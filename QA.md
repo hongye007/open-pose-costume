@@ -26,6 +26,14 @@ Tested in the Codex in-app browser at a desktop breakpoint, a 390 × 844 mobile 
 
 Screenshots, when present, are local review artifacts under `artifacts/`, excluded from Git. They are not a source-image dataset.
 
+## Logo and detail updates
+
+- Atomflow / GPT Image 2 logo is applied to the header, favicon and Apple touch icon; near-white background removed with opaque blue interiors preserved.
+- All five angle thumbnails load directly from remote thumbnail URLs. Selecting Side updates the active state and original-image link to `_side.png`.
+- At 390px, the five-column angle selector fits its 316px container without horizontal overflow.
+- The Chinese and English image redistribution restrictions appear on a separate line with computed font weight 700.
+- The usage guide has no source-site links. TypeScript and production build pass after these updates.
+
 ## Limits
 
 Remote-image availability depends on the source sites. No image de-emphasis, automatic clothing generation, offline image mirror, account service, cloud sync or public deployment was performed. The source permits contain their own usage restrictions; see SOURCES.md.

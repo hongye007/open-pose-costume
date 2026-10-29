@@ -1,0 +1,8 @@
+Use case: logo-brand
+Asset type: primary symbol for the Open Pose & Costume reference website, also used as a favicon.
+Primary request: Design one distinctive, beautifully resolved compact logo symbol for a creative reference studio combining figure poses and clothing design.
+Subject: A single abstract flowing geometric emblem. Integrate the gesture of a human figure and a draped garment into one continuous open loop reminiscent of a lowercase o. A small round head and one confident diagonal gesture may be expressed through negative space. The clothing idea must feel structural and subtle rather than a separate hanger icon. Aim for a coherent clever mark, not a collage of pictograms.
+Style: flat vector-like graphic, confident broad shapes, optically balanced curves, rounded precision, expressive but disciplined, suitable for a professional illustration and character-design tool.
+Color palette: predominantly drafting blue #3d5bd9, with an optional restrained periwinkle #9498e7 accent. Solid colors only.
+Composition: one centered symbol occupying roughly 75 percent of a square canvas, generous clean margin on every side, isolated on pure white #ffffff. Square-on and perfectly flat.
+Constraints: the symbol must remain clear at 32 pixels. Use very few broad forms, generous open counters, and no fine anatomy details. No words, letters as text, wordmark, slogan, label, signature, watermark, border, multiple concepts, presentation board, mockup, shadows, gradients, texture, 3D, realistic person, nudity, face details, or decorative stars.

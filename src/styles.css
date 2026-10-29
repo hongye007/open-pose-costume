@@ -127,13 +127,17 @@ html {
   padding: 0 13px 41px;
 }
 .brand-mark {
-  background: var(--blue);
-  color: white;
   display: grid;
   place-items: center;
-  width: 41px;
+  flex-shrink: 0;
+  width: 44px;
   height: 44px;
-  border-radius: 13px 13px 13px 4px;
+}
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .brand strong {
   font-size: 32px;
@@ -1277,15 +1281,16 @@ dialog::backdrop {
   margin-bottom: 12px;
 }
 .angle-buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 6px;
-  flex-wrap: wrap;
 }
 .angle-buttons button {
+  min-width: 0;
   border: 1px solid #e2e6ee;
   background: #f9fafd;
-  padding: 8px 11px;
-  border-radius: 5px;
+  padding: 4px;
+  border-radius: 7px;
   font-size: 10px;
   color: #8994a8;
 }
@@ -1294,6 +1299,50 @@ dialog::backdrop {
   color: var(--blue);
   background: #edf0ff;
   border-color: #c7d1f5;
+}
+.angle-buttons button.active {
+  border-color: var(--blue);
+}
+.angle-thumbnail {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 4px;
+  background: white;
+}
+.angle-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.angle-thumbnail .image-fallback {
+  min-height: 0;
+  height: 100%;
+  padding: 3px;
+  font-size: 8px;
+}
+.angle-selected {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+}
+.angle-label {
+  display: block;
+  padding: 6px 0 2px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.usage-restriction {
+  display: block;
+  font-weight: 700;
 }
 .angle-missing {
   font-size: 10px;
@@ -1713,12 +1762,8 @@ dialog::backdrop {
     width: max-content;
   }
   .brand-mark {
-    width: 32px;
+    width: 35px;
     height: 35px;
-    border-radius: 10px 10px 10px 3px;
-  }
-  .brand-mark svg {
-    width: 22px;
   }
   .brand strong {
     font-size: 27px;

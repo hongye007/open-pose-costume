@@ -97,8 +97,8 @@ export const copy = {
       '将一个姿势和一套服装加入搭配台，即可并排观察并复制组合描述。',
     ],
     aboutUseTitle: '素材使用规则',
-    aboutUse:
-      '素材可免费用于作品制作，包括商业作品、编辑和参考。图片数据本身（包括原图及加工后的图片）禁止再分发、转载或转售。',
+    aboutUse: '素材可免费用于作品制作，包括商业作品、编辑和参考。',
+    aboutRestriction: '图片数据本身（包括原图及加工后的图片）禁止再分发、转载或转售。',
     aboutRights: '本项目的代码开源许可不适用于图片及素材数据。',
     aboutCaveat: '姿势为人偶线稿，服装为 AI 生成的虚构穿搭。创作时请自行核对细节及相关权利。',
     footer: '让参考成为起点，让创作走得更远。',
@@ -212,7 +212,9 @@ export const copy = {
     ],
     aboutUseTitle: 'Image usage rules',
     aboutUse:
-      'Images may be used for free when creating works, including commercial works, editing and reference. Redistribution, republication or resale of the image data itself, including edited versions, is prohibited.',
+      'Images may be used for free when creating works, including commercial works, editing and reference.',
+    aboutRestriction:
+      'Redistribution, republication or resale of the image data itself, including edited versions, is prohibited.',
     aboutRights:
       'This project’s open-source code license does not cover the images or material data.',
     aboutCaveat:

@@ -375,7 +375,7 @@ export default function App() {
           }}
         >
           <span className="brand-mark">
-            <PersonStanding size={26} />
+            <img src="/brand/logo-mark.png" alt="" width={44} height={44} />
           </span>
           <span>
             <strong>
@@ -903,10 +903,19 @@ export default function App() {
                     <button
                       key={v.id}
                       className={v.id === variant.id ? 'active' : ''}
+                      aria-label={v.label[lang]}
                       aria-pressed={v.id === variant.id}
                       onClick={() => setDetailAngle(v.angle)}
                     >
-                      {v.label[lang]}
+                      <span className="angle-thumbnail">
+                        <RemoteImage src={v.thumbnail} alt="" lang={lang} eager />
+                        {v.id === variant.id && (
+                          <span className="angle-selected">
+                            <Check size={10} />
+                          </span>
+                        )}
+                      </span>
+                      <span className="angle-label">{v.label[lang]}</span>
                     </button>
                   ))}
                 </div>
@@ -1062,7 +1071,10 @@ export default function App() {
             ))}
           </ul>
           <h3>{t.aboutUseTitle}</h3>
-          <p>{t.aboutUse}</p>
+          <p>
+            {t.aboutUse}
+            <strong className="usage-restriction">{t.aboutRestriction}</strong>
+          </p>
           <p>{t.aboutRights}</p>
           <p>{t.aboutCaveat}</p>
         </Modal>
