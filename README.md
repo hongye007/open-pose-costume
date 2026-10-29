@@ -34,7 +34,7 @@ Chinese and English UI, cross-language search, multi-angle poses and costume pai
 
 ## 参考生成 / Generate from references
 
-点击右上角设置，服务地址默认 `https://atomflow.vip`，可自行修改。填写 API Key 和模型（默认 `gpt-image-2`），选择尺寸与质量后保存。在搭配台选好姿势与服饰，再点击“复制参考描述”旁的“参考生成”；缺少参考时会提示补齐。
+点击右上角设置，服务地址默认 `https://atomflow.vip`，可自行修改。填写 API Key 和模型（默认 `grok-imagine-image-2.0`），选择尺寸与质量后保存。在搭配台选好姿势与服饰，再点击“复制参考描述”旁的“参考生成”；缺少参考时会提示补齐。
 
 参考生成通过 `POST /v1/images/edits` 提交两张原图与描述。服务需支持此接口及浏览器 CORS 请求，地址支持 HTTPS 或本机 HTTP。左侧缩略图用于切换中间对照图，右侧显示生成结果；描述可编辑，失败后可手动重试。
 

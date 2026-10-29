@@ -101,7 +101,7 @@ test('image edit request attaches both original files and keeps auth off image s
   assert.equal(request.url, 'https://images.example/v1/images/edits');
   assert.equal(request.options.headers.Authorization, `Bearer ${config.apiKey}`);
   assert.equal(request.options.body.getAll('image[]').length, 2);
-  assert.equal(request.options.body.get('model'), 'gpt-image-2');
+  assert.equal(request.options.body.get('model'), 'grok-imagine-image-2.0');
   assert.equal(request.options.body.get('prompt'), 'draw a character');
   assert.equal(request.options.body.get('input_fidelity'), null);
 });

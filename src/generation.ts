@@ -27,7 +27,7 @@ const SESSION_KEY = 'opc-image-session-key';
 export const defaultImageConfig: ImageConfig = {
   baseUrl: 'https://atomflow.vip',
   apiKey: '',
-  model: 'gpt-image-2',
+  model: 'grok-imagine-image-2.0',
   size: '1024x1536',
   quality: 'auto',
   rememberKey: false,

@@ -42,7 +42,7 @@ export function ImageSettings({
     <Modal onClose={onClose} label={t.settings} className="image-settings-modal">
       <div className="panel-heading">
         <div>
-          <span className="section-kicker">GPT IMAGE</span>
+          <span className="section-kicker">IMAGE GENERATION</span>
           <h2>{t.settings}</h2>
         </div>
         <button className="icon-button" aria-label={t.close} onClick={onClose}>

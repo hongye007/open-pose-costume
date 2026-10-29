@@ -1,7 +1,7 @@
 export const generationCopy = {
   zh: {
     settings: '生图设置',
-    settingsIntro: '连接兼容 GPT Image 的生图服务。',
+    settingsIntro: '连接兼容 OpenAI 图片接口的生图服务。',
     baseUrl: '服务地址',
     apiKey: 'API Key',
     model: '模型',
@@ -55,7 +55,7 @@ export const generationCopy = {
   },
   en: {
     settings: 'Image settings',
-    settingsIntro: 'Connect a GPT Image-compatible service.',
+    settingsIntro: 'Connect an OpenAI-compatible image generation service.',
     baseUrl: 'Service URL',
     apiKey: 'API key',
     model: 'Model',
