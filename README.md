@@ -29,7 +29,7 @@ npm run dev -- --port 5200
 - 分类筛选、按名称或编号排序、逐批加载、移动端双列布局。
 - 姿势正面、俯视、仰视、侧面、斜侧切换；原站缺失的视角回退到已有视角，不生成不存在的链接。
 - 本地收藏、姿势＋服装搭配台、组合描述复制、详情链接分享。收藏和搭配台只保存在当前浏览器，无账号或云同步。
-- 原图与来源网站链接、图片加载失败状态、索引加载重试、键盘焦点和原生对话框。`/` 聚焦搜索；详情 `←` / `→` 切换参考，`Esc` 关闭。
+- 原图链接、使用说明、图片加载失败状态、索引加载重试、键盘焦点和原生对话框。`/` 聚焦搜索；详情 `←` / `→` 切换参考，`Esc` 关闭。
 - 默认展示常规分类；“显示扩展分类”保留其他原站分类。此设置只筛选目录，不修改或审查图片内容。
 
 All interface text, reference titles and search terms support Chinese and English. Favorites and the two-slot pairing board are stored locally in the browser. Search, category, language, selected reference and angle can be shared through URL parameters.

@@ -441,9 +441,9 @@ export default function App() {
             </label>
             <p>{t.extendedHint}</p>
           </div>
-          <button className="source-button" onClick={() => setPanel('about')}>
+          <button className="usage-button" onClick={() => setPanel('about')}>
             <Info size={17} />
-            {t.source}
+            {t.usage}
             <ArrowUpRight size={14} />
           </button>
           <span className="local-note">
@@ -472,7 +472,7 @@ export default function App() {
             <button
               className="header-source"
               onClick={() => setPanel('about')}
-              aria-label={t.source}
+              aria-label={t.usage}
             >
               <Info size={17} />
             </button>
@@ -825,7 +825,7 @@ export default function App() {
             <span className="footer-wordmark">open.</span>
             <p>{t.footer}</p>
             <button onClick={() => setPanel('about')}>
-              {t.source}
+              {t.usage}
               <ArrowUpRight size={13} />
             </button>
             <button
@@ -952,16 +952,7 @@ export default function App() {
                 {t.original}
                 <ExternalLink size={15} />
               </a>
-              <p className="source-note">{t.sourceNote}</p>
-              <a
-                className="source-site-link"
-                href={selected.source}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t.originSite}
-                <ArrowUpRight size={13} />
-              </a>
+              <p className="original-note">{t.originalNote}</p>
             </div>
             <p className="key-hint">{t.keys}</p>
           </div>
@@ -1053,10 +1044,10 @@ export default function App() {
       )}
 
       {panel === 'about' && (
-        <Modal onClose={() => setPanel(null)} label={t.source} className="about-modal">
+        <Modal onClose={() => setPanel(null)} label={t.usage} className="about-modal">
           <div className="panel-heading">
             <div>
-              <span className="section-kicker">SOURCES & USAGE</span>
+              <span className="section-kicker">HOW TO USE</span>
               <h2>{t.aboutTitle}</h2>
             </div>
             <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
@@ -1064,46 +1055,16 @@ export default function App() {
             </button>
           </div>
           <p>{t.aboutIntro}</p>
-          <div className="source-cards">
-            <a href="https://ai-pose-gallery.pages.dev/" target="_blank" rel="noopener noreferrer">
-              <PersonStanding size={22} />
-              <span>
-                {t.pose}
-                <small>ai-pose-gallery.pages.dev</small>
-              </span>
-              <ArrowUpRight size={17} />
-            </a>
-            <a
-              href="https://ai-costume-gallery.pages.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Shirt size={22} />
-              <span>
-                {t.costume}
-                <small>ai-costume-gallery.pages.dev</small>
-              </span>
-              <ArrowUpRight size={17} />
-            </a>
-          </div>
+          <h3>{t.aboutHowToTitle}</h3>
+          <ul className="usage-steps">
+            {t.aboutSteps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ul>
           <h3>{t.aboutUseTitle}</h3>
           <p>{t.aboutUse}</p>
           <p>{t.aboutRights}</p>
           <p>{t.aboutCaveat}</p>
-          <div className="about-links">
-            <a href="https://x.com/giaaibusi" target="_blank" rel="noopener noreferrer">
-              {t.originalCreator}
-              <ArrowUpRight size={13} />
-            </a>
-            <a
-              href="https://github.com/anhao/ai-pose-gallery-zh"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.chineseSource}
-              <ArrowUpRight size={13} />
-            </a>
-          </div>
         </Modal>
       )}
       {toast && (

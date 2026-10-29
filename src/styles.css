@@ -307,7 +307,7 @@ html {
   color: #9299a6;
   margin-top: 9px;
 }
-.source-button {
+.usage-button {
   display: flex;
   align-items: center;
   width: 100%;
@@ -318,7 +318,7 @@ html {
   font-size: 10px;
   color: #697182;
 }
-.source-button svg:last-child {
+.usage-button svg:last-child {
   margin-left: auto;
 }
 .local-note {
@@ -1345,19 +1345,11 @@ dialog::backdrop {
 .original-link:hover {
   color: var(--blue);
 }
-.source-note {
+.original-note {
   font-size: 9px;
   color: #a1a9b8;
   line-height: 1.9;
   text-align: center;
-}
-.source-site-link {
-  font-size: 10px;
-  color: #7e8ca6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
 }
 .key-hint {
   font-size: 9px;
@@ -1474,48 +1466,6 @@ dialog::backdrop {
   font-size: 14px;
   font-weight: 550;
   margin-top: 28px;
-}
-.source-cards {
-  display: grid;
-  gap: 9px;
-  margin: 24px 0;
-}
-.source-cards > a {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  border: 1px solid #e0e6f2;
-  border-radius: 7px;
-  padding: 16px;
-  background: #f9fafe;
-  color: #7d8baa;
-  font-size: 12px;
-}
-.source-cards > a > svg:last-child {
-  margin-left: auto;
-}
-.source-cards small {
-  display: block;
-  color: #9da8bd;
-  font-size: 10px;
-  margin-top: 5px;
-}
-.source-cards > a:hover {
-  background: #edf0fd;
-}
-.about-links {
-  display: flex;
-  gap: 18px;
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-  margin-top: 25px;
-  font-size: 11px;
-  color: var(--blue);
-}
-.about-links a {
-  display: flex;
-  align-items: center;
-  gap: 5px;
 }
 .header-board {
   display: flex;
@@ -1781,7 +1731,7 @@ dialog::backdrop {
   .sidebar-divider,
   .board-invitation,
   .board-nav,
-  .source-button,
+  .usage-button,
   .local-note {
     display: none;
   }
@@ -2336,17 +2286,6 @@ dialog::backdrop {
   .about-modal p {
     font-size: 11px;
   }
-  .source-cards > a {
-    padding: 14px 12px;
-    font-size: 11px;
-  }
-  .source-cards small {
-    font-size: 9px;
-  }
-  .about-links {
-    font-size: 10px;
-    gap: 14px;
-  }
   .toast {
     font-size: 11px;
     white-space: normal;
@@ -2374,4 +2313,15 @@ dialog::backdrop {
   .reference-card:hover .card-open > img {
     transform: none;
   }
+}
+
+.usage-steps {
+  margin: 16px 0 22px;
+  padding-left: 20px;
+  color: #7d889c;
+  font-size: 12px;
+  line-height: 2;
+}
+.usage-steps li + li {
+  margin-top: 8px;
 }
