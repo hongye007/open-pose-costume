@@ -25,7 +25,7 @@ export interface GenerationJob {
 const SETTINGS_KEY = 'opc-image-settings';
 const SESSION_KEY = 'opc-image-session-key';
 export const defaultImageConfig: ImageConfig = {
-  baseUrl: '',
+  baseUrl: 'https://atomflow.vip',
   apiKey: '',
   model: 'gpt-image-2',
   size: '1024x1536',
