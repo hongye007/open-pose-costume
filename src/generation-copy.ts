@@ -6,6 +6,7 @@ export const generationCopy = {
     baseUrl: '服务地址',
     apiKey: 'API Key',
     model: '模型',
+    referenceCount: '提交参考图数量',
     size: '生成尺寸',
     quality: '质量',
     rememberKey: '在此浏览器记住密钥',
@@ -47,6 +48,7 @@ export const generationCopy = {
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片连接后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
+    referencesRejected: '服务未识别提交的参考图，请检查服务渠道是否保留并透传 image/images 字段。',
     networkFailed: '连接失败，请检查网络，以及服务是否支持浏览器跨域请求。',
     timedOut: '生成超过 3 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
@@ -62,6 +64,7 @@ export const generationCopy = {
     baseUrl: 'Service URL',
     apiKey: 'API key',
     model: 'Model',
+    referenceCount: 'Submitted references',
     size: 'Image size',
     quality: 'Quality',
     rememberKey: 'Remember the key in this browser',
@@ -107,6 +110,8 @@ export const generationCopy = {
       'The original reference could not be read. Check the image connection and retry.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
+    referencesRejected:
+      'The service did not recognize the submitted references. Check whether the service channel preserves and forwards image/images fields.',
     networkFailed:
       'Connection failed. Check your network and whether the service allows browser CORS requests.',
     timedOut: 'Generation exceeded 3 minutes. Please retry later.',

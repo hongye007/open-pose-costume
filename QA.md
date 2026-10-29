@@ -10,7 +10,7 @@ npm run build
 npm audit
 ```
 
-All 15 tests and the production build pass; the dependency audit reports no known vulnerabilities. Tests cover catalog completeness, bilingual search, sorting, source hashes, safe JSON extraction, storage failures, OpenAI multipart and Grok JSON image API requests, key storage, cancellation and provider errors.
+All 16 tests and the production build pass; the dependency audit reports no known vulnerabilities. Tests cover catalog completeness, bilingual search, sorting, source hashes, safe JSON extraction, storage failures, OpenAI multipart and Grok JSON image API requests, key storage, cancellation and provider errors.
 
 ## Browser checks
 
@@ -39,3 +39,4 @@ Archive directories, download records and review artifacts are excluded from Git
 - Missing references open the pairing board with a selection prompt and send no generation request.
 - Tests disable Vite WebSocket listeners to avoid port conflicts.
 - A local HTTP receiver verifies Grok JSON requests, both original URLs and aspect ratios. No live Grok generation was requested by this check.
+- A simulated relay dropping image fields verifies the dedicated reference rejection diagnostic; it does not verify Atomflow's private channel configuration.

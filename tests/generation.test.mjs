@@ -192,6 +192,32 @@ test('Grok validates reference origins and never auto-retries a failed JSON requ
   assert.equal(calls, 1);
 });
 
+test('a relay dropping Grok references produces a specific diagnostic without auto-retry', async () => {
+  let calls = 0;
+  await assert.rejects(
+    api.generateReferenceImage(
+      { ...config, model: 'grok-imagine-image-2.0' },
+      references,
+      'combine references',
+      new AbortController().signal,
+      async (_url, options) => {
+        calls++;
+        const sent = JSON.parse(options.body);
+        assert.equal(sent.images.length, 2);
+        // New API's xAI adapter projects only these fields unless body passthrough is enabled.
+        const relayed = { model: sent.model, prompt: sent.prompt, n: sent.n };
+        assert.equal(relayed.images, undefined);
+        return Response.json(
+          { error: { message: 'image 或 images 数量必须在 1 到 8 之间' } },
+          { status: 400 },
+        );
+      },
+    ),
+    (error) => error.code === 'referencesRejected' && error.message.includes('HTTP 400'),
+  );
+  assert.equal(calls, 1);
+});
+
 test('provider errors are redacted and not retried automatically', async () => {
   let calls = 0;
   await assert.rejects(

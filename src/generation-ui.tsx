@@ -213,7 +213,7 @@ export function GenerationDialog({
         </button>
       </div>
       <p className="settings-note">
-        {t.model}: <code>{job.model}</code>
+        {t.model}: <code>{job.model}</code> · {t.referenceCount}: {job.references.length}
       </p>
       <div className="generation-comparison">
         <div className="generation-thumbnails" aria-label={t.reference}>

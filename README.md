@@ -40,6 +40,8 @@ Chinese and English UI, cross-language search, multi-angle poses and costume pai
 
 配置保存在当前浏览器，API Key 默认仅保存到当前会话；勾选“记住密钥”后保存在本地存储，可在设置中清除。生成时直接向配置的服务发送参考图和描述，服务可能按其规则计费。密钥不进入分享链接或仓库。
 
+若 Grok 返回“image 或 images 数量必须在 1 到 8 之间”，请先核对生成界面显示的提交数量。New API `v1.0.0-rc.20` 的 xAI 渠道适配器只转发模型、描述、数量和响应格式，会丢弃图片字段；渠道管理员需开启请求体透传，或改用保留图片字段的 OpenAI 兼容渠道。前端重试不能修复服务端丢字段的问题。
+
 ## 品牌素材 / Brand assets
 
 Logo 原稿位于 `output/imagegen/open-pose-costume-logo-original.png`，生成提示词见 `assets/brand/logo-prompt.txt`。

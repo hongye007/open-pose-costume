@@ -252,7 +252,11 @@ export async function generateReferenceImage(
     if (!response.ok || payload?.error) {
       const message = typeof payload?.error?.message === 'string' ? payload.error.message : '';
       throw new ImageGenerationError(
-        'providerFailed',
+        response.status === 400 &&
+          isGrokImageModel(valid.model) &&
+          message.includes('image 或 images 数量必须在 1 到 8 之间')
+          ? 'referencesRejected'
+          : 'providerFailed',
         `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
       );
     }
