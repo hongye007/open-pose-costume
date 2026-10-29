@@ -2,6 +2,8 @@
 
 [中文](README.md) · **English**
 
+[Live demo](https://hongye007.github.io/open-pose-costume/)
+
 A pose. A point of view. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
 
 ![Open Pose & Costume English homepage](docs/images/hero-en.webp)
@@ -71,13 +73,15 @@ Check with `lsof -nP -iTCP:5200 -sTCP:LISTEN` on macOS/Linux, or `Get-NetTCPConn
 
 ## Build and deploy
 
+The site is deployed on [GitHub Pages](https://hongye007.github.io/open-pose-costume/). Pushes to `main` automatically run tests, build with `/open-pose-costume/` as the base path, and deploy through GitHub Actions. Failed tests or builds prevent deployment. Other branches and pull requests only run checks.
+
 Built with **React 19 · TypeScript · Vite · Lucide**. The reference library is a static website; image generation requires your own service configuration.
 
 ```sh
 npm run build
 ```
 
-Deploy `dist/` to a static host. For Cloudflare Pages, use `npm run build` as the build command and `dist` as the output directory. `public/_headers` supplies cache and security headers.
+Deploy `dist/` to a static host. For Cloudflare Pages, use `npm run build` as the build command and `dist` as the output directory. `public/_headers` supplies cache and security headers on Cloudflare Pages; GitHub Pages does not read this file.
 
 Choose a free port for local preview as well:
 

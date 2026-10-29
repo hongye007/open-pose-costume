@@ -93,7 +93,7 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     setFailed(false);
-    fetch('/data/catalog.json', { signal: controller.signal })
+    fetch(`${import.meta.env.BASE_URL}data/catalog.json`, { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw Error(`HTTP ${res.status}`);
         return res.json() as Promise<Catalog>;
@@ -348,7 +348,7 @@ export default function App() {
       <aside className="sidebar">
         <a
           className="brand"
-          href="/"
+          href={import.meta.env.BASE_URL}
           onClick={(e) => {
             e.preventDefault();
             changeView('all');
@@ -356,7 +356,12 @@ export default function App() {
           }}
         >
           <span className="brand-mark">
-            <img src="/brand/logo-mark.png" alt="" width={44} height={44} />
+            <img
+              src={`${import.meta.env.BASE_URL}brand/logo-mark.png`}
+              alt=""
+              width={44}
+              height={44}
+            />
           </span>
           <span>
             <strong>

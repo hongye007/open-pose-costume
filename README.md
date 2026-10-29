@@ -2,6 +2,8 @@
 
 **中文** · [English](README.en.md)
 
+[在线体验](https://hongye007.github.io/open-pose-costume/)
+
 从姿势，到穿着。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
 
 ![Open Pose & Costume 中文首页](docs/images/hero-zh.webp)
@@ -71,13 +73,15 @@ npm run dev -- --port 5200
 
 ## 构建与部署
 
+当前使用 [GitHub Pages](https://hongye007.github.io/open-pose-costume/) 部署。推送到 `main` 后，GitHub Actions 自动运行测试、以 `/open-pose-costume/` 为基础路径构建并部署；测试或构建失败时不会更新网站。其他分支及拉取请求只执行检查。
+
 基于 **React 19 · TypeScript · Vite · Lucide**。参考库是静态网站，参考生成需自行配置生图服务。
 
 ```sh
 npm run build
 ```
 
-将 `dist/` 部署到静态托管平台即可。Cloudflare Pages 设置构建命令为 `npm run build`、输出目录为 `dist`。`public/_headers` 提供缓存与安全响应头。
+将 `dist/` 部署到静态托管平台即可。Cloudflare Pages 设置构建命令为 `npm run build`、输出目录为 `dist`。`public/_headers` 在 Cloudflare Pages 上提供缓存与安全响应头，GitHub Pages 不读取此文件。
 
 本地预览同样选择空闲端口：
 
