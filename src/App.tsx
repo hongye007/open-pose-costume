@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Copy,
+  Download,
   ExternalLink,
   Globe2,
   Grid2X2,
@@ -40,7 +41,7 @@ import {
 import type { CharacterImageReference, GenerationJob, ImageReference } from './generation';
 import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } from './library';
 import type { Sort, View } from './library';
-import type { Catalog, Lang, Reference } from './types';
+import type { Catalog, Lang, Reference, Variant } from './types';
 
 type Board = { pose?: string; costume?: string };
 const initialParams = new URLSearchParams(window.location.search);
@@ -97,6 +98,8 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<string | null>(initialParams.get('item'));
   const [detailAngle, setDetailAngle] = useState(initialParams.get('detailAngle') || angle);
   const [toast, setToast] = useState('');
+  const [downloadBusy, setDownloadBusy] = useState(false);
+  const downloadController = useRef<AbortController | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -136,6 +139,7 @@ export default function App() {
   }, [query, view, category, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => generationController.current?.abort(), []);
+  useEffect(() => () => downloadController.current?.abort(), []);
   useEffect(
     () => () => {
       characterTask.current++;
@@ -272,6 +276,45 @@ export default function App() {
       notify(t.copied);
     } catch {
       notify(t.copyFailed);
+    }
+  }
+  async function downloadOriginal(item: Reference, chosenVariant: Variant) {
+    if (downloadController.current) return;
+    const controller = new AbortController();
+    downloadController.current = controller;
+    setDownloadBusy(true);
+    try {
+      const response = await fetch(chosenVariant.original, {
+        signal: AbortSignal.any([controller.signal, AbortSignal.timeout(60_000)]),
+        credentials: 'omit',
+        referrerPolicy: 'no-referrer',
+      });
+      if (!response.ok) throw Error('Download failed');
+      const blob = await response.blob();
+      const extensions: Record<string, string> = {
+        'image/png': 'png',
+        'image/jpeg': 'jpg',
+        'image/webp': 'webp',
+      };
+      const extension = extensions[blob.type];
+      if (!extension || !blob.size) throw Error('Invalid image');
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${item.id}-${chosenVariant.angle}.${extension}`;
+      (document.querySelector('dialog[open]') || document.body).appendChild(link);
+      link.click();
+      link.remove();
+      // Give the browser time to start reading the file before releasing it.
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      notify(t.downloadStarted);
+    } catch {
+      if (!controller.signal.aborted) notify(t.downloadFailed);
+    } finally {
+      if (downloadController.current === controller) {
+        downloadController.current = null;
+        setDownloadBusy(false);
+      }
     }
   }
   function closeGeneration() {
@@ -1007,6 +1050,20 @@ export default function App() {
                     fill={saved.includes(selected.id) ? 'currentColor' : 'none'}
                   />
                   {saved.includes(selected.id) ? t.unsave : t.save}
+                </button>
+                <button
+                  className="secondary-button"
+                  onClick={() => downloadOriginal(selected, variant)}
+                  disabled={downloadBusy}
+                  aria-busy={downloadBusy}
+                  aria-label={downloadBusy ? t.downloading : t.downloadOriginal}
+                  title={downloadBusy ? t.downloading : t.downloadOriginal}
+                >
+                  {downloadBusy ? (
+                    <LoaderCircle size={16} className="spinner" />
+                  ) : (
+                    <Download size={16} />
+                  )}
                 </button>
                 <button
                   className="secondary-button"
