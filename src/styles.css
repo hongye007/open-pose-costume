@@ -311,7 +311,7 @@ html {
   color: #9299a6;
   margin-top: 9px;
 }
-.usage-button {
+.social-link {
   display: flex;
   align-items: center;
   width: 100%;
@@ -322,7 +322,10 @@ html {
   font-size: 10px;
   color: #697182;
 }
-.usage-button svg:last-child {
+.social-link:hover {
+  color: var(--blue);
+}
+.social-link svg:last-child {
   margin-left: auto;
 }
 .local-note {
@@ -1749,7 +1752,7 @@ dialog::backdrop {
   .sidebar-divider,
   .board-invitation,
   .board-nav,
-  .usage-button,
+  .social-link,
   .local-note {
     display: none;
   }
