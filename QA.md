@@ -34,6 +34,14 @@ Screenshots, when present, are local review artifacts under `artifacts/`, exclud
 - The Chinese and English image redistribution restrictions appear on a separate line with computed font weight 700.
 - The usage guide has no source-site links. TypeScript and production build pass after these updates.
 
+## Local image archive verification
+
+- Downloaded all 5,692 catalog cover/original files with no failed requests: pose covers/originals 1,439 each, costume covers/originals 1,407 each.
+- Verified every file with Pillow, checked byte sizes and SHA-256 against the manifest, and confirmed the folder inventory exactly matches the manifest, without incomplete `.part` files.
+- Total size: 2,097,624,172 bytes (1.954 GiB).
+- A second downloader run reused all 5,692 files, downloading zero additional files and reporting zero failures.
+- Confirmed both image directories and the local manifests are ignored by Git. The downloader passes Node syntax checking.
+
 ## Limits
 
-Remote-image availability depends on the source sites. No image de-emphasis, automatic clothing generation, offline image mirror, account service, cloud sync or public deployment was performed. The source permits contain their own usage restrictions; see SOURCES.md.
+Remote-image availability on the website depends on the source sites. A separate local cover/original archive is supported by `npm run images:download`; it is excluded from Git and website builds. No image de-emphasis, automatic clothing generation, account service, cloud sync or public deployment was performed. The source permits contain their own usage restrictions; see SOURCES.md.

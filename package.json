@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 5199 --strictPort",
     "sync": "node scripts/sync.mjs",
+    "images:download": "node scripts/download-images.mjs",
     "data:build": "node scripts/build-data.mjs",
     "test": "node --test tests/data.test.mjs"
   },

@@ -8,9 +8,13 @@
 
 ## What is stored
 
-Only metadata is synchronized: IDs, names, categories and remote image URLs. No source image files are downloaded or stored by the synchronization/build scripts. Browsers load visible images directly from the original sites, with lazy loading and `no-referrer`. There is no image proxy or image cache service. This project does not alter the source images.
+The metadata synchronization/build scripts store IDs, names, categories and remote image URLs. Browsers load visible images directly from the original sites, with lazy loading and `no-referrer`. There is no image proxy or image cache service. This project does not alter the source images.
 
-本仓库只保存元数据、翻译及远程图片地址。同步脚本不请求缩略图、预览图或原图。用户浏览时由浏览器直接加载原站图片，项目不提供图片代理或托管，也没有对图片做弱化处理。
+Git 保存元数据、翻译及远程图片地址。同步脚本不请求缩略图、预览图或原图。用户浏览时由浏览器直接加载原站图片，项目不提供图片代理或托管，也没有对图片做弱化处理。
+
+The separate, explicitly invoked `npm run images:download` command archives covers and original PNGs locally under `pose/` and `costume/`. It includes all existing pose angles and extended categories. These folders and their download manifests are ignored by Git and excluded from the website build. The local archive does not change the image rights below.
+
+用户单独调用 `npm run images:download` 可将封面与 PNG 原图归档到本机 `pose/`、`costume/` 目录。下载清单记录远程地址、编号、视角和 SHA-256；本地归档不改变下述素材权利。
 
 `data/sync-manifest.json` records the crawl timestamp, source URLs, source row counts and SHA-256 hashes. Pose variants are grouped by their original pose ID. All available angles are retained; a missing angle is not fabricated.
 

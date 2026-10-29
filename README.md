@@ -58,6 +58,27 @@ npm run data:build
 
 Images stay at their original URLs. Ordinary browsing loads remote thumbnails/previews directly; local metadata builds remain usable offline. Image availability depends on the upstream sites and their hotlinking policy.
 
+## 本地图片归档 / Local image archive
+
+```sh
+npm run images:download
+```
+
+按当前目录下载所有分类（包括扩展分类）的封面缩略图与 PNG 原图，姿势保留每个已有观察角度。目录结构：
+
+```text
+pose/
+  covers/       # 1,439 张 JPG 缩略图，文件名带角度
+  originals/    # 1,439 张 PNG 原图，文件名带角度
+costume/
+  covers/       # 1,407 张 WebP 缩略图
+  originals/    # 1,407 张 PNG 原图
+```
+
+共 5,692 个文件。默认 8 个并发请求，可通过 `npm run images:download -- --concurrency 4` 调整。脚本检查文件类型和完整性、计算 SHA-256、自动重试失败请求；再次运行会校验并复用已下载图片。
+
+`data/image-download-manifest.json` 保存每个文件的来源地址、参考编号、视角、大小及校验值，`data/image-download-summary.json` 保存本次统计及失败列表。图片、下载清单与临时文件均由 Git 忽略。归档位于项目根目录，不进入 Vite 的 `public/` 或生产构建；网页继续使用原站图片地址。
+
 ## 构建与部署 / Build
 
 技术栈：React 19、TypeScript、Vite、Lucide。纯静态网站，无数据库、服务端和 API 密钥。
@@ -78,4 +99,4 @@ npm run preview -- --port 5200
 
 代码使用 MIT 许可；素材、原始数据和第三方翻译权利另见 [SOURCES.md](SOURCES.md) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。原作者为「ギア」。本项目引用源站素材，不声称这些图片是开放许可素材。
 
-No source images are included in this repository. The code license does not cover the referenced images or upstream datasets. See the source sites for their current usage terms.
+No source images are tracked in Git. Local image archives are excluded from the repository and static build. The code license does not cover the referenced images or upstream datasets. See the source sites for their current usage terms.
