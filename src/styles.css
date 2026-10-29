@@ -1474,6 +1474,68 @@ dialog::backdrop {
 .board-empty .secondary-button {
   font-size: 11px;
 }
+.board-character {
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fafbfe;
+}
+.board-character-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.board-character-preview,
+.board-character-placeholder {
+  width: 58px;
+  height: 68px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  background: #edf1f8;
+  object-fit: contain;
+}
+.board-character-placeholder {
+  display: grid;
+  place-items: center;
+  color: #8997b1;
+}
+.board-character-description {
+  flex: 1;
+  min-width: 140px;
+  overflow: hidden;
+}
+.board-character-description h3 {
+  font-size: 12px;
+  font-weight: 500;
+}
+.board-character-filename {
+  font-size: 11px;
+  color: #7b889e;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.board-character-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.board-character-actions .secondary-button {
+  font-size: 11px;
+}
+.board-character-note,
+.board-character-error {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 11px;
+  color: #7b889e;
+}
+.board-character-error {
+  color: #b34040;
+}
 .board-prompt {
   padding: 23px 0 0;
   margin-top: 20px;

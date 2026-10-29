@@ -12,6 +12,7 @@ import {
   Globe2,
   Grid2X2,
   Info,
+  ImagePlus,
   Layers2,
   LayoutPanelLeft,
   LoaderCircle,
@@ -21,6 +22,7 @@ import {
   Search,
   Shirt,
   Sparkles,
+  UserRound,
   X,
 } from 'lucide-react';
 import { copy } from './i18n';
@@ -33,8 +35,9 @@ import {
   ImageGenerationError,
   loadImageConfig,
   referencePrompt,
+  validateCharacterFile,
 } from './generation';
-import type { GenerationJob, ImageReference } from './generation';
+import type { CharacterImageReference, GenerationJob, ImageReference } from './generation';
 import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } from './library';
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference } from './types';
@@ -79,6 +82,13 @@ export default function App() {
   const [limit, setLimit] = useState(24);
   const [saved, setSaved] = useState(() => storageGet('opc-saved', [], isIds));
   const [board, setBoard] = useState<Board>(() => storageGet('opc-board', {}, isBoard));
+  const [characterReference, setCharacterReference] = useState<CharacterImageReference | null>(
+    null,
+  );
+  const [characterLoading, setCharacterLoading] = useState(false);
+  const [characterError, setCharacterError] = useState('');
+  const characterInput = useRef<HTMLInputElement>(null);
+  const characterTask = useRef(0);
   const [panel, setPanel] = useState<'board' | 'about' | 'settings' | null>(null);
   const [imageConfig, setImageConfig] = useState(loadImageConfig);
   const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
@@ -126,6 +136,18 @@ export default function App() {
   }, [query, view, category, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => generationController.current?.abort(), []);
+  useEffect(
+    () => () => {
+      characterTask.current++;
+    },
+    [],
+  );
+  useEffect(() => {
+    const preview = characterReference?.variant.image;
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [characterReference]);
   useEffect(() => {
     const url = new URL(window.location.href);
     url.search = '';
@@ -188,7 +210,7 @@ export default function App() {
   const boardCount = Number(!!boardPose) + Number(!!boardCostume);
   const boardPrompt =
     boardPose && boardCostume
-      ? `${t.promptStart}${boardPose.title[lang]}${t.promptCostume}${boardCostume.keywords[lang]}${t.promptEnd}`
+      ? `${t.promptStart}${boardPose.title[lang]}${t.promptCostume}${boardCostume.keywords[lang]}${t.promptEnd}${characterReference ? t.promptCharacter : ''}`
       : '';
   const navItems = [
     { key: 'all' as const, label: t.all, icon: Grid2X2, count: eligible.length },
@@ -287,7 +309,46 @@ export default function App() {
       });
     }
   }
+  async function selectCharacter(file: File) {
+    const task = ++characterTask.current;
+    setCharacterLoading(true);
+    setCharacterError('');
+    let preview = '';
+    try {
+      await validateCharacterFile(file);
+      preview = URL.createObjectURL(file);
+      const image = new Image();
+      image.src = preview;
+      await image.decode();
+      if (task !== characterTask.current) return;
+      setCharacterReference({
+        kind: 'character',
+        file,
+        title: { zh: '人物参考', en: 'Character reference' },
+        keywords: {
+          zh: '保留所附人物的五官、脸型、发型发色、肤色、体型比例与画风',
+          en: 'Preserve the attached character’s face, hairstyle, hair color, skin tone, proportions and visual style',
+        },
+        variant: {
+          id: 'character-upload',
+          angle: 'front',
+          label: { zh: '人物', en: 'Character' },
+          thumbnail: preview,
+          image: preview,
+          original: preview,
+        },
+      });
+      preview = ''; // Ownership passes to the reference cleanup effect.
+    } catch (error) {
+      if (task === characterTask.current)
+        setCharacterError(error instanceof ImageGenerationError ? error.code : 'characterInvalid');
+    } finally {
+      if (preview) URL.revokeObjectURL(preview);
+      if (task === characterTask.current) setCharacterLoading(false);
+    }
+  }
   function beginGeneration(item?: Reference) {
+    if (characterLoading) return;
     const references: ImageReference[] = [];
     const add = (value: Reference | undefined, chosenVariant = value?.variants[0]) => {
       if (value && chosenVariant)
@@ -312,6 +373,7 @@ export default function App() {
       notify(generationCopy[lang].chooseReferences);
       return;
     }
+    if (characterReference) references.push(characterReference);
     void runGeneration(references, referencePrompt(references, lang));
   }
   useEffect(() => {
@@ -924,6 +986,7 @@ export default function App() {
                 {imageReady && (
                   <button
                     className="text-action reference-generate"
+                    disabled={characterLoading}
                     onClick={() => beginGeneration(selected)}
                   >
                     <Sparkles size={14} />
@@ -975,7 +1038,7 @@ export default function App() {
           <div className="panel-heading">
             <div>
               <span className="section-kicker">THE PAIRING BOARD</span>
-              <h2>{t.boardTitle}</h2>
+              <h2>{characterReference ? t.boardCharacterTitle : t.boardTitle}</h2>
             </div>
             <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
               <X size={22} />
@@ -1039,6 +1102,83 @@ export default function App() {
               );
             })}
           </div>
+          <section
+            className="board-character"
+            aria-label={t.characterOptional}
+            aria-busy={characterLoading}
+          >
+            <input
+              ref={characterInput}
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              aria-label={t.characterUpload}
+              hidden
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                event.target.value = '';
+                if (file) void selectCharacter(file);
+              }}
+            />
+            <div className="board-character-row">
+              {characterReference ? (
+                <img
+                  className="board-character-preview"
+                  src={characterReference.variant.thumbnail}
+                  alt={generationCopy[lang].character}
+                />
+              ) : (
+                <div className="board-character-placeholder">
+                  <UserRound size={25} strokeWidth={1.5} />
+                </div>
+              )}
+              <div className="board-character-description">
+                <h3>{t.characterOptional}</h3>
+                <p className="board-character-filename">
+                  {characterReference ? characterReference.file.name : t.characterFormats}
+                </p>
+              </div>
+              <div className="board-character-actions">
+                <button
+                  type="button"
+                  className="secondary-button"
+                  disabled={characterLoading}
+                  onClick={() => characterInput.current?.click()}
+                >
+                  {characterLoading ? (
+                    <LoaderCircle size={15} className="spinner" />
+                  ) : (
+                    <ImagePlus size={15} />
+                  )}
+                  {characterLoading
+                    ? t.characterLoading
+                    : characterReference
+                      ? t.characterReplace
+                      : t.characterUpload}
+                </button>
+                {characterReference && (
+                  <button
+                    type="button"
+                    className="icon-button"
+                    disabled={characterLoading}
+                    aria-label={t.characterRemove}
+                    onClick={() => {
+                      setCharacterReference(null);
+                      setCharacterError('');
+                    }}
+                  >
+                    <X size={17} />
+                  </button>
+                )}
+              </div>
+            </div>
+            <p className="board-character-note">{t.characterPrivacy}</p>
+            {characterError && (
+              <p className="board-character-error" role="alert">
+                {generationCopy[lang][characterError as keyof typeof generationCopy.zh] ||
+                  generationCopy[lang].characterInvalid}
+              </p>
+            )}
+          </section>
           <div className="board-prompt">
             <h3>{t.boardPrompt}</h3>
             <p>{boardPrompt || t.boardIncomplete}</p>
@@ -1052,7 +1192,11 @@ export default function App() {
                 {t.copyPrompt}
               </button>
               {imageReady && (
-                <button className="secondary-button" onClick={() => beginGeneration()}>
+                <button
+                  className="secondary-button"
+                  disabled={characterLoading}
+                  onClick={() => beginGeneration()}
+                >
                   <Sparkles size={16} />
                   {generationCopy[lang].generate}
                 </button>

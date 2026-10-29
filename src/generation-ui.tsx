@@ -5,10 +5,8 @@ import {
   Eye,
   EyeOff,
   LoaderCircle,
-  PersonStanding,
   RotateCcw,
   Settings,
-  Shirt,
   Sparkles,
   X,
 } from 'lucide-react';
@@ -21,8 +19,8 @@ import {
   imageSizes,
   saveImageConfig,
 } from './generation';
-import type { GenerationJob, ImageConfig } from './generation';
-import type { Kind, Lang } from './types';
+import type { GenerationJob, ImageConfig, ImageReference } from './generation';
+import type { Lang } from './types';
 
 export function ImageSettings({
   config,
@@ -259,7 +257,7 @@ export function GenerationDialog({
   onClose: () => void;
 }) {
   const t = generationCopy[lang];
-  const [activeKind, setActiveKind] = useState<Kind>(job.references[0].kind);
+  const [activeKind, setActiveKind] = useState<ImageReference['kind']>(job.references[0].kind);
   const [prompt, setPrompt] = useState(job.prompt);
   const [imageFailed, setImageFailed] = useState(false);
   const [imageAttempt, setImageAttempt] = useState(0);
@@ -300,38 +298,18 @@ export function GenerationDialog({
       </div>
       <div className={`generation-comparison ${previewMode === 'overlay' ? 'overlay-mode' : ''}`}>
         <div className="generation-thumbnails" aria-label={t.reference}>
-          {(['pose', 'costume'] as const).map((kind) => {
-            const ref = job.references.find((value) => value.kind === kind);
+          {job.references.map((ref) => {
+            const kind = ref.kind;
             return (
               <button
                 key={kind}
                 className={`generation-thumbnail ${active.kind === kind ? 'active' : ''}`}
-                disabled={!ref}
                 aria-pressed={active.kind === kind}
-                aria-label={kind === 'pose' ? t.pose : t.costume}
+                aria-label={t[kind]}
                 onClick={() => setActiveKind(kind)}
               >
-                {ref ? (
-                  <RemoteImage
-                    src={ref.variant.thumbnail}
-                    alt={ref.title[lang]}
-                    lang={lang}
-                    eager
-                  />
-                ) : (
-                  <span className="generation-missing">
-                    {kind === 'pose' ? <PersonStanding size={25} /> : <Shirt size={25} />}
-                  </span>
-                )}
-                <span>
-                  {ref
-                    ? kind === 'pose'
-                      ? t.pose
-                      : t.costume
-                    : kind === 'pose'
-                      ? t.missingPose
-                      : t.missingCostume}
-                </span>
+                <RemoteImage src={ref.variant.thumbnail} alt={ref.title[lang]} lang={lang} eager />
+                <span>{t[kind]}</span>
               </button>
             );
           })}

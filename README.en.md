@@ -30,19 +30,21 @@ Choose a pose and an outfit, then add them to the pairing board. The description
 ### Generate from references
 
 1. Open settings in the upper-right corner and enter your service URL, API key, model, image size and quality.
-2. Select **both a pose and a costume** on the pairing board, then click “Generate from references.” Missing references prompt you to complete the selection.
+2. Select **both a pose and a costume** on the pairing board, optionally upload a **character reference** to preserve identity and visual style, then click “Generate from references.” Missing pose or costume references prompt you to complete the selection.
 3. Wait for the result. Edit the description to generate again, or retry manually if a request fails.
-4. Use the thumbnails on the left to select the comparison reference, and switch between “Side by side” and “Overlay.”
+4. Use the pose, costume or character thumbnails on the left to select the comparison reference, and switch between “Side by side” and “Overlay.”
 
-| Setting          | Default or requirement                                            |
-| ---------------- | ----------------------------------------------------------------- |
-| Service URL      | `https://atomflow.vip`, editable                                  |
-| Model            | `gpt-image-2`, editable                                           |
-| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format       |
-| Reference images | Two original image files, pose and costume, uploaded as `image[]` |
-| Browser access   | Service must allow CORS; use HTTPS or a local HTTP address        |
+| Setting          | Default or requirement                                                                       |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| Service URL      | `https://atomflow.vip`, editable                                                             |
+| Model            | `gpt-image-2`, editable                                                                      |
+| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format                                  |
+| Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]` |
+| Browser access   | Service must allow CORS; use HTTPS or a local HTTP address                                   |
 
 Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, the browser sends references and the description directly to your configured service, which may charge for usage. Keys are excluded from share links and the repository.
+
+Character references support PNG, JPG and WebP up to 10 MB. The image stays in page memory when the board closes, and clears on page reload or close. It is excluded from browser storage, share links and the repository, and sent to your configured service only when you generate.
 
 **Side by side**: view the selected reference beside the generated result.
 

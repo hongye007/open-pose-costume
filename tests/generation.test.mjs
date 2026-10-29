@@ -183,3 +183,114 @@ test('cancelled requests are distinct from network errors and never continue to 
   assert.ok(prompt.includes('Reference 1 (pose)'));
   assert.ok(prompt.includes('Reference 2 (costume)'));
 });
+
+const characterReference = {
+  kind: 'character',
+  title: { zh: '人物参考', en: 'Character reference' },
+  keywords: { zh: '保留人物身份与画风', en: 'Preserve character identity and visual style' },
+  file: new File([Buffer.from(png, 'base64')], 'private-personal-name.png', { type: 'image/png' }),
+  variant: {
+    id: 'character-upload',
+    image: 'blob:local-preview',
+    thumbnail: 'blob:local-preview',
+    original: 'blob:local-preview',
+  },
+};
+
+test('optional character is a third original file without fetching its preview or exposing its filename', async () => {
+  const refs = [...references, characterReference];
+  const calls = [];
+  await api.generateReferenceImage(
+    config,
+    refs,
+    api.referencePrompt(refs, 'en'),
+    new AbortController().signal,
+    async (url, options) => {
+      calls.push({ url, options });
+      return calls.length <= 2
+        ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+        : Response.json({ data: [{ b64_json: png }] });
+    },
+  );
+  assert.equal(calls.length, 3);
+  assert.deepEqual(
+    calls.slice(0, 2).map((call) => call.url),
+    references.map((ref) => ref.variant.original),
+  );
+  assert.ok(calls.slice(0, 2).every((call) => call.options.headers === undefined));
+  const form = calls[2].options.body;
+  const files = form.getAll('image[]');
+  assert.equal(files.length, 3);
+  assert.equal(files[2].name, 'character-upload.png');
+  assert.deepEqual(Buffer.from(await files[2].arrayBuffer()), Buffer.from(png, 'base64'));
+  assert.match(form.get('prompt'), /Reference 3 \(character\)/);
+  assert.match(form.get('prompt'), /identity and visual style/);
+  assert.ok(!form.get('prompt').includes(characterReference.file.name));
+});
+
+test('character prompts describe actual role order in both languages without changing the two-reference workflow', () => {
+  const refs = [references[1], references[0], characterReference];
+  const en = api.referencePrompt(refs, 'en');
+  assert.match(en, /Reference 1 \(costume\)/);
+  assert.match(en, /Reference 2 \(pose\)/);
+  assert.match(en, /Reference 3 \(character\)/);
+  const zh = api.referencePrompt(refs, 'zh');
+  assert.match(zh, /参考图 1（服装）/);
+  assert.match(zh, /参考图 3（人物）/);
+  assert.match(zh, /保留其五官/);
+  const original = api.referencePrompt(references, 'en');
+  assert.match(original, /^Create a finished character illustration/);
+  assert.ok(!original.includes('character reference'));
+});
+
+test('invalid character uploads are rejected before making any network request', async () => {
+  const invalid = [
+    [new File(['<svg/>'], 'spoof.png', { type: 'image/png' }), 'characterInvalid'],
+    [new File([], 'empty.png', { type: 'image/png' }), 'characterInvalid'],
+    [
+      new File([Buffer.from(png, 'base64')], 'wrong.jpg', { type: 'image/jpeg' }),
+      'characterInvalid',
+    ],
+    [
+      new File([new Uint8Array(10 * 1024 * 1024 + 1)], 'large.png', { type: 'image/png' }),
+      'characterTooLarge',
+    ],
+  ];
+  for (const [file, code] of invalid) {
+    let calls = 0;
+    await assert.rejects(
+      api.generateReferenceImage(
+        config,
+        [...references, { ...characterReference, file }],
+        'draw',
+        new AbortController().signal,
+        async () => {
+          calls++;
+        },
+      ),
+      (error) => error.code === code,
+    );
+    assert.equal(calls, 0);
+  }
+});
+
+test('adding a character does not relax the gallery origin restriction', async () => {
+  let calls = 0;
+  const untrusted = {
+    ...references[0],
+    variant: { ...references[0].variant, original: 'https://untrusted.example/pose.png' },
+  };
+  await assert.rejects(
+    api.generateReferenceImage(
+      config,
+      [untrusted, references[1], characterReference],
+      'draw',
+      new AbortController().signal,
+      async () => {
+        calls++;
+      },
+    ),
+    (error) => error.code === 'referenceFailed',
+  );
+  assert.equal(calls, 0);
+});
