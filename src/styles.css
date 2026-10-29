@@ -613,23 +613,6 @@ h2 > span {
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
-.filter-toggle {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 10px;
-  padding: 9px 12px;
-  border: 1px solid #dfe3eb;
-  border-radius: 6px;
-  color: #727d90;
-  background: #fafbfc;
-}
-.filter-toggle:hover,
-.filter-toggle.active {
-  background: #edf0fd;
-  border-color: #cbd4f8;
-  color: var(--blue);
-}
 .search-row {
   display: flex;
   gap: 15px;
@@ -703,9 +686,6 @@ h2 > span {
   margin-top: 18px;
   overflow: hidden;
   max-height: 34px;
-}
-.category-area.expanded {
-  max-height: 400px;
 }
 .category-chips {
   display: flex;
@@ -1597,13 +1577,6 @@ dialog::backdrop {
 .category-chips {
   flex-wrap: nowrap;
 }
-.category-area.expanded {
-  max-height: none;
-  overflow: visible;
-}
-.category-area.expanded .category-chips {
-  flex-wrap: wrap;
-}
 @media (min-width: 1600px) {
   .reference-grid {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -2064,14 +2037,6 @@ dialog::backdrop {
   .collection-header h2 > span {
     font-size: 9px;
     margin-left: 8px;
-  }
-  .filter-toggle {
-    font-size: 9px;
-    gap: 5px;
-    padding: 8px;
-  }
-  .filter-toggle svg {
-    width: 13px;
   }
   .search-row {
     gap: 8px;

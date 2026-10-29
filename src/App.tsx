@@ -6,7 +6,6 @@ import {
   ArrowUpRight,
   Bookmark,
   Check,
-  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Copy,
@@ -22,7 +21,6 @@ import {
   RotateCcw,
   Search,
   Shirt,
-  SlidersHorizontal,
   Sparkles,
   X,
 } from 'lucide-react';
@@ -167,7 +165,6 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<string | null>(initialParams.get('item'));
   const [detailAngle, setDetailAngle] = useState(initialParams.get('detailAngle') || angle);
   const [toast, setToast] = useState('');
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -297,7 +294,6 @@ export default function App() {
     setView(next);
     setCategory('all');
     setQuery('');
-    setFiltersOpen(false);
   }
   function resetFilters() {
     setCategory('all');
@@ -583,15 +579,6 @@ export default function App() {
                   <span>{visible.length.toLocaleString(lang)}</span>
                 </h2>
               </div>
-              <button
-                className={`filter-toggle ${filtersOpen ? 'active' : ''}`}
-                aria-expanded={filtersOpen}
-                onClick={() => setFiltersOpen((v) => !v)}
-              >
-                <SlidersHorizontal size={16} />
-                {t.categories}
-                <ChevronDown size={14} />
-              </button>
             </div>
             <div className="search-row">
               <div className="search-box">
@@ -625,7 +612,7 @@ export default function App() {
                 </select>
               </label>
             </div>
-            <div className={`category-area ${filtersOpen ? 'expanded' : ''}`}>
+            <div className="category-area">
               <div className="category-chips" aria-label={t.categories}>
                 <button
                   className={category === 'all' ? 'chip active' : 'chip'}
