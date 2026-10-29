@@ -1,8 +1,7 @@
 export const generationCopy = {
   zh: {
     settings: '生图设置',
-    settingsIntro: '连接兼容 OpenAI 或 xAI 图片接口的生图服务。',
-    grokOptions: 'Grok 按所选尺寸的比例生成，具体分辨率与质量由服务决定。',
+    settingsIntro: '连接兼容 OpenAI 图片接口的生图服务。',
     baseUrl: '服务地址',
     apiKey: 'API Key',
     model: '模型',
@@ -26,6 +25,11 @@ export const generationCopy = {
     regenerate: '重新生成',
     generated: '生成结果',
     reference: '参考原图',
+    previewMode: '预览方式',
+    sideBySide: '双列预览',
+    overlay: '叠加预览',
+    comparisonSlider: '拖动对比生成图和参考图',
+    overlayHint: '左右拖动滑杆对比：左侧为生成图，右侧为所选参考图。',
     pose: '姿势参考',
     costume: '服饰参考',
     chooseReferences: '请先在搭配台选择姿势和服饰参考。',
@@ -48,7 +52,6 @@ export const generationCopy = {
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片连接后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
-    referencesRejected: '服务未识别提交的参考图，请检查服务渠道是否保留并透传 image/images 字段。',
     networkFailed: '连接失败，请检查网络，以及服务是否支持浏览器跨域请求。',
     timedOut: '生成超过 3 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
@@ -58,9 +61,7 @@ export const generationCopy = {
   },
   en: {
     settings: 'Image settings',
-    settingsIntro: 'Connect an OpenAI- or xAI-compatible image generation service.',
-    grokOptions:
-      'Grok uses the selected aspect ratio. Resolution and quality are determined by the service.',
+    settingsIntro: 'Connect an OpenAI-compatible image generation service.',
     baseUrl: 'Service URL',
     apiKey: 'API key',
     model: 'Model',
@@ -84,6 +85,11 @@ export const generationCopy = {
     regenerate: 'Generate again',
     generated: 'Generated image',
     reference: 'Original reference',
+    previewMode: 'Preview mode',
+    sideBySide: 'Side by side',
+    overlay: 'Overlay',
+    comparisonSlider: 'Slide to compare generated and reference images',
+    overlayHint: 'Drag to compare: generated image on the left, selected reference on the right.',
     pose: 'Pose reference',
     costume: 'Costume reference',
     chooseReferences: 'Choose both a pose and a costume in the pairing board first.',
@@ -110,8 +116,6 @@ export const generationCopy = {
       'The original reference could not be read. Check the image connection and retry.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
-    referencesRejected:
-      'The service did not recognize the submitted references. Check whether the service channel preserves and forwards image/images fields.',
     networkFailed:
       'Connection failed. Check your network and whether the service allows browser CORS requests.',
     timedOut: 'Generation exceeded 3 minutes. Please retry later.',

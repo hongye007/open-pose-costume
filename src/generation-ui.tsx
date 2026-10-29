@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {
+  ArrowLeftRight,
   Check,
   Eye,
   EyeOff,
@@ -13,13 +14,7 @@ import {
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
 import { generationCopy } from './generation-copy';
-import {
-  clearImageConfig,
-  defaultImageConfig,
-  imageSizes,
-  isGrokImageModel,
-  saveImageConfig,
-} from './generation';
+import { clearImageConfig, defaultImageConfig, imageSizes, saveImageConfig } from './generation';
 import type { GenerationJob, ImageConfig } from './generation';
 import type { Kind, Lang } from './types';
 
@@ -128,11 +123,7 @@ export function ImageSettings({
           </label>
           <label>
             {t.quality}
-            <select
-              disabled={isGrokImageModel(draft.model)}
-              value={draft.quality}
-              onChange={(e) => update('quality', e.target.value)}
-            >
+            <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
               {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
                 <option key={quality} value={quality}>
                   {t[quality]}
@@ -141,7 +132,6 @@ export function ImageSettings({
             </select>
           </label>
         </div>
-        {isGrokImageModel(draft.model) && <p className="settings-note">{t.grokOptions}</p>}
         <label className="remember-key">
           <input
             type="checkbox"
@@ -183,6 +173,62 @@ export function ImageSettings({
   );
 }
 
+function ComparisonWipe({
+  reference,
+  generated,
+  lang,
+  onImageError,
+}: {
+  reference: GenerationJob['references'][number];
+  generated: string;
+  lang: Lang;
+  onImageError: () => void;
+}) {
+  const t = generationCopy[lang];
+  const [position, setPosition] = useState(50);
+  return (
+    <div className="comparison-wipe">
+      <div className="comparison-wipe-layer">
+        <RemoteImage
+          src={reference.variant.image}
+          alt={reference.title[lang]}
+          lang={lang}
+          eager
+          retryable
+        />
+      </div>
+      <div
+        className="comparison-wipe-layer comparison-wipe-generated"
+        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+      >
+        <img
+          src={generated}
+          alt={t.generated}
+          referrerPolicy="no-referrer"
+          onError={onImageError}
+        />
+      </div>
+      <span className="comparison-wipe-label generated">{t.generated}</span>
+      <span className="comparison-wipe-label reference">{t.reference}</span>
+      <div className="comparison-wipe-divider" style={{ left: `${position}%` }} aria-hidden="true">
+        <span>
+          <ArrowLeftRight size={19} />
+        </span>
+      </div>
+      <input
+        className="comparison-wipe-range"
+        type="range"
+        min={0}
+        max={100}
+        value={position}
+        aria-label={t.comparisonSlider}
+        aria-valuetext={`${t.generated} ${position}% · ${t.reference} ${100 - position}%`}
+        onChange={(event) => setPosition(Number(event.target.value))}
+      />
+    </div>
+  );
+}
+
 export function GenerationDialog({
   job,
   lang,
@@ -199,6 +245,7 @@ export function GenerationDialog({
   const [prompt, setPrompt] = useState(job.prompt);
   const [imageFailed, setImageFailed] = useState(false);
   const [imageAttempt, setImageAttempt] = useState(0);
+  const [previewMode, setPreviewMode] = useState<'split' | 'overlay'>('split');
   const active = job.references.find((ref) => ref.kind === activeKind) || job.references[0];
   const loading = job.status === 'loading';
   return (
@@ -215,7 +262,25 @@ export function GenerationDialog({
       <p className="settings-note">
         {t.model}: <code>{job.model}</code> · {t.referenceCount}: {job.references.length}
       </p>
-      <div className="generation-comparison">
+      <div className="generation-preview-toolbar">
+        <div className="generation-preview-switch" role="group" aria-label={t.previewMode}>
+          <button
+            type="button"
+            aria-pressed={previewMode === 'split'}
+            onClick={() => setPreviewMode('split')}
+          >
+            {t.sideBySide}
+          </button>
+          <button
+            type="button"
+            aria-pressed={previewMode === 'overlay'}
+            onClick={() => setPreviewMode('overlay')}
+          >
+            {t.overlay}
+          </button>
+        </div>
+      </div>
+      <div className={`generation-comparison ${previewMode === 'overlay' ? 'overlay-mode' : ''}`}>
         <div className="generation-thumbnails" aria-label={t.reference}>
           {(['pose', 'costume'] as const).map((kind) => {
             const ref = job.references.find((value) => value.kind === kind);
@@ -253,25 +318,27 @@ export function GenerationDialog({
             );
           })}
         </div>
-        <section className="generation-frame">
-          <div className="generation-frame-heading">
-            <span>{t.reference}</span>
-            <code>{active.variant.id}</code>
-          </div>
-          <div className="generation-canvas">
-            <RemoteImage
-              src={active.variant.image}
-              alt={active.title[lang]}
-              lang={lang}
-              eager
-              retryable
-            />
-          </div>
-          <p className="generation-caption">{active.title[lang]}</p>
-        </section>
+        {previewMode === 'split' && (
+          <section className="generation-frame">
+            <div className="generation-frame-heading">
+              <span>{t.reference}</span>
+              <code>{active.variant.id}</code>
+            </div>
+            <div className="generation-canvas">
+              <RemoteImage
+                src={active.variant.image}
+                alt={active.title[lang]}
+                lang={lang}
+                eager
+                retryable
+              />
+            </div>
+            <p className="generation-caption">{active.title[lang]}</p>
+          </section>
+        )}
         <section className={`generation-frame generation-output ${job.status}`} aria-busy={loading}>
           <div className="generation-frame-heading">
-            <span>{t.generated}</span>
+            <span>{previewMode === 'overlay' ? t.overlay : t.generated}</span>
             <span className="generation-status" role="status">
               {loading ? (
                 <LoaderCircle size={13} className="spinner" />
@@ -283,7 +350,9 @@ export function GenerationDialog({
               {loading ? t.generating : job.status === 'success' ? t.success : t.failed}
             </span>
           </div>
-          <div className="generation-canvas">
+          <div
+            className={`generation-canvas ${previewMode === 'overlay' && job.status === 'success' && !imageFailed ? 'generation-overlay-canvas' : ''}`}
+          >
             {loading ? (
               <div className="generation-placeholder">
                 <LoaderCircle size={29} className="spinner" />
@@ -317,6 +386,14 @@ export function GenerationDialog({
                   {t.retryImage}
                 </button>
               </div>
+            ) : previewMode === 'overlay' && job.result ? (
+              <ComparisonWipe
+                key={`${job.result}-${imageAttempt}`}
+                reference={active}
+                generated={job.result}
+                lang={lang}
+                onImageError={() => setImageFailed(true)}
+              />
             ) : (
               <img
                 key={`${job.result}-${imageAttempt}`}
@@ -329,7 +406,9 @@ export function GenerationDialog({
           </div>
         </section>
       </div>
-      <p className="generation-reference-hint">{t.referenceHint}</p>
+      <p className="generation-reference-hint">
+        {previewMode === 'overlay' ? t.overlayHint : t.referenceHint}
+      </p>
       <div className="generation-prompt">
         <label htmlFor="generation-prompt">{t.prompt}</label>
         <textarea

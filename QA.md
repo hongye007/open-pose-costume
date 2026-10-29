@@ -10,7 +10,7 @@ npm run build
 npm audit
 ```
 
-All 16 tests and the production build pass; the dependency audit reports no known vulnerabilities. Tests cover catalog completeness, bilingual search, sorting, source hashes, safe JSON extraction, storage failures, OpenAI multipart and Grok JSON image API requests, key storage, cancellation and provider errors.
+All 13 tests and the production build pass; the dependency audit reports no known vulnerabilities. Tests cover catalog completeness, bilingual search, sorting, source hashes, safe JSON extraction, storage failures, OpenAI multipart image API requests, key storage, cancellation and provider errors.
 
 ## Browser checks
 
@@ -38,5 +38,6 @@ Archive directories, download records and review artifacts are excluded from Git
 - Loading, HTTP failure, manual retry and successful image display were verified. Switching pose/costume thumbnails updates the comparison reference.
 - Missing references open the pairing board with a selection prompt and send no generation request.
 - Tests disable Vite WebSocket listeners to avoid port conflicts.
-- A local HTTP receiver verifies Grok JSON requests, both original URLs and aspect ratios. No live Grok generation was requested by this check.
-- A simulated relay dropping image fields verifies the dedicated reference rejection diagnostic; it does not verify Atomflow's private channel configuration.
+- The default model is `gpt-image-2`; retired saved model settings migrate without removing the service URL or key.
+- Side-by-side and overlay previews were checked with local sample images in Chinese and English, including thumbnail switching and error/retry states. No live generation was requested.
+- The overlay slider responds to dragging, arrow keys and Home/End; its endpoints reveal the complete reference or result. The 390px viewport has no horizontal dialog overflow.

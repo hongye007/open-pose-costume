@@ -2453,11 +2453,39 @@ dialog::backdrop {
 .generation-heading h2 {
   font-size: 25px;
 }
+.generation-preview-toolbar {
+  display: flex;
+  margin: 12px 0 14px 117px;
+}
+.generation-preview-switch {
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f5f6fa;
+}
+.generation-preview-switch button {
+  padding: 7px 13px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #8490a4;
+  font-size: 11px;
+}
+.generation-preview-switch button[aria-pressed='true'] {
+  background: white;
+  color: var(--blue);
+  box-shadow: 0 1px 4px #26365212;
+}
 .generation-comparison {
   display: grid;
   grid-template-columns: 100px minmax(0, 1fr) minmax(0, 1fr);
   gap: 17px;
   align-items: stretch;
+}
+.generation-comparison.overlay-mode {
+  grid-template-columns: 100px minmax(0, 1fr);
 }
 .generation-thumbnails {
   display: flex;
@@ -2547,6 +2575,97 @@ dialog::backdrop {
   height: min(46dvh, 420px);
   object-fit: contain;
 }
+.generation-canvas.generation-overlay-canvas {
+  padding: 0;
+}
+.comparison-wipe {
+  position: relative;
+  width: 100%;
+  height: max(340px, min(46dvh, 420px));
+  overflow: hidden;
+  isolation: isolate;
+}
+.comparison-wipe-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #f5f6fa;
+}
+.comparison-wipe-layer > img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  padding: 16px;
+}
+.comparison-wipe-label {
+  position: absolute;
+  top: 12px;
+  padding: 5px 9px;
+  background: #ffffffeb;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: #63718a;
+  font-size: 10px;
+  pointer-events: none;
+}
+.comparison-wipe-label.generated {
+  left: 12px;
+}
+.comparison-wipe-label.reference {
+  right: 12px;
+}
+.comparison-wipe-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: var(--blue);
+  pointer-events: none;
+}
+.comparison-wipe-divider > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 2px 12px #26365230;
+}
+.comparison-wipe-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  appearance: none;
+  touch-action: pan-y;
+}
+.comparison-wipe-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1px;
+  height: 100%;
+}
+.comparison-wipe-range::-moz-range-thumb {
+  width: 1px;
+  height: 100%;
+  border: 0;
+}
+.comparison-wipe:focus-within {
+  outline: 2px solid var(--blue);
+  outline-offset: -3px;
+}
 .generation-caption {
   padding: 11px 15px;
   color: #8490a4;
@@ -2613,6 +2732,15 @@ dialog::backdrop {
     grid-template-columns: 76px minmax(0, 1fr) minmax(0, 1fr);
     gap: 10px;
   }
+  .generation-comparison.overlay-mode {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+  .generation-preview-toolbar {
+    margin-left: 86px;
+  }
+  .comparison-wipe {
+    height: max(300px, min(46dvh, 420px));
+  }
   .generation-thumbnail > img,
   .generation-missing {
     height: 90px;
@@ -2640,6 +2768,15 @@ dialog::backdrop {
 @media (max-width: 560px) {
   .generation-comparison {
     grid-template-columns: 1fr 1fr;
+  }
+  .generation-comparison.overlay-mode {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .generation-preview-toolbar {
+    margin-left: 0;
+  }
+  .comparison-wipe {
+    height: 330px;
   }
   .generation-thumbnails {
     grid-column: 1 / -1;
