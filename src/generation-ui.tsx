@@ -13,7 +13,13 @@ import {
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
 import { generationCopy } from './generation-copy';
-import { clearImageConfig, defaultImageConfig, imageSizes, saveImageConfig } from './generation';
+import {
+  clearImageConfig,
+  defaultImageConfig,
+  imageSizes,
+  isGrokImageModel,
+  saveImageConfig,
+} from './generation';
 import type { GenerationJob, ImageConfig } from './generation';
 import type { Kind, Lang } from './types';
 
@@ -122,7 +128,11 @@ export function ImageSettings({
           </label>
           <label>
             {t.quality}
-            <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
+            <select
+              disabled={isGrokImageModel(draft.model)}
+              value={draft.quality}
+              onChange={(e) => update('quality', e.target.value)}
+            >
               {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
                 <option key={quality} value={quality}>
                   {t[quality]}
@@ -131,6 +141,7 @@ export function ImageSettings({
             </select>
           </label>
         </div>
+        {isGrokImageModel(draft.model) && <p className="settings-note">{t.grokOptions}</p>}
         <label className="remember-key">
           <input
             type="checkbox"
@@ -201,6 +212,9 @@ export function GenerationDialog({
           <X size={22} />
         </button>
       </div>
+      <p className="settings-note">
+        {t.model}: <code>{job.model}</code>
+      </p>
       <div className="generation-comparison">
         <div className="generation-thumbnails" aria-label={t.reference}>
           {(['pose', 'costume'] as const).map((kind) => {

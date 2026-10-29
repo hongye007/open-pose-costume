@@ -261,7 +261,8 @@ export default function App() {
     generationController.current?.abort();
     const controller = new AbortController();
     generationController.current = controller;
-    setGenerationJob({ references, prompt, status: 'loading' });
+    const model = imageConfig.model.trim();
+    setGenerationJob({ model, references, prompt, status: 'loading' });
     try {
       const result = await generateReferenceImage(
         imageConfig,
@@ -270,7 +271,7 @@ export default function App() {
         controller.signal,
       );
       if (generationController.current === controller)
-        setGenerationJob({ references, prompt, status: 'success', result });
+        setGenerationJob({ model, references, prompt, status: 'success', result });
     } catch (failure) {
       if (generationController.current !== controller || controller.signal.aborted) return;
       const t = generationCopy[lang];
@@ -278,6 +279,7 @@ export default function App() {
       const summary = t[code as keyof typeof t] || t.networkFailed;
       const detail = failure instanceof ImageGenerationError ? failure.message : '';
       setGenerationJob({
+        model,
         references,
         prompt,
         status: 'error',

@@ -1,7 +1,8 @@
 export const generationCopy = {
   zh: {
     settings: '生图设置',
-    settingsIntro: '连接兼容 OpenAI 图片接口的生图服务。',
+    settingsIntro: '连接兼容 OpenAI 或 xAI 图片接口的生图服务。',
+    grokOptions: 'Grok 按所选尺寸的比例生成，具体分辨率与质量由服务决定。',
     baseUrl: '服务地址',
     apiKey: 'API Key',
     model: '模型',
@@ -55,7 +56,9 @@ export const generationCopy = {
   },
   en: {
     settings: 'Image settings',
-    settingsIntro: 'Connect an OpenAI-compatible image generation service.',
+    settingsIntro: 'Connect an OpenAI- or xAI-compatible image generation service.',
+    grokOptions:
+      'Grok uses the selected aspect ratio. Resolution and quality are determined by the service.',
     baseUrl: 'Service URL',
     apiKey: 'API key',
     model: 'Model',

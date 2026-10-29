@@ -15,6 +15,7 @@ export interface ImageReference {
   variant: Variant;
 }
 export interface GenerationJob {
+  model: string;
   references: ImageReference[];
   prompt: string;
   status: 'loading' | 'error' | 'success';
@@ -33,6 +34,10 @@ export const defaultImageConfig: ImageConfig = {
   rememberKey: false,
 };
 export const imageSizes = ['1024x1024', '1024x1536', '1536x1024', '2048x2048', 'auto'];
+
+export function isGrokImageModel(model: string): boolean {
+  return /^grok-imagine-image(?:-|$)/i.test(model.trim());
+}
 
 export function imageEndpoint(baseUrl: string): string {
   const url = new URL(baseUrl.trim());
@@ -178,43 +183,70 @@ export async function generateReferenceImage(
   const timer = setTimeout(() => timeout.abort(), 180_000);
   const combined = AbortSignal.any([signal, timeout.signal]);
   try {
-    const form = new FormData();
-    form.set('model', valid.model);
-    form.set('prompt', prompt.trim());
-    form.set('n', '1');
-    form.set('size', valid.size);
-    form.set('quality', valid.quality);
-    for (const reference of references) {
+    const urls = references.map((reference) => {
       const url = new URL(reference.variant.original);
       if (url.origin !== `https://ai-${reference.kind}-gallery.pages.dev`)
         throw new ImageGenerationError('referenceFailed');
-      const response = await fetcher(url.href, {
-        signal: combined,
-        credentials: 'omit',
-        referrerPolicy: 'no-referrer',
+      return url.href;
+    });
+    let body: BodyInit;
+    const headers: Record<string, string> = { Authorization: `Bearer ${valid.apiKey}` };
+    if (isGrokImageModel(valid.model)) {
+      // xAI edits accept JSON image URLs, not OpenAI's multipart file uploads.
+      const aspectRatio =
+        valid.size === 'auto'
+          ? undefined
+          : valid.size === '1024x1536'
+            ? '2:3'
+            : valid.size === '1536x1024'
+              ? '3:2'
+              : '1:1';
+      headers['Content-Type'] = 'application/json';
+      body = JSON.stringify({
+        model: valid.model,
+        prompt: prompt.trim(),
+        n: 1,
+        images: urls.map((url) => ({ type: 'image_url', url })),
+        ...(aspectRatio ? { aspect_ratio: aspectRatio } : {}),
       });
-      if (!response.ok)
-        throw new ImageGenerationError('referenceFailed', `HTTP ${response.status}`);
-      const blob = await response.blob();
-      if (
-        !['image/png', 'image/jpeg', 'image/webp'].includes(blob.type) ||
-        !blob.size ||
-        blob.size > 50 * 1024 * 1024
-      )
-        throw new ImageGenerationError('referenceFailed');
-      form.append(
-        'image[]',
-        blob,
-        `${reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
-      );
+    } else {
+      const form = new FormData();
+      form.set('model', valid.model);
+      form.set('prompt', prompt.trim());
+      form.set('n', '1');
+      form.set('size', valid.size);
+      form.set('quality', valid.quality);
+      for (const [index, reference] of references.entries()) {
+        const response = await fetcher(urls[index], {
+          signal: combined,
+          credentials: 'omit',
+          referrerPolicy: 'no-referrer',
+        });
+        if (!response.ok)
+          throw new ImageGenerationError('referenceFailed', `HTTP ${response.status}`);
+        const blob = await response.blob();
+        if (
+          !['image/png', 'image/jpeg', 'image/webp'].includes(blob.type) ||
+          !blob.size ||
+          blob.size > 50 * 1024 * 1024
+        )
+          throw new ImageGenerationError('referenceFailed');
+        form.append(
+          'image[]',
+          blob,
+          `${reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
+        );
+      }
+      body = form;
     }
+    combined.throwIfAborted();
     const response = await fetcher(imageEndpoint(valid.baseUrl), {
       method: 'POST',
       signal: combined,
       credentials: 'omit',
       redirect: 'error',
-      headers: { Authorization: `Bearer ${valid.apiKey}` },
-      body: form,
+      headers,
+      body,
     });
     const payload = await response.json().catch(() => null);
     if (!response.ok || payload?.error) {

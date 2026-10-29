@@ -36,7 +36,7 @@ Chinese and English UI, cross-language search, multi-angle poses and costume pai
 
 点击右上角设置，服务地址默认 `https://atomflow.vip`，可自行修改。填写 API Key 和模型（默认 `grok-imagine-image-2.0`），选择尺寸与质量后保存。在搭配台选好姿势与服饰，再点击“复制参考描述”旁的“参考生成”；缺少参考时会提示补齐。
 
-参考生成通过 `POST /v1/images/edits` 提交两张原图与描述。服务需支持此接口及浏览器 CORS 请求，地址支持 HTTPS 或本机 HTTP。左侧缩略图用于切换中间对照图，右侧显示生成结果；描述可编辑，失败后可手动重试。
+参考生成通过 `POST /v1/images/edits` 提交参考与描述：Grok Imagine 使用 xAI JSON 格式发送两张原图 URL，其他模型使用 OpenAI multipart 格式上传原图文件。Grok 按所选尺寸的比例生成，具体分辨率与质量由服务决定。服务需支持对应格式及浏览器 CORS 请求，地址支持 HTTPS 或本机 HTTP。生成界面显示实际请求的模型；左侧缩略图用于切换中间对照图，右侧显示生成结果，描述可编辑，失败后可手动重试。
 
 配置保存在当前浏览器，API Key 默认仅保存到当前会话；勾选“记住密钥”后保存在本地存储，可在设置中清除。生成时直接向配置的服务发送参考图和描述，服务可能按其规则计费。密钥不进入分享链接或仓库。
 
