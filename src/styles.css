@@ -2375,7 +2375,8 @@ dialog::backdrop {
   display: grid;
   gap: 17px;
 }
-.image-settings-form label {
+.image-settings-form label,
+.api-key-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -2399,6 +2400,19 @@ dialog::backdrop {
 .generation-prompt textarea:focus {
   outline: 2px solid #bdcaf6;
   outline-offset: 1px;
+}
+.api-key-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.api-key-label a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.api-key-label a:hover {
+  text-decoration-thickness: 2px;
 }
 .api-key-input {
   display: flex;

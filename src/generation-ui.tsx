@@ -14,7 +14,13 @@ import {
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
 import { generationCopy } from './generation-copy';
-import { clearImageConfig, defaultImageConfig, imageSizes, saveImageConfig } from './generation';
+import {
+  clearImageConfig,
+  defaultImageConfig,
+  imageEndpoint,
+  imageSizes,
+  saveImageConfig,
+} from './generation';
 import type { GenerationJob, ImageConfig } from './generation';
 import type { Kind, Lang } from './types';
 
@@ -35,6 +41,12 @@ export function ImageSettings({
   const [draft, setDraft] = useState(config);
   const [showKey, setShowKey] = useState(false);
   const [error, setError] = useState('');
+  let serviceHomepage = defaultImageConfig.baseUrl;
+  try {
+    serviceHomepage = new URL(imageEndpoint(draft.baseUrl)).origin;
+  } catch {
+    // Keep the default service link while an incomplete URL is being edited.
+  }
   const update = (key: keyof ImageConfig, value: string | boolean) => {
     setDraft((old) => ({ ...old, [key]: value }));
     setError('');
@@ -80,10 +92,16 @@ export function ImageSettings({
             onChange={(e) => update('baseUrl', e.target.value)}
           />
         </label>
-        <label>
-          {t.apiKey}
+        <div className="api-key-field">
+          <div className="api-key-label">
+            <label htmlFor="image-api-key">{t.apiKey}</label>
+            <a href={serviceHomepage} target="_blank" rel="noopener noreferrer">
+              {t.getApiKey}
+            </a>
+          </div>
           <span className="api-key-input">
             <input
+              id="image-api-key"
               type={showKey ? 'text' : 'password'}
               required
               autoComplete="off"
@@ -100,7 +118,7 @@ export function ImageSettings({
               {showKey ? <EyeOff size={17} /> : <Eye size={17} />}
             </button>
           </span>
-        </label>
+        </div>
         <label>
           {t.model}
           <input
