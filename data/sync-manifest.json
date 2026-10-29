@@ -1,0 +1,24 @@
+{
+  "syncedAt": "2026-10-29T19:17:31.726Z",
+  "imagesDownloaded": 0,
+  "sources": [
+    {
+      "name": "pose",
+      "url": "https://ai-pose-gallery.pages.dev/",
+      "records": 1439,
+      "sha256": "49a24362511e422e8481962e19dfc33742155d57fbd91d3c936beb4f77531d98"
+    },
+    {
+      "name": "costume",
+      "url": "https://ai-costume-gallery.pages.dev/",
+      "records": 1407,
+      "sha256": "a8c7315a57d2fb5c527199f673c1aa123b6ce143912e3bce6457331f0f13420a"
+    },
+    {
+      "name": "pose-zh",
+      "url": "https://raw.githubusercontent.com/anhao/ai-pose-gallery-zh/main/data/pose-zh.json",
+      "records": 1439,
+      "sha256": "d9a8e2796df7870ef8bac5920f1646103ad05b452b76efa76c11b4854f5f8f96"
+    }
+  ]
+}
