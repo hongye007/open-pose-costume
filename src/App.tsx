@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { ReactNode } from 'react';
 import {
   ArrowDown,
   ArrowRight,
@@ -25,6 +24,17 @@ import {
   X,
 } from 'lucide-react';
 import { copy } from './i18n';
+import { Modal, RemoteImage } from './ui';
+import { GenerationDialog, ImageSettings, ImageSettingsButton } from './generation-ui';
+import { generationCopy } from './generation-copy';
+import {
+  defaultImageConfig,
+  generateReferenceImage,
+  ImageGenerationError,
+  loadImageConfig,
+  referencePrompt,
+} from './generation';
+import type { GenerationJob, ImageReference } from './generation';
 import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } from './library';
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference } from './types';
@@ -42,98 +52,6 @@ const isBoard = (v: unknown): v is Board =>
     (k) => !(k in v) || typeof (v as Record<string, unknown>)[k] === 'string',
   );
 const viewParam = initialParams.get('view');
-
-function RemoteImage({
-  src,
-  alt,
-  lang,
-  className = '',
-  eager = false,
-  retryable = false,
-}: {
-  src: string;
-  alt: string;
-  lang: Lang;
-  className?: string;
-  eager?: boolean;
-  retryable?: boolean;
-}) {
-  const [failed, setFailed] = useState(false);
-  const [attempt, setAttempt] = useState(0);
-  useEffect(() => {
-    setFailed(false);
-    setAttempt(0);
-  }, [src]);
-  return failed ? (
-    <div className={`image-fallback ${className}`}>
-      <Info size={22} />
-      <span>{copy[lang].imageError}</span>
-      {retryable && (
-        <button
-          onClick={() => {
-            setFailed(false);
-            setAttempt((v) => v + 1);
-          }}
-        >
-          {copy[lang].retryImage}
-        </button>
-      )}
-    </div>
-  ) : (
-    <img
-      key={`${src}-${attempt}`}
-      className={className}
-      src={src}
-      alt={alt}
-      loading={eager ? 'eager' : 'lazy'}
-      decoding="async"
-      referrerPolicy="no-referrer"
-      onError={() => setFailed(true)}
-    />
-  );
-}
-
-function Modal({
-  children,
-  onClose,
-  label,
-  className = '',
-}: {
-  children: ReactNode;
-  onClose: () => void;
-  label: string;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDialogElement>(null);
-  const close = useRef(onClose);
-  close.current = onClose;
-  useEffect(() => {
-    const dialog = ref.current!;
-    const originalOverflow = document.body.style.overflow;
-    dialog.showModal();
-    document.body.style.overflow = 'hidden';
-    return () => {
-      dialog.close();
-      document.body.style.overflow = originalOverflow;
-    };
-  }, []);
-  return (
-    <dialog
-      ref={ref}
-      aria-label={label}
-      className={className}
-      onCancel={(e) => {
-        e.preventDefault();
-        close.current();
-      }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) close.current();
-      }}
-    >
-      <div className="modal-inner">{children}</div>
-    </dialog>
-  );
-}
 
 export default function App() {
   const [lang, setLang] = useState<Lang>(() => {
@@ -161,7 +79,11 @@ export default function App() {
   const [limit, setLimit] = useState(24);
   const [saved, setSaved] = useState(() => storageGet('opc-saved', [], isIds));
   const [board, setBoard] = useState<Board>(() => storageGet('opc-board', {}, isBoard));
-  const [panel, setPanel] = useState<'board' | 'about' | null>(null);
+  const [panel, setPanel] = useState<'board' | 'about' | 'settings' | null>(null);
+  const [imageConfig, setImageConfig] = useState(loadImageConfig);
+  const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
+  const generationController = useRef<AbortController | null>(null);
+  const imageReady = !!(imageConfig.baseUrl && imageConfig.apiKey && imageConfig.model);
   const [selectedId, setSelectedId] = useState<string | null>(initialParams.get('item'));
   const [detailAngle, setDetailAngle] = useState(initialParams.get('detailAngle') || angle);
   const [toast, setToast] = useState('');
@@ -203,6 +125,7 @@ export default function App() {
     setLimit(24);
   }, [query, view, category, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
+  useEffect(() => () => generationController.current?.abort(), []);
   useEffect(() => {
     const url = new URL(window.location.href);
     url.search = '';
@@ -329,13 +252,73 @@ export default function App() {
       notify(t.copyFailed);
     }
   }
+  function closeGeneration() {
+    generationController.current?.abort();
+    generationController.current = null;
+    setGenerationJob(null);
+  }
+  async function runGeneration(references: ImageReference[], prompt: string) {
+    generationController.current?.abort();
+    const controller = new AbortController();
+    generationController.current = controller;
+    setGenerationJob({ references, prompt, status: 'loading' });
+    try {
+      const result = await generateReferenceImage(
+        imageConfig,
+        references,
+        prompt,
+        controller.signal,
+      );
+      if (generationController.current === controller)
+        setGenerationJob({ references, prompt, status: 'success', result });
+    } catch (failure) {
+      if (generationController.current !== controller || controller.signal.aborted) return;
+      const t = generationCopy[lang];
+      const code = failure instanceof ImageGenerationError ? failure.code : 'networkFailed';
+      const summary = t[code as keyof typeof t] || t.networkFailed;
+      const detail = failure instanceof ImageGenerationError ? failure.message : '';
+      setGenerationJob({
+        references,
+        prompt,
+        status: 'error',
+        error: `${summary}${detail ? `\n${detail}` : ''}`,
+      });
+    }
+  }
+  function beginGeneration(item?: Reference) {
+    const references: ImageReference[] = [];
+    const add = (value: Reference | undefined, chosenVariant = value?.variants[0]) => {
+      if (value && chosenVariant)
+        references.push({
+          kind: value.kind,
+          title: value.title,
+          keywords: value.keywords,
+          variant: chosenVariant,
+        });
+    };
+    if (item) {
+      add(item, item.variants.find((value) => value.angle === detailAngle) || item.variants[0]);
+      add(item.kind === 'pose' ? boardCostume : boardPose);
+    } else {
+      add(boardPose);
+      add(boardCostume);
+    }
+    if (references.length < 2) {
+      if (item) setBoard((old) => ({ ...old, [item.kind]: item.id }));
+      setSelectedId(null);
+      setPanel('board');
+      notify(generationCopy[lang].chooseReferences);
+      return;
+    }
+    void runGeneration(references, referencePrompt(references, lang));
+  }
   useEffect(() => {
     const handle = (event: KeyboardEvent) => {
       const isEditing =
         event.target instanceof HTMLElement &&
         (['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName) ||
           event.target.isContentEditable);
-      if (isEditing) return;
+      if (isEditing || generationJob) return;
       if (selectedId) {
         if (event.key === 'ArrowLeft') {
           event.preventDefault();
@@ -352,7 +335,7 @@ export default function App() {
     };
     document.addEventListener('keydown', handle);
     return () => document.removeEventListener('keydown', handle);
-  }, [selectedId, panel, step]);
+  }, [selectedId, panel, step, generationJob]);
 
   const heroPose = items.find((item) => item.id === 'full_single_P019');
   const heroCostume =
@@ -466,6 +449,11 @@ export default function App() {
             <strong>{pageTitle}</strong>
           </div>
           <div className="header-actions">
+            <ImageSettingsButton
+              lang={lang}
+              ready={imageReady}
+              onClick={() => setPanel('settings')}
+            />
             <button
               className="header-board"
               onClick={() => setPanel('board')}
@@ -835,7 +823,7 @@ export default function App() {
         </main>
       </div>
 
-      {selected && variant && (
+      {selected && variant && !generationJob && (
         <Modal onClose={closeDetail} label={selected.title[lang]} className="detail-modal">
           <div className="detail-stage">
             <div className="detail-stage-top">
@@ -921,10 +909,21 @@ export default function App() {
             <div className="description-section">
               <h3>{t.keywords}</h3>
               <p>{selected.keywords[lang]}</p>
-              <button className="text-action" onClick={() => clipboard(selected.keywords[lang])}>
-                <Copy size={14} />
-                {t.copyPrompt}
-              </button>
+              <div className="reference-description-actions">
+                <button className="text-action" onClick={() => clipboard(selected.keywords[lang])}>
+                  <Copy size={14} />
+                  {t.copyPrompt}
+                </button>
+                {imageReady && (
+                  <button
+                    className="text-action reference-generate"
+                    onClick={() => beginGeneration(selected)}
+                  >
+                    <Sparkles size={14} />
+                    {generationCopy[lang].generate}
+                  </button>
+                )}
+              </div>
             </div>
             <div className="detail-actions">
               <button className="primary-button" onClick={() => addToBoard(selected)}>
@@ -964,7 +963,7 @@ export default function App() {
         </Modal>
       )}
 
-      {panel === 'board' && (
+      {panel === 'board' && !generationJob && (
         <Modal onClose={() => setPanel(null)} label={t.board} className="board-modal">
           <div className="panel-heading">
             <div>
@@ -1036,16 +1035,50 @@ export default function App() {
           <div className="board-prompt">
             <h3>{t.boardPrompt}</h3>
             <p>{boardPrompt || t.boardIncomplete}</p>
-            <button
-              className="primary-button"
-              disabled={!boardPrompt}
-              onClick={() => clipboard(boardPrompt)}
-            >
-              <Copy size={16} />
-              {t.copyPrompt}
-            </button>
+            <div className="reference-description-actions">
+              <button
+                className="primary-button"
+                disabled={!boardPrompt}
+                onClick={() => clipboard(boardPrompt)}
+              >
+                <Copy size={16} />
+                {t.copyPrompt}
+              </button>
+              {imageReady && (
+                <button className="secondary-button" onClick={() => beginGeneration()}>
+                  <Sparkles size={16} />
+                  {generationCopy[lang].generate}
+                </button>
+              )}
+            </div>
           </div>
         </Modal>
+      )}
+
+      {panel === 'settings' && (
+        <ImageSettings
+          config={imageConfig}
+          lang={lang}
+          onClose={() => setPanel(null)}
+          onSave={(config) => {
+            setImageConfig(config);
+            setPanel(null);
+            notify(generationCopy[lang].saved);
+          }}
+          onClear={() => {
+            setImageConfig({ ...defaultImageConfig });
+            setPanel(null);
+            notify(generationCopy[lang].cleared);
+          }}
+        />
+      )}
+      {generationJob && (
+        <GenerationDialog
+          job={generationJob}
+          lang={lang}
+          onClose={closeGeneration}
+          onRun={(prompt) => void runGeneration(generationJob.references, prompt)}
+        />
       )}
 
       {panel === 'about' && (

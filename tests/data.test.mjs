@@ -15,7 +15,7 @@ const [pose, costume, zh, catalog, manifest] = await Promise.all(
   ].map(readJson),
 );
 const vite = await createServer({
-  server: { middlewareMode: true },
+  server: { middlewareMode: true, hmr: false, ws: false },
   optimizeDeps: { noDiscovery: true, include: [] },
   appType: 'custom',
 });

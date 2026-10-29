@@ -10,7 +10,7 @@
     "sync": "node scripts/sync.mjs",
     "images:download": "node scripts/download-images.mjs",
     "data:build": "node scripts/build-data.mjs",
-    "test": "node --test tests/data.test.mjs"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
