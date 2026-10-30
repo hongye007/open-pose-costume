@@ -80,6 +80,7 @@ export default function App() {
       ? initialParams.get('angle')!
       : 'front',
   );
+  const [cardAngles, setCardAngles] = useState<Record<string, string>>({});
   const [sort, setSort] = useState<Sort>('curated');
   const [limit, setLimit] = useState(24);
   const [saved, setSaved] = useState(() => storageGet('opc-saved', [], isIds));
@@ -260,8 +261,11 @@ export default function App() {
     notify(t.boardToast);
   }
   function openDetail(item: Reference) {
-    setDetailAngle(angle);
+    setDetailAngle(cardAngles[item.id] || angle);
     setSelectedId(item.id);
+  }
+  function setCardAngle(id: string, value: string) {
+    setCardAngles((current) => (current[id] === value ? current : { ...current, [id]: value }));
   }
   const step = useCallback(
     (direction: number) => {
@@ -782,7 +786,10 @@ export default function App() {
                   <select
                     aria-label={t.angle}
                     value={angle}
-                    onChange={(e) => setAngle(e.target.value)}
+                    onChange={(e) => {
+                      setAngle(e.target.value);
+                      setCardAngles({});
+                    }}
                   >
                     {angles.map((key) => (
                       <option key={key} value={key}>
@@ -844,8 +851,9 @@ export default function App() {
               <>
                 <div className="reference-grid">
                   {visible.slice(0, limit).map((item, index) => {
+                    const cardAngle = cardAngles[item.id] || angle;
                     const preview =
-                      item.variants.find((v) => v.angle === angle) || item.variants[0];
+                      item.variants.find((v) => v.angle === cardAngle) || item.variants[0];
                     const isSaved = saved.includes(item.id);
                     return (
                       <article className={`reference-card ${item.kind}-card`} key={item.id}>
@@ -872,13 +880,13 @@ export default function App() {
                                   key={variant.id}
                                   type="button"
                                   className={`pose-angle-thumb ${
-                                    variant.angle === angle ? 'active' : ''
+                                    variant.id === preview.id ? 'active' : ''
                                   }`}
                                   aria-label={variant.label[lang]}
-                                  aria-pressed={variant.angle === angle}
-                                  onMouseEnter={() => setAngle(variant.angle)}
-                                  onFocus={() => setAngle(variant.angle)}
-                                  onClick={() => setAngle(variant.angle)}
+                                  aria-pressed={variant.id === preview.id}
+                                  onMouseEnter={() => setCardAngle(item.id, variant.angle)}
+                                  onFocus={() => setCardAngle(item.id, variant.angle)}
+                                  onClick={() => setCardAngle(item.id, variant.angle)}
                                 >
                                   <span className="pose-angle-thumb-image">
                                     <RemoteImage
