@@ -1077,15 +1077,18 @@ export default function App() {
                   <Copy size={14} />
                   {t.copyPrompt}
                 </button>
-                {imageReady && (
-                  <button
-                    className="text-action reference-generate"
-                    disabled={characterLoading}
-                    onClick={() => beginGeneration(selected)}
-                  >
-                    <Sparkles size={14} />
-                    {generationCopy[lang].generate}
-                  </button>
+                <button
+                  className="text-action reference-generate"
+                  disabled={!imageReady || characterLoading}
+                  onClick={() => beginGeneration(selected)}
+                >
+                  <Sparkles size={14} />
+                  {generationCopy[lang].generate}
+                </button>
+                {!imageReady && (
+                  <span className="reference-generate-hint">
+                    {generationCopy[lang].configureFirst}
+                  </span>
                 )}
               </div>
             </div>
@@ -1299,15 +1302,18 @@ export default function App() {
                 <Copy size={16} />
                 {t.copyPrompt}
               </button>
-              {imageReady && (
-                <button
-                  className="secondary-button"
-                  disabled={characterLoading}
-                  onClick={() => beginGeneration()}
-                >
-                  <Sparkles size={16} />
-                  {generationCopy[lang].generate}
-                </button>
+              <button
+                className="secondary-button"
+                disabled={!imageReady || characterLoading}
+                onClick={() => beginGeneration()}
+              >
+                <Sparkles size={16} />
+                {generationCopy[lang].generate}
+              </button>
+              {!imageReady && (
+                <span className="reference-generate-hint">
+                  {generationCopy[lang].configureFirst}
+                </span>
               )}
             </div>
           </div>

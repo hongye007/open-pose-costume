@@ -2523,6 +2523,11 @@ dialog::backdrop {
 .reference-generate {
   color: var(--blue);
 }
+.reference-generate-hint {
+  color: #9aa3b3;
+  font-size: 10px;
+  line-height: 1.5;
+}
 .image-settings-modal {
   width: 560px;
 }
