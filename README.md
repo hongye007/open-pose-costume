@@ -106,7 +106,7 @@ npm run preview -- --port 5200
 元数据快照位于 `data/source/`，网站索引位于 `public/data/catalog.json`，同步记录位于 `data/sync-manifest.json`。同步会检查分类、视角及翻译完整性；如缺少翻译，按报错补充词表。
 
 <details>
-<summary>本地图片归档与品牌素材</summary>
+<summary>图片归档与品牌素材</summary>
 
 图片归档保留姿势所有已有视角，当前数据共 5,692 个文件：
 
@@ -119,7 +119,9 @@ costume/
   originals/    # 1,407 张 PNG 原图
 ```
 
-下载支持 SHA-256 校验、失败重试与已下载文件复用。默认并发数为 8，可用 `npm run images:download -- --concurrency 4` 调整。清单与统计分别写入 `data/image-download-manifest.json`、`data/image-download-summary.json`。归档和下载记录由 Git 忽略，不进入网站构建。
+封面与原图已纳入 Git，合计约 1.95 GiB；网站构建不包含这些归档，网页仍使用原站链接。维护者确认已获得原作者对本仓库公开再分发的额外授权，图片不适用代码的 MIT 许可，详见 [SOURCES.md](SOURCES.md)。
+
+下载支持 SHA-256 校验、失败重试与已下载文件复用。默认并发数为 8，可用 `npm run images:download -- --concurrency 4` 调整。清单与统计分别写入 `data/image-download-manifest.json`、`data/image-download-summary.json`，下载记录仍由 Git 忽略。
 
 Logo 原稿见 [生成原图](output/imagegen/open-pose-costume-logo-original.png)，提示词见 [logo-prompt.txt](assets/brand/logo-prompt.txt)。安装 Python Pillow、NumPy 后，运行 `python3 scripts/build-brand-assets.py` 可生成透明标志、favicon 和 Apple touch icon。
 
