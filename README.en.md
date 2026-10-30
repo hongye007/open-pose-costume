@@ -4,6 +4,9 @@
 
 [Live demo](https://hongye007.github.io/open-pose-costume/) · [Character generation skill](https://github.com/hongye007/open-pose-costume-skill)
 
+- **Free trial instructions**: [Read the Feishu guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
+- **Author on X**: [@HongyeMain](https://x.com/HongyeMain)
+
 A pose. A point of view. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
 
 ![Open Pose & Costume English homepage](docs/images/hero-en.webp)
@@ -138,5 +141,3 @@ See the [original logo](output/imagegen/open-pose-costume-logo-original.png) and
 Project code uses the [MIT license](LICENSE). Images, upstream data and third-party translations retain their respective rights and are not covered by the code license. The source terms allow reference, editing and commercial work production, but prohibit redistribution, republication or resale of the image data itself, including edited copies. See [SOURCES.md](SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for attribution and full usage restrictions.
 
 Thanks to the original pose and costume creator and the Chinese translation contributors.
-
-Author on X: [HongyeMain](https://x.com/HongyeMain)

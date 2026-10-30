@@ -4,6 +4,9 @@
 
 [在线体验](https://hongye007.github.io/open-pose-costume/) · [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill)
 
+- **免费试用体验方式**：[查看飞书文档](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
+- **作者 X 主页**：[@HongyeMain](https://x.com/HongyeMain)
+
 从姿势，到穿着。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
 
 ![Open Pose & Costume 中文首页](docs/images/hero-zh.webp)
@@ -138,5 +141,3 @@ Logo 原稿见 [生成原图](output/imagegen/open-pose-costume-logo-original.pn
 项目代码使用 [MIT 许可](LICENSE)。图片、上游数据及第三方翻译保留各自权利，不随代码开放授权。原站允许作品制作中的参考、编辑与商用，但禁止图片数据本身（包括加工后）的再分发、转载和转售。完整来源与使用限制见 [SOURCES.md](SOURCES.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 感谢原始姿势与服饰素材作者，以及中文翻译贡献者。
-
-作者 X：[HongyeMain](https://x.com/HongyeMain)
