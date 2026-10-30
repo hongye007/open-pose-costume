@@ -847,10 +847,10 @@ h2 > span {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 2px;
   padding: 4px;
-  border: 1px solid #ffffff1c;
+  border: 1px solid #e2e6ee;
   border-radius: 7px;
-  background: #151916ed;
-  box-shadow: 0 4px 12px #1018273d;
+  background: #f7f8fbf5;
+  box-shadow: 0 4px 12px #23305314;
 }
 .pose-angle-thumb {
   min-width: 0;
@@ -861,7 +861,7 @@ h2 > span {
   padding: 1px;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #c1c9d8;
+  color: #7d8798;
   background: transparent;
   font-size: 8px;
   line-height: 1.2;
@@ -872,9 +872,9 @@ h2 > span {
 }
 .pose-angle-thumb:hover,
 .pose-angle-thumb.active {
-  border-color: #d8b46a;
-  color: #f1d18a;
-  background: #ffffff14;
+  border-color: var(--blue);
+  color: var(--blue);
+  background: #edf0ff;
 }
 .pose-angle-thumb-image {
   display: block;
