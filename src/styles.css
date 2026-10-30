@@ -3121,6 +3121,162 @@ dialog::backdrop {
 .portrait-filters .category-chips {
   padding: 0;
 }
+.hero-study {
+  background: var(--lavender);
+  border-radius: 14px;
+  padding: 18px;
+  min-width: 0;
+}
+.hero-study-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #827f9d;
+  font-size: 10px;
+  margin-bottom: 14px;
+}
+.hero-equation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1.25fr);
+  align-items: center;
+}
+.hero-inputs {
+  min-width: 0;
+}
+.hero-input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-input {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border: 1px solid #ffffffc9;
+  border-radius: 7px;
+  text-align: left;
+  background: #ffffffec;
+  box-shadow: 0 3px 10px #30344906;
+}
+.hero-input img {
+  width: 48%;
+  height: 62px;
+  object-fit: contain;
+  background: #f8f9fc;
+  border-radius: 3px;
+}
+.hero-input > span {
+  color: #58637b;
+  font-size: 11px;
+}
+.hero-input small {
+  display: block;
+  font-family: monospace;
+  font-size: 6px;
+  color: #939bb0;
+  margin-top: 5px;
+}
+.hero-plus {
+  display: block;
+  color: #918daf;
+  height: 15px;
+  font-size: 13px;
+  line-height: 15px;
+}
+.hero-equals {
+  color: var(--blue);
+  font-size: 21px;
+  text-align: center;
+}
+.hero-result {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px #30344912;
+  text-align: left;
+}
+.hero-result > img {
+  height: 232px;
+  width: 100%;
+  object-fit: contain;
+  background: #f4f4f5;
+  border-radius: 4px;
+}
+.hero-result > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 8px 3px 2px;
+  color: #495b9d;
+  font-size: 10px;
+}
+.hero-result small {
+  display: block;
+  color: #969daf;
+  font-size: 8px;
+  margin-top: 3px;
+}
+.hero-input:hover,
+.hero-result:hover {
+  box-shadow: 0 6px 18px #30344925;
+}
+.hero-study-modal {
+  width: 720px;
+  padding: 22px;
+}
+.hero-study-modal > img {
+  display: block;
+  max-height: 75vh;
+  width: 100%;
+  object-fit: contain;
+}
+@media (min-width: 1600px) {
+  .hero-study {
+    width: 100%;
+    max-width: 570px;
+    justify-self: end;
+  }
+}
+@media (min-width: 561px) and (max-width: 1020px) {
+  .hero-study {
+    padding: 12px;
+  }
+  .hero-study-heading {
+    font-size: 8px;
+  }
+  .hero-input {
+    gap: 5px;
+  }
+  .hero-input > span {
+    font-size: 9px;
+  }
+  .hero-input small {
+    display: none;
+  }
+  .hero-equation {
+    grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1.25fr);
+  }
+}
+@media (max-width: 560px) {
+  .hero-study {
+    margin-top: 24px;
+    padding: 16px;
+  }
+  .hero-result > img {
+    height: 252px;
+  }
+  .hero-input img {
+    height: 68px;
+  }
+}
 .character-card .card-bottom > span {
   overflow: hidden;
   white-space: nowrap;

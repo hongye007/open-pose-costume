@@ -9,7 +9,7 @@
 
 A pose. A point of view. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
 
-![Open Pose & Costume English homepage](docs/images/hero-en.webp)
+![Open Pose & Costume homepage in Chinese: pose, costume and character references combined into a generated character](docs/images/hero-zh.webp)
 
 **288 pose groups · 1,439 pose views · 1,407 outfits · 1,499 character references · 4,345 reference images**
 
@@ -55,11 +55,11 @@ Uploaded character references support PNG, JPG and WebP up to 10 MB. The image s
 
 **Side by side**: view the selected reference beside the generated result.
 
-![Side-by-side example in Chinese: original pose on the left, generated result on the right](docs/images/generation-side-by-side-zh.webp)
+![Side-by-side example in Chinese: pose, costume and character references, with the original pose beside the generated result](docs/images/generation-side-by-side-zh.webp)
 
 **Overlay**: drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported.
 
-![Overlay preview: drag the divider to compare the generated image and reference](docs/images/generation-overlay-en.webp)
+![Overlay example in Chinese: pose, costume and character references, with a slider comparing the generated image and original pose](docs/images/generation-overlay-zh.webp)
 
 These are example outputs. Results depend on the model, description and service configuration.
 

@@ -28,6 +28,7 @@ import {
   X,
 } from 'lucide-react';
 import { copy } from './i18n';
+import { HeroStudy } from './hero-study';
 import { Modal, RemoteImage } from './ui';
 import { GenerationDialog, ImageSettings, ImageSettingsButton } from './generation-ui';
 import { generationCopy } from './generation-copy';
@@ -497,10 +498,6 @@ export default function App() {
     return () => document.removeEventListener('keydown', handle);
   }, [selectedId, panel, step, generationJob]);
 
-  const heroPose = items.find((item) => item.id === 'full_single_P019');
-  const heroCostume =
-    items.find((item) => item.id === 'SPR-0001') || items.find((item) => item.kind === 'costume');
-
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -701,53 +698,7 @@ export default function App() {
                 <ArrowDown size={15} />
               </a>
             </div>
-            <div className="study-shelf">
-              <div className="study-label">
-                <span>{t.sheet}</span>
-                <Sparkles size={14} />
-              </div>
-              <div className="study-pair">
-                {heroPose && (
-                  <button
-                    className="study-sheet pose-sheet"
-                    onClick={() => openDetail(heroPose)}
-                    aria-label={`${t.detail}: ${heroPose.title[lang]}`}
-                  >
-                    <span className="sheet-code">POSE / {heroPose.code}</span>
-                    <RemoteImage
-                      src={heroPose.variants[0].thumbnail}
-                      alt={heroPose.title[lang]}
-                      lang={lang}
-                      eager
-                    />
-                    <span className="sheet-caption">
-                      {t.introPose}
-                      <ArrowUpRight size={13} />
-                    </span>
-                  </button>
-                )}
-                <span className="study-plus">+</span>
-                {heroCostume && (
-                  <button
-                    className="study-sheet costume-sheet"
-                    onClick={() => openDetail(heroCostume)}
-                    aria-label={`${t.detail}: ${heroCostume.title[lang]}`}
-                  >
-                    <span className="sheet-code">LOOK / {heroCostume.code}</span>
-                    <RemoteImage
-                      src={heroCostume.variants[0].thumbnail}
-                      alt={heroCostume.title[lang]}
-                      lang={lang}
-                      eager
-                    />
-                    <span className="sheet-caption">
-                      {t.introCostume}
-                      <ArrowUpRight size={13} />
-                    </span>
-                  </button>
-                )}
-              </div>
-            </div>
+            <HeroStudy lang={lang} />
           </section>
           <div className="collection-summary">
             <span>

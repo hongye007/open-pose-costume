@@ -9,7 +9,7 @@
 
 从姿势，到穿着。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
 
-![Open Pose & Costume 中文首页](docs/images/hero-zh.webp)
+![Open Pose & Costume 中文首页：姿势、服饰与人物三种参考合成角色](docs/images/hero-zh.webp)
 
 **288 组姿势 · 1,439 个姿势视角 · 1,407 套服饰 · 1,499 张人物参考 · 4,345 张参考图**
 
@@ -55,11 +55,11 @@
 
 **双列预览**：所选参考与生成结果并排展示。
 
-![双列预览：左侧姿势原图，右侧生成结果](docs/images/generation-side-by-side-zh.webp)
+![双列预览：姿势、服饰与人物三种参考，姿势原图与生成结果并排展示](docs/images/generation-side-by-side-zh.webp)
 
 **叠加预览**：在同一个画框中拖动滑杆对比，左侧为生成图、右侧为所选参考；支持方向键与 Home / End。
 
-![叠加预览示例（英文界面）：拖动滑杆比较生成图与参考图](docs/images/generation-overlay-en.webp)
+![叠加预览：姿势、服饰与人物三种参考，拖动滑杆对比生成图与姿势原图](docs/images/generation-overlay-zh.webp)
 
 上图为生成效果示例，实际结果取决于模型、描述与服务配置。
 
