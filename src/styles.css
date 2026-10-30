@@ -2632,6 +2632,107 @@ dialog::backdrop {
   font-size: 11px;
   color: #63718a;
 }
+.generation-frame-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.generation-image-action {
+  width: 27px;
+  height: 27px;
+  padding: 0;
+  color: #788cc8;
+  flex-shrink: 0;
+}
+.generation-image-action:disabled {
+  opacity: 0.65;
+}
+.generation-image-button {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.generation-image-button > img {
+  width: 100%;
+  height: min(46dvh, 420px);
+  object-fit: contain;
+}
+.generation-image-button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -3px;
+}
+.image-lightbox {
+  width: min(980px, calc(100vw - 48px));
+}
+.image-lightbox .modal-inner {
+  padding: 18px;
+}
+.image-lightbox-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #63718a;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.image-lightbox-canvas {
+  text-align: center;
+  min-height: 260px;
+  max-height: calc(100dvh - 190px);
+  overflow: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f5f6fa;
+}
+.image-lightbox-canvas img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 190px);
+  object-fit: contain;
+}
+.image-lightbox-canvas.full-size img {
+  max-width: none;
+  max-height: none;
+}
+.generation-download-control {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.generation-download-error {
+  position: absolute;
+  z-index: 3;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 160px;
+  padding: 8px 10px;
+  border: 1px solid #e5c4c4;
+  border-radius: 5px;
+  background: #fff;
+  color: #b35457;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.image-lightbox-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.image-lightbox-actions .secondary-button {
+  font-size: 11px;
+}
+
 .generation-frame-heading code {
   font-size: 9px;
   color: #9ba5b6;
@@ -2693,7 +2794,24 @@ dialog::backdrop {
   border-radius: 5px;
   color: #63718a;
   font-size: 10px;
-  pointer-events: none;
+  pointer-events: auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.comparison-wipe-label > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+}
+.comparison-wipe-label .generation-image-action {
+  width: 23px;
+  height: 23px;
 }
 .comparison-wipe-label.generated {
   left: 12px;
@@ -2881,7 +2999,8 @@ dialog::backdrop {
   .generation-canvas {
     min-height: 280px;
   }
-  .generation-canvas > img {
+  .generation-canvas > img,
+  .generation-image-button > img {
     height: 330px;
   }
   .generation-reference-hint {

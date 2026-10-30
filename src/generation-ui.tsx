@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   ArrowLeftRight,
   Check,
+  Download,
   Eye,
   EyeOff,
   LoaderCircle,
+  Maximize2,
+  ZoomIn,
+  ZoomOut,
   RotateCcw,
   Settings,
   Sparkles,
@@ -21,6 +25,137 @@ import {
 } from './generation';
 import type { GenerationJob, ImageConfig, ImageReference } from './generation';
 import type { Lang } from './types';
+
+function imageExtension(type: string): string {
+  return type === 'image/png'
+    ? 'png'
+    : type === 'image/jpeg'
+      ? 'jpg'
+      : type === 'image/webp'
+        ? 'webp'
+        : 'png';
+}
+
+async function downloadImageSource(source: string, filename: string): Promise<void> {
+  const url = new URL(source, window.location.href);
+  if (!['https:', 'blob:', 'data:'].includes(url.protocol)) throw Error('invalidImageSource');
+  const response = await fetch(url.href, {
+    signal: AbortSignal.timeout(60_000),
+    credentials: 'omit',
+    referrerPolicy: 'no-referrer',
+  });
+  if (!response.ok) throw Error('downloadFailed');
+  const blob = await response.blob();
+  if (!blob.size || !['image/png', 'image/jpeg', 'image/webp'].includes(blob.type))
+    throw Error('downloadFailed');
+  const objectUrl = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = objectUrl;
+  link.download = `${filename}.${imageExtension(blob.type)}`;
+  const dialogs = document.querySelectorAll('dialog[open]');
+  (dialogs[dialogs.length - 1] || document.body).appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(objectUrl), 60_000);
+}
+
+function ImageDownloadButton({
+  source,
+  filename,
+  lang,
+  label,
+  showLabel = false,
+}: {
+  source: string;
+  filename: string;
+  lang: Lang;
+  label?: string;
+  showLabel?: boolean;
+}) {
+  const t = generationCopy[lang];
+  const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const inProgress = useRef(false);
+  useEffect(() => setFailed(false), [source]);
+  return (
+    <span className="generation-download-control">
+      <button
+        type="button"
+        className={showLabel ? 'secondary-button' : 'icon-button generation-image-action'}
+        aria-label={busy ? t.downloading : label || t.downloadImage}
+        title={busy ? t.downloading : label || t.downloadImage}
+        aria-busy={busy}
+        disabled={busy}
+        onClick={async () => {
+          if (inProgress.current) return;
+          inProgress.current = true;
+          setBusy(true);
+          setFailed(false);
+          try {
+            await downloadImageSource(source, filename);
+          } catch {
+            setFailed(true);
+          } finally {
+            inProgress.current = false;
+            setBusy(false);
+          }
+        }}
+      >
+        {busy ? <LoaderCircle size={15} className="spinner" /> : <Download size={15} />}
+        {showLabel && (busy ? t.downloading : label || t.downloadImage)}
+      </button>
+      {failed && (
+        <span className="generation-download-error" role="alert">
+          {t.downloadFailed}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function ImageLightbox({
+  source,
+  downloadSource,
+  filename,
+  alt,
+  lang,
+  onClose,
+}: {
+  source: string;
+  downloadSource: string;
+  filename: string;
+  alt: string;
+  lang: Lang;
+  onClose: () => void;
+}) {
+  const t = generationCopy[lang];
+  const [fullSize, setFullSize] = useState(false);
+  return (
+    <Modal onClose={onClose} label={t.openImage} className="image-lightbox">
+      <div className="image-lightbox-heading">
+        <span>{alt}</span>
+        <button type="button" className="icon-button" aria-label={t.close} onClick={onClose}>
+          <X size={20} />
+        </button>
+      </div>
+      <div className={`image-lightbox-canvas ${fullSize ? 'full-size' : ''}`}>
+        <RemoteImage src={source} alt={alt} lang={lang} eager retryable />
+      </div>
+      <div className="image-lightbox-actions">
+        <button
+          type="button"
+          className="secondary-button"
+          aria-pressed={fullSize}
+          onClick={() => setFullSize(!fullSize)}
+        >
+          {fullSize ? <ZoomOut size={15} /> : <ZoomIn size={15} />}
+          {fullSize ? t.fitImage : t.actualSize}
+        </button>
+        <ImageDownloadButton source={downloadSource} filename={filename} lang={lang} showLabel />
+      </div>
+    </Modal>
+  );
+}
 
 export function ImageSettings({
   config,
@@ -194,11 +329,15 @@ function ComparisonWipe({
   generated,
   lang,
   onImageError,
+  onOpenReference,
+  onOpenGenerated,
 }: {
   reference: GenerationJob['references'][number];
   generated: string;
   lang: Lang;
   onImageError: () => void;
+  onOpenReference: () => void;
+  onOpenGenerated: () => void;
 }) {
   const t = generationCopy[lang];
   const [position, setPosition] = useState(50);
@@ -224,8 +363,40 @@ function ComparisonWipe({
           onError={onImageError}
         />
       </div>
-      <span className="comparison-wipe-label generated">{t.generated}</span>
-      <span className="comparison-wipe-label reference">{t.reference}</span>
+      <div className="comparison-wipe-label generated">
+        <button
+          type="button"
+          aria-label={`${t.openImage}: ${t.generated}`}
+          title={t.openImage}
+          onClick={onOpenGenerated}
+        >
+          <Maximize2 size={13} />
+          {t.generated}
+        </button>
+        <ImageDownloadButton
+          source={generated}
+          filename="generated-character"
+          lang={lang}
+          label={`${t.downloadImage}: ${t.generated}`}
+        />
+      </div>
+      <div className="comparison-wipe-label reference">
+        <button
+          type="button"
+          aria-label={`${t.openImage}: ${t.reference}`}
+          title={t.openImage}
+          onClick={onOpenReference}
+        >
+          <Maximize2 size={13} />
+          {t.reference}
+        </button>
+        <ImageDownloadButton
+          source={reference.variant.original}
+          filename={reference.variant.id}
+          lang={lang}
+          label={`${t.downloadImage}: ${t.reference}`}
+        />
+      </div>
       <div className="comparison-wipe-divider" style={{ left: `${position}%` }} aria-hidden="true">
         <span>
           <ArrowLeftRight size={19} />
@@ -262,10 +433,36 @@ export function GenerationDialog({
   const [imageFailed, setImageFailed] = useState(false);
   const [imageAttempt, setImageAttempt] = useState(0);
   const [previewMode, setPreviewMode] = useState<'split' | 'overlay'>('split');
+  const [lightbox, setLightbox] = useState<{
+    source: string;
+    downloadSource: string;
+    filename: string;
+    alt: string;
+  } | null>(null);
   const active = job.references.find((ref) => ref.kind === activeKind) || job.references[0];
   const loading = job.status === 'loading';
+  const openReference = () =>
+    setLightbox({
+      source: active.variant.original,
+      downloadSource: active.variant.original,
+      filename: active.variant.id,
+      alt: active.title[lang],
+    });
+  const openGenerated = () => {
+    if (job.status === 'success' && job.result)
+      setLightbox({
+        source: job.result,
+        downloadSource: job.result,
+        filename: 'generated-character',
+        alt: t.generated,
+      });
+  };
   return (
-    <Modal onClose={onClose} label={t.generate} className="generation-modal">
+    <Modal
+      onClose={lightbox ? () => setLightbox(null) : onClose}
+      label={t.generate}
+      className="generation-modal"
+    >
       <div className="generation-heading">
         <div>
           <span className="section-kicker">REFERENCE STUDIO</span>
@@ -318,16 +515,39 @@ export function GenerationDialog({
           <section className="generation-frame">
             <div className="generation-frame-heading">
               <span>{t.reference}</span>
-              <code>{active.variant.id}</code>
+              <div className="generation-frame-tools">
+                <code>{active.variant.id}</code>
+                <button
+                  type="button"
+                  className="icon-button generation-image-action"
+                  aria-label={`${t.openImage}: ${t.reference}`}
+                  title={t.openImage}
+                  onClick={openReference}
+                >
+                  <Maximize2 size={15} />
+                </button>
+                <ImageDownloadButton
+                  source={active.variant.original}
+                  filename={active.variant.id}
+                  lang={lang}
+                  label={`${t.downloadImage}: ${t.reference}`}
+                />
+              </div>
             </div>
             <div className="generation-canvas">
-              <RemoteImage
-                src={active.variant.image}
-                alt={active.title[lang]}
-                lang={lang}
-                eager
-                retryable
-              />
+              <button
+                type="button"
+                className="generation-image-button"
+                aria-label={`${t.openImage}: ${active.title[lang]}`}
+                onClick={openReference}
+              >
+                <RemoteImage
+                  src={active.variant.image}
+                  alt={active.title[lang]}
+                  lang={lang}
+                  eager
+                />
+              </button>
             </div>
             <p className="generation-caption">{active.title[lang]}</p>
           </section>
@@ -335,16 +555,37 @@ export function GenerationDialog({
         <section className={`generation-frame generation-output ${job.status}`} aria-busy={loading}>
           <div className="generation-frame-heading">
             <span>{previewMode === 'overlay' ? t.overlay : t.generated}</span>
-            <span className="generation-status" role="status">
-              {loading ? (
-                <LoaderCircle size={13} className="spinner" />
-              ) : job.status === 'success' ? (
-                <Check size={13} />
-              ) : (
-                <RotateCcw size={13} />
+            <div className="generation-frame-tools">
+              {previewMode === 'split' && job.status === 'success' && job.result && (
+                <>
+                  <button
+                    type="button"
+                    className="icon-button generation-image-action"
+                    aria-label={`${t.openImage}: ${t.generated}`}
+                    title={t.openImage}
+                    onClick={openGenerated}
+                  >
+                    <Maximize2 size={15} />
+                  </button>
+                  <ImageDownloadButton
+                    source={job.result}
+                    filename="generated-character"
+                    lang={lang}
+                    label={`${t.downloadImage}: ${t.generated}`}
+                  />
+                </>
               )}
-              {loading ? t.generating : job.status === 'success' ? t.success : t.failed}
-            </span>
+              <span className="generation-status" role="status">
+                {loading ? (
+                  <LoaderCircle size={13} className="spinner" />
+                ) : job.status === 'success' ? (
+                  <Check size={13} />
+                ) : (
+                  <RotateCcw size={13} />
+                )}
+                {loading ? t.generating : job.status === 'success' ? t.success : t.failed}
+              </span>
+            </div>
           </div>
           <div
             className={`generation-canvas ${previewMode === 'overlay' && job.status === 'success' && !imageFailed ? 'generation-overlay-canvas' : ''}`}
@@ -389,15 +630,24 @@ export function GenerationDialog({
                 generated={job.result}
                 lang={lang}
                 onImageError={() => setImageFailed(true)}
+                onOpenReference={openReference}
+                onOpenGenerated={openGenerated}
               />
             ) : (
-              <img
-                key={`${job.result}-${imageAttempt}`}
-                src={job.result}
-                alt={t.generated}
-                referrerPolicy="no-referrer"
-                onError={() => setImageFailed(true)}
-              />
+              <button
+                type="button"
+                className="generation-image-button"
+                aria-label={`${t.openImage}: ${t.generated}`}
+                onClick={openGenerated}
+              >
+                <img
+                  key={`${job.result}-${imageAttempt}`}
+                  src={job.result}
+                  alt={t.generated}
+                  referrerPolicy="no-referrer"
+                  onError={() => setImageFailed(true)}
+                />
+              </button>
             )}
           </div>
         </section>
@@ -432,6 +682,16 @@ export function GenerationDialog({
           {loading ? t.generating : job.status === 'error' ? t.retry : t.regenerate}
         </button>
       </div>
+      {lightbox && (
+        <ImageLightbox
+          source={lightbox.source}
+          downloadSource={lightbox.downloadSource}
+          filename={lightbox.filename}
+          alt={lightbox.alt}
+          lang={lang}
+          onClose={() => setLightbox(null)}
+        />
+      )}
     </Modal>
   );
 }
