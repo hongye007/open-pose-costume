@@ -7,8 +7,6 @@ playwright-report/
 !.env.example
 *.tsbuildinfo
 artifacts/
-/pose/
-/costume/
 /data/image-download-manifest.json*
 /data/image-download-summary.json
 /data/image-download.lock
