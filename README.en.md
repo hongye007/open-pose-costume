@@ -11,7 +11,7 @@ A pose. A point of view. A bilingual reference studio for character design, draw
 
 ![Open Pose & Costume English homepage](docs/images/hero-en.webp)
 
-**288 pose groups · 1,439 pose views · 1,407 outfits · 2,846 reference images**
+**288 pose groups · 1,439 pose views · 1,407 outfits · 1,499 character references · 4,345 reference images**
 
 Counts include extended categories. Data updated on October 30, 2026 (Asia/Shanghai).
 
@@ -26,14 +26,16 @@ Counts include extended categories. Data updated on October 30, 2026 (Asia/Shang
 
 ## Two references. One character.
 
-Choose a pose and an outfit, then add them to the pairing board. The description updates with your selections and can be copied for your creative workflow or another image tool.
+Choose a pose and an outfit, then add them to the pairing board. Optionally choose a character from the library or upload your own. The description updates with your selections and can be copied for your creative workflow or another image tool.
+
+The character library includes **893 face and 606 styling references**, with bilingual search, hair-length filters, favorites, original previews and downloads. Only hair length has complete source classifications; some style descriptions mention hair color, but dedicated eye-color, hair-color and skin-tone labels are unavailable.
 
 ![English pairing board with pose, costume, description and generation controls](docs/images/pairing-en.webp)
 
 ### Generate from references
 
 1. Open settings in the upper-right corner and enter your service URL, API key, model, image size and quality.
-2. Select **both a pose and a costume** on the pairing board, optionally upload a **character reference** to preserve identity and visual style, then click “Generate from references.” Missing pose or costume references prompt you to complete the selection.
+2. Select **both a pose and a costume** on the pairing board, optionally choose or upload a **character reference** to preserve identity and visual style, then click “Generate from references.” Missing pose or costume references prompt you to complete the selection.
 3. Wait for the result. Edit the description to generate again, or retry manually if a request fails.
 4. Use the pose, costume or character thumbnails on the left to select the comparison reference, and switch between “Side by side” and “Overlay.”
 
@@ -47,7 +49,9 @@ Choose a pose and an outfit, then add them to the pairing board. The description
 
 Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, the browser sends references and the description directly to your configured service, which may charge for usage. Keys are excluded from share links and the repository.
 
-Character references support PNG, JPG and WebP up to 10 MB. The image stays in page memory when the board closes, and clears on page reload or close. It is excluded from browser storage, share links and the repository, and sent to your configured service only when you generate.
+Library selections are saved as reference IDs in this browser. Lists use thumbnails; details and generation use original remote PNGs. Character references control identity and appearance, while pose and costume references control gesture and clothing.
+
+Uploaded character references support PNG, JPG and WebP up to 10 MB. The image stays in page memory when the board closes, and clears on page reload or close. It is excluded from browser storage, share links and the repository, and sent to your configured service only when you generate.
 
 **Side by side**: view the selected reference beside the generated result.
 
@@ -104,6 +108,8 @@ npm run preview -- --port 5200
 
 The website loads images directly from the source sites, so availability depends on those sites. Local image archives do not change the URLs used by the website.
 
+Character metadata comes from [AI Portrait Gallery](https://ai-portrait-gallery.pages.dev/). Portrait thumbnails and originals are not downloaded or archived in this repository and are excluded from `images:download`.
+
 | Command                   | Purpose                                                                           |
 | ------------------------- | --------------------------------------------------------------------------------- |
 | `npm run sync`            | Sync upstream metadata without executing upstream page code or downloading images |
@@ -138,6 +144,8 @@ See the [original logo](output/imagegen/open-pose-costume-logo-original.png) and
 
 ## License and credits
 
-Project code uses the [MIT license](LICENSE). Images, upstream data and third-party translations retain their respective rights and are not covered by the code license. The source terms allow reference, editing and commercial work production, but prohibit redistribution, republication or resale of the image data itself, including edited copies. See [SOURCES.md](SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for attribution and full usage restrictions.
+The portrait source states [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) while requesting no republication or redistribution of image data. Portraits depict fictional AI-generated people. Both statements are recorded in [SOURCES.md](SOURCES.md).
+
+Project code uses the [MIT license](LICENSE). Images, upstream data and third-party translations retain their respective rights and are not covered by the code license. The pose and costume source terms allow reference, editing and commercial work production, but prohibit redistribution, republication or resale of the image data itself, including edited copies. See [SOURCES.md](SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for attribution and full usage restrictions.
 
 Thanks to the original pose and costume creator and the Chinese translation contributors.

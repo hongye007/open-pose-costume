@@ -5,6 +5,13 @@ export const copy = {
     all: '全部参考',
     pose: '姿势参考',
     costume: '服装参考',
+    character: '人物参考',
+    chooseCharacter: '从人物库选择',
+    hairLength: '发长',
+    allHair: '全部发长',
+    hairLengths: { short: '短发', medium: '中发', 'medium-long': '中长发', long: '长发' },
+    characterLibraryNote:
+      '可从人物库选择或上传图片。库中选择保存在此浏览器，生成时发送原图至所配置的服务。',
     saved: '我的收藏',
     workspace: '创作工作台',
     board: '搭配台',
@@ -26,7 +33,7 @@ export const copy = {
     sheet: '角色研究 / REFERENCE STUDY',
     introPose: '动作与重心',
     introCostume: '廓形与材质',
-    search: '搜索姿势、服装或编号…',
+    search: '搜索姿势、服装、人物或编号…',
     shortcut: '搜索',
     allCategories: '全部分类',
     categories: '按分类探索',
@@ -89,7 +96,8 @@ export const copy = {
     remove: '移除',
     boardTitle: '一个角色，两种参考。',
     boardCharacterTitle: '一个角色，三种参考。',
-    boardDescription: '组合动作与穿搭，也可以上传人物参考，让创作保留角色的身份与画风。',
+    boardDescription:
+      '组合动作与穿搭，也可以从人物库选择或上传人物参考，让创作保留角色的身份与画风。',
     characterOptional: '人物参考（可选）',
     characterUpload: '上传人物图',
     characterReplace: '替换图片',
@@ -115,9 +123,11 @@ export const copy = {
     ],
     aboutUseTitle: '素材使用规则',
     aboutUse: '素材可免费用于作品制作，包括商业作品、编辑和参考。',
-    aboutRestriction: '图片数据本身（包括原图及加工后的图片）禁止再分发、转载或转售。',
+    aboutRestriction:
+      '姿势与服饰的图片数据本身（包括加工后的图片）禁止再分发、转载或转售。人物库标注 CC0，同时请求避免转载与再分发；各类素材以原站具体规则为准。',
     aboutRights: '本项目的代码开源许可不适用于图片及素材数据。',
-    aboutCaveat: '姿势为人偶线稿，服装为 AI 生成的虚构穿搭。创作时请自行核对细节及相关权利。',
+    aboutCaveat:
+      '姿势为人偶线稿，服装与人物均为 AI 生成的虚构素材。创作时请自行核对细节及相关权利。',
     footer: '让参考成为起点，让创作走得更远。',
     top: '回到顶部',
     savedToast: '已加入收藏',
@@ -132,6 +142,13 @@ export const copy = {
     all: 'All references',
     pose: 'Pose references',
     costume: 'Costume references',
+    character: 'Character references',
+    chooseCharacter: 'Choose from library',
+    hairLength: 'Hair length',
+    allHair: 'All hair lengths',
+    hairLengths: { short: 'Short', medium: 'Medium', 'medium-long': 'Medium-long', long: 'Long' },
+    characterLibraryNote:
+      'Choose from the library or upload an image. Library selections stay in this browser; originals are sent to your configured service when you generate.',
     saved: 'Saved references',
     workspace: 'Your workspace',
     board: 'Pairing board',
@@ -154,7 +171,7 @@ export const copy = {
     sheet: 'CHARACTER / REFERENCE STUDY',
     introPose: 'Gesture & balance',
     introCostume: 'Shape & texture',
-    search: 'Search poses, outfits or IDs…',
+    search: 'Search poses, outfits, characters or IDs…',
     shortcut: 'Search',
     allCategories: 'All categories',
     categories: 'Explore by category',
@@ -219,7 +236,7 @@ export const copy = {
     boardTitle: 'Two references. One character.',
     boardCharacterTitle: 'Three references. One character.',
     boardDescription:
-      'Combine a pose and an outfit, and optionally upload a character to preserve their identity and visual style.',
+      'Combine a pose and an outfit, and optionally choose or upload a character to preserve their identity and visual style.',
     characterOptional: 'Character reference (optional)',
     characterUpload: 'Upload character',
     characterReplace: 'Replace image',
@@ -248,11 +265,11 @@ export const copy = {
     aboutUse:
       'Images may be used for free when creating works, including commercial works, editing and reference.',
     aboutRestriction:
-      'Redistribution, republication or resale of the image data itself, including edited versions, is prohibited.',
+      'Pose and costume image data may not be redistributed, republished or resold, including edited versions. The portrait source states CC0 while requesting no republication or redistribution. Refer to each source’s specific terms.',
     aboutRights:
       'This project’s open-source code license does not cover the images or material data.',
     aboutCaveat:
-      'Poses depict mannequins. Outfits are AI-generated fictional clothing. Check details and relevant rights when creating your work.',
+      'Poses depict mannequins. Outfits and portraits are AI-generated fictional references. Check details and relevant rights when creating your work.',
     footer: 'Start with a reference. Make it your own.',
     top: 'Back to top',
     savedToast: 'Reference saved',

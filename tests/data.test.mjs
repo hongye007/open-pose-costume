@@ -3,13 +3,15 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { createServer } from 'vite';
 import { normalize, readJson } from '../scripts/build-data.mjs';
+import { normalizePortraits } from '../scripts/portrait-data.mjs';
 import { extractDataset } from '../scripts/sync.mjs';
 
-const [pose, costume, zh, catalog, manifest] = await Promise.all(
+const [pose, costume, zh, portrait, catalog, manifest] = await Promise.all(
   [
     'data/source/pose.json',
     'data/source/costume.json',
     'data/source/pose-zh.json',
+    'data/source/portrait.json',
     'public/data/catalog.json',
     'data/sync-manifest.json',
   ].map(readJson),
@@ -25,7 +27,7 @@ after(async () => {
 });
 
 test('all source records are preserved, uniquely grouped, with no invented angles', async () => {
-  assert.deepEqual(await normalize(pose, costume, zh), catalog);
+  assert.deepEqual(await normalize(pose, costume, zh, portrait), catalog);
   const poseGroups = catalog.items.filter((item) => item.kind === 'pose');
   assert.equal(
     poseGroups.reduce((sum, item) => sum + item.variants.length, 0),
@@ -33,7 +35,7 @@ test('all source records are preserved, uniquely grouped, with no invented angle
   );
   assert.equal(catalog.items.filter((item) => item.kind === 'costume').length, costume.length);
   assert.equal(new Set(catalog.items.map((item) => item.id)).size, catalog.items.length);
-  assert.equal(catalog.stats.images, pose.length + costume.length);
+  assert.equal(catalog.stats.images, pose.length + costume.length + portrait.length);
   assert.deepEqual(
     new Set(poseGroups.flatMap((item) => item.variants.map((variant) => variant.id))),
     new Set(pose.map((row) => row.id)),
@@ -53,7 +55,9 @@ test('every reference and variant has complete Chinese and English, and only ori
           new URL(variant[key]).origin,
           item.kind === 'pose'
             ? 'https://ai-pose-gallery.pages.dev'
-            : 'https://ai-costume-gallery.pages.dev',
+            : item.kind === 'costume'
+              ? 'https://ai-costume-gallery.pages.dev'
+              : 'https://ai-portrait-gallery.pages.dev',
         );
       }
       assert.ok(variant.label.zh && variant.label.en);
@@ -62,7 +66,7 @@ test('every reference and variant has complete Chinese and English, and only ori
 });
 
 test('source snapshot hashes and counts match the crawl manifest', () => {
-  for (const [index, rows] of [pose, costume, zh].entries()) {
+  for (const [index, rows] of [pose, costume, zh, portrait].entries()) {
     assert.equal(manifest.sources[index].records, rows.length);
     assert.equal(
       manifest.sources[index].sha256,
@@ -139,4 +143,38 @@ test('missing, damaged, or inaccessible local storage falls back safely', () => 
   };
   assert.deepEqual(storageGet('saved', [], validator), []);
   delete globalThis.localStorage;
+});
+
+test('portrait ingestion preserves both sections, translates styles and rejects unsafe or incomplete records', async () => {
+  const characters = catalog.items.filter((item) => item.kind === 'character');
+  assert.equal(characters.length, portrait.length);
+  assert.equal(characters.filter((item) => item.portrait.section === 'face').length, 893);
+  assert.equal(characters.filter((item) => item.portrait.section === 'styling').length, 606);
+  assert.ok(
+    matchesQuery(
+      characters.find((item) => item.title.en.includes('Black short bob')),
+      '黑色 螺旋',
+    ),
+  );
+  assert.ok(
+    matchesQuery(
+      characters.find((item) => item.title.en.includes('Black short bob')),
+      'black spiral',
+    ),
+  );
+  for (const row of [
+    { ...portrait[0], full: 'https://other.example/image.png' },
+    { ...portrait[0], section: 'unknown' },
+    { ...portrait[0], hair: 'unknown' },
+    { ...portrait[0], style: 'unknown' },
+  ])
+    await assert.rejects(normalizePortraits([row]));
+  await assert.rejects(normalizePortraits([portrait[0], portrait[0]]));
+  assert.deepEqual(
+    extractDataset(
+      'window.GALLERY_IMAGES=[{"id":"safe"}];throw Error("untrusted");',
+      /\bwindow\.GALLERY_IMAGES\s*=\s*/,
+    ),
+    [{ id: 'safe' }],
+  );
 });

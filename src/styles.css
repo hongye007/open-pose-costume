@@ -912,7 +912,8 @@ h2 > span {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.costume-card .card-open {
+.costume-card .card-open,
+.character-card .card-open {
   padding: 28px 7px 13px;
 }
 .card-type {
@@ -928,7 +929,8 @@ h2 > span {
   letter-spacing: 0.6px;
   pointer-events: none;
 }
-.costume-card .card-type {
+.costume-card .card-type,
+.character-card .card-type {
   background: #ffffffc9;
   padding: 2px 4px;
   border-radius: 3px;
@@ -1904,7 +1906,7 @@ dialog::backdrop {
   }
   .main-nav {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 5px;
   }
   .nav-item {
@@ -3105,4 +3107,22 @@ dialog::backdrop {
   .image-settings-actions .secondary-button {
     padding: 10px 12px;
   }
+}
+
+.portrait-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  color: #7b889e;
+  font-size: 12px;
+}
+.portrait-filters .category-chips {
+  padding: 0;
+}
+.character-card .card-bottom > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

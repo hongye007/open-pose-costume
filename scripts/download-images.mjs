@@ -26,6 +26,8 @@ const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const jobs = [];
 const paths = new Set();
 for (const item of catalog.items) {
+  // Portraits remain remote references; this command archives only poses and costumes.
+  if (item.kind === 'character') continue;
   if (!['pose', 'costume'].includes(item.kind)) throw Error('Unexpected image kind');
   const origin = `https://ai-${item.kind}-gallery.pages.dev`;
   for (const variant of item.variants) {

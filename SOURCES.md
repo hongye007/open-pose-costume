@@ -1,10 +1,12 @@
 # Sources / 素材来源
 
-| Dataset | Source | Creator |
-| --- | --- | --- |
-| Pose metadata, thumbnails, full-resolution references | https://ai-pose-gallery.pages.dev/ | ギア · https://x.com/giaaibusi |
-| Costume metadata, thumbnails, WebP previews, PNG originals | https://ai-costume-gallery.pages.dev/ | ギア · https://x.com/giaaibusi |
-| Chinese pose names | https://github.com/anhao/ai-pose-gallery-zh | Anhao |
+Portrait metadata, WebP thumbnails and PNG originals: https://ai-portrait-gallery.pages.dev/ — creator: あぎ · https://x.com/agi_aibusi
+
+| Dataset                                                    | Source                                      | Creator                        |
+| ---------------------------------------------------------- | ------------------------------------------- | ------------------------------ |
+| Pose metadata, thumbnails, full-resolution references      | https://ai-pose-gallery.pages.dev/          | ギア · https://x.com/giaaibusi |
+| Costume metadata, thumbnails, WebP previews, PNG originals | https://ai-costume-gallery.pages.dev/       | ギア · https://x.com/giaaibusi |
+| Chinese pose names                                         | https://github.com/anhao/ai-pose-gallery-zh | Anhao                          |
 
 ## What is stored
 
@@ -39,3 +41,19 @@ They allow free use for producing works, including commercial work, editing and 
 原站允许作品制作中的商用、编辑和参考使用，但禁止图片数据本身（包括加工后）的再分发、转载或转售。原站提供的人偶与虚构服装不保证准确性或无第三方权利问题。完整条款及更新以原站为准。本项目的代码许可证不授予素材权利。
 
 The Chinese adaptation repository's original license is preserved in `THIRD_PARTY_NOTICES.md`. Its code license explicitly excludes the original source images/data and does not replace the original creator's terms.
+
+## Portrait library / 人物参考库
+
+Read on 2026-10-30 (Asia/Shanghai). The portrait source describes 893 face and 606 styling images as fictional AI-generated people and labels them CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/ . It permits commercial use, editing and reference, makes attribution optional, and supplies images without warranties. The page also states:
+
+> 実在人物のなりすましや公序良俗に反する用途は不可
+>
+> 画像データそのものの再配布・転載はご遠慮ください（お願い）。
+
+The second statement is worded as a request to avoid redistributing or republishing image data alongside the CC0 statement. Both are recorded here. Refer to the source for the full current wording. The additional permission above concerns pose/costume archives only and does not cover this new source.
+
+人物库原站标注 CC0 1.0，允许商用、编辑和参考，署名自愿且无保证；同时要求不冒充真实人物、不用于违背公序良俗的用途，并以“请求”方式表达希望避免图片数据再分发、转载。此处保留两处表述。上文关于公开归档的额外授权仅针对姿势与服饰，不适用于新增人物来源。
+
+Only portrait metadata and locally authored Chinese/English labels are stored. Portrait images remain at their original URLs and are excluded from the pose/costume archive download command. During reference generation, the browser retrieves the selected original and uploads it with the pose and costume to the user's configured image service. This project does not execute the source site's scripts or analytics.
+
+项目仅保存人物元数据和本地编写的中英文标签，缩略图与原图均使用原站链接，不纳入图片归档下载命令。参考生成时，浏览器读取所选人物原图，与姿势、服饰一同发送至用户配置的生图服务；本项目不执行来源站的脚本或统计代码。

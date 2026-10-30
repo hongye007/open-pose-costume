@@ -1,10 +1,11 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { normalizePortraits } from './portrait-data.mjs';
 
 export const root = new URL('../', import.meta.url);
 export const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
 
-export async function normalize(pose, costume, chinese) {
+export async function normalize(pose, costume, chinese, portraits = []) {
   const vocabulary = await readJson('data/vocabulary.json');
   const titles = await readJson('data/pose-titles.en.json');
   const zh = new Map(chinese.map((row) => [row.id, row]));
@@ -132,14 +133,16 @@ export async function normalize(pose, costume, chinese) {
   });
   // Start with foundational poses; retain every source record, including the one incomplete angle set.
   const poses = [...groups.values()].sort((a, b) => Number(a.extended) - Number(b.extended));
+  const characters = await normalizePortraits(portraits);
   return {
-    items: [...poses, ...outfits],
+    items: [...poses, ...outfits, ...characters],
     stats: {
       poseGroups: poses.length,
       poseImages: pose.length,
       costumes: outfits.length,
-      references: poses.length + outfits.length,
-      images: pose.length + outfits.length,
+      characters: characters.length,
+      references: poses.length + outfits.length + characters.length,
+      images: pose.length + outfits.length + characters.length,
     },
   };
 }
@@ -154,7 +157,9 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   await saveCatalog(
     await normalize(
       ...(await Promise.all(
-        ['pose', 'costume', 'pose-zh'].map((name) => readJson(`data/source/${name}.json`)),
+        ['pose', 'costume', 'pose-zh', 'portrait'].map((name) =>
+          readJson(`data/source/${name}.json`),
+        ),
       )),
     ),
   );

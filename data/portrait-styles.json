@@ -1,0 +1,202 @@
+{
+  "2wayバングのワンカールミディアムボブ": {
+    "zh": "双向刘海内扣中长波波头",
+    "en": "Medium bob with two-way bangs and inward curls"
+  },
+  "2wayバングの韓国レイヤー": {
+    "zh": "双向刘海韩式层次发",
+    "en": "Korean layers with two-way bangs"
+  },
+  "くびれショート（襟足長め・シースルーバング）": {
+    "zh": "收腰短发（长后颈、空气刘海）",
+    "en": "Waisted short cut with a long nape and wispy bangs"
+  },
+  "くびれセミロング（透明感カラー）": {
+    "zh": "收腰中长发（通透发色）",
+    "en": "Waisted medium-long hair with translucent color"
+  },
+  "くびれボブ（インナーカラー）": {
+    "zh": "收腰波波头（内层染色）",
+    "en": "Waisted bob with inner color"
+  },
+  "くるくるハードパーマミディアム": {
+    "zh": "中发紧密卷烫发",
+    "en": "Medium hair with tight curls"
+  },
+  "たっぷりレイヤー（ラベンダーグレージュ）": {
+    "zh": "丰盈层次发（薰衣草灰米色）",
+    "en": "Full layers in lavender greige"
+  },
+  "ぱっつん前髪のミディアムストレート": {
+    "zh": "齐刘海中长直发",
+    "en": "Medium straight hair with blunt bangs"
+  },
+  "ウェットヘアの前髪長めショートボブ": {
+    "zh": "湿发短波波头（长刘海）",
+    "en": "Wet-look short bob with long bangs"
+  },
+  "ショートウルフ（ミニウルフ）": {
+    "zh": "短狼尾发",
+    "en": "Short wolf cut"
+  },
+  "シースルーぱっつん前髪のシャギーレイヤー": {
+    "zh": "轻薄齐刘海碎层次发",
+    "en": "Shaggy layers with sheer blunt bangs"
+  },
+  "スパイラルパーマショートボブ（黒髪）": {
+    "zh": "黑色螺旋卷短波波头",
+    "en": "Black short bob with spiral curls"
+  },
+  "スパイラルパーマ韓国風セミロング": {
+    "zh": "韩式中长螺旋卷发",
+    "en": "Korean medium-long spiral curls"
+  },
+  "セミロングウルフ（チェリーレッド）": {
+    "zh": "樱桃红中长狼尾发",
+    "en": "Cherry-red medium-long wolf cut"
+  },
+  "セミロングストレート（前髪あり・暗髪）": {
+    "zh": "深色中长直发（有刘海）",
+    "en": "Dark medium-long straight hair with bangs"
+  },
+  "セミロングニュアンスパーマ": {
+    "zh": "自然微卷中长发",
+    "en": "Medium-long hair with soft waves"
+  },
+  "セミロング顔まわりレイヤー（ミルクティーベージュ）": {
+    "zh": "奶茶米色中长发（修饰脸型层次）",
+    "en": "Milk-tea beige medium-long face-framing layers"
+  },
+  "セミロング黒髪ツヤレイヤー": {
+    "zh": "亮泽黑色中长层次发",
+    "en": "Glossy black medium-long layers"
+  },
+  "ハイトーンミルクティーグレージュミディアム": {
+    "zh": "浅奶茶灰米色中发",
+    "en": "Light milk-tea greige medium hair"
+  },
+  "ハイトーンミルクティーショートボブ": {
+    "zh": "浅奶茶色短波波头",
+    "en": "Light milk-tea short bob"
+  },
+  "ハイライト入り丸みショート": {
+    "zh": "挑染圆弧短发",
+    "en": "Rounded short cut with highlights"
+  },
+  "ハイレイヤー×裾カラー（ブロンド）": {
+    "zh": "高层次金色发尾染",
+    "en": "High layers with blonde dip-dyed ends"
+  },
+  "ハッシュカット（グレージュ）": {
+    "zh": "灰米色轻盈层次剪",
+    "en": "Greige hush cut"
+  },
+  "ハッシュカット（韓国ヘア）": {
+    "zh": "韩式轻盈层次剪",
+    "en": "Korean hush cut"
+  },
+  "バタフライカット（ヘーゼルカラー）": {
+    "zh": "榛子色蝴蝶层次剪",
+    "en": "Hazel butterfly cut"
+  },
+  "バタフライカット（ミントベージュ・シースルーバング）": {
+    "zh": "薄荷米色蝴蝶剪（空气刘海）",
+    "en": "Mint-beige butterfly cut with wispy bangs"
+  },
+  "バーガンディのシースルーレイヤー": {
+    "zh": "酒红色轻透层次发",
+    "en": "Burgundy airy layers"
+  },
+  "マッシュショート（前髪長め）": {
+    "zh": "蘑菇短发（长刘海）",
+    "en": "Short mushroom cut with long bangs"
+  },
+  "ミディアムウルフパーマ": {
+    "zh": "中长狼尾卷发",
+    "en": "Medium wolf cut with curls"
+  },
+  "ミディアムニュアンスパーマ（コテ巻き風）": {
+    "zh": "自然微卷中发（卷棒造型）",
+    "en": "Medium soft waves with an iron-curled finish"
+  },
+  "ミディアムレイヤー内巻きワンカール（まろベージュ）": {
+    "zh": "柔米色中长内扣层次发",
+    "en": "Soft-beige medium layers with inward curls"
+  },
+  "ミニボブパーマ（くせ毛風）": {
+    "zh": "自然卷迷你波波头",
+    "en": "Mini bob with natural-looking curls"
+  },
+  "ミニボブ（オン眉ぱっつん前髪）": {
+    "zh": "眉上齐刘海迷你波波头",
+    "en": "Mini bob with blunt above-brow bangs"
+  },
+  "レイヤーショートボブ（顔まわりレイヤー）": {
+    "zh": "修饰脸型的短层次波波头",
+    "en": "Short layered bob with face-framing layers"
+  },
+  "ロブレイヤー（ミントベージュ）": {
+    "zh": "薄荷米色长波波层次发",
+    "en": "Mint-beige layered lob"
+  },
+  "ロングウルフ（クラゲヘア）": {
+    "zh": "长狼尾水母发",
+    "en": "Long wolf cut with jellyfish layers"
+  },
+  "ワンカールレイヤーと後れ毛（ショコラブラウン）": {
+    "zh": "巧克力棕内扣层次发（鬓角碎发）",
+    "en": "Chocolate-brown curled layers with loose tendrils"
+  },
+  "丸みショートボブ（シースルーバング・ダークブラウン）": {
+    "zh": "深棕圆弧短波波头（空气刘海）",
+    "en": "Dark-brown rounded short bob with wispy bangs"
+  },
+  "内巻きワンカールボブ（ラベンダーアッシュ）": {
+    "zh": "薰衣草灰内扣波波头",
+    "en": "Lavender-ash bob with inward curls"
+  },
+  "切りっぱなしストレートボブ（前髪なし）": {
+    "zh": "无刘海齐切直波波头",
+    "en": "Blunt straight bob without bangs"
+  },
+  "切りっぱなし外ハネミディアムボブ": {
+    "zh": "齐切外翘中长波波头",
+    "en": "Blunt medium bob with flipped ends"
+  },
+  "前下がりひし形ショートボブ（黒髪）": {
+    "zh": "黑色前长菱形短波波头",
+    "en": "Black angled diamond-shaped short bob"
+  },
+  "前下がりミディアムボブ（マロンベージュ）": {
+    "zh": "栗米色前长中长波波头",
+    "en": "Chestnut-beige angled medium bob"
+  },
+  "外ハネボブ（暗髪）": {
+    "zh": "深色外翘波波头",
+    "en": "Dark bob with flipped ends"
+  },
+  "斜めバングのエアリーカール": {
+    "zh": "斜刘海轻盈卷发",
+    "en": "Airy curls with side-swept bangs"
+  },
+  "耳掛けハンサムショート（前髪なし）": {
+    "zh": "无刘海耳后利落短发",
+    "en": "Sleek short hair tucked behind the ears without bangs"
+  },
+  "艶さらストレートミディアムボブ（前髪なし）": {
+    "zh": "无刘海亮泽中长直波波头",
+    "en": "Glossy straight medium bob without bangs"
+  },
+  "重めミディアムレイヤー（バレイヤージュ）": {
+    "zh": "厚重中发层次（渐变挑染）",
+    "en": "Full medium layers with balayage"
+  },
+  "鎖骨丈ミディアムレイヤーボブ（アッシュグレージュ）": {
+    "zh": "灰米色锁骨层次波波头",
+    "en": "Ash-greige collarbone-length layered bob"
+  },
+  "韓国風タッセルボブ（サイドバング）": {
+    "zh": "韩式流苏波波头（侧刘海）",
+    "en": "Korean tassel bob with side bangs"
+  }
+}

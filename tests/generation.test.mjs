@@ -294,3 +294,48 @@ test('adding a character does not relax the gallery origin restriction', async (
   );
   assert.equal(calls, 0);
 });
+
+test('library character is fetched as a third original and uploaded with no API key sent to the source', async () => {
+  const galleryCharacter = {
+    kind: 'character',
+    title: { zh: '人物', en: 'Character' },
+    keywords: { zh: '保留人物身份', en: 'Preserve identity' },
+    variant: { id: 'f123', original: 'https://ai-portrait-gallery.pages.dev/img/full/f123.png' },
+  };
+  const refs = [...references, galleryCharacter];
+  const calls = [];
+  await api.generateReferenceImage(
+    config,
+    refs,
+    api.referencePrompt(refs, 'en'),
+    new AbortController().signal,
+    async (url, options) => {
+      calls.push({ url, options });
+      return calls.length <= 3
+        ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+        : Response.json({ data: [{ b64_json: png }] });
+    },
+  );
+  assert.deepEqual(
+    calls.slice(0, 3).map((call) => call.url),
+    refs.map((ref) => ref.variant.original),
+  );
+  assert.ok(calls.slice(0, 3).every((call) => call.options.headers === undefined));
+  const form = calls[3].options.body;
+  assert.equal(form.getAll('image[]').length, 3);
+  assert.equal(form.getAll('image[]')[2].name, 'f123.png');
+  assert.match(form.get('prompt'), /Reference 3 \(character\)/);
+  galleryCharacter.variant.original = 'https://other.example/person.png';
+  await assert.rejects(
+    api.generateReferenceImage(
+      config,
+      [galleryCharacter],
+      'draw',
+      new AbortController().signal,
+      async () => {
+        throw Error('Must not fetch an untrusted origin');
+      },
+    ),
+    (error) => error.code === 'referenceFailed',
+  );
+});

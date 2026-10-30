@@ -1,6 +1,6 @@
 export type Lang = 'zh' | 'en';
 export type Localized = Record<Lang, string>;
-export type Kind = 'pose' | 'costume';
+export type Kind = 'pose' | 'costume' | 'character';
 export interface Variant {
   id: string;
   angle: string;
@@ -19,6 +19,7 @@ export interface Reference {
   extended: boolean;
   keywords: Localized;
   source: string;
+  portrait?: { section: 'face' | 'styling'; hair: string };
   variants: Variant[];
 }
 export interface Catalog {
@@ -27,6 +28,7 @@ export interface Catalog {
     poseGroups: number;
     poseImages: number;
     costumes: number;
+    characters: number;
     references: number;
     images: number;
   };

@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-29T19:17:31.726Z",
+  "syncedAt": "2026-10-30T14:15:52.777Z",
   "imagesDownloaded": 0,
   "sources": [
     {
@@ -19,6 +19,12 @@
       "url": "https://raw.githubusercontent.com/anhao/ai-pose-gallery-zh/main/data/pose-zh.json",
       "records": 1439,
       "sha256": "d9a8e2796df7870ef8bac5920f1646103ad05b452b76efa76c11b4854f5f8f96"
+    },
+    {
+      "name": "portrait",
+      "url": "https://ai-portrait-gallery.pages.dev/data/images.js",
+      "records": 1499,
+      "sha256": "562f12dcdb27db8e1fca6edeab8269d1f276d9d82245c4a9b0a988e8a71f1965"
     }
   ]
 }

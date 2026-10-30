@@ -44,7 +44,7 @@ import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } fro
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference, Variant } from './types';
 
-type Board = { pose?: string; costume?: string };
+type Board = { pose?: string; costume?: string; character?: string };
 const initialParams = new URLSearchParams(window.location.search);
 const isLanguage = (v: unknown): v is Lang => v === 'zh' || v === 'en';
 const isIds = (v: unknown): v is string[] =>
@@ -53,7 +53,7 @@ const isBoard = (v: unknown): v is Board =>
   !!v &&
   typeof v === 'object' &&
   !Array.isArray(v) &&
-  ['pose', 'costume'].every(
+  ['pose', 'costume', 'character'].every(
     (k) => !(k in v) || typeof (v as Record<string, unknown>)[k] === 'string',
   );
 const viewParam = initialParams.get('view');
@@ -70,10 +70,13 @@ export default function App() {
   const [failed, setFailed] = useState(false);
   const [reload, setReload] = useState(0);
   const [view, setView] = useState<View>(
-    ['pose', 'costume', 'saved'].includes(viewParam || '') ? (viewParam as View) : 'all',
+    ['pose', 'costume', 'character', 'saved'].includes(viewParam || '')
+      ? (viewParam as View)
+      : 'all',
   );
   const [query, setQuery] = useState(initialParams.get('q') || '');
   const [category, setCategory] = useState(initialParams.get('category') || 'all');
+  const [hair, setHair] = useState(initialParams.get('hair') || 'all');
   const [extended, setExtended] = useState(initialParams.get('extended') === '1');
   const [angle, setAngle] = useState<string>(
     angles.includes(initialParams.get('angle') as (typeof angles)[number])
@@ -138,7 +141,7 @@ export default function App() {
   }, [board]);
   useEffect(() => {
     setLimit(24);
-  }, [query, view, category, extended, sort]);
+  }, [query, view, category, hair, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => generationController.current?.abort(), []);
   useEffect(() => () => downloadController.current?.abort(), []);
@@ -151,7 +154,7 @@ export default function App() {
   useEffect(() => {
     const preview = characterReference?.variant.image;
     return () => {
-      if (preview) URL.revokeObjectURL(preview);
+      if (preview?.startsWith('blob:')) URL.revokeObjectURL(preview);
     };
   }, [characterReference]);
   useEffect(() => {
@@ -163,12 +166,13 @@ export default function App() {
       ...(query ? { q: query } : {}),
       ...(category !== 'all' ? { category } : {}),
       ...(extended ? { extended: '1' } : {}),
+      ...(hair !== 'all' ? { hair } : {}),
       ...(angle !== 'front' ? { angle } : {}),
       ...(selectedId ? { item: selectedId, detailAngle } : {}),
     };
     for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
     window.history.replaceState(null, '', url);
-  }, [lang, view, query, category, extended, angle, selectedId, detailAngle]);
+  }, [lang, view, query, category, hair, extended, angle, selectedId, detailAngle]);
 
   const notify = useCallback((message: string) => {
     setToast(message);
@@ -201,22 +205,41 @@ export default function App() {
       sortItems(
         byView.filter(
           (item) =>
-            (category === 'all' || item.category.id === category) && matchesQuery(item, query),
+            (category === 'all' || item.category.id === category) &&
+            (hair === 'all' || item.portrait?.hair === hair) &&
+            matchesQuery(item, query),
         ),
         sort,
         lang,
       ),
-    [byView, category, query, sort, lang],
+    [byView, category, hair, query, sort, lang],
   );
   const selected = items.find((item) => item.id === selectedId);
   const selectedIndex = selected ? visible.findIndex((item) => item.id === selected.id) : -1;
   const variant = selected?.variants.find((v) => v.angle === detailAngle) || selected?.variants[0];
   const boardPose = items.find((item) => item.id === board.pose && item.kind === 'pose');
   const boardCostume = items.find((item) => item.id === board.costume && item.kind === 'costume');
-  const boardCount = Number(!!boardPose) + Number(!!boardCostume);
+  const boardCharacter = items.find(
+    (item) => item.id === board.character && item.kind === 'character',
+  );
+  const activeCharacter: ImageReference | null =
+    characterReference ||
+    (boardCharacter
+      ? {
+          kind: 'character',
+          title: boardCharacter.title,
+          keywords: boardCharacter.keywords,
+          variant: boardCharacter.variants[0],
+        }
+      : null);
+  const boardCount = Number(!!boardPose) + Number(!!boardCostume) + Number(!!activeCharacter);
+  const onBoard = (item: Reference) =>
+    item.kind === 'character'
+      ? !characterReference && board.character === item.id
+      : board[item.kind] === item.id;
   const boardPrompt =
     boardPose && boardCostume
-      ? `${t.promptStart}${boardPose.title[lang]}${t.promptCostume}${boardCostume.keywords[lang]}${t.promptEnd}${characterReference ? t.promptCharacter : ''}`
+      ? `${t.promptStart}${boardPose.title[lang]}${t.promptCostume}${boardCostume.keywords[lang]}${t.promptEnd}${activeCharacter ? t.promptCharacter : ''}`
       : '';
   const navItems = [
     { key: 'all' as const, label: t.all, icon: Grid2X2, count: eligible.length },
@@ -233,6 +256,12 @@ export default function App() {
       count: eligible.filter((item) => item.kind === 'costume').length,
     },
     {
+      key: 'character' as const,
+      label: t.character,
+      icon: UserRound,
+      count: eligible.filter((item) => item.kind === 'character').length,
+    },
+    {
       key: 'saved' as const,
       label: t.saved,
       icon: Bookmark,
@@ -244,10 +273,12 @@ export default function App() {
   function changeView(next: View) {
     setView(next);
     setCategory('all');
+    setHair('all');
     setQuery('');
   }
   function resetFilters() {
     setCategory('all');
+    setHair('all');
     setQuery('');
     setSort('curated');
   }
@@ -257,7 +288,13 @@ export default function App() {
     notify(exists ? t.removedToast : t.savedToast);
   }
   function addToBoard(item: Reference) {
-    setBoard((old) => ({ ...old, [item.kind]: old[item.kind] === item.id ? undefined : item.id }));
+    if (item.kind === 'character') {
+      characterTask.current++;
+      setCharacterLoading(false);
+      setCharacterReference(null);
+      setCharacterError('');
+    }
+    setBoard((old) => ({ ...old, [item.kind]: onBoard(item) ? undefined : item.id }));
     notify(t.boardToast);
   }
   function openDetail(item: Reference) {
@@ -369,6 +406,7 @@ export default function App() {
       image.src = preview;
       await image.decode();
       if (task !== characterTask.current) return;
+      setBoard((old) => ({ ...old, character: undefined }));
       setCharacterReference({
         kind: 'character',
         file,
@@ -391,7 +429,7 @@ export default function App() {
       if (task === characterTask.current)
         setCharacterError(error instanceof ImageGenerationError ? error.code : 'characterInvalid');
     } finally {
-      if (preview) URL.revokeObjectURL(preview);
+      if (preview?.startsWith('blob:')) URL.revokeObjectURL(preview);
       if (task === characterTask.current) setCharacterLoading(false);
     }
   }
@@ -407,21 +445,31 @@ export default function App() {
           variant: chosenVariant,
         });
     };
-    if (item) {
-      add(item, item.variants.find((value) => value.angle === detailAngle) || item.variants[0]);
-      add(item.kind === 'pose' ? boardCostume : boardPose);
-    } else {
-      add(boardPose);
-      add(boardCostume);
-    }
-    if (references.length < 2) {
-      if (item) setBoard((old) => ({ ...old, [item.kind]: item.id }));
+    const pose = item?.kind === 'pose' ? item : boardPose;
+    const costume = item?.kind === 'costume' ? item : boardCostume;
+    if (!pose || !costume) {
+      if (item) {
+        if (item.kind === 'character') {
+          characterTask.current++;
+          setCharacterReference(null);
+          setCharacterError('');
+        }
+        setBoard((old) => ({ ...old, [item.kind]: item.id }));
+      }
       setSelectedId(null);
       setPanel('board');
       notify(generationCopy[lang].chooseReferences);
       return;
     }
-    if (characterReference) references.push(characterReference);
+    add(
+      pose,
+      pose.variants.find(
+        (value) => value.angle === (item?.kind === 'pose' ? detailAngle : 'front'),
+      ) || pose.variants[0],
+    );
+    add(costume);
+    if (item?.kind === 'character') add(item);
+    else if (activeCharacter) references.push(activeCharacter);
     void runGeneration(references, referencePrompt(references, lang));
   }
   useEffect(() => {
@@ -503,7 +551,7 @@ export default function App() {
         >
           <LayoutPanelLeft size={19} />
           <span>{t.board}</span>
-          <small>{boardCount}/2</small>
+          <small>{boardCount}/3</small>
         </button>
         <div className="board-invitation">
           <div className="mini-pair">
@@ -712,7 +760,7 @@ export default function App() {
             </span>
             <span className="summary-right">
               <Layers2 size={14} />
-              POSE + COSTUME
+              POSE + COSTUME + CHARACTER
             </span>
           </div>
 
@@ -780,19 +828,36 @@ export default function App() {
                 ))}
               </div>
             </div>
+            {view === 'character' && (
+              <div className="portrait-filters">
+                <span>{t.hairLength}</span>
+                <div className="category-chips" role="group" aria-label={t.hairLength}>
+                  {(['all', 'short', 'medium', 'medium-long', 'long'] as const).map((key) => (
+                    <button
+                      key={key}
+                      className={hair === key ? 'chip active' : 'chip'}
+                      aria-pressed={hair === key}
+                      onClick={() => setHair(key)}
+                    >
+                      {key === 'all' ? t.allHair : t.hairLengths[key]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="result-toolbar">
               <span>
                 {visible.length.toLocaleString(lang)} {t.results}
                 <span className="result-dot">·</span>
                 <span className="regular-label">{extended ? t.extended : t.filterHint}</span>
-                {(query || category !== 'all') && (
+                {(query || category !== 'all' || hair !== 'all') && (
                   <button className="reset-inline" onClick={resetFilters}>
                     {t.clear}
                     <X size={12} />
                   </button>
                 )}
               </span>
-              {view !== 'costume' && (
+              {byView.some((item) => item.kind === 'pose') && (
                 <label className="angle-control">
                   <span>{t.angle}</span>
                   <select
@@ -918,10 +983,16 @@ export default function App() {
                           <span className="card-type">
                             {item.kind === 'pose' ? (
                               <PersonStanding size={13} />
-                            ) : (
+                            ) : item.kind === 'costume' ? (
                               <Shirt size={13} />
+                            ) : (
+                              <UserRound size={13} />
                             )}{' '}
-                            {item.kind === 'pose' ? 'POSE' : 'COSTUME'}
+                            {item.kind === 'pose'
+                              ? 'POSE'
+                              : item.kind === 'costume'
+                                ? 'COSTUME'
+                                : 'CHARACTER'}
                           </span>
                           <button
                             className={`save-button ${isSaved ? 'is-saved' : ''}`}
@@ -941,29 +1012,25 @@ export default function App() {
                         <div className="card-meta">
                           <div className="card-category">
                             <span>{item.category[lang]}</span>
-                            <code>{item.kind === 'pose' ? item.code : item.id}</code>
+                            <code>{item.code}</code>
                           </div>
                           <button className="card-title" onClick={() => openDetail(item)}>
                             {item.title[lang]}
                           </button>
                           <div className="card-bottom">
                             <span>
-                              {item.kind === 'pose'
-                                ? preview.label[lang]
-                                : item.keywords[lang].split(' ').slice(0, 3).join(' · ')}
+                              {item.kind === 'character'
+                                ? item.series[lang]
+                                : item.kind === 'pose'
+                                  ? preview.label[lang]
+                                  : item.keywords[lang].split(' ').slice(0, 3).join(' · ')}
                             </span>
                             <button
-                              className={
-                                board[item.kind] === item.id ? 'add-pair selected' : 'add-pair'
-                              }
-                              aria-label={board[item.kind] === item.id ? t.removeBoard : t.addBoard}
+                              className={onBoard(item) ? 'add-pair selected' : 'add-pair'}
+                              aria-label={onBoard(item) ? t.removeBoard : t.addBoard}
                               onClick={() => addToBoard(item)}
                             >
-                              {board[item.kind] === item.id ? (
-                                <Check size={15} />
-                              ) : (
-                                <Plus size={15} />
-                              )}
+                              {onBoard(item) ? <Check size={15} /> : <Plus size={15} />}
                             </button>
                           </div>
                         </div>
@@ -1011,7 +1078,11 @@ export default function App() {
           <div className="detail-stage">
             <div className="detail-stage-top">
               <span>
-                {selected.kind === 'pose' ? 'POSE STUDY' : 'COSTUME STUDY'}{' '}
+                {selected.kind === 'pose'
+                  ? 'POSE STUDY'
+                  : selected.kind === 'costume'
+                    ? 'COSTUME STUDY'
+                    : 'CHARACTER STUDY'}{' '}
                 <code>/ {selected.code}</code>
               </span>
               <button
@@ -1114,8 +1185,8 @@ export default function App() {
             </div>
             <div className="detail-actions">
               <button className="primary-button" onClick={() => addToBoard(selected)}>
-                {board[selected.kind] === selected.id ? <Check size={17} /> : <Plus size={17} />}{' '}
-                {board[selected.kind] === selected.id ? t.removeBoard : t.addBoard}
+                {onBoard(selected) ? <Check size={17} /> : <Plus size={17} />}{' '}
+                {onBoard(selected) ? t.removeBoard : t.addBoard}
               </button>
               <div className="detail-action-row">
                 <button className="secondary-button" onClick={() => save(selected)}>
@@ -1169,7 +1240,7 @@ export default function App() {
           <div className="panel-heading">
             <div>
               <span className="section-kicker">THE PAIRING BOARD</span>
-              <h2>{characterReference ? t.boardCharacterTitle : t.boardTitle}</h2>
+              <h2>{activeCharacter ? t.boardCharacterTitle : t.boardTitle}</h2>
             </div>
             <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
               <X size={22} />
@@ -1251,10 +1322,10 @@ export default function App() {
               }}
             />
             <div className="board-character-row">
-              {characterReference ? (
+              {activeCharacter ? (
                 <img
                   className="board-character-preview"
-                  src={characterReference.variant.thumbnail}
+                  src={activeCharacter.variant.thumbnail}
                   alt={generationCopy[lang].character}
                 />
               ) : (
@@ -1265,10 +1336,26 @@ export default function App() {
               <div className="board-character-description">
                 <h3>{t.characterOptional}</h3>
                 <p className="board-character-filename">
-                  {characterReference ? characterReference.file.name : t.characterFormats}
+                  {characterReference
+                    ? characterReference.file.name
+                    : activeCharacter
+                      ? activeCharacter.title[lang]
+                      : t.characterFormats}
                 </p>
               </div>
               <div className="board-character-actions">
+                <button
+                  type="button"
+                  className="secondary-button"
+                  onClick={() => {
+                    setPanel(null);
+                    changeView('character');
+                    document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <UserRound size={15} />
+                  {t.chooseCharacter}
+                </button>
                 <button
                   type="button"
                   className="secondary-button"
@@ -1282,18 +1369,20 @@ export default function App() {
                   )}
                   {characterLoading
                     ? t.characterLoading
-                    : characterReference
+                    : activeCharacter
                       ? t.characterReplace
                       : t.characterUpload}
                 </button>
-                {characterReference && (
+                {activeCharacter && (
                   <button
                     type="button"
                     className="icon-button"
                     disabled={characterLoading}
                     aria-label={t.characterRemove}
                     onClick={() => {
+                      characterTask.current++;
                       setCharacterReference(null);
+                      setBoard((old) => ({ ...old, character: undefined }));
                       setCharacterError('');
                     }}
                   >
@@ -1302,7 +1391,9 @@ export default function App() {
                 )}
               </div>
             </div>
-            <p className="board-character-note">{t.characterPrivacy}</p>
+            <p className="board-character-note">
+              {characterReference ? t.characterPrivacy : t.characterLibraryNote}
+            </p>
             {characterError && (
               <p className="board-character-error" role="alert">
                 {generationCopy[lang][characterError as keyof typeof generationCopy.zh] ||

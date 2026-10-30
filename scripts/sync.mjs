@@ -1,16 +1,17 @@
 import { writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { root, normalize, saveCatalog } from './build-data.mjs';
+import { root, normalize, saveCatalog, readJson } from './build-data.mjs';
 
 const sources = {
   pose: 'https://ai-pose-gallery.pages.dev/',
   costume: 'https://ai-costume-gallery.pages.dev/',
   'pose-zh': 'https://raw.githubusercontent.com/anhao/ai-pose-gallery-zh/main/data/pose-zh.json',
+  portrait: 'https://ai-portrait-gallery.pages.dev/data/images.js',
 };
-export function extractDataset(html) {
+export function extractDataset(html, marker = /\bconst\s+D\s*=\s*/) {
   // Parse JSON literals only. Never execute source-site scripts.
-  const start = html.match(/\bconst\s+D\s*=\s*/);
+  const start = html.match(marker);
   if (!start) throw Error('Source dataset marker not found; review the source site format');
   const rest = html.slice(start.index + start[0].length);
   let quote = false,
@@ -58,26 +59,47 @@ async function fetchText(url) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const portraitOnly = process.argv.includes('--portrait-only');
   const entries = await Promise.all(
-    Object.entries(sources).map(async ([name, url]) => {
-      const text = await fetchText(url);
-      const rows = name === 'pose-zh' ? JSON.parse(text) : extractDataset(text);
-      if (!Array.isArray(rows) || !rows.length) throw Error(`Empty dataset from ${url}`);
-      return [name, rows];
-    }),
+    Object.entries(sources)
+      .filter(([name]) => !portraitOnly || name === 'portrait')
+      .map(async ([name, url]) => {
+        const text = await fetchText(url);
+        const rows =
+          name === 'pose-zh'
+            ? JSON.parse(text)
+            : extractDataset(
+                text,
+                name === 'portrait' ? /\bwindow\.GALLERY_IMAGES\s*=\s*/ : undefined,
+              );
+        if (!Array.isArray(rows) || !rows.length) throw Error(`Empty dataset from ${url}`);
+        return [name, rows];
+      }),
   );
   const datasets = Object.fromEntries(entries);
+  if (portraitOnly)
+    for (const name of ['pose', 'costume', 'pose-zh'])
+      datasets[name] = await readJson(`data/source/${name}.json`);
   // Validate all translations before replacing any local snapshots.
-  const catalog = await normalize(datasets.pose, datasets.costume, datasets['pose-zh']);
+  const catalog = await normalize(
+    datasets.pose,
+    datasets.costume,
+    datasets['pose-zh'],
+    datasets.portrait,
+  );
+  const previous = portraitOnly ? await readJson('data/sync-manifest.json') : { sources: [] };
   const manifest = {
     syncedAt: new Date().toISOString(),
     imagesDownloaded: 0,
-    sources: entries.map(([name, rows]) => ({
-      name,
-      url: sources[name],
-      records: rows.length,
-      sha256: createHash('sha256').update(JSON.stringify(rows)).digest('hex'),
-    })),
+    sources: [
+      ...previous.sources.filter((source) => !entries.some(([name]) => name === source.name)),
+      ...entries.map(([name, rows]) => ({
+        name,
+        url: sources[name],
+        records: rows.length,
+        sha256: createHash('sha256').update(JSON.stringify(rows)).digest('hex'),
+      })),
+    ],
   };
   for (const [name, rows] of entries)
     await writeFile(new URL(`data/source/${name}.json`, root), JSON.stringify(rows));

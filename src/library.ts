@@ -1,7 +1,7 @@
 import type { Lang, Reference } from './types';
 import vocabulary from '../data/vocabulary.json';
 
-export type View = 'all' | 'pose' | 'costume' | 'saved';
+export type View = 'all' | 'pose' | 'costume' | 'character' | 'saved';
 export type Sort = 'curated' | 'name' | 'code';
 export const angles = ['front', 'high', 'low', 'side', 'diag'] as const;
 const chineseTerms = [...new Set(Object.values(vocabulary.costume))].sort(
@@ -55,10 +55,12 @@ export function sortItems(items: Reference[], sort: Sort, lang: Lang): Reference
     );
   const poses = items.filter((item) => item.kind === 'pose');
   const costumes = items.filter((item) => item.kind === 'costume');
+  const characters = items.filter((item) => item.kind === 'character');
   const mixed: Reference[] = [];
-  for (let i = 0; i < Math.max(poses.length, costumes.length); i++) {
+  for (let i = 0; i < Math.max(poses.length, costumes.length, characters.length); i++) {
     if (poses[i]) mixed.push(poses[i]);
     if (costumes[i]) mixed.push(costumes[i]);
+    if (characters[i]) mixed.push(characters[i]);
   }
   return mixed;
 }

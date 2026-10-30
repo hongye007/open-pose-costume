@@ -208,14 +208,17 @@ export async function generateReferenceImage(
   const combined = AbortSignal.any([signal, timeout.signal]);
   try {
     const urls = references.map((reference) => {
-      if (reference.kind === 'character') return null;
+      if ('file' in reference) return null;
       const url = new URL(reference.variant.original);
-      if (url.origin !== `https://ai-${reference.kind}-gallery.pages.dev`)
+      if (
+        url.origin !==
+        `https://ai-${reference.kind === 'character' ? 'portrait' : reference.kind}-gallery.pages.dev`
+      )
         throw new ImageGenerationError('referenceFailed');
       return url.href;
     });
     for (const reference of references)
-      if (reference.kind === 'character') await validateCharacterFile(reference.file);
+      if ('file' in reference) await validateCharacterFile(reference.file);
     const form = new FormData();
     form.set('model', valid.model);
     form.set('prompt', prompt.trim());
@@ -225,7 +228,7 @@ export async function generateReferenceImage(
     for (const [index, reference] of references.entries()) {
       combined.throwIfAborted();
       let blob: Blob;
-      if (reference.kind === 'character') blob = reference.file;
+      if ('file' in reference) blob = reference.file;
       else {
         const response = await fetcher(urls[index]!, {
           signal: combined,
@@ -245,7 +248,7 @@ export async function generateReferenceImage(
       form.append(
         'image[]',
         blob,
-        `${reference.kind === 'character' ? 'character-upload' : reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
+        `${'file' in reference ? 'character-upload' : reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
       );
     }
     combined.throwIfAborted();
