@@ -322,6 +322,15 @@ html {
   font-size: 10px;
   color: #697182;
 }
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+.github-link {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
 .social-link:hover {
   color: var(--blue);
 }

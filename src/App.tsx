@@ -11,6 +11,7 @@ import {
   Download,
   ExternalLink,
   Globe2,
+  Github,
   Grid2X2,
   Info,
   ImagePlus,
@@ -532,20 +533,40 @@ export default function App() {
             </label>
             <p>{t.extendedHint}</p>
           </div>
-          <a
-            className="social-link"
-            href="https://x.com/HongyeMain"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t.xProfile}
-            title={t.xProfile}
-          >
-            <svg width={16} height={16} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933ZM17.61 20.645h2.039L6.486 3.24H4.298L17.61 20.645Z" />
-            </svg>
-            @HongyeMain
-            <ArrowUpRight size={14} />
-          </a>
+          <div className="social-links">
+            <a
+              className="social-link"
+              href="https://x.com/HongyeMain"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.xProfile}
+              title={t.xProfile}
+            >
+              <svg
+                width={16}
+                height={16}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932 6.064-6.933ZM17.61 20.645h2.039L6.486 3.24H4.298L17.61 20.645Z" />
+              </svg>
+              @HongyeMain
+              <ArrowUpRight size={14} />
+            </a>
+            <a
+              className="social-link github-link"
+              href="https://github.com/hongye007/open-pose-costume"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.githubRepo}
+              title={t.githubRepo}
+            >
+              <Github size={16} />
+              GitHub / open-pose-costume
+              <ArrowUpRight size={14} />
+            </a>
+          </div>
           <span className="local-note">
             <span />
             {t.local}
