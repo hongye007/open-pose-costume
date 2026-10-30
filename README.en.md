@@ -55,11 +55,11 @@ Uploaded character references support PNG, JPG and WebP up to 10 MB. The image s
 
 **Side by side**: view the selected reference beside the generated result.
 
-![Side-by-side example in Chinese: pose, costume and character references, with the original pose beside the generated result](docs/images/generation-side-by-side-zh.webp)
+![Side-by-side example in Chinese: pose, costume and character references, with the original pose beside the generated result](docs/images/generation-character-side-by-side-zh.webp)
 
 **Overlay**: drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported.
 
-![Overlay example in Chinese: pose, costume and character references, with a slider comparing the generated image and original pose](docs/images/generation-overlay-zh.webp)
+![Overlay example in Chinese: pose, costume and character references, with a slider comparing the generated image and original pose](docs/images/generation-character-overlay-zh.webp)
 
 These are example outputs. Results depend on the model, description and service configuration.
 

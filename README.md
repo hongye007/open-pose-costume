@@ -55,11 +55,11 @@
 
 **双列预览**：所选参考与生成结果并排展示。
 
-![双列预览：姿势、服饰与人物三种参考，姿势原图与生成结果并排展示](docs/images/generation-side-by-side-zh.webp)
+![双列预览：姿势、服饰与人物三种参考，姿势原图与生成结果并排展示](docs/images/generation-character-side-by-side-zh.webp)
 
 **叠加预览**：在同一个画框中拖动滑杆对比，左侧为生成图、右侧为所选参考；支持方向键与 Home / End。
 
-![叠加预览：姿势、服饰与人物三种参考，拖动滑杆对比生成图与姿势原图](docs/images/generation-overlay-zh.webp)
+![叠加预览：姿势、服饰与人物三种参考，拖动滑杆对比生成图与姿势原图](docs/images/generation-character-overlay-zh.webp)
 
 上图为生成效果示例，实际结果取决于模型、描述与服务配置。
 
