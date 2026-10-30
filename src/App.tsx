@@ -570,6 +570,18 @@ export default function App() {
               GitHub / open-pose-costume
               <ArrowUpRight size={14} />
             </a>
+            <a
+              className="social-link github-link"
+              href="https://github.com/hongye007/open-pose-costume-skill"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.skillRepo}
+              title={t.skillRepo}
+            >
+              <Sparkles size={16} />
+              <span>Skill / open-pose-costume-skill</span>
+              <ArrowUpRight size={14} />
+            </a>
           </div>
           <span className="local-note">
             <span />

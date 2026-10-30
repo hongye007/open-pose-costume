@@ -2,7 +2,7 @@
 
 **中文** · [English](README.en.md)
 
-[在线体验](https://hongye007.github.io/open-pose-costume/)
+[在线体验](https://hongye007.github.io/open-pose-costume/) · [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill)
 
 从姿势，到穿着。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
 
@@ -55,6 +55,10 @@
 ![叠加预览示例（英文界面）：拖动滑杆比较生成图与参考图](docs/images/generation-overlay-en.webp)
 
 上图为生成效果示例，实际结果取决于模型、描述与服务配置。
+
+## 配套 Skill
+
+[open-pose-costume-skill](https://github.com/hongye007/open-pose-costume-skill) 将姿势、服饰与人物参考组合生成为一张人物图，让你在 Codex 中通过自然语言使用这套创作流程。网站用于浏览和挑选参考，Skill 用于执行人物生成；安装方法、示例与生图服务配置见 Skill 仓库的中英文 README。
 
 ## 本地运行
 

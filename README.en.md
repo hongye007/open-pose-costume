@@ -2,7 +2,7 @@
 
 [中文](README.md) · **English**
 
-[Live demo](https://hongye007.github.io/open-pose-costume/)
+[Live demo](https://hongye007.github.io/open-pose-costume/) · [Character generation skill](https://github.com/hongye007/open-pose-costume-skill)
 
 A pose. A point of view. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
 
@@ -55,6 +55,10 @@ Character references support PNG, JPG and WebP up to 10 MB. The image stays in p
 ![Overlay preview: drag the divider to compare the generated image and reference](docs/images/generation-overlay-en.webp)
 
 These are example outputs. Results depend on the model, description and service configuration.
+
+## Companion skill
+
+[open-pose-costume-skill](https://github.com/hongye007/open-pose-costume-skill) combines pose, costume and character references into one character image through natural-language requests in Codex. Browse and select references on this website, then use the skill to generate a character. See the skill repository's bilingual README for installation, examples and image service configuration.
 
 ## Run locally
 
