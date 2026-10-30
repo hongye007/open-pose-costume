@@ -77,6 +77,8 @@ npm run dev -- --port 5200
 
 当前使用 [GitHub Pages](https://hongye007.github.io/open-pose-costume/) 部署。推送到 `main` 后，GitHub Actions 自动运行测试、以 `/open-pose-costume/` 为基础路径构建并部署；测试或构建失败时不会更新网站。其他分支及拉取请求只执行检查。
 
+CI 使用稀疏检出，跳过 `pose/`、`costume/` 图片归档的下载与检出，保留测试和构建所需文件。
+
 基于 **React 19 · TypeScript · Vite · Lucide**。参考库是静态网站，参考生成需自行配置生图服务。
 
 ```sh
