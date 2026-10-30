@@ -7,9 +7,9 @@
 - **Free trial instructions**: [Read the Feishu guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 - **Author on X**: [@HongyeMain](https://x.com/HongyeMain)
 
-A pose. A point of view. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
+From pose and outfit, to character. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
 
-![Open Pose & Costume homepage in Chinese: pose, costume and character references combined into a generated character](docs/images/hero-zh.webp)
+![Open Pose & Costume English homepage: pose, costume and character references combined into a generated character](docs/images/hero-character-workflow-en.webp)
 
 **288 pose groups · 1,439 pose views · 1,407 outfits · 1,499 character references · 4,345 reference images**
 

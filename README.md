@@ -7,9 +7,9 @@
 - **免费试用体验方式**：[查看飞书文档](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 - **作者 X 主页**：[@HongyeMain](https://x.com/HongyeMain)
 
-从姿势，到穿着。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
+从姿势，服饰到人物。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
 
-![Open Pose & Costume 中文首页：姿势、服饰与人物三种参考合成角色](docs/images/hero-zh.webp)
+![Open Pose & Costume 中文首页：姿势、服饰与人物三种参考合成角色](docs/images/hero-character-workflow-zh.webp)
 
 **288 组姿势 · 1,439 个姿势视角 · 1,407 套服饰 · 1,499 张人物参考 · 4,345 张参考图**
 
