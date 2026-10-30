@@ -865,6 +865,34 @@ export default function App() {
                               <ArrowUpRight size={20} />
                             </span>
                           </button>
+                          {item.kind === 'pose' && (
+                            <div className="pose-angle-strip" aria-label={t.angles}>
+                              {item.variants.map((variant) => (
+                                <button
+                                  key={variant.id}
+                                  type="button"
+                                  className={`pose-angle-thumb ${
+                                    variant.angle === angle ? 'active' : ''
+                                  }`}
+                                  aria-label={variant.label[lang]}
+                                  aria-pressed={variant.angle === angle}
+                                  onClick={() => setAngle(variant.angle)}
+                                >
+                                  <span className="pose-angle-thumb-image">
+                                    <RemoteImage
+                                      src={variant.thumbnail}
+                                      alt=""
+                                      lang={lang}
+                                      eager={index < 4}
+                                    />
+                                  </span>
+                                  <span className="pose-angle-thumb-label">
+                                    {variant.label[lang]}
+                                  </span>
+                                </button>
+                              ))}
+                            </div>
+                          )}
                           <span className="card-type">
                             {item.kind === 'pose' ? (
                               <PersonStanding size={13} />

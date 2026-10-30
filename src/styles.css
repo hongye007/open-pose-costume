@@ -837,6 +837,70 @@ h2 > span {
 .reference-card:hover .card-open > img {
   transform: scale(1.035);
 }
+.pose-angle-strip {
+  position: absolute;
+  z-index: 4;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid #ffffff1c;
+  border-radius: 7px;
+  background: #151916ed;
+  box-shadow: 0 4px 12px #1018273d;
+}
+.pose-angle-thumb {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  padding: 1px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #c1c9d8;
+  background: transparent;
+  font-size: 8px;
+  line-height: 1.2;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
+}
+.pose-angle-thumb:hover,
+.pose-angle-thumb.active {
+  border-color: #d8b46a;
+  color: #f1d18a;
+  background: #ffffff14;
+}
+.pose-angle-thumb-image {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #f8f9fb;
+}
+.pose-angle-thumb-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.pose-angle-thumb-image .image-fallback {
+  min-height: 0;
+  height: 100%;
+  padding: 2px;
+  font-size: 7px;
+}
+.pose-angle-thumb-label {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .costume-card .card-open {
   padding: 28px 7px 13px;
 }
@@ -2186,6 +2250,20 @@ dialog::backdrop {
   }
   .card-open {
     padding: 29px 6px 18px;
+  }
+  .pose-angle-strip {
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 5px;
+  }
+  .pose-angle-thumb {
+    gap: 2px;
+    padding: 1px;
+    border-radius: 3px;
+    font-size: 6px;
   }
   .card-type {
     top: 10px;
