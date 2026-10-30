@@ -876,6 +876,8 @@ export default function App() {
                                   }`}
                                   aria-label={variant.label[lang]}
                                   aria-pressed={variant.angle === angle}
+                                  onMouseEnter={() => setAngle(variant.angle)}
+                                  onFocus={() => setAngle(variant.angle)}
                                   onClick={() => setAngle(variant.angle)}
                                 >
                                   <span className="pose-angle-thumb-image">

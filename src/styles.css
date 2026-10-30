@@ -837,12 +837,19 @@ h2 > span {
 .reference-card:hover .card-open > img {
   transform: scale(1.035);
 }
+.pose-card {
+  --pose-angle-strip-height: 68px;
+}
+.pose-card .card-open {
+  height: calc(100% - var(--pose-angle-strip-height));
+}
 .pose-angle-strip {
   position: absolute;
   z-index: 4;
   left: 8px;
   right: 8px;
-  bottom: 8px;
+  bottom: 0;
+  height: var(--pose-angle-strip-height);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 2px;
@@ -2254,7 +2261,7 @@ dialog::backdrop {
   .pose-angle-strip {
     left: 5px;
     right: 5px;
-    bottom: 5px;
+    bottom: 0;
     gap: 2px;
     padding: 3px;
     border-radius: 5px;
@@ -2264,6 +2271,9 @@ dialog::backdrop {
     padding: 1px;
     border-radius: 3px;
     font-size: 6px;
+  }
+  .pose-card {
+    --pose-angle-strip-height: 58px;
   }
   .card-type {
     top: 10px;
