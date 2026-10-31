@@ -10,6 +10,9 @@ import {
   ZoomIn,
   ZoomOut,
   Settings,
+  SlidersHorizontal,
+  RotateCcw,
+  Move,
   X,
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
@@ -339,77 +342,261 @@ export function ComparisonWipe({
 }) {
   const t = generationCopy[lang];
   const [position, setPosition] = useState(50);
+  const [aligning, setAligning] = useState(false);
+  const [target, setTarget] = useState<'generated' | 'reference'>('reference');
+  const [transforms, setTransforms] = useState({
+    generated: { scale: 1, x: 0, y: 0 },
+    reference: { scale: 1, x: 0, y: 0 },
+  });
+  const drag = useRef<{
+    pointer: number;
+    startX: number;
+    startY: number;
+    x: number;
+    y: number;
+  } | null>(null);
+  useEffect(() => {
+    setTransforms((old) => ({ ...old, reference: { scale: 1, x: 0, y: 0 } }));
+    drag.current = null;
+  }, [reference.variant.original]);
+  useEffect(() => {
+    setTransforms({ generated: { scale: 1, x: 0, y: 0 }, reference: { scale: 1, x: 0, y: 0 } });
+    setPosition(50);
+    drag.current = null;
+  }, [generated]);
+  const current = transforms[target];
+  function updateScale(scale: number) {
+    setTransforms((old) => ({
+      ...old,
+      [target]: { ...old[target], scale: Math.max(0.25, Math.min(4, scale)) },
+    }));
+  }
+  const transformStyle = (kind: 'generated' | 'reference') => ({
+    transform: `translate(${transforms[kind].x}%, ${transforms[kind].y}%) scale(${transforms[kind].scale})`,
+  });
   return (
-    <div className="comparison-wipe">
-      <div className="comparison-wipe-layer">
-        <RemoteImage
-          src={reference.variant.image}
-          alt={reference.title[lang]}
-          lang={lang}
-          eager
-          retryable
-        />
-      </div>
-      <div
-        className="comparison-wipe-layer comparison-wipe-generated"
-        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
-      >
-        <img
-          src={generated}
-          alt={t.generated}
-          referrerPolicy="no-referrer"
-          onError={onImageError}
-        />
-      </div>
-      <div className="comparison-wipe-label generated">
+    <div className="comparison-workspace">
+      <div className="comparison-alignment-toolbar">
         <button
           type="button"
-          aria-label={`${t.openImage}: ${t.generated}`}
-          title={t.openImage}
-          onClick={onOpenGenerated}
+          aria-pressed={aligning}
+          onClick={() => {
+            setAligning(!aligning);
+            drag.current = null;
+          }}
         >
-          <Maximize2 size={13} />
-          {t.generated}
+          <SlidersHorizontal size={13} />
+          {aligning ? t.finishAlignment : t.adjustAlignment}
         </button>
-        <ImageDownloadButton
-          source={generated}
-          filename="generated-character"
-          lang={lang}
-          label={`${t.downloadImage}: ${t.generated}`}
-        />
-      </div>
-      <div className="comparison-wipe-label reference">
         <button
           type="button"
-          aria-label={`${t.openImage}: ${t.reference}`}
-          title={t.openImage}
-          onClick={onOpenReference}
+          onClick={() => {
+            setTransforms({
+              generated: { scale: 1, x: 0, y: 0 },
+              reference: { scale: 1, x: 0, y: 0 },
+            });
+            setPosition(50);
+          }}
         >
-          <Maximize2 size={13} />
-          {t.reference}
+          <RotateCcw size={12} />
+          {t.resetAlignment}
         </button>
-        <ImageDownloadButton
-          source={reference.variant.original}
-          filename={reference.variant.id}
-          lang={lang}
-          label={`${t.downloadImage}: ${t.reference}`}
-        />
       </div>
-      <div className="comparison-wipe-divider" style={{ left: `${position}%` }} aria-hidden="true">
-        <span>
-          <ArrowLeftRight size={19} />
-        </span>
+      {aligning && (
+        <div className="comparison-alignment-controls">
+          <div className="comparison-alignment-options">
+            <label>
+              {t.adjustImage}
+              <select
+                aria-label={t.adjustImage}
+                value={target}
+                onChange={(event) => {
+                  setTarget(event.target.value as typeof target);
+                  drag.current = null;
+                }}
+              >
+                <option value="reference">{t.reference}</option>
+                <option value="generated">{t.generated}</option>
+              </select>
+            </label>
+            <div className="comparison-alignment-zoom">
+              <button
+                type="button"
+                aria-label={t.zoomOut}
+                disabled={current.scale <= 0.25}
+                onClick={() => updateScale(current.scale - 0.1)}
+              >
+                <ZoomOut size={14} />
+              </button>
+              <input
+                type="range"
+                min="25"
+                max="400"
+                step="5"
+                aria-label={t.imageScale}
+                value={Math.round(current.scale * 100)}
+                onChange={(event) => updateScale(Number(event.target.value) / 100)}
+              />
+              <button
+                type="button"
+                aria-label={t.zoomIn}
+                disabled={current.scale >= 4}
+                onClick={() => updateScale(current.scale + 0.1)}
+              >
+                <ZoomIn size={14} />
+              </button>
+              <output>{Math.round(current.scale * 100)}%</output>
+            </div>
+          </div>
+          <p>
+            <Move size={12} />
+            {t.alignmentHint}
+          </p>
+        </div>
+      )}
+      <div className={`comparison-wipe ${aligning ? 'is-aligning' : ''}`}>
+        <div className="comparison-wipe-layer">
+          <div className="comparison-wipe-image" style={transformStyle('reference')}>
+            <RemoteImage
+              src={reference.variant.image}
+              alt={reference.title[lang]}
+              lang={lang}
+              eager
+              retryable
+            />
+          </div>
+        </div>
+        <div
+          className="comparison-wipe-layer comparison-wipe-generated"
+          style={{ clipPath: aligning ? 'none' : `inset(0 ${100 - position}% 0 0)` }}
+        >
+          <div className="comparison-wipe-image" style={transformStyle('generated')}>
+            <img
+              src={generated}
+              alt={t.generated}
+              referrerPolicy="no-referrer"
+              onError={onImageError}
+            />
+          </div>
+        </div>
+        <div className="comparison-wipe-label generated">
+          <button
+            type="button"
+            aria-label={`${t.openImage}: ${t.generated}`}
+            title={t.openImage}
+            onClick={onOpenGenerated}
+          >
+            <Maximize2 size={13} />
+            {t.generated}
+          </button>
+          <ImageDownloadButton
+            source={generated}
+            filename="generated-character"
+            lang={lang}
+            label={`${t.downloadImage}: ${t.generated}`}
+          />
+        </div>
+        <div className="comparison-wipe-label reference">
+          <button
+            type="button"
+            aria-label={`${t.openImage}: ${t.reference}`}
+            title={t.openImage}
+            onClick={onOpenReference}
+          >
+            <Maximize2 size={13} />
+            {t.reference}
+          </button>
+          <ImageDownloadButton
+            source={reference.variant.original}
+            filename={reference.variant.id}
+            lang={lang}
+            label={`${t.downloadImage}: ${t.reference}`}
+          />
+        </div>
+        <div
+          className="comparison-wipe-divider"
+          style={{ left: `${position}%` }}
+          aria-hidden="true"
+        >
+          <span>
+            <ArrowLeftRight size={19} />
+          </span>
+        </div>
+        {aligning ? (
+          <div
+            className="comparison-alignment-drag"
+            role="group"
+            tabIndex={0}
+            aria-label={`${t.moveImage}: ${target === 'reference' ? t.reference : t.generated}`}
+            onPointerDown={(event) => {
+              if (event.button !== 0) return;
+              event.preventDefault();
+              event.currentTarget.focus();
+              event.currentTarget.setPointerCapture(event.pointerId);
+              drag.current = {
+                pointer: event.pointerId,
+                startX: event.clientX,
+                startY: event.clientY,
+                x: current.x,
+                y: current.y,
+              };
+            }}
+            onPointerMove={(event) => {
+              const start = drag.current;
+              if (!start || start.pointer !== event.pointerId) return;
+              const rect = event.currentTarget.getBoundingClientRect();
+              const clamp = (value: number) => Math.max(-100, Math.min(100, value));
+              setTransforms((old) => ({
+                ...old,
+                [target]: {
+                  ...old[target],
+                  x: clamp(start.x + ((event.clientX - start.startX) / rect.width) * 100),
+                  y: clamp(start.y + ((event.clientY - start.startY) / rect.height) * 100),
+                },
+              }));
+            }}
+            onPointerUp={() => {
+              drag.current = null;
+            }}
+            onPointerCancel={() => {
+              drag.current = null;
+            }}
+            onLostPointerCapture={() => {
+              drag.current = null;
+            }}
+            onKeyDown={(event) => {
+              const direction = {
+                ArrowLeft: [-1, 0],
+                ArrowRight: [1, 0],
+                ArrowUp: [0, -1],
+                ArrowDown: [0, 1],
+              }[event.key];
+              if (!direction) return;
+              event.preventDefault();
+              const step = event.shiftKey ? 10 : 1;
+              setTransforms((old) => ({
+                ...old,
+                [target]: {
+                  ...old[target],
+                  x: Math.max(-100, Math.min(100, old[target].x + direction[0] * step)),
+                  y: Math.max(-100, Math.min(100, old[target].y + direction[1] * step)),
+                },
+              }));
+            }}
+          />
+        ) : (
+          <input
+            className="comparison-wipe-range"
+            type="range"
+            min={0}
+            max={100}
+            value={position}
+            aria-label={t.comparisonSlider}
+            aria-valuetext={`${t.generated} ${position}% · ${t.reference} ${100 - position}%`}
+            onChange={(event) => setPosition(Number(event.target.value))}
+          />
+        )}
       </div>
-      <input
-        className="comparison-wipe-range"
-        type="range"
-        min={0}
-        max={100}
-        value={position}
-        aria-label={t.comparisonSlider}
-        aria-valuetext={`${t.generated} ${position}% · ${t.reference} ${100 - position}%`}
-        onChange={(event) => setPosition(Number(event.target.value))}
-      />
     </div>
   );
 }
