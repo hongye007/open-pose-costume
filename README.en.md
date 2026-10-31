@@ -17,27 +17,28 @@ Counts include extended categories. Data updated on October 30, 2026 (Asia/Shang
 
 ## Browse and save
 
-- **Bilingual search**: find references by name, keyword, ID or multiple terms, across Chinese and English.
-- **Categories and angles**: filter and sort poses or costumes, switch pose angles, and view thumbnails or originals. Enable extended categories when needed.
-- **Favorites and sharing**: favorites and pairings stay in your browser. Share links preserve language, filters and reference selections.
-- **Easy browsing**: responsive layout, lazy-loaded images and incremental loading. Press `/` to search, `←` / `→` to navigate in the detail view, and `Esc` to close it.
+- **Three libraries, one search**: browse poses, outfits and characters. Search by Chinese or English name, keyword or ID, then narrow results with categories, sorting and character hair-length filters.
+- **Angles and depth maps**: switch pose viewpoints or preview depth maps. Lists use thumbnails; open details to enlarge and download originals. Extended categories can be enabled separately.
+- **Favorites and sharing**: save references and return to “Saved references” to continue pairing or download them. Share links preserve language, filters and reference selections.
+- **Continuous browsing**: responsive layout, lazy-loaded images and automatic loading as you scroll. Press `/` to search, `←` / `→` to navigate in the detail view, and `Esc` to close it.
 
-![English reference library with categories, search, angles and favorites](docs/images/library-en.webp)
+![English reference library: poses, outfits and characters, bilingual search, viewpoints, depth maps and favorites](docs/images/library-v2-en.webp)
 
-## Two references. One character.
+The character library includes **893 face and 606 styling references**, with hair-length filters. Only hair length has complete source classifications; some style descriptions mention hair color, but dedicated eye-color, hair-color and skin-tone labels are unavailable.
 
-Choose a pose and an outfit, then add them to the pairing board. Optionally choose a character from the library or upload your own. The description updates with your selections and can be copied for your creative workflow or another image tool.
+## Pose, outfit and character. Generate an image.
 
-The character library includes **893 face and 606 styling references**, with bilingual search, hair-length filters, favorites, original previews and downloads. Only hair length has complete source classifications; some style descriptions mention hair color, but dedicated eye-color, hair-color and skin-tone labels are unavailable.
+Open “Generate image” from the sidebar. Choose references and settings on the left, then view the result on the right. **A pose and an outfit are required; a character reference is optional.** The pose guides the action, the outfit guides clothing, and the character reference helps preserve identity and appearance. Choose library references or click “Randomize” for inspiration.
 
-![English pairing board with pose, costume, description and generation controls](docs/images/pairing-en.webp)
+![English generation studio: pose, outfit and optional character references, style and size settings, and the generated result](docs/images/generation-studio-v2-en.webp)
 
-### Generate from references
+### From references to an image
 
-1. Open settings in the upper-right corner and enter your service URL, API key, model, image size and quality.
-2. Select **both a pose and a costume** on the pairing board, optionally choose or upload a **character reference** to preserve identity and visual style, then click “Generate from references.” Missing pose or costume references prompt you to complete the selection.
-3. Wait for the result. Edit the description to generate again, or retry manually if a request fails.
-4. Use the pose, costume or character thumbnails on the left to select the comparison reference, and switch between “Side by side” and “Overlay.”
+1. **Configure the service**: click “Configure image service” or the settings icon in the upper-right corner, then enter the service URL, API key and model. Generation is disabled until the API is configured.
+2. **Choose references**: select a pose and an outfit, then optionally choose a library character or upload your own. Upload, drop or paste PNG, JPG or WebP images up to 10 MB each.
+3. **Extract your own outfit**: “Upload costume” opens a dialog. Choose an outfit photo on the left, click “Extract outfit” in the middle, inspect the result on the right, then “Confirm and use.” Extraction makes one additional image request. You can retry failures; the previous reference stays until you confirm.
+4. **Adjust and generate**: select a viewpoint, optionally enable depth guidance, and set the visual style, image size and additional instructions. Advanced settings let you edit the full prompt. Click “Generate image”; you can keep browsing while it runs and retry failed requests manually.
+5. **Review and keep creating**: switch between “Result only,” “Side by side” and “Overlay,” enlarge or download the result, or select “Use as character reference.” The “History” drawer keeps the latest 20 successful results, with controls to restore references, delete records and download a ZIP of the pose, outfit and optional character references used for that result.
 
 | Setting          | Default or requirement                                                                       |
 | ---------------- | -------------------------------------------------------------------------------------------- |
@@ -49,15 +50,15 @@ The character library includes **893 face and 606 styling references**, with bil
 
 Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, the browser sends references and the description directly to your configured service, which may charge for usage. Keys are excluded from share links and the repository.
 
-Library selections are saved as reference IDs in this browser. Lists use thumbnails; details and generation use original remote PNGs. Character references control identity and appearance, while pose and costume references control gesture and clothing.
+Library selections are saved as reference IDs in this browser. Lists use thumbnails; details and generation use originals. For uploaded outfits, the original photo is sent to your configured service when you click “Extract outfit.” The confirmed extraction becomes the outfit reference for subsequent generation.
 
-Uploaded character references support PNG, JPG and WebP up to 10 MB. The image stays in page memory when the board closes, and clears on page reload or close. It is excluded from browser storage, share links and the repository, and sent to your configured service only when you generate.
+History is stored in this browser using IndexedDB, including generated images, prompts, settings and reference information. Uploaded reference files are also saved with successful results. Uploads without a successful result stay only in page memory. Delete individual records or clear history in the drawer. Images and keys are excluded from share links and the repository; history does not contain API keys.
 
 **Side by side**: view the selected reference beside the generated result.
 
 ![Side-by-side example: pose, costume and character references, with the original pose beside the generated result](docs/images/generation-character-side-by-side-en.webp)
 
-**Overlay**: drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported.
+**Overlay**: drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported. If subject sizes or positions differ, select “Align images” to zoom and drag each image before comparing. Alignment affects the preview only, leaving originals and downloads unchanged.
 
 ![Overlay example: pose, costume and character references, with a slider comparing the generated image and original pose](docs/images/generation-character-overlay-en.webp)
 

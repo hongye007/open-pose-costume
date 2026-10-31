@@ -47,12 +47,18 @@ function ReferencePicker({
   kind,
   items,
   lang,
+  poseDepth,
+  onDepth,
+  depthDisabled,
   onChoose,
   onClose,
 }: {
   kind: Kind;
   items: Reference[];
   lang: Lang;
+  poseDepth: boolean;
+  onDepth: (value: boolean) => void;
+  depthDisabled: boolean;
   onChoose: (item: Reference) => void;
   onClose: () => void;
 }) {
@@ -60,7 +66,9 @@ function ReferencePicker({
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
   const [limit, setLimit] = useState(24);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+  const Icon = referenceIcons[kind];
   const available = useMemo(() => items.filter((item) => item.kind === kind), [items, kind]);
   const categories = [
     ...new Map(available.map((item) => [item.category.id, item.category[lang]])).entries(),
@@ -78,74 +86,109 @@ function ReferencePicker({
         observer.disconnect();
         setLimit((current) => Math.min(current + 24, filtered.length));
       },
-      { root: sentinel.closest('dialog'), rootMargin: '0px 0px 160px 0px' },
+      { root: scrollRef.current, rootMargin: '0px 0px 160px 0px' },
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
   }, [hasMore, limit, filtered.length, query, category]);
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [query, category]);
   return (
     <Modal
       onClose={onClose}
       label={`${t.choose} ${generationCopy[lang][kind]}`}
       className="studio-picker-modal"
     >
-      <div className="panel-heading">
-        <h2>
-          {t.choose} {generationCopy[lang][kind]}
-        </h2>
-        <button className="icon-button" aria-label={generationCopy[lang].close} onClick={onClose}>
-          <X size={20} />
-        </button>
-      </div>
-      <div className="studio-picker-filters">
-        <label className="studio-picker-search">
-          <Search size={16} />
-          <input
-            autoFocus
-            value={query}
-            placeholder={t.search}
-            aria-label={t.search}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setLimit(24);
-            }}
-          />
-        </label>
-        <select
-          value={category}
-          aria-label={t.allCategories}
-          onChange={(e) => {
-            setCategory(e.target.value);
-            setLimit(24);
-          }}
-        >
-          <option value="all">{t.allCategories}</option>
-          {categories.map(([id, label]) => (
-            <option key={id} value={id}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="studio-picker-grid">
-        {filtered.slice(0, limit).map((item) => (
-          <button key={item.id} onClick={() => onChoose(item)}>
-            <RemoteImage src={item.variants[0].thumbnail} alt={item.title[lang]} lang={lang} />
-            <span>{item.title[lang]}</span>
-          </button>
-        ))}
-      </div>
-      {!filtered.length && <p className="studio-picker-empty">{t.noMatches}</p>}
-      {hasMore && (
-        <div ref={loadMoreRef} className="studio-picker-more">
-          <button
-            className="secondary-button"
-            onClick={() => setLimit((current) => Math.min(current + 24, filtered.length))}
-          >
-            {t.more}
+      <header className="studio-picker-header">
+        <div className="panel-heading">
+          <div className="studio-picker-title">
+            <span className="studio-picker-icon">
+              <Icon size={21} />
+            </span>
+            <div>
+              <h2>
+                {t.choose} {generationCopy[lang][kind]}
+              </h2>
+              <p>{t.pickerHint}</p>
+            </div>
+          </div>
+          <button className="icon-button" aria-label={generationCopy[lang].close} onClick={onClose}>
+            <X size={20} />
           </button>
         </div>
-      )}
+        <div className="studio-picker-filters">
+          <label className="studio-picker-search">
+            <Search size={16} />
+            <input
+              autoFocus
+              value={query}
+              placeholder={t.search}
+              aria-label={t.search}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setLimit(24);
+              }}
+            />
+          </label>
+          <select
+            value={category}
+            aria-label={t.allCategories}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              setLimit(24);
+            }}
+          >
+            <option value="all">{t.allCategories}</option>
+            {categories.map(([id, label]) => (
+              <option key={id} value={id}>
+                {label}
+              </option>
+            ))}
+          </select>
+          {kind === 'pose' && (
+            <label className="pose-depth-switch studio-picker-depth" title={t.depthHint}>
+              <span>{t.depthMap}</span>
+              <input
+                type="checkbox"
+                checked={poseDepth}
+                disabled={depthDisabled}
+                onChange={(e) => onDepth(e.target.checked)}
+              />
+              <span className="switch-track" aria-hidden="true" />
+            </label>
+          )}
+        </div>
+        <p className="studio-picker-count" role="status">
+          {filtered.length.toLocaleString(lang === 'zh' ? 'zh-CN' : 'en')} {t.referenceCount}
+        </p>
+      </header>
+      <div className="studio-picker-scroll" ref={scrollRef}>
+        <div className="studio-picker-grid">
+          {filtered.slice(0, limit).map((item) => (
+            <button
+              key={item.id}
+              className={`studio-picker-card studio-picker-card-${kind}`}
+              title={item.title[lang]}
+              onClick={() => onChoose(item)}
+            >
+              <RemoteImage src={item.variants[0].thumbnail} alt={item.title[lang]} lang={lang} />
+              <span>{item.title[lang]}</span>
+            </button>
+          ))}
+        </div>
+        {!filtered.length && <p className="studio-picker-empty">{t.noMatches}</p>}
+        {hasMore && (
+          <div ref={loadMoreRef} className="studio-picker-more">
+            <button
+              className="secondary-button"
+              onClick={() => setLimit((current) => Math.min(current + 24, filtered.length))}
+            >
+              {t.more}
+            </button>
+          </div>
+        )}
+      </div>
     </Modal>
   );
 }
@@ -1038,6 +1081,12 @@ export function GenerationStudio({
           kind={picker}
           items={items}
           lang={lang}
+          poseDepth={poseDepth}
+          depthDisabled={loading}
+          onDepth={(value) => {
+            onDepth(value);
+            setCustomPrompt(null);
+          }}
           onClose={() => setPicker(null)}
           onChoose={(item) => {
             onChoose(item);

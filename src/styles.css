@@ -4049,13 +4049,57 @@ dialog::backdrop {
   line-height: 1.8;
 }
 .studio-picker-modal {
-  width: min(850px, calc(100vw - 40px));
+  width: min(960px, calc(100vw - 48px));
+  height: min(800px, calc(100dvh - 64px));
+  overflow: hidden;
+}
+.studio-picker-modal .modal-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+.studio-picker-header {
+  flex-shrink: 0;
+  padding: 24px 26px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.studio-picker-header .panel-heading {
+  align-items: center;
+}
+.studio-picker-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.studio-picker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: var(--blue);
+  background: #eef1ff;
+}
+.studio-picker-header h2 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+.studio-picker-title p {
+  margin: 4px 0 0;
+  color: #626d80;
+  font-size: 12px;
+  line-height: 1.5;
 }
 .studio-picker-filters {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 18px 0;
+  margin: 20px 0 12px;
 }
 .studio-picker-search {
   display: flex;
@@ -4067,7 +4111,12 @@ dialog::backdrop {
   background: #f8f9fc;
   border-radius: 7px;
   padding: 10px 12px;
-  color: var(--muted);
+  color: #626d80;
+  height: 42px;
+}
+.studio-picker-search:focus-within {
+  border-color: var(--blue);
+  outline: 2px solid #3d5bd920;
 }
 .studio-picker-search input {
   width: 100%;
@@ -4075,44 +4124,84 @@ dialog::backdrop {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 13px;
+  outline: none;
+}
+.studio-picker-search input::placeholder {
+  color: #626d80;
 }
 .studio-picker-filters > select {
+  min-width: 130px;
   max-width: 180px;
+  height: 42px;
   border: 1px solid var(--line);
   border-radius: 7px;
   background: white;
   padding: 10px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink);
+}
+.studio-picker-depth {
+  min-height: 42px;
+  padding: 0 2px 0 6px;
+  color: var(--ink);
+}
+.studio-picker-depth:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.studio-picker-count {
+  margin: 0;
+  font-size: 12px;
+  color: #626d80;
+}
+.studio-picker-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 20px 26px 26px;
+  background: #f7f8fb;
 }
 .studio-picker-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 13px;
+  gap: 16px;
 }
 .studio-picker-grid > button {
   min-width: 0;
   overflow: hidden;
   padding: 0;
-  background: #f8f9fb;
+  background: white;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: left;
 }
 .studio-picker-grid > button:hover {
   border-color: var(--blue);
+  box-shadow: 0 2px 8px #3d5bd912;
+}
+.studio-picker-grid > button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
 }
 .studio-picker-grid img {
+  display: block;
   width: 100%;
-  height: 155px;
+  height: 185px;
+  padding: 10px;
   object-fit: contain;
   background: white;
 }
+.studio-picker-card-costume img {
+  height: 220px;
+}
 .studio-picker-grid span {
   display: block;
-  padding: 10px;
-  font-size: 11px;
+  padding: 11px 12px;
+  border-top: 1px solid #edf0f5;
+  font-size: 12px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -4223,15 +4312,43 @@ dialog::backdrop {
   }
   .studio-picker-filters {
     flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .studio-picker-modal {
+    width: calc(100vw - 24px);
+    height: calc(100dvh - 32px);
+  }
+  .studio-picker-header {
+    padding: 18px 16px 12px;
+  }
+  .studio-picker-header h2 {
+    font-size: 18px;
+  }
+  .studio-picker-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .studio-picker-scroll {
+    padding: 16px;
+  }
+  .studio-picker-filters > select {
+    flex: 1;
+    max-width: none;
+    font-size: 16px;
   }
   .studio-picker-search {
     flex-basis: 100%;
   }
   .studio-picker-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
   .studio-picker-grid img {
-    height: 140px;
+    height: 155px;
+  }
+  .studio-picker-card-costume img {
+    height: 190px;
   }
   .studio-select,
   .studio-controls textarea,
