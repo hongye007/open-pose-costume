@@ -22,6 +22,7 @@ const vite = await createServer({
   appType: 'custom',
 });
 const { matchesQuery, sortItems, storageGet } = await vite.ssrLoadModule('/src/library.ts');
+const { withPoseDepth, poseDepthOrigin } = await vite.ssrLoadModule('/src/pose-depth.ts');
 after(async () => {
   await vite.close();
 });
@@ -177,4 +178,28 @@ test('portrait ingestion preserves both sections, translates styles and rejects 
     ),
     [{ id: 'safe' }],
   );
+});
+
+test('depth mode preserves catalog identity and angles without mutating originals', () => {
+  const snapshot = JSON.stringify(catalog);
+  for (const item of catalog.items) {
+    const depth = withPoseDepth(item);
+    if (item.kind !== 'pose') {
+      assert.equal(depth, item);
+      continue;
+    }
+    assert.deepEqual({ ...depth, source: item.source, variants: item.variants }, item);
+    assert.equal(depth.variants.length, item.variants.length);
+    for (const [index, variant] of depth.variants.entries()) {
+      const original = item.variants[index];
+      assert.equal(variant.id, original.id);
+      assert.equal(variant.angle, original.angle);
+      assert.deepEqual(variant.label, original.label);
+      for (const field of ['thumbnail', 'image', 'original']) {
+        assert.equal(new URL(variant[field]).origin, poseDepthOrigin);
+        assert.equal(new URL(variant[field]).pathname, new URL(original[field]).pathname);
+      }
+    }
+  }
+  assert.equal(JSON.stringify(catalog), snapshot);
 });

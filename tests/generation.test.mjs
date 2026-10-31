@@ -339,3 +339,49 @@ test('library character is fetched as a third original and uploaded with no API 
     (error) => error.code === 'referenceFailed',
   );
 });
+
+test('depth pose uploads the selected depth original and explains depth without granting other kinds access', async () => {
+  const pose = {
+    ...references[0],
+    variant: {
+      ...references[0].variant,
+      original: 'https://ai-pose-depth-gallery.pages.dev/img/full_single_P001_side.png',
+    },
+  };
+  const refs = [pose, references[1]];
+  assert.match(api.referencePrompt(refs, 'zh'), /此图为深度图/);
+  assert.match(api.referencePrompt(refs, 'en'), /This is a depth map/);
+  const calls = [];
+  await api.generateReferenceImage(
+    config,
+    refs,
+    api.referencePrompt(refs, 'en'),
+    new AbortController().signal,
+    async (url, options) => {
+      calls.push({ url, options });
+      return calls.length <= 2
+        ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+        : Response.json({ data: [{ b64_json: png }] });
+    },
+  );
+  assert.equal(calls[0].url, pose.variant.original);
+  assert.equal(calls[0].options.headers, undefined);
+  assert.equal(calls[0].options.credentials, 'omit');
+  const files = calls[2].options.body.getAll('image[]');
+  assert.equal(files.length, 2);
+  assert.deepEqual(Buffer.from(await files[0].arrayBuffer()), Buffer.from(png, 'base64'));
+  for (const kind of ['costume', 'character']) {
+    await assert.rejects(
+      api.generateReferenceImage(
+        config,
+        [{ ...pose, kind }],
+        'draw',
+        new AbortController().signal,
+        async () => {
+          throw Error('Must not fetch a depth image as a non-pose reference');
+        },
+      ),
+      (error) => error.code === 'referenceFailed',
+    );
+  }
+});

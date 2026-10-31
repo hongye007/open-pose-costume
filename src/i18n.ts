@@ -4,6 +4,8 @@ export const copy = {
     library: '参考资料库',
     all: '全部参考',
     pose: '姿势参考',
+    depth: '深度图',
+    depthHint: '切换姿势参考的人偶图与深度图，搭配和生成同步使用所选版本',
     costume: '服装参考',
     character: '人物参考',
     chooseCharacter: '从人物库选择',
@@ -141,6 +143,9 @@ export const copy = {
     library: 'Reference library',
     all: 'All references',
     pose: 'Pose references',
+    depth: 'Depth map',
+    depthHint:
+      'Switch pose references between mannequin and depth images, including pairing and generation',
     costume: 'Costume references',
     character: 'Character references',
     chooseCharacter: 'Choose from library',

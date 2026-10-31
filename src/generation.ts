@@ -1,4 +1,5 @@
 import type { Kind, Lang, Reference, Variant } from './types';
+import { isDepthVariant, poseDepthOrigin } from './pose-depth';
 
 export interface ImageConfig {
   baseUrl: string;
@@ -118,11 +119,18 @@ export function clearImageConfig() {
 export function referencePrompt(references: ImageReference[], lang: Lang): string {
   const hasCharacter = references.some((ref) => ref.kind === 'character');
   const details = references
-    .map((ref, index) =>
-      lang === 'zh'
-        ? `参考图 ${index + 1}（${ref.kind === 'pose' ? '姿势' : ref.kind === 'costume' ? '服装' : '人物'}）：${ref.keywords.zh}。`
-        : `Reference ${index + 1} (${ref.kind}): ${ref.keywords.en}.`,
-    )
+    .map((ref, index) => {
+      const detail =
+        lang === 'zh'
+          ? `参考图 ${index + 1}（${ref.kind === 'pose' ? '姿势' : ref.kind === 'costume' ? '服装' : '人物'}）：${ref.keywords.zh}。`
+          : `Reference ${index + 1} (${ref.kind}): ${ref.keywords.en}.`;
+      if (ref.kind !== 'pose' || !isDepthVariant(ref.variant)) return detail;
+      return `${detail} ${
+        lang === 'zh'
+          ? '此图为深度图，越亮越靠近镜头。仅参考动作、透视与遮挡关系，不复制灰度、深色背景或人偶外观。'
+          : 'This is a depth map: brighter areas are closer to the camera. Use only its pose, perspective and occlusion; do not copy the grayscale, dark background or mannequin appearance.'
+      }`;
+    })
     .join('\n');
   if (hasCharacter)
     return lang === 'zh'
@@ -210,11 +218,11 @@ export async function generateReferenceImage(
     const urls = references.map((reference) => {
       if ('file' in reference) return null;
       const url = new URL(reference.variant.original);
-      if (
-        url.origin !==
-        `https://ai-${reference.kind === 'character' ? 'portrait' : reference.kind}-gallery.pages.dev`
-      )
-        throw new ImageGenerationError('referenceFailed');
+      const allowedOrigins = [
+        `https://ai-${reference.kind === 'character' ? 'portrait' : reference.kind}-gallery.pages.dev`,
+        ...(reference.kind === 'pose' ? [poseDepthOrigin] : []),
+      ];
+      if (!allowedOrigins.includes(url.origin)) throw new ImageGenerationError('referenceFailed');
       return url.href;
     });
     for (const reference of references)

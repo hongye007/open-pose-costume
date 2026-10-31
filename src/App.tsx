@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 import { copy } from './i18n';
 import { HeroStudy } from './hero-study';
+import { withPoseDepth } from './pose-depth';
 import { Modal, RemoteImage } from './ui';
 import { GenerationDialog, ImageSettings, ImageSettingsButton } from './generation-ui';
 import { generationCopy } from './generation-copy';
@@ -79,6 +80,7 @@ export default function App() {
   const [category, setCategory] = useState(initialParams.get('category') || 'all');
   const [hair, setHair] = useState(initialParams.get('hair') || 'all');
   const [extended, setExtended] = useState(initialParams.get('extended') === '1');
+  const [poseDepth, setPoseDepth] = useState(initialParams.get('depth') === '1');
   const [angle, setAngle] = useState<string>(
     angles.includes(initialParams.get('angle') as (typeof angles)[number])
       ? initialParams.get('angle')!
@@ -167,20 +169,24 @@ export default function App() {
       ...(query ? { q: query } : {}),
       ...(category !== 'all' ? { category } : {}),
       ...(extended ? { extended: '1' } : {}),
+      ...(poseDepth ? { depth: '1' } : {}),
       ...(hair !== 'all' ? { hair } : {}),
       ...(angle !== 'front' ? { angle } : {}),
       ...(selectedId ? { item: selectedId, detailAngle } : {}),
     };
     for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
     window.history.replaceState(null, '', url);
-  }, [lang, view, query, category, hair, extended, angle, selectedId, detailAngle]);
+  }, [lang, view, query, category, hair, extended, poseDepth, angle, selectedId, detailAngle]);
 
   const notify = useCallback((message: string) => {
     setToast(message);
     clearTimeout(toastTimer.current);
     toastTimer.current = setTimeout(() => setToast(''), 2600);
   }, []);
-  const items = catalog?.items || [];
+  const items = useMemo(
+    () => (catalog?.items || []).map((item) => (poseDepth ? withPoseDepth(item) : item)),
+    [catalog, poseDepth],
+  );
   const eligible = useMemo(
     () => items.filter((item) => extended || !item.extended),
     [items, extended],
@@ -724,6 +730,18 @@ export default function App() {
                   <span>{visible.length.toLocaleString(lang)}</span>
                 </h2>
               </div>
+              {(view === 'pose' || byView.some((item) => item.kind === 'pose')) && (
+                <label className="pose-depth-switch" title={t.depthHint}>
+                  <span>{t.depth}</span>
+                  <input
+                    type="checkbox"
+                    role="switch"
+                    checked={poseDepth}
+                    onChange={(event) => setPoseDepth(event.target.checked)}
+                  />
+                  <span className="switch-track" aria-hidden="true" />
+                </label>
+              )}
             </div>
             <div className="search-row">
               <div className="search-box">
