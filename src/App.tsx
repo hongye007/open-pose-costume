@@ -14,7 +14,6 @@ import {
   Github,
   Grid2X2,
   Info,
-  ImagePlus,
   Layers2,
   LayoutPanelLeft,
   LoaderCircle,
@@ -31,17 +30,26 @@ import { copy } from './i18n';
 import { HeroStudy } from './hero-study';
 import { withPoseDepth } from './pose-depth';
 import { Modal, RemoteImage } from './ui';
-import { GenerationDialog, ImageSettings, ImageSettingsButton } from './generation-ui';
+import { ImageSettings, ImageSettingsButton } from './generation-ui';
+import { GenerationStudio } from './generation-studio';
+import { studioCopy } from './studio-copy';
+import { extractCostume } from './costume-extraction';
+import { CostumeExtractionDialog } from './costume-extraction-ui';
 import { generationCopy } from './generation-copy';
 import {
   defaultImageConfig,
   generateReferenceImage,
   ImageGenerationError,
   loadImageConfig,
-  referencePrompt,
-  validateCharacterFile,
+  normalizeImageConfig,
+  validateReferenceFile,
 } from './generation';
-import type { CharacterImageReference, GenerationJob, ImageReference } from './generation';
+import type {
+  UploadedImageReference,
+  GenerationJob,
+  ImageConfig,
+  ImageReference,
+} from './generation';
 import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } from './library';
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference, Variant } from './types';
@@ -72,7 +80,7 @@ export default function App() {
   const [failed, setFailed] = useState(false);
   const [reload, setReload] = useState(0);
   const [view, setView] = useState<View>(
-    ['pose', 'costume', 'character', 'saved'].includes(viewParam || '')
+    ['pose', 'costume', 'character', 'saved', 'studio'].includes(viewParam || '')
       ? (viewParam as View)
       : 'all',
   );
@@ -91,14 +99,20 @@ export default function App() {
   const [limit, setLimit] = useState(24);
   const [saved, setSaved] = useState(() => storageGet('opc-saved', [], isIds));
   const [board, setBoard] = useState<Board>(() => storageGet('opc-board', {}, isBoard));
-  const [characterReference, setCharacterReference] = useState<CharacterImageReference | null>(
-    null,
-  );
+  const [characterReference, setCharacterReference] = useState<UploadedImageReference | null>(null);
+  const [costumeReference, setCostumeReference] = useState<UploadedImageReference | null>(null);
+  const [costumeLoading, setCostumeLoading] = useState(false);
+  const [pendingCostume, setPendingCostume] = useState<File | null>(null);
+  const [costumeDialogOpen, setCostumeDialogOpen] = useState(false);
+  const [extractedCostume, setExtractedCostume] = useState<File | null>(null);
+  const [extractionError, setExtractionError] = useState('');
+  const costumeController = useRef<AbortController | null>(null);
   const [characterLoading, setCharacterLoading] = useState(false);
   const [characterError, setCharacterError] = useState('');
-  const characterInput = useRef<HTMLInputElement>(null);
+  const [studioAngle, setStudioAngle] = useState('front');
   const characterTask = useRef(0);
-  const [panel, setPanel] = useState<'board' | 'about' | 'settings' | null>(null);
+  const costumeTask = useRef(0);
+  const [panel, setPanel] = useState<'about' | 'settings' | null>(null);
   const [imageConfig, setImageConfig] = useState(loadImageConfig);
   const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
   const generationController = useRef<AbortController | null>(null);
@@ -151,6 +165,8 @@ export default function App() {
   useEffect(
     () => () => {
       characterTask.current++;
+      costumeTask.current++;
+      costumeController.current?.abort();
     },
     [],
   );
@@ -160,6 +176,12 @@ export default function App() {
       if (preview?.startsWith('blob:')) URL.revokeObjectURL(preview);
     };
   }, [characterReference]);
+  useEffect(() => {
+    const preview = costumeReference?.variant.image;
+    return () => {
+      if (preview?.startsWith('blob:')) URL.revokeObjectURL(preview);
+    };
+  }, [costumeReference]);
   useEffect(() => {
     const url = new URL(window.location.href);
     url.search = '';
@@ -239,15 +261,25 @@ export default function App() {
           variant: boardCharacter.variants[0],
         }
       : null);
-  const boardCount = Number(!!boardPose) + Number(!!boardCostume) + Number(!!activeCharacter);
+  const boardCount =
+    Number(!!boardPose) + Number(!!(costumeReference || boardCostume)) + Number(!!activeCharacter);
   const onBoard = (item: Reference) =>
     item.kind === 'character'
       ? !characterReference && board.character === item.id
-      : board[item.kind] === item.id;
-  const boardPrompt =
-    boardPose && boardCostume
-      ? `${t.promptStart}${boardPose.title[lang]}${t.promptCostume}${boardCostume.keywords[lang]}${t.promptEnd}${activeCharacter ? t.promptCharacter : ''}`
-      : '';
+      : item.kind === 'costume'
+        ? !costumeReference && board.costume === item.id
+        : board[item.kind] === item.id;
+  const studioReferences: ImageReference[] = [];
+  for (const item of [boardPose, costumeReference ? undefined : boardCostume]) {
+    if (!item) continue;
+    const variant =
+      item.variants.find(
+        (value) => value.angle === (item.kind === 'pose' ? studioAngle : 'front'),
+      ) || item.variants[0];
+    studioReferences.push({ kind: item.kind, title: item.title, keywords: item.keywords, variant });
+  }
+  if (costumeReference) studioReferences.push(costumeReference);
+  if (activeCharacter) studioReferences.push(activeCharacter);
   const navItems = [
     { key: 'all' as const, label: t.all, icon: Grid2X2, count: eligible.length },
     {
@@ -275,9 +307,12 @@ export default function App() {
       count: eligible.filter((item) => saved.includes(item.id)).length,
     },
   ];
-  const pageTitle = navItems.find((item) => item.key === view)!.label;
+  const pageTitle =
+    view === 'studio' ? studioCopy[lang].title : navItems.find((item) => item.key === view)!.label;
 
   function changeView(next: View) {
+    setSelectedId(null);
+    setPanel(null);
     setView(next);
     setCategory('all');
     setHair('all');
@@ -295,6 +330,12 @@ export default function App() {
     notify(exists ? t.removedToast : t.savedToast);
   }
   function addToBoard(item: Reference) {
+    if (item.kind === 'costume') {
+      cancelCostumeExtraction();
+      setCostumeLoading(false);
+      setCostumeReference(null);
+      setCharacterError('');
+    }
     if (item.kind === 'character') {
       characterTask.current++;
       setCharacterLoading(false);
@@ -366,26 +407,32 @@ export default function App() {
       }
     }
   }
-  function closeGeneration() {
+  function cancelGeneration() {
     generationController.current?.abort();
     generationController.current = null;
-    setGenerationJob(null);
+    setGenerationJob((old) => (old ? { ...old, status: 'cancelled' } : null));
   }
-  async function runGeneration(references: ImageReference[], prompt: string) {
+  async function runGeneration(
+    references: ImageReference[],
+    prompt: string,
+    options: Pick<ImageConfig, 'size' | 'quality'>,
+  ) {
     generationController.current?.abort();
     const controller = new AbortController();
     generationController.current = controller;
-    const model = imageConfig.model.trim();
-    setGenerationJob({ model, references, prompt, status: 'loading' });
+    const requestConfig = { ...imageConfig, ...options };
+    const model = requestConfig.model.trim();
+    const details = { model, references, prompt, ...options };
+    setGenerationJob({ ...details, status: 'loading' });
     try {
       const result = await generateReferenceImage(
-        imageConfig,
+        requestConfig,
         references,
         prompt,
         controller.signal,
       );
       if (generationController.current === controller)
-        setGenerationJob({ model, references, prompt, status: 'success', result });
+        setGenerationJob({ ...details, status: 'success', result });
     } catch (failure) {
       if (generationController.current !== controller || controller.signal.aborted) return;
       const t = generationCopy[lang];
@@ -393,91 +440,190 @@ export default function App() {
       const summary = t[code as keyof typeof t] || t.networkFailed;
       const detail = failure instanceof ImageGenerationError ? failure.message : '';
       setGenerationJob({
-        model,
-        references,
-        prompt,
+        ...details,
         status: 'error',
         error: `${summary}${detail ? `\n${detail}` : ''}`,
       });
     }
   }
-  async function selectCharacter(file: File) {
-    const task = ++characterTask.current;
-    setCharacterLoading(true);
-    setCharacterError('');
+  function cancelCostumeExtraction() {
+    costumeTask.current++;
+    costumeController.current?.abort();
+    costumeController.current = null;
+    setCostumeLoading(false);
+    setPendingCostume(null);
+    setCostumeDialogOpen(false);
+    setExtractedCostume(null);
+    setExtractionError('');
+  }
+  async function selectReferenceFile(file: File, kind: 'character' | 'costume') {
+    if (kind === 'character') return applyReferenceFile(file, kind);
+    cancelCostumeExtraction();
+    setCostumeDialogOpen(true);
+    const task = costumeTask.current;
+    try {
+      await validateReferenceFile(file, 'costume');
+      if (task !== costumeTask.current) return false;
+      setPendingCostume(file);
+      setCharacterError('');
+      return true;
+    } catch (error) {
+      if (task === costumeTask.current) {
+        const code = error instanceof ImageGenerationError ? error.code : 'costumeInvalid';
+        setExtractionError(
+          generationCopy[lang][code as keyof typeof generationCopy.zh] ||
+            generationCopy[lang].costumeInvalid,
+        );
+      }
+      return false;
+    }
+  }
+  async function runCostumeExtraction() {
+    if (!pendingCostume || costumeController.current) return;
+    try {
+      normalizeImageConfig(imageConfig);
+    } catch {
+      setExtractionError(generationCopy[lang].missingConfig);
+      setPanel('settings');
+      return;
+    }
+    const task = ++costumeTask.current;
+    const controller = new AbortController();
+    costumeController.current = controller;
+    setCostumeLoading(true);
+    setExtractedCostume(null);
+    setExtractionError('');
     let preview = '';
     try {
-      await validateCharacterFile(file);
+      const file = await extractCostume(imageConfig, pendingCostume, controller.signal);
       preview = URL.createObjectURL(file);
       const image = new Image();
       image.src = preview;
       await image.decode();
-      if (task !== characterTask.current) return;
-      setBoard((old) => ({ ...old, character: undefined }));
-      setCharacterReference({
-        kind: 'character',
+      if (task === costumeTask.current) setExtractedCostume(file);
+    } catch (error) {
+      if (task === costumeTask.current) {
+        const code = error instanceof ImageGenerationError ? error.code : 'networkFailed';
+        const detail = error instanceof ImageGenerationError ? error.message : '';
+        setExtractionError(
+          `${studioCopy[lang].costumeExtractionFailed} ${generationCopy[lang][code as keyof typeof generationCopy.zh] || generationCopy[lang].networkFailed}${detail ? `\n${detail}` : ''}`,
+        );
+      }
+    } finally {
+      if (preview) URL.revokeObjectURL(preview);
+      if (task === costumeTask.current) {
+        costumeController.current = null;
+        setCostumeLoading(false);
+      }
+    }
+  }
+  async function applyReferenceFile(file: File, kind: 'character' | 'costume') {
+    const taskRef = kind === 'character' ? characterTask : costumeTask;
+    const setLoading = kind === 'character' ? setCharacterLoading : setCostumeLoading;
+    const setReference = kind === 'character' ? setCharacterReference : setCostumeReference;
+    const task = ++taskRef.current;
+    setLoading(true);
+    setCharacterError('');
+    let preview = '';
+    try {
+      await validateReferenceFile(file, kind);
+      if (task !== taskRef.current) return false;
+      preview = URL.createObjectURL(file);
+      const image = new Image();
+      image.src = preview;
+      await image.decode();
+      if (task !== taskRef.current) return false;
+      setBoard((old) => ({ ...old, [kind]: undefined }));
+      setReference({
+        kind,
         file,
-        title: { zh: '人物参考', en: 'Character reference' },
+        title:
+          kind === 'character'
+            ? { zh: '人物参考', en: 'Character reference' }
+            : { zh: '已提取的服饰', en: 'Extracted outfit' },
         keywords: {
-          zh: '保留所附人物的五官、脸型、发型发色、肤色、体型比例与画风',
-          en: 'Preserve the attached character’s face, hairstyle, hair color, skin tone, proportions and visual style',
+          zh:
+            kind === 'character'
+              ? '保留所附人物的五官、脸型、发型发色、肤色、体型比例与画风'
+              : '采用所附服饰图片中的穿搭、配色、版型和材质，不采用服装模特的身份和姿势',
+          en:
+            kind === 'character'
+              ? 'Preserve the attached character’s face, hairstyle, hair color, skin tone, proportions and visual style'
+              : 'Use the outfit, colors, garment shape and materials from the uploaded costume; do not copy the clothing model’s identity or pose',
         },
         variant: {
-          id: 'character-upload',
+          id: `${kind}-upload`,
           angle: 'front',
-          label: { zh: '人物', en: 'Character' },
+          label:
+            kind === 'character' ? { zh: '人物', en: 'Character' } : { zh: '服饰', en: 'Costume' },
           thumbnail: preview,
           image: preview,
           original: preview,
         },
       });
       preview = ''; // Ownership passes to the reference cleanup effect.
+      if (kind === 'costume') {
+        cancelCostumeExtraction();
+        notify(studioCopy[lang].costumeExtracted);
+      }
+      return true;
     } catch (error) {
-      if (task === characterTask.current)
-        setCharacterError(error instanceof ImageGenerationError ? error.code : 'characterInvalid');
+      if (task === taskRef.current) {
+        const code = error instanceof ImageGenerationError ? error.code : `${kind}Invalid`;
+        if (kind === 'costume') setExtractionError(generationCopy[lang].costumeInvalid);
+        else setCharacterError(code);
+      }
+      return false;
     } finally {
       if (preview?.startsWith('blob:')) URL.revokeObjectURL(preview);
-      if (task === characterTask.current) setCharacterLoading(false);
+      if (task === taskRef.current) {
+        setLoading(false);
+      }
     }
   }
-  function beginGeneration(item?: Reference) {
-    if (characterLoading) return;
-    const references: ImageReference[] = [];
-    const add = (value: Reference | undefined, chosenVariant = value?.variants[0]) => {
-      if (value && chosenVariant)
-        references.push({
-          kind: value.kind,
-          title: value.title,
-          keywords: value.keywords,
-          variant: chosenVariant,
-        });
-    };
-    const pose = item?.kind === 'pose' ? item : boardPose;
-    const costume = item?.kind === 'costume' ? item : boardCostume;
-    if (!pose || !costume) {
-      if (item) {
-        if (item.kind === 'character') {
-          characterTask.current++;
-          setCharacterReference(null);
-          setCharacterError('');
-        }
-        setBoard((old) => ({ ...old, [item.kind]: item.id }));
-      }
-      setSelectedId(null);
-      setPanel('board');
-      notify(generationCopy[lang].chooseReferences);
-      return;
+  function openStudio() {
+    setSelectedId(null);
+    setPanel(null);
+    setView('studio');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function chooseStudioReference(item: Reference) {
+    if (item.kind === 'costume') {
+      cancelCostumeExtraction();
+      setCostumeLoading(false);
+      setCostumeReference(null);
+      setCharacterError('');
     }
-    add(
-      pose,
-      pose.variants.find(
-        (value) => value.angle === (item?.kind === 'pose' ? detailAngle : 'front'),
-      ) || pose.variants[0],
-    );
-    add(costume);
-    if (item?.kind === 'character') add(item);
-    else if (activeCharacter) references.push(activeCharacter);
-    void runGeneration(references, referencePrompt(references, lang));
+    if (item.kind === 'character') {
+      characterTask.current++;
+      setCharacterLoading(false);
+      setCharacterReference(null);
+      setCharacterError('');
+    }
+    if (item.kind === 'pose') setStudioAngle('front');
+    setBoard((old) => ({ ...old, [item.kind]: item.id }));
+  }
+  function removeStudioReference(kind: Reference['kind']) {
+    if (kind === 'costume') {
+      cancelCostumeExtraction();
+      setCostumeLoading(false);
+      setCostumeReference(null);
+      setCharacterError('');
+    }
+    if (kind === 'character') {
+      characterTask.current++;
+      setCharacterLoading(false);
+      setCharacterReference(null);
+      setCharacterError('');
+    }
+    setBoard((old) => ({ ...old, [kind]: undefined }));
+  }
+  function beginGeneration(item?: Reference) {
+    if (item) {
+      chooseStudioReference(item);
+      if (item.kind === 'pose') setStudioAngle(detailAngle);
+    }
+    openStudio();
   }
   useEffect(() => {
     const handle = (event: KeyboardEvent) => {
@@ -485,7 +631,7 @@ export default function App() {
         event.target instanceof HTMLElement &&
         (['INPUT', 'TEXTAREA', 'SELECT'].includes(event.target.tagName) ||
           event.target.isContentEditable);
-      if (isEditing || generationJob) return;
+      if (isEditing || view === 'studio') return;
       if (selectedId) {
         if (event.key === 'ArrowLeft') {
           event.preventDefault();
@@ -502,7 +648,7 @@ export default function App() {
     };
     document.addEventListener('keydown', handle);
     return () => document.removeEventListener('keydown', handle);
-  }, [selectedId, panel, step, generationJob]);
+  }, [selectedId, panel, step, view]);
 
   return (
     <div className="app-shell">
@@ -549,29 +695,13 @@ export default function App() {
         <div className="sidebar-divider" />
         <p className="nav-heading">{t.workspace}</p>
         <button
-          className={`nav-item board-nav ${panel === 'board' ? 'active' : ''}`}
-          onClick={() => setPanel('board')}
+          className={`nav-item board-nav ${view === 'studio' ? 'active' : ''}`}
+          onClick={openStudio}
         >
           <LayoutPanelLeft size={19} />
-          <span>{t.board}</span>
+          <span>{studioCopy[lang].title}</span>
           <small>{boardCount}/3</small>
         </button>
-        <div className="board-invitation">
-          <div className="mini-pair">
-            <span>
-              <PersonStanding size={27} />
-            </span>
-            <Plus size={13} />
-            <span>
-              <Shirt size={25} />
-            </span>
-          </div>
-          <p>{t.boardHint}</p>
-          <button onClick={() => setPanel('board')}>
-            {t.boardOpen}
-            <ArrowUpRight size={14} />
-          </button>
-        </div>
         <div className="sidebar-bottom">
           <div className="content-switch">
             <label>
@@ -654,11 +784,7 @@ export default function App() {
               ready={imageReady}
               onClick={() => setPanel('settings')}
             />
-            <button
-              className="header-board"
-              onClick={() => setPanel('board')}
-              aria-label={t.boardOpen}
-            >
+            <button className="header-board" onClick={openStudio} aria-label={t.boardOpen}>
               <LayoutPanelLeft size={17} />
               {boardCount > 0 && <small>{boardCount}</small>}
             </button>
@@ -686,7 +812,7 @@ export default function App() {
           </div>
         </header>
 
-        <main>
+        <main hidden={view === 'studio'}>
           <section className="intro" aria-label={t.brand}>
             <div className="intro-copy">
               <p className="eyebrow">
@@ -1040,9 +1166,76 @@ export default function App() {
             </button>
           </footer>
         </main>
+        <main className="studio-main" hidden={view !== 'studio'}>
+          <GenerationStudio
+            lang={lang}
+            references={studioReferences}
+            items={eligible}
+            poseItem={boardPose}
+            job={generationJob}
+            config={imageConfig}
+            characterLoading={characterLoading || costumeLoading}
+            characterError={characterError}
+            poseDepth={poseDepth}
+            onDepth={setPoseDepth}
+            onChoose={chooseStudioReference}
+            onRemove={removeStudioReference}
+            onAngle={setStudioAngle}
+            onUpload={(file, kind) => void selectReferenceFile(file, kind)}
+            onOpenCostumeUpload={() => {
+              cancelCostumeExtraction();
+              setCostumeDialogOpen(true);
+            }}
+            onSettings={() => setPanel('settings')}
+            onRun={(references, prompt, options) => void runGeneration(references, prompt, options)}
+            onCancel={cancelGeneration}
+            onReuse={async (file) => {
+              if (!(await selectReferenceFile(file, 'character'))) throw Error('characterInvalid');
+            }}
+            notify={notify}
+            onRestore={(record, references, source) => {
+              if (generationJob?.status === 'loading') return;
+              characterTask.current++;
+              cancelCostumeExtraction();
+              setCostumeLoading(false);
+              setCharacterLoading(false);
+              setCharacterError('');
+              const costume = references.find((ref) => ref.kind === 'costume');
+              setCostumeReference(costume && 'file' in costume ? costume : null);
+              const character = references.find((ref) => ref.kind === 'character');
+              setCharacterReference(character && 'file' in character ? character : null);
+              const nextBoard: Board = {};
+              for (const reference of references) {
+                if ('file' in reference) continue;
+                const item = items.find(
+                  (item) =>
+                    item.kind === reference.kind &&
+                    item.variants.some((variant) => variant.id === reference.variant.id),
+                );
+                if (item) nextBoard[reference.kind] = item.id;
+              }
+              setBoard(nextBoard);
+              const pose = references.find((ref) => ref.kind === 'pose');
+              setStudioAngle(pose?.variant.angle || 'front');
+              setPoseDepth(
+                !!pose?.variant.original.startsWith('https://ai-pose-depth-gallery.pages.dev/'),
+              );
+              setGenerationJob({
+                model: record.model,
+                prompt: record.prompt,
+                references,
+                result: source,
+                status: 'success',
+                size: record.size,
+                quality: record.quality,
+                restored: true,
+              });
+            }}
+          />
+        </main>
       </div>
 
-      {selected && variant && !generationJob && (
+      {selected && variant && (
         <Modal onClose={closeDetail} label={selected.title[lang]} className="detail-modal">
           <div className="detail-stage">
             <div className="detail-stage-top">
@@ -1139,7 +1332,7 @@ export default function App() {
                 </button>
                 <button
                   className="text-action reference-generate"
-                  disabled={!imageReady || characterLoading}
+                  disabled={!imageReady || characterLoading || costumeLoading}
                   onClick={() => beginGeneration(selected)}
                 >
                   <Sparkles size={14} />
@@ -1204,202 +1397,22 @@ export default function App() {
         </Modal>
       )}
 
-      {panel === 'board' && !generationJob && (
-        <Modal onClose={() => setPanel(null)} label={t.board} className="board-modal">
-          <div className="panel-heading">
-            <div>
-              <span className="section-kicker">THE PAIRING BOARD</span>
-              <h2>{activeCharacter ? t.boardCharacterTitle : t.boardTitle}</h2>
-            </div>
-            <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
-              <X size={22} />
-            </button>
-          </div>
-          <p className="panel-description">{t.boardDescription}</p>
-          <div className="board-slots">
-            {(['pose', 'costume'] as const).map((kind) => {
-              const item = kind === 'pose' ? boardPose : boardCostume;
-              return (
-                <div className="board-slot" key={kind}>
-                  <div className="board-slot-heading">
-                    <span>
-                      {kind === 'pose' ? <PersonStanding size={16} /> : <Shirt size={16} />}{' '}
-                      {kind === 'pose' ? t.pose : t.costume}
-                    </span>
-                    {item && (
-                      <button
-                        className="icon-button"
-                        aria-label={`${t.remove}: ${item.title[lang]}`}
-                        onClick={() => setBoard((old) => ({ ...old, [kind]: undefined }))}
-                      >
-                        <X size={15} />
-                      </button>
-                    )}
-                  </div>
-                  {item ? (
-                    <>
-                      <RemoteImage
-                        src={item.variants[0].thumbnail}
-                        alt={item.title[lang]}
-                        lang={lang}
-                      />
-                      <h3>{item.title[lang]}</h3>
-                      <code>{item.id}</code>
-                    </>
-                  ) : (
-                    <div className="board-empty">
-                      {kind === 'pose' ? (
-                        <PersonStanding size={46} strokeWidth={1} />
-                      ) : (
-                        <Shirt size={44} strokeWidth={1} />
-                      )}
-                      <p>{kind === 'pose' ? t.poseEmpty : t.costumeEmpty}</p>
-                      <button
-                        className="secondary-button"
-                        onClick={() => {
-                          setPanel(null);
-                          changeView(kind);
-                          document
-                            .getElementById('collection')
-                            ?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                      >
-                        {kind === 'pose' ? t.choosePose : t.chooseCostume}
-                        <ArrowRight size={14} />
-                      </button>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-          <section
-            className="board-character"
-            aria-label={t.characterOptional}
-            aria-busy={characterLoading}
-          >
-            <input
-              ref={characterInput}
-              type="file"
-              accept="image/png,image/jpeg,image/webp"
-              aria-label={t.characterUpload}
-              hidden
-              onChange={(event) => {
-                const file = event.target.files?.[0];
-                event.target.value = '';
-                if (file) void selectCharacter(file);
-              }}
-            />
-            <div className="board-character-row">
-              {activeCharacter ? (
-                <img
-                  className="board-character-preview"
-                  src={activeCharacter.variant.thumbnail}
-                  alt={generationCopy[lang].character}
-                />
-              ) : (
-                <div className="board-character-placeholder">
-                  <UserRound size={25} strokeWidth={1.5} />
-                </div>
-              )}
-              <div className="board-character-description">
-                <h3>{t.characterOptional}</h3>
-                <p className="board-character-filename">
-                  {characterReference
-                    ? characterReference.file.name
-                    : activeCharacter
-                      ? activeCharacter.title[lang]
-                      : t.characterFormats}
-                </p>
-              </div>
-              <div className="board-character-actions">
-                <button
-                  type="button"
-                  className="secondary-button"
-                  onClick={() => {
-                    setPanel(null);
-                    changeView('character');
-                    document.getElementById('collection')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  <UserRound size={15} />
-                  {t.chooseCharacter}
-                </button>
-                <button
-                  type="button"
-                  className="secondary-button"
-                  disabled={characterLoading}
-                  onClick={() => characterInput.current?.click()}
-                >
-                  {characterLoading ? (
-                    <LoaderCircle size={15} className="spinner" />
-                  ) : (
-                    <ImagePlus size={15} />
-                  )}
-                  {characterLoading
-                    ? t.characterLoading
-                    : activeCharacter
-                      ? t.characterReplace
-                      : t.characterUpload}
-                </button>
-                {activeCharacter && (
-                  <button
-                    type="button"
-                    className="icon-button"
-                    disabled={characterLoading}
-                    aria-label={t.characterRemove}
-                    onClick={() => {
-                      characterTask.current++;
-                      setCharacterReference(null);
-                      setBoard((old) => ({ ...old, character: undefined }));
-                      setCharacterError('');
-                    }}
-                  >
-                    <X size={17} />
-                  </button>
-                )}
-              </div>
-            </div>
-            <p className="board-character-note">
-              {characterReference ? t.characterPrivacy : t.characterLibraryNote}
-            </p>
-            {characterError && (
-              <p className="board-character-error" role="alert">
-                {generationCopy[lang][characterError as keyof typeof generationCopy.zh] ||
-                  generationCopy[lang].characterInvalid}
-              </p>
-            )}
-          </section>
-          <div className="board-prompt">
-            <h3>{t.boardPrompt}</h3>
-            <p>{boardPrompt || t.boardIncomplete}</p>
-            <div className="reference-description-actions">
-              <button
-                className="primary-button"
-                disabled={!boardPrompt}
-                onClick={() => clipboard(boardPrompt)}
-              >
-                <Copy size={16} />
-                {t.copyPrompt}
-              </button>
-              <button
-                className="secondary-button"
-                disabled={!imageReady || characterLoading}
-                onClick={() => beginGeneration()}
-              >
-                <Sparkles size={16} />
-                {generationCopy[lang].generate}
-              </button>
-              {!imageReady && (
-                <span className="reference-generate-hint">
-                  {generationCopy[lang].configureFirst}
-                </span>
-              )}
-            </div>
-          </div>
-        </Modal>
+      {costumeDialogOpen && (
+        <CostumeExtractionDialog
+          lang={lang}
+          file={pendingCostume}
+          result={extractedCostume}
+          loading={costumeLoading}
+          error={extractionError}
+          onUpload={(file) => void selectReferenceFile(file, 'costume')}
+          onExtract={() => void runCostumeExtraction()}
+          onConfirm={() => {
+            if (extractedCostume && !costumeLoading)
+              void applyReferenceFile(extractedCostume, 'costume');
+          }}
+          onClose={cancelCostumeExtraction}
+        />
       )}
-
       {panel === 'settings' && (
         <ImageSettings
           config={imageConfig}
@@ -1417,15 +1430,6 @@ export default function App() {
           }}
         />
       )}
-      {generationJob && (
-        <GenerationDialog
-          job={generationJob}
-          lang={lang}
-          onClose={closeGeneration}
-          onRun={(prompt) => void runGeneration(generationJob.references, prompt)}
-        />
-      )}
-
       {panel === 'about' && (
         <Modal onClose={() => setPanel(null)} label={t.usage} className="about-modal">
           <div className="panel-heading">

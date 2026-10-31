@@ -9,9 +9,7 @@ import {
   Maximize2,
   ZoomIn,
   ZoomOut,
-  RotateCcw,
   Settings,
-  Sparkles,
   X,
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
@@ -23,7 +21,7 @@ import {
   imageSizes,
   saveImageConfig,
 } from './generation';
-import type { GenerationJob, ImageConfig, ImageReference } from './generation';
+import type { GenerationJob, ImageConfig } from './generation';
 import type { Lang } from './types';
 
 function imageExtension(type: string): string {
@@ -59,7 +57,7 @@ async function downloadImageSource(source: string, filename: string): Promise<vo
   setTimeout(() => URL.revokeObjectURL(objectUrl), 60_000);
 }
 
-function ImageDownloadButton({
+export function ImageDownloadButton({
   source,
   filename,
   lang,
@@ -113,7 +111,7 @@ function ImageDownloadButton({
   );
 }
 
-function ImageLightbox({
+export function ImageLightbox({
   source,
   downloadSource,
   filename,
@@ -324,7 +322,7 @@ export function ImageSettings({
   );
 }
 
-function ComparisonWipe({
+export function ComparisonWipe({
   reference,
   generated,
   lang,
@@ -413,286 +411,6 @@ function ComparisonWipe({
         onChange={(event) => setPosition(Number(event.target.value))}
       />
     </div>
-  );
-}
-
-export function GenerationDialog({
-  job,
-  lang,
-  onRun,
-  onClose,
-}: {
-  job: GenerationJob;
-  lang: Lang;
-  onRun: (prompt: string) => void;
-  onClose: () => void;
-}) {
-  const t = generationCopy[lang];
-  const [activeKind, setActiveKind] = useState<ImageReference['kind']>(job.references[0].kind);
-  const [prompt, setPrompt] = useState(job.prompt);
-  const [imageFailed, setImageFailed] = useState(false);
-  const [imageAttempt, setImageAttempt] = useState(0);
-  const [previewMode, setPreviewMode] = useState<'split' | 'overlay'>('split');
-  const [lightbox, setLightbox] = useState<{
-    source: string;
-    downloadSource: string;
-    filename: string;
-    alt: string;
-  } | null>(null);
-  const active = job.references.find((ref) => ref.kind === activeKind) || job.references[0];
-  const loading = job.status === 'loading';
-  const openReference = () =>
-    setLightbox({
-      source: active.variant.original,
-      downloadSource: active.variant.original,
-      filename: active.variant.id,
-      alt: active.title[lang],
-    });
-  const openGenerated = () => {
-    if (job.status === 'success' && job.result)
-      setLightbox({
-        source: job.result,
-        downloadSource: job.result,
-        filename: 'generated-character',
-        alt: t.generated,
-      });
-  };
-  return (
-    <Modal
-      onClose={lightbox ? () => setLightbox(null) : onClose}
-      label={t.generate}
-      className="generation-modal"
-    >
-      <div className="generation-heading">
-        <div>
-          <span className="section-kicker">REFERENCE STUDIO</span>
-          <h2>{t.generate}</h2>
-        </div>
-        <button className="icon-button" aria-label={t.close} onClick={onClose}>
-          <X size={22} />
-        </button>
-      </div>
-      <p className="settings-note">
-        {t.model}: <code>{job.model}</code> · {t.referenceCount}: {job.references.length}
-      </p>
-      <div className="generation-preview-toolbar">
-        <div className="generation-preview-switch" role="group" aria-label={t.previewMode}>
-          <button
-            type="button"
-            aria-pressed={previewMode === 'split'}
-            onClick={() => setPreviewMode('split')}
-          >
-            {t.sideBySide}
-          </button>
-          <button
-            type="button"
-            aria-pressed={previewMode === 'overlay'}
-            onClick={() => setPreviewMode('overlay')}
-          >
-            {t.overlay}
-          </button>
-        </div>
-      </div>
-      <div className={`generation-comparison ${previewMode === 'overlay' ? 'overlay-mode' : ''}`}>
-        <div className="generation-thumbnails" aria-label={t.reference}>
-          {job.references.map((ref) => {
-            const kind = ref.kind;
-            return (
-              <button
-                key={kind}
-                className={`generation-thumbnail ${active.kind === kind ? 'active' : ''}`}
-                aria-pressed={active.kind === kind}
-                aria-label={t[kind]}
-                onClick={() => setActiveKind(kind)}
-              >
-                <RemoteImage src={ref.variant.thumbnail} alt={ref.title[lang]} lang={lang} eager />
-                <span>{t[kind]}</span>
-              </button>
-            );
-          })}
-        </div>
-        {previewMode === 'split' && (
-          <section className="generation-frame">
-            <div className="generation-frame-heading">
-              <span>{t.reference}</span>
-              <div className="generation-frame-tools">
-                <code>{active.variant.id}</code>
-                <button
-                  type="button"
-                  className="icon-button generation-image-action"
-                  aria-label={`${t.openImage}: ${t.reference}`}
-                  title={t.openImage}
-                  onClick={openReference}
-                >
-                  <Maximize2 size={15} />
-                </button>
-                <ImageDownloadButton
-                  source={active.variant.original}
-                  filename={active.variant.id}
-                  lang={lang}
-                  label={`${t.downloadImage}: ${t.reference}`}
-                />
-              </div>
-            </div>
-            <div className="generation-canvas">
-              <button
-                type="button"
-                className="generation-image-button"
-                aria-label={`${t.openImage}: ${active.title[lang]}`}
-                onClick={openReference}
-              >
-                <RemoteImage
-                  src={active.variant.image}
-                  alt={active.title[lang]}
-                  lang={lang}
-                  eager
-                />
-              </button>
-            </div>
-            <p className="generation-caption">{active.title[lang]}</p>
-          </section>
-        )}
-        <section className={`generation-frame generation-output ${job.status}`} aria-busy={loading}>
-          <div className="generation-frame-heading">
-            <span>{previewMode === 'overlay' ? t.overlay : t.generated}</span>
-            <div className="generation-frame-tools">
-              {previewMode === 'split' && job.status === 'success' && job.result && (
-                <>
-                  <button
-                    type="button"
-                    className="icon-button generation-image-action"
-                    aria-label={`${t.openImage}: ${t.generated}`}
-                    title={t.openImage}
-                    onClick={openGenerated}
-                  >
-                    <Maximize2 size={15} />
-                  </button>
-                  <ImageDownloadButton
-                    source={job.result}
-                    filename="generated-character"
-                    lang={lang}
-                    label={`${t.downloadImage}: ${t.generated}`}
-                  />
-                </>
-              )}
-              <span className="generation-status" role="status">
-                {loading ? (
-                  <LoaderCircle size={13} className="spinner" />
-                ) : job.status === 'success' ? (
-                  <Check size={13} />
-                ) : (
-                  <RotateCcw size={13} />
-                )}
-                {loading ? t.generating : job.status === 'success' ? t.success : t.failed}
-              </span>
-            </div>
-          </div>
-          <div
-            className={`generation-canvas ${previewMode === 'overlay' && job.status === 'success' && !imageFailed ? 'generation-overlay-canvas' : ''}`}
-          >
-            {loading ? (
-              <div className="generation-placeholder">
-                <LoaderCircle size={29} className="spinner" />
-                <h3>{t.waiting}</h3>
-                <p>{t.waitingHint}</p>
-              </div>
-            ) : job.status === 'error' ? (
-              <div className="generation-placeholder" role="alert">
-                <RotateCcw size={28} />
-                <h3>{t.failed}</h3>
-                <p>{job.error}</p>
-                <button
-                  className="primary-button"
-                  onClick={() => onRun(prompt)}
-                  disabled={!prompt.trim()}
-                >
-                  <RotateCcw size={15} />
-                  {t.retry}
-                </button>
-              </div>
-            ) : imageFailed ? (
-              <div className="generation-placeholder">
-                <p>{t.imageFailed}</p>
-                <button
-                  className="secondary-button"
-                  onClick={() => {
-                    setImageFailed(false);
-                    setImageAttempt((v) => v + 1);
-                  }}
-                >
-                  {t.retryImage}
-                </button>
-              </div>
-            ) : previewMode === 'overlay' && job.result ? (
-              <ComparisonWipe
-                key={`${job.result}-${imageAttempt}`}
-                reference={active}
-                generated={job.result}
-                lang={lang}
-                onImageError={() => setImageFailed(true)}
-                onOpenReference={openReference}
-                onOpenGenerated={openGenerated}
-              />
-            ) : (
-              <button
-                type="button"
-                className="generation-image-button"
-                aria-label={`${t.openImage}: ${t.generated}`}
-                onClick={openGenerated}
-              >
-                <img
-                  key={`${job.result}-${imageAttempt}`}
-                  src={job.result}
-                  alt={t.generated}
-                  referrerPolicy="no-referrer"
-                  onError={() => setImageFailed(true)}
-                />
-              </button>
-            )}
-          </div>
-        </section>
-      </div>
-      <p className="generation-reference-hint">
-        {previewMode === 'overlay' ? t.overlayHint : t.referenceHint}
-      </p>
-      <div className="generation-prompt">
-        <label htmlFor="generation-prompt">{t.prompt}</label>
-        <textarea
-          id="generation-prompt"
-          value={prompt}
-          disabled={loading}
-          onChange={(e) => setPrompt(e.target.value)}
-          rows={3}
-        />
-        <button
-          className="primary-button"
-          disabled={loading || !prompt.trim()}
-          onClick={() => {
-            setImageFailed(false);
-            onRun(prompt);
-          }}
-        >
-          {loading ? (
-            <LoaderCircle size={16} className="spinner" />
-          ) : job.status === 'error' ? (
-            <RotateCcw size={16} />
-          ) : (
-            <Sparkles size={16} />
-          )}
-          {loading ? t.generating : job.status === 'error' ? t.retry : t.regenerate}
-        </button>
-      </div>
-      {lightbox && (
-        <ImageLightbox
-          source={lightbox.source}
-          downloadSource={lightbox.downloadSource}
-          filename={lightbox.filename}
-          alt={lightbox.alt}
-          lang={lang}
-          onClose={() => setLightbox(null)}
-        />
-      )}
-    </Modal>
   );
 }
 

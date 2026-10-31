@@ -1,7 +1,7 @@
 import type { Lang, Reference } from './types';
 import vocabulary from '../data/vocabulary.json';
 
-export type View = 'all' | 'pose' | 'costume' | 'character' | 'saved';
+export type View = 'all' | 'pose' | 'costume' | 'character' | 'saved' | 'studio';
 export type Sort = 'curated' | 'name' | 'code';
 export const angles = ['front', 'high', 'low', 'side', 'diag'] as const;
 const chineseTerms = [...new Set(Object.values(vocabulary.costume))].sort(

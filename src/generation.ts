@@ -17,18 +17,21 @@ interface ReferenceDetails {
 export interface GalleryImageReference extends ReferenceDetails {
   kind: Kind;
 }
-export interface CharacterImageReference extends ReferenceDetails {
-  kind: 'character';
+export interface UploadedImageReference extends ReferenceDetails {
+  kind: 'character' | 'costume';
   file: File;
 }
-export type ImageReference = GalleryImageReference | CharacterImageReference;
+export type ImageReference = GalleryImageReference | UploadedImageReference;
 export interface GenerationJob {
   model: string;
   references: ImageReference[];
   prompt: string;
-  status: 'loading' | 'error' | 'success';
+  status: 'loading' | 'error' | 'success' | 'cancelled';
   result?: string;
   error?: string;
+  size?: string;
+  quality?: ImageConfig['quality'];
+  restored?: boolean;
 }
 
 const SETTINGS_KEY = 'opc-image-settings';
@@ -150,8 +153,11 @@ export class ImageGenerationError extends Error {
   }
 }
 
-export async function validateCharacterFile(file: File): Promise<void> {
-  if (file.size > 10 * 1024 * 1024) throw new ImageGenerationError('characterTooLarge');
+export async function validateReferenceFile(
+  file: File,
+  kind: 'character' | 'costume',
+): Promise<void> {
+  if (file.size > 10 * 1024 * 1024) throw new ImageGenerationError(`${kind}TooLarge`);
   const bytes = new Uint8Array(await file.slice(0, 12).arrayBuffer());
   const signature = String.fromCharCode(...bytes);
   const mime = signature.startsWith('\x89PNG\r\n\x1a\n')
@@ -161,7 +167,7 @@ export async function validateCharacterFile(file: File): Promise<void> {
       : signature.startsWith('RIFF') && signature.slice(8, 12) === 'WEBP'
         ? 'image/webp'
         : '';
-  if (!mime || mime !== file.type) throw new ImageGenerationError('characterInvalid');
+  if (!mime || mime !== file.type) throw new ImageGenerationError(`${kind}Invalid`);
 }
 
 function safeMessage(message: string, key: string): string {
@@ -226,7 +232,7 @@ export async function generateReferenceImage(
       return url.href;
     });
     for (const reference of references)
-      if ('file' in reference) await validateCharacterFile(reference.file);
+      if ('file' in reference) await validateReferenceFile(reference.file, reference.kind);
     const form = new FormData();
     form.set('model', valid.model);
     form.set('prompt', prompt.trim());
@@ -256,7 +262,7 @@ export async function generateReferenceImage(
       form.append(
         'image[]',
         blob,
-        `${'file' in reference ? 'character-upload' : reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
+        `${'file' in reference ? `${reference.kind}-upload` : reference.variant.id}.${blob.type === 'image/png' ? 'png' : blob.type === 'image/jpeg' ? 'jpg' : 'webp'}`,
       );
     }
     combined.throwIfAborted();

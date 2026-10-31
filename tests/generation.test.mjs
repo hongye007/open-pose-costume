@@ -385,3 +385,67 @@ test('depth pose uploads the selected depth original and explains depth without 
     );
   }
 });
+
+test('uploaded costumes are sent as a file alongside the pose, without fetching previews or leaking local names', async () => {
+  const outfit = {
+    ...characterReference,
+    kind: 'costume',
+    title: { zh: '上传的服饰', en: 'Uploaded costume' },
+    keywords: { zh: '采用服饰配色与材质', en: 'Use the outfit colors and materials' },
+    variant: { ...characterReference.variant, id: 'costume-upload' },
+    file: new File([Buffer.from(png, 'base64')], 'private-outfit-name.png', { type: 'image/png' }),
+  };
+  const refs = [references[0], outfit, characterReference];
+  const calls = [];
+  await api.generateReferenceImage(
+    config,
+    refs,
+    api.referencePrompt(refs, 'en'),
+    new AbortController().signal,
+    async (url, options) => {
+      calls.push({ url, options });
+      return calls.length === 1
+        ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+        : Response.json({ data: [{ b64_json: png }] });
+    },
+  );
+  assert.equal(calls.length, 2);
+  assert.equal(calls[0].url, references[0].variant.original);
+  assert.equal(calls[0].options.headers, undefined);
+  const files = calls[1].options.body.getAll('image[]');
+  assert.equal(files.length, 3);
+  assert.equal(files[1].name, 'costume-upload.png');
+  assert.equal(files[2].name, 'character-upload.png');
+  assert.deepEqual(Buffer.from(await files[1].arrayBuffer()), Buffer.from(png, 'base64'));
+  assert.match(calls[1].options.body.get('prompt'), /Reference 2 \(costume\)/);
+  assert.ok(!calls[1].options.body.get('prompt').includes(outfit.file.name));
+});
+
+test('invalid and oversized costume uploads fail before any reference or provider request', async () => {
+  for (const [file, code] of [
+    [new File(['<svg/>'], 'outfit.png', { type: 'image/png' }), 'costumeInvalid'],
+    [
+      new File([Buffer.from(png, 'base64')], 'outfit.jpg', { type: 'image/jpeg' }),
+      'costumeInvalid',
+    ],
+    [
+      new File([new Uint8Array(10 * 1024 * 1024 + 1)], 'outfit.png', { type: 'image/png' }),
+      'costumeTooLarge',
+    ],
+  ]) {
+    let calls = 0;
+    await assert.rejects(
+      api.generateReferenceImage(
+        config,
+        [references[0], { ...characterReference, kind: 'costume', file }],
+        'draw',
+        new AbortController().signal,
+        async () => {
+          calls++;
+        },
+      ),
+      (error) => error.code === code,
+    );
+    assert.equal(calls, 0);
+  }
+});
