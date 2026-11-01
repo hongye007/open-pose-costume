@@ -39,11 +39,21 @@ export function matchesQuery(item: Reference, query: string): boolean {
     item.category.en,
     item.series.zh,
     item.series.en,
+    ...(item.collection === 'custom' ? ['自建扩展', 'Custom'] : []),
+    ...(item.tags || []).flatMap((tag) => [tag.id, tag.zh, tag.en]),
   ]
     .join(' ')
     .toLocaleLowerCase()
     .normalize('NFKC');
   return searchWords(query).every((word) => haystack.includes(word));
+}
+
+export function matchesExtension(item: Reference, collection: string, tag: string): boolean {
+  return (
+    (collection === 'all' ||
+      (collection === 'custom' ? item.collection === 'custom' : !item.collection)) &&
+    (tag === 'all' || !!item.tags?.some((value) => value.id === tag))
+  );
 }
 
 export function sortItems(items: Reference[], sort: Sort, lang: Lang): Reference[] {

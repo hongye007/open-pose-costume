@@ -50,7 +50,17 @@ import type {
   ImageConfig,
   ImageReference,
 } from './generation';
-import { angles, copyText, matchesQuery, sortItems, storageGet, storageSet } from './library';
+import {
+  angles,
+  copyText,
+  matchesQuery,
+  matchesExtension,
+  sortItems,
+  storageGet,
+  storageSet,
+} from './library';
+import { resolveCustomAssets } from './custom-assets';
+import { ReferenceFilters, ReferenceBadges } from './reference-filters';
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference, Variant } from './types';
 
@@ -87,6 +97,14 @@ export default function App() {
   const [query, setQuery] = useState(initialParams.get('q') || '');
   const [category, setCategory] = useState(initialParams.get('category') || 'all');
   const [hair, setHair] = useState(initialParams.get('hair') || 'all');
+  const [collection, setCollection] = useState(
+    initialParams.get('collection') === 'custom'
+      ? 'custom'
+      : initialParams.get('collection') === 'builtin'
+        ? 'builtin'
+        : 'all',
+  );
+  const [tag, setTag] = useState(initialParams.get('tag') || 'all');
   const [extended, setExtended] = useState(initialParams.get('extended') === '1');
   const [poseDepth, setPoseDepth] = useState(initialParams.get('depth') === '1');
   const [angle, setAngle] = useState<string>(
@@ -135,7 +153,7 @@ export default function App() {
       })
       .then((data) => {
         if (!data.items?.length || !data.stats) throw Error('Invalid reference catalog');
-        setCatalog(data);
+        setCatalog(resolveCustomAssets(data));
       })
       .catch((error) => {
         if (error.name !== 'AbortError') setFailed(true);
@@ -158,7 +176,7 @@ export default function App() {
   }, [board]);
   useEffect(() => {
     setLimit(24);
-  }, [query, view, category, hair, extended, sort]);
+  }, [query, view, category, hair, collection, tag, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => generationController.current?.abort(), []);
   useEffect(() => () => downloadController.current?.abort(), []);
@@ -193,12 +211,27 @@ export default function App() {
       ...(extended ? { extended: '1' } : {}),
       ...(poseDepth ? { depth: '1' } : {}),
       ...(hair !== 'all' ? { hair } : {}),
+      ...(collection !== 'all' ? { collection } : {}),
+      ...(tag !== 'all' ? { tag } : {}),
       ...(angle !== 'front' ? { angle } : {}),
       ...(selectedId ? { item: selectedId, detailAngle } : {}),
     };
     for (const [key, value] of Object.entries(params)) url.searchParams.set(key, value);
     window.history.replaceState(null, '', url);
-  }, [lang, view, query, category, hair, extended, poseDepth, angle, selectedId, detailAngle]);
+  }, [
+    lang,
+    view,
+    query,
+    category,
+    hair,
+    collection,
+    tag,
+    extended,
+    poseDepth,
+    angle,
+    selectedId,
+    detailAngle,
+  ]);
 
   const notify = useCallback((message: string) => {
     setToast(message);
@@ -236,12 +269,13 @@ export default function App() {
           (item) =>
             (category === 'all' || item.category.id === category) &&
             (hair === 'all' || item.portrait?.hair === hair) &&
+            matchesExtension(item, collection, tag) &&
             matchesQuery(item, query),
         ),
         sort,
         lang,
       ),
-    [byView, category, hair, query, sort, lang],
+    [byView, category, hair, collection, tag, query, sort, lang],
   );
   const selected = items.find((item) => item.id === selectedId);
   const selectedIndex = selected ? visible.findIndex((item) => item.id === selected.id) : -1;
@@ -316,11 +350,15 @@ export default function App() {
     setView(next);
     setCategory('all');
     setHair('all');
+    setCollection('all');
+    setTag('all');
     setQuery('');
   }
   function resetFilters() {
     setCategory('all');
     setHair('all');
+    setCollection('all');
+    setTag('all');
     setQuery('');
     setSort('curated');
   }
@@ -923,6 +961,14 @@ export default function App() {
                 ))}
               </div>
             </div>
+            <ReferenceFilters
+              items={byView}
+              lang={lang}
+              collection={collection}
+              tag={tag}
+              onCollection={setCollection}
+              onTag={setTag}
+            />
             {view === 'character' && (
               <div className="portrait-filters">
                 <span>{t.hairLength}</span>
@@ -945,7 +991,11 @@ export default function App() {
                 {visible.length.toLocaleString(lang)} {t.results}
                 <span className="result-dot">·</span>
                 <span className="regular-label">{extended ? t.extended : t.filterHint}</span>
-                {(query || category !== 'all' || hair !== 'all') && (
+                {(query ||
+                  category !== 'all' ||
+                  hair !== 'all' ||
+                  collection !== 'all' ||
+                  tag !== 'all') && (
                   <button className="reset-inline" onClick={resetFilters}>
                     {t.clear}
                     <X size={12} />
@@ -994,17 +1044,31 @@ export default function App() {
             ) : visible.length === 0 ? (
               <div className="status-state">
                 <div className="empty-symbol">
-                  {view === 'saved' && !query && category === 'all' ? (
+                  {view === 'saved' &&
+                  !query &&
+                  category === 'all' &&
+                  collection === 'all' &&
+                  tag === 'all' ? (
                     <Bookmark size={30} />
                   ) : (
                     <Search size={30} />
                   )}
                 </div>
                 <h3>
-                  {view === 'saved' && !query && category === 'all' ? t.noSaved : t.noResults}
+                  {view === 'saved' &&
+                  !query &&
+                  category === 'all' &&
+                  collection === 'all' &&
+                  tag === 'all'
+                    ? t.noSaved
+                    : t.noResults}
                 </h3>
                 <p>
-                  {view === 'saved' && !query && category === 'all'
+                  {view === 'saved' &&
+                  !query &&
+                  category === 'all' &&
+                  collection === 'all' &&
+                  tag === 'all'
                     ? t.noSavedHint
                     : t.noResultsHint}
                 </p>
@@ -1112,6 +1176,7 @@ export default function App() {
                           <button className="card-title" onClick={() => openDetail(item)}>
                             {item.title[lang]}
                           </button>
+                          <ReferenceBadges item={item} lang={lang} />
                           <div className="card-bottom">
                             <span>
                               {item.kind === 'character'
@@ -1295,6 +1360,7 @@ export default function App() {
             <code className="detail-code">{selected.id}</code>
             <h2>{selected.title[lang]}</h2>
             <p className="detail-series">{selected.series[lang]}</p>
+            <ReferenceBadges item={selected} lang={lang} />
             {selected.kind === 'pose' && (
               <div className="detail-angle-section">
                 <h3>{t.angles}</h3>

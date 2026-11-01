@@ -1,5 +1,6 @@
 import type { Kind, Lang, Reference, Variant } from './types';
 import { isDepthVariant, poseDepthOrigin } from './pose-depth';
+import { isCustomAsset } from './custom-assets';
 
 export interface ImageConfig {
   baseUrl: string;
@@ -228,7 +229,12 @@ export async function generateReferenceImage(
         `https://ai-${reference.kind === 'character' ? 'portrait' : reference.kind}-gallery.pages.dev`,
         ...(reference.kind === 'pose' ? [poseDepthOrigin] : []),
       ];
-      if (!allowedOrigins.includes(url.origin)) throw new ImageGenerationError('referenceFailed');
+      if (
+        url.username ||
+        url.password ||
+        (!allowedOrigins.includes(url.origin) && !isCustomAsset(url.href, reference.kind))
+      )
+        throw new ImageGenerationError('referenceFailed');
       return url.href;
     });
     for (const reference of references)

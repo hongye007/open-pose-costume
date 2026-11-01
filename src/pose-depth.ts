@@ -8,7 +8,7 @@ export function isDepthVariant(variant: Variant): boolean {
 }
 
 export function withPoseDepth(item: Reference): Reference {
-  if (item.kind !== 'pose') return item;
+  if (item.kind !== 'pose' || item.collection === 'custom') return item;
   const depthUrl = (value: string) => {
     const url = new URL(value);
     return url.origin === poseOrigin ? `${poseDepthOrigin}${url.pathname}` : value;

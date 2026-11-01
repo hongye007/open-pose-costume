@@ -29,9 +29,9 @@ Find inspiration, combine references and generate characters in one place.
   <tbody>
     <tr>
       <td align="center"><strong>288</strong> groups · <strong>1,439</strong> views</td>
-      <td align="center"><strong>1,407</strong></td>
+      <td align="center"><strong>1,438</strong></td>
       <td align="center"><strong>1,499</strong></td>
-      <td align="center"><strong>4,345</strong></td>
+      <td align="center"><strong>4,376</strong></td>
     </tr>
   </tbody>
 </table>
@@ -164,6 +164,8 @@ Character metadata comes from [AI Portrait Gallery](https://ai-portrait-gallery.
 | `npm run images:download` | Optional: archive covers and originals from all categories locally                |
 
 Metadata snapshots live in `data/source/`, the website index in `public/data/catalog.json`, and sync records in `data/sync-manifest.json`. Sync checks categories, angles and translation coverage. If translations are missing, update the dictionaries indicated by the error.
+
+Custom extensions are maintained separately in [`data/custom/`](data/custom/README.md), with shipped assets in `public/custom/{costume,pose,character}/`. The initial collection contains 30 anime outfits and one photorealistic extracted outfit. Filter by **Custom**, **Anime** or **Photorealistic** in the library and reference picker. Each outfit has a PNG original, WebP preview and thumbnail. Rebuilding or syncing upstream metadata preserves custom entries.
 
 <details>
 <summary>Image archives and brand assets</summary>

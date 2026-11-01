@@ -1,5 +1,6 @@
 import { zipSync } from 'fflate';
 import type { ImageReference } from './generation';
+import { isCustomAsset } from './custom-assets';
 
 /** Export the references submitted for this result, including persisted uploads. */
 export async function referenceArchive(
@@ -13,7 +14,11 @@ export async function referenceArchive(
     if ('file' in reference) blob = reference.file;
     else {
       const url = new URL(reference.variant.original);
-      if (url.protocol !== 'https:' || url.username || url.password)
+      if (
+        (url.protocol !== 'https:' && !isCustomAsset(url.href, reference.kind)) ||
+        url.username ||
+        url.password
+      )
         throw Error('invalidReference');
       const response = await fetcher(url.href, {
         credentials: 'omit',

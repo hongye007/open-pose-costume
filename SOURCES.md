@@ -68,3 +68,9 @@ Read on 2026-10-31 (Asia/Shanghai). The depth gallery has the same 1,439 variant
 The source permits individual reference use for creating works, including commercial works, and explicitly prohibits bulk downloads (including automated retrieval), redistribution, republication and resale of its images. The earlier pose/costume archive permission is not assumed to cover depth maps. Full current terms are available at the source site.
 
 原站允许单张用于作品制作参考（含商业作品），明确禁止批量下载（含自动获取）、图片再分发、转载与转售。现有姿势与服饰归档授权不视为自动覆盖深度图，完整现行条款以原站为准。
+
+## 自建扩展 / Custom extensions
+
+自建素材清单位于 `data/custom/`，图片独立位于 `public/custom/{costume,pose,character}/`，随网站发布，不混入上游快照或根目录图片归档。首批包含 30 套动漫服饰和 1 套月纹服饰提取图，均使用维护者提供的参考素材通过 Atomflow `gpt-image-2` 重绘或提取。AI 重绘不是原始细节恢复；批次、模型和原图哈希见各条目的 `provenance`。这些图片不自动适用代码的 MIT 授权。原有上游条目的图片链接保持原样。
+
+Custom metadata and shipped assets are stored separately from upstream snapshots and archives. The first collection contains 30 anime outfits and one extracted moon-pattern outfit, reconstructed or extracted from maintainer-supplied references using Atomflow `gpt-image-2`. This is AI reconstruction, not recovery of original details. Per-item provenance records the batch, model and original-image hash. Images are separate from the MIT code license. Existing upstream image URLs remain unchanged. See [custom extension instructions](data/custom/README.md).

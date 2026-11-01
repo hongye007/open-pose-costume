@@ -26,6 +26,7 @@ import {
 } from './generation';
 import type { GenerationJob, ImageConfig } from './generation';
 import type { Lang } from './types';
+import { isCustomAsset } from './custom-assets';
 
 function imageExtension(type: string): string {
   return type === 'image/png'
@@ -39,7 +40,8 @@ function imageExtension(type: string): string {
 
 async function downloadImageSource(source: string, filename: string): Promise<void> {
   const url = new URL(source, window.location.href);
-  if (!['https:', 'blob:', 'data:'].includes(url.protocol)) throw Error('invalidImageSource');
+  if (!['https:', 'blob:', 'data:'].includes(url.protocol) && !isCustomAsset(url.href))
+    throw Error('invalidImageSource');
   const response = await fetch(url.href, {
     signal: AbortSignal.timeout(60_000),
     credentials: 'omit',

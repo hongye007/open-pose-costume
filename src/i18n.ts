@@ -1,5 +1,11 @@
 export const copy = {
   zh: {
+    collection: '素材范围',
+    allCollections: '全部素材',
+    builtinCollection: '原有素材',
+    customCollection: '自建扩展',
+    tag: '风格标签',
+    allTags: '全部风格',
     brand: '姿势与服装参考库',
     library: '参考资料库',
     all: '全部参考',
@@ -139,6 +145,12 @@ export const copy = {
     searchExamples: '试试：侧坐、针织、blue coat',
   },
   en: {
+    collection: 'Collection',
+    allCollections: 'All references',
+    builtinCollection: 'Original library',
+    customCollection: 'Custom',
+    tag: 'Style tag',
+    allTags: 'All styles',
     brand: 'Pose & costume reference library',
     library: 'Reference library',
     all: 'All references',

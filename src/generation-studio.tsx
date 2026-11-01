@@ -32,7 +32,8 @@ import {
   saveGenerationRecord,
 } from './generation-history';
 import type { GenerationRecord } from './generation-history';
-import { matchesQuery } from './library';
+import { matchesQuery, matchesExtension } from './library';
+import { ReferenceFilters, ReferenceBadges } from './reference-filters';
 import { Modal, RemoteImage } from './ui';
 import type { Kind, Lang, Reference } from './types';
 
@@ -65,6 +66,8 @@ function ReferencePicker({
   const t = studioCopy[lang];
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('all');
+  const [collection, setCollection] = useState('all');
+  const [tag, setTag] = useState('all');
   const [limit, setLimit] = useState(24);
   const scrollRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -74,7 +77,10 @@ function ReferencePicker({
     ...new Map(available.map((item) => [item.category.id, item.category[lang]])).entries(),
   ];
   const filtered = available.filter(
-    (item) => (category === 'all' || item.category.id === category) && matchesQuery(item, query),
+    (item) =>
+      (category === 'all' || item.category.id === category) &&
+      matchesExtension(item, collection, tag) &&
+      matchesQuery(item, query),
   );
   const hasMore = filtered.length > limit;
   useEffect(() => {
@@ -90,10 +96,11 @@ function ReferencePicker({
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [hasMore, limit, filtered.length, query, category]);
+  }, [hasMore, limit, filtered.length, query, category, collection, tag]);
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
-  }, [query, category]);
+    setLimit(24);
+  }, [query, category, collection, tag]);
   return (
     <Modal
       onClose={onClose}
@@ -159,6 +166,14 @@ function ReferencePicker({
             </label>
           )}
         </div>
+        <ReferenceFilters
+          items={available}
+          lang={lang}
+          collection={collection}
+          tag={tag}
+          onCollection={setCollection}
+          onTag={setTag}
+        />
         <p className="studio-picker-count" role="status">
           {filtered.length.toLocaleString(lang === 'zh' ? 'zh-CN' : 'en')} {t.referenceCount}
         </p>
@@ -174,6 +189,7 @@ function ReferencePicker({
             >
               <RemoteImage src={item.variants[0].thumbnail} alt={item.title[lang]} lang={lang} />
               <span>{item.title[lang]}</span>
+              <ReferenceBadges item={item} lang={lang} />
             </button>
           ))}
         </div>

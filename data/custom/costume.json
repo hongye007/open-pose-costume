@@ -1,0 +1,1614 @@
+[
+  {
+    "id": "custom_costume_001",
+    "kind": "costume",
+    "code": "C-001",
+    "title": {
+      "zh": "风衣马甲长裙",
+      "en": "Trench coat, sage waistcoat and ivory maxi skirt"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "风衣马甲长裙",
+      "en": "Trench coat, sage waistcoat and ivory maxi skirt"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "67d59e46b9c17764eb4a004bba9632f3d7d4bb5857a3433371df42e281f4c1b7"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_001",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_001.webp",
+        "image": "custom/costume/images/custom_costume_001.webp",
+        "original": "custom/costume/originals/custom_costume_001.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_002",
+    "kind": "costume",
+    "code": "C-002",
+    "title": {
+      "zh": "黄色薄衫百褶裙",
+      "en": "Yellow chiffon shrug, white crop top and pleated skirt"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黄色薄衫百褶裙",
+      "en": "Yellow chiffon shrug, white crop top and pleated skirt"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "867a2e1926c1bd121359e12d021fa952e03732b7f79c6e8e6e2579f688b8f245"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_002",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_002.webp",
+        "image": "custom/costume/images/custom_costume_002.webp",
+        "original": "custom/costume/originals/custom_costume_002.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_003",
+    "kind": "costume",
+    "code": "C-003",
+    "title": {
+      "zh": "绿色绑带上衣短裙",
+      "en": "Sage wrap blouse, cream short skirt and bucket hat"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "绿色绑带上衣短裙",
+      "en": "Sage wrap blouse, cream short skirt and bucket hat"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "87e777803ad522648c267a8fd947940eaa5603d2361131bf1509dd639b24a37b"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_003",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_003.webp",
+        "image": "custom/costume/images/custom_costume_003.webp",
+        "original": "custom/costume/originals/custom_costume_003.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_004",
+    "kind": "costume",
+    "code": "C-004",
+    "title": {
+      "zh": "卡其衬衫黑色工装裤",
+      "en": "Khaki overshirt, white tee and black cargo trousers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "卡其衬衫黑色工装裤",
+      "en": "Khaki overshirt, white tee and black cargo trousers"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "0032c769ec563289f8c68a175b31c234226f43fa166df7280628cc98b2a8f37e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_004",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_004.webp",
+        "image": "custom/costume/images/custom_costume_004.webp",
+        "original": "custom/costume/originals/custom_costume_004.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_005",
+    "kind": "costume",
+    "code": "C-005",
+    "title": {
+      "zh": "黑西装白色纱裙",
+      "en": "Black blazer, ribbed turtleneck and white layered tulle skirt"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑西装白色纱裙",
+      "en": "Black blazer, ribbed turtleneck and white layered tulle skirt"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "7ed5a53c3736fd699bddd70612d6ddaedd1c0257140ca4b19a3c3fd21c4e6cc8"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_005",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_005.webp",
+        "image": "custom/costume/images/custom_costume_005.webp",
+        "original": "custom/costume/originals/custom_costume_005.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_006",
+    "kind": "costume",
+    "code": "C-006",
+    "title": {
+      "zh": "蕾丝开衫粉色短裙",
+      "en": "Lace cardigan, navy camisole and pink pleated mini skirt"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "蕾丝开衫粉色短裙",
+      "en": "Lace cardigan, navy camisole and pink pleated mini skirt"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "e8bee13a9b8dcf787447bf498067f766536d9b86d6401f8198cf94ef042c2240"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_006",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_006.webp",
+        "image": "custom/costume/images/custom_costume_006.webp",
+        "original": "custom/costume/originals/custom_costume_006.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_007",
+    "kind": "costume",
+    "code": "C-007",
+    "title": {
+      "zh": "蓝绿吊带百褶裙",
+      "en": "Turquoise draped camisole and ivory pleated skirt"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "蓝绿吊带百褶裙",
+      "en": "Turquoise draped camisole and ivory pleated skirt"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "5258c989d6c00ac695f0056ed7e997058ee3834aea876ecca18d633e2c74e203"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_007",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_007.webp",
+        "image": "custom/costume/images/custom_costume_007.webp",
+        "original": "custom/costume/originals/custom_costume_007.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_008",
+    "kind": "costume",
+    "code": "C-008",
+    "title": {
+      "zh": "浅蓝挂脖连衣裙",
+      "en": "Light blue halterneck dress and lace cover-up"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "浅蓝挂脖连衣裙",
+      "en": "Light blue halterneck dress and lace cover-up"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "769759cd50b2dc1a5283e64342e7d9f5b1c42049a3e53af7c04d0a4887f8804e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_008",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_008.webp",
+        "image": "custom/costume/images/custom_costume_008.webp",
+        "original": "custom/costume/originals/custom_costume_008.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_009",
+    "kind": "costume",
+    "code": "C-009",
+    "title": {
+      "zh": "黑色背心短裤",
+      "en": "Black sleeveless top, denim shorts and stockings"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色背心短裤",
+      "en": "Black sleeveless top, denim shorts and stockings"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "eaefd9c343e8991c1a9b6c3386d6389a678e4ec54808ce39893cd9596df2e2e7"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_009",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_009.webp",
+        "image": "custom/costume/images/custom_costume_009.webp",
+        "original": "custom/costume/originals/custom_costume_009.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_010",
+    "kind": "costume",
+    "code": "C-010",
+    "title": {
+      "zh": "黑色无袖连体裤",
+      "en": "Black belted sleeveless jumpsuit"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色无袖连体裤",
+      "en": "Black belted sleeveless jumpsuit"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "72e8615b67d676d05839ba26cc0f461dc2aabc3c0fc19a7fbe2781212ecbd5cf"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_010",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_010.webp",
+        "image": "custom/costume/images/custom_costume_010.webp",
+        "original": "custom/costume/originals/custom_costume_010.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_011",
+    "kind": "costume",
+    "code": "C-011",
+    "title": {
+      "zh": "黄色上衣酒红短裤",
+      "en": "Mustard draped blouse, burgundy shorts and brown boots"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黄色上衣酒红短裤",
+      "en": "Mustard draped blouse, burgundy shorts and brown boots"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "8ef9ddbe2990392e62192a7ec7ef499db7351f337b7f4d927e6996ef8c8232ed"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_011",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_011.webp",
+        "image": "custom/costume/images/custom_costume_011.webp",
+        "original": "custom/costume/originals/custom_costume_011.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_012",
+    "kind": "costume",
+    "code": "C-012",
+    "title": {
+      "zh": "棕色上衣酒红喇叭裤",
+      "en": "Chocolate draped blouse and burgundy flared trousers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "棕色上衣酒红喇叭裤",
+      "en": "Chocolate draped blouse and burgundy flared trousers"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "fd943ae0421fc306d464b89592b37942a112ed3e70e92e5d84b233705f9e510e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_012",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_012.webp",
+        "image": "custom/costume/images/custom_costume_012.webp",
+        "original": "custom/costume/originals/custom_costume_012.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_013",
+    "kind": "costume",
+    "code": "C-013",
+    "title": {
+      "zh": "风衣金色短裙",
+      "en": "Beige trench coat, golden mini dress and white knee socks"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "风衣金色短裙",
+      "en": "Beige trench coat, golden mini dress and white knee socks"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "6c9da5733f0c25d723f6f0228e4d31a43cd403737d2a6cb2362b3be3b5be5c49"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_013",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_013.webp",
+        "image": "custom/costume/images/custom_costume_013.webp",
+        "original": "custom/costume/originals/custom_costume_013.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_014",
+    "kind": "costume",
+    "code": "C-014",
+    "title": {
+      "zh": "棕色皮衣灰色阔腿裤",
+      "en": "Brown leather jacket and grey wide-leg trousers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "棕色皮衣灰色阔腿裤",
+      "en": "Brown leather jacket and grey wide-leg trousers"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "53e35cd7bc83fa8e81f0774abe8c35e6e04e5c723a5343f9b83f893772cd7c97"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_014",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_014.webp",
+        "image": "custom/costume/images/custom_costume_014.webp",
+        "original": "custom/costume/originals/custom_costume_014.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_015",
+    "kind": "costume",
+    "code": "C-015",
+    "title": {
+      "zh": "黑色夹克灰色针织裙",
+      "en": "Black jacket, grey ribbed mini dress and tall boots"
+    },
+    "category": {
+      "id": "winter",
+      "zh": "冬日穿搭",
+      "en": "Winter"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色夹克灰色针织裙",
+      "en": "Black jacket, grey ribbed mini dress and tall boots"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "187ba87162da73c9316f45974035b08a24b8b80465aa5680efa73d386d59d802"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_015",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_015.webp",
+        "image": "custom/costume/images/custom_costume_015.webp",
+        "original": "custom/costume/originals/custom_costume_015.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_016",
+    "kind": "costume",
+    "code": "C-016",
+    "title": {
+      "zh": "米白夹克针织长裙",
+      "en": "Ivory shearling jacket and ribbed maxi dress"
+    },
+    "category": {
+      "id": "winter",
+      "zh": "冬日穿搭",
+      "en": "Winter"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "米白夹克针织长裙",
+      "en": "Ivory shearling jacket and ribbed maxi dress"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ccc65a59b1f86ea39c32e73dff84a60c250f5272f53984aed1e81e5646faf3bb"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_016",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_016.webp",
+        "image": "custom/costume/images/custom_costume_016.webp",
+        "original": "custom/costume/originals/custom_costume_016.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_017",
+    "kind": "costume",
+    "code": "C-017",
+    "title": {
+      "zh": "蓝色针织百褶短裙",
+      "en": "Navy knit top, grey pleated skirt and cream scarf"
+    },
+    "category": {
+      "id": "winter",
+      "zh": "冬日穿搭",
+      "en": "Winter"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "蓝色针织百褶短裙",
+      "en": "Navy knit top, grey pleated skirt and cream scarf"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "bf975bbd30580ea7597eb77bbf2c3ed679cde1071bdf596dcb44f0cb9580a2c5"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_017",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_017.webp",
+        "image": "custom/costume/images/custom_costume_017.webp",
+        "original": "custom/costume/originals/custom_costume_017.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_018",
+    "kind": "costume",
+    "code": "C-018",
+    "title": {
+      "zh": "棕色羊羔绒外套短裙",
+      "en": "Tan shearling jacket, champagne mini dress and knit hat"
+    },
+    "category": {
+      "id": "winter",
+      "zh": "冬日穿搭",
+      "en": "Winter"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "棕色羊羔绒外套短裙",
+      "en": "Tan shearling jacket, champagne mini dress and knit hat"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "044cc01ac6668b717ca33b5bcb7a6bc1d8e0d73580dd068c299552b0aac4781e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_018",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_018.webp",
+        "image": "custom/costume/images/custom_costume_018.webp",
+        "original": "custom/costume/originals/custom_costume_018.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_019",
+    "kind": "costume",
+    "code": "C-019",
+    "title": {
+      "zh": "黑绿叠穿条纹阔腿裤",
+      "en": "Black vest, green blouse and striped wide-leg trousers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑绿叠穿条纹阔腿裤",
+      "en": "Black vest, green blouse and striped wide-leg trousers"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "221236939d92c7791cce2aad7cd209b5e506aad30f9c17ff0c7addbda6d14526"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_019",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_019.webp",
+        "image": "custom/costume/images/custom_costume_019.webp",
+        "original": "custom/costume/originals/custom_costume_019.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_020",
+    "kind": "costume",
+    "code": "C-020",
+    "title": {
+      "zh": "灰色西装黑色针织裙",
+      "en": "Grey blazer, black ribbed mini dress and stockings"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "灰色西装黑色针织裙",
+      "en": "Grey blazer, black ribbed mini dress and stockings"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "777b155389800ef4a2c37af53b54521a541ff0b323d6ecaec7a6f4329b34df68"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_020",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_020.webp",
+        "image": "custom/costume/images/custom_costume_020.webp",
+        "original": "custom/costume/originals/custom_costume_020.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_021",
+    "kind": "costume",
+    "code": "C-021",
+    "title": {
+      "zh": "蓝色蕾丝居家套装",
+      "en": "Blue lace camisole and shorts with long sheer robe"
+    },
+    "category": {
+      "id": "lingerie",
+      "zh": "内衣",
+      "en": "Lingerie"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": true,
+    "keywords": {
+      "zh": "蓝色蕾丝居家套装",
+      "en": "Blue lace camisole and shorts with long sheer robe"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "cf02a6ec2113689a9fa628cf3aab9cd88fe6243f6c72c78bcfb6ba0d5e4169d4"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_021",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_021.webp",
+        "image": "custom/costume/images/custom_costume_021.webp",
+        "original": "custom/costume/originals/custom_costume_021.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_022",
+    "kind": "costume",
+    "code": "C-022",
+    "title": {
+      "zh": "米色绒边居家套装",
+      "en": "Beige wrap loungewear set with plush trim and slippers"
+    },
+    "category": {
+      "id": "winter",
+      "zh": "冬日穿搭",
+      "en": "Winter"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "米色绒边居家套装",
+      "en": "Beige wrap loungewear set with plush trim and slippers"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ba1203f0dedae82ac7dd08de66254e70a0fffca21c5134969a232ef702592bb3"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_022",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_022.webp",
+        "image": "custom/costume/images/custom_costume_022.webp",
+        "original": "custom/costume/originals/custom_costume_022.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_023",
+    "kind": "costume",
+    "code": "C-023",
+    "title": {
+      "zh": "酒红羽毛蕾丝套装",
+      "en": "Burgundy feather-trimmed lace lingerie ensemble"
+    },
+    "category": {
+      "id": "lingerie",
+      "zh": "内衣",
+      "en": "Lingerie"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": true,
+    "keywords": {
+      "zh": "酒红羽毛蕾丝套装",
+      "en": "Burgundy feather-trimmed lace lingerie ensemble"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "250c2d6d39b943a21f1cfcc02c819d3b0731cf41baff0ab85cb17037b8f3608e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_023",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_023.webp",
+        "image": "custom/costume/images/custom_costume_023.webp",
+        "original": "custom/costume/originals/custom_costume_023.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_024",
+    "kind": "costume",
+    "code": "C-024",
+    "title": {
+      "zh": "酒红蕾丝吊带袜套装",
+      "en": "Burgundy lace lingerie with garter belt and stockings"
+    },
+    "category": {
+      "id": "lingerie",
+      "zh": "内衣",
+      "en": "Lingerie"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": true,
+    "keywords": {
+      "zh": "酒红蕾丝吊带袜套装",
+      "en": "Burgundy lace lingerie with garter belt and stockings"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "768d7ea9edbe1992510b8d69a7846b41c1d91afe89cdbdef4051769fe99121f4"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_024",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_024.webp",
+        "image": "custom/costume/images/custom_costume_024.webp",
+        "original": "custom/costume/originals/custom_costume_024.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_025",
+    "kind": "costume",
+    "code": "C-025",
+    "title": {
+      "zh": "黑色波点蕾丝套装",
+      "en": "Black dotted sheer lingerie with thigh-high stockings"
+    },
+    "category": {
+      "id": "lingerie",
+      "zh": "内衣",
+      "en": "Lingerie"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": true,
+    "keywords": {
+      "zh": "黑色波点蕾丝套装",
+      "en": "Black dotted sheer lingerie with thigh-high stockings"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ce88e9275e943e29d7eb3fe649fc4e077b5548fcdd1648c28d2cc429c3223f1f"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_025",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_025.webp",
+        "image": "custom/costume/images/custom_costume_025.webp",
+        "original": "custom/costume/originals/custom_costume_025.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_026",
+    "kind": "costume",
+    "code": "C-026",
+    "title": {
+      "zh": "白色黑边旗袍造型",
+      "en": "White black-trimmed cutout qipao-inspired costume"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "白色黑边旗袍造型",
+      "en": "White black-trimmed cutout qipao-inspired costume"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "cd10bacd8534b056ce811231742fc3dc4346ad508e8c8a7b948afb082d88a453"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_026",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_026.webp",
+        "image": "custom/costume/images/custom_costume_026.webp",
+        "original": "custom/costume/originals/custom_costume_026.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_027",
+    "kind": "costume",
+    "code": "C-027",
+    "title": {
+      "zh": "白色天使羽翼造型",
+      "en": "White angel costume with halo and feathered wings"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "白色天使羽翼造型",
+      "en": "White angel costume with halo and feathered wings"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "33d73c315e127fab603aa921ce21c5c0fea30e45099482134a861c2aa8a996b5"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_027",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_027.webp",
+        "image": "custom/costume/images/custom_costume_027.webp",
+        "original": "custom/costume/originals/custom_costume_027.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_028",
+    "kind": "costume",
+    "code": "C-028",
+    "title": {
+      "zh": "白金幻想礼服造型",
+      "en": "White and gold fantasy dress with miniature top hat"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "白金幻想礼服造型",
+      "en": "White and gold fantasy dress with miniature top hat"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "dad26632dc33517155b1ea76f129eab173d329520b9a779dc52d7c284e9c9185"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_028",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_028.webp",
+        "image": "custom/costume/images/custom_costume_028.webp",
+        "original": "custom/costume/originals/custom_costume_028.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_029",
+    "kind": "costume",
+    "code": "C-029",
+    "title": {
+      "zh": "粉色制服长靴造型",
+      "en": "Pink uniform-inspired costume with cap and tall boots"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "粉色制服长靴造型",
+      "en": "Pink uniform-inspired costume with cap and tall boots"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "eebab7c90de45736a654c1a4a539310b7f8a32c2d613d9f18d0fed908e816085"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_029",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_029.webp",
+        "image": "custom/costume/images/custom_costume_029.webp",
+        "original": "custom/costume/originals/custom_costume_029.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_030",
+    "kind": "costume",
+    "code": "C-030",
+    "title": {
+      "zh": "黑红幻想战斗造型",
+      "en": "Black and red fantasy costume with straps and tall boots"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建动漫服饰 · 01",
+      "en": "Custom anime outfits · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑红幻想战斗造型",
+      "en": "Black and red fantasy costume with straps and tall boots"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "anime",
+        "zh": "动漫",
+        "en": "Anime"
+      }
+    ],
+    "provenance": {
+      "batch": "anime-outfits-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "5d5312b1420c18f0dbc56d9ad8da61092da12f904a75d7f25ccd2273c5572c60"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_030",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_030.webp",
+        "image": "custom/costume/images/custom_costume_030.webp",
+        "original": "custom/costume/originals/custom_costume_030.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_moon_001",
+    "kind": "costume",
+    "code": "C-M001",
+    "title": {
+      "zh": "黑金月纹幻想服饰",
+      "en": "Black and gold moon-pattern fantasy outfit"
+    },
+    "category": {
+      "id": "fantasy",
+      "zh": "幻想服饰",
+      "en": "Fantasy costumes"
+    },
+    "series": {
+      "zh": "自建服饰提取 · 01",
+      "en": "Custom outfit extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 金色 月亮 星座 幻想 服饰",
+      "en": "black gold moon constellation fantasy outfit"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photorealistic"
+      }
+    ],
+    "provenance": {
+      "batch": "moon-extraction-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "fe0b529e9d860d2e651783b2608841ffeb2f91e68efe32e9538b9778fa34ca85"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_moon_001",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "thumbnail": "custom/costume/thumbnails/custom_costume_moon_001.webp",
+        "image": "custom/costume/images/custom_costume_moon_001.webp",
+        "original": "custom/costume/originals/custom_costume_moon_001.png"
+      }
+    ]
+  }
+]

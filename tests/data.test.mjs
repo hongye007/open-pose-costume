@@ -29,21 +29,34 @@ after(async () => {
 
 test('all source records are preserved, uniquely grouped, with no invented angles', async () => {
   assert.deepEqual(await normalize(pose, costume, zh, portrait), catalog);
-  const poseGroups = catalog.items.filter((item) => item.kind === 'pose');
+  const poseGroups = catalog.items.filter(
+    (item) => item.kind === 'pose' && item.collection !== 'custom',
+  );
   assert.equal(
     poseGroups.reduce((sum, item) => sum + item.variants.length, 0),
     pose.length,
   );
-  assert.equal(catalog.items.filter((item) => item.kind === 'costume').length, costume.length);
+  assert.equal(
+    catalog.items.filter((item) => item.kind === 'costume' && item.collection !== 'custom').length,
+    costume.length,
+  );
   assert.equal(new Set(catalog.items.map((item) => item.id)).size, catalog.items.length);
-  assert.equal(catalog.stats.images, pose.length + costume.length + portrait.length);
+  assert.equal(
+    catalog.stats.images,
+    pose.length +
+      costume.length +
+      portrait.length +
+      catalog.items
+        .filter((item) => item.collection === 'custom')
+        .reduce((n, item) => n + item.variants.length, 0),
+  );
   assert.deepEqual(
     new Set(poseGroups.flatMap((item) => item.variants.map((variant) => variant.id))),
     new Set(pose.map((row) => row.id)),
   );
 });
 
-test('every reference and variant has complete Chinese and English, and only original external image URLs', () => {
+test('every reference has complete Chinese and English, and upstream URLs stay unchanged', () => {
   for (const item of catalog.items) {
     for (const field of ['title', 'category', 'series', 'keywords']) {
       assert.ok(item[field].zh.length > 0, `${item.id} ${field}.zh`);
@@ -51,7 +64,7 @@ test('every reference and variant has complete Chinese and English, and only ori
       assert.doesNotMatch(item[field].en, /[\u3040-\u30ff\u4e00-\u9fff]/);
     }
     for (const variant of item.variants) {
-      for (const key of ['thumbnail', 'image', 'original']) {
+      for (const key of item.collection === 'custom' ? [] : ['thumbnail', 'image', 'original']) {
         assert.equal(
           new URL(variant[key]).origin,
           item.kind === 'pose'
@@ -147,7 +160,9 @@ test('missing, damaged, or inaccessible local storage falls back safely', () => 
 });
 
 test('portrait ingestion preserves both sections, translates styles and rejects unsafe or incomplete records', async () => {
-  const characters = catalog.items.filter((item) => item.kind === 'character');
+  const characters = catalog.items.filter(
+    (item) => item.kind === 'character' && item.collection !== 'custom',
+  );
   assert.equal(characters.length, portrait.length);
   assert.equal(characters.filter((item) => item.portrait.section === 'face').length, 893);
   assert.equal(characters.filter((item) => item.portrait.section === 'styling').length, 606);
@@ -184,7 +199,7 @@ test('depth mode preserves catalog identity and angles without mutating original
   const snapshot = JSON.stringify(catalog);
   for (const item of catalog.items) {
     const depth = withPoseDepth(item);
-    if (item.kind !== 'pose') {
+    if (item.kind !== 'pose' || item.collection === 'custom') {
       assert.equal(depth, item);
       continue;
     }

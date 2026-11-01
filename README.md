@@ -29,9 +29,9 @@
   <tbody>
     <tr>
       <td align="center"><strong>288</strong> 组 · <strong>1,439</strong> 个视角</td>
-      <td align="center"><strong>1,407</strong> 套</td>
+      <td align="center"><strong>1,438</strong> 套</td>
       <td align="center"><strong>1,499</strong> 张</td>
-      <td align="center"><strong>4,345</strong> 张</td>
+      <td align="center"><strong>4,376</strong> 张</td>
     </tr>
   </tbody>
 </table>
@@ -164,6 +164,8 @@ npm run preview -- --port 5200
 | `npm run images:download` | 可选：本地归档所有分类的封面与原图           |
 
 元数据快照位于 `data/source/`，网站索引位于 `public/data/catalog.json`，同步记录位于 `data/sync-manifest.json`。同步会检查分类、视角及翻译完整性；如缺少翻译，按报错补充词表。
+
+自建扩展独立维护在 [`data/custom/`](data/custom/README.md)，图片放在 `public/custom/{costume,pose,character}/`。首批包含 30 套动漫服饰与 1 套写实提取服饰，支持按 **自建扩展**、**动漫**、**写实** 筛选，并在搭配台使用。每套保留 PNG 原图、WebP 预览和缩略图；重建索引或同步上游不会覆盖自建数据。
 
 <details>
 <summary>图片归档与品牌素材</summary>

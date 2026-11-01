@@ -4546,3 +4546,49 @@ dialog::backdrop {
     justify-self: center;
   }
 }
+
+/* Custom extensions share the existing library and picker controls. */
+.reference-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 14px 0;
+}
+.reference-filters label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.reference-filters select {
+  min-width: 116px;
+  max-width: 190px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+  font-size: 12px;
+}
+.reference-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 7px 0;
+}
+.reference-badges > span,
+.studio-picker-grid .reference-badges > span {
+  display: inline-block;
+  padding: 3px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: #eef2ff;
+  color: #435ca5;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.studio-picker-card .reference-badges {
+  padding: 0 12px 7px;
+  margin: 0;
+}

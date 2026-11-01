@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { normalizePortraits } from './portrait-data.mjs';
+import { loadCustomReferences } from './custom-data.mjs';
 
 export const root = new URL('../', import.meta.url);
 export const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
@@ -134,15 +135,19 @@ export async function normalize(pose, costume, chinese, portraits = []) {
   // Start with foundational poses; retain every source record, including the one incomplete angle set.
   const poses = [...groups.values()].sort((a, b) => Number(a.extended) - Number(b.extended));
   const characters = await normalizePortraits(portraits);
+  const custom = await loadCustomReferences([...poses, ...outfits, ...characters]);
+  const items = [...custom, ...poses, ...outfits, ...characters];
   return {
-    items: [...poses, ...outfits, ...characters],
+    items,
     stats: {
-      poseGroups: poses.length,
-      poseImages: pose.length,
-      costumes: outfits.length,
-      characters: characters.length,
-      references: poses.length + outfits.length + characters.length,
-      images: pose.length + outfits.length + characters.length,
+      poseGroups: items.filter((item) => item.kind === 'pose').length,
+      poseImages: items
+        .filter((item) => item.kind === 'pose')
+        .reduce((n, item) => n + item.variants.length, 0),
+      costumes: items.filter((item) => item.kind === 'costume').length,
+      characters: items.filter((item) => item.kind === 'character').length,
+      references: items.length,
+      images: items.reduce((n, item) => n + item.variants.length, 0),
     },
   };
 }

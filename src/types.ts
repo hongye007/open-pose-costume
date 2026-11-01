@@ -19,6 +19,8 @@ export interface Reference {
   extended: boolean;
   keywords: Localized;
   source: string;
+  collection?: 'custom';
+  tags?: (Localized & { id: string })[];
   portrait?: { section: 'face' | 'styling'; hair: string };
   variants: Variant[];
 }
