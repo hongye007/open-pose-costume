@@ -1,19 +1,39 @@
+<div align="center">
+
+<img src="public/brand/logo-mark.png" width="72" height="72" alt="Open Pose & Costume logo" />
+
 # Open Pose & Costume
 
-[中文](README.md) · **English**
+### From pose and outfit to character
 
-[Live demo](https://hongye007.github.io/open-pose-costume/) · [Character generation skill](https://github.com/hongye007/open-pose-costume-skill)
+A bilingual reference studio for character design, drawing practice and AI creation.<br />
+Find inspiration, combine references and generate characters in one place.
 
-- **Free trial instructions**: [Read the Feishu guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
-- **Author on X**: [@HongyeMain](https://x.com/HongyeMain)
+**[Try the studio ↗](https://hongye007.github.io/open-pose-costume/)** &nbsp; · &nbsp; [Character generation skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [Free trial guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 
-From pose and outfit, to character. A bilingual reference studio for character design, drawing practice and AI creation: find references, pair a pose with an outfit, generate a character and compare the result.
+[中文](README.md) / **English** &nbsp; · &nbsp; [Author on X · @HongyeMain](https://x.com/HongyeMain)
 
-![Open Pose & Costume English homepage: pose, costume and character references combined into a generated character](docs/images/hero-character-workflow-en.webp)
+</div>
 
-**288 pose groups · 1,439 pose views · 1,407 outfits · 1,499 character references · 4,345 reference images**
+![Open Pose & Costume: pose, costume and character references combined into a generated character](docs/images/hero-reference-banner-v3-en.webp)
 
-Counts include extended categories. Data updated on October 30, 2026 (Asia/Shanghai).
+| Pose references | Outfits | Character references | Reference images |
+| :---: | :---: | :---: | :---: |
+| **288** groups · **1,439** views | **1,407** | **1,499** | **4,345** |
+
+<div align="center">
+<sub>Includes extended categories · Updated October 30, 2026 (Asia/Shanghai)</sub>
+</div>
+
+<p align="center">
+<a href="#browse-and-save">Browse &amp; save</a> ·
+<a href="#pose-outfit-and-character-generate-an-image">Generate</a> ·
+<a href="#companion-skill">Companion skill</a> ·
+<a href="#run-locally">Run locally</a> ·
+<a href="#license-and-credits">License</a>
+</p>
+
+---
 
 ## Browse and save
 
@@ -48,17 +68,26 @@ Open “Generate image” from the sidebar. Choose references and settings on th
 | Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]` |
 | Browser access   | Service must allow CORS; use HTTPS or a local HTTP address                                   |
 
+<details>
+<summary>How are API keys, images and history stored?</summary>
+
 Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, the browser sends references and the description directly to your configured service, which may charge for usage. Keys are excluded from share links and the repository.
 
 Library selections are saved as reference IDs in this browser. Lists use thumbnails; details and generation use originals. For uploaded outfits, the original photo is sent to your configured service when you click “Extract outfit.” The confirmed extraction becomes the outfit reference for subsequent generation.
 
 History is stored in this browser using IndexedDB, including generated images, prompts, settings and reference information. Uploaded reference files are also saved with successful results. Uploads without a successful result stay only in page memory. Delete individual records or clear history in the drawer. Images and keys are excluded from share links and the repository; history does not contain API keys.
 
-**Side by side**: view the selected reference beside the generated result.
+</details>
+
+### Side by side
+
+View the selected reference beside the generated result to compare the pose and outfit.
 
 ![Side-by-side example: pose, costume and character references, with the original pose beside the generated result](docs/images/generation-character-side-by-side-en.webp)
 
-**Overlay**: drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported. If subject sizes or positions differ, select “Align images” to zoom and drag each image before comparing. Alignment affects the preview only, leaving originals and downloads unchanged.
+### Overlay
+
+Drag the divider within a single frame, with the generated image on the left and the selected reference on the right. Arrow keys and Home / End are supported. If subject sizes or positions differ, select “Align images” to zoom and drag each image before comparing. Alignment affects the preview only, leaving originals and downloads unchanged.
 
 ![Overlay example: pose, costume and character references, with a slider comparing the generated image and original pose](docs/images/generation-character-overlay-en.webp)
 

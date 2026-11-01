@@ -1,19 +1,39 @@
+<div align="center">
+
+<img src="public/brand/logo-mark.png" width="72" height="72" alt="Open Pose & Costume Logo" />
+
 # Open Pose & Costume
 
-**中文** · [English](README.en.md)
+### 从姿势、服饰到人物
 
-[在线体验](https://hongye007.github.io/open-pose-costume/) · [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill)
+为角色设计、绘画练习与 AI 创作准备的中英文参考工作台。<br />
+查找灵感、组合参考、生成角色，在一个地方完成。
 
-- **免费试用体验方式**：[查看飞书文档](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
-- **作者 X 主页**：[@HongyeMain](https://x.com/HongyeMain)
+**[在线体验 ↗](https://hongye007.github.io/open-pose-costume/)** &nbsp; · &nbsp; [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [免费试用指南](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 
-从姿势，服饰到人物。一个面向角色设计、绘画练习与 AI 创作的中英文参考工作台，把查找素材、搭配参考、生成角色与对照预览放在一起。
+**中文** / [English](README.en.md) &nbsp; · &nbsp; [作者 X · @HongyeMain](https://x.com/HongyeMain)
 
-![Open Pose & Costume 中文首页：姿势、服饰与人物三种参考合成角色](docs/images/hero-character-workflow-zh.webp)
+</div>
 
-**288 组姿势 · 1,439 个姿势视角 · 1,407 套服饰 · 1,499 张人物参考 · 4,345 张参考图**
+![Open Pose & Costume：姿势、服饰与人物参考组合生成角色](docs/images/hero-reference-banner-v3-zh.webp)
 
-以上为包含扩展分类的数据，更新于 2026-10-30（Asia/Shanghai）。
+| 姿势参考 | 服饰参考 | 人物参考 | 参考图片总数 |
+| :---: | :---: | :---: | :---: |
+| **288** 组 · **1,439** 个视角 | **1,407** 套 | **1,499** 张 | **4,345** 张 |
+
+<div align="center">
+<sub>包含扩展分类 · 数据更新于 2026-10-30（Asia/Shanghai）</sub>
+</div>
+
+<p align="center">
+<a href="#查找与收藏">查找与收藏</a> ·
+<a href="#姿势服饰与人物一键生成">一键生图</a> ·
+<a href="#配套-skill">配套 Skill</a> ·
+<a href="#本地运行">本地运行</a> ·
+<a href="#授权与致谢">授权说明</a>
+</p>
+
+---
 
 ## 查找与收藏
 
@@ -48,17 +68,26 @@
 | 参考图     | 通过 `image[]` 上传姿势、服饰两张原图；选传人物图时共三张 |
 | 浏览器访问 | 服务需允许 CORS；使用 HTTPS 或本机 HTTP 地址              |
 
+<details>
+<summary>密钥、图片与历史记录如何保存？</summary>
+
 配置保存在当前浏览器，API Key 默认仅保存到当前会话；勾选“记住密钥”后存入本地存储，可在设置中清除。生成时，浏览器直接向配置的服务发送参考图和描述，费用以该服务为准。密钥不会进入分享链接或仓库。
 
 库中参考选择以素材编号保存在当前浏览器；列表使用缩略图，详情和生成使用原图。上传服饰时，原始穿搭图会在点击“提取服饰”后发送至所配置的服务；确认后的提取结果作为服饰参考参与后续生成。
 
 历史记录通过 IndexedDB 保存在当前浏览器，包含生成结果、描述、参数与该次参考信息；使用上传图片时，相应参考文件也会随成功结果保存。未生成成功的上传图片仅保留在当前页面内存中。可在历史抽屉删除或清空记录；图片和密钥不会写入分享链接或仓库，历史记录不包含 API Key。
 
-**双列预览**：所选参考与生成结果并排展示。
+</details>
+
+### 双列预览
+
+所选参考与生成结果并排展示，方便检查动作与穿搭。
 
 ![双列预览：姿势、服饰与人物三种参考，姿势原图与生成结果并排展示](docs/images/generation-character-side-by-side-zh.webp)
 
-**叠加预览**：在同一个画框中拖动滑杆对比，左侧为生成图、右侧为所选参考；支持方向键与 Home / End。人物大小或位置不一致时，点击“调整对齐”，分别缩放、拖动参考与结果后再对照；调整仅影响预览，不改变原图和下载内容。
+### 叠加预览
+
+在同一个画框中拖动滑杆对比，左侧为生成图、右侧为所选参考；支持方向键与 Home / End。人物大小或位置不一致时，点击“调整对齐”，分别缩放、拖动参考与结果后再对照；调整仅影响预览，不改变原图和下载内容。
 
 ![叠加预览：姿势、服饰与人物三种参考，拖动滑杆对比生成图与姿势原图](docs/images/generation-character-overlay-zh.webp)
 
