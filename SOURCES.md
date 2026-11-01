@@ -73,4 +73,8 @@ The source permits individual reference use for creating works, including commer
 
 自建素材清单位于 `data/custom/`，图片独立位于 `public/custom/{costume,pose,character}/`，随网站发布，不混入上游快照或根目录图片归档。首批包含 30 套动漫服饰和 1 套月纹服饰提取图，均使用维护者提供的参考素材通过 Atomflow `gpt-image-2` 重绘或提取。AI 重绘不是原始细节恢复；批次、模型和原图哈希见各条目的 `provenance`。这些图片不自动适用代码的 MIT 授权。原有上游条目的图片链接保持原样。
 
+自建素材需单独授权：可自由学习和个人使用，但不可商用。未经事先书面授权，拒绝任何形式的分发、再分发、转载、打包、下载提供或转售；限制也适用于编辑或生成的衍生图片。需要在其他项目、网站、模型或数据集中使用时，请先联系维护者。
+
 Custom metadata and shipped assets are stored separately from upstream snapshots and archives. The first collection contains 30 anime outfits and one extracted moon-pattern outfit, reconstructed or extracted from maintainer-supplied references using Atomflow `gpt-image-2`. This is AI reconstruction, not recovery of original details. Per-item provenance records the batch, model and original-image hash. Images are separate from the MIT code license. Existing upstream image URLs remain unchanged. See [custom extension instructions](data/custom/README.md).
+
+Custom assets require separate permission: learning and personal use are free, but commercial use is prohibited. Without prior written permission, distribution, redistribution, republication, packaging, download provision or resale is prohibited, including edited or generated derivatives. Contact the maintainer before using them in another project, website, model or dataset.

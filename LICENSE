@@ -3,7 +3,9 @@ MIT License — project code only
 Copyright (c) 2026 open-pose-costume contributors
 
 Scope: This license applies to original application source code, scripts, tests,
-and project documentation. It does NOT grant rights to images served by third
+and project documentation, excluding custom asset usage terms. It does NOT grant
+rights to custom images under public/custom/ (see public/custom/LICENSE.txt),
+images served by third
 parties, their original catalog data, or third-party translations. See SOURCES.md
 and THIRD_PARTY_NOTICES.md. The word "open" in the project name describes the
 project code, not an open-content license for the referenced images.

@@ -167,6 +167,8 @@ npm run preview -- --port 5200
 
 自建扩展独立维护在 [`data/custom/`](data/custom/README.md)，图片放在 `public/custom/{costume,pose,character}/`。首批包含 30 套动漫服饰与 1 套写实提取服饰，支持按 **自建扩展**、**动漫**、**写实** 筛选，并在搭配台使用。每套保留 PNG 原图、WebP 预览和缩略图；重建索引或同步上游不会覆盖自建数据。
 
+**自建素材使用限制：**需要单独授权，可自由学习和个人使用，不可商用。未经事先书面授权，禁止任何形式的分发、再分发、转载、打包、下载提供或转售；代码的 MIT 许可不适用于这些图片及其衍生图。详见 [`data/custom/README.md`](data/custom/README.md)。
+
 <details>
 <summary>图片归档与品牌素材</summary>
 

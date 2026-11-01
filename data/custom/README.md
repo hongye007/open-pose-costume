@@ -2,6 +2,12 @@
 
 自建素材与 `data/source/` 上游快照分开维护，`npm run sync` 不会改写这里。
 
+## 使用限制 / Usage restriction
+
+自建素材需要单独授权。允许自由学习和个人使用，但**不可商用**；未经事先书面授权，禁止以任何形式分发、再分发、转载、打包、提供下载或转售。需要把素材放入其他项目、网站、模型或数据集时，请先联系维护者取得单独授权。该限制适用于原图、预览图、缩略图及其修改或生成的衍生图片，不影响本仓库代码的 MIT 许可。
+
+Custom assets require separate permission. They are free for learning and personal use, but **commercial use is prohibited**. Without prior written permission, do not distribute, redistribute, republish, package, provide downloads, or resell the originals, previews, thumbnails, edits, or generated derivatives. Ask the maintainer before including them in another project, website, model, or dataset. This restriction does not change the MIT license for the application code.
+
 | 类型 / Kind | 清单 / Manifest | 图片目录 / Assets |
 | :--- | :--- | :--- |
 | 服饰 / Costume | `costume.json` | `public/custom/costume/` |

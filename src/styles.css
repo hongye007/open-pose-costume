@@ -4554,6 +4554,21 @@ dialog::backdrop {
   gap: 12px 20px;
   margin: 14px 0;
 }
+.reference-filter-wrap {
+  margin: 14px 0;
+}
+.reference-filter-wrap .reference-filters {
+  margin: 0;
+}
+.custom-usage-notice {
+  margin: 9px 0 0;
+  padding: 9px 11px;
+  border-left: 3px solid #d38a32;
+  background: #fff8ed;
+  color: #79501d;
+  font-size: 12px;
+  line-height: 1.55;
+}
 .reference-filters label {
   display: flex;
   align-items: center;

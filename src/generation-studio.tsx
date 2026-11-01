@@ -34,6 +34,8 @@ import {
 import type { GenerationRecord } from './generation-history';
 import { matchesQuery, matchesExtension } from './library';
 import { ReferenceFilters, ReferenceBadges } from './reference-filters';
+import { isCustomAsset } from './custom-assets';
+import { copy } from './i18n';
 import { Modal, RemoteImage } from './ui';
 import type { Kind, Lang, Reference } from './types';
 
@@ -651,6 +653,9 @@ export function GenerationStudio({
             })}
           </div>
           <p className="studio-upload-note">{t.uploadHint}</p>
+          {references.some((reference) => isCustomAsset(reference.variant.original)) && (
+            <p className="custom-usage-notice">{copy[lang].customUsageNotice}</p>
+          )}
           <p className="studio-upload-note">{t.costumeExtractionHint}</p>
           {characterError && (
             <p className="studio-inline-error" role="alert">

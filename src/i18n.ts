@@ -6,6 +6,8 @@ export const copy = {
     customCollection: '自建扩展',
     tag: '风格标签',
     allTags: '全部风格',
+    customUsageNotice:
+      '自建素材需单独授权：可自由学习和个人使用，不可商用；禁止任何形式的分发、再分发或转售，需分发请先取得书面授权。',
     brand: '姿势与服装参考库',
     library: '参考资料库',
     all: '全部参考',
@@ -151,6 +153,8 @@ export const copy = {
     customCollection: 'Custom',
     tag: 'Style tag',
     allTags: 'All styles',
+    customUsageNotice:
+      'Custom assets require separate permission: free for learning and personal use, not for commercial use. Any distribution, redistribution or resale is prohibited without prior written permission.',
     brand: 'Pose & costume reference library',
     library: 'Reference library',
     all: 'All references',

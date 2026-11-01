@@ -1361,6 +1361,9 @@ export default function App() {
             <h2>{selected.title[lang]}</h2>
             <p className="detail-series">{selected.series[lang]}</p>
             <ReferenceBadges item={selected} lang={lang} />
+            {selected.collection === 'custom' && (
+              <p className="custom-usage-notice">{t.customUsageNotice}</p>
+            )}
             {selected.kind === 'pose' && (
               <div className="detail-angle-section">
                 <h3>{t.angles}</h3>

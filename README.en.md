@@ -167,6 +167,8 @@ Metadata snapshots live in `data/source/`, the website index in `public/data/cat
 
 Custom extensions are maintained separately in [`data/custom/`](data/custom/README.md), with shipped assets in `public/custom/{costume,pose,character}/`. The initial collection contains 30 anime outfits and one photorealistic extracted outfit. Filter by **Custom**, **Anime** or **Photorealistic** in the library and reference picker. Each outfit has a PNG original, WebP preview and thumbnail. Rebuilding or syncing upstream metadata preserves custom entries.
 
+**Custom asset usage restriction:** separate permission is required. Learning and personal use are free, but commercial use is prohibited. Without prior written permission, do not distribute, redistribute, republish, package, provide downloads, or resell these images or derivatives. The MIT license applies to the code only. See [`data/custom/README.md`](data/custom/README.md).
+
 <details>
 <summary>Image archives and brand assets</summary>
 
