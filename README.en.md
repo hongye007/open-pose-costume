@@ -17,9 +17,24 @@ Find inspiration, combine references and generate characters in one place.
 
 ![Open Pose & Costume: pose, costume and character references combined into a generated character](docs/images/hero-reference-banner-v3-en.webp)
 
-| Pose references | Outfits | Character references | Reference images |
-| :---: | :---: | :---: | :---: |
-| **288** groups · **1,439** views | **1,407** | **1,499** | **4,345** |
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center">Pose references</th>
+      <th align="center">Outfits</th>
+      <th align="center">Character references</th>
+      <th align="center">Reference images</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>288</strong> groups · <strong>1,439</strong> views</td>
+      <td align="center"><strong>1,407</strong></td>
+      <td align="center"><strong>1,499</strong></td>
+      <td align="center"><strong>4,345</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 <div align="center">
 <sub>Includes extended categories · Updated October 30, 2026 (Asia/Shanghai)</sub>

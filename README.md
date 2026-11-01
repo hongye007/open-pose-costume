@@ -17,9 +17,24 @@
 
 ![Open Pose & Costume：姿势、服饰与人物参考组合生成角色](docs/images/hero-reference-banner-v3-zh.webp)
 
-| 姿势参考 | 服饰参考 | 人物参考 | 参考图片总数 |
-| :---: | :---: | :---: | :---: |
-| **288** 组 · **1,439** 个视角 | **1,407** 套 | **1,499** 张 | **4,345** 张 |
+<table align="center">
+  <thead>
+    <tr>
+      <th align="center">姿势参考</th>
+      <th align="center">服饰参考</th>
+      <th align="center">人物参考</th>
+      <th align="center">参考图片总数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><strong>288</strong> 组 · <strong>1,439</strong> 个视角</td>
+      <td align="center"><strong>1,407</strong> 套</td>
+      <td align="center"><strong>1,499</strong> 张</td>
+      <td align="center"><strong>4,345</strong> 张</td>
+    </tr>
+  </tbody>
+</table>
 
 <div align="center">
 <sub>包含扩展分类 · 数据更新于 2026-10-30（Asia/Shanghai）</sub>
