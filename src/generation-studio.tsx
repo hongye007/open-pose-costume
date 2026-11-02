@@ -32,10 +32,11 @@ import {
   saveGenerationRecord,
 } from './generation-history';
 import type { GenerationRecord } from './generation-history';
-import { matchesQuery, matchesExtension } from './library';
-import { ReferenceFilters, ReferenceBadges } from './reference-filters';
+import { filterReferences } from './library';
+import { ReferenceFilters, ReferenceBadges, CategoryFilter } from './reference-filters';
 import { isCustomAsset } from './custom-assets';
 import { copy } from './i18n';
+import { hasPoseDepth } from './pose-depth';
 import { Modal, RemoteImage } from './ui';
 import type { Kind, Lang, Reference } from './types';
 
@@ -62,7 +63,7 @@ function ReferencePicker({
   poseDepth: boolean;
   onDepth: (value: boolean) => void;
   depthDisabled: boolean;
-  onChoose: (item: Reference) => void;
+  onChoose: (item: Reference, angle?: string) => void;
   onClose: () => void;
 }) {
   const t = studioCopy[lang];
@@ -70,20 +71,16 @@ function ReferencePicker({
   const [category, setCategory] = useState('all');
   const [collection, setCollection] = useState('all');
   const [tag, setTag] = useState('all');
+  const [style, setStyle] = useState('all');
+  const [country, setCountry] = useState('all');
   const [limit, setLimit] = useState(24);
+  const [cardAngles, setCardAngles] = useState<Record<string, string>>({});
   const scrollRef = useRef<HTMLDivElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const Icon = referenceIcons[kind];
   const available = useMemo(() => items.filter((item) => item.kind === kind), [items, kind]);
-  const categories = [
-    ...new Map(available.map((item) => [item.category.id, item.category[lang]])).entries(),
-  ];
-  const filtered = available.filter(
-    (item) =>
-      (category === 'all' || item.category.id === category) &&
-      matchesExtension(item, collection, tag) &&
-      matchesQuery(item, query),
-  );
+  const filters = { category, collection, tag, style, country, query };
+  const filtered = filterReferences(available, filters);
   const hasMore = filtered.length > limit;
   useEffect(() => {
     const sentinel = loadMoreRef.current;
@@ -98,11 +95,11 @@ function ReferencePicker({
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
-  }, [hasMore, limit, filtered.length, query, category, collection, tag]);
+  }, [hasMore, limit, filtered.length, query, category, collection, tag, style, country]);
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
     setLimit(24);
-  }, [query, category, collection, tag]);
+  }, [query, category, collection, tag, style, country]);
   return (
     <Modal
       onClose={onClose}
@@ -119,7 +116,7 @@ function ReferencePicker({
               <h2>
                 {t.choose} {generationCopy[lang][kind]}
               </h2>
-              <p>{t.pickerHint}</p>
+              <p>{kind === 'pose' ? t.posePickerHint : t.pickerHint}</p>
             </div>
           </div>
           <button className="icon-button" aria-label={generationCopy[lang].close} onClick={onClose}>
@@ -140,60 +137,87 @@ function ReferencePicker({
               }}
             />
           </label>
-          <select
-            value={category}
-            aria-label={t.allCategories}
-            onChange={(e) => {
-              setCategory(e.target.value);
-              setLimit(24);
-            }}
-          >
-            <option value="all">{t.allCategories}</option>
-            {categories.map(([id, label]) => (
-              <option key={id} value={id}>
-                {label}
-              </option>
-            ))}
-          </select>
           {kind === 'pose' && (
             <label className="pose-depth-switch studio-picker-depth" title={t.depthHint}>
               <span>{t.depthMap}</span>
               <input
                 type="checkbox"
                 checked={poseDepth}
-                disabled={depthDisabled}
+                disabled={depthDisabled || (!poseDepth && !filtered.some(hasPoseDepth))}
                 onChange={(e) => onDepth(e.target.checked)}
               />
               <span className="switch-track" aria-hidden="true" />
             </label>
           )}
         </div>
+        {kind === 'pose' && filtered.some((item) => !hasPoseDepth(item)) && (
+          <p className="depth-availability-note">{copy[lang].depthPartial}</p>
+        )}
         <ReferenceFilters
           items={available}
           lang={lang}
-          collection={collection}
-          tag={tag}
+          filters={filters}
           onCollection={setCollection}
           onTag={setTag}
-        />
+          onStyle={setStyle}
+          onCountry={setCountry}
+        >
+          <CategoryFilter items={available} filters={filters} lang={lang} onChange={setCategory} />
+        </ReferenceFilters>
         <p className="studio-picker-count" role="status">
           {filtered.length.toLocaleString(lang === 'zh' ? 'zh-CN' : 'en')} {t.referenceCount}
         </p>
       </header>
       <div className="studio-picker-scroll" ref={scrollRef}>
         <div className="studio-picker-grid">
-          {filtered.slice(0, limit).map((item) => (
-            <button
-              key={item.id}
-              className={`studio-picker-card studio-picker-card-${kind}`}
-              title={item.title[lang]}
-              onClick={() => onChoose(item)}
-            >
-              <RemoteImage src={item.variants[0].thumbnail} alt={item.title[lang]} lang={lang} />
-              <span>{item.title[lang]}</span>
-              <ReferenceBadges item={item} lang={lang} />
-            </button>
-          ))}
+          {filtered.slice(0, limit).map((item) => {
+            const variant =
+              item.variants.find((value) => value.angle === cardAngles[item.id]) ||
+              item.variants.find((value) => value.angle === 'front') ||
+              item.variants[0];
+            return (
+              <article key={item.id} className={`studio-picker-card studio-picker-card-${kind}`}>
+                <button
+                  className="studio-picker-select"
+                  title={item.title[lang]}
+                  aria-label={`${t.choose} ${item.title[lang]}${kind === 'pose' ? ` · ${variant.label[lang]}` : ''}`}
+                  onClick={() => onChoose(item, variant.angle)}
+                >
+                  <RemoteImage
+                    className="studio-picker-preview"
+                    src={variant.thumbnail}
+                    alt={`${item.title[lang]} · ${variant.label[lang]}`}
+                    lang={lang}
+                  />
+                  <span className="studio-picker-card-title">{item.title[lang]}</span>
+                </button>
+                {kind === 'pose' && item.variants.length > 1 && (
+                  <div
+                    className="studio-picker-angles"
+                    role="group"
+                    aria-label={`${item.title[lang]} · ${t.angle}`}
+                  >
+                    {item.variants.map((view) => (
+                      <button
+                        key={view.id}
+                        type="button"
+                        aria-label={view.label[lang]}
+                        aria-pressed={view.angle === variant.angle}
+                        title={view.label[lang]}
+                        onClick={() =>
+                          setCardAngles((current) => ({ ...current, [item.id]: view.angle }))
+                        }
+                      >
+                        <RemoteImage src={view.thumbnail} alt="" lang={lang} />
+                        <span>{view.label[lang]}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                <ReferenceBadges item={item} lang={lang} />
+              </article>
+            );
+          })}
         </div>
         {!filtered.length && <p className="studio-picker-empty">{t.noMatches}</p>}
         {hasMore && (
@@ -326,7 +350,7 @@ export function GenerationStudio({
   characterError: string;
   poseDepth: boolean;
   onDepth: (value: boolean) => void;
-  onChoose: (item: Reference) => void;
+  onChoose: (item: Reference, angle?: string) => void;
   onRemove: (kind: Kind) => void;
   onAngle: (angle: string) => void;
   onUpload: (file: File, kind: 'character' | 'costume') => void;
@@ -663,11 +687,11 @@ export function GenerationStudio({
             </p>
           )}
           <div className="studio-pose-options">
-            <label className="studio-depth">
+            <label className="studio-depth" title={copy[lang].depthHint}>
               <input
                 type="checkbox"
                 checked={poseDepth}
-                disabled={loading}
+                disabled={loading || (!poseDepth && (!poseItem || !hasPoseDepth(poseItem)))}
                 onChange={(e) => {
                   onDepth(e.target.checked);
                   setCustomPrompt(null);
@@ -675,6 +699,9 @@ export function GenerationStudio({
               />
               <span>{t.depth}</span>
             </label>
+            {poseItem && !hasPoseDepth(poseItem) && (
+              <small className="depth-availability-note">{copy[lang].noDepth}</small>
+            )}
             {poseItem && poseItem.variants.length > 1 && (
               <label className="studio-angle">
                 {t.angle}
@@ -1109,8 +1136,8 @@ export function GenerationStudio({
             setCustomPrompt(null);
           }}
           onClose={() => setPicker(null)}
-          onChoose={(item) => {
-            onChoose(item);
+          onChoose={(item, angle) => {
+            onChoose(item, angle);
             setPicker(null);
           }}
         />

@@ -51,6 +51,12 @@ export async function normalizePortraits(rows) {
       category,
       series: { zh: hair.zh, en: hair.en },
       extended: false,
+      // The existing portrait collection is female and photographic, as confirmed by the curator.
+      tags: [
+        { id: 'female', zh: '女性', en: 'Female' },
+        { id: 'photo', zh: '写实', en: 'Photographic' },
+      ],
+      country: { id: 'jp', zh: '日本', en: 'Japan' },
       keywords: {
         zh: `${title.zh}。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的服装或动作。`,
         en: `${title.en}. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference outfit or pose.`,

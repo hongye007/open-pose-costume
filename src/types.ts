@@ -8,6 +8,9 @@ export interface Variant {
   thumbnail: string;
   image: string;
   original: string;
+  depth?: { thumbnail: string; image: string; original: string };
+  /** Persists the selected depth representation in generation history. */
+  depthMap?: boolean;
 }
 export interface Reference {
   id: string;
@@ -21,6 +24,7 @@ export interface Reference {
   source: string;
   collection?: 'custom';
   tags?: (Localized & { id: string })[];
+  country?: Localized & { id: string };
   portrait?: { section: 'face' | 'styling'; hair: string };
   variants: Variant[];
 }

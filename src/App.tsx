@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 import { copy } from './i18n';
 import { HeroStudy } from './hero-study';
-import { withPoseDepth } from './pose-depth';
+import { hasPoseDepth, isDepthVariant, withPoseDepth } from './pose-depth';
 import { Modal, RemoteImage } from './ui';
 import { ImageSettings, ImageSettingsButton } from './generation-ui';
 import { GenerationStudio } from './generation-studio';
@@ -53,14 +53,16 @@ import type {
 import {
   angles,
   copyText,
-  matchesQuery,
-  matchesExtension,
+  filterReferences,
+  readTagFilters,
+  referenceTagLabel,
   sortItems,
   storageGet,
   storageSet,
 } from './library';
 import { resolveCustomAssets } from './custom-assets';
-import { ReferenceFilters, ReferenceBadges } from './reference-filters';
+import { ReferenceFilters, ReferenceBadges, CategoryFilter } from './reference-filters';
+import { FilterSelect } from './filter-select';
 import type { Sort, View } from './library';
 import type { Catalog, Lang, Reference, Variant } from './types';
 
@@ -104,7 +106,15 @@ export default function App() {
         ? 'builtin'
         : 'all',
   );
-  const [tag, setTag] = useState(initialParams.get('tag') || 'all');
+  const [tag, setTag] = useState(readTagFilters(initialParams).tag);
+  const [style, setStyle] = useState(readTagFilters(initialParams).style);
+  const [country, setCountry] = useState(initialParams.get('country') || 'all');
+  const [kind, setKind] = useState(
+    viewParam === 'saved' &&
+      ['pose', 'costume', 'character'].includes(initialParams.get('kind') || '')
+      ? initialParams.get('kind')!
+      : 'all',
+  );
   const [extended, setExtended] = useState(initialParams.get('extended') === '1');
   const [poseDepth, setPoseDepth] = useState(initialParams.get('depth') === '1');
   const [angle, setAngle] = useState<string>(
@@ -113,7 +123,11 @@ export default function App() {
       : 'front',
   );
   const [cardAngles, setCardAngles] = useState<Record<string, string>>({});
-  const [sort, setSort] = useState<Sort>('curated');
+  const [sort, setSort] = useState<Sort>(
+    ['name', 'code'].includes(initialParams.get('sort') || '')
+      ? (initialParams.get('sort') as Sort)
+      : 'curated',
+  );
   const [limit, setLimit] = useState(24);
   const [saved, setSaved] = useState(() => storageGet('opc-saved', [], isIds));
   const [board, setBoard] = useState<Board>(() => storageGet('opc-board', {}, isBoard));
@@ -141,6 +155,7 @@ export default function App() {
   const [downloadBusy, setDownloadBusy] = useState(false);
   const downloadController = useRef<AbortController | null>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
@@ -176,7 +191,7 @@ export default function App() {
   }, [board]);
   useEffect(() => {
     setLimit(24);
-  }, [query, view, category, hair, collection, tag, extended, sort]);
+  }, [query, view, category, hair, collection, tag, style, country, kind, extended, sort]);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => generationController.current?.abort(), []);
   useEffect(() => () => downloadController.current?.abort(), []);
@@ -213,6 +228,10 @@ export default function App() {
       ...(hair !== 'all' ? { hair } : {}),
       ...(collection !== 'all' ? { collection } : {}),
       ...(tag !== 'all' ? { tag } : {}),
+      ...(style !== 'all' ? { style } : {}),
+      ...(country !== 'all' ? { country } : {}),
+      ...(kind !== 'all' ? { kind } : {}),
+      ...(sort !== 'curated' ? { sort } : {}),
       ...(angle !== 'front' ? { angle } : {}),
       ...(selectedId ? { item: selectedId, detailAngle } : {}),
     };
@@ -226,6 +245,10 @@ export default function App() {
     hair,
     collection,
     tag,
+    style,
+    country,
+    kind,
+    sort,
     extended,
     poseDepth,
     angle,
@@ -254,29 +277,110 @@ export default function App() {
       ),
     [eligible, view, saved],
   );
-  const categories = useMemo(() => {
-    const map = new Map<string, { label: string; count: number }>();
-    for (const item of byView) {
-      const existing = map.get(item.category.id);
-      map.set(item.category.id, { label: item.category[lang], count: (existing?.count || 0) + 1 });
-    }
-    return [...map.entries()];
-  }, [byView, lang]);
+  const filters = { category, hair, collection, tag, style, country, kind, query };
   const visible = useMemo(
     () =>
       sortItems(
-        byView.filter(
-          (item) =>
-            (category === 'all' || item.category.id === category) &&
-            (hair === 'all' || item.portrait?.hair === hair) &&
-            matchesExtension(item, collection, tag) &&
-            matchesQuery(item, query),
-        ),
+        filterReferences(byView, { category, hair, collection, tag, style, country, kind, query }),
         sort,
         lang,
       ),
-    [byView, category, hair, collection, tag, query, sort, lang],
+    [byView, category, hair, collection, tag, style, country, kind, query, sort, lang],
   );
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (
+      !sentinel ||
+      view === 'studio' ||
+      selectedId ||
+      panel ||
+      limit >= visible.length ||
+      !('IntersectionObserver' in window)
+    )
+      return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        setLimit((current) => Math.min(current + 24, visible.length));
+      },
+      { rootMargin: '0px 0px 320px 0px' },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [visible, limit, view, selectedId, panel]);
+  const resultKinds = new Set(visible.map((item) => item.kind));
+  const characterCategory = byView.some(
+    (item) => item.category.id === category && item.kind === 'character',
+  );
+  function changeCategory(value: string) {
+    setCategory(value);
+    if (
+      view !== 'character' &&
+      kind !== 'character' &&
+      !byView.some((item) => item.category.id === value && item.kind === 'character')
+    )
+      setHair('all');
+  }
+  const activeFilters = [
+    ...(query ? [{ key: 'q', label: `“${query}”`, clear: () => setQuery('') }] : []),
+    ...(kind !== 'all'
+      ? [
+          {
+            key: 'kind',
+            label: t[kind as 'pose' | 'costume' | 'character'],
+            clear: () => {
+              setKind('all');
+              setCategory('all');
+              setHair('all');
+            },
+          },
+        ]
+      : []),
+    ...(category !== 'all'
+      ? [
+          {
+            key: 'category',
+            label: byView.find((item) => item.category.id === category)?.category[lang] || category,
+            clear: () => changeCategory('all'),
+          },
+        ]
+      : []),
+    ...(collection !== 'all'
+      ? [
+          {
+            key: 'collection',
+            label: collection === 'custom' ? t.customCollection : t.builtinCollection,
+            clear: () => setCollection('all'),
+          },
+        ]
+      : []),
+    ...(tag !== 'all'
+      ? [{ key: 'tag', label: referenceTagLabel(tag, lang), clear: () => setTag('all') }]
+      : []),
+    ...(style !== 'all'
+      ? [{ key: 'style', label: referenceTagLabel(style, lang), clear: () => setStyle('all') }]
+      : []),
+    ...(country !== 'all'
+      ? [
+          {
+            key: 'country',
+            label: items.find((item) => item.country?.id === country)?.country?.[lang] || country,
+            clear: () => setCountry('all'),
+          },
+        ]
+      : []),
+    ...(hair !== 'all'
+      ? [
+          {
+            key: 'hair',
+            label: t.hairLengths[hair as keyof typeof t.hairLengths] || hair,
+            clear: () => setHair('all'),
+          },
+        ]
+      : []),
+  ];
+  const hasFilters = activeFilters.length > 0;
   const selected = items.find((item) => item.id === selectedId);
   const selectedIndex = selected ? visible.findIndex((item) => item.id === selected.id) : -1;
   const variant = selected?.variants.find((v) => v.angle === detailAngle) || selected?.variants[0];
@@ -352,6 +456,9 @@ export default function App() {
     setHair('all');
     setCollection('all');
     setTag('all');
+    setStyle('all');
+    setCountry('all');
+    setKind('all');
     setQuery('');
   }
   function resetFilters() {
@@ -359,8 +466,10 @@ export default function App() {
     setHair('all');
     setCollection('all');
     setTag('all');
+    setStyle('all');
+    setCountry('all');
+    setKind('all');
     setQuery('');
-    setSort('curated');
   }
   function save(item: Reference) {
     const exists = saved.includes(item.id);
@@ -625,7 +734,7 @@ export default function App() {
     setView('studio');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  function chooseStudioReference(item: Reference) {
+  function chooseStudioReference(item: Reference, angle = 'front') {
     if (item.kind === 'costume') {
       cancelCostumeExtraction();
       setCostumeLoading(false);
@@ -638,7 +747,10 @@ export default function App() {
       setCharacterReference(null);
       setCharacterError('');
     }
-    if (item.kind === 'pose') setStudioAngle('front');
+    if (item.kind === 'pose')
+      setStudioAngle(
+        item.variants.some((variant) => variant.angle === angle) ? angle : item.variants[0].angle,
+      );
     setBoard((old) => ({ ...old, [item.kind]: item.id }));
   }
   function removeStudioReference(kind: Reference['kind']) {
@@ -894,135 +1006,182 @@ export default function App() {
                   <span>{visible.length.toLocaleString(lang)}</span>
                 </h2>
               </div>
-              {(view === 'pose' || byView.some((item) => item.kind === 'pose')) && (
-                <label className="pose-depth-switch" title={t.depthHint}>
-                  <span>{t.depth}</span>
+            </div>
+            <div className="library-filter-panel">
+              <div className="search-row">
+                <div className="search-box">
+                  <Search size={19} />
                   <input
-                    type="checkbox"
-                    role="switch"
-                    checked={poseDepth}
-                    onChange={(event) => setPoseDepth(event.target.checked)}
+                    ref={searchRef}
+                    type="search"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder={t.search}
+                    aria-label={t.search}
                   />
-                  <span className="switch-track" aria-hidden="true" />
-                </label>
-              )}
-            </div>
-            <div className="search-row">
-              <div className="search-box">
-                <Search size={19} />
-                <input
-                  ref={searchRef}
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder={t.search}
-                  aria-label={t.search}
-                />
-                {query ? (
-                  <button className="icon-button" aria-label={t.clear} onClick={() => setQuery('')}>
-                    <X size={16} />
-                  </button>
-                ) : (
-                  <kbd>/</kbd>
-                )}
-              </div>
-              <label className="sort-control">
-                <span>{t.sort}</span>
-                <select
-                  aria-label={t.sort}
-                  value={sort}
-                  onChange={(e) => setSort(e.target.value as Sort)}
-                >
-                  <option value="curated">{t.curated}</option>
-                  <option value="name">{t.name}</option>
-                  <option value="code">{t.code}</option>
-                </select>
-              </label>
-            </div>
-            <div className="category-area">
-              <div className="category-chips" aria-label={t.categories}>
-                <button
-                  className={category === 'all' ? 'chip active' : 'chip'}
-                  aria-pressed={category === 'all'}
-                  onClick={() => setCategory('all')}
-                >
-                  {t.allCategories}
-                </button>
-                {categories.map(([id, { label, count }]) => (
-                  <button
-                    key={id}
-                    className={category === id ? 'chip active' : 'chip'}
-                    aria-pressed={category === id}
-                    onClick={() => setCategory(id)}
-                  >
-                    {label}
-                    <small>{count}</small>
-                  </button>
-                ))}
-              </div>
-            </div>
-            <ReferenceFilters
-              items={byView}
-              lang={lang}
-              collection={collection}
-              tag={tag}
-              onCollection={setCollection}
-              onTag={setTag}
-            />
-            {view === 'character' && (
-              <div className="portrait-filters">
-                <span>{t.hairLength}</span>
-                <div className="category-chips" role="group" aria-label={t.hairLength}>
-                  {(['all', 'short', 'medium', 'medium-long', 'long'] as const).map((key) => (
+                  {query ? (
                     <button
-                      key={key}
-                      className={hair === key ? 'chip active' : 'chip'}
-                      aria-pressed={hair === key}
-                      onClick={() => setHair(key)}
+                      className="icon-button"
+                      aria-label={t.clear}
+                      onClick={() => setQuery('')}
                     >
-                      {key === 'all' ? t.allHair : t.hairLengths[key]}
+                      <X size={16} />
                     </button>
-                  ))}
+                  ) : (
+                    <kbd>/</kbd>
+                  )}
                 </div>
               </div>
-            )}
-            <div className="result-toolbar">
-              <span>
-                {visible.length.toLocaleString(lang)} {t.results}
-                <span className="result-dot">·</span>
-                <span className="regular-label">{extended ? t.extended : t.filterHint}</span>
-                {(query ||
-                  category !== 'all' ||
-                  hair !== 'all' ||
-                  collection !== 'all' ||
-                  tag !== 'all') && (
-                  <button className="reset-inline" onClick={resetFilters}>
-                    {t.clear}
-                    <X size={12} />
-                  </button>
+              <ReferenceFilters
+                items={byView}
+                lang={lang}
+                filters={filters}
+                onCollection={setCollection}
+                onTag={setTag}
+                onStyle={setStyle}
+                onCountry={setCountry}
+              >
+                {view === 'saved' && (
+                  <div className="reference-filter-field">
+                    <span>{t.kindFilter}</span>
+                    <FilterSelect
+                      label={t.kindFilter}
+                      lang={lang}
+                      value={kind}
+                      onChange={(value) => {
+                        setKind(value);
+                        setCategory('all');
+                        setHair('all');
+                      }}
+                      options={[
+                        { value: 'all', label: t.allKinds },
+                        ...(['pose', 'costume', 'character'] as const).map((value) => {
+                          const count = filterReferences(byView, {
+                            ...filters,
+                            kind: value,
+                            category: 'all',
+                            hair: 'all',
+                          }).length;
+                          return {
+                            value,
+                            label: t[value],
+                            count,
+                            disabled: !count && kind !== value,
+                          };
+                        }),
+                      ]}
+                    />
+                  </div>
                 )}
-              </span>
-              {byView.some((item) => item.kind === 'pose') && (
-                <label className="angle-control">
-                  <span>{t.angle}</span>
-                  <select
-                    aria-label={t.angle}
-                    value={angle}
-                    onChange={(e) => {
-                      setAngle(e.target.value);
-                      setCardAngles({});
-                    }}
-                  >
-                    {angles.map((key) => (
-                      <option key={key} value={key}>
-                        {t[key]}
-                      </option>
-                    ))}
-                  </select>
-                </label>
+                <CategoryFilter
+                  items={byView}
+                  filters={filters}
+                  lang={lang}
+                  onChange={changeCategory}
+                />
+                {(view === 'character' || kind === 'character' || characterCategory) && (
+                  <div className="reference-filter-field">
+                    <span>{t.hairLength}</span>
+                    <FilterSelect
+                      label={t.hairLength}
+                      lang={lang}
+                      value={hair}
+                      onChange={setHair}
+                      options={[
+                        { value: 'all', label: t.allHair },
+                        ...(['short', 'medium', 'medium-long', 'long'] as const).map((key) => {
+                          const count = filterReferences(byView, { ...filters, hair: key }).length;
+                          return {
+                            value: key,
+                            label: t.hairLengths[key],
+                            count,
+                            disabled: !count && hair !== key,
+                          };
+                        }),
+                      ]}
+                    />
+                  </div>
+                )}
+              </ReferenceFilters>
+              {hasFilters && (
+                <div className="active-filter-row" role="group" aria-label={t.activeFilters}>
+                  <span>{t.activeFilters}</span>
+                  {activeFilters.map((filter) => (
+                    <button
+                      key={filter.key}
+                      aria-label={`${t.removeFilter}: ${filter.label}`}
+                      onClick={filter.clear}
+                    >
+                      {filter.label}
+                      <X size={12} />
+                    </button>
+                  ))}
+                  <button className="filter-reset" onClick={resetFilters}>
+                    {t.clear}
+                  </button>
+                </div>
               )}
             </div>
+            <div className="result-toolbar library-result-toolbar">
+              <span aria-live="polite">
+                {visible.length.toLocaleString(lang)} {t.results}
+              </span>
+              <div className="library-display-options" role="group" aria-label={t.displayOptions}>
+                {resultKinds.has('pose') && (
+                  <label className="pose-depth-switch" title={t.depthHint}>
+                    <span>{t.depth}</span>
+                    <input
+                      type="checkbox"
+                      role="switch"
+                      checked={poseDepth}
+                      disabled={!poseDepth && !visible.some(hasPoseDepth)}
+                      onChange={(event) => setPoseDepth(event.target.checked)}
+                    />
+                    <span className="switch-track" aria-hidden="true" />
+                  </label>
+                )}
+                <label className="sort-control">
+                  <span>{t.sort}</span>
+                  <select
+                    aria-label={t.sort}
+                    value={sort}
+                    onChange={(e) => setSort(e.target.value as Sort)}
+                  >
+                    <option value="curated">
+                      {resultKinds.size > 1 ? t.curated : t.defaultOrder}
+                    </option>
+                    <option value="name">{t.name}</option>
+                    <option value="code">{t.code}</option>
+                  </select>
+                </label>
+                {resultKinds.has('pose') && (
+                  <label className="angle-control">
+                    <span>{t.angle}</span>
+                    <select
+                      aria-label={t.angle}
+                      value={angle}
+                      onChange={(e) => {
+                        setAngle(e.target.value);
+                        setCardAngles({});
+                      }}
+                    >
+                      {angles.map((key) => (
+                        <option key={key} value={key}>
+                          {t[key]}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+              </div>
+            </div>
 
+            {(poseDepth || !visible.some(hasPoseDepth)) &&
+              visible.some((item) => item.kind === 'pose' && !hasPoseDepth(item)) && (
+                <p className="depth-availability-note" role="status">
+                  {visible.some(hasPoseDepth) ? t.depthPartial : t.noDepth}
+                </p>
+              )}
             {!catalog ? (
               <div className="status-state" role="status">
                 {failed ? (
@@ -1044,34 +1203,10 @@ export default function App() {
             ) : visible.length === 0 ? (
               <div className="status-state">
                 <div className="empty-symbol">
-                  {view === 'saved' &&
-                  !query &&
-                  category === 'all' &&
-                  collection === 'all' &&
-                  tag === 'all' ? (
-                    <Bookmark size={30} />
-                  ) : (
-                    <Search size={30} />
-                  )}
+                  {view === 'saved' && !hasFilters ? <Bookmark size={30} /> : <Search size={30} />}
                 </div>
-                <h3>
-                  {view === 'saved' &&
-                  !query &&
-                  category === 'all' &&
-                  collection === 'all' &&
-                  tag === 'all'
-                    ? t.noSaved
-                    : t.noResults}
-                </h3>
-                <p>
-                  {view === 'saved' &&
-                  !query &&
-                  category === 'all' &&
-                  collection === 'all' &&
-                  tag === 'all'
-                    ? t.noSavedHint
-                    : t.noResultsHint}
-                </p>
+                <h3>{view === 'saved' && !hasFilters ? t.noSaved : t.noResults}</h3>
+                <p>{view === 'saved' && !hasFilters ? t.noSavedHint : t.noResultsHint}</p>
                 <button
                   className="secondary-button"
                   onClick={() => {
@@ -1177,6 +1312,9 @@ export default function App() {
                             {item.title[lang]}
                           </button>
                           <ReferenceBadges item={item} lang={lang} />
+                          {poseDepth && item.kind === 'pose' && !hasPoseDepth(item) && (
+                            <small className="depth-availability-note">{t.noDepth}</small>
+                          )}
                           <div className="card-bottom">
                             <span>
                               {item.kind === 'character'
@@ -1198,13 +1336,16 @@ export default function App() {
                     );
                   })}
                 </div>
-                <div className="load-more">
+                <div ref={loadMoreRef} className="load-more">
                   <p>
                     {t.shown} {Math.min(limit, visible.length)} {t.of}{' '}
                     {visible.length.toLocaleString(lang)}
                   </p>
                   {limit < visible.length ? (
-                    <button className="secondary-button" onClick={() => setLimit((v) => v + 24)}>
+                    <button
+                      className="secondary-button"
+                      onClick={() => setLimit((v) => Math.min(v + 24, visible.length))}
+                    >
                       {t.more}
                       <ArrowDown size={15} />
                     </button>
@@ -1282,9 +1423,7 @@ export default function App() {
               setBoard(nextBoard);
               const pose = references.find((ref) => ref.kind === 'pose');
               setStudioAngle(pose?.variant.angle || 'front');
-              setPoseDepth(
-                !!pose?.variant.original.startsWith('https://ai-pose-depth-gallery.pages.dev/'),
-              );
+              setPoseDepth(!!pose && isDepthVariant(pose.variant));
               setGenerationJob({
                 model: record.model,
                 prompt: record.prompt,

@@ -52,6 +52,15 @@ export function resolveCustomAssets(catalog: Catalog, base = siteBase()): Catalo
                 thumbnail: asset(variant.thumbnail),
                 image: asset(variant.image),
                 original: asset(variant.original),
+                ...(variant.depth
+                  ? {
+                      depth: {
+                        thumbnail: asset(variant.depth.thumbnail),
+                        image: asset(variant.depth.image),
+                        original: asset(variant.depth.original),
+                      },
+                    }
+                  : {}),
               };
             }),
           },

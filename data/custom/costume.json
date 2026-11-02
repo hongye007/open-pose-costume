@@ -25,6 +25,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -76,6 +81,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -129,6 +139,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -180,6 +195,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -233,6 +253,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -284,6 +309,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -337,6 +367,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -388,6 +423,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -441,6 +481,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -492,6 +537,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -545,6 +595,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -596,6 +651,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -649,6 +709,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -700,6 +765,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -753,6 +823,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -804,6 +879,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -857,6 +937,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -908,6 +993,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -961,6 +1051,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1012,6 +1107,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1065,6 +1165,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1116,6 +1221,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1169,6 +1279,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1220,6 +1335,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1273,6 +1393,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1324,6 +1449,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1377,6 +1507,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1428,6 +1563,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1481,6 +1621,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "anime",
         "zh": "动漫",
         "en": "Anime"
@@ -1532,6 +1677,11 @@
     "source": "custom",
     "collection": "custom",
     "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
       {
         "id": "anime",
         "zh": "动漫",
@@ -1585,6 +1735,11 @@
     "collection": "custom",
     "tags": [
       {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
         "id": "photo",
         "zh": "写实",
         "en": "Photorealistic"
@@ -1608,6 +1763,736 @@
         "thumbnail": "custom/costume/thumbnails/custom_costume_moon_001.webp",
         "image": "custom/costume/images/custom_costume_moon_001.webp",
         "original": "custom/costume/originals/custom_costume_moon_001.png"
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_001",
+    "kind": "costume",
+    "code": "MC-001",
+    "title": {
+      "zh": "男士黑色礼服套装",
+      "en": "Men’s black tuxedo ensemble"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对礼服",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "男士穿搭 · 01",
+      "en": "Menswear · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 西装 礼服 白色衬衫 蝴蝶领结 西裤 黑色无系带短靴 男性 男士",
+      "en": "black tuxedo white dress shirt bow tie trousers laceless black ankle boots male mens"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "male-outfits-03-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "b60b92286d5be66d8e0055bcbdb5b55caa375a589fef4fe47e83078744cfe26a",
+      "width": 1024,
+      "height": 1536
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_001",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_001.png",
+        "image": "custom/costume/images/custom_costume_male_001.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_001.webp",
+        "provenance": {
+          "originalSha256": "b60b92286d5be66d8e0055bcbdb5b55caa375a589fef4fe47e83078744cfe26a",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_002",
+    "kind": "costume",
+    "code": "MC-002",
+    "title": {
+      "zh": "男士黑色针织 Polo",
+      "en": "Men’s black ribbed knit polo"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "男士穿搭 · 01",
+      "en": "Menswear · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 针织 Polo 长袖 长裤 手表 男性 男士 完整长裤 黑色皮鞋 乐福鞋",
+      "en": "black ribbed knit polo long sleeve trousers watch male mens full-length trousers black leather loafers footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "male-outfits-03-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "0a0378122815279ed7d747d06dd7863169ebce41d0f7704148101601a4f02f3a",
+      "width": 1024,
+      "height": 1536,
+      "completion": {
+        "method": "AI garment completion",
+        "sourceSha256": "02ca3d3ad4fc88ec86049b2e167324448eb0fb76c7626f43d5641a5a28e34796",
+        "completedRegions": [
+          "lower trouser legs",
+          "trouser hems"
+        ],
+        "footwearAdded": false,
+        "note": {
+          "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
+          "en": "Lower trouser legs and hems are AI completions based on the visible outfit, not observed source-photo details."
+        }
+      },
+      "footwearEdit": {
+        "batch": "male-costume-with-shoes",
+        "provider": "Atomflow",
+        "model": "gpt-image-2",
+        "sourceSha256": "14073915803625a0a19f74c9f35bbae172fb5b68957f7710fb59a93bb8a7e7fb",
+        "promptSha256": "29611e990a32c34662c04058e16ac7e85c873ed7b6702ceae98570884610e5a4",
+        "footwearAdded": true,
+        "note": {
+          "zh": "在完整服饰参考上由 AI 添加搭配鞋履，并非原照片中可见的鞋子。",
+          "en": "Matching footwear was AI-added to the full outfit reference; these shoes were not visible in the source photo."
+        }
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_002",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_002.png",
+        "image": "custom/costume/images/custom_costume_male_002.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_002.webp",
+        "provenance": {
+          "originalSha256": "0a0378122815279ed7d747d06dd7863169ebce41d0f7704148101601a4f02f3a",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_003",
+    "kind": "costume",
+    "code": "MC-003",
+    "title": {
+      "zh": "男士米色休闲西装",
+      "en": "Men’s beige casual suit"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "男士穿搭 · 01",
+      "en": "Menswear · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "米色 休闲西装 棕色 圆领T恤 长裤 金属框眼镜 手表 男性 男士 完整长裤 棕色绒面鞋 乐福鞋",
+      "en": "beige casual blazer suit taupe brown crewneck shirt trousers metal aviator glasses watch male mens full-length trousers brown suede loafers footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "male-outfits-03-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "400700636695073db78f184378c090fd1588098f44d665781b6657900a76a410",
+      "width": 1024,
+      "height": 1536,
+      "completion": {
+        "method": "AI garment completion",
+        "sourceSha256": "63222b8a870d7d3c16b2e88b9fe3dcc795ad8956e37b1fc4be9553ebcacae53d",
+        "completedRegions": [
+          "lower trouser legs",
+          "trouser hems"
+        ],
+        "footwearAdded": false,
+        "note": {
+          "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
+          "en": "Lower trouser legs and hems are AI completions based on the visible outfit, not observed source-photo details."
+        }
+      },
+      "footwearEdit": {
+        "batch": "male-costume-with-shoes",
+        "provider": "Atomflow",
+        "model": "gpt-image-2",
+        "sourceSha256": "3de5cc31fcdbcf2c134a8d0cb645ebd3f43eea52046d53ac0c22191f1e7f1051",
+        "promptSha256": "100c814e2d22d18abcfcffbb06707620be6c088a29dc2731bb190d9348cc614e",
+        "footwearAdded": true,
+        "note": {
+          "zh": "在完整服饰参考上由 AI 添加搭配鞋履，并非原照片中可见的鞋子。",
+          "en": "Matching footwear was AI-added to the full outfit reference; these shoes were not visible in the source photo."
+        }
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_003",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_003.png",
+        "image": "custom/costume/images/custom_costume_male_003.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_003.webp",
+        "provenance": {
+          "originalSha256": "400700636695073db78f184378c090fd1588098f44d665781b6657900a76a410",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_001",
+    "kind": "costume",
+    "code": "ST-001",
+    "title": {
+      "zh": "黑色露肩针织与百褶裙",
+      "en": "Black off-shoulder knit top and pleated skirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "街拍提取 · 01",
+      "en": "Street-style extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 露肩 长袖 针织 百褶 短裙 腰带 丝袜 尖头 高跟 长靴 肩包 项链 街拍提取 全套服饰 鞋履",
+      "en": "black off shoulder rib knit long sleeve pleated mini skirt belt tights pointed toe stiletto knee high boots shoulder bag necklace street style extraction full outfit footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "street-outfits-05-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "806dcd63e09536a7f953e594c5cdcf79e51f008b4afeb1fcef8e9e76d18e63f4",
+      "sourceSha256": "94ee8166d21f7d826f4ea7afca80a7c1c83e9d3a976af34d8a7841856cc509e9",
+      "promptSha256": "ff642733ee0289f64ba150262f932af0eac2af1e6baa6d5087f6bde4b83f19af",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户提供的穿搭照片提取重绘；遮挡区域包含 AI 推断，未将人物照片纳入网站。",
+        "en": "AI outfit extraction from user-provided photos; occluded details are inferred. Source portraits are not included in the website."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_001",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_001.png",
+        "image": "custom/costume/images/custom_costume_street_001.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_001.webp",
+        "provenance": {
+          "originalSha256": "806dcd63e09536a7f953e594c5cdcf79e51f008b4afeb1fcef8e9e76d18e63f4",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_002",
+    "kind": "costume",
+    "code": "ST-002",
+    "title": {
+      "zh": "黑色上衣与奶白短裙",
+      "en": "Black scoop-neck top and ivory mini skirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "街拍提取 · 01",
+      "en": "Street-style extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 圆领 长袖 上衣 奶白 短裙 细腰带 金色搭扣 黑色 长靴 街拍提取 全套服饰 鞋履",
+      "en": "black scoop neck long sleeve top ivory mini skirt thin belt gold buckle knee high boots street style extraction full outfit footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "street-outfits-05-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "c10bf7abeaf7817584919f056896c89d61b774fc27aeacf556471be32f4f867a",
+      "sourceSha256": "8de8ec6de8b2c91180502d236fcd67d33fac35d0e3e0c356d2a67d1cb57e0f09",
+      "promptSha256": "2e75ce099d74ef6be88d501d75135bd5776feb8c0edeac0c17ca4aca2273492a",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户提供的穿搭照片提取重绘；遮挡区域包含 AI 推断，未将人物照片纳入网站。",
+        "en": "AI outfit extraction from user-provided photos; occluded details are inferred. Source portraits are not included in the website."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_002",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_002.png",
+        "image": "custom/costume/images/custom_costume_street_002.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_002.webp",
+        "provenance": {
+          "originalSha256": "c10bf7abeaf7817584919f056896c89d61b774fc27aeacf556471be32f4f867a",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_003",
+    "kind": "costume",
+    "code": "ST-003",
+    "title": {
+      "zh": "黑色无袖裙与奶白丝巾",
+      "en": "Black sleeveless dress and ivory neck scarf"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "街拍提取 · 01",
+      "en": "Street-style extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "黑色 无袖 连衣裙 短裙 奶白 丝巾 蝴蝶结 手提包 长靴 街拍提取 全套服饰 鞋履",
+      "en": "black sleeveless mini dress ivory silk neck scarf bow top handle handbag knee high boots street style extraction full outfit footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "street-outfits-05-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "06ea9e1063c0ceb18436cbe13f8fa9582832954a75030fb63e27c5148961e56e",
+      "sourceSha256": "28587b4b724fb0a6b328ce8e7775f8cf97afdec551e420af907a021a96b6f336",
+      "promptSha256": "8da08be66b3afed880b41b4aec99a6a94a6c82598cd9c8951961f1acc8e0e2be",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户提供的穿搭照片提取重绘；遮挡区域包含 AI 推断，未将人物照片纳入网站。",
+        "en": "AI outfit extraction from user-provided photos; occluded details are inferred. Source portraits are not included in the website."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_003",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_003.png",
+        "image": "custom/costume/images/custom_costume_street_003.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_003.webp",
+        "provenance": {
+          "originalSha256": "06ea9e1063c0ceb18436cbe13f8fa9582832954a75030fb63e27c5148961e56e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_004",
+    "kind": "costume",
+    "code": "ST-004",
+    "title": {
+      "zh": "奶白针织与棕色格纹裙",
+      "en": "Cream rib-knit top and brown plaid ruffle skirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "街拍提取 · 01",
+      "en": "Street-style extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "奶白 方领 棕色滚边 蝴蝶结 长袖 针织 棕色 格纹 荷叶边 短裙 白袜 长靴 肩包 项链 耳环 发夹 街拍提取 全套服饰 鞋履",
+      "en": "cream square neck brown trim bow rib knit long sleeve plaid ruffle mini skirt white socks brown knee high boots shoulder bag necklace earrings hair bow street style extraction full outfit footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "street-outfits-05-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "da9f93fc31eedac1cc4af338fa7320380cc6cf4c540770505193f64d6a89c0a3",
+      "sourceSha256": "521ebad77095110485ec9a05faf64dd5b799d6e4326a1b2972d395ae30daf5c9",
+      "promptSha256": "4d5f6e466128ea9719bfe97719756c9b11ee618652eba3f828bfaae0bcbbdb3b",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户提供的穿搭照片提取重绘；遮挡区域包含 AI 推断，未将人物照片纳入网站。",
+        "en": "AI outfit extraction from user-provided photos; occluded details are inferred. Source portraits are not included in the website."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_004",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_004.png",
+        "image": "custom/costume/images/custom_costume_street_004.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_004.webp",
+        "provenance": {
+          "originalSha256": "da9f93fc31eedac1cc4af338fa7320380cc6cf4c540770505193f64d6a89c0a3",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_005",
+    "kind": "costume",
+    "code": "ST-005",
+    "title": {
+      "zh": "奶白裹身针织与棕色百褶裙",
+      "en": "Ivory wrap knit cardigan and brown pleated skirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "街拍提取 · 01",
+      "en": "Street-style extraction · 01"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "奶白 裹身 V领 系带 针织 开衫 长袖 棕色 百褶 短裙 白袜 长靴 肩包 项链 耳环 街拍提取 全套服饰 鞋履",
+      "en": "ivory wrap v neck tie waist knit cardigan long sleeve brown pleated mini skirt white socks knee high boots shoulder tote bag necklace earrings street style extraction full outfit footwear"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "street-outfits-05-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "4b7b4a1c728efc14623377068f3c90c99b822730820bc2150c988028b613e7f4",
+      "sourceSha256": "007ab6c63e90082c9be1f38499a2797b5d83052d8e079a782200adb5b6c3f733",
+      "promptSha256": "cac90c46f19825e4b9f30bae29c6c57d0c5824a845e40c6f128d218a53b3e0d3",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户提供的穿搭照片提取重绘；遮挡区域包含 AI 推断，未将人物照片纳入网站。",
+        "en": "AI outfit extraction from user-provided photos; occluded details are inferred. Source portraits are not included in the website."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_005",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_005.png",
+        "image": "custom/costume/images/custom_costume_street_005.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_005.webp",
+        "provenance": {
+          "originalSha256": "4b7b4a1c728efc14623377068f3c90c99b822730820bc2150c988028b613e7f4",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "source": "custom",
+    "collection": "custom",
+    "extended": false,
+    "series": {
+      "zh": "图书馆提取 · 01",
+      "en": "Library extraction · 01"
+    },
+    "id": "custom_costume_street_006",
+    "kind": "costume",
+    "code": "ST-006",
+    "title": {
+      "zh": "奶白挂脖上衣与牛仔短裙",
+      "en": "Ivory halter top and denim mini skirt"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "keywords": {
+      "zh": "图书馆提取 街拍提取 女性 写实 奶白 针织 挂脖 无袖 上衣 牛仔 短裙 红色 尖头 高跟鞋 发箍 蝴蝶耳环 项链 隐形人台 无人物 无腿",
+      "en": "library extraction street style extraction female photographic ivory rib knit halter sleeveless top blue denim mini skirt red pointed stiletto pumps headband butterfly earrings necklace ghost mannequin no human legs"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "45908e6fca401e217dde78347e49bc4674901ff69819838c7851060e2c395be9",
+      "width": 1024,
+      "height": 1536,
+      "batch": "library-reference-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "promptSha256": "cae469af94c86a3b99196134f7a149bda8892ffcecf46d102efffd4c0e6cca92",
+      "note": {
+        "zh": "根据用户确认的隐形人台服饰图导入，已移除人物腿部，保留完整鞋履和配饰；细节含 AI 推断。",
+        "en": "Approved ghost-mannequin outfit with human legs removed and full footwear and accessories retained; details include AI inference."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_006",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_006.png",
+        "image": "custom/costume/images/custom_costume_street_006.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_006.webp",
+        "provenance": {
+          "originalSha256": "45908e6fca401e217dde78347e49bc4674901ff69819838c7851060e2c395be9",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_004",
+    "kind": "costume",
+    "code": "MC-004",
+    "title": {
+      "zh": "男士米色短背心与橄榄绿短裤",
+      "en": "Men’s beige cropped tank and olive mesh shorts"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "男士服饰提取 · 01",
+      "en": "Men’s outfit extraction · 01"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 服饰提取 米色 短款 背心 圆领 橄榄绿 网眼 运动短裤 黑色 运动鞋 绿色 镜框 墨镜 隐形人台 无人物 无首饰",
+      "en": "male photographic outfit extraction beige cropped scoop neck tank top olive green mesh athletic shorts black sneakers green frame sunglasses ghost mannequin no person no jewelry"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "914975951268f61d20265df5d45029baa0831addcfcae72e0e35d6131fa8ee94",
+      "width": 1024,
+      "height": 1536,
+      "batch": "male-outfit-extract-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "promptSha256": "8d0c9d58caee95e007a907e831734e7c83b2ec5b9cd14966ecb3f9a4260dc3f9",
+      "note": {
+        "zh": "根据用户照片提取并去除人物、耳环、戒指与护腕，保留墨镜；黑色运动鞋为 AI 补充搭配，原照片未展示鞋履。细节含 AI 推断。",
+        "en": "Extracted from the user’s photo with the person, earrings, rings and wrist cuffs removed; sunglasses retained. Black sneakers are an AI-added styling choice, absent from the source photo. Details include AI inference."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_004",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_004.png",
+        "image": "custom/costume/images/custom_costume_male_004.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_004.webp",
+        "provenance": {
+          "originalSha256": "914975951268f61d20265df5d45029baa0831addcfcae72e0e35d6131fa8ee94",
+          "width": 1024,
+          "height": 1536
+        }
       }
     ]
   }

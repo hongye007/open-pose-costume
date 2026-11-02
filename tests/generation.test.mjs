@@ -243,6 +243,30 @@ test('character prompts describe actual role order in both languages without cha
   assert.ok(!original.includes('character reference'));
 });
 
+test('catalog search metadata cannot request a multi-view sheet or override the selected pose', () => {
+  const refs = [...references, characterReference].map((ref) => ({
+    ...ref,
+    title: { zh: '五视角角色设定页', en: 'Five-view character sheet' },
+    keywords: {
+      zh: '图书馆提取 五视角 正面 侧面 头肩裁切 双手放到身后',
+      en: 'library extraction five views front side head-and-shoulders crop hands behind the back',
+    },
+  }));
+  for (const count of [2, 3]) {
+    for (const lang of ['zh', 'en']) {
+      const prompt = api.referencePrompt(refs.slice(0, count), lang);
+      for (const ref of refs) {
+        assert.ok(!prompt.includes(ref.title[lang]));
+        assert.ok(!prompt.includes(ref.keywords[lang]));
+      }
+      assert.doesNotMatch(prompt, /五视角|five views/i);
+      assert.match(prompt, lang === 'zh' ? /一个人物、一个选定视角/ : /one person and one selected viewpoint/);
+      assert.match(prompt, lang === 'zh' ? /手势、腿部弯曲及遮挡关系/ : /hand gestures, bent legs and occlusion/);
+      assert.match(prompt, lang === 'zh' ? /禁止多面板/ : /No panels/);
+    }
+  }
+});
+
 test('invalid character uploads are rejected before making any network request', async () => {
   const invalid = [
     [new File(['<svg/>'], 'spoof.png', { type: 'image/png' }), 'characterInvalid'],

@@ -1,1 +1,3085 @@
-[]
+[
+  {
+    "id": "custom_pose_male_001",
+    "kind": "pose",
+    "code": "MP-001",
+    "title": {
+      "zh": "男性 · 自然站立",
+      "en": "Male · Neutral standing"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "自然站立 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Neutral standing male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "4591cae201c01e677d0911a66cc80b6d006d1600d782bb74048485fe9737113d",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_001_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_001_front.png",
+        "image": "custom/pose/images/custom_pose_male_001_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_front.webp",
+        "provenance": {
+          "originalSha256": "4591cae201c01e677d0911a66cc80b6d006d1600d782bb74048485fe9737113d",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_001_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_001_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4591cae201c01e677d0911a66cc80b6d006d1600d782bb74048485fe9737113d",
+            "generatedSha256": "2adec4f5cd4ce9f47acc6f5ee5fc5eaf549f04e89fc2c45676120808b2189874",
+            "originalSha256": "d2fbcad6fab047b702faa1a0ccfb954bc1566cb34cebb527dc181830b17f0059",
+            "promptSha256": "b7a3d3b21bbdab6a8316504d0f0cbbc82996466ce41e36d3fb3170a9ad26f86f",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_001_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_001_high.png",
+        "image": "custom/pose/images/custom_pose_male_001_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_high.webp",
+        "provenance": {
+          "originalSha256": "807f549746bc3f1defbbf1bdaba49c51590de4acf0de9ad2e1a17fcbff9b1d51",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_001_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_001_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "807f549746bc3f1defbbf1bdaba49c51590de4acf0de9ad2e1a17fcbff9b1d51",
+            "generatedSha256": "59a06527dd43c55929b472d27f956010adc6d3c354f4f4713203b8cdb687e2d5",
+            "originalSha256": "dc1de69d139add37dae8ffeb7b6da04f48b5117304c0b15d2cfd2f4a14045c6e",
+            "promptSha256": "5b7aa93cf51079cbefc8ecf000f0ce25ae3845acc826dcee15cfb9e65d318324",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_001_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_001_low.png",
+        "image": "custom/pose/images/custom_pose_male_001_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_low.webp",
+        "provenance": {
+          "originalSha256": "94cb080fc1ad32e953fd0510eb55694f767f1ff0183c78f3465c19d871eb517a",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_001_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_001_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "94cb080fc1ad32e953fd0510eb55694f767f1ff0183c78f3465c19d871eb517a",
+            "generatedSha256": "f6f5fa246bb3c82e731ee76cca028dfc99df886af2dc26e3920e64d6a6922f29",
+            "originalSha256": "1d5c3714b4950c8b48a00caad2186e45b10cb3c27fa4dbbfabfeb63116cc1dc4",
+            "promptSha256": "4b8b58e097ca55d6bf02ea4855db16921eb8d14b08ab116013e55db1dab002a1",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_001_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_001_side.png",
+        "image": "custom/pose/images/custom_pose_male_001_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_side.webp",
+        "provenance": {
+          "originalSha256": "b36e48fa1d265025b9491db26079bcad7cc55d136062443cac211439df49d385",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_001_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_001_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "b36e48fa1d265025b9491db26079bcad7cc55d136062443cac211439df49d385",
+            "generatedSha256": "3fd4fa7f0b4d6d04342ff4a27adfadfe6a060ff18b64d9301ef77fef138c9cf7",
+            "originalSha256": "9e8fe867cc9cf7b5ddd812f7e051f75f726e0371941b6986191c9ac1cd634525",
+            "promptSha256": "e37fa0bf1401492f3ac5fc01276f7e8c7392241be4e441a737ca05f76ef984fa",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_001_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_001_diag.png",
+        "image": "custom/pose/images/custom_pose_male_001_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_diag.webp",
+        "provenance": {
+          "originalSha256": "d95daad0f1899c0a74c6214b2a26a1eac8311c2ca1f93fb139ed0fb9c321abee",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_001_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_001_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_001_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d95daad0f1899c0a74c6214b2a26a1eac8311c2ca1f93fb139ed0fb9c321abee",
+            "generatedSha256": "423ffecf08480d94b5a3a910f3a3a9489bb7cff06ec568243bc9b064a8f9c673",
+            "originalSha256": "b5fd7f91d83a10712614ab98d92ccd2d9ac6cf59866c7821230aaa14122031ef",
+            "promptSha256": "441f5f45b815159e029829df1cf1d3d5e281987b3806ee9ed6efb7135069cee8",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_002",
+    "kind": "pose",
+    "code": "MP-002",
+    "title": {
+      "zh": "男性 · 行走",
+      "en": "Male · Walking"
+    },
+    "category": {
+      "id": "movement",
+      "zh": "行走与跑步",
+      "en": "Walking & running"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "行走 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Walking male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "1a23117f2e80965f88c38adc49c8c09b8b35c995f09fc247529cb7602d52151a",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_002_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_002_front.png",
+        "image": "custom/pose/images/custom_pose_male_002_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_front.webp",
+        "provenance": {
+          "originalSha256": "1a23117f2e80965f88c38adc49c8c09b8b35c995f09fc247529cb7602d52151a",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_002_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_002_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1a23117f2e80965f88c38adc49c8c09b8b35c995f09fc247529cb7602d52151a",
+            "generatedSha256": "4f694b86b158b93e81c6a686fee29513649b97e79ee75f2305198cfffdbed84b",
+            "originalSha256": "6e60027c18b80f4ad20bab19b5fdce886745bc04955381834858e4933e5ba39c",
+            "promptSha256": "61a4fa83792542b14867f1f9e581b6e841996a7cc672f9b132dddc15fb0372b0",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_002_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_002_high.png",
+        "image": "custom/pose/images/custom_pose_male_002_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_high.webp",
+        "provenance": {
+          "originalSha256": "a7af2fe4cc4b35a58deba8be39da5f550822a3a3eda4cb0482bc57ee3d19ba3e",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_002_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_002_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a7af2fe4cc4b35a58deba8be39da5f550822a3a3eda4cb0482bc57ee3d19ba3e",
+            "generatedSha256": "94f20f055718b9262a8c08adf17ee32259f3b86dbdabb3a88d8df68ed89c39ea",
+            "originalSha256": "73b25026efd815dce4bda2547a011eb8b119950187bd88a2ef3eb1fa8e3f7180",
+            "promptSha256": "5e0fd505daed46aef6d3ac2413120c9eb4c2044e801d6b7e61e90bdd66e015ce",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_002_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_002_low.png",
+        "image": "custom/pose/images/custom_pose_male_002_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_low.webp",
+        "provenance": {
+          "originalSha256": "524e1f52f699c53084896872426f5f99f35d01dd0eb9939581aaaf3f9188ade7",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_002_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_002_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "524e1f52f699c53084896872426f5f99f35d01dd0eb9939581aaaf3f9188ade7",
+            "generatedSha256": "59c2b993c61219dc9516db1d452067eb3831a5b6c66505da22888f1f063de42a",
+            "originalSha256": "978110882533617792bb9e2d4037ce8b0dbee29ef6a577b812bb624e9dc58722",
+            "promptSha256": "9f503e511b83367bae8cb8b3bca2c311c94e03f89237643f1a9ca21f6cff79c3",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_002_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_002_side.png",
+        "image": "custom/pose/images/custom_pose_male_002_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_side.webp",
+        "provenance": {
+          "originalSha256": "8120223f5fe1ab13123d4fb2272cba0de7623286be87f0419bce7055c280df3d",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_002_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_002_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "8120223f5fe1ab13123d4fb2272cba0de7623286be87f0419bce7055c280df3d",
+            "generatedSha256": "3af3f382a247af8acfa367a492dab4d680021d3fcee19e19a54ab2b2ec2f3c72",
+            "originalSha256": "040cb1596699c012871889256d930ab9d2f940a951df87e2e09c2a486fe7e3fd",
+            "promptSha256": "79aed5d3bbd9b925729bf67935cab78b5f4a900b1ec4256f292199eba7040b43",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_002_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_002_diag.png",
+        "image": "custom/pose/images/custom_pose_male_002_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_diag.webp",
+        "provenance": {
+          "originalSha256": "d0656e8a62bb97196f6468ec62aeb7be0ce65c3df55d26e8e1a2868f9c06da54",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_002_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_002_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_002_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d0656e8a62bb97196f6468ec62aeb7be0ce65c3df55d26e8e1a2868f9c06da54",
+            "generatedSha256": "d55d751e4efe96b50ccefa6128291a7c87c211d10e2bce28e938343675ebd1c2",
+            "originalSha256": "71e11b950ddab8c6187467f36b509664b6de86a03777e2f57be1a5c13ba4b518",
+            "promptSha256": "cb0b5fdb7c42936dd35abc3b97ea36659f3926e0032beface31fe0bcd155b011",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_003",
+    "kind": "pose",
+    "code": "MP-003",
+    "title": {
+      "zh": "男性 · 跑步",
+      "en": "Male · Running"
+    },
+    "category": {
+      "id": "movement",
+      "zh": "行走与跑步",
+      "en": "Walking & running"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "跑步 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Running male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "3abdd6c251f552903c96ac1e1cbaa4b4574eabd7186c46067bfeb909465df3a5",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_003_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_003_front.png",
+        "image": "custom/pose/images/custom_pose_male_003_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_front.webp",
+        "provenance": {
+          "originalSha256": "3abdd6c251f552903c96ac1e1cbaa4b4574eabd7186c46067bfeb909465df3a5",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_003_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_003_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3abdd6c251f552903c96ac1e1cbaa4b4574eabd7186c46067bfeb909465df3a5",
+            "generatedSha256": "23fb75da93ceca4d2c7e1af329d078f3c682bbe8a4bf7f1373ce1fcc66a6db3b",
+            "originalSha256": "a1f546fc05fae79cf317a5f38142b191816b986a797dc3022a6751ae14da17db",
+            "promptSha256": "c40ee211e2d94913c39991a61cd97261a7ea026e20f1e66100da42831c8b4983",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_003_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_003_high.png",
+        "image": "custom/pose/images/custom_pose_male_003_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_high.webp",
+        "provenance": {
+          "originalSha256": "4c91fe53057caa73f9e246f1019515113bc7efc94ec11a1bec5359ac8e332859",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_003_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_003_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4c91fe53057caa73f9e246f1019515113bc7efc94ec11a1bec5359ac8e332859",
+            "generatedSha256": "fd4fd0856682f0e429aefde2aad4944b065dd5a9b3e4627070d20918f5112ee9",
+            "originalSha256": "b6bd969a8dd4da6d110186020774fd67063ea98f6bc1a35607d06490ee50d818",
+            "promptSha256": "42de3c0013be1c17612008c98778b3ea1dbeb54cebfb1a5bfa10ea19740fdaaf",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_003_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_003_low.png",
+        "image": "custom/pose/images/custom_pose_male_003_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_low.webp",
+        "provenance": {
+          "originalSha256": "7620a9a3d104a62ca49f1930a24243e5133a557c832d2f056d303ab3576f95f1",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_003_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_003_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "7620a9a3d104a62ca49f1930a24243e5133a557c832d2f056d303ab3576f95f1",
+            "generatedSha256": "2e535a1b6e0cbf11158221f7e3f247eeb1e50c563b93d2a1c4a2d5dd7d58af97",
+            "originalSha256": "92e804e76392cef88fdbb99d81a90281f8d93ee63fbb07bfc8d5f5a2af9b7d05",
+            "promptSha256": "b28205cdc4278d2e903c285a7dbe9ebd9bde0ddf036a0c49f1d123de8fd08248",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_003_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_003_side.png",
+        "image": "custom/pose/images/custom_pose_male_003_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_side.webp",
+        "provenance": {
+          "originalSha256": "e11fe076018b200af46774752f76b1f972e13c1245f78b51ec0744c23f1247ac",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_003_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_003_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "e11fe076018b200af46774752f76b1f972e13c1245f78b51ec0744c23f1247ac",
+            "generatedSha256": "24beaae9a67f115519e0b97f3de7a678ffed9af35d2ba6d31f2dcefbbc680100",
+            "originalSha256": "13b96574e6b798d564e8f8df3746e279d216f1369ce701263b0ed8e0762edf7c",
+            "promptSha256": "5bb5fbc123272a7cb2f221bb1abf56e8a47309a30738ec82a6c64fb1fc3eb3a1",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_003_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_003_diag.png",
+        "image": "custom/pose/images/custom_pose_male_003_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_diag.webp",
+        "provenance": {
+          "originalSha256": "db5d768d424efdb9c91144769c0c4be6f4fe0d121a1bb97fd3f85cad5bcbcaa2",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_003_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_003_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_003_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "db5d768d424efdb9c91144769c0c4be6f4fe0d121a1bb97fd3f85cad5bcbcaa2",
+            "generatedSha256": "f65b8e5342f2fde27442f43b3922a69f2c89a690a221176095f3c11bdbf3ee95",
+            "originalSha256": "c42c2932e1f19b01235f8b206402b48de234f434a19fec25e11ac9e0f23b26de",
+            "promptSha256": "94a943aace61bd52efb4b461ae532d08973d01247e3610b085fd33818eab9a6c",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_004",
+    "kind": "pose",
+    "code": "MP-004",
+    "title": {
+      "zh": "男性 · 坐椅",
+      "en": "Male · Seated on chair"
+    },
+    "category": {
+      "id": "sitting",
+      "zh": "坐姿",
+      "en": "Sitting"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "坐椅 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Seated on chair male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "c64baabd1295bae4a05ac335f796e62e542f1de660a5d8fb55822db139a395f2",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_004_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_004_front.png",
+        "image": "custom/pose/images/custom_pose_male_004_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_front.webp",
+        "provenance": {
+          "originalSha256": "c64baabd1295bae4a05ac335f796e62e542f1de660a5d8fb55822db139a395f2",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_004_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_004_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c64baabd1295bae4a05ac335f796e62e542f1de660a5d8fb55822db139a395f2",
+            "generatedSha256": "82454286f0f409016ba0d8b2f92773dc07168ccd055ce64db885481581d56fe5",
+            "originalSha256": "6585ef6def93e062d54b48f99552437070654033347629a02e8fd0e5c1485703",
+            "promptSha256": "b55d9c632e84ecb18fbdb7bb5c740cb47c8b2d556755714f4e17bedf3508b8ad",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_004_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_004_high.png",
+        "image": "custom/pose/images/custom_pose_male_004_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_high.webp",
+        "provenance": {
+          "originalSha256": "a5658d85c10479720561faad2d64a6c4894a103b709bcb47acb79e2e95d0478d",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_004_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_004_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a5658d85c10479720561faad2d64a6c4894a103b709bcb47acb79e2e95d0478d",
+            "generatedSha256": "a21a9021af53de2610f756d8a96536e78748a34dd249124afc9f245e4be8d181",
+            "originalSha256": "daf2813668f113f069cc2643eebdbacc9c4ab28bc67dfa4504a9917786f0046d",
+            "promptSha256": "f494065263cee72a5bbc583ddbc42caf07cf0efe242e10802ee0994391f81aa5",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_004_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_004_low.png",
+        "image": "custom/pose/images/custom_pose_male_004_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_low.webp",
+        "provenance": {
+          "originalSha256": "d5d6cbdb1dff3de0ff7cb8bd4ef00da159134a0ca0e53a01d7dcfc0fd35b8c3c",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_004_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_004_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d5d6cbdb1dff3de0ff7cb8bd4ef00da159134a0ca0e53a01d7dcfc0fd35b8c3c",
+            "generatedSha256": "b1660fbd949813672672d0dd77757c52d9df1be0ac6d4560e0d0ec02bca73c98",
+            "originalSha256": "8fbd9d54221ebda8412bef00d23f0e010ae8bc3b640b4aac35d1a65743efa6aa",
+            "promptSha256": "22c0132011bfb6914ecb1876400e843621117098e681d23dde42b97bdbf7e480",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_004_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_004_side.png",
+        "image": "custom/pose/images/custom_pose_male_004_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_side.webp",
+        "provenance": {
+          "originalSha256": "a1e8c475de0ab020e00d1c1eba957329a6ddaf644e91c07542256e081bd80a01",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_004_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_004_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a1e8c475de0ab020e00d1c1eba957329a6ddaf644e91c07542256e081bd80a01",
+            "generatedSha256": "c5f4c908811b1cbea2ae863fc7631b6b4828f04a6695ccdf2b6ffdbcb5d23c0c",
+            "originalSha256": "f5af90463a53168d792761e27817d73f01b64f17197ebc45ecd623af8d608a9d",
+            "promptSha256": "ef2b6ac829b411e4944fdf53476ad144cda4961560e6bb19313be47bb01ab200",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_004_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_004_diag.png",
+        "image": "custom/pose/images/custom_pose_male_004_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_diag.webp",
+        "provenance": {
+          "originalSha256": "0be89508183f59ffb6beff4c7b026817944852bf4e485bb5ad78137df5baf600",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_004_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_004_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_004_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "0be89508183f59ffb6beff4c7b026817944852bf4e485bb5ad78137df5baf600",
+            "generatedSha256": "c7a4041fe79fff39c8c65fa15e873d568439b576c4c590ade40195ee21ecc7d4",
+            "originalSha256": "53b40e2ea7ef9437bfa50be8048b3c4c516745c217e78ffc68ec4b22703bf767",
+            "promptSha256": "aa256114ebbe266d6b174981a083c6cde3f664d97615c855d45a751cf2d6fc2f",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_005",
+    "kind": "pose",
+    "code": "MP-005",
+    "title": {
+      "zh": "男性 · 盘坐",
+      "en": "Male · Cross-legged sitting"
+    },
+    "category": {
+      "id": "sitting",
+      "zh": "坐姿",
+      "en": "Sitting"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "盘坐 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Cross-legged sitting male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "7d539f61bb3b257dc2a0350c0b9f56461ba9bf720399e8657af0e06944dd0cef",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_005_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_005_front.png",
+        "image": "custom/pose/images/custom_pose_male_005_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_front.webp",
+        "provenance": {
+          "originalSha256": "7d539f61bb3b257dc2a0350c0b9f56461ba9bf720399e8657af0e06944dd0cef",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_005_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_005_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "7d539f61bb3b257dc2a0350c0b9f56461ba9bf720399e8657af0e06944dd0cef",
+            "generatedSha256": "8bc8eb17409741a2b04bdda17fae5123a2cfba4fa70798a0afeffc5eb97f2aad",
+            "originalSha256": "63ef99cac4a8e68eca879ff65897dbe4a234b13bd9d6190b687dee1a71ed0096",
+            "promptSha256": "0cc54061100eb824b5f602884cc49ae897feea979f11e16da9a6defa13a7b29b",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_005_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_005_high.png",
+        "image": "custom/pose/images/custom_pose_male_005_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_high.webp",
+        "provenance": {
+          "originalSha256": "ef3255d1ae53938f3e3baae2ff34e2345921f157543b9e94a706e51bd8e5b6bf",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_005_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_005_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "ef3255d1ae53938f3e3baae2ff34e2345921f157543b9e94a706e51bd8e5b6bf",
+            "generatedSha256": "98e257262adcfb89bdc9011aad6b1be735fe197e08911c5c52494bebb3fe5eff",
+            "originalSha256": "ae809a66c85f9e5f38774acfc6825b9bc3df858ee6eb49c577283fe2a739d160",
+            "promptSha256": "b690a1593280d2ed295720394f5f512b81b5f3da3077259d807ea83b26d22d4b",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_005_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_005_low.png",
+        "image": "custom/pose/images/custom_pose_male_005_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_low.webp",
+        "provenance": {
+          "originalSha256": "74f55ddaaf77b978c20a723664d6848a619d8f480cb7afc1f4bba6eea72bc220",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_005_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_005_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "74f55ddaaf77b978c20a723664d6848a619d8f480cb7afc1f4bba6eea72bc220",
+            "generatedSha256": "5b3a79cb21510367b3393c05ee12bd9ddbe495244a674433c304270b3b14466b",
+            "originalSha256": "e03f61e7826dbd858964039714c04fe1da18505575fc90fa4100051d7f1afe49",
+            "promptSha256": "4c59873cf1c2886aa76dcd7821aac2c68f60f05fb99feaae9bf4e36c909a3fed",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_005_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_005_side.png",
+        "image": "custom/pose/images/custom_pose_male_005_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_side.webp",
+        "provenance": {
+          "originalSha256": "5a18196970ed85ce3555ea84240ee6d8790275693cea1e15adca98e919f66ca3",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_005_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_005_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5a18196970ed85ce3555ea84240ee6d8790275693cea1e15adca98e919f66ca3",
+            "generatedSha256": "0b63618a9d799eff17b22c4a531e18e8d8a568adc3b1cd2d19b1798841ce9769",
+            "originalSha256": "fb9e8315c01fc008081da2aed1baa937532a4438e38951707f9b751217ab9021",
+            "promptSha256": "25bd27e1c5b5b8fcb581358426ce247b0a14e686ada60c4ac4270bc57764aa19",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_005_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_005_diag.png",
+        "image": "custom/pose/images/custom_pose_male_005_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_diag.webp",
+        "provenance": {
+          "originalSha256": "d8b8ec144faa52d9bdcbf7e7cd840be6578891a38a24e51d02adba8587a62a3c",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_005_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_005_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_005_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d8b8ec144faa52d9bdcbf7e7cd840be6578891a38a24e51d02adba8587a62a3c",
+            "generatedSha256": "a5145064a4dbd71152789eb3e795dc3d043399c4293e4b190f18ce15fb4d5255",
+            "originalSha256": "9dfa7d90607864ca5ae402dc7d102322f84763f9da59d7387ed0b3f270673883",
+            "promptSha256": "8655efe77a5c27055d362e1d3b88fb528d7564acba1d43cb9168b35f5af85adf",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_006",
+    "kind": "pose",
+    "code": "MP-006",
+    "title": {
+      "zh": "男性 · 深蹲",
+      "en": "Male · Deep squat"
+    },
+    "category": {
+      "id": "crouching",
+      "zh": "蹲姿",
+      "en": "Crouching"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "深蹲 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Deep squat male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "f1ecd21de77a75382889441083ad01632faa90b3d5d81cd4a7d48b55adea8c0c",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_006_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_006_front.png",
+        "image": "custom/pose/images/custom_pose_male_006_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_front.webp",
+        "provenance": {
+          "originalSha256": "f1ecd21de77a75382889441083ad01632faa90b3d5d81cd4a7d48b55adea8c0c",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_006_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_006_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "f1ecd21de77a75382889441083ad01632faa90b3d5d81cd4a7d48b55adea8c0c",
+            "generatedSha256": "55400eba00355528f774a29e1a7e19f50e49b856d595c24130be87ac527040b2",
+            "originalSha256": "d7e0486263a6772c8742553854684cc715d826fd6a2f30b705851955c6dc8ca4",
+            "promptSha256": "1d3b8cd89a1d3cc30077ff2e0558963ed0461c0f57b1f5927c8657269c2625d7",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_006_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_006_high.png",
+        "image": "custom/pose/images/custom_pose_male_006_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_high.webp",
+        "provenance": {
+          "originalSha256": "539e0bc6890a17e0d74727a5abeec7be8885307cbe9c9c262165b8a427ee02a5",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_006_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_006_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "539e0bc6890a17e0d74727a5abeec7be8885307cbe9c9c262165b8a427ee02a5",
+            "generatedSha256": "b80ef0f009ce7f2bb837511badbac502b37a50a666ce68eaf1970b1a24d07b15",
+            "originalSha256": "aca91f7e89426ac8b5fbad3a16de8dd735bcd6ebe0e70cb3f20c5cbe6121a462",
+            "promptSha256": "4c7f62206b1272a96605014024f107802bbd9bd8317074b8fe97e8dd5d144257",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_006_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_006_low.png",
+        "image": "custom/pose/images/custom_pose_male_006_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_low.webp",
+        "provenance": {
+          "originalSha256": "3786a7f962f55c0182a33b97d8208d3e606d72b3e600b2d9bfd338e3d2c3e076",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_006_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_006_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3786a7f962f55c0182a33b97d8208d3e606d72b3e600b2d9bfd338e3d2c3e076",
+            "generatedSha256": "0a32467197cdc0852d281d77c137a3dcc4af61496057949494ea2185b5f6882b",
+            "originalSha256": "b0a2b019fefca8c132a89f601414a871795afc48355cf47b6a311fe7bbb3f8ca",
+            "promptSha256": "84e3afd151f28fb509597dcad0032e192770ab77c64043618008640f52e436d4",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_006_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_006_side.png",
+        "image": "custom/pose/images/custom_pose_male_006_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_side.webp",
+        "provenance": {
+          "originalSha256": "170f2ceace49bee5517c6a6d0e61f7a7eaae0764a643c611cec0c1ec35f62597",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_006_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_006_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "170f2ceace49bee5517c6a6d0e61f7a7eaae0764a643c611cec0c1ec35f62597",
+            "generatedSha256": "48eeb87b7d56ee9ad17ab5db1b18e1aea3fd82bbb653fc3eb0f5b62e61d3b1aa",
+            "originalSha256": "6d00bdc4fbc0a90c347b8c0aef986a74173268f0b8fea447561f8eb195c4212d",
+            "promptSha256": "3b8cf8e0b3f032891d53e29e19089ab124af98bc967999743e95d00a06919765",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_006_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_006_diag.png",
+        "image": "custom/pose/images/custom_pose_male_006_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_diag.webp",
+        "provenance": {
+          "originalSha256": "4cd3c23fca3d1a1fbcb92b322ef375e97cb8d398e012e2438072d635be9e8524",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_006_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_006_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_006_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4cd3c23fca3d1a1fbcb92b322ef375e97cb8d398e012e2438072d635be9e8524",
+            "generatedSha256": "c70a8f2eda657020601c91faaab9c2f0c3bd209eecde2ddf2f5cd4685196fca7",
+            "originalSha256": "de68f9bfebad9cbf9ab8a85fe506732fbe3614e367871f7752b724dba9cda73e",
+            "promptSha256": "eb9dd57c359f6def843506294eb9489f0bc9d612db361722ff77cdfeed84a91a",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_007",
+    "kind": "pose",
+    "code": "MP-007",
+    "title": {
+      "zh": "男性 · 双膝跪坐",
+      "en": "Male · Kneeling on heels"
+    },
+    "category": {
+      "id": "kneeling",
+      "zh": "跪立",
+      "en": "Kneeling"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "双膝跪坐 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Kneeling on heels male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "e10c754d01a971a9638a4a2dc3afd2158ea6f76570e8b78512b15178974b724a",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_007_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_007_front.png",
+        "image": "custom/pose/images/custom_pose_male_007_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_front.webp",
+        "provenance": {
+          "originalSha256": "e10c754d01a971a9638a4a2dc3afd2158ea6f76570e8b78512b15178974b724a",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_007_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_007_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "e10c754d01a971a9638a4a2dc3afd2158ea6f76570e8b78512b15178974b724a",
+            "generatedSha256": "1e957427b519bc92930fbd0f76c58ac4e76493e8a18fc3fc1a6a6bd06b1df848",
+            "originalSha256": "e71a9ee9db1fcc017679e19d01c4e7019ac1f4a8e8dc6bfcd38cbada0c867bb8",
+            "promptSha256": "2fc60e8f3cb7dcc7b5ceedbad0b1a9a815dc2f4543d79520ff1d80d61beff5a9",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_007_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_007_high.png",
+        "image": "custom/pose/images/custom_pose_male_007_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_high.webp",
+        "provenance": {
+          "originalSha256": "52baae8d625fec4d3d9650ca118c86d7046169ca358b391a01b6d5fc54eb50e6",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_007_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_007_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "52baae8d625fec4d3d9650ca118c86d7046169ca358b391a01b6d5fc54eb50e6",
+            "generatedSha256": "a58445efec552531adb435c0a1279c7e156613c14805920d99d57aa56645ebd7",
+            "originalSha256": "89a180fcc98f6823656e8c9a422c982b41c2e583a825e89abbe91755e4c2c820",
+            "promptSha256": "14f24bd5d18205d1f53a54147d1ad2ddbb9c77ef1a5c63005cd441f4db9e2aeb",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_007_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_007_low.png",
+        "image": "custom/pose/images/custom_pose_male_007_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_low.webp",
+        "provenance": {
+          "originalSha256": "ba07461272d433238532687855bd163e06e0ef7e4f481b627a50772539c0700b",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_007_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_007_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "ba07461272d433238532687855bd163e06e0ef7e4f481b627a50772539c0700b",
+            "generatedSha256": "387b27fe9d719a4be70f83fc8032ddf5b7cf96272d531addd1b39863541f16e8",
+            "originalSha256": "875f7946417308fbb7e10f658eb61af7124207a52d175c2df2c190c9f9f5c59e",
+            "promptSha256": "f15270a4050514dd12ce03aef19dc879c1815c2376f540e8b28c4632b12797ed",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_007_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_007_side.png",
+        "image": "custom/pose/images/custom_pose_male_007_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_side.webp",
+        "provenance": {
+          "originalSha256": "18bcff54bfdd6dc9741c6beac02c471a7acf0a40731a5fa84602d2cbaaa18e72",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_007_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_007_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "18bcff54bfdd6dc9741c6beac02c471a7acf0a40731a5fa84602d2cbaaa18e72",
+            "generatedSha256": "e3927fff91df5abf7f94cb52b6c0b8fd077dd6f781b6e4ec5bec676e92980f4f",
+            "originalSha256": "feca4ad723e3cec3f157dbc1eb859da323f828095eb2e1dde27c465d3880726d",
+            "promptSha256": "cfa9cd49bac14e816b42decc77b38f19854543b2c58c32e4910434704332cd4e",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_007_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_007_diag.png",
+        "image": "custom/pose/images/custom_pose_male_007_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_diag.webp",
+        "provenance": {
+          "originalSha256": "1f7bd4ee57df84d9664b8d64f9a165de372beece28ebf27935437ddf12aa109c",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_007_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_007_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_007_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1f7bd4ee57df84d9664b8d64f9a165de372beece28ebf27935437ddf12aa109c",
+            "generatedSha256": "a9889fabf2fe5056938a3b52f150652b43d867fc0f949812e5d9dcb6d132e05f",
+            "originalSha256": "53d414aa28b8c2489900a399f7b7b464cce15d03b698d717ee33e5db1bfca729",
+            "promptSha256": "36b284c9248fc580eca7ea59f06893dde1f0b1656d393245c4832cca9a5da5ec",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_008",
+    "kind": "pose",
+    "code": "MP-008",
+    "title": {
+      "zh": "男性 · 单膝跪地",
+      "en": "Male · Half kneeling"
+    },
+    "category": {
+      "id": "kneeling",
+      "zh": "跪立",
+      "en": "Kneeling"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "单膝跪地 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Half kneeling male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "975189b851b309932e0c090a07aeae89e39fd229ca60748660cd00931cafcb77",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_008_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_008_front.png",
+        "image": "custom/pose/images/custom_pose_male_008_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_front.webp",
+        "provenance": {
+          "originalSha256": "975189b851b309932e0c090a07aeae89e39fd229ca60748660cd00931cafcb77",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_008_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_008_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "975189b851b309932e0c090a07aeae89e39fd229ca60748660cd00931cafcb77",
+            "generatedSha256": "19354c3575c55eae3ff22ad853cee924ef5cd12c460fa877cf84f49c1b8f99ca",
+            "originalSha256": "d9014a3915217bbea21a9447c749526ae01700b0a70e00045bf2163126cf2087",
+            "promptSha256": "0972a3f6261253a1478563af87100ee1d295e1c14f055685daef97fe303c3e20",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_008_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_008_high.png",
+        "image": "custom/pose/images/custom_pose_male_008_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_high.webp",
+        "provenance": {
+          "originalSha256": "9489ff1e4dd9473c563a1a47cd0df3925b394e2b04263e478c7af4030a4552a7",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_008_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_008_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "9489ff1e4dd9473c563a1a47cd0df3925b394e2b04263e478c7af4030a4552a7",
+            "generatedSha256": "b145113c9fa51c6f7b53a898980bb2f8c1c4b447514a1f3883347536669306af",
+            "originalSha256": "952d7d9595b6a83b4bf05a8e311f41b2264ce3d60882c70ac70ad2efc3a16c69",
+            "promptSha256": "7155da5cc9c52f1be273ff563e8c258673f5d6905d2122d9d4c4202f5b15b991",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_008_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_008_low.png",
+        "image": "custom/pose/images/custom_pose_male_008_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_low.webp",
+        "provenance": {
+          "originalSha256": "fb3014a60c200d8522ad315d3c8f5a0c8d61f56cd5912fa67370f5f8d8af1fbc",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_008_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_008_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "fb3014a60c200d8522ad315d3c8f5a0c8d61f56cd5912fa67370f5f8d8af1fbc",
+            "generatedSha256": "7731fea1d8a5a23295c8612135656131647ea400dcb4319ba5bcd1417bdbd2b0",
+            "originalSha256": "d8ce957fd6cec388fc1c4d0cca4c4b5c273669d41e2429313bbde6fd0a6ff191",
+            "promptSha256": "b45896ff4caf94f77f8c5ec6c066e224ef1c4a5d4c6481edab4b281adf62c787",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_008_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_008_side.png",
+        "image": "custom/pose/images/custom_pose_male_008_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_side.webp",
+        "provenance": {
+          "originalSha256": "8543887c4155b05414e73793bb637eb29a1acfb23ef7475f9d3cd97c81f6a5ee",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_008_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_008_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "8543887c4155b05414e73793bb637eb29a1acfb23ef7475f9d3cd97c81f6a5ee",
+            "generatedSha256": "e5f68fc6f6b7a161574a63a8f3c85f5d6a770b5e62edc5b9400794846926976b",
+            "originalSha256": "b7d1df1591265a4e8359940b5f823cacfd8f94662bf453483a57fcfaaa16b4b4",
+            "promptSha256": "30f6914dc5d3caf8675acdf7018537a3fd0c9833d013c7e54ead22e3ead6b75f",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_008_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_008_diag.png",
+        "image": "custom/pose/images/custom_pose_male_008_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_diag.webp",
+        "provenance": {
+          "originalSha256": "59939e53275e23b7634dd7b5b9d98f9c4dbabd32035a5ed1b5cd547c39badd6d",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_008_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_008_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_008_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "59939e53275e23b7634dd7b5b9d98f9c4dbabd32035a5ed1b5cd547c39badd6d",
+            "generatedSha256": "9517974a97a7714fcd39a4ec8a791b79bd94ccf2713464a58a333b96bcfec822",
+            "originalSha256": "a811eed4b2397c3f9a65b6ed33d6609722326054c6860374fbd14e4d26f683b0",
+            "promptSha256": "f609c1087ac550e16490b17e4caf75d97da6149f64f9e9f0f7491b811b6305dc",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_009",
+    "kind": "pose",
+    "code": "MP-009",
+    "title": {
+      "zh": "男性 · 弓步",
+      "en": "Male · Forward lunge"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "弓步 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Forward lunge male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "5bd6e773f707b69f20130e71aae0739a3f5111b74ee8c8b2f745cdb5385dd499",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_009_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_009_front.png",
+        "image": "custom/pose/images/custom_pose_male_009_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_front.webp",
+        "provenance": {
+          "originalSha256": "5bd6e773f707b69f20130e71aae0739a3f5111b74ee8c8b2f745cdb5385dd499",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_009_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_009_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5bd6e773f707b69f20130e71aae0739a3f5111b74ee8c8b2f745cdb5385dd499",
+            "generatedSha256": "186d38f6f665340812f5a80d7e04a95d68cbcfdd85bee72fab5a67f6ad270aac",
+            "originalSha256": "6bb3f1fa89bae18254e8e74c38bb0b478a4dde3779d6416e918346edb122e604",
+            "promptSha256": "c2614668189ef3f5b8756e9e4036147f5ddd20ed1d1102f386675237a051b56c",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_009_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_009_high.png",
+        "image": "custom/pose/images/custom_pose_male_009_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_high.webp",
+        "provenance": {
+          "originalSha256": "fc1635530cb7f638c9dc2f213180839abae953d88f9063e707a91b48ef2b2c5b",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_009_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_009_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "fc1635530cb7f638c9dc2f213180839abae953d88f9063e707a91b48ef2b2c5b",
+            "generatedSha256": "6f708647e5f9c6f148db7e1b8eebddf0a93ebf6e63c6797dae446e7cf299ce33",
+            "originalSha256": "f121618fc1d4fa462c801b5fa26c06894942cbf0a7ee8422273c9a713783d6a1",
+            "promptSha256": "bccd19bfdc681076435df9006562d0098cfe13ca2b7ac6ba57d5074b41fc6994",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_009_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_009_low.png",
+        "image": "custom/pose/images/custom_pose_male_009_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_low.webp",
+        "provenance": {
+          "originalSha256": "cab8a5691c977262c97c0d373b535563e1d610bf5ff43007eeca9f3f65af9cfe",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_009_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_009_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "cab8a5691c977262c97c0d373b535563e1d610bf5ff43007eeca9f3f65af9cfe",
+            "generatedSha256": "5fe86a0bcc25c99c582cb987630007c77f6e86e3e655fcfbf395ee587ee26957",
+            "originalSha256": "ef8ae276c34ebef833b19b78b0aa3a9e646158bc3f75f8ddba0c2b25a402ae9c",
+            "promptSha256": "33fa21e9873528f2fa58c10daff33a96b4e77077f296879f371f52f5ce3f0533",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_009_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_009_side.png",
+        "image": "custom/pose/images/custom_pose_male_009_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_side.webp",
+        "provenance": {
+          "originalSha256": "a99d86d6277bd0fe9abc8c8cdc8e9cb67c785e532bdba34b312019851394ec52",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_009_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_009_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a99d86d6277bd0fe9abc8c8cdc8e9cb67c785e532bdba34b312019851394ec52",
+            "generatedSha256": "5f7095c061323883c89a566ef3f542b884e007b5b4ff568c6cdfc37964077aef",
+            "originalSha256": "ff5897a3075f6daff406b443d1b84c99bc5f327fc49aeada68d5a8b5453fbd0b",
+            "promptSha256": "4cc7f75d48c89146491d9d1b7d545495fa477fa09c65101a890c3550c20d4f64",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_009_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_009_diag.png",
+        "image": "custom/pose/images/custom_pose_male_009_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_diag.webp",
+        "provenance": {
+          "originalSha256": "5898d37300291c09204c760e1a476ea60a148e14d9a2c6b7f19968b9b2eb5a81",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_009_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_009_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_009_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5898d37300291c09204c760e1a476ea60a148e14d9a2c6b7f19968b9b2eb5a81",
+            "generatedSha256": "0ff3571243d8a8106bfb3bb2ac8126ff1f2c7e5096529db099c6ffd356b06e57",
+            "originalSha256": "3dcf093fedb6d6577f8a847e809e42cae6550e43c7c99484ec9b89da90102b8d",
+            "promptSha256": "393384f2fa0b3db38f8ed6daca2029fdc7526370d66fc850565ce3691b70112b",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_010",
+    "kind": "pose",
+    "code": "MP-010",
+    "title": {
+      "zh": "男性 · 双手 V 字",
+      "en": "Male · Double peace sign"
+    },
+    "category": {
+      "id": "gestures",
+      "zh": "手势与表情动作",
+      "en": "Gestures"
+    },
+    "series": {
+      "zh": "男性结构线稿 · 10 姿势 × 5 视角",
+      "en": "Male structural poses · 10 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "双手 V 字 男性 男士 男生 白底 结构线稿 人偶 正面 俯视 仰视 侧面 斜侧",
+      "en": "Double peace sign male man mens mannequin structural line art white background front high low side diagonal"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-structural-10x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "979c6882cda0e98d3913d0d7899739cd0c6888d942856cbee164bae3a57c3ccc",
+      "note": {
+        "zh": "AI 重绘的视觉参考，非严格标定的三维多视角数据。",
+        "en": "AI-redrawn visual references, not calibrated multi-view 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_010_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_010_front.png",
+        "image": "custom/pose/images/custom_pose_male_010_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_front.webp",
+        "provenance": {
+          "originalSha256": "979c6882cda0e98d3913d0d7899739cd0c6888d942856cbee164bae3a57c3ccc",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_010_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_010_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "979c6882cda0e98d3913d0d7899739cd0c6888d942856cbee164bae3a57c3ccc",
+            "generatedSha256": "65f8c750609699dcf698ca7097ac412d7e8ac4b71790a2d9a5db7c873628a1da",
+            "originalSha256": "2ad82334538752ccc17ab172892cb94ae24afa220d045f10308e2974b6259507",
+            "promptSha256": "6cd36ff5b2e124e963a84996e5d8cfccbd2c2a0b6c848b00ab79fb5e3e6663fe",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_010_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_010_high.png",
+        "image": "custom/pose/images/custom_pose_male_010_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_high.webp",
+        "provenance": {
+          "originalSha256": "3553f31f408b8dc054957fc0b42fa04a4cad68d2d8bbdb7f22a503a96881553e",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_010_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_010_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3553f31f408b8dc054957fc0b42fa04a4cad68d2d8bbdb7f22a503a96881553e",
+            "generatedSha256": "ad0d82c6efff4d3d910ea2a2a44bff80abecf4f8c2b95c7a8acb62b17b14a318",
+            "originalSha256": "d4f88000540e99f62ec35d61679c6338397a333daeadb3894ef925aa0d2fc231",
+            "promptSha256": "2f3a0bbccc006e32185c7af8474666b58d2e222c1cb787751f27401c9ac22419",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_010_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_010_low.png",
+        "image": "custom/pose/images/custom_pose_male_010_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_low.webp",
+        "provenance": {
+          "originalSha256": "4038d9d8e73b30a1a51c3b6f86cea8370ad157131f0dae84c3bf9842eac54a46",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_010_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_010_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4038d9d8e73b30a1a51c3b6f86cea8370ad157131f0dae84c3bf9842eac54a46",
+            "generatedSha256": "f56482fc584cfe614b16e8bb5cb13d80511d7184a2d703bc0ac07091e60e978e",
+            "originalSha256": "6086abca0b435c0d8619e33948080bf9def26cf2ff36a8d876c9efc645b46b00",
+            "promptSha256": "df9c99d77b6a5599581d54a66039e3302159bb8170a3627b1876d5f62cd7ba16",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_010_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_010_side.png",
+        "image": "custom/pose/images/custom_pose_male_010_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_side.webp",
+        "provenance": {
+          "originalSha256": "317047e737d982d8aee88cbca19f0709f07d6f1b36a854d3289d1e03374b03f8",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_010_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_010_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "317047e737d982d8aee88cbca19f0709f07d6f1b36a854d3289d1e03374b03f8",
+            "generatedSha256": "a92a7b3fca7781bf7457f58a63d9476b154e320663a5ff270140b9a7d430a8f7",
+            "originalSha256": "cd486335088648f7e0aec15775ee955ee7c61a2cd05b6705d5e753d78a471272",
+            "promptSha256": "93572b1a6ce9c1b91bf94fc343e2bcf872d057871deea5e8ca75452f31fa668a",
+            "width": 512,
+            "height": 512
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_010_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_010_diag.png",
+        "image": "custom/pose/images/custom_pose_male_010_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_diag.webp",
+        "provenance": {
+          "originalSha256": "47a1dfa2dfc9134e28bccabc3a82065d3dfccca7131bc2b2ae916b815d02d51a",
+          "width": 512,
+          "height": 512
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_010_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_010_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_010_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "47a1dfa2dfc9134e28bccabc3a82065d3dfccca7131bc2b2ae916b815d02d51a",
+            "generatedSha256": "9df2ce881b2154bed390230b7b5451f841660250fc8b59e57e550a6134264fcc",
+            "originalSha256": "590b155bc97d1659b82099cec302a6acf6099e57f9bfbb128c5a871b0f753a69",
+            "promptSha256": "b78bea66fa65d0ccd19ed0ddd5a4ad768c820ad9eb833471b0951b705b12c609",
+            "width": 512,
+            "height": 512
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_011",
+    "kind": "pose",
+    "code": "MP-011",
+    "title": {
+      "zh": "男性 · 腰前合手站姿",
+      "en": "Male · Standing with hands at waist"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性提取动作 · 三组五视角",
+      "en": "Extracted male poses · 3 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "腰前合手站姿 男性 男士 白底 结构线稿 圆形关节 辅助线 正面 俯视 仰视 侧面 斜侧 全身",
+      "en": "Standing with hands at waist male man structural line art circular joint guides white background front high low side diagonal full body"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-extracted-poses-3x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "fab90e9395aabeb0ada8b007a4afe8fdda5275abfe4a9f7e9f0d13df40672127",
+      "coverage": "full_body",
+      "note": {
+        "zh": "由已确认的提取姿势线稿生成五视角，非严格标定的三维数据。保留全身取景。",
+        "en": "Five AI-generated views from the approved extracted pose, not calibrated 3D data. Preserves full-body framing."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_011_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_011_front.png",
+        "image": "custom/pose/images/custom_pose_male_011_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_front.webp",
+        "provenance": {
+          "originalSha256": "fab90e9395aabeb0ada8b007a4afe8fdda5275abfe4a9f7e9f0d13df40672127",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_011_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_011_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "fab90e9395aabeb0ada8b007a4afe8fdda5275abfe4a9f7e9f0d13df40672127",
+            "generatedSha256": "1a7d20723907df7eff264d7f8a68a1c75274a718d52deb693614af997fc143e4",
+            "originalSha256": "729e46190f49b43c855e2a8089512302d19c4ce1419184053fc81f055fe0e412",
+            "promptSha256": "71873abec5b170c26ecab66dc163a66810cdc3f54bc9414d5716da2247a0a5c0",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_011_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_011_high.png",
+        "image": "custom/pose/images/custom_pose_male_011_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_high.webp",
+        "provenance": {
+          "originalSha256": "3a6e2c9c65f9c824acfe392a11db469d0df6babac2047d8205ec9ba113c6871e",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_011_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_011_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3a6e2c9c65f9c824acfe392a11db469d0df6babac2047d8205ec9ba113c6871e",
+            "generatedSha256": "140313e5161b0b1b63d422e08ae25fdee0f0380cdcffad16a35e574ff8fa280e",
+            "originalSha256": "7b569b35bbdd7dd41ce5bfee73a233187d2353b2d4c9f2cc757d1a397e79bc9e",
+            "promptSha256": "b2e48be7e7910c345c5db71418ca962cf9b4e86a4cf21ed3693af22e26070e08",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_011_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_011_low.png",
+        "image": "custom/pose/images/custom_pose_male_011_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_low.webp",
+        "provenance": {
+          "originalSha256": "ffeeb024c544d8dea2595de57090381dfba8b3734629fb581db4b8331257cdb8",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_011_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_011_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "ffeeb024c544d8dea2595de57090381dfba8b3734629fb581db4b8331257cdb8",
+            "generatedSha256": "73ab580ab3e24d56bd4319e23c5ba5b0dc5929d0319255c4e022981bfe944d1c",
+            "originalSha256": "bd3539bb7c8d904d00273dd43acb63e93c70eb0f97657ffeeafcc1031db43ff4",
+            "promptSha256": "7e8c126e98c0be568a3a72b1cef04de0d83936efcc54ce607ca3ddc5da09e707",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_011_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_011_side.png",
+        "image": "custom/pose/images/custom_pose_male_011_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_side.webp",
+        "provenance": {
+          "originalSha256": "8d0d55f10bc06089df82e4df350ba72a1d35d5659933113f345c444c005a4866",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_011_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_011_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "8d0d55f10bc06089df82e4df350ba72a1d35d5659933113f345c444c005a4866",
+            "generatedSha256": "29bfdab7725f1552b95861c2aef73bfca045e31324c0057037449a3f1ff6fa7f",
+            "originalSha256": "40a011991799b415b5286b7fafe45c674d89c98a4ec698ddc301143fc00b62b6",
+            "promptSha256": "b2c303238bc7c6b678e1085664e369d979b345e4197ecff30f04891e16032e1f",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_011_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_011_diag.png",
+        "image": "custom/pose/images/custom_pose_male_011_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_diag.webp",
+        "provenance": {
+          "originalSha256": "72ad3bb776da3bcbe42e9bcb5b7ca391c52e6254df70fa8c973db269e7ef01bf",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_011_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_011_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_011_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "72ad3bb776da3bcbe42e9bcb5b7ca391c52e6254df70fa8c973db269e7ef01bf",
+            "generatedSha256": "54626f0079bc89fd89ad97cb32d46c339ecdcee8771dd8e53c7e5e4701ec1af0",
+            "originalSha256": "a9f7645721791a71138bccaa8e3bd14d934157a0f35da0af232c49b6ad6ca14e",
+            "promptSha256": "af7cef404a2a79c94de6b4008593602339df624c48c3f36c24e5f7173672098f",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_012",
+    "kind": "pose",
+    "code": "MP-012",
+    "title": {
+      "zh": "男性 · 转头扶髋站姿",
+      "en": "Male · Head turned with hands at hips"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性提取动作 · 三组五视角",
+      "en": "Extracted male poses · 3 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "转头扶髋站姿 男性 男士 白底 结构线稿 圆形关节 辅助线 正面 俯视 仰视 侧面 斜侧 大腿裁切 半身",
+      "en": "Head turned with hands at hips male man structural line art circular joint guides white background front high low side diagonal cropped thighs upper body"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-extracted-poses-3x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "d9615585e7be7c39655bf7271d76828c7798739a1d9556c96054dadfc28c2500",
+      "coverage": "cropped_above_knees",
+      "note": {
+        "zh": "由已确认的提取姿势线稿生成五视角，非严格标定的三维数据。保留大腿处裁切，不补全原图未展示的腿脚。",
+        "en": "Five AI-generated views from the approved extracted pose, not calibrated 3D data. Preserves the thigh crop; hidden lower legs and feet are not reconstructed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_012_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_012_front.png",
+        "image": "custom/pose/images/custom_pose_male_012_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_front.webp",
+        "provenance": {
+          "originalSha256": "d9615585e7be7c39655bf7271d76828c7798739a1d9556c96054dadfc28c2500",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_012_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_012_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d9615585e7be7c39655bf7271d76828c7798739a1d9556c96054dadfc28c2500",
+            "generatedSha256": "78ee4159755fc9ba97dc28eefa368a23d248e8b27946e428cbe8ba703d82133d",
+            "originalSha256": "a9f34739e69597a269bfd0fa200a740d873eab82a7c98f2d022bc90cc863a9cd",
+            "promptSha256": "22459eab59c6f5145b3a4968aae0d2a0c6142916323001f3e7b168d0c99ed9cd",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_012_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_012_high.png",
+        "image": "custom/pose/images/custom_pose_male_012_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_high.webp",
+        "provenance": {
+          "originalSha256": "028d6718b920606e669e023b17197e0bc241baa57f403e52dbe76470e3439878",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_012_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_012_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "028d6718b920606e669e023b17197e0bc241baa57f403e52dbe76470e3439878",
+            "generatedSha256": "8bc45e6ab1aa660014bd21bff9c9385994fbbc6ab9c5a90e5a41375c7f58d071",
+            "originalSha256": "98b76d60d6cc834798e506ff622cebb1ac6510ee14800f925dd3094c2a5292d3",
+            "promptSha256": "31347378823b2d95fd460e9f1c6dd76cb2835a3ef5445bda8a37cd29d169cc27",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_012_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_012_low.png",
+        "image": "custom/pose/images/custom_pose_male_012_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_low.webp",
+        "provenance": {
+          "originalSha256": "c5c495a5109b0745247c5b9c6a801983dc18d36a5c6947c800b07b4a9a9c2619",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_012_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_012_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c5c495a5109b0745247c5b9c6a801983dc18d36a5c6947c800b07b4a9a9c2619",
+            "generatedSha256": "8a62fb180b3c057131121ed76001a3a48ad67db8465ebce7ee87072d39d44d4b",
+            "originalSha256": "5c4625995a645799a6860cafa94a49763f8e929ee03334a8996d228119082074",
+            "promptSha256": "483045f3c8e66054b860e4451934421546f4991073d7101e33f61469df03df04",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_012_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_012_side.png",
+        "image": "custom/pose/images/custom_pose_male_012_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_side.webp",
+        "provenance": {
+          "originalSha256": "62faf999b83624bf6ea8335bf9567527a06e4fb266dd9946a202d7f560518ac7",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_012_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_012_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "62faf999b83624bf6ea8335bf9567527a06e4fb266dd9946a202d7f560518ac7",
+            "generatedSha256": "9e98bfd6cd3fddd5f4638f57e4b789a00b1400f984ee26ebb2ea959716e93c9a",
+            "originalSha256": "a51f07143b4eb27e9a06bb6b06705c36590c4719f7e3631d58f3a2062dff6a20",
+            "promptSha256": "f4b3210670e6e0bd1915aa0f4f27af78e87fa591d204b47e920c72c5f8fbde50",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_012_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_012_diag.png",
+        "image": "custom/pose/images/custom_pose_male_012_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_diag.webp",
+        "provenance": {
+          "originalSha256": "0be132a7a1f00afad90aa42ed53d94123e58a601b5a82c3ea15d614b0a4bacbd",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_012_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_012_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_012_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "0be132a7a1f00afad90aa42ed53d94123e58a601b5a82c3ea15d614b0a4bacbd",
+            "generatedSha256": "984a42f3c4221dc5e41e96e6df26135ee256a0699f5a84d09f08828edf951e5b",
+            "originalSha256": "04e08a37aee7f6c578b690b044207a4798c5cec9b0cb6be524cadb7eb55f7ad1",
+            "promptSha256": "c353afd4c19a294f3bcf70d16516da2f2cb5458610e2fea5fda8d378c0ae22a8",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_male_013",
+    "kind": "pose",
+    "code": "MP-013",
+    "title": {
+      "zh": "男性 · 单手扶髋持书",
+      "en": "Male · One hand at hip, holding a book"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性提取动作 · 三组五视角",
+      "en": "Extracted male poses · 3 poses × 5 views"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "单手扶髋持书 男性 男士 白底 结构线稿 圆形关节 辅助线 正面 俯视 仰视 侧面 斜侧 大腿裁切 半身",
+      "en": "One hand at hip, holding a book male man structural line art circular joint guides white background front high low side diagonal cropped thighs upper body"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-extracted-poses-3x5-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "c174aefb9130afda791b2dd32f92fb3db358dc5ed14662ad07d8ad039d9c53ae",
+      "coverage": "cropped_above_knees",
+      "note": {
+        "zh": "由已确认的提取姿势线稿生成五视角，非严格标定的三维数据。保留大腿处裁切，不补全原图未展示的腿脚。",
+        "en": "Five AI-generated views from the approved extracted pose, not calibrated 3D data. Preserves the thigh crop; hidden lower legs and feet are not reconstructed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_male_013_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_male_013_front.png",
+        "image": "custom/pose/images/custom_pose_male_013_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_front.webp",
+        "provenance": {
+          "originalSha256": "c174aefb9130afda791b2dd32f92fb3db358dc5ed14662ad07d8ad039d9c53ae",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_013_front_depth.png",
+          "image": "custom/pose/images/custom_pose_male_013_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_front_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c174aefb9130afda791b2dd32f92fb3db358dc5ed14662ad07d8ad039d9c53ae",
+            "generatedSha256": "33491efbe4a8b1831eca1d9ea6bd5352c1067a2bd0e4f7dc0c8f5d9c7ee57852",
+            "originalSha256": "8f169006ef17eb6797da5950bea2b78db42d2257cd06d28e19be3ecf187e6e29",
+            "promptSha256": "5775c838cd5afdd5950c45cd3bbc08a7c7f0527217c14ffcd0ed98e4c4805f3c",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_013_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_013_high.png",
+        "image": "custom/pose/images/custom_pose_male_013_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_high.webp",
+        "provenance": {
+          "originalSha256": "c73275dd15652746785582c379a39777e9cc39b84ac3d018608deba09b01223f",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_013_high_depth.png",
+          "image": "custom/pose/images/custom_pose_male_013_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_high_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c73275dd15652746785582c379a39777e9cc39b84ac3d018608deba09b01223f",
+            "generatedSha256": "bd057e0ab92eb4201cbc96d79b9ee6c0203b23a7630ce9475a1abc2b24b8d2ef",
+            "originalSha256": "bc6c6788cd2fe92a4915c706eae6c7ba7127869c0b84c69058dc8eb8006950c1",
+            "promptSha256": "aaefd1220baee5f31c93821073bf2e6d67a5ad45de5a8d068061b90f5d172431",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_013_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_male_013_low.png",
+        "image": "custom/pose/images/custom_pose_male_013_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_low.webp",
+        "provenance": {
+          "originalSha256": "a0a1aff6dd347feb8ef9ab8073343ffaf9f4d591988f62af4dcd79ebe47c5dd5",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_013_low_depth.png",
+          "image": "custom/pose/images/custom_pose_male_013_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_low_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a0a1aff6dd347feb8ef9ab8073343ffaf9f4d591988f62af4dcd79ebe47c5dd5",
+            "generatedSha256": "4c252340cd7831b1a14d9f41860043cc41d6fc82b6aded3c4becf245f8d57b14",
+            "originalSha256": "678e9297167eabb6126b54ec9a26f5c4f828fe168ee3278feb0425800bf97e6e",
+            "promptSha256": "046141413e2b6cce34436a66c1d4d1308a078459bf83f1cf17d6269076f883aa",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_013_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_male_013_side.png",
+        "image": "custom/pose/images/custom_pose_male_013_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_side.webp",
+        "provenance": {
+          "originalSha256": "5360af356bbf88fac93f79cc60a97bdb772e9b06fa518f388a8a30fc7145f409",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_013_side_depth.png",
+          "image": "custom/pose/images/custom_pose_male_013_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_side_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5360af356bbf88fac93f79cc60a97bdb772e9b06fa518f388a8a30fc7145f409",
+            "generatedSha256": "286fc8dd2dfb65c2dfdf36ddeb7e3a82a39d3ab29dc3497facc137083bc9a6fd",
+            "originalSha256": "bd616322594afb4d30e4439e5e53f4034dbeb82bcf2508cbad5d29fda5f59c24",
+            "promptSha256": "041795070b7ab8651616e01ad4511fe6d73abae0c4fd685c83c381e96ee5986c",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_male_013_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_male_013_diag.png",
+        "image": "custom/pose/images/custom_pose_male_013_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_diag.webp",
+        "provenance": {
+          "originalSha256": "a493edef916351461426a9db7da4e9c8cdaee3e3051ff03f1bc5888f9c36388f",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_male_013_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_male_013_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_male_013_diag_depth.webp",
+          "provenance": {
+            "batch": "male-pose-depth-13x5-01",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a493edef916351461426a9db7da4e9c8cdaee3e3051ff03f1bc5888f9c36388f",
+            "generatedSha256": "e73ecedcd2e2d2519b08cf997db39f4c33348ed845eb10077ba5941765f31a5d",
+            "originalSha256": "99cca54d497cf0364fc8b7b0cba83a0ed1dbc278aa3b0d683ec6b0acad63c6a7",
+            "promptSha256": "149261d609e98c5a484b6661ba009fd4ca0dfb9305d09475781bc419b02f41b4",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "source": "custom",
+    "collection": "custom",
+    "extended": false,
+    "series": {
+      "zh": "图书馆提取 · 01",
+      "en": "Library extraction · 01"
+    },
+    "id": "custom_pose_female_001",
+    "kind": "pose",
+    "code": "FP-001",
+    "title": {
+      "zh": "女性 · 侧倾并膝站姿",
+      "en": "Female · Relaxed tilted standing"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "keywords": {
+      "zh": "图书馆提取 女性 自然站立 头部侧倾 并膝 空手 五视角 结构线稿 深度图",
+      "en": "library extraction female relaxed standing head tilt close knees empty hands five views structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "library-reference-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "b4bf6b18be497921ebbbb0915f2965a0b26bea8e6235ead469f93168be141f50",
+      "note": {
+        "zh": "保留用户提供的正面线稿，其余视角与配套深度为 AI 推断；非严格标定的三维数据。",
+        "en": "The user-provided front drawing is preserved. Additional views and relative depth are AI-inferred, not calibrated 3D data."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_001_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_001_front.png",
+        "image": "custom/pose/images/custom_pose_female_001_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_front.webp",
+        "provenance": {
+          "originalSha256": "b4bf6b18be497921ebbbb0915f2965a0b26bea8e6235ead469f93168be141f50",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_001_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_001_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_front_depth.webp",
+          "provenance": {
+            "originalSha256": "2657fbf813b5da53f07a89a4944bec6753bbfca67a0a88734527ee268453caac",
+            "width": 1024,
+            "height": 1536,
+            "batch": "library-reference-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "b4bf6b18be497921ebbbb0915f2965a0b26bea8e6235ead469f93168be141f50",
+            "generatedSha256": "a70881be4a61da9d6e844d0641fbbbcd33013793c46eebcafc1df49c4179bf37",
+            "promptSha256": "b9cfd165e69fcdc7174232f7c08cef01f929614ada8dd8bd550c9fa6c912b04c"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_001_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_001_high.png",
+        "image": "custom/pose/images/custom_pose_female_001_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_high.webp",
+        "provenance": {
+          "originalSha256": "6a568e1356f7b4593a9fea4d91236eb17a48a9ea5e9ad08e9dac69d8ca161893",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_001_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_001_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_high_depth.webp",
+          "provenance": {
+            "originalSha256": "b0771699ad422f372e337df49449a53d06dfca4bd62ea2dc3fa741b415a763bc",
+            "width": 1024,
+            "height": 1536,
+            "batch": "library-reference-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "6a568e1356f7b4593a9fea4d91236eb17a48a9ea5e9ad08e9dac69d8ca161893",
+            "generatedSha256": "0533f1c24ed774baf48ba18ed9f46ae5cafe2404dda7bd6d03ad0ba63c7aa92a",
+            "promptSha256": "b9cfd165e69fcdc7174232f7c08cef01f929614ada8dd8bd550c9fa6c912b04c"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_001_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_001_low.png",
+        "image": "custom/pose/images/custom_pose_female_001_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_low.webp",
+        "provenance": {
+          "originalSha256": "d9a54fcd32cdf456491b3a0be84be4b6aeced4cab5e4c0333629c9de2c2cf286",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_001_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_001_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_low_depth.webp",
+          "provenance": {
+            "originalSha256": "cab4a1c244ea288d7f5c2542a99794ff9add8f34ef71b7f510105cb410a9ecf9",
+            "width": 1024,
+            "height": 1536,
+            "batch": "library-reference-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d9a54fcd32cdf456491b3a0be84be4b6aeced4cab5e4c0333629c9de2c2cf286",
+            "generatedSha256": "12ced07fc9b460a591c2e68bd426399e29a6de438b9acdedef860708044ca804",
+            "promptSha256": "b9cfd165e69fcdc7174232f7c08cef01f929614ada8dd8bd550c9fa6c912b04c"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_001_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_001_side.png",
+        "image": "custom/pose/images/custom_pose_female_001_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_side.webp",
+        "provenance": {
+          "originalSha256": "4b750be1c16c54f5f1e88d034393be21a5342c868ef3fb6492ff47fe8022e547",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_001_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_001_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_side_depth.webp",
+          "provenance": {
+            "originalSha256": "449d58568d01328f1d4ff91e0928f9f789cc169a3fa83f838220d39ea08f8c83",
+            "width": 1024,
+            "height": 1536,
+            "batch": "library-reference-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4b750be1c16c54f5f1e88d034393be21a5342c868ef3fb6492ff47fe8022e547",
+            "generatedSha256": "57e46757171fb46dea9c6e78f4bd589305545a9136d126757a157af0ca441290",
+            "promptSha256": "b9cfd165e69fcdc7174232f7c08cef01f929614ada8dd8bd550c9fa6c912b04c"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_001_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_001_diag.png",
+        "image": "custom/pose/images/custom_pose_female_001_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_diag.webp",
+        "provenance": {
+          "originalSha256": "82106fa098f069f48b3606f9c0772fe96cf4c516e60b7187be2ae34b11249ac8",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_001_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_001_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_001_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "f505cb576289ca5d788ffe83e1525449dd284bc332ec2c17bfcf9c54529a5b30",
+            "width": 1024,
+            "height": 1536,
+            "batch": "library-reference-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "82106fa098f069f48b3606f9c0772fe96cf4c516e60b7187be2ae34b11249ac8",
+            "generatedSha256": "e09b4084bbdcdcf00ab197c5ba999a4c16e71a1a63a50a29b41c6e69003e23e3",
+            "promptSha256": "b9cfd165e69fcdc7174232f7c08cef01f929614ada8dd8bd550c9fa6c912b04c"
+          }
+        }
+      }
+    ]
+  }
+]

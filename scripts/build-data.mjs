@@ -50,6 +50,7 @@ export async function normalize(pose, costume, chinese, portraits = []) {
         title: { zh: translated, en },
         category: category(row['分類']),
         series: vocabulary.series[row['系統']],
+        tags: [{ id: 'female', zh: '女性', en: 'Female' }],
         extended:
           prefix === 'full_sexy' ||
           prefix === 'pair60' ||
@@ -117,6 +118,10 @@ export async function normalize(pose, costume, chinese, portraits = []) {
       title: { zh: titleZh, en: titleEn[0].toUpperCase() + titleEn.slice(1) },
       category: cat,
       series: { zh: '服装参考', en: 'Costume reference' },
+      tags: [
+        { id: 'female', zh: '女性', en: 'Female' },
+        { id: 'photo', zh: '写实', en: 'Photographic' },
+      ],
       extended: ['lingerie', 'swimwear', 'expressive-outfits'].includes(cat.id),
       keywords: { zh: translated.join(' '), en },
       source: 'https://ai-costume-gallery.pages.dev/',

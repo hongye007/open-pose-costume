@@ -1,1 +1,2340 @@
-[]
+[
+  {
+    "id": "custom_character_region_fr_female",
+    "kind": "character",
+    "code": "RCF-001",
+    "title": {
+      "zh": "法国 · 女性人像",
+      "en": "France · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "法国 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。sculpted heart-shaped face with elegant high cheekbones and a refined tapered jaw；clear green-hazel almond eyes with softly lifted outer corners, precise dark brows, straight narrow nose, balanced full lips；glossy chestnut-brown shoulder-length waves, precise side part；one tiny understated beauty mark below the left eye AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "France Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. sculpted heart-shaped face with elegant high cheekbones and a refined tapered jaw; clear green-hazel almond eyes with softly lifted outer corners, precise dark brows, straight narrow nose, balanced full lips; glossy chestnut-brown shoulder-length waves, precise side part; one tiny understated beauty mark below the left eye Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "d4b07ec10167fa7f510f8d1a526897f4ac8bf99f85cb3e725df53c7e8eaaf546",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "d1fbc9681a9de5b16d5d8d43b1999bbf0961fcfe339fb7a66bd2d6143159d3e1",
+      "editorialCountry": {
+        "code": "fr",
+        "zh": "法国",
+        "en": "France"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "db57b76292bf46d2f4364a2a6c3d7fbf0b797124e50b61de7539e05b01385fb8",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "light neutral-olive skin",
+        "face": "sculpted heart-shaped face with elegant high cheekbones and a refined tapered jaw",
+        "eyes": "clear green-hazel almond eyes with softly lifted outer corners, precise dark brows, straight narrow nose, balanced full lips",
+        "hair": "glossy chestnut-brown shoulder-length waves, precise side part",
+        "mark": "one tiny understated beauty mark below the left eye"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_fr_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_fr_female.png",
+        "image": "custom/character/images/custom_character_region_fr_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_fr_female.webp",
+        "provenance": {
+          "originalSha256": "d4b07ec10167fa7f510f8d1a526897f4ac8bf99f85cb3e725df53c7e8eaaf546",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "fr",
+      "zh": "法国",
+      "en": "France"
+    }
+  },
+  {
+    "id": "custom_character_region_fr_male",
+    "kind": "character",
+    "code": "RCF-002",
+    "title": {
+      "zh": "法国 · 男性人像",
+      "en": "France · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "法国 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。深栗棕色短发，自然侧分，榛色瞳色，浅暖米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "France Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short dark-chestnut hair with a natural textured side part; hazel eyes; light warm beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "f8e40eb2842d8f9b0895e399f1f55d09b4305058c9bb0a15f7f12e44634ffec2",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "24c2b4ca1de7343a8e12b17c04702f0d9a48f09723bfae79f1305ed6b5303f89",
+      "editorialCountry": {
+        "code": "fr",
+        "zh": "法国",
+        "en": "France"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_fr_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_fr_male.png",
+        "image": "custom/character/images/custom_character_region_fr_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_fr_male.webp",
+        "provenance": {
+          "originalSha256": "f8e40eb2842d8f9b0895e399f1f55d09b4305058c9bb0a15f7f12e44634ffec2",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "fr",
+      "zh": "法国",
+      "en": "France"
+    }
+  },
+  {
+    "id": "custom_character_region_ca_female",
+    "kind": "character",
+    "code": "RCF-003",
+    "title": {
+      "zh": "加拿大 · 女性人像",
+      "en": "Canada · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "加拿大 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。polished oval face with luminous cheekbones, soft jaw and small rounded chin；clear icy blue-grey eyes, light defined brows, compact straight nose, softly full lips；expensive golden-blonde shoulder-length waves, polished side part；fine natural freckles across the bridge of the nose AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "Canada Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. polished oval face with luminous cheekbones, soft jaw and small rounded chin; clear icy blue-grey eyes, light defined brows, compact straight nose, softly full lips; expensive golden-blonde shoulder-length waves, polished side part; fine natural freckles across the bridge of the nose Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "48ee395af4b9339ef15d0048edfd6183167391221cd4142d4d0252c8fdca0d3e",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "79a12bd9b62f4d845ad31c37170e5af3b5dac6d8d81e9fd685224aba654567da",
+      "editorialCountry": {
+        "code": "ca",
+        "zh": "加拿大",
+        "en": "Canada"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "0b796e2f3212ffe8912145bac05f3a68500e3f66577d62f52a47bf8ea3b45c4c",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "fair peach skin",
+        "face": "polished oval face with luminous cheekbones, soft jaw and small rounded chin",
+        "eyes": "clear icy blue-grey eyes, light defined brows, compact straight nose, softly full lips",
+        "hair": "expensive golden-blonde shoulder-length waves, polished side part",
+        "mark": "fine natural freckles across the bridge of the nose"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_ca_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_ca_female.png",
+        "image": "custom/character/images/custom_character_region_ca_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_ca_female.webp",
+        "provenance": {
+          "originalSha256": "48ee395af4b9339ef15d0048edfd6183167391221cd4142d4d0252c8fdca0d3e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "ca",
+      "zh": "加拿大",
+      "en": "Canada"
+    }
+  },
+  {
+    "id": "custom_character_region_ca_male",
+    "kind": "character",
+    "code": "RCF-004",
+    "title": {
+      "zh": "加拿大 · 男性人像",
+      "en": "Canada · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "加拿大 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。沙金色短发，向后梳理，蓝灰色瞳色，白皙桃色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Canada Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short sandy-blonde hair, textured swept-back top; blue-grey eyes; fair peach skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "51ae6a3a242ee07151e1f89ea84a9df3c290a335ff49ebf488b4e30b0deebe7f",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "ac3a700b1258fbd1da3a86aa4ebf854a26e4704a866e18d18539314e4f444946",
+      "editorialCountry": {
+        "code": "ca",
+        "zh": "加拿大",
+        "en": "Canada"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_ca_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_ca_male.png",
+        "image": "custom/character/images/custom_character_region_ca_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_ca_male.webp",
+        "provenance": {
+          "originalSha256": "51ae6a3a242ee07151e1f89ea84a9df3c290a335ff49ebf488b4e30b0deebe7f",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "ca",
+      "zh": "加拿大",
+      "en": "Canada"
+    }
+  },
+  {
+    "id": "custom_character_region_us_female",
+    "kind": "character",
+    "code": "RCF-005",
+    "title": {
+      "zh": "美国 · 女性人像",
+      "en": "USA · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "美国 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。strong editorial oval-square face, defined jaw, broad cheekbones and long elegant neck；deep dark-brown almond eyes, bold straight brows, clean medium nose, full sculpted lips；long espresso-brown loose waves, sleek center part；one tiny subtle mole near the right jaw AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "USA Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. strong editorial oval-square face, defined jaw, broad cheekbones and long elegant neck; deep dark-brown almond eyes, bold straight brows, clean medium nose, full sculpted lips; long espresso-brown loose waves, sleek center part; one tiny subtle mole near the right jaw Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "fde69518bebe54b12ebd63d5dea867c03cd27980fb899059c9ce2cf0bb0c4cd5",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "173e37b59efc3cf996fdc9cfb8c91ff5edae05ca58aa01e3004f4ade419fd4ef",
+      "editorialCountry": {
+        "code": "us",
+        "zh": "美国",
+        "en": "USA"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "a46757738a37701a60e98b20de8214828effea262315301ea66a0e71c4cf7de2",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "medium warm tan skin",
+        "face": "strong editorial oval-square face, defined jaw, broad cheekbones and long elegant neck",
+        "eyes": "deep dark-brown almond eyes, bold straight brows, clean medium nose, full sculpted lips",
+        "hair": "long espresso-brown loose waves, sleek center part",
+        "mark": "one tiny subtle mole near the right jaw"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_us_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_us_female.png",
+        "image": "custom/character/images/custom_character_region_us_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_us_female.webp",
+        "provenance": {
+          "originalSha256": "fde69518bebe54b12ebd63d5dea867c03cd27980fb899059c9ce2cf0bb0c4cd5",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "us",
+      "zh": "美国",
+      "en": "USA"
+    }
+  },
+  {
+    "id": "custom_character_region_us_male",
+    "kind": "character",
+    "code": "RCF-006",
+    "title": {
+      "zh": "美国 · 男性人像",
+      "en": "USA · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "美国 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。深棕色短卷发，两侧渐短，棕色瞳色，中等暖棕色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "USA Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short dark-brown wavy hair, clean tapered sides; brown eyes; medium warm tan skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "beb037d7c9769f43907ab9f4fb626566ddd4a1bebdaa229b43649a2514e36a29",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "b120a4dc3847aa250f8aca9ea3ead1c3a462427dd8d4c4d6aca8698afcf647c0",
+      "editorialCountry": {
+        "code": "us",
+        "zh": "美国",
+        "en": "USA"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_us_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_us_male.png",
+        "image": "custom/character/images/custom_character_region_us_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_us_male.webp",
+        "provenance": {
+          "originalSha256": "beb037d7c9769f43907ab9f4fb626566ddd4a1bebdaa229b43649a2514e36a29",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "us",
+      "zh": "美国",
+      "en": "USA"
+    }
+  },
+  {
+    "id": "custom_character_region_jp_female",
+    "kind": "character",
+    "code": "RCF-007",
+    "title": {
+      "zh": "日本 · 女性人像",
+      "en": "Japan · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "日本 女性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。深棕色齐下巴波波头，轻薄刘海，深棕色瞳色，浅中性米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Japan Female adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. straight dark-brown chin-length bob with light wispy bangs; dark brown eyes; light neutral beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "865f75b8fb8cc9ec631cac5ded8e69b48022071bfc11bb5febcf93bde1f8bf53",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "66d1e915f00df5d0d493179a44ac2e0046a33f336cc008049ee9468f44a41048",
+      "editorialCountry": {
+        "code": "jp",
+        "zh": "日本",
+        "en": "Japan"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_jp_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_jp_female.png",
+        "image": "custom/character/images/custom_character_region_jp_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_jp_female.webp",
+        "provenance": {
+          "originalSha256": "865f75b8fb8cc9ec631cac5ded8e69b48022071bfc11bb5febcf93bde1f8bf53",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "jp",
+      "zh": "日本",
+      "en": "Japan"
+    }
+  },
+  {
+    "id": "custom_character_region_jp_male",
+    "kind": "character",
+    "code": "RCF-008",
+    "title": {
+      "zh": "日本 · 男性人像",
+      "en": "Japan · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "日本 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。黑色短层次直发，自然帘式刘海，深棕色瞳色，浅中性米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Japan Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. straight black short layered hair with a relaxed curtain fringe; dark brown eyes; light neutral beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "ba704b0dedd77baae5c895f23ab96c785e5d086d8c94e01eec7556c1549b0f71",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "9ffeb9961fe25e938d42fd425090bd5466376339ac869fbeece70606ff575f9e",
+      "editorialCountry": {
+        "code": "jp",
+        "zh": "日本",
+        "en": "Japan"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_jp_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_jp_male.png",
+        "image": "custom/character/images/custom_character_region_jp_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_jp_male.webp",
+        "provenance": {
+          "originalSha256": "ba704b0dedd77baae5c895f23ab96c785e5d086d8c94e01eec7556c1549b0f71",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "jp",
+      "zh": "日本",
+      "en": "Japan"
+    }
+  },
+  {
+    "id": "custom_character_region_de_female",
+    "kind": "character",
+    "code": "RCF-009",
+    "title": {
+      "zh": "德国 · 女性人像",
+      "en": "Germany · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "德国 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。long symmetrical oval face, high forehead, clean jawline and defined chin；pale grey-green hooded eyes, straight pale brows, long refined nose, elegant medium lips；ash-blonde shoulder-length waves, sleek center part, one side tucked behind ear；no freckles or moles; minimal restrained expression AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "Germany Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. long symmetrical oval face, high forehead, clean jawline and defined chin; pale grey-green hooded eyes, straight pale brows, long refined nose, elegant medium lips; ash-blonde shoulder-length waves, sleek center part, one side tucked behind ear; no freckles or moles; minimal restrained expression Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "9f5adc29157f89ca3855d640e0e64dc8407921b62e1e5ae3ebaeee74ea8bbfd1",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "95e955fe1cfa06516bf58d20865439d6d11a863cf6614922f500722f1c58463e",
+      "editorialCountry": {
+        "code": "de",
+        "zh": "德国",
+        "en": "Germany"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "d6cf704583ff9bbad953bd5602164fdfd8086de291f2af9f4db27e6a2a3eb55a",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "fair cool-neutral skin",
+        "face": "long symmetrical oval face, high forehead, clean jawline and defined chin",
+        "eyes": "pale grey-green hooded eyes, straight pale brows, long refined nose, elegant medium lips",
+        "hair": "ash-blonde shoulder-length waves, sleek center part, one side tucked behind ear",
+        "mark": "no freckles or moles; minimal restrained expression"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_de_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_de_female.png",
+        "image": "custom/character/images/custom_character_region_de_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_de_female.webp",
+        "provenance": {
+          "originalSha256": "9f5adc29157f89ca3855d640e0e64dc8407921b62e1e5ae3ebaeee74ea8bbfd1",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "de",
+      "zh": "德国",
+      "en": "Germany"
+    }
+  },
+  {
+    "id": "custom_character_region_de_male",
+    "kind": "character",
+    "code": "RCF-010",
+    "title": {
+      "zh": "德国 · 男性人像",
+      "en": "Germany · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "德国 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。灰金色短碎发，灰绿色瞳色，白皙中性肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Germany Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short ash-blonde hair, neat textured crop; grey-green eyes; fair neutral skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "844b308dfb2b9267f59aae618dda73752f23d79701b17aef8a926aaaf61c42c6",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "6285ea15e6660541ef44dfe8f4895ef6fb15497dd98287992f3d4cd47e51ffdc",
+      "editorialCountry": {
+        "code": "de",
+        "zh": "德国",
+        "en": "Germany"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_de_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_de_male.png",
+        "image": "custom/character/images/custom_character_region_de_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_de_male.webp",
+        "provenance": {
+          "originalSha256": "844b308dfb2b9267f59aae618dda73752f23d79701b17aef8a926aaaf61c42c6",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "de",
+      "zh": "德国",
+      "en": "Germany"
+    }
+  },
+  {
+    "id": "custom_character_region_br_female",
+    "kind": "character",
+    "code": "RCF-011",
+    "title": {
+      "zh": "巴西 · 女性人像",
+      "en": "Brazil · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "巴西 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。radiant rounded-oval face, strong cheekbones, soft full cheeks and rounded chin；large warm amber-brown almond eyes, thick naturally curved brows, graceful rounded nose, plush lips；luxurious long deep-brown spiral curls, defined side part；a small right-cheek dimple visible in a subtle smile AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "Brazil Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. radiant rounded-oval face, strong cheekbones, soft full cheeks and rounded chin; large warm amber-brown almond eyes, thick naturally curved brows, graceful rounded nose, plush lips; luxurious long deep-brown spiral curls, defined side part; a small right-cheek dimple visible in a subtle smile Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "ec00f2cb11d12a4a1f307d83ad4b0d04b9d8eb5a4bd2532340c1cc7344987b82",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "c32325072b118d9680094ec5932c417d4a7cce454c174964892a007b4baaed28",
+      "editorialCountry": {
+        "code": "br",
+        "zh": "巴西",
+        "en": "Brazil"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "b95d90f34c15e4bd166333b29cd02708ec4a8bc025ae0e14c910a83f3d6e4a88",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "medium golden-brown skin",
+        "face": "radiant rounded-oval face, strong cheekbones, soft full cheeks and rounded chin",
+        "eyes": "large warm amber-brown almond eyes, thick naturally curved brows, graceful rounded nose, plush lips",
+        "hair": "luxurious long deep-brown spiral curls, defined side part",
+        "mark": "a small right-cheek dimple visible in a subtle smile"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_br_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_br_female.png",
+        "image": "custom/character/images/custom_character_region_br_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_br_female.webp",
+        "provenance": {
+          "originalSha256": "ec00f2cb11d12a4a1f307d83ad4b0d04b9d8eb5a4bd2532340c1cc7344987b82",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "br",
+      "zh": "巴西",
+      "en": "Brazil"
+    }
+  },
+  {
+    "id": "custom_character_region_br_male",
+    "kind": "character",
+    "code": "RCF-012",
+    "title": {
+      "zh": "巴西 · 男性人像",
+      "en": "Brazil · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "巴西 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。深棕色短密卷发，棕色瞳色，中等金棕色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Brazil Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short dark-brown tight curls with a low taper; brown eyes; medium golden-brown skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "a7addc14484e959ed7261c942fd23ea05c3341fdc2902fa0c78d63f3dddc0286",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "4955c194f04ead1abda0d02572794635b76d3cfc079b7afaa39ce7076a192b27",
+      "editorialCountry": {
+        "code": "br",
+        "zh": "巴西",
+        "en": "Brazil"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_br_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_br_male.png",
+        "image": "custom/character/images/custom_character_region_br_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_br_male.webp",
+        "provenance": {
+          "originalSha256": "a7addc14484e959ed7261c942fd23ea05c3341fdc2902fa0c78d63f3dddc0286",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "br",
+      "zh": "巴西",
+      "en": "Brazil"
+    }
+  },
+  {
+    "id": "custom_character_region_in_female",
+    "kind": "character",
+    "code": "RCF-013",
+    "title": {
+      "zh": "印度 · 女性人像",
+      "en": "India · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "印度 女性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。黑色长波浪发，偏分，深棕色瞳色，中深暖棕色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "India Female adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. long black wavy hair, slightly off-center part; dark brown eyes; medium-deep warm brown skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "0c0109d68151172a2e13d7dec91faff05cb3b54e66986fe416f33db6216b4942",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "7a336120aa94f836505817040931bb609e16aa9ce6816b5b558449a27bc30d06",
+      "editorialCountry": {
+        "code": "in",
+        "zh": "印度",
+        "en": "India"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_in_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_in_female.png",
+        "image": "custom/character/images/custom_character_region_in_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_in_female.webp",
+        "provenance": {
+          "originalSha256": "0c0109d68151172a2e13d7dec91faff05cb3b54e66986fe416f33db6216b4942",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "in",
+      "zh": "印度",
+      "en": "India"
+    }
+  },
+  {
+    "id": "custom_character_region_in_male",
+    "kind": "character",
+    "code": "RCF-014",
+    "title": {
+      "zh": "印度 · 男性人像",
+      "en": "India · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "印度 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。黑色浓密短卷发，深棕色瞳色，中深暖棕色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "India Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short black thick wavy hair, brushed loosely upward; dark brown eyes; medium-deep warm brown skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "dadbd3716808fc73d26864be62bcd2c0dcc9e2b149daa94a39c412e913407ba2",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "24eb87e34fca7c0bc42256355b160785978a080909cdd404ab45d77444464852",
+      "editorialCountry": {
+        "code": "in",
+        "zh": "印度",
+        "en": "India"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_in_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_in_male.png",
+        "image": "custom/character/images/custom_character_region_in_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_in_male.webp",
+        "provenance": {
+          "originalSha256": "dadbd3716808fc73d26864be62bcd2c0dcc9e2b149daa94a39c412e913407ba2",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "in",
+      "zh": "印度",
+      "en": "India"
+    }
+  },
+  {
+    "id": "custom_character_region_ru_female",
+    "kind": "character",
+    "code": "RCF-015",
+    "title": {
+      "zh": "俄罗斯 · 女性人像",
+      "en": "Russia · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "俄罗斯 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。high-fashion narrow heart-shaped face, high cheekbones, sharp but natural jaw and pointed chin；pale blue-grey elongated eyes, lifted outer corners, sculpted brows, narrow straight nose, defined lips；long cool medium-brown waves, polished center part；one tiny light beauty mark near the right lower jaw AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "Russia Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. high-fashion narrow heart-shaped face, high cheekbones, sharp but natural jaw and pointed chin; pale blue-grey elongated eyes, lifted outer corners, sculpted brows, narrow straight nose, defined lips; long cool medium-brown waves, polished center part; one tiny light beauty mark near the right lower jaw Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "a87cd8fa4d218204c339e52ab027b45b14d8fb41270f9107c6bb1af94d1417b6",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "665f57b1082876791df36636ebdd1aac02ef76cc13ef3d8c72ab9a2d027d2d64",
+      "editorialCountry": {
+        "code": "ru",
+        "zh": "俄罗斯",
+        "en": "Russia"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "985669ab1b2067af622562641e41e23d9638d54feb4bb089200db648a1c32747",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "fair cool skin with a soft pink undertone",
+        "face": "high-fashion narrow heart-shaped face, high cheekbones, sharp but natural jaw and pointed chin",
+        "eyes": "pale blue-grey elongated eyes, lifted outer corners, sculpted brows, narrow straight nose, defined lips",
+        "hair": "long cool medium-brown waves, polished center part",
+        "mark": "one tiny light beauty mark near the right lower jaw"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_ru_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_ru_female.png",
+        "image": "custom/character/images/custom_character_region_ru_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_ru_female.webp",
+        "provenance": {
+          "originalSha256": "a87cd8fa4d218204c339e52ab027b45b14d8fb41270f9107c6bb1af94d1417b6",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "ru",
+      "zh": "俄罗斯",
+      "en": "Russia"
+    }
+  },
+  {
+    "id": "custom_character_region_ru_male",
+    "kind": "character",
+    "code": "RCF-016",
+    "title": {
+      "zh": "俄罗斯 · 男性人像",
+      "en": "Russia · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "俄罗斯 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。棕色短发，侧分，灰蓝色瞳色，白皙冷中性肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Russia Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short medium-brown hair with a subtle side part; grey-blue eyes; fair cool-neutral skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "24137d402b7848e40aed9bad425c03b1fa93f4cc8ad167ea1fb1c665d31c07d4",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "3a33c44598beb6714a4128dedb48835c9140a41e145bf8c055c43b18fca5a623",
+      "editorialCountry": {
+        "code": "ru",
+        "zh": "俄罗斯",
+        "en": "Russia"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_ru_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_ru_male.png",
+        "image": "custom/character/images/custom_character_region_ru_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_ru_male.webp",
+        "provenance": {
+          "originalSha256": "24137d402b7848e40aed9bad425c03b1fa93f4cc8ad167ea1fb1c665d31c07d4",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "ru",
+      "zh": "俄罗斯",
+      "en": "Russia"
+    }
+  },
+  {
+    "id": "custom_character_region_au_female",
+    "kind": "character",
+    "code": "RCF-017",
+    "title": {
+      "zh": "澳大利亚 · 女性人像",
+      "en": "Australia · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "澳大利亚 女性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。蜜金色齐肩波浪发，侧分，蓝色瞳色，浅日晒米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Australia Female adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. honey-blonde shoulder-length beach-like loose waves, relaxed side part; blue eyes; light sun-kissed beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "f73af39172f1d6a00d1fc684c1ded58469c5a371f6710d669eb0be739075da6d",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "2873683035d9d36df77892c8e3d7b98e970089779794f14bdb3f9db1394e3dd9",
+      "editorialCountry": {
+        "code": "au",
+        "zh": "澳大利亚",
+        "en": "Australia"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_au_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_au_female.png",
+        "image": "custom/character/images/custom_character_region_au_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_au_female.webp",
+        "provenance": {
+          "originalSha256": "f73af39172f1d6a00d1fc684c1ded58469c5a371f6710d669eb0be739075da6d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "au",
+      "zh": "澳大利亚",
+      "en": "Australia"
+    }
+  },
+  {
+    "id": "custom_character_region_au_male",
+    "kind": "character",
+    "code": "RCF-018",
+    "title": {
+      "zh": "澳大利亚 · 男性人像",
+      "en": "Australia · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "澳大利亚 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。金棕色短发，自然蓬松，蓝绿色瞳色，浅日晒米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "Australia Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short golden-brown slightly tousled hair; green-blue eyes; light sun-kissed beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "5b4ffc6ff98c3e5cd9649475998a0c32033b65f27bbf06cae7e27c9612e68795",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "e2d3aaade42a844110df40c7d39a1d27764ab06a16264505b1395e6549c12760",
+      "editorialCountry": {
+        "code": "au",
+        "zh": "澳大利亚",
+        "en": "Australia"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_au_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_au_male.png",
+        "image": "custom/character/images/custom_character_region_au_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_au_male.webp",
+        "provenance": {
+          "originalSha256": "5b4ffc6ff98c3e5cd9649475998a0c32033b65f27bbf06cae7e27c9612e68795",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "au",
+      "zh": "澳大利亚",
+      "en": "Australia"
+    }
+  },
+  {
+    "id": "custom_character_region_kr_female",
+    "kind": "character",
+    "code": "RCF-019",
+    "title": {
+      "zh": "韩国 · 女性人像",
+      "en": "South Korea · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "韩国 女性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。黑色长直发，偏分，深棕色瞳色，浅冷中性米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "South Korea Female adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. long straight glossy black hair, off-center part, no heavy fringe; dark brown eyes; light cool-neutral beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "7043e6e206e90c3a54262c8e84deb3683b0dca2300f8531715df9fe241c86cae",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "aef446e5b05b296e101e723c616c384910c67bcfbf46757c6e817334096cd65d",
+      "editorialCountry": {
+        "code": "kr",
+        "zh": "韩国",
+        "en": "South Korea"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_kr_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_kr_female.png",
+        "image": "custom/character/images/custom_character_region_kr_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_kr_female.webp",
+        "provenance": {
+          "originalSha256": "7043e6e206e90c3a54262c8e84deb3683b0dca2300f8531715df9fe241c86cae",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "kr",
+      "zh": "韩国",
+      "en": "South Korea"
+    }
+  },
+  {
+    "id": "custom_character_region_kr_male",
+    "kind": "character",
+    "code": "RCF-020",
+    "title": {
+      "zh": "韩国 · 男性人像",
+      "en": "South Korea · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "韩国 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。黑色短层次发，侧扫刘海，深棕色瞳色，浅冷中性米色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "South Korea Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. black soft layered short hair with a clean side-swept fringe; dark brown eyes; light cool-neutral beige skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "95d14ff6e6f50dbcd8c4865fae07c271f953a31ecaf8fd2681d728bc5c73a301",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "919b90984255237af3363b86a2f49f34b4012e4004acf28ffa9715c44944f0e4",
+      "editorialCountry": {
+        "code": "kr",
+        "zh": "韩国",
+        "en": "South Korea"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_kr_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_kr_male.png",
+        "image": "custom/character/images/custom_character_region_kr_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_kr_male.webp",
+        "provenance": {
+          "originalSha256": "95d14ff6e6f50dbcd8c4865fae07c271f953a31ecaf8fd2681d728bc5c73a301",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "kr",
+      "zh": "韩国",
+      "en": "South Korea"
+    }
+  },
+  {
+    "id": "custom_character_region_uk_female",
+    "kind": "character",
+    "code": "RCF-021",
+    "title": {
+      "zh": "英国 · 女性人像",
+      "en": "UK · Female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "英国 女性 成年 20岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。short elegant soft-square face, clear jawline and rounded chin；green-hazel eyes with a delicate outer lift, thick groomed brows, neat slightly broad nose, wide refined smile；dark-blonde shoulder-length waves with airy curtain fringe；a few precise freckles across the nose only AI虚构成年人物；20岁为生成设定，并非从外观验证的年龄；国家仅为编辑分组。人物参考保留独特五官、发型、发色与肤色。",
+      "en": "UK Female adult age 20, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short elegant soft-square face, clear jawline and rounded chin; green-hazel eyes with a delicate outer lift, thick groomed brows, neat slightly broad nose, wide refined smile; dark-blonde shoulder-length waves with airy curtain fringe; a few precise freckles across the nose only Fictional adult. Age 20 is a generation setting, not an age verified from appearance. Editorial country grouping only. Preserve the distinctive face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "4c72dcf519cc3799e6101e1be54f05b1907b960a410ff83c1348ee54dc37a761",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "970356513a58a88a113959f03ddf3c7d10a434f1d933ef139ee0f7364cb85d00",
+      "editorialCountry": {
+        "code": "uk",
+        "zh": "英国",
+        "en": "UK"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face",
+      "regenerationBatch": "western-female-age20-20261102-v4-model-editorial",
+      "previousOriginalSha256": "8e4018658eb5c0b9eff58cd82aff6a83451b6d369ac3c222b18db3eb2e2ab672",
+      "adultAgeSetting": 20,
+      "ageSettingBasis": "Explicit image-generation prompt; not verified from visual appearance",
+      "distinctiveFeatures": {
+        "skin": "fair rosy skin with a warm blush",
+        "face": "short elegant soft-square face, clear jawline and rounded chin",
+        "eyes": "green-hazel eyes with a delicate outer lift, thick groomed brows, neat slightly broad nose, wide refined smile",
+        "hair": "dark-blonde shoulder-length waves with airy curtain fringe",
+        "mark": "a few precise freckles across the nose only"
+      },
+      "userAppearanceReferenceSha256": null,
+      "revision": "distinct-phenotypes-v3",
+      "generationMode": "text-to-image",
+      "userFaceReferenceUsed": false,
+      "editorialModelStyle": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_uk_female",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_uk_female.png",
+        "image": "custom/character/images/custom_character_region_uk_female.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_uk_female.webp",
+        "provenance": {
+          "originalSha256": "4c72dcf519cc3799e6101e1be54f05b1907b960a410ff83c1348ee54dc37a761",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "uk",
+      "zh": "英国",
+      "en": "UK"
+    }
+  },
+  {
+    "id": "custom_character_region_uk_male",
+    "kind": "character",
+    "code": "RCF-022",
+    "title": {
+      "zh": "英国 · 男性人像",
+      "en": "UK · Male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "多地区人物参考 · 22 张",
+      "en": "Regional character references · 22 portraits"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "英国 男性 成年 28岁 写实 正面 头肩 自然微笑 浅灰绿背景 象牙白衬衫。深金色短发，自然侧分，榛绿色瞳色，白皙玫瑰色肤色。AI虚构人物；国家仅为编辑分组，不表示真实国籍或代表性长相。人物参考保留五官、发型、发色与肤色。",
+      "en": "UK Male adult age 28, photographic frontal head-and-shoulders portrait, natural smile, pale grey-green background, ivory shirt. short dark-blonde hair, naturally textured side part; green-hazel eyes; fair rosy skin. Fictional AI character. Editorial country group only, not a real nationality or representative national face. Preserve face, hairstyle, hair color and skin tone."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "custom-character-regions-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "fictional": true,
+      "originalSha256": "b9ae589410d7a45200e0d03e2fcf91944ac5e4002e6cf1d9a03e1bafd8c6dbd7",
+      "width": 1024,
+      "height": 1536,
+      "promptSha256": "6a4cfccd5d957c6d882cfbaea3abf40513d0c513c8fcebb56e3fad9f162f923b",
+      "editorialCountry": {
+        "code": "uk",
+        "zh": "英国",
+        "en": "UK"
+      },
+      "groupingNote": "Editorial country group, not an inference from appearance or a representative national face"
+    },
+    "variants": [
+      {
+        "id": "custom_character_region_uk_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_region_uk_male.png",
+        "image": "custom/character/images/custom_character_region_uk_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_region_uk_male.webp",
+        "provenance": {
+          "originalSha256": "b9ae589410d7a45200e0d03e2fcf91944ac5e4002e6cf1d9a03e1bafd8c6dbd7",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "uk",
+      "zh": "英国",
+      "en": "UK"
+    }
+  },
+  {
+    "id": "custom_character_male_001",
+    "kind": "character",
+    "code": "MCF-001",
+    "title": {
+      "zh": "男性 · 清爽短发",
+      "en": "Male · Clean short hair"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "清爽短发。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Clean short hair. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "5d3ab1901e5e6767bda7254999d07da4735378c2910c8bbb302f1830907e0bdc",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_001",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_001.png",
+        "image": "custom/character/images/custom_character_male_001.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_001.webp",
+        "provenance": {
+          "originalSha256": "5d3ab1901e5e6767bda7254999d07da4735378c2910c8bbb302f1830907e0bdc",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  },
+  {
+    "id": "custom_character_male_002",
+    "kind": "character",
+    "code": "MCF-002",
+    "title": {
+      "zh": "男性 · 温柔中分",
+      "en": "Male · Soft center part"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "温柔中分。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Soft center part. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "5d3ff67027b2985f56002c525618fdbb2fec3311025c2a2739810f1a268994cc",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_002",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_002.png",
+        "image": "custom/character/images/custom_character_male_002.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_002.webp",
+        "provenance": {
+          "originalSha256": "5d3ff67027b2985f56002c525618fdbb2fec3311025c2a2739810f1a268994cc",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  },
+  {
+    "id": "custom_character_male_003",
+    "kind": "character",
+    "code": "MCF-003",
+    "title": {
+      "zh": "男性 · 硬朗寸头",
+      "en": "Male · Athletic buzz cut"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "硬朗寸头。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Athletic buzz cut. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "3d038776071d187f35f65a4a6f44fe3295d5cd0fe71611eeb106c83e4a1f7bea",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_003",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_003.png",
+        "image": "custom/character/images/custom_character_male_003.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_003.webp",
+        "provenance": {
+          "originalSha256": "3d038776071d187f35f65a4a6f44fe3295d5cd0fe71611eeb106c83e4a1f7bea",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  },
+  {
+    "id": "custom_character_male_004",
+    "kind": "character",
+    "code": "MCF-004",
+    "title": {
+      "zh": "男性 · 成熟商务",
+      "en": "Male · Mature professional"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "成熟商务。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Mature professional. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "dd93ad864d2ac1e8963f83de512c03fb54b79755c9712b57638d55cafdc2f9d8",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_004",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_004.png",
+        "image": "custom/character/images/custom_character_male_004.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_004.webp",
+        "provenance": {
+          "originalSha256": "dd93ad864d2ac1e8963f83de512c03fb54b79755c9712b57638d55cafdc2f9d8",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  },
+  {
+    "id": "custom_character_male_005",
+    "kind": "character",
+    "code": "MCF-005",
+    "title": {
+      "zh": "男性 · 卷发文艺",
+      "en": "Male · Creative soft curls"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "卷发文艺。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Creative soft curls. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "d0b7192a111192eb4bb0e92b8207d58a9d55e3a8684661172c8ad27b546248eb",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_005",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_005.png",
+        "image": "custom/character/images/custom_character_male_005.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_005.webp",
+        "provenance": {
+          "originalSha256": "d0b7192a111192eb4bb0e92b8207d58a9d55e3a8684661172c8ad27b546248eb",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  },
+  {
+    "id": "custom_character_male_006",
+    "kind": "character",
+    "code": "MCF-006",
+    "title": {
+      "zh": "男性 · 长发冷感",
+      "en": "Male · Long hair, calm presence"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "男性人物参考 · 六种风格",
+      "en": "Male character references · Six styles"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "长发冷感。男性 男士 成年 写实 正面 头肩 人像 浅蓝灰背景。AI 虚构人物参考，保留人物五官、脸型、发型发色与肤色，不采用参考中的动作。",
+      "en": "Long hair, calm presence. Male adult photographic frontal head-and-shoulders portrait, pale blue-gray background. Fictional AI character reference. Preserve face, hairstyle, hair color and skin tone, without adopting the reference pose."
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "male-character-styles-06-01",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "25fb6f6c9aeac5050f9cfc5c41767c251839292d0e7033b38db2af75b4480ad9",
+      "width": 1024,
+      "height": 1536,
+      "fictional": true
+    },
+    "variants": [
+      {
+        "id": "custom_character_male_006",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_male_006.png",
+        "image": "custom/character/images/custom_character_male_006.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_male_006.webp",
+        "provenance": {
+          "originalSha256": "25fb6f6c9aeac5050f9cfc5c41767c251839292d0e7033b38db2af75b4480ad9",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    }
+  }
+]

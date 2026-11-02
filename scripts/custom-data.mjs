@@ -25,9 +25,15 @@ export async function loadCustomReferences(existing = []) {
         item.series,
         item.keywords,
         ...(item.tags || []),
+        ...(item.country ? [item.country] : []),
       ])
         if (!value?.zh?.trim() || !value?.en?.trim())
           throw Error(`Missing custom translation: ${item.id}`);
+      if (
+        item.country &&
+        (kind !== 'character' || !/^[a-z]{2}$|^international$/.test(item.country.id))
+      )
+        throw Error(`Invalid custom country group: ${item.id}`);
       if (!item.category.id || typeof item.extended !== 'boolean' || !item.variants?.length)
         throw Error(`Incomplete custom reference: ${item.id}`);
       for (const variant of item.variants) {
@@ -52,6 +58,16 @@ export async function loadCustomReferences(existing = []) {
           )
             throw Error(`Unsafe custom asset: ${item.id} ${key}`);
           await access(new URL(`public/${variant[key]}`, root));
+          if (variant.depth) {
+            if (
+              kind !== 'pose' ||
+              !new RegExp(`^custom/pose/${folder}/[a-zA-Z0-9_-]+_depth\\.(png|jpg|webp)$`).test(
+                variant.depth[key],
+              )
+            )
+              throw Error(`Unsafe custom depth asset: ${item.id} ${key}`);
+            await access(new URL(`public/${variant.depth[key]}`, root));
+          }
         }
       }
       items.push(item);

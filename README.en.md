@@ -28,19 +28,20 @@ Find inspiration, combine references and generate characters in one place.
   </thead>
   <tbody>
     <tr>
-      <td align="center"><strong>288</strong> groups · <strong>1,439</strong> views</td>
-      <td align="center"><strong>1,438</strong></td>
-      <td align="center"><strong>1,499</strong></td>
-      <td align="center"><strong>4,376</strong></td>
+      <td align="center"><strong>302</strong> groups · <strong>1,509</strong> views</td>
+      <td align="center"><strong>1,448</strong></td>
+      <td align="center"><strong>1,527</strong></td>
+      <td align="center"><strong>4,484</strong></td>
     </tr>
   </tbody>
 </table>
 
 <div align="center">
-<sub>Includes extended categories · Outfits: 1,407 original + 31 custom · Updated November 1, 2026 (Asia/Shanghai)</sub>
+<sub>Includes extended categories · Outfits: 1,407 original + 41 custom · Image count excludes paired depth maps and preview copies · Updated November 2, 2026 (Asia/Shanghai)</sub>
 </div>
 
 <p align="center">
+<a href="#whats-new-male-references-and-regional-portraits">What’s new</a> ·
 <a href="#browse-and-save">Browse &amp; save</a> ·
 <a href="#30-new-anime-outfits">Custom anime outfits</a> ·
 <a href="#pose-outfit-and-character-generate-an-image">Generate</a> ·
@@ -51,26 +52,38 @@ Find inspiration, combine references and generate characters in one place.
 
 ---
 
+## What’s new: male references and regional portraits
+
+- **Male references**: 13 new male pose groups with 65 views, 4 photorealistic male outfits with complete footwear, and 6 male portraits with different hairstyles and visual identities.
+- **Five views and paired depth**: every custom pose offers front, high, low, side and diagonal views. Including one new female pose, the custom collection has 14 groups, 70 line-art images and 70 paired AI-inferred relative-depth maps. These are visual guides, not calibrated 3D measurements.
+- **Regional portraits**: 22 fictional adult portraits across 11 editorial country groups, one woman and one man per group. Seven female portraits were further redesigned with a 20-year-old adult fashion-model brief and distinct facial structure, eyes, hair and skin tones. Country groups do not establish nationality or a representative appearance for any population.
+- **More outfits**: 4 male outfits and 6 extracted female outfits join the existing 30 anime outfits and one moon-pattern outfit, bringing the custom outfit collection to **41**. Extracted references remove the person while preserving garment volume; provenance notes identify additions such as footwear absent from the source photo.
+- **Better discovery**: independent category, collection, subject and visual-style filters, plus country/region and hair length for characters. Options show matching counts, and active filters can be removed individually. Pose pickers have five thumbnails that switch only their own card, fixed filters and automatic loading as you scroll.
+
+[Browse male poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=character&collection=custom#collection)
+
+![New male pose line art and paired depth, complete outfits and regional fictional adult portraits](docs/images/library-expansion-20261102-en.webp)
+
 ## Browse and save
 
-- **Three libraries, one search**: browse poses, outfits and characters. Search by Chinese or English name, keyword or ID, then narrow results with categories, collection, style tags, sorting and character hair-length filters.
-- **Angles and depth maps**: switch pose viewpoints or preview depth maps. Lists use thumbnails; open details to enlarge and download originals. Extended categories can be enabled separately.
+- **Three libraries, one search**: browse poses, outfits and characters. Search by Chinese or English name, keyword or ID, then narrow results with independent category, collection, subject and visual-style filters, plus country/region and hair length for characters. Sorting and viewpoint are separate display settings. Use the sidebar or grouped category menu to select a reference type on the all-references page.
+- **Angles and depth maps**: switch pose viewpoints or preview depth maps. Hovering or clicking a viewpoint thumbnail changes only that card. Lists use thumbnails; open details to enlarge and download originals. Custom poses use their paired depth maps when available; otherwise the line art stays visible with a notice. Extended categories can be enabled separately.
 - **Favorites and sharing**: save references and return to “Saved references” to continue pairing or download them. Share links preserve language, filters and reference selections.
 - **Continuous browsing**: responsive layout, lazy-loaded images and automatic loading as you scroll. Press `/` to search, `←` / `→` to navigate in the detail view, and `Esc` to close it.
 
-![English reference library: poses, outfits and characters, bilingual search, viewpoints, depth maps and favorites](docs/images/library-v2-en.webp)
+![English reference library: poses, outfits and characters, bilingual search, viewpoints, depth maps and favorites](docs/images/library-v3-en.webp)
 
-The character library includes **893 face and 606 styling references**, with hair-length filters. Only hair length has complete source classifications; some style descriptions mention hair color, but dedicated eye-color, hair-color and skin-tone labels are unavailable.
+The character library has **1,527 references**: 893 original face references, 606 original styling references and 28 custom head-and-shoulders portraits. Existing poses, outfits and characters are tagged female as confirmed by the curator; existing outfits and characters are also tagged photographic. New male and anime assets retain their own tags. Characters support country/region and hair-length filters. Eye color, hair color and skin tone do not yet have complete structured filters, though keywords describe some custom portraits.
 
 ## 30 new anime outfits
 
-The custom collection adds **30 anime outfits** spanning everyday looks, autumn and winter layers, and fantasy costumes. Pair them with the **Anime illustration** style in the generation studio. One additional photorealistic moon-pattern outfit is tagged **Photorealistic**, bringing the custom collection to 31 outfits.
+The custom collection adds **30 anime outfits** spanning everyday looks, autumn and winter layers, and fantasy costumes. Pair them with the **Anime illustration** style in the generation studio. One additional photorealistic moon-pattern outfit is tagged **Photorealistic**. Together with the 10 outfits added in this update, the custom collection now contains 41 outfits.
 
 ![Nine selected custom anime outfits from the 30-outfit collection: everyday, winter and fantasy looks](docs/images/custom-anime-outfits-en.webp)
 
 ### Create an anime look with custom outfits
 
-1. **Find an outfit**: in the outfit library or studio's outfit picker, set **Collection → Custom** and **Style tag → Anime**. Enable the sidebar's extended-category toggle to see lingerie items.
+1. **Find an outfit**: in the outfit library or studio's outfit picker, set **Library → Custom** and **Visual style → Anime**. Enable the sidebar's extended-category toggle to see lingerie items.
 2. **Combine references**: choose a pose and outfit, then optionally select or upload a character reference to guide facial features, hairstyle and identity.
 3. **Choose the style and generate**: select **Anime illustration** under visual style, adjust the size, background or extra instructions, and generate after configuring your image service. Charges depend on that service.
 
@@ -78,7 +91,7 @@ The custom collection adds **30 anime outfits** spanning everyday looks, autumn 
 
 ![Custom outfit examples using the same character reference: sage skirt, casual cargo and cozy winter looks](docs/images/custom-anime-looks-en.webp)
 
-These are AI-generated examples; results depend on references, prompts and the model. Custom outfits are reconstructed or extracted from references with AI. Each includes a 1024 × 1536 PNG, a WebP preview and a thumbnail. Separate custom pose and character directories are reserved but currently empty.
+These are AI-generated examples; results depend on references, prompts and the model. Custom outfits are reconstructed or extracted from references with AI. Each includes a 1024 × 1536 PNG, a WebP preview and a thumbnail. Custom poses and portraits are also available in their own manifests; see [what’s new](#whats-new-male-references-and-regional-portraits).
 
 **Free for personal learning and non-commercial use. Commercial use is prohibited; any distribution, redistribution or resale requires prior separate written permission.** See the [custom asset terms](public/custom/LICENSE.txt) and contact [@HongyeMain](https://x.com/HongyeMain) for permission.
 
@@ -93,7 +106,7 @@ Open “Generate image” from the sidebar. Choose references and settings on th
 1. **Configure the service**: click “Configure image service” or the settings icon in the upper-right corner, then enter the service URL, API key and model. Generation is disabled until the API is configured.
 2. **Choose references**: select a pose and an outfit, then optionally choose a library character or upload your own. Upload, drop or paste PNG, JPG or WebP images up to 10 MB each.
 3. **Extract your own outfit**: “Upload costume” opens a dialog. Choose an outfit photo on the left, click “Extract outfit” in the middle, inspect the result on the right, then “Confirm and use.” Extraction makes one additional image request. You can retry failures; the previous reference stays until you confirm.
-4. **Adjust and generate**: select a viewpoint, optionally enable depth guidance, and set the visual style (Follow references, Natural photo, Studio portrait or Anime illustration), image size and additional instructions. Advanced settings let you edit the full prompt. Click “Generate image”; you can keep browsing while it runs and retry failed requests manually.
+4. **Adjust and generate**: click a small viewpoint thumbnail in the pose picker to switch just that card, then click its main image to select it. Select a viewpoint, optionally enable depth guidance, and set the visual style (Follow references, Natural photo, Studio portrait or Anime illustration), image size and additional instructions. Advanced settings let you edit the full prompt. Click “Generate image”; you can keep browsing while it runs and retry failed requests manually.
 5. **Review and keep creating**: switch between “Result only,” “Side by side” and “Overlay,” enlarge or download the result, or select “Use as character reference.” The “History” drawer keeps the latest 20 successful results, with controls to restore references, delete records and download a ZIP of the pose, outfit and optional character references used for that result.
 
 | Setting          | Default or requirement                                                                       |

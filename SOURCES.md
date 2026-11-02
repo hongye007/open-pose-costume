@@ -73,6 +73,10 @@ The source permits individual reference use for creating works, including commer
 
 自建素材清单位于 `data/custom/`，图片独立位于 `public/custom/{costume,pose,character}/`，随网站发布，不混入上游快照或根目录图片归档。首批包含 30 套动漫服饰和 1 套月纹服饰提取图，均使用维护者提供的参考素材通过 Atomflow `gpt-image-2` 重绘或提取。AI 重绘不是原始细节恢复；批次、模型和原图哈希见各条目的 `provenance`。这些图片不自动适用代码的 MIT 授权。原有上游条目的图片链接保持原样。
 
+截至 2026-11-02，自建扩展包含 41 套服饰、14 组五视角姿势（70 张线稿及 70 张配套深度图）、28 张虚构成年人物参考。新服饰采用去除人物的隐形人台展示；补充鞋履等原照片未展示的部分在条目中注明。自建深度图通过原始线稿由 AI 推断生成，不取自上游深度图库，也不是精确三维测量；人物国家／地区仅为编辑分组，不推定真实国籍或代表性外貌。原始用户人物照片不随网站收录，具体批次与使用说明见 [自建扩展指南](data/custom/README.md)。
+
+As of November 2, 2026, the custom collection contains 41 outfits, 14 five-view pose groups (70 line-art images and 70 paired depth maps), and 28 fictional adult portraits. Extracted outfits use ghost-mannequin styling with the person removed; provenance identifies additions absent from the source, such as shoes. Custom depth maps are AI-inferred from the line art, not obtained from the upstream depth gallery or calibrated 3D measurements. Portrait countries/regions are editorial groups, not inferred nationalities or representative appearances. Original user-supplied person photos are not shipped with the website. See the [custom extension guide](data/custom/README.md) for batches and usage notes.
+
 自建素材需单独授权：可自由学习和个人使用，但不可商用。未经事先书面授权，拒绝任何形式的分发、再分发、转载、打包、下载提供或转售；限制也适用于编辑或生成的衍生图片。需要在其他项目、网站、模型或数据集中使用时，请先联系维护者。
 
 Custom metadata and shipped assets are stored separately from upstream snapshots and archives. The first collection contains 30 anime outfits and one extracted moon-pattern outfit, reconstructed or extracted from maintainer-supplied references using Atomflow `gpt-image-2`. This is AI reconstruction, not recovery of original details. Per-item provenance records the batch, model and original-image hash. Images are separate from the MIT code license. Existing upstream image URLs remain unchanged. See [custom extension instructions](data/custom/README.md).

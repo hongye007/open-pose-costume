@@ -22,7 +22,8 @@ const vite = await createServer({
   appType: 'custom',
 });
 const { matchesQuery, sortItems, storageGet } = await vite.ssrLoadModule('/src/library.ts');
-const { withPoseDepth, poseDepthOrigin } = await vite.ssrLoadModule('/src/pose-depth.ts');
+const { hasPoseDepth, withPoseDepth, poseDepthOrigin } =
+  await vite.ssrLoadModule('/src/pose-depth.ts');
 after(async () => {
   await vite.close();
 });
@@ -199,10 +200,16 @@ test('depth mode preserves catalog identity and angles without mutating original
   const snapshot = JSON.stringify(catalog);
   for (const item of catalog.items) {
     const depth = withPoseDepth(item);
-    if (item.kind !== 'pose' || item.collection === 'custom') {
+    if (
+      item.kind !== 'pose' ||
+      (item.collection === 'custom' && !item.variants.every((v) => v.depth))
+    ) {
+      assert.equal(hasPoseDepth(item), false);
       assert.equal(depth, item);
       continue;
     }
+    assert.equal(hasPoseDepth(item), true);
+    assert.equal(hasPoseDepth(depth), true);
     assert.deepEqual({ ...depth, source: item.source, variants: item.variants }, item);
     assert.equal(depth.variants.length, item.variants.length);
     for (const [index, variant] of depth.variants.entries()) {
@@ -211,6 +218,11 @@ test('depth mode preserves catalog identity and angles without mutating original
       assert.equal(variant.angle, original.angle);
       assert.deepEqual(variant.label, original.label);
       for (const field of ['thumbnail', 'image', 'original']) {
+        if (item.collection === 'custom') {
+          assert.equal(variant[field], original.depth[field]);
+          assert.equal(variant.depthMap, true);
+          continue;
+        }
         assert.equal(new URL(variant[field]).origin, poseDepthOrigin);
         assert.equal(new URL(variant[field]).pathname, new URL(original[field]).pathname);
       }
