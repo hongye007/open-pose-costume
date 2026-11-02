@@ -1,3 +1,5 @@
+import { generationCopyEs } from './generation-copy-es';
+
 export const generationCopy = {
   zh: {
     settings: '生图设置',
@@ -171,4 +173,5 @@ export const generationCopy = {
     actualSize: 'Actual size',
     downloadFailed: 'Download failed. Please try again.',
   },
+  es: generationCopyEs,
 };

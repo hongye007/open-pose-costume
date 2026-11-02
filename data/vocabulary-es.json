@@ -1,0 +1,241 @@
+{
+  "costume": {
+    "apron": "delantal",
+    "bag": "bolso",
+    "beanie": "gorro de punto",
+    "beige": "beige",
+    "belt": "cinturón",
+    "beret": "boina",
+    "black": "negro",
+    "blouse": "blusa",
+    "blue": "azul",
+    "boots": "botas",
+    "bra": "sujetador",
+    "briefs": "bragas",
+    "brown": "marrón",
+    "burgundy": "burdeos",
+    "camisole": "camisola",
+    "cardigan": "cárdigan",
+    "chiffon": "gasa",
+    "choker": "gargantilla",
+    "coat": "abrigo",
+    "corduroy": "pana",
+    "corset": "corsé",
+    "cream": "crema",
+    "denim": "denim",
+    "dress": "vestido",
+    "floral": "floral",
+    "frill": "volantes",
+    "fur": "piel",
+    "gloves": "guantes",
+    "gold": "dorado",
+    "green": "verde",
+    "grey": "gris",
+    "hat": "sombrero",
+    "headband": "diadema",
+    "heels": "tacones",
+    "hoodie": "sudadera con capucha",
+    "ivory": "marfil",
+    "jacket": "chaqueta",
+    "jeans": "vaqueros",
+    "khaki": "caqui",
+    "knit": "punto",
+    "lace": "encaje",
+    "lavender": "lavanda",
+    "leather": "cuero",
+    "loafers": "mocasines",
+    "maxi": "maxi",
+    "mesh": "malla",
+    "midi": "midi",
+    "mini": "mini",
+    "mint": "menta",
+    "muffler": "bufanda",
+    "navy": "azul marino",
+    "necklace": "collar",
+    "olive": "oliva",
+    "orange": "naranja",
+    "pants": "pantalones",
+    "pink": "rosa",
+    "pleated": "plisado",
+    "polka-dot": "lunares",
+    "pumps": "zapatos de salón",
+    "purple": "morado",
+    "red": "rojo",
+    "ribbon": "cinta",
+    "robe": "bata",
+    "sandals": "sandalias",
+    "satin": "satén",
+    "scarf": "pañuelo",
+    "shirt": "camisa",
+    "shorts": "pantalones cortos",
+    "silver": "plateado",
+    "skirt": "falda",
+    "sneakers": "zapatillas",
+    "socks": "calcetines",
+    "stockings": "medias",
+    "suede": "ante",
+    "sunglasses": "gafas de sol",
+    "sweater": "suéter",
+    "swimsuit": "traje de baño",
+    "tights": "pantis",
+    "tote": "bolso tote",
+    "tulle": "tul",
+    "turtleneck": "cuello alto",
+    "velvet": "terciopelo",
+    "vest": "chaleco",
+    "white": "blanco",
+    "wool": "lana",
+    "yellow": "amarillo"
+  },
+  "series": {
+    "全身1人・セクシー系": "Cuerpo entero · expresivo",
+    "全身1人・標準系": "Cuerpo entero · básico",
+    "上半身1人": "Parte superior",
+    "2人絡み": "Dos figuras"
+  },
+  "angles": {
+    "正面": "Frente",
+    "上から": "Picado",
+    "下から": "Contrapicado",
+    "横": "Perfil",
+    "斜め": "Tres cuartos"
+  },
+  "categories": {
+    "春": {
+      "id": "spring",
+      "es": "Primavera"
+    },
+    "夏": {
+      "id": "summer",
+      "es": "Verano"
+    },
+    "秋": {
+      "id": "autumn",
+      "es": "Otoño"
+    },
+    "冬": {
+      "id": "winter",
+      "es": "Invierno"
+    },
+    "ランジェリー": {
+      "id": "lingerie",
+      "es": "Lencería"
+    },
+    "パーティ": {
+      "id": "party",
+      "es": "Fiesta"
+    },
+    "水着": {
+      "id": "swimwear",
+      "es": "Trajes de baño"
+    },
+    "セクシー": {
+      "id": "expressive-outfits",
+      "es": "Conjuntos llamativos"
+    },
+    "立ち": {
+      "id": "standing",
+      "es": "De pie"
+    },
+    "座り": {
+      "id": "sitting",
+      "es": "Sentada"
+    },
+    "膝立ち・四つん這い": {
+      "id": "kneeling-all-fours",
+      "es": "De rodillas y a cuatro patas"
+    },
+    "寝そべり": {
+      "id": "lying",
+      "es": "Tumbada"
+    },
+    "特殊": {
+      "id": "special",
+      "es": "Poses especiales"
+    },
+    "膝立ち": {
+      "id": "kneeling",
+      "es": "De rodillas"
+    },
+    "横座り・女の子座り": {
+      "id": "side-sitting",
+      "es": "Sentada de lado y en W"
+    },
+    "しゃがみ": {
+      "id": "crouching",
+      "es": "En cuclillas"
+    },
+    "前かがみ": {
+      "id": "leaning",
+      "es": "Inclinada hacia adelante"
+    },
+    "のけぞり・反り": {
+      "id": "arching",
+      "es": "Arqueos hacia atrás"
+    },
+    "ひねり": {
+      "id": "twisting",
+      "es": "Giros"
+    },
+    "かわいい系": {
+      "id": "gestures",
+      "es": "Gestos"
+    },
+    "胸寄せ・谷間強調系": {
+      "id": "torso-study",
+      "es": "Estudio de torso y brazos"
+    },
+    "セクシー・露骨寄り系": {
+      "id": "expressive-upper",
+      "es": "Parte superior expresiva"
+    },
+    "立位": {
+      "id": "pair-standing",
+      "es": "Pareja de pie"
+    },
+    "顔寄せ系": {
+      "id": "close-faces",
+      "es": "Interacción cercana"
+    },
+    "正常位": {
+      "id": "pair-supine",
+      "es": "Pareja en decúbito supino"
+    },
+    "後背位": {
+      "id": "pair-rear",
+      "es": "Pareja de espaldas"
+    },
+    "座位": {
+      "id": "pair-sitting",
+      "es": "Pareja sentada"
+    },
+    "背面座位": {
+      "id": "pair-back-seated",
+      "es": "Pareja sentada de espaldas"
+    },
+    "騎乗位": {
+      "id": "pair-overlap",
+      "es": "Figuras superpuestas"
+    },
+    "側位": {
+      "id": "pair-side",
+      "es": "Pareja de lado"
+    },
+    "対面座位": {
+      "id": "pair-facing",
+      "es": "Pareja sentada frente a frente"
+    },
+    "立位密着": {
+      "id": "standing-embrace",
+      "es": "Abrazo de pie"
+    },
+    "座位密着": {
+      "id": "seated-embrace",
+      "es": "Abrazo sentada"
+    },
+    "密着": {
+      "id": "embrace",
+      "es": "Abrazo"
+    }
+  }
+}

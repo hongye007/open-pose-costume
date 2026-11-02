@@ -1,3 +1,5 @@
+import { copyEs } from './i18n-es';
+
 export const copy = {
   zh: {
     kindFilter: '素材类型',
@@ -335,4 +337,5 @@ export const copy = {
     selected: 'Selected',
     searchExamples: 'Try: side sitting, knit, 蓝色大衣',
   },
+  es: copyEs,
 };

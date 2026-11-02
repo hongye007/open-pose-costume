@@ -68,7 +68,8 @@ import type { Catalog, Lang, Reference, Variant } from './types';
 
 type Board = { pose?: string; costume?: string; character?: string };
 const initialParams = new URLSearchParams(window.location.search);
-const isLanguage = (v: unknown): v is Lang => v === 'zh' || v === 'en';
+const isLanguage = (v: unknown): v is Lang => v === 'zh' || v === 'en' || v === 'es';
+const nextLanguage = (lang: Lang): Lang => (lang === 'zh' ? 'en' : lang === 'en' ? 'es' : 'zh');
 const isIds = (v: unknown): v is string[] =>
   Array.isArray(v) && v.every((id) => typeof id === 'string');
 const isBoard = (v: unknown): v is Board =>
@@ -85,7 +86,15 @@ export default function App() {
     const value = initialParams.get('lang');
     return isLanguage(value)
       ? value
-      : storageGet('opc-language', navigator.language.startsWith('zh') ? 'zh' : 'en', isLanguage);
+      : storageGet(
+      'opc-language',
+      navigator.language.startsWith('zh')
+        ? 'zh'
+        : navigator.language.startsWith('es')
+          ? 'es'
+          : 'en',
+      isLanguage,
+    );
   });
   const t = copy[lang];
   const [catalog, setCatalog] = useState<Catalog | null>(null);
@@ -168,7 +177,23 @@ export default function App() {
       })
       .then((data) => {
         if (!data.items?.length || !data.stats) throw Error('Invalid reference catalog');
-        setCatalog(resolveCustomAssets(data));
+        // Spanish overlay safety net: a catalog built before the es layer
+        // (or rebuilt upstream without it) must never render blank titles.
+        const fillEs = <T extends { zh: string; en: string; es?: string }>(value: T) => ({
+          ...value,
+          es: value.es || value.en,
+        });
+        const items = data.items.map((item: Reference) => ({
+          ...item,
+          title: fillEs(item.title),
+          category: fillEs(item.category),
+          series: fillEs(item.series),
+          keywords: fillEs(item.keywords),
+          tags: item.tags?.map((tag) => fillEs(tag)),
+          country: item.country ? fillEs(item.country) : item.country,
+          variants: item.variants.map((variant) => ({ ...variant, label: fillEs(variant.label) })),
+        }));
+        setCatalog(resolveCustomAssets({ ...data, items }));
       })
       .catch((error) => {
         if (error.name !== 'AbortError') setFailed(true);
@@ -176,11 +201,13 @@ export default function App() {
     return () => controller.abort();
   }, [reload]);
   useEffect(() => {
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
     document.title =
       lang === 'zh'
         ? 'Open Pose & Costume · 姿势与服装参考库'
-        : 'Open Pose & Costume · Reference studio';
+        : lang === 'es'
+          ? 'Open Pose & Costume · Estudio de referencias'
+          : 'Open Pose & Costume · Reference studio';
     storageSet('opc-language', lang);
   }, [lang]);
   useEffect(() => {
@@ -686,8 +713,8 @@ export default function App() {
         file,
         title:
           kind === 'character'
-            ? { zh: '人物参考', en: 'Character reference' }
-            : { zh: '已提取的服饰', en: 'Extracted outfit' },
+            ? { zh: '人物参考', en: 'Character reference', es: 'Referencia de personaje' }
+            : { zh: '已提取的服饰', en: 'Extracted outfit', es: 'Atuendo extraído' },
         keywords: {
           zh:
             kind === 'character'
@@ -697,12 +724,18 @@ export default function App() {
             kind === 'character'
               ? 'Preserve the attached character’s face, hairstyle, hair color, skin tone, proportions and visual style'
               : 'Use the outfit, colors, garment shape and materials from the uploaded costume; do not copy the clothing model’s identity or pose',
+          es:
+            kind === 'character'
+              ? 'Conserva el rostro, la forma del rostro, el peinado, el color del cabello, el tono de piel, las proporciones y el estilo visual del personaje adjunto'
+              : 'Usa el atuendo, los colores, la forma de las prendas y los materiales de la imagen de vestuario subida; no copies la identidad ni la pose de la modelo',
         },
         variant: {
           id: `${kind}-upload`,
           angle: 'front',
           label:
-            kind === 'character' ? { zh: '人物', en: 'Character' } : { zh: '服饰', en: 'Costume' },
+            kind === 'character'
+              ? { zh: '人物', en: 'Character', es: 'Personaje' }
+              : { zh: '服饰', en: 'Costume', es: 'Vestuario' },
           thumbnail: preview,
           image: preview,
           original: preview,
@@ -947,13 +980,15 @@ export default function App() {
             </button>
             <button
               className="language-button"
-              onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+              onClick={() => setLang(nextLanguage(lang))}
               aria-label={t.language}
             >
               <Globe2 size={16} />
               <span className={lang === 'zh' ? 'current-language' : ''}>中</span>
               <span className="language-slash">/</span>
               <span className={lang === 'en' ? 'current-language' : ''}>EN</span>
+              <span className="language-slash">/</span>
+              <span className={lang === 'es' ? 'current-language' : ''}>ES</span>
             </button>
             <span className="studio-badge">
               REFERENCE STUDIO

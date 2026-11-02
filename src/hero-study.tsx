@@ -24,6 +24,16 @@ const labels = {
     open: 'View larger',
     close: 'Close',
   },
+  es: {
+    title: 'Tres referencias. Un personaje.',
+    pose: 'Pose',
+    costume: 'Vestuario',
+    character: 'Personaje',
+    result: 'Resultado generado',
+    example: 'Ejemplo de resultado',
+    open: 'Ver más grande',
+    close: 'Cerrar',
+  },
 };
 type ImageKind = 'pose' | 'costume' | 'character' | 'result';
 

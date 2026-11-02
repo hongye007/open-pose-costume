@@ -1,3 +1,5 @@
+import { studioCopyEs } from './studio-copy-es';
+
 export const studioCopy = {
   zh: {
     title: '一键生图',
@@ -186,4 +188,5 @@ export const studioCopy = {
     resultHint:
       'Changing references keeps the previous result. Comparisons use the references submitted for that result.',
   },
+  es: studioCopyEs,
 };

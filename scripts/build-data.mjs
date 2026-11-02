@@ -6,15 +6,34 @@ import { loadCustomReferences } from './custom-data.mjs';
 export const root = new URL('../', import.meta.url);
 export const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
 
+// Spanish overlay (rama es): these files live ONLY in the es layer and are
+// never written by `npm run sync` (it only replaces data/source/*). Every
+// Spanish field falls back to English, so a new upstream item can never
+// break the Spanish build — it just shows in English until translated.
+const readJsonOrNull = async (path) => {
+  try {
+    return await readJson(path);
+  } catch {
+    return null;
+  }
+};
+const withEs = (localized, es) => ({ ...localized, es: es || localized.en });
+
 export async function normalize(pose, costume, chinese, portraits = [], animeCostumes = []) {
   const vocabulary = await readJson('data/vocabulary.json');
   const titles = await readJson('data/pose-titles.en.json');
+  const vocabularyEs = (await readJsonOrNull('data/vocabulary-es.json')) || {};
+  const titlesEs = (await readJsonOrNull('data/pose-titles.es.json')) || {};
+  const esCategory = (key, base) => withEs(base, vocabularyEs.categories?.[key]?.es);
+  const esSeries = (key, base) => withEs(base, vocabularyEs.series?.[key]);
+  const esAngle = (key, base) => withEs(base, vocabularyEs.angles?.[key]);
+  const esCostumeToken = (word) => vocabularyEs.costume?.[word] || word;
   const zh = new Map(chinese.map((row) => [row.id, row]));
   const groups = new Map();
   const used = new Set();
   const category = (key) => {
     if (!vocabulary.categories[key]) throw Error(`Missing category translation: ${key}`);
-    return vocabulary.categories[key];
+    return esCategory(key, vocabulary.categories[key]);
   };
   const remote = (origin, path) => {
     const url = new URL(path, origin);
@@ -31,6 +50,9 @@ export async function normalize(pose, costume, chinese, portraits = [], animeCos
     const en = Array.isArray(titles[prefix])
       ? titles[prefix][Number(number) - 1]
       : titles[prefix]?.[number];
+    const esTitle = Array.isArray(titlesEs[prefix])
+      ? titlesEs[prefix][Number(number) - 1]
+      : titlesEs[prefix]?.[number];
     const translated = zh.get(row.id)?.['姿势名称'];
     if (
       !en ||
@@ -47,22 +69,22 @@ export async function normalize(pose, costume, chinese, portraits = [], animeCos
         id,
         kind: 'pose',
         code: row['ポーズ番号'],
-        title: { zh: translated, en },
+        title: withEs({ zh: translated, en }, esTitle),
         category: category(row['分類']),
-        series: vocabulary.series[row['系統']],
-        tags: [{ id: 'female', zh: '女性', en: 'Female' }],
+        series: esSeries(row['系統'], vocabulary.series[row['系統']]),
+        tags: [{ id: 'female', zh: '女性', en: 'Female', es: 'Femenino' }],
         extended:
           prefix === 'full_sexy' ||
           prefix === 'pair60' ||
           (prefix === 'upper80v2' && Number(number) > 25),
-        keywords: { zh: translated, en },
+        keywords: withEs({ zh: translated, en }, esTitle),
         source: 'https://ai-pose-gallery.pages.dev/',
         variants: [],
       });
     groups.get(id).variants.push({
       id: row.id,
       angle: row.id.split('_').at(-1),
-      label: vocabulary.angles[row['アングル']],
+      label: esAngle(row['アングル'], vocabulary.angles[row['アングル']]),
       thumbnail: remote('https://ai-pose-gallery.pages.dev', row['サムネ']),
       image: remote('https://ai-pose-gallery.pages.dev', row['原寸']),
       original: remote('https://ai-pose-gallery.pages.dev', row['原寸']),
@@ -84,6 +106,8 @@ export async function normalize(pose, costume, chinese, portraits = [], animeCos
       });
       const cat = category(row['カテゴリ']);
       const en = tokens.join(' ');
+      const translatedEs = tokens.map((word) => esCostumeToken(word));
+      const es = translatedEs.join(' ');
       const garments = new Set([
         'apron',
         'blouse',
@@ -117,29 +141,33 @@ export async function normalize(pose, costume, chinese, portraits = [], animeCos
       const titleZh = phrases.length
         ? phrases.map((words) => words.map((word) => vocabulary.costume[word]).join('')).join(' · ')
         : translated.join(' · ');
+      const titleEs = phrases.length
+        ? phrases.map((words) => words.map((word) => esCostumeToken(word)).join(' ')).join(' / ')
+        : es;
+      const titleEsCased = titleEs[0].toUpperCase() + titleEs.slice(1);
       return {
         id,
         kind: 'costume',
         code: anime ? `ANIME-${row.id}` : row.id,
-        title: { zh: titleZh, en: titleEn[0].toUpperCase() + titleEn.slice(1) },
+        title: { zh: titleZh, en: titleEn[0].toUpperCase() + titleEn.slice(1), es: titleEsCased },
         category: cat,
         series: anime
-          ? { zh: '动漫服饰参考', en: 'Anime costume reference' }
-          : { zh: '服装参考', en: 'Costume reference' },
+          ? { zh: '动漫服饰参考', en: 'Anime costume reference', es: 'Referencia de vestuario anime' }
+          : { zh: '服装参考', en: 'Costume reference', es: 'Referencia de vestuario' },
         tags: [
-          { id: 'female', zh: '女性', en: 'Female' },
+          { id: 'female', zh: '女性', en: 'Female', es: 'Femenino' },
           anime
-            ? { id: 'anime', zh: '动漫', en: 'Anime' }
-            : { id: 'photo', zh: '写实', en: 'Photographic' },
+            ? { id: 'anime', zh: '动漫', en: 'Anime', es: 'Anime' }
+            : { id: 'photo', zh: '写实', en: 'Photographic', es: 'Fotográfico' },
         ],
         extended: ['lingerie', 'swimwear', 'expressive-outfits'].includes(cat.id),
-        keywords: { zh: translated.join(' '), en },
+        keywords: { zh: translated.join(' '), en, es },
         source: `${origin}/`,
         variants: [
           {
             id,
             angle: 'front',
-            label: { zh: '正面', en: 'Front' },
+            label: { zh: '正面', en: 'Front', es: 'Frente' },
             thumbnail: remote(origin, row['サムネ']),
             image: remote(origin, row['画像']),
             original: remote(origin, row['原寸']),
@@ -151,7 +179,19 @@ export async function normalize(pose, costume, chinese, portraits = [], animeCos
   // Start with foundational poses; retain every source record, including the one incomplete angle set.
   const poses = [...groups.values()].sort((a, b) => Number(a.extended) - Number(b.extended));
   const characters = await normalizePortraits(portraits);
-  const custom = await loadCustomReferences([...poses, ...outfits, ...characters]);
+  const customRaw = await loadCustomReferences([...poses, ...outfits, ...characters]);
+  // Custom items may predate the es layer: fill es from en, keep any es already present.
+  const fillCustomEs = (value) => (value ? { ...value, es: value.es || value.en } : value);
+  const custom = customRaw.map((item) => ({
+    ...item,
+    title: fillCustomEs(item.title),
+    category: fillCustomEs(item.category),
+    series: fillCustomEs(item.series),
+    keywords: fillCustomEs(item.keywords),
+    ...(item.tags ? { tags: item.tags.map((tag) => fillCustomEs(tag)) } : {}),
+    ...(item.country ? { country: fillCustomEs(item.country) } : {}),
+    variants: item.variants.map((variant) => ({ ...variant, label: fillCustomEs(variant.label) })),
+  }));
   const items = [...custom, ...poses, ...outfits, ...characters];
   return {
     items,

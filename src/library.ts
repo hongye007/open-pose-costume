@@ -8,17 +8,17 @@ export const subjectTagIds = ['female', 'male', 'model', 'dance'] as const;
 export function isSubjectTag(id: string) {
   return subjectTagIds.some((value) => value === id);
 }
-const tagVocabulary: Record<string, { zh: string; en: string }> = {
-  female: { zh: '女性', en: 'Female' },
-  male: { zh: '男性', en: 'Male' },
-  model: { zh: '模特', en: 'Model' },
-  dance: { zh: '舞蹈', en: 'Dance' },
-  photo: { zh: '写实', en: 'Photographic' },
-  anime: { zh: '动漫', en: 'Anime' },
-  'line-art': { zh: '结构线稿', en: 'Structural line art' },
+const tagVocabulary: Record<string, { zh: string; en: string; es: string }> = {
+  female: { zh: '女性', en: 'Female', es: 'Femenino' },
+  male: { zh: '男性', en: 'Male', es: 'Masculino' },
+  model: { zh: '模特', en: 'Model', es: 'Modelo' },
+  dance: { zh: '舞蹈', en: 'Dance', es: 'Danza' },
+  photo: { zh: '写实', en: 'Photographic', es: 'Fotográfico' },
+  anime: { zh: '动漫', en: 'Anime', es: 'Anime' },
+  'line-art': { zh: '结构线稿', en: 'Structural line art', es: 'Arte lineal estructural' },
 };
 export function referenceTagLabel(id: string, lang: Lang, fallback?: string) {
-  return tagVocabulary[id]?.[lang] || fallback || id;
+  return tagVocabulary[id]?.[lang] || tagVocabulary[id]?.en || fallback || id;
 }
 export interface LibraryFilters {
   category?: string;
@@ -92,15 +92,19 @@ export function matchesQuery(item: Reference, query: string): boolean {
     item.code,
     item.title.zh,
     item.title.en,
+    item.title.es,
     item.keywords.zh,
     item.keywords.en,
+    item.keywords.es,
     item.category.zh,
     item.category.en,
+    item.category.es,
     item.series.zh,
     item.series.en,
-    ...(item.country ? [item.country.id, item.country.zh, item.country.en] : []),
-    ...(item.collection === 'custom' ? ['自建扩展', 'Custom'] : []),
-    ...(item.tags || []).flatMap((tag) => [tag.id, tag.zh, tag.en]),
+    item.series.es,
+    ...(item.country ? [item.country.id, item.country.zh, item.country.en, item.country.es] : []),
+    ...(item.collection === 'custom' ? ['自建扩展', 'Custom', 'Personalizada'] : []),
+    ...(item.tags || []).flatMap((tag) => [tag.id, tag.zh, tag.en, tag.es]),
   ]
     .join(' ')
     .toLocaleLowerCase()
@@ -122,7 +126,7 @@ export function sortItems(items: Reference[], sort: Sort, lang: Lang): Reference
       sort === 'code'
         ? a.code.localeCompare(b.code, undefined, { numeric: true }) ||
           a.id.localeCompare(b.id, undefined, { numeric: true })
-        : a.title[lang].localeCompare(b.title[lang], lang === 'zh' ? 'zh-CN' : 'en'),
+        : a.title[lang].localeCompare(b.title[lang], lang === 'zh' ? 'zh-CN' : lang),
     );
   const poses = items.filter((item) => item.kind === 'pose');
   const costumes = items.filter((item) => item.kind === 'costume');

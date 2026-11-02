@@ -1,4 +1,4 @@
-export type Lang = 'zh' | 'en';
+export type Lang = 'zh' | 'en' | 'es';
 export type Localized = Record<Lang, string>;
 export type Kind = 'pose' | 'costume' | 'character';
 export interface Variant {
