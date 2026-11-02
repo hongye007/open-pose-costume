@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-30T14:15:52.777Z",
+  "syncedAt": "2026-11-02T04:59:39.475Z",
   "imagesDownloaded": 0,
   "sources": [
     {
@@ -25,6 +25,12 @@
       "url": "https://ai-portrait-gallery.pages.dev/data/images.js",
       "records": 1499,
       "sha256": "562f12dcdb27db8e1fca6edeab8269d1f276d9d82245c4a9b0a988e8a71f1965"
+    },
+    {
+      "name": "costume-anime",
+      "url": "https://ai-costume-anime-gallery.pages.dev/",
+      "records": 1320,
+      "sha256": "7a6b353c2a57ed6064863553fb122d6cc732e4f390d6babd46d0e81f14d47f87"
     }
   ]
 }

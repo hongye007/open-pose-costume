@@ -6,7 +6,7 @@ import { loadCustomReferences } from './custom-data.mjs';
 export const root = new URL('../', import.meta.url);
 export const readJson = async (path) => JSON.parse(await readFile(new URL(path, root), 'utf8'));
 
-export async function normalize(pose, costume, chinese, portraits = []) {
+export async function normalize(pose, costume, chinese, portraits = [], animeCostumes = []) {
   const vocabulary = await readJson('data/vocabulary.json');
   const titles = await readJson('data/pose-titles.en.json');
   const zh = new Map(chinese.map((row) => [row.id, row]));
@@ -68,75 +68,86 @@ export async function normalize(pose, costume, chinese, portraits = []) {
       original: remote('https://ai-pose-gallery.pages.dev', row['原寸']),
     });
   }
-  const outfits = costume.map((row) => {
-    if (used.has(row.id)) throw Error(`Duplicate ID: ${row.id}`);
-    used.add(row.id);
-    const tokens = row['キーワード'].split(/\s+/);
-    const translated = tokens.map((word) => {
-      if (!vocabulary.costume[word]) throw Error(`Missing costume translation: ${word}`);
-      return vocabulary.costume[word];
+  const normalizeOutfits = (rows, anime = false) =>
+    rows.map((row) => {
+      if (!/^[A-Z]+-\d+$/.test(row.id)) throw Error(`Invalid costume ID: ${row.id}`);
+      const id = anime ? `anime_costume_${row.id}` : row.id;
+      const origin = anime
+        ? 'https://ai-costume-anime-gallery.pages.dev'
+        : 'https://ai-costume-gallery.pages.dev';
+      if (used.has(id)) throw Error(`Duplicate ID: ${id}`);
+      used.add(id);
+      const tokens = row['キーワード'].split(/\s+/);
+      const translated = tokens.map((word) => {
+        if (!vocabulary.costume[word]) throw Error(`Missing costume translation: ${word}`);
+        return vocabulary.costume[word];
+      });
+      const cat = category(row['カテゴリ']);
+      const en = tokens.join(' ');
+      const garments = new Set([
+        'apron',
+        'blouse',
+        'bra',
+        'briefs',
+        'camisole',
+        'cardigan',
+        'coat',
+        'corset',
+        'dress',
+        'hoodie',
+        'jacket',
+        'jeans',
+        'pants',
+        'robe',
+        'shirt',
+        'shorts',
+        'skirt',
+        'sweater',
+        'swimsuit',
+        'vest',
+      ]);
+      const phrases = [];
+      let lastGarment = -1;
+      for (let index = 0; index < tokens.length && phrases.length < 2; index++) {
+        if (!garments.has(tokens[index])) continue;
+        phrases.push(tokens.slice(Math.max(lastGarment + 1, index - 3), index + 1));
+        lastGarment = index;
+      }
+      const titleEn = phrases.length ? phrases.map((words) => words.join(' ')).join(' / ') : en;
+      const titleZh = phrases.length
+        ? phrases.map((words) => words.map((word) => vocabulary.costume[word]).join('')).join(' · ')
+        : translated.join(' · ');
+      return {
+        id,
+        kind: 'costume',
+        code: anime ? `ANIME-${row.id}` : row.id,
+        title: { zh: titleZh, en: titleEn[0].toUpperCase() + titleEn.slice(1) },
+        category: cat,
+        series: anime
+          ? { zh: '动漫服饰参考', en: 'Anime costume reference' }
+          : { zh: '服装参考', en: 'Costume reference' },
+        tags: [
+          { id: 'female', zh: '女性', en: 'Female' },
+          anime
+            ? { id: 'anime', zh: '动漫', en: 'Anime' }
+            : { id: 'photo', zh: '写实', en: 'Photographic' },
+        ],
+        extended: ['lingerie', 'swimwear', 'expressive-outfits'].includes(cat.id),
+        keywords: { zh: translated.join(' '), en },
+        source: `${origin}/`,
+        variants: [
+          {
+            id,
+            angle: 'front',
+            label: { zh: '正面', en: 'Front' },
+            thumbnail: remote(origin, row['サムネ']),
+            image: remote(origin, row['画像']),
+            original: remote(origin, row['原寸']),
+          },
+        ],
+      };
     });
-    const cat = category(row['カテゴリ']);
-    const en = tokens.join(' ');
-    const garments = new Set([
-      'apron',
-      'blouse',
-      'bra',
-      'briefs',
-      'camisole',
-      'cardigan',
-      'coat',
-      'corset',
-      'dress',
-      'hoodie',
-      'jacket',
-      'jeans',
-      'pants',
-      'robe',
-      'shirt',
-      'shorts',
-      'skirt',
-      'sweater',
-      'swimsuit',
-      'vest',
-    ]);
-    const phrases = [];
-    let lastGarment = -1;
-    for (let index = 0; index < tokens.length && phrases.length < 2; index++) {
-      if (!garments.has(tokens[index])) continue;
-      phrases.push(tokens.slice(Math.max(lastGarment + 1, index - 3), index + 1));
-      lastGarment = index;
-    }
-    const titleEn = phrases.length ? phrases.map((words) => words.join(' ')).join(' / ') : en;
-    const titleZh = phrases.length
-      ? phrases.map((words) => words.map((word) => vocabulary.costume[word]).join('')).join(' · ')
-      : translated.join(' · ');
-    return {
-      id: row.id,
-      kind: 'costume',
-      code: row.id,
-      title: { zh: titleZh, en: titleEn[0].toUpperCase() + titleEn.slice(1) },
-      category: cat,
-      series: { zh: '服装参考', en: 'Costume reference' },
-      tags: [
-        { id: 'female', zh: '女性', en: 'Female' },
-        { id: 'photo', zh: '写实', en: 'Photographic' },
-      ],
-      extended: ['lingerie', 'swimwear', 'expressive-outfits'].includes(cat.id),
-      keywords: { zh: translated.join(' '), en },
-      source: 'https://ai-costume-gallery.pages.dev/',
-      variants: [
-        {
-          id: row.id,
-          angle: 'front',
-          label: { zh: '正面', en: 'Front' },
-          thumbnail: remote('https://ai-costume-gallery.pages.dev', row['サムネ']),
-          image: remote('https://ai-costume-gallery.pages.dev', row['画像']),
-          original: remote('https://ai-costume-gallery.pages.dev', row['原寸']),
-        },
-      ],
-    };
-  });
+  const outfits = [...normalizeOutfits(costume), ...normalizeOutfits(animeCostumes, true)];
   // Start with foundational poses; retain every source record, including the one incomplete angle set.
   const poses = [...groups.values()].sort((a, b) => Number(a.extended) - Number(b.extended));
   const characters = await normalizePortraits(portraits);
@@ -167,7 +178,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   await saveCatalog(
     await normalize(
       ...(await Promise.all(
-        ['pose', 'costume', 'pose-zh', 'portrait'].map((name) =>
+        ['pose', 'costume', 'pose-zh', 'portrait', 'costume-anime'].map((name) =>
           readJson(`data/source/${name}.json`),
         ),
       )),

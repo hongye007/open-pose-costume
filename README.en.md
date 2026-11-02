@@ -28,22 +28,22 @@ Find inspiration, combine references and generate characters in one place.
   </thead>
   <tbody>
     <tr>
-      <td align="center"><strong>302</strong> groups · <strong>1,509</strong> views</td>
-      <td align="center"><strong>1,448</strong></td>
+      <td align="center"><strong>312</strong> groups · <strong>1,559</strong> views</td>
+      <td align="center"><strong>2,769</strong></td>
       <td align="center"><strong>1,527</strong></td>
-      <td align="center"><strong>4,484</strong></td>
+      <td align="center"><strong>5,855</strong></td>
     </tr>
   </tbody>
 </table>
 
 <div align="center">
-<sub>Includes extended categories · Outfits: 1,407 original + 41 custom · Image count excludes paired depth maps and preview copies · Updated November 2, 2026 (Asia/Shanghai)</sub>
+<sub>Includes extended categories · Outfits: 1,407 photographic + 1,320 upstream anime + 42 custom · Image count excludes paired depth maps and preview copies · Updated November 2, 2026 (Asia/Shanghai)</sub>
 </div>
 
 <p align="center">
-<a href="#whats-new-male-references-and-regional-portraits">What’s new</a> ·
+<a href="#whats-new-anime-outfits-and-modeldance-poses">What’s new</a> ·
 <a href="#browse-and-save">Browse &amp; save</a> ·
-<a href="#30-new-anime-outfits">Custom anime outfits</a> ·
+<a href="#anime-outfits-upstream-library-and-custom-collection">Anime outfits</a> ·
 <a href="#pose-outfit-and-character-generate-an-image">Generate</a> ·
 <a href="#companion-skill">Companion skill</a> ·
 <a href="#run-locally">Run locally</a> ·
@@ -52,15 +52,17 @@ Find inspiration, combine references and generate characters in one place.
 
 ---
 
-## What’s new: male references and regional portraits
+## What’s new: anime outfits and model/dance poses
 
+- **Photographic and anime outfits**: 1,320 upstream anime references offer anime versions of corresponding photographic outfits across eight categories. With 30 custom anime outfits, the library now has **1,350 anime references** and **2,769 outfits overall**. Filter photographic and anime styles independently.
+- **Model and dance poses**: 10 new female pose groups are tagged Model and Dance. Each has front, high, low, side and diagonal views with paired depth maps: **50 line-art images and 50 relative-depth maps**. The white-background construction drawings are searchable in both the library and generation picker.
 - **Male references**: 13 new male pose groups with 65 views, 4 photorealistic male outfits with complete footwear, and 6 male portraits with different hairstyles and visual identities.
-- **Five views and paired depth**: every custom pose offers front, high, low, side and diagonal views. Including one new female pose, the custom collection has 14 groups, 70 line-art images and 70 paired AI-inferred relative-depth maps. These are visual guides, not calibrated 3D measurements.
+- **Five views and paired depth**: every custom pose offers front, high, low, side and diagonal views. Including 11 female poses, the custom collection has 24 groups, 120 line-art images and 120 paired AI-inferred relative-depth maps. These are visual guides, not calibrated 3D measurements.
 - **Regional portraits**: 22 fictional adult portraits across 11 editorial country groups, one woman and one man per group. Seven female portraits were further redesigned with a 20-year-old adult fashion-model brief and distinct facial structure, eyes, hair and skin tones. Country groups do not establish nationality or a representative appearance for any population.
-- **More outfits**: 4 male outfits and 6 extracted female outfits join the existing 30 anime outfits and one moon-pattern outfit, bringing the custom outfit collection to **41**. Extracted references remove the person while preserving garment volume; provenance notes identify additions such as footwear absent from the source photo.
+- **More outfits**: 4 male outfits and 7 extracted female outfits join the existing 30 anime outfits and one moon-pattern outfit, bringing the custom outfit collection to **42**. Extracted references remove the person while preserving garment volume; provenance notes identify additions such as footwear absent from the source photo.
 - **Better discovery**: independent category, collection, subject and visual-style filters, plus country/region and hair length for characters. Options show matching counts, and active filters can be removed individually. Pose pickers have five thumbnails that switch only their own card, fixed filters and automatic loading as you scroll.
 
-[Browse male poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=character&collection=custom#collection)
+[Browse model/dance poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=dance#collection) · [Browse male poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=character&collection=custom#collection)
 
 ![New male pose line art and paired depth, complete outfits and regional fictional adult portraits](docs/images/library-expansion-20261102-en.webp)
 
@@ -73,27 +75,33 @@ Find inspiration, combine references and generate characters in one place.
 
 ![English reference library: poses, outfits and characters, bilingual search, viewpoints, depth maps and favorites](docs/images/library-v3-en.webp)
 
-The character library has **1,527 references**: 893 original face references, 606 original styling references and 28 custom head-and-shoulders portraits. Existing poses, outfits and characters are tagged female as confirmed by the curator; existing outfits and characters are also tagged photographic. New male and anime assets retain their own tags. Characters support country/region and hair-length filters. Eye color, hair color and skin tone do not yet have complete structured filters, though keywords describe some custom portraits.
+The character library has **1,527 references**: 893 original face references, 606 original styling references and 28 custom head-and-shoulders portraits. Original poses, photographic outfits and characters are tagged Female as confirmed by the curator; photographic outfits and characters also carry the Photographic tag. New anime outfits are tagged Female / Anime, while male references retain their Male tag. Characters support country/region and hair-length filters. Eye color, hair color and skin tone do not yet have complete structured filters, though keywords describe some custom portraits.
 
-## 30 new anime outfits
+## Anime outfits: upstream library and custom collection
 
-The custom collection adds **30 anime outfits** spanning everyday looks, autumn and winter layers, and fantasy costumes. Pair them with the **Anime illustration** style in the generation studio. One additional photorealistic moon-pattern outfit is tagged **Photorealistic**. Together with the 10 outfits added in this update, the custom collection now contains 41 outfits.
+The **1,350 anime outfits** comprise **1,320 upstream references** from [AI Costume Anime Gallery](https://ai-costume-anime-gallery.pages.dev/) and **30 custom outfits**. Upstream items share source IDs with corresponding photographic outfits, mainly offering anime versions of the same designs. Separate `ANIME-` codes keep favorites and selected references distinct.
+
+The upstream collection retains eight categories: spring, summer, autumn, winter, lingerie, party, swimwear and statement outfits. It shows 932 outfits by default; enable extended categories to access all 1,320. Set Visual style to Anime, then choose Original library or Custom to filter by source. Search by Chinese or English garment terms, color, material or code.
+
+### 30 custom anime outfits
+
+The custom anime outfits span everyday looks, autumn and winter layers, and fantasy costumes. The image below shows nine of them. These 30 outfits and 12 photographic outfits make up **42 custom outfits**. Both anime sources work in the generation studio; choose **Anime illustration** as the output style when appropriate.
 
 ![Nine selected custom anime outfits from the 30-outfit collection: everyday, winter and fantasy looks](docs/images/custom-anime-outfits-en.webp)
 
-### Create an anime look with custom outfits
+### Create a character with anime outfits
 
-1. **Find an outfit**: in the outfit library or studio's outfit picker, set **Library → Custom** and **Visual style → Anime**. Enable the sidebar's extended-category toggle to see lingerie items.
+1. **Find an outfit**: in the outfit library or studio's outfit picker, set **Visual style → Anime**. Choose **Original library** for upstream anime outfits, or **Custom** for the 30 custom anime outfits. Enable extended categories for lingerie, swimwear and statement outfits.
 2. **Combine references**: choose a pose and outfit, then optionally select or upload a character reference to guide facial features, hairstyle and identity.
 3. **Choose the style and generate**: select **Anime illustration** under visual style, adjust the size, background or extra instructions, and generate after configuring your image service. Charges depend on that service.
 
-[Browse all 30 anime outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=anime&extended=1#collection)
+[Browse upstream anime outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=builtin&style=anime#collection) · [Browse 30 custom anime outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&style=anime&extended=1#collection)
 
 ![Custom outfit examples using the same character reference: sage skirt, casual cargo and cozy winter looks](docs/images/custom-anime-looks-en.webp)
 
-These are AI-generated examples; results depend on references, prompts and the model. Custom outfits are reconstructed or extracted from references with AI. Each includes a 1024 × 1536 PNG, a WebP preview and a thumbnail. Custom poses and portraits are also available in their own manifests; see [what’s new](#whats-new-male-references-and-regional-portraits).
+These are AI-generated examples using custom outfits; results depend on references, prompts and the model. Custom outfits are reconstructed or extracted from references with AI. Each includes a 1024 × 1536 PNG, a WebP preview and a thumbnail. Upstream anime previews and originals load on demand from the source site. Custom poses and portraits are also available in their own manifests; see [what’s new](#whats-new-anime-outfits-and-modeldance-poses).
 
-**Free for personal learning and non-commercial use. Commercial use is prohibited; any distribution, redistribution or resale requires prior separate written permission.** See the [custom asset terms](public/custom/LICENSE.txt) and contact [@HongyeMain](https://x.com/HongyeMain) for permission.
+**Custom assets are free for personal learning and non-commercial use. Commercial use is prohibited; any distribution, redistribution or resale requires prior separate written permission.** See the [custom asset terms](public/custom/LICENSE.txt) and contact [@HongyeMain](https://x.com/HongyeMain) for permission.
 
 ## Pose, outfit and character. Generate an image.
 
@@ -109,18 +117,18 @@ Open “Generate image” from the sidebar. Choose references and settings on th
 4. **Adjust and generate**: click a small viewpoint thumbnail in the pose picker to switch just that card, then click its main image to select it. Select a viewpoint, optionally enable depth guidance, and set the visual style (Follow references, Natural photo, Studio portrait or Anime illustration), image size and additional instructions. Advanced settings let you edit the full prompt. Click “Generate image”; you can keep browsing while it runs and retry failed requests manually.
 5. **Review and keep creating**: switch between “Result only,” “Side by side” and “Overlay,” enlarge or download the result, or select “Use as character reference.” The “History” drawer keeps the latest 20 successful results, with controls to restore references, delete records and download a ZIP of the pose, outfit and optional character references used for that result.
 
-| Setting          | Default or requirement                                                                       |
-| ---------------- | -------------------------------------------------------------------------------------------- |
-| Service URL      | `https://atomflow.vip`, editable                                                             |
-| Model            | `gpt-image-2`, editable                                                                      |
-| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format                                  |
-| Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]` |
-| Browser access   | Service must allow CORS; use HTTPS or a local HTTP address                                   |
+| Setting          | Default or requirement                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Service URL      | `https://atomflow.vip`, editable                                                                                               |
+| Model            | `gpt-image-2`, editable                                                                                                        |
+| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format                                                                    |
+| Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]`                                   |
+| Browser access   | Static deployments require CORS with the `Authorization` header; local Atomflow development requests use the same-origin proxy |
 
 <details>
 <summary>How are API keys, images and history stored?</summary>
 
-Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, the browser sends references and the description directly to your configured service, which may charge for usage. Keys are excluded from share links and the repository.
+Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, references and the description are sent to your configured service, which may charge for usage. Local Atomflow development requests pass through Vite; static deployments connect directly. Keys are excluded from share links and the repository.
 
 Library selections are saved as reference IDs in this browser. Lists use thumbnails. Custom details use WebP previews; generation and original downloads use high-resolution PNGs. Original-library entries use the previews and originals specified in the index. For uploaded outfits, the original photo is sent to your configured service when you click “Extract outfit.” The confirmed extraction becomes the outfit reference for subsequent generation.
 
@@ -163,6 +171,8 @@ npm run dev -- --port 5200
 
 Check with `lsof -nP -iTCP:5200 -sTCP:LISTEN` on macOS/Linux, or `Get-NetTCPConnection -LocalPort 5200` in Windows PowerShell.
 
+During `npm run dev`, Vite forwards Atomflow `/v1/images/edits` requests through the local origin to the configured `atomflow.vip` or `api.atomflow.vip` host, avoiding browser CORS restrictions. The key is forwarded only with the current request. Other providers, static builds and `npm run preview` still connect directly and require the service to allow CORS requests with the `Authorization` header.
+
 ## Build and deploy
 
 The site is deployed on [GitHub Pages](https://hongye007.github.io/open-pose-costume/). Pushes to `main` automatically run tests, build with `/open-pose-costume/` as the base path, and deploy through GitHub Actions. Failed tests or builds prevent deployment. Other branches and pull requests only run checks.
@@ -185,17 +195,19 @@ npm run preview -- --port 5200
 
 ## Data and maintenance
 
+Anime metadata is stored separately in `data/source/costume-anime.json` and merged with photographic outfits when rebuilding the index. Run `npm run sync -- --costume-anime-only` to update this source while preserving other snapshots and custom manifests. Upstream anime images are excluded from the bulk archive command.
+
 Original-library images keep their upstream URLs, so their availability depends on the source sites. Root-level local archives do not change those URLs. Custom images are built and deployed from `public/custom/` and served by this website.
 
 Character metadata comes from [AI Portrait Gallery](https://ai-portrait-gallery.pages.dev/). Portrait thumbnails and originals are not downloaded or archived in this repository and are excluded from `images:download`.
 
-| Command                   | Purpose                                                                                           |
-| ------------------------- | ------------------------------------------------------------------------------------------------- |
-| `npm run sync`            | Sync upstream metadata without executing upstream page code or downloading images                 |
-| `npm run data:build`      | Rebuild the index from local upstream snapshots and custom manifests                              |
-| `npm test`                | Run tests                                                                                         |
-| `npm run build`           | Type-check and build the website                                                                  |
-| `npm run images:download` | Optional: archive upstream pose/outfit covers and originals; excludes portraits and custom assets |
+| Command                   | Purpose                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `npm run sync`            | Sync upstream metadata without executing upstream page code or downloading images                                        |
+| `npm run data:build`      | Rebuild the index from local upstream snapshots and custom manifests                                                     |
+| `npm test`                | Run tests                                                                                                                |
+| `npm run build`           | Type-check and build the website                                                                                         |
+| `npm run images:download` | Optional: archive upstream pose/outfit covers and originals; excludes portraits, upstream anime images and custom assets |
 
 Metadata snapshots live in `data/source/`, the website index in `public/data/catalog.json`, and sync records in `data/sync-manifest.json`. Sync checks categories, angles and translation coverage. If translations are missing, update the dictionaries indicated by the error.
 

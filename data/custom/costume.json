@@ -2495,5 +2495,83 @@
         }
       }
     ]
+  },
+  {
+    "id": "custom_costume_street_007",
+    "kind": "costume",
+    "code": "ST-007",
+    "title": {
+      "zh": "白色挂脖上衣与红黑格纹百褶裙",
+      "en": "White halter crop top and red tartan pleated skirt"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "模特舞蹈服饰 · 01",
+      "en": "Model dance outfit · 01"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 写实 服饰提取 白色 挂脖 短上衣 红黑 格纹 百褶裙 黑色 金属孔 腰带 链条 蕾丝边 长袜 黑色 厚底 玛丽珍鞋 隐形人台 无人物 无首饰",
+      "en": "model dance female photographic extracted outfit white ribbed halter crop top red black tartan pleated skirt black eyelet belt silver hip chain lace top thigh high stockings black chunky platform Mary Jane shoes ghost mannequin no person no jewelry"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "3fcea4992ada7dac8577e106a53eb5ba15350679d4446c312d4e2189c0cf04fe",
+      "width": 1024,
+      "height": 1536,
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "从参考照片提取并去除人物与首饰，保留腰带附属链条。鞋履为 AI 补配，原照片未展示。",
+        "en": "Extracted from reference photo with person and jewelry removed; belt chain retained. Footwear is AI-added and absent from the source photo."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_007",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_007.png",
+        "image": "custom/costume/images/custom_costume_street_007.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_007.webp",
+        "provenance": {
+          "originalSha256": "3fcea4992ada7dac8577e106a53eb5ba15350679d4446c312d4e2189c0cf04fe",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
   }
 ]

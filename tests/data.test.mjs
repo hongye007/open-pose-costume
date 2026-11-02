@@ -6,7 +6,7 @@ import { normalize, readJson } from '../scripts/build-data.mjs';
 import { normalizePortraits } from '../scripts/portrait-data.mjs';
 import { extractDataset } from '../scripts/sync.mjs';
 
-const [pose, costume, zh, portrait, catalog, manifest] = await Promise.all(
+const [pose, costume, zh, portrait, catalog, manifest, animeCostumes] = await Promise.all(
   [
     'data/source/pose.json',
     'data/source/costume.json',
@@ -14,6 +14,7 @@ const [pose, costume, zh, portrait, catalog, manifest] = await Promise.all(
     'data/source/portrait.json',
     'public/data/catalog.json',
     'data/sync-manifest.json',
+    'data/source/costume-anime.json',
   ].map(readJson),
 );
 const vite = await createServer({
@@ -29,7 +30,7 @@ after(async () => {
 });
 
 test('all source records are preserved, uniquely grouped, with no invented angles', async () => {
-  assert.deepEqual(await normalize(pose, costume, zh, portrait), catalog);
+  assert.deepEqual(await normalize(pose, costume, zh, portrait, animeCostumes), catalog);
   const poseGroups = catalog.items.filter(
     (item) => item.kind === 'pose' && item.collection !== 'custom',
   );
@@ -39,13 +40,14 @@ test('all source records are preserved, uniquely grouped, with no invented angle
   );
   assert.equal(
     catalog.items.filter((item) => item.kind === 'costume' && item.collection !== 'custom').length,
-    costume.length,
+    costume.length + animeCostumes.length,
   );
   assert.equal(new Set(catalog.items.map((item) => item.id)).size, catalog.items.length);
   assert.equal(
     catalog.stats.images,
     pose.length +
       costume.length +
+      animeCostumes.length +
       portrait.length +
       catalog.items
         .filter((item) => item.collection === 'custom')
@@ -71,7 +73,7 @@ test('every reference has complete Chinese and English, and upstream URLs stay u
           item.kind === 'pose'
             ? 'https://ai-pose-gallery.pages.dev'
             : item.kind === 'costume'
-              ? 'https://ai-costume-gallery.pages.dev'
+              ? new URL(item.source).origin
               : 'https://ai-portrait-gallery.pages.dev',
         );
       }
@@ -81,7 +83,7 @@ test('every reference has complete Chinese and English, and upstream URLs stay u
 });
 
 test('source snapshot hashes and counts match the crawl manifest', () => {
-  for (const [index, rows] of [pose, costume, zh, portrait].entries()) {
+  for (const [index, rows] of [pose, costume, zh, portrait, animeCostumes].entries()) {
     assert.equal(manifest.sources[index].records, rows.length);
     assert.equal(
       manifest.sources[index].sha256,

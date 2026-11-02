@@ -86,8 +86,8 @@ test('existing characters are female photographic references, while custom male 
 
 test('existing costumes are female photographic references; poses keep their existing style tags', () => {
   for (const [kind, expected] of [
-    ['pose', 289],
-    ['costume', 1444],
+    ['pose', 299],
+    ['costume', 2765],
   ]) {
     const females = filterReferences(items, { kind, tag: 'female' });
     assert.equal(females.length, expected);
@@ -95,7 +95,11 @@ test('existing costumes are female photographic references; poses keep their exi
       filterReferences(items, { kind, collection: 'builtin', tag: 'female', style: 'photo' }).map(
         (item) => item.id,
       ),
-      kind === 'costume' ? females.filter((item) => !item.collection).map((item) => item.id) : [],
+      kind === 'costume'
+        ? females
+            .filter((item) => !item.collection && item.tags.some((tag) => tag.id === 'photo'))
+            .map((item) => item.id)
+        : [],
     );
   }
   assert.equal(
@@ -112,10 +116,10 @@ test('existing costumes are female photographic references; poses keep their exi
   );
   assert.equal(
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
-    30,
+    1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 49);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 3243);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 60);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4574);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {
@@ -168,4 +172,33 @@ test('visible codes are searchable and one tag ID has one bilingual display name
   assert.equal(filterReferences(items, { query: 'MP-012' }).length, 1);
   assert.equal(referenceTagLabel('photo', 'en', 'Photorealistic'), 'Photographic');
   assert.equal(referenceTagLabel('photo', 'zh'), '写实');
+});
+
+// Model/dance are subject/use tags; they must not migrate into visual style.
+test('model and dance links retain subject tags and intersect with line-art in both languages', () => {
+  for (const tag of ['model', 'dance']) {
+    assert.deepEqual(readTagFilters(new URLSearchParams(`tag=${tag}&style=line-art`)), {
+      tag,
+      style: 'line-art',
+    });
+    const poses = filterReferences(items, {
+      kind: 'pose',
+      collection: 'custom',
+      tag,
+      style: 'line-art',
+    });
+    assert.equal(poses.length, 10);
+    assert.ok(
+      poses.every(
+        (item) =>
+          item.tags.some((value) => value.id === 'model') &&
+          item.tags.some((value) => value.id === 'dance'),
+      ),
+    );
+    for (const query of ['模特 舞蹈', 'Model Dance'])
+      assert.equal(filterReferences(poses, { query }).length, 10);
+    assert.equal(filterReferences(items, { kind: 'costume', tag, style: 'photo' }).length, 1);
+  }
+  assert.equal(referenceTagLabel('model', 'zh'), '模特');
+  assert.equal(referenceTagLabel('dance', 'en'), 'Dance');
 });

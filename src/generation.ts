@@ -1,6 +1,7 @@
 import type { Kind, Lang, Reference, Variant } from './types';
 import { isDepthVariant, poseDepthOrigin } from './pose-depth';
 import { isCustomAsset } from './custom-assets';
+import { imageRequestEndpoint } from './image-transport';
 
 export interface ImageConfig {
   baseUrl: string;
@@ -125,7 +126,7 @@ export function referencePrompt(references: ImageReference[], lang: Lang): strin
   const roles = {
     pose: {
       zh: '仅采用此图当前展示的动作与单一观察角度。保持头部朝向、肩胯方向、肘腕位置、手势、腿部弯曲及遮挡关系，不擅自把双手移到身后。取景范围跟随此图。',
-      en: 'Use only the pose and single viewpoint shown in this image. Preserve head direction, shoulder and hip orientation, elbows, wrists, hand gestures, bent legs and occlusion. Do not move the hands behind the back unless shown. Match this image\'s framing.',
+      en: "Use only the pose and single viewpoint shown in this image. Preserve head direction, shoulder and hip orientation, elbows, wrists, hand gestures, bent legs and occlusion. Do not move the hands behind the back unless shown. Match this image's framing.",
     },
     costume: {
       zh: '仅提取可见服饰、鞋履及配饰的款式、颜色、材质与穿戴方式，穿到同一个人物身上；不复制陈列布局、空白间距或隐形人台外观。',
@@ -133,7 +134,7 @@ export function referencePrompt(references: ImageReference[], lang: Lang): strin
     },
     character: {
       zh: '仅保留此人物的身份、五官、脸型、发型发色、肤色与画风；不复制人物参考的动作、服饰或头像裁切，不额外生成头像或其他视角。',
-      en: 'Preserve only this person\'s identity, facial features, face shape, hairstyle, hair color, skin tone and visual style. Do not copy this reference\'s pose, clothing or portrait crop, or add separate portraits or other views.',
+      en: "Preserve only this person's identity, facial features, face shape, hairstyle, hair color, skin tone and visual style. Do not copy this reference's pose, clothing or portrait crop, or add separate portraits or other views.",
     },
   };
   const details = references
@@ -246,6 +247,7 @@ export async function generateReferenceImage(
       const url = new URL(reference.variant.original);
       const allowedOrigins = [
         `https://ai-${reference.kind === 'character' ? 'portrait' : reference.kind}-gallery.pages.dev`,
+        ...(reference.kind === 'costume' ? ['https://ai-costume-anime-gallery.pages.dev'] : []),
         ...(reference.kind === 'pose' ? [poseDepthOrigin] : []),
       ];
       if (
@@ -273,6 +275,9 @@ export async function generateReferenceImage(
           signal: combined,
           credentials: 'omit',
           referrerPolicy: 'no-referrer',
+        }).catch((error) => {
+          if (combined.aborted) throw error;
+          throw new ImageGenerationError('referenceFailed');
         });
         if (!response.ok)
           throw new ImageGenerationError('referenceFailed', `HTTP ${response.status}`);
@@ -291,7 +296,11 @@ export async function generateReferenceImage(
       );
     }
     combined.throwIfAborted();
-    const response = await fetcher(imageEndpoint(valid.baseUrl), {
+    const endpoint = imageRequestEndpoint(
+      imageEndpoint(valid.baseUrl),
+      import.meta.env.DEV && !import.meta.env.SSR,
+    );
+    const response = await fetcher(endpoint, {
       method: 'POST',
       signal: combined,
       credentials: 'omit',

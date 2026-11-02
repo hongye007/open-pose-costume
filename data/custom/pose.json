@@ -3081,5 +3081,2486 @@
         }
       }
     ]
+  },
+  {
+    "id": "custom_pose_female_002",
+    "kind": "pose",
+    "code": "FP-002",
+    "title": {
+      "zh": "模特舞蹈 · 重心侧移",
+      "en": "Model dance · Hip-shift stance"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 01",
+      "en": "Model dance · 01"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 重心侧移 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Hip-shift stance extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "b2fdcf304223ea14d0790e128ac478b182d292dec4344495a7d78f939ea526a0",
+      "approvedSourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_002_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_002_front.png",
+        "image": "custom/pose/images/custom_pose_female_002_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_front.webp",
+        "provenance": {
+          "originalSha256": "b2fdcf304223ea14d0790e128ac478b182d292dec4344495a7d78f939ea526a0",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "fee5cf90dd394de14eb95408b4020fc41953eddf4420e5aea6b8a295a0331dd3",
+          "promptSha256": "22e85a5998d7b1b7df603381bf74d3f27430694702db730c72c96732b42a572e",
+          "sourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_002_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_002_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_front_depth.webp",
+          "provenance": {
+            "originalSha256": "37c85f6abb020f00fe8b97291a582c014b6a029099f07d912cbb92442f38cd14",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "b2fdcf304223ea14d0790e128ac478b182d292dec4344495a7d78f939ea526a0",
+            "generatedSha256": "04764fbcbe5a27736577ba141260a6ca400cb4fd6d80ba08fa6393b94bb7e030",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_002_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_002_high.png",
+        "image": "custom/pose/images/custom_pose_female_002_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_high.webp",
+        "provenance": {
+          "originalSha256": "096b62c9e720903fec2363e9426e06ffe4e73a80a02e2ed28a0630acfd5bc483",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "5dee34231eda219687ba3d1566a8c01eac6c1aa44c95b459585485eb685fef48",
+          "promptSha256": "5dd2e683c37c92c74ceef7169c666625f8aa1f2a1034cf909e85e61a0b27428f",
+          "sourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_002_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_002_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_high_depth.webp",
+          "provenance": {
+            "originalSha256": "70f456664a13c319f7076a6d8c874eb0eae1ae12e70167fb656cb5ea31a4d56e",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "096b62c9e720903fec2363e9426e06ffe4e73a80a02e2ed28a0630acfd5bc483",
+            "generatedSha256": "91a871eee47dfae1a1f4eeb77d186bf50783940290ea96c3f95b205ef64e5773",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_002_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_002_low.png",
+        "image": "custom/pose/images/custom_pose_female_002_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_low.webp",
+        "provenance": {
+          "originalSha256": "85fe0d5d9ea4a64a710f58a2c1ca96f76cdab2a51d99a0899747bbeaee656937",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "245fb9d4d77b8c60a5d989297b25d19845bb3427faa323ed091a51f13abe58fd",
+          "promptSha256": "a2233da05d34b5403f93ddc79bc4a4893bd89e96863318fd988706ee3b666e0f",
+          "sourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_002_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_002_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_low_depth.webp",
+          "provenance": {
+            "originalSha256": "b2e012fa5af51aa92cedc8d5e338593cd0048b6d423d239dd355f6715a6c00e3",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "85fe0d5d9ea4a64a710f58a2c1ca96f76cdab2a51d99a0899747bbeaee656937",
+            "generatedSha256": "075e49883b7001ce03bad1412cd46ba1205705508c1ee1c781c0dbe723d8525c",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_002_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_002_side.png",
+        "image": "custom/pose/images/custom_pose_female_002_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_side.webp",
+        "provenance": {
+          "originalSha256": "fea55bb1cbeba5d318c91d70064b99cc6e708c08627da3d5902ae70db9398a20",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "55ddf19aa534005d38022c3a2e549db6a97e3e45347c22890677fae23392d8fd",
+          "promptSha256": "101d48c8e9b87c223b3f2fd139e2b0566cf793ffceda7f83162962dd6c3d6631",
+          "sourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_002_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_002_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_side_depth.webp",
+          "provenance": {
+            "originalSha256": "eb8ed190eda28b30a3d0e0acc535ae34ee041e1b375941213210fc6cd39f4516",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "fea55bb1cbeba5d318c91d70064b99cc6e708c08627da3d5902ae70db9398a20",
+            "generatedSha256": "81e740400826fd41987762f02ef17f563f6904d698cf2c8f38994b15136d2442",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_002_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_002_diag.png",
+        "image": "custom/pose/images/custom_pose_female_002_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_diag.webp",
+        "provenance": {
+          "originalSha256": "965776d494bedbe36d2e30f2d5a1e96a5bb7bfe6494fbc03bffd79324f2c6545",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "eec541ac8fdfd3262969172a203d80bcef73809feb040ce03b32a13e6dc33ce4",
+          "promptSha256": "9f25ec99e7eb758af2110e3205a82aeeaee764c47e98bc65b8294dce3f124c06",
+          "sourceSha256": "3254624d079c1a78009f2b23e320c5a85bfdc28f2c32c7456087cbf0d487fe6c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_002_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_002_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_002_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "1954ce42812b84d0bfdc71bc60f801bac6bd37c7b2ed4dcc6b8944f3528db500",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "965776d494bedbe36d2e30f2d5a1e96a5bb7bfe6494fbc03bffd79324f2c6545",
+            "generatedSha256": "b4c97c2d6e7868f6b5805f2a721a348d4e0d5d9c625906909e840fe805b6d3d7",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_003",
+    "kind": "pose",
+    "code": "FP-003",
+    "title": {
+      "zh": "模特舞蹈 · 举臂交叉",
+      "en": "Model dance · Overhead crossed-arm sway"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 02",
+      "en": "Model dance · 02"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 举臂交叉 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Overhead crossed-arm sway extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "2163bbef080a9b37ae994e5c01f3f40dd6d757df12491090d612e5135760d788",
+      "approvedSourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_003_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_003_front.png",
+        "image": "custom/pose/images/custom_pose_female_003_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_front.webp",
+        "provenance": {
+          "originalSha256": "2163bbef080a9b37ae994e5c01f3f40dd6d757df12491090d612e5135760d788",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "d71b84d00d00f813574770d5c10bf1740da73cee7a69e779f25d6e58416e2fdb",
+          "promptSha256": "7c9fb9d3d1119b4d434bd512984c5be1db0954afe8121f9012ae876f98455ce7",
+          "sourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_003_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_003_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_front_depth.webp",
+          "provenance": {
+            "originalSha256": "66d845c1f6318a1857e91652730612bac08cf18867671fc4fe445c2cafeeea19",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "2163bbef080a9b37ae994e5c01f3f40dd6d757df12491090d612e5135760d788",
+            "generatedSha256": "07e8473501d76956c17249d38b6a33dbe8ad668da0458fc30d51a33786d0c045",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_003_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_003_high.png",
+        "image": "custom/pose/images/custom_pose_female_003_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_high.webp",
+        "provenance": {
+          "originalSha256": "24c22613f3eff137fc9cb505b36e9fbc6ee11f95ed1fed0745fa03d4d9dc1580",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "6c2219fb057a86a68c608bbcb88d33d0ae73db06091e6b45e0cdedd870581506",
+          "promptSha256": "90a42f823e18ed606ec485b13d901c4fd137bfb96977a2a3be9bd5dcfd64d6b9",
+          "sourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_003_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_003_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_high_depth.webp",
+          "provenance": {
+            "originalSha256": "ecd565626d139f5486a0bf37d4a92b900177f788cbceb1715d18ec747c353b20",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "24c22613f3eff137fc9cb505b36e9fbc6ee11f95ed1fed0745fa03d4d9dc1580",
+            "generatedSha256": "a17728351d332abf0b2aef9b38b83bdaf8f9b82242e8d9be43aa4507537b763b",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_003_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_003_low.png",
+        "image": "custom/pose/images/custom_pose_female_003_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_low.webp",
+        "provenance": {
+          "originalSha256": "1aea1ee05f4278bba3ef9564856bd6254eee3220f956993173b36ea8f700144b",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "d5f435f515fc9800e331295614e585bbfff197fa99cf506f50299158fb8a2b65",
+          "promptSha256": "05813684e406eb4cc7cfb3b0e5696398e339194b0fe53322f169ef0ffcf6de8c",
+          "sourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_003_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_003_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_low_depth.webp",
+          "provenance": {
+            "originalSha256": "541bc532d48d8d7919363f0f97c67768a0214323862889335282702f5c83e971",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1aea1ee05f4278bba3ef9564856bd6254eee3220f956993173b36ea8f700144b",
+            "generatedSha256": "f21c4882a6ec148a5447dc7329b273758ea2c0bb941b0519050fcba8f711e3c3",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_003_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_003_side.png",
+        "image": "custom/pose/images/custom_pose_female_003_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_side.webp",
+        "provenance": {
+          "originalSha256": "1f435d184a11a2cd97102e900317f36a96274ccff52b2aa68bb61eef974a2061",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "afe62d40ba00a4e033c6c245ad10aafcd42b8014e177417cc339b235a3daef23",
+          "promptSha256": "7784055f73267068c201e88bcc48153fe93e74d38f440e83934225ccb3890e86",
+          "sourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_003_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_003_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_side_depth.webp",
+          "provenance": {
+            "originalSha256": "581903f1af893a0cc09906f1aa8bc9e24feb03f6f1bb1dc3ac6f5c1ed89669c1",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1f435d184a11a2cd97102e900317f36a96274ccff52b2aa68bb61eef974a2061",
+            "generatedSha256": "31db4f5e8ecb66fdcc21a3d7d868d49182a675a3a2b8fffc89f90ece5c1c6f86",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_003_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_003_diag.png",
+        "image": "custom/pose/images/custom_pose_female_003_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_diag.webp",
+        "provenance": {
+          "originalSha256": "0167771c7f541b56516d63c982e7ab7df29da14503886365b67ecb323bb04532",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "a1344ac4e62420e4b96d90ef0b4f1361deb82a56fc7d78c32b82b1a1561cb47b",
+          "promptSha256": "77a91f8be314c56c0af5a1f0709b1fc21993ab29e04ccfb2e59f59500b255119",
+          "sourceSha256": "df54141c171d7a9ceb78c5ff49ebfcbe6a25711dc091946598e5a9a7414f9ebe"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_003_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_003_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_003_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "7451556cb0d6689802678d7cb9ce21504f1408730d779b81076d5304001e8f88",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "0167771c7f541b56516d63c982e7ab7df29da14503886365b67ecb323bb04532",
+            "generatedSha256": "36e4db3a93b487d914204fb7d7fc7accf6a22f86399da48f21ddcc047b33b64c",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_004",
+    "kind": "pose",
+    "code": "FP-004",
+    "title": {
+      "zh": "模特舞蹈 · 背身回望",
+      "en": "Model dance · Lookback shoulder touch"
+    },
+    "category": {
+      "id": "twisting",
+      "zh": "扭身",
+      "en": "Twisting"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 03",
+      "en": "Model dance · 03"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 背身回望 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Lookback shoulder touch extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "98fb25590f4c0e2c54c2d7a23fb2c233d9aedfa5f5f1f90fd40d4e16f1203945",
+      "approvedSourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_004_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_004_front.png",
+        "image": "custom/pose/images/custom_pose_female_004_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_front.webp",
+        "provenance": {
+          "originalSha256": "98fb25590f4c0e2c54c2d7a23fb2c233d9aedfa5f5f1f90fd40d4e16f1203945",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "9d10a856434b7334b0fad626279292b5ff14b902fae0cd715f7aaa7312cb0c2b",
+          "promptSha256": "54e469c90696352d72765713440aad5ef41175cbb5f370e34b8206029b4bf988",
+          "sourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_004_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_004_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_front_depth.webp",
+          "provenance": {
+            "originalSha256": "b4c52c6c3979dad1868128e6593da0517c3a082ed001cd029bed784f6a73b61f",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "98fb25590f4c0e2c54c2d7a23fb2c233d9aedfa5f5f1f90fd40d4e16f1203945",
+            "generatedSha256": "5e992664b180e90dc9dd7bb3a57decc84a40b3ac1d7e718e5dc0a37fcdfc9076",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_004_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_004_high.png",
+        "image": "custom/pose/images/custom_pose_female_004_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_high.webp",
+        "provenance": {
+          "originalSha256": "3c444582cc4bc135670ed4c6be6b5c1c59614ce49d8b299c4ade41352de9aefd",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "50acdcbdf2d068824e89432592363e1e29a0432b7190b0804e77f8a1efae70da",
+          "promptSha256": "381df90227957debfb8eff21bab025b11c388f2016db5061d095ab56d02c0f1b",
+          "sourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_004_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_004_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_high_depth.webp",
+          "provenance": {
+            "originalSha256": "ed1a104c3b4c771baaf85367ba1a822f5c140514a7a3f8211ea80ddc5740383f",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3c444582cc4bc135670ed4c6be6b5c1c59614ce49d8b299c4ade41352de9aefd",
+            "generatedSha256": "b8b01835946039f19ad6927e09b3327e766ed5eb8c82a551741cb468b6ce5259",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_004_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_004_low.png",
+        "image": "custom/pose/images/custom_pose_female_004_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_low.webp",
+        "provenance": {
+          "originalSha256": "9a7237019d8023259a8b2854e07059a2a19386030f80cae33d3adc0f564e0bcb",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "c5cd19f954d5bc591abf8b62aaf42d6e7c1323ecd175c1a368358432c0f7cfb9",
+          "promptSha256": "7288dedf7d20bae16507ae19eb9262b9287b6d5bb43924620aad73f59eb9da22",
+          "sourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_004_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_004_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_low_depth.webp",
+          "provenance": {
+            "originalSha256": "23256f44157651ecd54bac1ac509fd314f18c7a47bd164de7e2bf233f5e3872b",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "9a7237019d8023259a8b2854e07059a2a19386030f80cae33d3adc0f564e0bcb",
+            "generatedSha256": "7fd277f0964f243ab007d816afc376541ab9a950a40b2e6c55dfb89172777597",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_004_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_004_side.png",
+        "image": "custom/pose/images/custom_pose_female_004_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_side.webp",
+        "provenance": {
+          "originalSha256": "790fe7405026e1d059698f875c128e1e822e904841996af2313af2237ae77ca2",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "81b976017f99c3f7bb66243f77bd60bb1df6c1bb800d50d7cd25cdc44015dacf",
+          "promptSha256": "b9121f3c4503c4c16d01093fda884c334ad0c9f603b80ac83ea7c01b99134442",
+          "sourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_004_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_004_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_side_depth.webp",
+          "provenance": {
+            "originalSha256": "b16ac581b8f1893083dc22255a7250d89e4702e00166f825bdf73e80341c3d4d",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "790fe7405026e1d059698f875c128e1e822e904841996af2313af2237ae77ca2",
+            "generatedSha256": "893fc6d33754f467d59445df5e9b8f4190b47d4b692e92d774209cfdc10e40c6",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_004_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_004_diag.png",
+        "image": "custom/pose/images/custom_pose_female_004_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_diag.webp",
+        "provenance": {
+          "originalSha256": "3467af49e20c0ab11f890f0086a1d53dacd2c9d8f4bfcf686f04ded5fd199fef",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "48e5e46408af2621e06a13b743023b95fc871bace95657132462d99310b7c443",
+          "promptSha256": "f45d091e7a7e06665e5d32d9dc2d1e68ea91f5fa04c9eb8622fe32858ebf99eb",
+          "sourceSha256": "2d61f81ba8156241b500381ac9c585765a0664853559246370580504ec0a1934"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_004_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_004_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_004_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "cb21ca501d8fef261a8caf04b865d213b81e5d1a4bbd47e2b88df2f93de671a0",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3467af49e20c0ab11f890f0086a1d53dacd2c9d8f4bfcf686f04ded5fd199fef",
+            "generatedSha256": "42c43313b6387e8d3a8b411063b734e1599efea7abbdf91b74fbbd8a50a081a2",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_005",
+    "kind": "pose",
+    "code": "FP-005",
+    "title": {
+      "zh": "模特舞蹈 · 低位下蹲",
+      "en": "Model dance · Low squat floor touch"
+    },
+    "category": {
+      "id": "crouching",
+      "zh": "蹲姿",
+      "en": "Crouching"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 04",
+      "en": "Model dance · 04"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 低位下蹲 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Low squat floor touch extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "1151ba6638b07797ad0168b8d6291a0cbaa622731dd02e0b10b2953d5a3f6771",
+      "approvedSourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_005_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_005_front.png",
+        "image": "custom/pose/images/custom_pose_female_005_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_front.webp",
+        "provenance": {
+          "originalSha256": "1151ba6638b07797ad0168b8d6291a0cbaa622731dd02e0b10b2953d5a3f6771",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "741fcd28051d6845c56772714a47b0d19e57b11d295958f60ee17415d2834c89",
+          "promptSha256": "81fc1e705a68a403df6b508000272af767e4b107e103746335935bfcac71c6c9",
+          "sourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_005_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_005_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_front_depth.webp",
+          "provenance": {
+            "originalSha256": "f5239c035744259ed6914fa5fbc850f45a57cf4040fb3429ac2e6c52d997dd8b",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1151ba6638b07797ad0168b8d6291a0cbaa622731dd02e0b10b2953d5a3f6771",
+            "generatedSha256": "b7987d4cf77b020266cef5b64f545bd063dc113c4def68f5e7dd47a2b3811020",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_005_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_005_high.png",
+        "image": "custom/pose/images/custom_pose_female_005_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_high.webp",
+        "provenance": {
+          "originalSha256": "c6212880cf3c3b044781e689ac72af3b40d8a7788900a7853f7cb63e0eddff05",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "c6edff85b37d59f4d96de5a1d4bdd2778a234aef69e11aa241573fa462371d49",
+          "promptSha256": "f2f2cd4d9bc47e982c85c21875655268877b01697fa00fde2c98d1b620a6f915",
+          "sourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_005_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_005_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_high_depth.webp",
+          "provenance": {
+            "originalSha256": "54aedfeabc86781169fafe6dccb7ba3260574b1427cbb7666b068b275631a4a4",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c6212880cf3c3b044781e689ac72af3b40d8a7788900a7853f7cb63e0eddff05",
+            "generatedSha256": "dbae02f35f7e0a82b5e5ad9fd4425b90647c980215cda9d62107d438b627b4d3",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_005_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_005_low.png",
+        "image": "custom/pose/images/custom_pose_female_005_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_low.webp",
+        "provenance": {
+          "originalSha256": "c103a340b429237d911fccd515116532b2bfc279ccec05133a0e01da2ac8e26a",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "5fd40418accab46a22bed8a43f6aa5b552ef4a0f5dcf67b5921af6db67dee5e1",
+          "promptSha256": "2b77e1b623ebbd88447aafa263d066fbdb6f5174ad0d6ae8c1c7b3025148beda",
+          "sourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_005_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_005_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_low_depth.webp",
+          "provenance": {
+            "originalSha256": "1cad93719e38e6cb1842c0e16c4a15a2e976e1e8cbab58800f10e756274688a2",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c103a340b429237d911fccd515116532b2bfc279ccec05133a0e01da2ac8e26a",
+            "generatedSha256": "8ea71d4b8cb06042b3abd5a712d55c3d2e36711fdd0f71cf00e6f5298a336f29",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_005_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_005_side.png",
+        "image": "custom/pose/images/custom_pose_female_005_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_side.webp",
+        "provenance": {
+          "originalSha256": "5e794913c9280efb53f7d35c1ae02daae3339f9181dc96813dda0948544d3d3d",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "4e9214162895754910beddb4055af0eb0116b1a4890cead49f085d8c33d28d46",
+          "promptSha256": "e9620ebb118e68cbfbd25ec408bae5e8018c2a1595186569eaea8e1f4fd6af74",
+          "sourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08",
+          "refinedCamera": true
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_005_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_005_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_side_depth.webp",
+          "provenance": {
+            "originalSha256": "39e1469de058610a156986efb4b958173c2cade0766f8de7d675b97e676cb6d5",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5e794913c9280efb53f7d35c1ae02daae3339f9181dc96813dda0948544d3d3d",
+            "generatedSha256": "ca9a464dc9bf0cd0c08d622772bb83a651cf426a42ffe0de4567a1da6af938b2",
+            "promptSha256": "61cd30773b031172f249275c2e7774d727942eb798bbde7311ce41524421808d",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_005_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_005_diag.png",
+        "image": "custom/pose/images/custom_pose_female_005_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_diag.webp",
+        "provenance": {
+          "originalSha256": "aa23a850019d5d9111376663df556a1077a51aea0ed4073db834373c916b95d6",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "cef415104bc025b29656d1a344b7940f691f8df47378381c05f7e98a26866f86",
+          "promptSha256": "18865114b526d2dbb0170d895180ef92a6721774d10a26fe404db6abbbd8def8",
+          "sourceSha256": "9865b201556b50df20435cea9da783851382c9fd2f93058b03d102a314f19f08"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_005_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_005_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_005_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "d5773bb54a02b3f0d4b4cd3234ec56d75b9dcd6042bff6339b517509b32c7144",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "aa23a850019d5d9111376663df556a1077a51aea0ed4073db834373c916b95d6",
+            "generatedSha256": "4089bdf7f2a5776c974c289e5f428b1b88a106931ba8ec50c39e61247299ea33",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_006",
+    "kind": "pose",
+    "code": "FP-006",
+    "title": {
+      "zh": "模特舞蹈 · 后仰展臂",
+      "en": "Model dance · Arched torso open arms"
+    },
+    "category": {
+      "id": "arching",
+      "zh": "后仰",
+      "en": "Backbends"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 05",
+      "en": "Model dance · 05"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 后仰展臂 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Arched torso open arms extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "01de227ffc2366fae2038b90c521e755bbdc496d17587fb47ccc54bf91cfd3e4",
+      "approvedSourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_006_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_006_front.png",
+        "image": "custom/pose/images/custom_pose_female_006_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_front.webp",
+        "provenance": {
+          "originalSha256": "01de227ffc2366fae2038b90c521e755bbdc496d17587fb47ccc54bf91cfd3e4",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "522690d4b48b7b36f2e12a4dc4869bf9a48ce34b40f941e443ac47d200e6b6ec",
+          "promptSha256": "12faf9a3df7a5b22ed641781d0d1ff285960a037810b67c1cddcca1f3280778e",
+          "sourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_006_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_006_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_front_depth.webp",
+          "provenance": {
+            "originalSha256": "89d9525df6819796e8392b736fb49dc479ee26c6051cfec64328d0de241a5f2f",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "01de227ffc2366fae2038b90c521e755bbdc496d17587fb47ccc54bf91cfd3e4",
+            "generatedSha256": "d389d0d569035c0fc4fcced429b0a3b5010b15d51ce8be99d0cd893d5ec01c92",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_006_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_006_high.png",
+        "image": "custom/pose/images/custom_pose_female_006_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_high.webp",
+        "provenance": {
+          "originalSha256": "26720b07c0854448026538ff1755cce662b076598ebdde8cd0287e7d656ea861",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "8818ce590de73eb01800206de4e15ddd8e1b693f17c6f680061c744cd0028934",
+          "promptSha256": "a859f2b81067a887998fb4eb42175d86856e8d92178cf414a46d056477629712",
+          "sourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_006_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_006_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_high_depth.webp",
+          "provenance": {
+            "originalSha256": "1d79e6c174c3a22a6d50eaf3a6d9ea34df9745b27421762521f118f7111aeff9",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "26720b07c0854448026538ff1755cce662b076598ebdde8cd0287e7d656ea861",
+            "generatedSha256": "305849ddb95e78dbe97cf305d44a344d2e60609571930c2bc4f74260dbf23cda",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_006_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_006_low.png",
+        "image": "custom/pose/images/custom_pose_female_006_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_low.webp",
+        "provenance": {
+          "originalSha256": "c23b05155f01e69c932595fe0dd91013c5f1801a5c6cd06414bbdfca83755edf",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "eae20461f35affa0c5325420212ff53ad8506da483c041c25f472da3805a4cd5",
+          "promptSha256": "ea07d574ee992aa8e33305a437f8fc4ad2afa79c6363f246e874c494b9bbb91b",
+          "sourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_006_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_006_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_low_depth.webp",
+          "provenance": {
+            "originalSha256": "5760c2a2ec9781a4b1c9b191793292044469d9b117a139348b8b4eafc5609dcd",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "c23b05155f01e69c932595fe0dd91013c5f1801a5c6cd06414bbdfca83755edf",
+            "generatedSha256": "b11fcea82991d5147d6305092800501eeb6f3dc72fc140b6fe4a5f35344d3797",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_006_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_006_side.png",
+        "image": "custom/pose/images/custom_pose_female_006_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_side.webp",
+        "provenance": {
+          "originalSha256": "6f0fd043c0de6cab104eaec8a05e14bc10657cfa01aefa7e25ac08c1bf9f0d6d",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "8a6f813053a82a098ff06a072c54876f47f3d063c917af2dd6023b7634cdb50f",
+          "promptSha256": "785b6991e641dfc4b1bbb8cc7346b20d5b04f117903d36aa3612c261ba01a6e8",
+          "sourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711",
+          "refinedCamera": true
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_006_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_006_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_side_depth.webp",
+          "provenance": {
+            "originalSha256": "ddfe085f19462f7c845de62b1be904e0f6a36dfbf2c316afce6f8ee96fecb065",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "6f0fd043c0de6cab104eaec8a05e14bc10657cfa01aefa7e25ac08c1bf9f0d6d",
+            "generatedSha256": "26c35cbed7efeef119d3cc89e9d3ad17cb7c297e07b0f1d3be8d69484c9415a5",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_006_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_006_diag.png",
+        "image": "custom/pose/images/custom_pose_female_006_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_diag.webp",
+        "provenance": {
+          "originalSha256": "5fa6fc7dfaeb995b61b155b0ee4237fe26e0d0e85b78bc4713b90b4e139a65da",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "eec97186f01ab0de0b9b26faaf0db03ebdc9d274d150eed47ba125f2bdc15637",
+          "promptSha256": "c3733bc94872d8245695e3d3b1d1e47cd01216a64e8b0450949ba85e13775ef4",
+          "sourceSha256": "51d3b5523aa830482dffbed9a4b3985d1b094cb1b8e449efca6bbe010ad19711"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_006_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_006_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_006_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "97442555efbad5f96ca073c6f07e9d3344be9bb2916e0226aa89a4a9e8ae2c8a",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5fa6fc7dfaeb995b61b155b0ee4237fe26e0d0e85b78bc4713b90b4e139a65da",
+            "generatedSha256": "e99d38eedd6899222ec1e9ba7aa3012c3b50acfec74255313a1f4419ff590353",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_007",
+    "kind": "pose",
+    "code": "FP-007",
+    "title": {
+      "zh": "模特舞蹈 · 交叉转身",
+      "en": "Model dance · Twisting cross-step turn"
+    },
+    "category": {
+      "id": "twisting",
+      "zh": "扭身",
+      "en": "Twisting"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 06",
+      "en": "Model dance · 06"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 交叉转身 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Twisting cross-step turn extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "14c5dd83cca78bbb8f1f72fda55e214da7ecb12fe63f46cff056dcea8a26646a",
+      "approvedSourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_007_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_007_front.png",
+        "image": "custom/pose/images/custom_pose_female_007_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_front.webp",
+        "provenance": {
+          "originalSha256": "14c5dd83cca78bbb8f1f72fda55e214da7ecb12fe63f46cff056dcea8a26646a",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "25ed423fcd05e5591da0f02a7bcc6dba492f98441bb4ee4d437ad7c8efa68476",
+          "promptSha256": "82246e7ca677d90f1500c811b283eadc5b87d96e6172a1734eded9f8e9317772",
+          "sourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_007_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_007_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_front_depth.webp",
+          "provenance": {
+            "originalSha256": "df0e87759bb057f64545cef42a597a67d5837e5b20b2b15c9e13031c3cd20576",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "14c5dd83cca78bbb8f1f72fda55e214da7ecb12fe63f46cff056dcea8a26646a",
+            "generatedSha256": "f0a46b923becc567500adb53442d7371c40ca261024e0ca3be76718970c9112f",
+            "promptSha256": "42f4a09a881e3f328594d1bfdb8e1370dc87e36728cba3e016615063edac8489"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_007_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_007_high.png",
+        "image": "custom/pose/images/custom_pose_female_007_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_high.webp",
+        "provenance": {
+          "originalSha256": "7977ecbcafb02e9f8a7ba87306d17a7d3e1e7cb14881a6d388f452a3b25955cf",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "51db7c45dbff451bfedb226dc97a3ed72beba67335bda6269499d9c04fd91914",
+          "promptSha256": "0c36ef2d329bf28e021cef6bde976c85ff776653036aedbef8f04e77d9f28b0a",
+          "sourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_007_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_007_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_high_depth.webp",
+          "provenance": {
+            "originalSha256": "2f8360d83d82b3073b7cff39e68caccf6c464872a93641699d969004c4f429bb",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "7977ecbcafb02e9f8a7ba87306d17a7d3e1e7cb14881a6d388f452a3b25955cf",
+            "generatedSha256": "7d39f0b53efb7ccf6d6cc24f19d347c59d47937d91e1f17860966c804c725f70",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_007_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_007_low.png",
+        "image": "custom/pose/images/custom_pose_female_007_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_low.webp",
+        "provenance": {
+          "originalSha256": "6429f8c8bfe4d5cc01fd185d605b2c7a1619fab2a8d8d8e00a15624de55359c0",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "8c0911c369304d66a2d961f6139d37156748b73a1208a3700dbd3aaec51db954",
+          "promptSha256": "60b1ecb92777dd6226e5b5ff61d1a1b8893a5183753337b6169c6cde6b70cb17",
+          "sourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_007_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_007_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_low_depth.webp",
+          "provenance": {
+            "originalSha256": "2cc851fdd5e399a29effdd3662ddad37c101933c9c8c81476dc173075f44ad72",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "6429f8c8bfe4d5cc01fd185d605b2c7a1619fab2a8d8d8e00a15624de55359c0",
+            "generatedSha256": "1e6145f3134928952b4a98f1c1a3e81f03ddf19ef76330850629d43531fffd36",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_007_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_007_side.png",
+        "image": "custom/pose/images/custom_pose_female_007_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_side.webp",
+        "provenance": {
+          "originalSha256": "3047d5e8ee3648dce0ba50be2dce4a5ad23af608941ecc9bbd639cf61a81b8c3",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "9da0237cc23b5108acb1e8ce4d322e8305cdc1e6d9ac5d8f93c94bf26bd497de",
+          "promptSha256": "04d1701485b7bab8ccf5c5fcd8afde4d90dc65ff28eeb85fdc852d8bf88fe209",
+          "sourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_007_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_007_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_side_depth.webp",
+          "provenance": {
+            "originalSha256": "08f22fe7610092194c36a2c1d947e554da021603293c5c5175d49f3d4710931c",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3047d5e8ee3648dce0ba50be2dce4a5ad23af608941ecc9bbd639cf61a81b8c3",
+            "generatedSha256": "68ec8c6e319cac004236125af40b2229dbf561d2c82513ce874ba9c51abddd5e",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_007_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_007_diag.png",
+        "image": "custom/pose/images/custom_pose_female_007_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_diag.webp",
+        "provenance": {
+          "originalSha256": "3999e6486eb0a8bf312c79bb58fd85ed5b08146602d215ec5795a0b9ffa57935",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "f41df01dd9c7f6f3f59fb69f04cd53b76785ea3b4d780ae86d6cb1b641a1da18",
+          "promptSha256": "3b834cc42906b67c0df388ef6b98ddecc5b3fd7233431a2a35b07893a19acfbc",
+          "sourceSha256": "e9e0e1f451e887928f93fa91dd5e2a45e8f40d7293fd230a681927f20f97fc71"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_007_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_007_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_007_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "d4dc7013272746bcfe83b421ee8446a91e50bba9f8d854d5f455b4d252726322",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3999e6486eb0a8bf312c79bb58fd85ed5b08146602d215ec5795a0b9ffa57935",
+            "generatedSha256": "3be8e0bd2c8b45333a4f4c08b8ba5e52244d2ddc4b82b6843d2e8c893ab6358a",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_008",
+    "kind": "pose",
+    "code": "FP-008",
+    "title": {
+      "zh": "模特舞蹈 · 侧跪伸腿",
+      "en": "Model dance · Side kneel extended leg"
+    },
+    "category": {
+      "id": "kneeling",
+      "zh": "跪立",
+      "en": "Kneeling"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 07",
+      "en": "Model dance · 07"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 侧跪伸腿 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Side kneel extended leg extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ffb01fc4da48e6233b453b07b8ab506e284f0073c4da25ad7392c2d0bd470ded",
+      "approvedSourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_008_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_008_front.png",
+        "image": "custom/pose/images/custom_pose_female_008_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_front.webp",
+        "provenance": {
+          "originalSha256": "ffb01fc4da48e6233b453b07b8ab506e284f0073c4da25ad7392c2d0bd470ded",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "67a568e7a93bbc120adab283066aec71b4f3df29459e63c47584aad91950ce33",
+          "promptSha256": "b90939555e2fdc1ed267dd37da314c256e1c98c2601713fed3817737fff4105c",
+          "sourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_008_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_008_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_front_depth.webp",
+          "provenance": {
+            "originalSha256": "ffb523b4036c00333a9c306fd3b6fc39f46b3a1ed467961f514ef25a2311ea27",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "ffb01fc4da48e6233b453b07b8ab506e284f0073c4da25ad7392c2d0bd470ded",
+            "generatedSha256": "418ac3b195cb3c166669f5bd21c31e724d4226f32fa5c9dcf114027011ee42c9",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_008_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_008_high.png",
+        "image": "custom/pose/images/custom_pose_female_008_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_high.webp",
+        "provenance": {
+          "originalSha256": "3e20bd6f3211c285735e3837a10799fcdc229bb97e30cf8d0b461410ddb940d9",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "ea70ac24bfc66c38f4a9c996a4affa1da4fa89d457c3a336deec493a8c1edb3c",
+          "promptSha256": "669f4afa999c40e7b715911066cb4f773ccf301e31d99f871d2ffd8e7d108ad0",
+          "sourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_008_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_008_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_high_depth.webp",
+          "provenance": {
+            "originalSha256": "7006a0b7d8f8db4559f5da2d17360586ed3ea82ed099c9bb0485db782d600529",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "3e20bd6f3211c285735e3837a10799fcdc229bb97e30cf8d0b461410ddb940d9",
+            "generatedSha256": "820cdeb40a29871ad77c05a1458584636c234e4eaebd9c18496fe2cc55d24782",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_008_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_008_low.png",
+        "image": "custom/pose/images/custom_pose_female_008_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_low.webp",
+        "provenance": {
+          "originalSha256": "bb89d3ef5d82d209dc338afaa2a280e1a73ff43286d8430dedbd9aa0787afbc7",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "3053a418355c558789aa11d26c97ca1f827b02328b59aacc2f36e5d17c11c7a5",
+          "promptSha256": "93ab548520059281ec612db3ba19c1957076dcd7e9096c2245cc6220d38092e1",
+          "sourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_008_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_008_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_low_depth.webp",
+          "provenance": {
+            "originalSha256": "ae4b060895e103f0795fc86dd02dd27b33930ed326df36e13559155cb72be67a",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "bb89d3ef5d82d209dc338afaa2a280e1a73ff43286d8430dedbd9aa0787afbc7",
+            "generatedSha256": "7ae1245b5a8d61880ec0b17f401eca21cd34d049733017b0d046b2acee9a77ae",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_008_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_008_side.png",
+        "image": "custom/pose/images/custom_pose_female_008_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_side.webp",
+        "provenance": {
+          "originalSha256": "e6472944643225aa405cc73932f75d2e06f9626aa173ebf6df52094f3a8c96bc",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "5ba189324bc293f5fceb84129bf3970bb5d880da3c7dbcb5bb288c0f6257b8ec",
+          "promptSha256": "2874d5b8b6f0372580dacf4fa06fcaf83754cf572d367a4d7846461c8c30f08c",
+          "sourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce",
+          "refinedCamera": true
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_008_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_008_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_side_depth.webp",
+          "provenance": {
+            "originalSha256": "044805bffb89ff0dfb00aed051703d5f03c5e1610730a6955ed628e86d9c51ed",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "e6472944643225aa405cc73932f75d2e06f9626aa173ebf6df52094f3a8c96bc",
+            "generatedSha256": "7b40138e173e464f8d9d931e24a4dbec39914356b1301b789d209e6c3be57162",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_008_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_008_diag.png",
+        "image": "custom/pose/images/custom_pose_female_008_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_diag.webp",
+        "provenance": {
+          "originalSha256": "52e308895cca9e83114d175f86ebd57227bb9e8e1416e4a2169bd8f37e4623cf",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "81ae09883e8de7e74cd4fe89796984983bb923a990ea1c36a99e0b8e57c21803",
+          "promptSha256": "0aa742743063f5c92f37de378395a6bc516bf36961c2096aabee58d2fe3cd176",
+          "sourceSha256": "d4adc4458529475076b45fc042e35261427e215f7b530085868c21de2ab17cce"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_008_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_008_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_008_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "028c741fc9874e67b84be6de2a487a8dd0094458d589389deafc4c298bccb0fd",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "52e308895cca9e83114d175f86ebd57227bb9e8e1416e4a2169bd8f37e4623cf",
+            "generatedSha256": "b0754b5cdf9f54d99a652162a47453cb86eb21ca0c54b64643f5e917440b0286",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_009",
+    "kind": "pose",
+    "code": "FP-009",
+    "title": {
+      "zh": "模特舞蹈 · 单腿高踢",
+      "en": "Model dance · Single-leg high kick"
+    },
+    "category": {
+      "id": "movement",
+      "zh": "行走与跑步",
+      "en": "Walking & running"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 08",
+      "en": "Model dance · 08"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 单腿高踢 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Single-leg high kick extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "2330b96be9e14a1e05f77cc44875777803d50d26803f86fa217c7d164afaff6d",
+      "approvedSourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_009_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_009_front.png",
+        "image": "custom/pose/images/custom_pose_female_009_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_front.webp",
+        "provenance": {
+          "originalSha256": "2330b96be9e14a1e05f77cc44875777803d50d26803f86fa217c7d164afaff6d",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "b127ed9d28209717de158d014a08a15ee05e263297c202d63f870aba3019616f",
+          "promptSha256": "1dbc69fef72b7d8b79e6f8424cb19429754f78e1964e4ca3214ac7bdf87d29a8",
+          "sourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_009_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_009_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_front_depth.webp",
+          "provenance": {
+            "originalSha256": "d19ef086a08450021bd5f7d7da45cc458d937b96e4404f8a3a60eb78d2082c75",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "2330b96be9e14a1e05f77cc44875777803d50d26803f86fa217c7d164afaff6d",
+            "generatedSha256": "2e8dbaf9b0bcebd9af8754977b0e24b2020dc88a2125e1aa84b730496a967f2d",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_009_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_009_high.png",
+        "image": "custom/pose/images/custom_pose_female_009_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_high.webp",
+        "provenance": {
+          "originalSha256": "cb1cfcb0d113313643e3cff079f65f965afad1b97847a04ec70983d1f6f6cd44",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "4caab15a9ed4e0d7dc8ffddddfc478d580c8c5c0f5c44b096ced638fef0de3cf",
+          "promptSha256": "816de3b644c9591a748e5586a6ca84e126c8ec61337f12eaff04a9528d217d1f",
+          "sourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_009_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_009_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_high_depth.webp",
+          "provenance": {
+            "originalSha256": "7255d84aa6e415076f3e5eb126935e93e492ec66d7d0117df886e04a5ff5d5fa",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "cb1cfcb0d113313643e3cff079f65f965afad1b97847a04ec70983d1f6f6cd44",
+            "generatedSha256": "023a63afd1bc69554ab172c351ea366f7a97e6b4b5a6d5e893aa710454b441bc",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_009_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_009_low.png",
+        "image": "custom/pose/images/custom_pose_female_009_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_low.webp",
+        "provenance": {
+          "originalSha256": "226743b213d1ad897a24eef9ab4cc628c4d4b7269e32dfeedfa1e0880ee50751",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "ab3f74bb4139d5919048016e3a8b861b3e751d899ab5782ce1d4b69623a31f1c",
+          "promptSha256": "6d08d3c35c964457e885edbe4f02e6a5020c734191e58f4f001ffec66c3f2d56",
+          "sourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_009_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_009_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_low_depth.webp",
+          "provenance": {
+            "originalSha256": "37af01ba9fde5656b41b51067ab6f989a68dcee31cfa7219febb7bb225cee33a",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "226743b213d1ad897a24eef9ab4cc628c4d4b7269e32dfeedfa1e0880ee50751",
+            "generatedSha256": "1869187dbe21a053f1ffaaeeb9bc94383c9c4f1688c719c607e6652afc818f3e",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_009_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_009_side.png",
+        "image": "custom/pose/images/custom_pose_female_009_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_side.webp",
+        "provenance": {
+          "originalSha256": "a088087a34417e7ce0f567ae5aad1f265bd43f6d4e3f362e8b2c23c5bb834a67",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "41f343da237748beba9eb5ba941f3daa4c3a014941e3bdd52922602e95846c5b",
+          "promptSha256": "1836f2049c8ba389fabe0a0fdd616501e9cd22dad9295e3bc08839368fd4f003",
+          "sourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_009_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_009_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_side_depth.webp",
+          "provenance": {
+            "originalSha256": "d0a8fd095e0f94ca0fbe4f1af41ac982616fba8f83d4b19cc8d397f7863c8620",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "a088087a34417e7ce0f567ae5aad1f265bd43f6d4e3f362e8b2c23c5bb834a67",
+            "generatedSha256": "ebca5ab4facb4beafc3995b657c00760e461371a1358ef0b64b51f2bc89da26a",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_009_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_009_diag.png",
+        "image": "custom/pose/images/custom_pose_female_009_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_diag.webp",
+        "provenance": {
+          "originalSha256": "929f21d7f2133f27eeecb35b6fb67ead0947b66437b5f7a788460c4d8e56a5e7",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "1ed267820a344aa2a064e651b96058e7f208e5137786e622de48216762e56ef0",
+          "promptSha256": "c7e200d9a25fbd8bf5d89818afc0b401d9ff22267fc6b31d2bad323f25381b1f",
+          "sourceSha256": "49c1d12c293b93aa3de0009bff7ac29e84b4f4527e4adb6979dd94733fb2d402"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_009_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_009_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_009_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "42da7c9d3de18ae28555f9ad595e958f1df80cc3a690eb3ddea624bb255e73a1",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "929f21d7f2133f27eeecb35b6fb67ead0947b66437b5f7a788460c4d8e56a5e7",
+            "generatedSha256": "36283c13e074ce14cad9232b6e372e385718f18829e0165fd3bec352cb3ce011",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_010",
+    "kind": "pose",
+    "code": "FP-010",
+    "title": {
+      "zh": "模特舞蹈 · 跪姿伸臂",
+      "en": "Model dance · Kneeling overhead reach"
+    },
+    "category": {
+      "id": "kneeling",
+      "zh": "跪立",
+      "en": "Kneeling"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 09",
+      "en": "Model dance · 09"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 跪姿伸臂 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Kneeling overhead reach extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ff00e829273ec6c590c4e1aefd81fb5bc371937b46201d86fc639d717a72ba81",
+      "approvedSourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c",
+      "supplementalAction": false,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_010_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_010_front.png",
+        "image": "custom/pose/images/custom_pose_female_010_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_front.webp",
+        "provenance": {
+          "originalSha256": "ff00e829273ec6c590c4e1aefd81fb5bc371937b46201d86fc639d717a72ba81",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "cdddeb51f69d073e8b04a284712f081f68446946ae9c0bf6aef7e447455f2662",
+          "promptSha256": "4c534028631dc30d56dca396ae5d3dfc808f459a2b95eaa1bdce73ce914c0961",
+          "sourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_010_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_010_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_front_depth.webp",
+          "provenance": {
+            "originalSha256": "f3dafe58717ab4496f604f80c4937365edec61075078eac13e2cc9c16df90731",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "ff00e829273ec6c590c4e1aefd81fb5bc371937b46201d86fc639d717a72ba81",
+            "generatedSha256": "21ca304dab034879ff8f78b326f98b513ad223165431a40bf3ef776d8470ccea",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_010_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_010_high.png",
+        "image": "custom/pose/images/custom_pose_female_010_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_high.webp",
+        "provenance": {
+          "originalSha256": "5b44fbde5ae27365b3227c2ce162b5a88e800d21c8de0670d64c9627916a4a0f",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "3ccb556fa8e623ba3bef52a0c8fc538539a4fca0d7d884e774c9ac0799235498",
+          "promptSha256": "a1a8bb68d8525ec85d9f2305a36eb7882eee3f02831aeec8defd62bf920a2651",
+          "sourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_010_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_010_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_high_depth.webp",
+          "provenance": {
+            "originalSha256": "54503ea4f8a2a779c9cd9172feeaea6b56d635ace15e6e96ff504189baecb5e8",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "5b44fbde5ae27365b3227c2ce162b5a88e800d21c8de0670d64c9627916a4a0f",
+            "generatedSha256": "7fb58942053284e35d8314ddcd4ae5e111c72f3184f0ee025175503c8dcbdb47",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_010_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_010_low.png",
+        "image": "custom/pose/images/custom_pose_female_010_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_low.webp",
+        "provenance": {
+          "originalSha256": "16c72ed581774378eae25ff6db974ea032e730bc72b50a8c80c2fd071101bbd3",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "1f308626031438eb018f0410173d17027c95e5d3545195d4e9ca02c2a7652829",
+          "promptSha256": "09dbc0b03fb1684c38115db6268d7e3d8ed90e732b186b186447e9d1f9e8d50c",
+          "sourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_010_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_010_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_low_depth.webp",
+          "provenance": {
+            "originalSha256": "6fc237d4664303270bf99b10400065770f1f2f147aa06d921269a4afa15eeb58",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "16c72ed581774378eae25ff6db974ea032e730bc72b50a8c80c2fd071101bbd3",
+            "generatedSha256": "52d9538ef076c46ae8de51cf2d51d5332ec5820ea5933d8c26f7ef97b67e56f2",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_010_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_010_side.png",
+        "image": "custom/pose/images/custom_pose_female_010_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_side.webp",
+        "provenance": {
+          "originalSha256": "1aad9c2f995bc207ccf6b75e0053d1125c31f6aa23168804ca518bc6afef6010",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "3b24ab4e97ad2f1103899356c8ee57db2367ab7e2408511fc6fd1c58d47cc8a9",
+          "promptSha256": "6f9e847ee60d84ed6e20aa3151127471ae48b32024529954e633ffeaa0b931c4",
+          "sourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_010_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_010_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_side_depth.webp",
+          "provenance": {
+            "originalSha256": "cb7dbfa9d64650008bc76ff7ee15f53ea892d419cb65dac2ae8b5f4a0ca24941",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1aad9c2f995bc207ccf6b75e0053d1125c31f6aa23168804ca518bc6afef6010",
+            "generatedSha256": "a771cd9c38c48ac389b146c61147e633bed79618e40421fcce3b7b242a351ec9",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_010_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_010_diag.png",
+        "image": "custom/pose/images/custom_pose_female_010_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_diag.webp",
+        "provenance": {
+          "originalSha256": "4965263bd45438946ed2d0c0c5d1d7e62ab8ac178c0c4be8906e8b3486452ce8",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "3efbe215de519109aea7f81e9eeeb4819c1a94eedab4cb1cdac1c0a22b711b02",
+          "promptSha256": "1713b59e9481368a07e15dfa2a2d6b6f324795f814aaf61f843c692712c96f51",
+          "sourceSha256": "6bf4a6e1255376197bca10ea96964c90f164e208c091e913d79d14389f21682c"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_010_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_010_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_010_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "578929611796b9b88b96e77a92725ec1c60909c86f77da491be79f4cc1c2dd02",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "4965263bd45438946ed2d0c0c5d1d7e62ab8ac178c0c4be8906e8b3486452ce8",
+            "generatedSha256": "c545e7d9dcf8bd0fdb5ac8c489fd7e03f06664aa308b76d17096d21be6899bd0",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_female_011",
+    "kind": "pose",
+    "code": "FP-011",
+    "title": {
+      "zh": "模特舞蹈 · 踏步斜展",
+      "en": "Model dance · Diagonal step and reach"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "模特舞蹈 · 10",
+      "en": "Model dance · 10"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 舞蹈 女性 踏步斜展 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿 深度图",
+      "en": "model dance female Diagonal step and reach extracted pose five views front high low side three-quarter structural line art depth"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "dance",
+        "zh": "舞蹈",
+        "en": "Dance"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "model-dance-10x5-depth-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "1df393cc7ed321c74a579055ffb658be07a216c378b26193bb4056b6eb5f47ef",
+      "approvedSourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88",
+      "supplementalAction": true,
+      "note": {
+        "zh": "根据已确认的结构线稿扩展五视角与配套 AI 相对深度；只改变观察视角，非精确三维标定。第10组为补充动作。",
+        "en": "Five views and paired AI relative depths derived from the approved construction drawing; camera-only intent, not calibrated 3D. Group 10 is a supplemental action."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_011_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_011_front.png",
+        "image": "custom/pose/images/custom_pose_female_011_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_front.webp",
+        "provenance": {
+          "originalSha256": "1df393cc7ed321c74a579055ffb658be07a216c378b26193bb4056b6eb5f47ef",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "b6547011834268436365939a0010b3809e67d7b14bcf68f070c1a7964cad8fd7",
+          "promptSha256": "ef5a0a4bedba082f274e43d70fc49fd713583a2ce4e6cd1fb624a73cd5ba4a92",
+          "sourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_011_front_depth.png",
+          "image": "custom/pose/images/custom_pose_female_011_front_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_front_depth.webp",
+          "provenance": {
+            "originalSha256": "704ffffa2fc8d571b781d64041ddfd5c8f353bcba3367024303978d48ae83a4f",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "1df393cc7ed321c74a579055ffb658be07a216c378b26193bb4056b6eb5f47ef",
+            "generatedSha256": "56f2718a793e89d968fa52c6c628852bab4b2a29c8e9e650e7c0822c9d207196",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_011_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_011_high.png",
+        "image": "custom/pose/images/custom_pose_female_011_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_high.webp",
+        "provenance": {
+          "originalSha256": "055a673dc8610d8bb7cdcc7f6e41e58b82d759a42f30deb7261236e028729983",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "f8ebeb498f1f4eab1818b4f4bbbd7eb8f72b2bb8adf41c776bf6c2c9b22f1e65",
+          "promptSha256": "66066d95b9a867e51a95e0543c6edba9d73c005b1b5118a30fdbcb3b63ad84ac",
+          "sourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_011_high_depth.png",
+          "image": "custom/pose/images/custom_pose_female_011_high_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_high_depth.webp",
+          "provenance": {
+            "originalSha256": "075f78f525e9c5458a7fbb589d4768d47b83a8ed5ead022d0289735c4038348f",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "055a673dc8610d8bb7cdcc7f6e41e58b82d759a42f30deb7261236e028729983",
+            "generatedSha256": "6affc5cdd091eb60a0b44ffa4700077dafd214cb1c8c01ff2b28feafad78eb54",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_011_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_011_low.png",
+        "image": "custom/pose/images/custom_pose_female_011_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_low.webp",
+        "provenance": {
+          "originalSha256": "9eeec9e3314a1ec2a4b9ec3eef2f463aff0c9b1bc4d7b4356f03e177cef12341",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "52299f9d7b37b138d567eb0059b1e5187f5cbc9790d2f426aacefd151f01a56f",
+          "promptSha256": "e2f0101ba90ac4e41c95de694a09731e126859dc1d698bc59cc153c422f55754",
+          "sourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_011_low_depth.png",
+          "image": "custom/pose/images/custom_pose_female_011_low_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_low_depth.webp",
+          "provenance": {
+            "originalSha256": "452985edba4e258cfb65a02020f73f958880f41e623ab1ad47478fcdc0ed6b5a",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "9eeec9e3314a1ec2a4b9ec3eef2f463aff0c9b1bc4d7b4356f03e177cef12341",
+            "generatedSha256": "983db79c6412dd7f2f9d2fedeb12fa38699012ccec6a9655467bceb2dc5ac058",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_011_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_011_side.png",
+        "image": "custom/pose/images/custom_pose_female_011_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_side.webp",
+        "provenance": {
+          "originalSha256": "6fcddc4e686cd3e045456b02f367d10222d2c7655600cb5a90fd208a5a51dcf9",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "1de7ab34e1dc8a015a50755833adcc17bb41e5911e656443a67440e1129a46cc",
+          "promptSha256": "12dc46255f1b6c3ed76cc90bd9909ead5dd0ff055172d3744d0ff139dd81ce4a",
+          "sourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_011_side_depth.png",
+          "image": "custom/pose/images/custom_pose_female_011_side_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_side_depth.webp",
+          "provenance": {
+            "originalSha256": "4605f4c900b98dab6a58423d848670658be8ccf2301e48be979feab34e9e90ae",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "6fcddc4e686cd3e045456b02f367d10222d2c7655600cb5a90fd208a5a51dcf9",
+            "generatedSha256": "6d16dff9eba1be782828806615d7425327bfb9642f9faa5ce666e34ab03597b6",
+            "promptSha256": "e3df993079bd3490756876c71442e4c1a450c2f1d9de70890b28255dc0e9ab8f"
+          }
+        }
+      },
+      {
+        "id": "custom_pose_female_011_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_011_diag.png",
+        "image": "custom/pose/images/custom_pose_female_011_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_diag.webp",
+        "provenance": {
+          "originalSha256": "d9940051698033eab9f288d396be5b33f5df2b0439435873a5549d1e1c4f3d89",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "6c07d8fddee430f939ccbbbbd5b6af961dac9f93a702e9b30deac376b5bf0873",
+          "promptSha256": "06e7fb9f8fb5df35c8b50af076b75b58f8cc39f412df4d762d59e31af2237187",
+          "sourceSha256": "c6817a27940f90dd58235e19622117328b34f16681fc78725b9f53e9ff36fa88"
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_female_011_diag_depth.png",
+          "image": "custom/pose/images/custom_pose_female_011_diag_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_female_011_diag_depth.webp",
+          "provenance": {
+            "originalSha256": "26ecfd107d5da7ade1e681bbe38a73a699d3638f2fe5622004e2b5462d6a2242",
+            "width": 1024,
+            "height": 1536,
+            "batch": "model-dance-10x5-depth-20261102",
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "aiInferred": true,
+            "calibrated": false,
+            "sourceSha256": "d9940051698033eab9f288d396be5b33f5df2b0439435873a5549d1e1c4f3d89",
+            "generatedSha256": "8180da25cafde2f8e2507d77d889bb651fabe457f6a2a62df58d7b78044a0abc",
+            "promptSha256": "520d38c807eeccb6e64df24d1ceb6c1e3c6e25212394e39ae1657d88d14ac79f",
+            "neutralGeometry": true
+          }
+        }
+      }
+    ]
   }
 ]

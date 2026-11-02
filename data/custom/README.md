@@ -39,6 +39,8 @@ Regional portraits: 22 fictional adult characters in 11 editorial country groups
 
 - `male-outfit-extract-20261102`：1 套男性写实服饰（MC-004），米色短背心、橄榄绿网眼短裤、绿色墨镜与黑色运动鞋，1024 × 1536 隐形人台展示。已去除人物、耳环、戒指与护腕；鞋履为 AI 补充搭配，原照片未展示。标签 `male`、`photo`，可搜索“男士米色短背心”。原始人物照片不纳入网站。
 
+- `model-dance-10x5-depth-20261102`：10组女性模特舞蹈姿势（FP-002 至 FP-011），共50个视角、50张配套AI相对深度图；1套白色挂脖上衣与红黑格纹百褶裙服饰（ST-007），鞋履为AI补配。姿势保持白底结构线稿，统一标签“模特”“舞蹈”；支持图库与选图器检索、独立视角切换及深度图。全套1024 × 1536；第10组为补充动作，原始照片不纳入网站。
+
 ## 添加素材 / Adding references
 
 ### 男性服饰制作规范 / Male outfit generation

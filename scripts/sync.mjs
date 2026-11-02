@@ -8,6 +8,7 @@ const sources = {
   costume: 'https://ai-costume-gallery.pages.dev/',
   'pose-zh': 'https://raw.githubusercontent.com/anhao/ai-pose-gallery-zh/main/data/pose-zh.json',
   portrait: 'https://ai-portrait-gallery.pages.dev/data/images.js',
+  'costume-anime': 'https://ai-costume-anime-gallery.pages.dev/',
 };
 export function extractDataset(html, marker = /\bconst\s+D\s*=\s*/) {
   // Parse JSON literals only. Never execute source-site scripts.
@@ -60,9 +61,12 @@ async function fetchText(url) {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const portraitOnly = process.argv.includes('--portrait-only');
+  const animeOnly = process.argv.includes('--costume-anime-only');
+  if (portraitOnly && animeOnly) throw Error('Choose only one source-specific sync option');
+  const only = portraitOnly ? 'portrait' : animeOnly ? 'costume-anime' : null;
   const entries = await Promise.all(
     Object.entries(sources)
-      .filter(([name]) => !portraitOnly || name === 'portrait')
+      .filter(([name]) => !only || name === only)
       .map(async ([name, url]) => {
         const text = await fetchText(url);
         const rows =
@@ -77,8 +81,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       }),
   );
   const datasets = Object.fromEntries(entries);
-  if (portraitOnly)
-    for (const name of ['pose', 'costume', 'pose-zh'])
+  if (only)
+    for (const name of Object.keys(sources).filter((name) => name !== only))
       datasets[name] = await readJson(`data/source/${name}.json`);
   // Validate all translations before replacing any local snapshots.
   const catalog = await normalize(
@@ -86,20 +90,17 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     datasets.costume,
     datasets['pose-zh'],
     datasets.portrait,
+    datasets['costume-anime'],
   );
-  const previous = portraitOnly ? await readJson('data/sync-manifest.json') : { sources: [] };
   const manifest = {
     syncedAt: new Date().toISOString(),
     imagesDownloaded: 0,
-    sources: [
-      ...previous.sources.filter((source) => !entries.some(([name]) => name === source.name)),
-      ...entries.map(([name, rows]) => ({
-        name,
-        url: sources[name],
-        records: rows.length,
-        sha256: createHash('sha256').update(JSON.stringify(rows)).digest('hex'),
-      })),
-    ],
+    sources: Object.entries(sources).map(([name, url]) => ({
+      name,
+      url,
+      records: datasets[name].length,
+      sha256: createHash('sha256').update(JSON.stringify(datasets[name])).digest('hex'),
+    })),
   };
   for (const [name, rows] of entries)
     await writeFile(new URL(`data/source/${name}.json`, root), JSON.stringify(rows));

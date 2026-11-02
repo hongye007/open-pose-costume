@@ -82,7 +82,7 @@ test('custom and anime filters intersect with categories and bilingual search', 
   assert.equal(anime.length, 30);
   assert.equal(
     catalog.items.filter((item) => matchesExtension(item, 'builtin', 'anime')).length,
-    0,
+    1320,
   );
   assert.ok(anime.some((item) => item.extended));
   assert.ok(anime.some((item) => !item.extended && item.category.id === 'summer'));
@@ -216,8 +216,8 @@ test('custom depth keeps project-base URLs, generation uploads and history seman
   const poses = resolved.items.filter(
     (item) => item.kind === 'pose' && item.collection === 'custom' && hasPoseDepth(item),
   );
-  assert.equal(poses.length, 14);
-  assert.equal(poses.flatMap((item) => item.variants).length, 70);
+  assert.equal(poses.length, 24);
+  assert.equal(poses.flatMap((item) => item.variants).length, 120);
   const selected = withPoseDepth(poses[0]);
   const reference = {
     kind: 'pose',

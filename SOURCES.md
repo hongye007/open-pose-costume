@@ -2,12 +2,13 @@
 
 Portrait metadata, WebP thumbnails and PNG originals: https://ai-portrait-gallery.pages.dev/ — creator: あぎ · https://x.com/agi_aibusi
 
-| Dataset                                                    | Source                                      | Creator                        |
-| ---------------------------------------------------------- | ------------------------------------------- | ------------------------------ |
-| Pose metadata, thumbnails, full-resolution references      | https://ai-pose-gallery.pages.dev/          | ギア · https://x.com/giaaibusi |
-| Optional pose depth-map thumbnails and originals           | https://ai-pose-depth-gallery.pages.dev/    | ギア · https://x.com/giaaibusi |
-| Costume metadata, thumbnails, WebP previews, PNG originals | https://ai-costume-gallery.pages.dev/       | ギア · https://x.com/giaaibusi |
-| Chinese pose names                                         | https://github.com/anhao/ai-pose-gallery-zh | Anhao                          |
+| Dataset                                                          | Source                                      | Creator                        |
+| ---------------------------------------------------------------- | ------------------------------------------- | ------------------------------ |
+| Pose metadata, thumbnails, full-resolution references            | https://ai-pose-gallery.pages.dev/          | ギア · https://x.com/giaaibusi |
+| Optional pose depth-map thumbnails and originals                 | https://ai-pose-depth-gallery.pages.dev/    | ギア · https://x.com/giaaibusi |
+| Costume metadata, thumbnails, WebP previews, PNG originals       | https://ai-costume-gallery.pages.dev/       | ギア · https://x.com/giaaibusi |
+| Anime costume metadata, thumbnails, WebP previews, PNG originals | https://ai-costume-anime-gallery.pages.dev/ | ギア · https://x.com/giaaibusi |
+| Chinese pose names                                               | https://github.com/anhao/ai-pose-gallery-zh | Anhao                          |
 
 ## What is stored
 
@@ -69,13 +70,21 @@ The source permits individual reference use for creating works, including commer
 
 原站允许单张用于作品制作参考（含商业作品），明确禁止批量下载（含自动获取）、图片再分发、转载与转售。现有姿势与服饰归档授权不视为自动覆盖深度图，完整现行条款以原站为准。
 
+## Anime costume library / 动漫服饰库
+
+Read on 2026-11-02 (Asia/Shanghai). The anime costume source contains 1,320 outfits across eight categories. Only JSON metadata, locally translated labels and upstream image URLs are indexed. Internal IDs use `anime_costume_` and visible codes use `ANIME-` to avoid collisions with photographic outfits. Images remain on the source site and are excluded from `images:download`. Individual references selected in the browser may be loaded for preview or submitted to the user's configured image service.
+
+The source allows individual reference use for creating works, including commercial work, and prohibits bulk downloads (including automated retrieval), redistribution, republication and resale of image data. Earlier archive permission is not assumed to cover this new source. Full current terms are available at the source site.
+
+本批仅索引 1,320 套动漫服饰的元数据、中英文标签与源站图片地址。使用独立编号避免与写实服饰冲突；图片不纳入仓库或批量归档命令。浏览器按需读取展示或用户选中的单张原图，用于预览及发送到用户配置的生图服务。原站允许单张参考创作（含商业作品），禁止批量下载、图片再分发、转载和转售；此前归档授权不自动覆盖此新增来源，完整现行条款以原站为准。
+
 ## 自建扩展 / Custom extensions
 
 自建素材清单位于 `data/custom/`，图片独立位于 `public/custom/{costume,pose,character}/`，随网站发布，不混入上游快照或根目录图片归档。首批包含 30 套动漫服饰和 1 套月纹服饰提取图，均使用维护者提供的参考素材通过 Atomflow `gpt-image-2` 重绘或提取。AI 重绘不是原始细节恢复；批次、模型和原图哈希见各条目的 `provenance`。这些图片不自动适用代码的 MIT 授权。原有上游条目的图片链接保持原样。
 
-截至 2026-11-02，自建扩展包含 41 套服饰、14 组五视角姿势（70 张线稿及 70 张配套深度图）、28 张虚构成年人物参考。新服饰采用去除人物的隐形人台展示；补充鞋履等原照片未展示的部分在条目中注明。自建深度图通过原始线稿由 AI 推断生成，不取自上游深度图库，也不是精确三维测量；人物国家／地区仅为编辑分组，不推定真实国籍或代表性外貌。原始用户人物照片不随网站收录，具体批次与使用说明见 [自建扩展指南](data/custom/README.md)。
+截至 2026-11-02，自建扩展包含 42 套服饰、24 组五视角姿势（120 张线稿及 120 张配套深度图）、28 张虚构成年人物参考。新服饰采用去除人物的隐形人台展示；补充鞋履等原照片未展示的部分在条目中注明。自建深度图通过原始线稿由 AI 推断生成，不取自上游深度图库，也不是精确三维测量；人物国家／地区仅为编辑分组，不推定真实国籍或代表性外貌。原始用户人物照片不随网站收录，具体批次与使用说明见 [自建扩展指南](data/custom/README.md)。
 
-As of November 2, 2026, the custom collection contains 41 outfits, 14 five-view pose groups (70 line-art images and 70 paired depth maps), and 28 fictional adult portraits. Extracted outfits use ghost-mannequin styling with the person removed; provenance identifies additions absent from the source, such as shoes. Custom depth maps are AI-inferred from the line art, not obtained from the upstream depth gallery or calibrated 3D measurements. Portrait countries/regions are editorial groups, not inferred nationalities or representative appearances. Original user-supplied person photos are not shipped with the website. See the [custom extension guide](data/custom/README.md) for batches and usage notes.
+As of November 2, 2026, the custom collection contains 42 outfits, 24 five-view pose groups (120 line-art images and 120 paired depth maps), and 28 fictional adult portraits. Extracted outfits use ghost-mannequin styling with the person removed; provenance identifies additions absent from the source, such as shoes. Custom depth maps are AI-inferred from the line art, not obtained from the upstream depth gallery or calibrated 3D measurements. Portrait countries/regions are editorial groups, not inferred nationalities or representative appearances. Original user-supplied person photos are not shipped with the website. See the [custom extension guide](data/custom/README.md) for batches and usage notes.
 
 自建素材需单独授权：可自由学习和个人使用，但不可商用。未经事先书面授权，拒绝任何形式的分发、再分发、转载、打包、下载提供或转售；限制也适用于编辑或生成的衍生图片。需要在其他项目、网站、模型或数据集中使用时，请先联系维护者。
 

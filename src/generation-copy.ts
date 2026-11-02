@@ -66,7 +66,7 @@ export const generationCopy = {
     invalidConfig: '请检查尺寸与质量设置。',
     storageFailed: '浏览器无法保存配置，请检查存储权限后重试。',
     missingReference: '请先选择参考图并填写生成描述。',
-    referenceFailed: '参考原图读取失败，请检查图片连接后重试。',
+    referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
     networkFailed: '连接失败，请检查网络，以及服务是否支持浏览器跨域请求。',
     timedOut: '生成超过 3 分钟，请稍后重试。',
@@ -152,7 +152,7 @@ export const generationCopy = {
     storageFailed: 'Settings could not be saved. Check browser storage permissions and try again.',
     missingReference: 'Select a reference and enter a generation prompt.',
     referenceFailed:
-      'The original reference could not be read. Check the image connection and retry.',
+      'The original reference could not be read. Check the image URL, network and image host CORS settings, then retry.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
     networkFailed:

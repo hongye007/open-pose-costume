@@ -4,13 +4,15 @@ import vocabulary from '../data/vocabulary.json';
 export type View = 'all' | 'pose' | 'costume' | 'character' | 'saved' | 'studio';
 export type Sort = 'curated' | 'name' | 'code';
 export const angles = ['front', 'high', 'low', 'side', 'diag'] as const;
-export const subjectTagIds = ['female', 'male'] as const;
+export const subjectTagIds = ['female', 'male', 'model', 'dance'] as const;
 export function isSubjectTag(id: string) {
   return subjectTagIds.some((value) => value === id);
 }
 const tagVocabulary: Record<string, { zh: string; en: string }> = {
   female: { zh: '女性', en: 'Female' },
   male: { zh: '男性', en: 'Male' },
+  model: { zh: '模特', en: 'Model' },
+  dance: { zh: '舞蹈', en: 'Dance' },
   photo: { zh: '写实', en: 'Photographic' },
   anime: { zh: '动漫', en: 'Anime' },
   'line-art': { zh: '结构线稿', en: 'Structural line art' },
