@@ -64,7 +64,7 @@
 
 [浏览模特舞蹈姿势 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=pose&collection=custom&tag=dance#collection) · [浏览男性姿势 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=pose&collection=custom&tag=male#collection) · [浏览男性服饰 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=costume&collection=custom&tag=male&style=photo#collection) · [浏览自建人物 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=character&collection=custom#collection)
 
-![男性素材与多地区人物：三个 AI 生成搭配示例、11 国人物分组及当前参考库数量（5:3）](docs/images/library-expansion-20261102-zh.webp)
+![男性素材与多地区人物：三个 AI 生成搭配示例、11 国人物分组及当前参考库数量（5:3）](docs/images/male-regional-references-5x3-zh-81e48837.webp)
 
 ## 查找与收藏
 

@@ -64,7 +64,7 @@ Find inspiration, combine references and generate characters in one place.
 
 [Browse model/dance poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=dance#collection) · [Browse male poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=character&collection=custom#collection)
 
-![Male references and regional portraits: three AI-generated outfit examples, 11 editorial country groups and current library counts (5:3)](docs/images/library-expansion-20261102-en.webp)
+![Male references and regional portraits: three AI-generated outfit examples, 11 editorial country groups and current library counts (5:3)](docs/images/male-regional-references-5x3-en-5c3fbea0.webp)
 
 ## Browse and save
 
