@@ -299,6 +299,7 @@ export async function generateReferenceImage(
     const endpoint = imageRequestEndpoint(
       imageEndpoint(valid.baseUrl),
       import.meta.env.DEV && !import.meta.env.SSR,
+      import.meta.env.VITE_IMAGE_PROXY_URL,
     );
     const response = await fetcher(endpoint, {
       method: 'POST',

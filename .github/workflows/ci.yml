@@ -28,6 +28,8 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build -- --base /${{ github.event.repository.name }}/
+        env:
+          VITE_IMAGE_PROXY_URL: ${{ vars.IMAGE_PROXY_URL }}
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:

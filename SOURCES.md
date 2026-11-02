@@ -12,9 +12,9 @@ Portrait metadata, WebP thumbnails and PNG originals: https://ai-portrait-galler
 
 ## What is stored
 
-The metadata synchronization/build scripts store IDs, names, categories and remote image URLs. Browsers load visible images directly from the original sites, with lazy loading and `no-referrer`. There is no image proxy or image cache service. This project does not alter the source images.
+The metadata synchronization/build scripts store IDs, names, categories and remote image URLs. Browsers load visible reference images directly from the original sites, with lazy loading and `no-referrer`; there is no proxy or cache for browsing source images. The optional generation API Worker transports only user-initiated Atomflow generation requests and does not cache source images. This project does not alter the source images.
 
-Git 保存元数据、翻译、远程图片地址及下述图片归档。同步脚本不请求缩略图、预览图或原图。用户浏览时由浏览器直接加载原站图片，网页不使用图片代理或仓库归档地址，也没有对图片做弱化处理。
+Git 保存元数据、翻译、远程图片地址及下述图片归档。同步脚本不请求缩略图、预览图或原图。用户浏览时由浏览器直接加载原站图片，网页不使用素材图片代理或仓库归档地址，也没有对图片做弱化处理。可选的生图 API Worker 只转发用户主动发起的 Atomflow 生图请求，不缓存素材图片。
 
 The separate, explicitly invoked `npm run images:download` command archives covers and original PNGs under `pose/` and `costume/`. It includes all existing pose angles and extended categories. The 5,692 covers and originals are tracked in Git, while download manifests remain ignored. The archive is excluded from the website build; the website continues to use upstream image URLs.
 

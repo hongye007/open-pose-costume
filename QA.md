@@ -39,5 +39,6 @@ Archive directories, download records and review artifacts are excluded from Git
 - Missing references open the pairing board with a selection prompt and send no generation request.
 - Tests disable Vite WebSocket listeners to avoid port conflicts.
 - The default model is `gpt-image-2`; retired saved model settings migrate without removing the service URL or key.
+- Production Atomflow routing uses the configured fixed-destination Worker. Tests cover explicit `Authorization` preflight headers, origin and route rejection, request-size limits, byte-preserving multipart streaming and cookie removal.
 - Side-by-side and overlay previews were checked with local sample images in Chinese and English, including thumbnail switching and error/retry states. No live generation was requested.
 - The overlay slider responds to dragging, arrow keys and Home/End; its endpoints reveal the complete reference or result. The 390px viewport has no horizontal dialog overflow.

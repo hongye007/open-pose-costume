@@ -14,7 +14,10 @@ const api = await vite.ssrLoadModule('/src/generation.ts');
 after(() => vite.close());
 
 test('only the two exact Atomflow edit endpoints use the development transport', () => {
-  for (const [host, route] of [['atomflow.vip', 'site'], ['api.atomflow.vip', 'api']]) {
+  for (const [host, route] of [
+    ['atomflow.vip', 'site'],
+    ['api.atomflow.vip', 'api'],
+  ]) {
     const endpoint = `https://${host}/v1/images/edits`;
     assert.equal(imageRequestEndpoint(endpoint, true), `/__opc-image/${route}/v1/images/edits`);
     assert.equal(imageRequestEndpoint(endpoint, false), endpoint);
@@ -24,7 +27,33 @@ test('only the two exact Atomflow edit endpoints use the development transport',
     'https://atomflow.vip/custom/v1/images/edits',
     'https://atomflow.vip/v1/images/edits?target=other',
     'https://atomflow.vip.other.example/v1/images/edits',
-  ]) assert.equal(imageRequestEndpoint(endpoint, true), endpoint);
+  ])
+    assert.equal(imageRequestEndpoint(endpoint, true), endpoint);
+});
+
+test('production transport uses the configured proxy only for exact Atomflow endpoints', () => {
+  const proxy = 'https://open-pose-costume-image-proxy.example.workers.dev';
+  assert.equal(
+    imageRequestEndpoint('https://atomflow.vip/v1/images/edits', false, proxy),
+    `${proxy}/site/v1/images/edits`,
+  );
+  assert.equal(
+    imageRequestEndpoint('https://api.atomflow.vip/v1/images/edits', false, `${proxy}/edge/`),
+    `${proxy}/edge/api/v1/images/edits`,
+  );
+  assert.equal(
+    imageRequestEndpoint('https://images.example/v1/images/edits', false, proxy),
+    'https://images.example/v1/images/edits',
+  );
+  assert.equal(
+    imageRequestEndpoint('https://atomflow.vip/v1/images/edits', false),
+    'https://atomflow.vip/v1/images/edits',
+  );
+  assert.throws(
+    () =>
+      imageRequestEndpoint('https://atomflow.vip/v1/images/edits', false, 'http://proxy.example'),
+    /invalidProxyEndpoint/,
+  );
 });
 
 test('local proxy preserves multipart bytes and auth, excludes cookies, and rejects foreign origins', async () => {
@@ -41,11 +70,16 @@ test('local proxy preserves multipart bytes and auth, excludes cookies, and reje
   const server = await createServer({
     configFile: false,
     server: {
-      host: '127.0.0.1', port: 0, hmr: false, ws: false,
-      proxy: { [pattern]: {
-        ...config.server.proxy[pattern],
-        target: `http://127.0.0.1:${upstream.address().port}`,
-      } },
+      host: '127.0.0.1',
+      port: 0,
+      hmr: false,
+      ws: false,
+      proxy: {
+        [pattern]: {
+          ...config.server.proxy[pattern],
+          target: `http://127.0.0.1:${upstream.address().port}`,
+        },
+      },
     },
     appType: 'custom',
   });
@@ -60,10 +94,13 @@ test('local proxy preserves multipart bytes and auth, excludes cookies, and reje
     const request = new Request(endpoint, { method: 'POST', body: form });
     const body = Buffer.from(await request.arrayBuffer());
     const response = await fetch(endpoint, {
-      method: 'POST', body,
+      method: 'POST',
+      body,
       headers: {
-        Origin: origin, Authorization: 'Bearer local-test-only',
-        Cookie: 'local-session=private', 'Content-Type': request.headers.get('Content-Type'),
+        Origin: origin,
+        Authorization: 'Bearer local-test-only',
+        Cookie: 'local-session=private',
+        'Content-Type': request.headers.get('Content-Type'),
       },
     });
     assert.equal(response.status, 401);
@@ -74,7 +111,11 @@ test('local proxy preserves multipart bytes and auth, excludes cookies, and reje
     assert.equal(calls[0].headers.authorization, 'Bearer local-test-only');
     assert.equal(calls[0].headers.cookie, undefined);
     assert.deepEqual(calls[0].body, body);
-    assert.equal((await fetch(endpoint, { method: 'POST', headers: { Origin: 'https://other.example' } })).status, 404);
+    assert.equal(
+      (await fetch(endpoint, { method: 'POST', headers: { Origin: 'https://other.example' } }))
+        .status,
+      404,
+    );
     assert.equal((await fetch(endpoint)).status, 404);
     assert.equal(calls.length, 1);
   } finally {
@@ -85,21 +126,41 @@ test('local proxy preserves multipart bytes and auth, excludes cookies, and reje
 
 test('reference network failures are distinguished from provider connection failures without retry', async () => {
   const reference = {
-    kind: 'pose', title: { zh: 'test', en: 'test' }, keywords: { zh: '', en: '' },
+    kind: 'pose',
+    title: { zh: 'test', en: 'test' },
+    keywords: { zh: '', en: '' },
     variant: { id: 'pose', original: 'https://ai-pose-gallery.pages.dev/img/test.png' },
   };
   const config = { ...api.defaultImageConfig, apiKey: 'local-test-only' };
   let calls = 0;
-  await assert.rejects(api.generateReferenceImage(config, [reference], 'test', new AbortController().signal, async () => {
-    calls++;
-    throw new TypeError('Failed to fetch');
-  }), (error) => error.code === 'referenceFailed');
+  await assert.rejects(
+    api.generateReferenceImage(
+      config,
+      [reference],
+      'test',
+      new AbortController().signal,
+      async () => {
+        calls++;
+        throw new TypeError('Failed to fetch');
+      },
+    ),
+    (error) => error.code === 'referenceFailed',
+  );
   assert.equal(calls, 1);
   calls = 0;
-  await assert.rejects(api.generateReferenceImage(config, [reference], 'test', new AbortController().signal, async (_url, options) => {
-    calls++;
-    if (options.method === 'POST') throw new TypeError('Failed to fetch');
-    return new Response(new Blob(['test'], { type: 'image/png' }));
-  }), (error) => error.code === 'networkFailed');
+  await assert.rejects(
+    api.generateReferenceImage(
+      config,
+      [reference],
+      'test',
+      new AbortController().signal,
+      async (_url, options) => {
+        calls++;
+        if (options.method === 'POST') throw new TypeError('Failed to fetch');
+        return new Response(new Blob(['test'], { type: 'image/png' }));
+      },
+    ),
+    (error) => error.code === 'networkFailed',
+  );
   assert.equal(calls, 2);
 });

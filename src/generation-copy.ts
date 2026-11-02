@@ -14,7 +14,8 @@ export const generationCopy = {
     hideKey: '隐藏密钥',
     privacy:
       '配置仅保存在此浏览器。未勾选时，密钥只保留在当前会话。生成图片或上传服饰进行提取时，相应图片和描述会发送到此服务。',
-    compatibility: '服务需支持 /v1/images/edits 图片编辑接口和浏览器跨域请求。',
+    compatibility:
+      '服务需支持 /v1/images/edits 图片编辑接口；本站为默认 Atomflow 服务提供移动端代理。',
     save: '保存配置',
     clear: '清除配置',
     saved: '生图配置已保存',
@@ -68,7 +69,7 @@ export const generationCopy = {
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
-    networkFailed: '连接失败，请检查网络，以及服务是否支持浏览器跨域请求。',
+    networkFailed: '暂时无法连接生图服务，请检查网络后重试；若持续失败，请联系网站维护者。',
     timedOut: '生成超过 3 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
     cancelled: '已取消生成',
@@ -96,7 +97,8 @@ export const generationCopy = {
     hideKey: 'Hide key',
     privacy:
       'Settings stay in this browser. Without this option, the key lasts for this session only. Generation and uploaded outfit extraction send the relevant images and instructions to this service.',
-    compatibility: 'The service must support /v1/images/edits and browser CORS requests.',
+    compatibility:
+      'The service must support /v1/images/edits. This site provides a mobile-safe proxy for the default Atomflow service.',
     save: 'Save settings',
     clear: 'Clear settings',
     saved: 'Image settings saved',
@@ -156,7 +158,7 @@ export const generationCopy = {
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
     networkFailed:
-      'Connection failed. Check your network and whether the service allows browser CORS requests.',
+      'The image service is temporarily unreachable. Check your connection and retry; contact the site maintainer if it continues.',
     timedOut: 'Generation exceeded 3 minutes. Please retry later.',
     invalidResult: 'No usable image was returned. Check API compatibility and retry.',
     cancelled: 'Generation cancelled',

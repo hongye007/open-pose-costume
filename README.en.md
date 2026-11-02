@@ -117,18 +117,18 @@ Open “Generate image” from the sidebar. Choose references and settings on th
 4. **Adjust and generate**: click a small viewpoint thumbnail in the pose picker to switch just that card, then click its main image to select it. Select a viewpoint, optionally enable depth guidance, and set the visual style (Follow references, Natural photo, Studio portrait or Anime illustration), image size and additional instructions. Advanced settings let you edit the full prompt. Click “Generate image”; you can keep browsing while it runs and retry failed requests manually.
 5. **Review and keep creating**: switch between “Result only,” “Side by side” and “Overlay,” enlarge or download the result, or select “Use as character reference.” The “History” drawer keeps the latest 20 successful results, with controls to restore references, delete records and download a ZIP of the pose, outfit and optional character references used for that result.
 
-| Setting          | Default or requirement                                                                                                         |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Service URL      | `https://atomflow.vip`, editable                                                                                               |
-| Model            | `gpt-image-2`, editable                                                                                                        |
-| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format                                                                    |
-| Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]`                                   |
-| Browser access   | Static deployments require CORS with the `Authorization` header; local Atomflow development requests use the same-origin proxy |
+| Setting          | Default or requirement                                                                                              |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Service URL      | `https://atomflow.vip`, editable                                                                                    |
+| Model            | `gpt-image-2`, editable                                                                                             |
+| Endpoint         | `POST /v1/images/edits`, OpenAI-compatible multipart format                                                         |
+| Reference images | Two originals (pose and costume), or three with an optional character, uploaded as `image[]`                        |
+| Browser access   | Local Atomflow requests use Vite; production can use the restricted Worker proxy; custom services must provide CORS |
 
 <details>
 <summary>How are API keys, images and history stored?</summary>
 
-Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, references and the description are sent to your configured service, which may charge for usage. Local Atomflow development requests pass through Vite; static deployments connect directly. Keys are excluded from share links and the repository.
+Settings stay in your browser. The API key is stored only for the current session by default; enabling “Remember key” stores it locally. You can clear it in settings. During generation, references and the description are sent to your configured service, which may charge for usage. Local Atomflow requests pass through Vite; production requests pass through the restricted Worker when configured. The Worker does not store keys or images. Keys are excluded from share links and the repository.
 
 Library selections are saved as reference IDs in this browser. Lists use thumbnails. Custom details use WebP previews; generation and original downloads use high-resolution PNGs. Original-library entries use the previews and originals specified in the index. For uploaded outfits, the original photo is sent to your configured service when you click “Extract outfit.” The confirmed extraction becomes the outfit reference for subsequent generation.
 
@@ -171,11 +171,20 @@ npm run dev -- --port 5200
 
 Check with `lsof -nP -iTCP:5200 -sTCP:LISTEN` on macOS/Linux, or `Get-NetTCPConnection -LocalPort 5200` in Windows PowerShell.
 
-During `npm run dev`, Vite forwards Atomflow `/v1/images/edits` requests through the local origin to the configured `atomflow.vip` or `api.atomflow.vip` host, avoiding browser CORS restrictions. The key is forwarded only with the current request. Other providers, static builds and `npm run preview` still connect directly and require the service to allow CORS requests with the `Authorization` header.
+During `npm run dev`, Vite forwards Atomflow `/v1/images/edits` requests through the local origin to the configured `atomflow.vip` or `api.atomflow.vip` host, avoiding browser CORS restrictions. The key is forwarded only with the current request. Custom service URLs still connect directly and must allow CORS requests with the `Authorization` header.
 
 ## Build and deploy
 
 The site is deployed on [GitHub Pages](https://hongye007.github.io/open-pose-costume/). Pushes to `main` automatically run tests, build with `/open-pose-costume/` as the base path, and deploy through GitHub Actions. Failed tests or builds prevent deployment. Other branches and pull requests only run checks.
+
+Mobile production generation uses the Cloudflare Worker in `worker/`. It accepts only this site's origins, forwards only the two fixed Atomflow image-edit endpoints, and streams responses without storing API keys or images. It cannot proxy arbitrary URLs. Deploy and validate it with:
+
+```sh
+npm run worker:check
+npm run worker:deploy
+```
+
+After deployment, set the GitHub Actions repository variable `IMAGE_PROXY_URL` to the Worker root URL; this project currently uses `https://open-pose-costume-image-proxy.hongye1main.workers.dev`. Actions exposes it to the build as `VITE_IMAGE_PROXY_URL`. Without this variable, production falls back to direct Atomflow browser requests; custom service URLs always remain direct.
 
 CI uses sparse checkout to skip the upstream image archives at the repository root, `pose/` and `costume/`. Custom images under `public/custom/` are checked out, included in builds and deployed with the website.
 

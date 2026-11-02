@@ -117,18 +117,18 @@
 4. **调整并生成**：在姿势选择弹窗中点击小缩略图切换单张卡片视角，再点击大图选用；选择观察角度、按需启用深度参考，设置画面风格（跟随参考、自然写真、影棚质感或动漫插画）、尺寸与补充描述；高级设置支持编辑完整提示词。点击“生成图片”后可继续浏览图库，失败可手动重试。
 5. **查看与继续创作**：在“仅结果”“双列预览”“叠加预览”中切换，放大或下载结果，也可点击“用此人物继续生成”。“历史记录”右侧抽屉保留最近 20 次成功结果，支持恢复搭配、删除记录，以及打包下载该次使用的姿势、服饰和人物参考图（如有）。
 
-| 配置项     | 默认值或要求                                                                            |
-| ---------- | --------------------------------------------------------------------------------------- |
-| 服务地址   | `https://atomflow.vip`，可修改                                                          |
-| 模型       | `gpt-image-2`，可修改                                                                   |
-| 接口       | `POST /v1/images/edits`，OpenAI 兼容 multipart 格式                                     |
-| 参考图     | 通过 `image[]` 上传姿势、服饰两张原图；选传人物图时共三张                               |
-| 浏览器访问 | 静态部署需服务允许携带 `Authorization` 的 CORS 请求；本地 Atomflow 开发请求通过同源转发 |
+| 配置项     | 默认值或要求                                                                               |
+| ---------- | ------------------------------------------------------------------------------------------ |
+| 服务地址   | `https://atomflow.vip`，可修改                                                             |
+| 模型       | `gpt-image-2`，可修改                                                                      |
+| 接口       | `POST /v1/images/edits`，OpenAI 兼容 multipart 格式                                        |
+| 参考图     | 通过 `image[]` 上传姿势、服饰两张原图；选传人物图时共三张                                  |
+| 浏览器访问 | 本地通过 Vite、线上通过可配置的受限 Worker 转发默认 Atomflow 请求；其他服务需自行支持 CORS |
 
 <details>
 <summary>密钥、图片与历史记录如何保存？</summary>
 
-配置保存在当前浏览器，API Key 默认仅保存到当前会话；勾选“记住密钥”后存入本地存储，可在设置中清除。生成时，参考图和描述会发送至配置的服务，费用以该服务为准；本地开发中的 Atomflow 请求经 Vite 同源转发，静态部署直接请求该服务。密钥不会进入分享链接或仓库。
+配置保存在当前浏览器，API Key 默认仅保存到当前会话；勾选“记住密钥”后存入本地存储，可在设置中清除。生成时，参考图和描述会发送至配置的服务，费用以该服务为准；本地开发中的 Atomflow 请求经 Vite 转发，线上配置代理后经受限 Worker 流式转发。Worker 不保存密钥或图片，密钥不会进入分享链接或仓库。
 
 库中参考选择以素材编号保存在当前浏览器；列表使用缩略图；自建素材详情使用 WebP 预览，生成与原图下载使用高清 PNG；原有素材按索引加载对应预览与原图。上传服饰时，原始穿搭图会在点击“提取服饰”后发送至所配置的服务；确认后的提取结果作为服饰参考参与后续生成。
 
@@ -171,11 +171,20 @@ npm run dev -- --port 5200
 
 可用 `lsof -nP -iTCP:5200 -sTCP:LISTEN`（macOS/Linux）或 `Get-NetTCPConnection -LocalPort 5200`（Windows PowerShell）检查占用。
 
-本地 `npm run dev` 会将 Atomflow 的 `/v1/images/edits` 请求通过 Vite 同源转发到配置的 `atomflow.vip` 或 `api.atomflow.vip`，避免浏览器跨域限制；密钥仅随当前请求转发。其他服务地址、构建后的静态网站和 `npm run preview` 仍直接请求生图服务，需要服务允许 `Authorization` 请求头的 CORS 访问。
+本地 `npm run dev` 会将 Atomflow 的 `/v1/images/edits` 请求通过 Vite 同源转发到配置的 `atomflow.vip` 或 `api.atomflow.vip`，避免浏览器跨域限制；密钥仅随当前请求转发。自定义服务地址仍由浏览器直连，需要服务允许带 `Authorization` 请求头的 CORS 访问。
 
 ## 构建与部署
 
 当前使用 [GitHub Pages](https://hongye007.github.io/open-pose-costume/) 部署。推送到 `main` 后，GitHub Actions 自动运行测试、以 `/open-pose-costume/` 为基础路径构建并部署；测试或构建失败时不会更新网站。其他分支及拉取请求只执行检查。
+
+线上移动端生图使用 `worker/` 中的 Cloudflare Worker。它只接受本站来源、只转发两个固定的 Atomflow 图片编辑入口，并流式返回响应；不会保存 API Key 或图片，也不能作为任意 URL 代理。部署与接入步骤：
+
+```sh
+npm run worker:check
+npm run worker:deploy
+```
+
+部署后，在 GitHub 仓库的 Actions Variables 中将 `IMAGE_PROXY_URL` 设置为 Worker 根地址；本项目当前使用 `https://open-pose-costume-image-proxy.hongye1main.workers.dev`。Actions 会将它作为 `VITE_IMAGE_PROXY_URL` 注入生产构建。未配置该变量时，线上构建会回退为浏览器直连 Atomflow；自定义服务始终直连。
 
 CI 使用稀疏检出，跳过根目录 `pose/`、`costume/` 上游图片归档的下载与检出。`public/custom/` 下的自建图片参与检出和构建，随网站部署。
 
