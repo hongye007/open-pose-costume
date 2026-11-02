@@ -5562,5 +5562,156 @@
         }
       }
     ]
+  },
+  {
+    "id": "custom_pose_female_012",
+    "kind": "pose",
+    "code": "FP-012",
+    "title": {
+      "zh": "模特站姿 · 交叉腿侧转",
+      "en": "Model standing · Crossed-leg turn"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "模特站姿 · 12",
+      "en": "Model standing · 12"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "模特 站姿 女性 交叉腿 侧转 动作提取 五视角 正面 俯视 仰视 侧面 斜侧 结构线稿",
+      "en": "model standing female crossed legs turn extracted pose five views front high low side three-quarter structural line art"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "model",
+        "zh": "模特",
+        "en": "Model"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "crossed-standing-five-view-20261102",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050",
+      "approvedSourceSha256": "61e81d2a44ca0c3e40d771bc48063eb8807b35997f1145910bf694dd1146625e",
+      "note": {
+        "zh": "根据已确认的正面结构线稿扩展五视角；只改变观察视角，属于 AI 视觉参考而非精确标定的多视角数据。配套深度图待确认后补充。",
+        "en": "Five views derived from the approved front construction drawing; camera-only intent for AI visual reference, not calibrated multi-view data. Paired depth references are pending review."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_female_012_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_female_012_front.png",
+        "image": "custom/pose/images/custom_pose_female_012_front.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_012_front.webp",
+        "provenance": {
+          "originalSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050",
+          "promptSha256": "9881764ac3f65a739b619c0b3df3408183b41940e32379d9448279b24460dd08",
+          "sourceSha256": "61e81d2a44ca0c3e40d771bc48063eb8807b35997f1145910bf694dd1146625e"
+        }
+      },
+      {
+        "id": "custom_pose_female_012_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_012_high.png",
+        "image": "custom/pose/images/custom_pose_female_012_high.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_012_high.webp",
+        "provenance": {
+          "originalSha256": "2a283537ae6455710facc3d531f9710330369134bb5a5fcfca698a3c44f5c27f",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "2a283537ae6455710facc3d531f9710330369134bb5a5fcfca698a3c44f5c27f",
+          "promptSha256": "59568bebee2ffcdb1db5e20966b2d6b895e615b78d6cbe2f678a44d4ed282417",
+          "sourceSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050"
+        }
+      },
+      {
+        "id": "custom_pose_female_012_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low angle"
+        },
+        "original": "custom/pose/originals/custom_pose_female_012_low.png",
+        "image": "custom/pose/images/custom_pose_female_012_low.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_012_low.webp",
+        "provenance": {
+          "originalSha256": "4fe17dbbdb098a407d4230143938ee58d9f10f87385de2e45aa3cb9c1015cdc3",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "4fe17dbbdb098a407d4230143938ee58d9f10f87385de2e45aa3cb9c1015cdc3",
+          "promptSha256": "defa7d4a642e7361ffe143e3b311a1b164ecd8714ccb4ba942e32f329eed3604",
+          "sourceSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050"
+        }
+      },
+      {
+        "id": "custom_pose_female_012_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_female_012_side.png",
+        "image": "custom/pose/images/custom_pose_female_012_side.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_012_side.webp",
+        "provenance": {
+          "originalSha256": "1d6be187a0a086b699d8ac5b40b33ac5d9a92a9c06849626a394e3024e270062",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "1d6be187a0a086b699d8ac5b40b33ac5d9a92a9c06849626a394e3024e270062",
+          "promptSha256": "40268753eb38f63ad2b3f99ae3a1f9fca89049ebd4e34eb3a0bd936006987549",
+          "sourceSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050"
+        }
+      },
+      {
+        "id": "custom_pose_female_012_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Three-quarter"
+        },
+        "original": "custom/pose/originals/custom_pose_female_012_diag.png",
+        "image": "custom/pose/images/custom_pose_female_012_diag.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_female_012_diag.webp",
+        "provenance": {
+          "originalSha256": "d0e18da18fa53740dd4af5702802ac7cb39faa090861832b9ee60503900baa8a",
+          "width": 1024,
+          "height": 1536,
+          "generatedSha256": "d0e18da18fa53740dd4af5702802ac7cb39faa090861832b9ee60503900baa8a",
+          "promptSha256": "7356457250fae21222db16a5d464e29098c2ee5f57c9384f832e0ffa351e8d53",
+          "sourceSha256": "6ff698092c41c26e72783f7e06be804abc38fe85c6f0aa0fc0609b0c18ef9050"
+        }
+      }
+    ]
   }
 ]

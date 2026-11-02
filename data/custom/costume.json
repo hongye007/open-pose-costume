@@ -2573,5 +2573,138 @@
         }
       }
     ]
+  },
+  {
+    "id": "custom_costume_street_008",
+    "kind": "costume",
+    "code": "ST-008",
+    "title": {
+      "zh": "棕色缎面吊带荷叶边裙",
+      "en": "Brown satin cowl-neck ruffle dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "缎面礼服 · 01",
+      "en": "Satin occasionwear · 01"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 棕色 巧克力色 缎面 吊带 垂坠领 荷叶边 不对称 短裙 米色 链条包 绗缝包 米色 一字带 粗跟 高跟凉鞋 完整套装 无人物",
+      "en": "female photographic brown chocolate satin spaghetti strap cowl neck ruffle asymmetric mini dress beige quilted chain bag ankle strap block heel sandals complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "a011ef9b765d050b909e86d2a92d3aaebb9e9f3f8640088ac56441b084f12320",
+      "width": 1024,
+      "height": 1536,
+      "batch": "brown-satin-outfit-20261102",
+      "note": {
+        "zh": "用户提供的完整服饰参考图，包含连衣裙、链条包与高跟凉鞋。",
+        "en": "User-provided complete outfit reference with dress, chain bag and heeled sandals."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_008",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_008.png",
+        "image": "custom/costume/images/custom_costume_street_008.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_008.webp",
+        "provenance": {
+          "originalSha256": "a011ef9b765d050b909e86d2a92d3aaebb9e9f3f8640088ac56441b084f12320",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_009",
+    "kind": "costume",
+    "code": "ST-009",
+    "title": {
+      "zh": "黑色缎面不对称吊带短裙",
+      "en": "Black satin asymmetric spaghetti-strap mini dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "黑色礼服 · 01",
+      "en": "Black eveningwear · 01"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 缎面 吊带 修身 包臀 不对称 开衩 短裙 黑色颈圈 一字带 细高跟 高跟凉鞋 完整套装 无人物",
+      "en": "female photographic black satin spaghetti strap fitted bodycon asymmetric slit mini dress black choker ankle strap stiletto sandals complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "f985bfb4486b0a99d8db945008a70e146c0bf8d99707fd7c798310cb8ca8aa6b",
+      "width": 1024,
+      "height": 1536,
+      "batch": "black-satin-outfit-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "用户提供的完整服饰参考图，包含黑色短裙、颈圈与细带高跟凉鞋。",
+        "en": "User-provided complete outfit reference with a black mini dress, choker and strappy stiletto sandals."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_009",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_009.png",
+        "image": "custom/costume/images/custom_costume_street_009.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_009.webp",
+        "provenance": {
+          "originalSha256": "f985bfb4486b0a99d8db945008a70e146c0bf8d99707fd7c798310cb8ca8aa6b",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
   }
 ]

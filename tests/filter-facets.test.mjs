@@ -86,8 +86,8 @@ test('existing characters are female photographic references, while custom male 
 
 test('existing costumes are female photographic references; poses keep their existing style tags', () => {
   for (const [kind, expected] of [
-    ['pose', 299],
-    ['costume', 2765],
+    ['pose', 300],
+    ['costume', 2767],
   ]) {
     const females = filterReferences(items, { kind, tag: 'female' });
     assert.equal(females.length, expected);
@@ -118,8 +118,8 @@ test('existing costumes are female photographic references; poses keep their exi
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
     1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 60);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 4574);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 63);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4577);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {
@@ -175,8 +175,11 @@ test('visible codes are searchable and one tag ID has one bilingual display name
 });
 
 // Model/dance are subject/use tags; they must not migrate into visual style.
-test('model and dance links retain subject tags and intersect with line-art in both languages', () => {
-  for (const tag of ['model', 'dance']) {
+test('model and dance links retain independent subject tags and intersect with line-art', () => {
+  for (const { tag, poseCount, costumeCount, queries } of [
+    { tag: 'model', poseCount: 11, costumeCount: 1, queries: ['模特', 'Model'] },
+    { tag: 'dance', poseCount: 10, costumeCount: 1, queries: ['舞蹈', 'Dance'] },
+  ]) {
     assert.deepEqual(readTagFilters(new URLSearchParams(`tag=${tag}&style=line-art`)), {
       tag,
       style: 'line-art',
@@ -187,17 +190,16 @@ test('model and dance links retain subject tags and intersect with line-art in b
       tag,
       style: 'line-art',
     });
-    assert.equal(poses.length, 10);
-    assert.ok(
-      poses.every(
-        (item) =>
-          item.tags.some((value) => value.id === 'model') &&
-          item.tags.some((value) => value.id === 'dance'),
-      ),
+    assert.equal(poses.length, poseCount);
+    assert.ok(poses.every((item) => item.tags.some((value) => value.id === tag)));
+    if (tag === 'dance')
+      assert.ok(poses.every((item) => item.tags.some((value) => value.id === 'model')));
+    for (const query of queries)
+      assert.equal(filterReferences(poses, { query }).length, poseCount);
+    assert.equal(
+      filterReferences(items, { kind: 'costume', tag, style: 'photo' }).length,
+      costumeCount,
     );
-    for (const query of ['模特 舞蹈', 'Model Dance'])
-      assert.equal(filterReferences(poses, { query }).length, 10);
-    assert.equal(filterReferences(items, { kind: 'costume', tag, style: 'photo' }).length, 1);
   }
   assert.equal(referenceTagLabel('model', 'zh'), '模特');
   assert.equal(referenceTagLabel('dance', 'en'), 'Dance');
