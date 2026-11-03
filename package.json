@@ -10,7 +10,7 @@
     "sync": "node scripts/sync.mjs",
     "images:download": "node scripts/download-images.mjs",
     "data:build": "node scripts/build-data.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
     "worker:types": "wrangler types worker/worker-configuration.d.ts --config worker/wrangler.jsonc",
     "worker:check": "npm run worker:types && tsc -p worker/tsconfig.json && wrangler deploy --config worker/wrangler.jsonc --dry-run",
     "worker:dev": "wrangler dev --config worker/wrangler.jsonc --port 8787",

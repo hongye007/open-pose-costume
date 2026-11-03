@@ -1,3 +1,4 @@
+import { readImageResponse } from './image-diagnostics';
 import { atomflowRoute } from './image-transport';
 import type { ImageConfig, ImageReference } from './generation';
 
@@ -78,10 +79,10 @@ export async function generateWithJobApi(
     headers: { Authorization: `Bearer ${config.apiKey}` },
     body: form,
   });
-  const submission = await submitted.json().catch(() => null);
+  const { payload: submission, diagnostic: submissionDiagnostic } = await readImageResponse(submitted, 'job-submit', `${base}/jobs`, config.apiKey);
   if (!submitted.ok) {
     const detail = safeDetail(submission?.error?.detail || submission?.error?.message);
-    throw Object.assign(new Error(detail), { jobStatus: submitted.status });
+    throw Object.assign(new Error(detail), { jobStatus: submitted.status, diagnostic: submissionDiagnostic });
   }
   const jobId = typeof submission?.jobId === 'string' ? submission.jobId : '';
   const jobToken = typeof submission?.jobToken === 'string' ? submission.jobToken : '';
@@ -105,10 +106,11 @@ export async function generateWithJobApi(
         cache: 'no-store',
         headers: { 'X-Job-Token': jobToken },
       });
-      const job = (await response.json().catch(() => null)) as JobStatus | null;
+      const { payload, diagnostic } = await readImageResponse(response, 'job-poll', `${base}/jobs/[job-id]`, config.apiKey);
+      const job = payload as JobStatus | null;
       if (!response.ok) {
         const detail = safeDetail(job?.error?.detail || job?.error?.message);
-        throw Object.assign(new Error(detail), { jobStatus: response.status });
+        throw Object.assign(new Error(detail), { jobStatus: response.status, diagnostic });
       }
       if (job?.status === 'succeeded' && typeof job.result === 'string') return job.result;
       if (job?.status === 'failed') {

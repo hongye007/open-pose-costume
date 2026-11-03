@@ -1462,9 +1462,6 @@ export default function App() {
             onSettings={() => setPanel('settings')}
             onRun={(references, prompt, options) => void runGeneration(references, prompt, options)}
             onCancel={cancelGeneration}
-            onReuse={async (file) => {
-              if (!(await selectReferenceFile(file, 'character'))) throw Error('characterInvalid');
-            }}
             notify={notify}
             onRestore={(record, references, source) => {
               if (generationJob?.status === 'loading') return;

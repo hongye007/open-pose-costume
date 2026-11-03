@@ -37,6 +37,7 @@ import { ReferenceFilters, ReferenceBadges, CategoryFilter } from './reference-f
 import { isCustomAsset } from './custom-assets';
 import { copy } from './i18n';
 import { hasPoseDepth } from './pose-depth';
+import { compatiblePoseAlternatives } from './studio-randomize';
 import { Modal, RemoteImage } from './ui';
 import type { Kind, Lang, Reference } from './types';
 
@@ -336,7 +337,6 @@ export function GenerationStudio({
   onSettings,
   onRun,
   onCancel,
-  onReuse,
   onRestore,
   notify,
 }: {
@@ -362,7 +362,6 @@ export function GenerationStudio({
     options: Pick<ImageConfig, 'size' | 'quality'>,
   ) => void;
   onCancel: () => void;
-  onReuse: (file: File) => Promise<void>;
   onRestore: (record: GenerationRecord, references: ImageReference[], source: string) => void;
   notify: (message: string) => void;
 }) {
@@ -388,12 +387,12 @@ export function GenerationStudio({
   const [history, setHistory] = useState<GenerationRecord[]>([]);
   const [historyError, setHistoryError] = useState(false);
   const [elapsed, setElapsed] = useState(0);
-  const [reusing, setReusing] = useState(false);
   const [imageFailed, setImageFailed] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const fileInputs = useRef<Partial<Record<'character' | 'costume', HTMLInputElement | null>>>({});
   const savedResult = useRef<GenerationJob | null>(null);
   const restoredUrls = useRef<string[]>([]);
+  const pendingPoseGeneration = useRef<string | null>(null);
   const loading = job?.status === 'loading';
   const ready = !!(config.baseUrl && config.apiKey && config.model);
   const missing = kinds.filter(
@@ -405,6 +404,10 @@ export function GenerationStudio({
   const fingerprint = referenceFingerprint(references);
   const customActive = customPrompt?.references === fingerprint;
   const prompt = customActive ? customPrompt.text : autoPrompt;
+  const poseAlternatives = useMemo(
+    () => compatiblePoseAlternatives(items, references, poseItem),
+    [items, references, poseItem],
+  );
   const [comparisonReferences, setComparisonReferences] = useState<ImageReference[]>([]);
   useEffect(() => {
     const owned: string[] = [];
@@ -443,6 +446,23 @@ export function GenerationStudio({
     const timer = setInterval(() => setElapsed(Math.floor((Date.now() - started) / 1000)), 1000);
     return () => clearInterval(timer);
   }, [job, loading]);
+  useEffect(() => {
+    if (!pendingPoseGeneration.current || poseItem?.id !== pendingPoseGeneration.current) return;
+    pendingPoseGeneration.current = null;
+    if (missing.length || !ready || !autoPrompt.trim() || loading || characterLoading) return;
+    onRun(references, autoPrompt, { size, quality });
+  }, [
+    poseItem?.id,
+    references,
+    autoPrompt,
+    missing.length,
+    ready,
+    loading,
+    characterLoading,
+    onRun,
+    size,
+    quality,
+  ]);
   useEffect(() => {
     if (!job?.result || job.status !== 'success' || savedResult.current === job || job.restored)
       return;
@@ -493,25 +513,23 @@ export function GenerationStudio({
     onRestore(record, restoredRefs, source);
     setHistoryOpen(false);
   }
-  async function reuse() {
-    if (!job?.result || reusing) return;
-    setReusing(true);
-    try {
-      const blob = await readResultBlob(job.result);
-      const extension =
-        blob.type === 'image/jpeg' ? 'jpg' : blob.type === 'image/webp' ? 'webp' : 'png';
-      await onReuse(new File([blob], `generated-character.${extension}`, { type: blob.type }));
-      setCustomPrompt(null);
-      notify(t.reused);
-    } catch {
-      notify(t.reuseFailed);
-    } finally {
-      setReusing(false);
-    }
-  }
   function run() {
     if (missing.length || !ready || !prompt.trim() || loading || characterLoading) return;
     onRun(references, prompt, { size, quality });
+  }
+  function changePose() {
+    if (
+      !poseAlternatives.length ||
+      missing.length ||
+      !ready ||
+      loading ||
+      characterLoading
+    )
+      return;
+    const nextPose = poseAlternatives[Math.floor(Math.random() * poseAlternatives.length)];
+    pendingPoseGeneration.current = nextPose.id;
+    setCustomPrompt(null);
+    onChoose(nextPose);
   }
   return (
     <section className="image-studio" aria-label={t.title}>
@@ -902,7 +920,12 @@ export function GenerationStudio({
               <div className="studio-placeholder studio-failed" role="alert">
                 <RotateCcw size={28} />
                 <h2>{job.status === 'cancelled' ? g.cancelled : g.failed}</h2>
-                <p>{job.status === 'cancelled' ? t.keepWorking : job.error}</p>
+                <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'anywhere' }}>{job.status === 'cancelled' ? t.keepWorking : job.error}</p>
+                {job.status === 'error' && <button className="secondary-button" onClick={async (event) => {
+                  const button = event.currentTarget;
+                  try { await navigator.clipboard.writeText(job.error || ''); button.textContent = lang === 'zh' ? '已复制' : 'Copied'; }
+                  catch { window.prompt(lang === 'zh' ? '请复制诊断信息' : 'Copy diagnostics', job.error || ''); }
+                }}>{lang === 'zh' ? '复制诊断信息' : 'Copy diagnostics'}</button>}
                 <button
                   className="primary-button"
                   disabled={!ready}
@@ -1060,15 +1083,18 @@ export function GenerationStudio({
                 />
                 <button
                   className="secondary-button studio-reuse"
-                  disabled={reusing || characterLoading}
-                  onClick={() => void reuse()}
+                  disabled={
+                    loading ||
+                    !ready ||
+                    missing.length > 0 ||
+                    !prompt.trim() ||
+                    characterLoading ||
+                    poseAlternatives.length === 0
+                  }
+                  onClick={changePose}
                 >
-                  {reusing ? (
-                    <LoaderCircle size={15} className="spinner" />
-                  ) : (
-                    <UserRound size={15} />
-                  )}
-                  {reusing ? t.reusing : t.reuse}
+                  <Shuffle size={15} />
+                  {t.reuse}
                   <ArrowRight size={14} />
                 </button>
               </div>

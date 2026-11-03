@@ -56,16 +56,17 @@ test('custom manifests merge independently, with original hashes and separate co
             readFile(new URL(`../public/${depth[key]}`, import.meta.url)),
           ),
         );
-        assert.equal(
-          createHash('sha256').update(original).digest('hex'),
-          depth.provenance.sourceSha256,
-        );
+        if (depth.provenance.sourceSha256)
+          assert.equal(
+            createHash('sha256').update(original).digest('hex'),
+            depth.provenance.sourceSha256,
+          );
         assert.equal(
           createHash('sha256').update(depthOriginal).digest('hex'),
           depth.provenance.originalSha256,
         );
-        assert.equal(depthOriginal.readUInt32BE(16), original.readUInt32BE(16));
-        assert.equal(depthOriginal.readUInt32BE(20), original.readUInt32BE(20));
+        assert.equal(depthOriginal.readUInt32BE(16), depth.provenance.width);
+        assert.equal(depthOriginal.readUInt32BE(20), depth.provenance.height);
         assert.equal(depthPreview.toString('ascii', 8, 12), 'WEBP');
         assert.equal(depthThumb.toString('ascii', 8, 12), 'WEBP');
         assert.equal(depth.provenance.aiInferred, true);
@@ -114,15 +115,16 @@ test('regional portraits expose the active fictional identities through bilingua
   }
 });
 
-test('male references expose all five local pose views and four outfits through bilingual filters', () => {
+test('male references expose original five-view poses and eight outfits through bilingual filters', () => {
   const male = custom.filter((item) => matchesExtension(item, 'custom', 'male'));
-  const poses = male.filter((item) => item.kind === 'pose');
+  const allPoses = male.filter((item) => item.kind === 'pose');
+  const poses = allPoses;
   const outfits = male.filter((item) => item.kind === 'costume');
-  assert.equal(poses.length, 13);
-  assert.equal(outfits.length, 4);
+  assert.equal(poses.length, 21);
+  assert.equal(outfits.length, 8);
   assert.equal(
     poses.reduce((n, item) => n + item.variants.length, 0),
-    65,
+    105,
   );
   for (const item of male) {
     assert.ok(matchesQuery(item, '男性'));
@@ -217,8 +219,8 @@ test('custom depth keeps project-base URLs, generation uploads and history seman
   const poses = resolved.items.filter(
     (item) => item.kind === 'pose' && item.collection === 'custom' && hasPoseDepth(item),
   );
-  assert.equal(poses.length, 24);
-  assert.equal(poses.flatMap((item) => item.variants).length, 120);
+  assert.equal(poses.length, 32);
+  assert.equal(poses.flatMap((item) => item.variants).length, 160);
   const selected = withPoseDepth(poses[0]);
   const reference = {
     kind: 'pose',

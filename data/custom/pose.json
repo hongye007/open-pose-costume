@@ -1,5 +1,1917 @@
 [
   {
+    "id": "custom_pose_extracted_20261103_02",
+    "kind": "pose",
+    "code": "MP-015",
+    "title": {
+      "zh": "双手置胯微侧身",
+      "en": "Hands at hips with slight turn"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 双手置胯微侧身 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Hands at hips with slight turn"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-five-multiview-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。腿脚为AI补全。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_02_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_02_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_02_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "08090417ce3b4a34369b8936c9f1951f68e666d00b477474ee8ed1ed7587b7ba",
+          "originalSha256": "08090417ce3b4a34369b8936c9f1951f68e666d00b477474ee8ed1ed7587b7ba",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_02_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_02_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "a97d764d673c8e549ce51206caec57eb3ae6b66e3250318f99d16594116766ab",
+            "originalSha256": "a97d764d673c8e549ce51206caec57eb3ae6b66e3250318f99d16594116766ab",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_02_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_02_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_02_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "788ff06a7534e5b790d1e3e282361f98cd0e7f51ae57edf695057895b09cd4e3",
+          "originalSha256": "788ff06a7534e5b790d1e3e282361f98cd0e7f51ae57edf695057895b09cd4e3",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_02_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_02_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "5e751fbe79ff3f8f570e1d235888c0c044fa690825102b740009ea0948bf099b",
+            "originalSha256": "5e751fbe79ff3f8f570e1d235888c0c044fa690825102b740009ea0948bf099b",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_02_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_02_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_02_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "6cd9ed7884f924509895515c0eca9d7e990e1f454197adc99a6d1d0bd5c83ba2",
+          "originalSha256": "6cd9ed7884f924509895515c0eca9d7e990e1f454197adc99a6d1d0bd5c83ba2",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_02_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_02_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "7c9617a29b68841ad88668e3bbc46fe97fcad425362157864e5585a951ac42bf",
+            "originalSha256": "7c9617a29b68841ad88668e3bbc46fe97fcad425362157864e5585a951ac42bf",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_02_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_02_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_02_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "25a5ca139c06ccaf8c27863f7d3eb3a706941461a88d6596e7bc0ab85a1baf44",
+          "originalSha256": "25a5ca139c06ccaf8c27863f7d3eb3a706941461a88d6596e7bc0ab85a1baf44",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_02_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_02_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "f8990850bf6334a2bd333d96f0abe9e843bde6cdab5bf175c2a718b5b0128c46",
+            "originalSha256": "f8990850bf6334a2bd333d96f0abe9e843bde6cdab5bf175c2a718b5b0128c46",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_02_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_02_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_02_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "cfaee879d73a1fc9b88c07579a2fed49319867d3272f2a516186858000503833",
+          "originalSha256": "cfaee879d73a1fc9b88c07579a2fed49319867d3272f2a516186858000503833",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_02_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_02_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_02_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "6c23c475d07a7ef22d2f08b80338c01fe4dae685bda27a3f8b91659aa62a97f1",
+            "originalSha256": "6c23c475d07a7ef22d2f08b80338c01fe4dae685bda27a3f8b91659aa62a97f1",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_03",
+    "kind": "pose",
+    "code": "MP-016",
+    "title": {
+      "zh": "转头双手扶腰",
+      "en": "Head turn with hands at waist"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 转头双手扶腰 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Head turn with hands at waist"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-five-multiview-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_03_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_03_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_03_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "2b128aaf70cb59fa2b39ceb0a9d91b5b35ee2f3a94141471d142ce406dfdbb76",
+          "originalSha256": "2b128aaf70cb59fa2b39ceb0a9d91b5b35ee2f3a94141471d142ce406dfdbb76",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_03_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_03_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "c63d6244c10a4c7cd3b0bb7dd6c2132b8a3a9c53bdbc8dffaf0e41684cb03967",
+            "originalSha256": "c63d6244c10a4c7cd3b0bb7dd6c2132b8a3a9c53bdbc8dffaf0e41684cb03967",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_03_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_03_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_03_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "0f9420a3bfbaed8ecd2f6bbf6d945d4f41bb4b5a2be85d24d14385856ef442b8",
+          "originalSha256": "0f9420a3bfbaed8ecd2f6bbf6d945d4f41bb4b5a2be85d24d14385856ef442b8",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_03_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_03_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "439444b3378769ac1e84a32e6bcffb15dcf3cadb95edeae418c65aadb430a088",
+            "originalSha256": "439444b3378769ac1e84a32e6bcffb15dcf3cadb95edeae418c65aadb430a088",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_03_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_03_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_03_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "5922d7c5a2202fad49043077caa56cd68ac7b90d015ded2698337a79d81bc759",
+          "originalSha256": "5922d7c5a2202fad49043077caa56cd68ac7b90d015ded2698337a79d81bc759",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_03_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_03_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "510c75a98623a48a1ce9114aa2ce0bb7e22ab605e2b2fc180c5f9e747c505633",
+            "originalSha256": "510c75a98623a48a1ce9114aa2ce0bb7e22ab605e2b2fc180c5f9e747c505633",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_03_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_03_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_03_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "fe0ea758f9f597f56a6335aeb37ed285c78116e4c3bbd8ac024dc830a4beda76",
+          "originalSha256": "fe0ea758f9f597f56a6335aeb37ed285c78116e4c3bbd8ac024dc830a4beda76",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_03_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_03_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "9fc8f71ddb033d9495c974b67d412de1fca5c200769e17831d713dfd21442247",
+            "originalSha256": "9fc8f71ddb033d9495c974b67d412de1fca5c200769e17831d713dfd21442247",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_03_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_03_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_03_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "69b921783f0046c07f73166ebad4c5c955dc46bb07e98495977761bfcca5a637",
+          "originalSha256": "69b921783f0046c07f73166ebad4c5c955dc46bb07e98495977761bfcca5a637",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_03_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_03_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_03_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "759af6684083d7e855bca15fd8c6d14926e6666b184fe842e7085f282a8f9ec2",
+            "originalSha256": "759af6684083d7e855bca15fd8c6d14926e6666b184fe842e7085f282a8f9ec2",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_04",
+    "kind": "pose",
+    "code": "MP-017",
+    "title": {
+      "zh": "单手扶髋重心侧移",
+      "en": "One hand on hip with weight shift"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 单手扶髋重心侧移 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal One hand on hip with weight shift"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-five-multiview-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_04_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_04_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_04_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "0fa97d1dbf2956ffc2c2591b4a7750d981fa7b666e6d6ec0a675899bdbee914a",
+          "originalSha256": "0fa97d1dbf2956ffc2c2591b4a7750d981fa7b666e6d6ec0a675899bdbee914a",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_04_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_04_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "4eca0d65c39baf76c5eb2183a335475fb104739f2fdf1ad3ae14f8bd6b61abcb",
+            "originalSha256": "4eca0d65c39baf76c5eb2183a335475fb104739f2fdf1ad3ae14f8bd6b61abcb",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_04_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_04_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_04_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "f495cbec5c30370a32f0342f6c59ee3f58879baa030547fc7d088871d209f84d",
+          "originalSha256": "f495cbec5c30370a32f0342f6c59ee3f58879baa030547fc7d088871d209f84d",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_04_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_04_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "5e585b4949c7f95298a80ffcdfa4a7a8151e16dead160479f5dc57f686319eb7",
+            "originalSha256": "5e585b4949c7f95298a80ffcdfa4a7a8151e16dead160479f5dc57f686319eb7",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_04_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_04_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_04_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "ac8bdde8542cfeb4ccecb7977d15be10930fc17d16c8374723c29bafdddb8b1f",
+          "originalSha256": "ac8bdde8542cfeb4ccecb7977d15be10930fc17d16c8374723c29bafdddb8b1f",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_04_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_04_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "aae2ec32d4a5dc445dd0736e0f95e29d8de57e6da45355be7021434e919a8a79",
+            "originalSha256": "aae2ec32d4a5dc445dd0736e0f95e29d8de57e6da45355be7021434e919a8a79",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_04_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_04_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_04_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "3ebd2b6d59b158cb0e7de9ced4542e1a9ccb3e4a06832ea37ff89662adc80a02",
+          "originalSha256": "3ebd2b6d59b158cb0e7de9ced4542e1a9ccb3e4a06832ea37ff89662adc80a02",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_04_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_04_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "052fa98d7ca438b8fa7f1da3c904bb497f1e93e33c04fb49cfb890daee33260d",
+            "originalSha256": "052fa98d7ca438b8fa7f1da3c904bb497f1e93e33c04fb49cfb890daee33260d",
+            "width": 1024,
+            "height": 1535
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_04_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_04_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_04_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "ccbe66f8fde6abe3efe434d310a89823195c44bf520cd32282d433b2640db59e",
+          "originalSha256": "ccbe66f8fde6abe3efe434d310a89823195c44bf520cd32282d433b2640db59e",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_04_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_04_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_04_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "1b2897e3361fd727dea57b1d0eaa063aa65b5a08d9ca5a3a0334329d091b9865",
+            "originalSha256": "1b2897e3361fd727dea57b1d0eaa063aa65b5a08d9ca5a3a0334329d091b9865",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_05",
+    "kind": "pose",
+    "code": "MP-018",
+    "title": {
+      "zh": "抬臂扶头放松站姿",
+      "en": "Raised arm touching head"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 抬臂扶头放松站姿 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Raised arm touching head"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-five-multiview-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_05_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_05_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_05_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "9782631db84445cf037d5f673a0f469c3c11935d72bfc0c8331e212b1bd965ac",
+          "originalSha256": "9782631db84445cf037d5f673a0f469c3c11935d72bfc0c8331e212b1bd965ac",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_05_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_05_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "7c712ee8d2d5ced1417f4c16936db0297c028b589639ce540fbc96861964dde3",
+            "originalSha256": "7c712ee8d2d5ced1417f4c16936db0297c028b589639ce540fbc96861964dde3",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_05_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_05_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_05_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "4041892c15f0e6fa67a55fdfca2a0aeace29b7399f8cbf87c2a7a9f0a3654592",
+          "originalSha256": "4041892c15f0e6fa67a55fdfca2a0aeace29b7399f8cbf87c2a7a9f0a3654592",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_05_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_05_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "4c3a7f7bb7e37c65486e5c3ee8e4b952b5485ee807b55b9eeea823f994b221c3",
+            "originalSha256": "4c3a7f7bb7e37c65486e5c3ee8e4b952b5485ee807b55b9eeea823f994b221c3",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_05_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_05_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_05_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "1c2fd9fb09b604865d9135f1e09e3c5954a1bb20ee603abf5de466ebe3e6fb49",
+          "originalSha256": "1c2fd9fb09b604865d9135f1e09e3c5954a1bb20ee603abf5de466ebe3e6fb49",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_05_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_05_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "185270630f52fad3003aa4d7575c720d690870fbb41c5c72855b1b18b659853c",
+            "originalSha256": "185270630f52fad3003aa4d7575c720d690870fbb41c5c72855b1b18b659853c",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_05_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_05_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_05_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "445242d52b90936e8c44efc677cb66f186c5eb1f797f8eb94cad9a3d469c0804",
+          "originalSha256": "445242d52b90936e8c44efc677cb66f186c5eb1f797f8eb94cad9a3d469c0804",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_05_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_05_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "c4cd8fd8095c2a5bee8e178a313c6a31cb01a580a1ab078ce3d8ffc5d7263314",
+            "originalSha256": "c4cd8fd8095c2a5bee8e178a313c6a31cb01a580a1ab078ce3d8ffc5d7263314",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_05_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_05_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_05_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "d10a0e8cfaaab186c2b3b1cb960f0499eb44c81602caa62c75a93a7aaab8506f",
+          "originalSha256": "d10a0e8cfaaab186c2b3b1cb960f0499eb44c81602caa62c75a93a7aaab8506f",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_05_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_05_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_05_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "7e81dc540ea3043ba80c9d802f8fcfc3bd72a1d7ff9509639e4236d7be5d5d14",
+            "originalSha256": "7e81dc540ea3043ba80c9d802f8fcfc3bd72a1d7ff9509639e4236d7be5d5d14",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_06",
+    "kind": "pose",
+    "code": "MP-019",
+    "title": {
+      "zh": "倚靠交叉腿",
+      "en": "Leaning with crossed legs"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 倚靠交叉腿 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Leaning with crossed legs"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-five-multiview-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_06_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_06_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_06_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "4d3fc18741e00ecb1904e985f6b72750654502c8bc9c112b1b6c416d44000758",
+          "originalSha256": "4d3fc18741e00ecb1904e985f6b72750654502c8bc9c112b1b6c416d44000758",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_06_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_06_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "3afc0622e701dc487c098dcbe0f6b7a5c519dc59a61fd821795adc28214533b6",
+            "originalSha256": "3afc0622e701dc487c098dcbe0f6b7a5c519dc59a61fd821795adc28214533b6",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_06_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_06_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_06_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "85c6f8bd7f42b05cf6deb05d9838f030bdf36841c20a72f806d07d57d5ac3648",
+          "originalSha256": "85c6f8bd7f42b05cf6deb05d9838f030bdf36841c20a72f806d07d57d5ac3648",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_06_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_06_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "776b075081ef26aa4162d9778fb81450ae42de64ac4ddb37667434be7479773b",
+            "originalSha256": "776b075081ef26aa4162d9778fb81450ae42de64ac4ddb37667434be7479773b",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_06_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_06_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_06_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "20c7fcaf1f15e57135d995acfd4316b5a04991886b69826ece3e1fbb711df3e3",
+          "originalSha256": "20c7fcaf1f15e57135d995acfd4316b5a04991886b69826ece3e1fbb711df3e3",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_06_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_06_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "760bb03df70f545266e0b951d3023bd80b0d31e0b4cada346cf18018909c8ef2",
+            "originalSha256": "760bb03df70f545266e0b951d3023bd80b0d31e0b4cada346cf18018909c8ef2",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_06_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_06_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_06_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "ecb035b0cf07848fa7568c593b45703702228b56702a2bfb346d8179d7318ba3",
+          "originalSha256": "ecb035b0cf07848fa7568c593b45703702228b56702a2bfb346d8179d7318ba3",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_06_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_06_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "912b691326dd50f540eb2b8c7d264eb8510fe42404df0863a9186f1d87338e5c",
+            "originalSha256": "912b691326dd50f540eb2b8c7d264eb8510fe42404df0863a9186f1d87338e5c",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_06_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_06_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_06_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-five-multiview-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "76ba2928b9f0832eee06b53bec54e434e2193c51bf2ecadda2a1255d189acddc",
+          "originalSha256": "76ba2928b9f0832eee06b53bec54e434e2193c51bf2ecadda2a1255d189acddc",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_06_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_06_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_06_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-five-multiview-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "0da2013c012e488ab460041997187d2bb066e6e98f9b720b1d206c0736f53b99",
+            "originalSha256": "0da2013c012e488ab460041997187d2bb066e6e98f9b720b1d206c0736f53b99",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_07",
+    "kind": "pose",
+    "code": "MP-020",
+    "title": {
+      "zh": "腹前交叠双手",
+      "en": "Overlapping hands before abdomen"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 腹前交叠双手 五视角 深度图 胸腹肌 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Overlapping hands before abdomen"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-three-completion-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。保留半身裁切。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_07_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_07_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_07_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "fcc2032de6d3bcc64a703e9dd3424d681f0a52bccc15b795017f4f3d5da8c237",
+          "originalSha256": "fcc2032de6d3bcc64a703e9dd3424d681f0a52bccc15b795017f4f3d5da8c237",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_07_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_07_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "55118bf455be3f57c4af9404e4585b2f53aba7c5db60d7ff2f3ce6ec9b0e4fab",
+            "originalSha256": "55118bf455be3f57c4af9404e4585b2f53aba7c5db60d7ff2f3ce6ec9b0e4fab",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_07_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_07_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_07_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "a32b0941b893a17eba12efccf0ad6fc453be31a22f23f0d040a1c68d2f586b51",
+          "originalSha256": "a32b0941b893a17eba12efccf0ad6fc453be31a22f23f0d040a1c68d2f586b51",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_07_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_07_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "b54876671914f38b7f9cfc6a68afec9704b70b8342ae8d2f3bcc4422474942b8",
+            "originalSha256": "b54876671914f38b7f9cfc6a68afec9704b70b8342ae8d2f3bcc4422474942b8",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_07_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_07_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_07_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "4d6b998edeeca6bd7ccc744af604c401036bf8beeb1928559178f8ca6d1a159c",
+          "originalSha256": "4d6b998edeeca6bd7ccc744af604c401036bf8beeb1928559178f8ca6d1a159c",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_07_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_07_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "2c600206e6976345542aac0f71b49c9f19c5508ba51c390de90d28878dd84e5d",
+            "originalSha256": "2c600206e6976345542aac0f71b49c9f19c5508ba51c390de90d28878dd84e5d",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_07_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_07_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_07_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "705c4977599f2cf94b31b970f4f950109e532e10d9c65ae1caabd1962fad5f34",
+          "originalSha256": "705c4977599f2cf94b31b970f4f950109e532e10d9c65ae1caabd1962fad5f34",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_07_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_07_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "b5d7f0daae458f96a01844db631aa43781076fa8de2534c673afb12c82cc5828",
+            "originalSha256": "b5d7f0daae458f96a01844db631aa43781076fa8de2534c673afb12c82cc5828",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_07_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_07_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_07_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "75612f22cad189e419068abaddd57d41d0a100f51a19b4ff1e8d89e9ca24ad82",
+          "originalSha256": "75612f22cad189e419068abaddd57d41d0a100f51a19b4ff1e8d89e9ca24ad82",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_07_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_07_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_07_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "1c0692cc35f3b2fb1e0fe39110d10c7ca349416ff7dd650e7a762cc3ab4f5caa",
+            "originalSha256": "1c0692cc35f3b2fb1e0fe39110d10c7ca349416ff7dd650e7a762cc3ab4f5caa",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_08",
+    "kind": "pose",
+    "code": "MP-021",
+    "title": {
+      "zh": "双手置胯自然站姿",
+      "en": "Relaxed stance with hands at hips"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 双手置胯自然站姿 五视角 深度图 胸腹肌 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Relaxed stance with hands at hips"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-three-completion-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_08_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_08_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_08_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "ac18404079e3031c3bc3cdbf31fd0b3beb927c4c77b606186cff389fdbab8057",
+          "originalSha256": "ac18404079e3031c3bc3cdbf31fd0b3beb927c4c77b606186cff389fdbab8057",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_08_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_08_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "e419bfb6894b80b1a3a7e17a526d0100a723bb42e180e6941facf00b3b08f63b",
+            "originalSha256": "e419bfb6894b80b1a3a7e17a526d0100a723bb42e180e6941facf00b3b08f63b",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_08_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_08_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_08_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "05f640f380dd35e29929965cc651f1b9d04026fad86f77da081ef15fdc7217ac",
+          "originalSha256": "05f640f380dd35e29929965cc651f1b9d04026fad86f77da081ef15fdc7217ac",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_08_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_08_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "9193b59a94cd906c76edd665a813762dea08e48e52d1722cfe053f6369666147",
+            "originalSha256": "9193b59a94cd906c76edd665a813762dea08e48e52d1722cfe053f6369666147",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_08_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_08_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_08_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "b149d9263fa7ecab50dc19f9b84219069d89eca2896d2c5e30aab18acf691335",
+          "originalSha256": "b149d9263fa7ecab50dc19f9b84219069d89eca2896d2c5e30aab18acf691335",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_08_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_08_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "aaa95359ecae3e01d78dec39776df974bf77d5f1cf5a8f86384b5533eb101a6c",
+            "originalSha256": "aaa95359ecae3e01d78dec39776df974bf77d5f1cf5a8f86384b5533eb101a6c",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_08_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_08_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_08_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "f6c2177571178d668f3f86b475dcc3c7f08ee71473d4ce4259223befaac0abd5",
+          "originalSha256": "f6c2177571178d668f3f86b475dcc3c7f08ee71473d4ce4259223befaac0abd5",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_08_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_08_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "5b705ca4951cd50d29e9fa77355a54792df5ff00ddbf9d7ad581571a8df8e941",
+            "originalSha256": "5b705ca4951cd50d29e9fa77355a54792df5ff00ddbf9d7ad581571a8df8e941",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_08_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_08_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_08_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "f589c84ad7a2b00d69fbdfd879d71ec51b39300112d16d56729dc8d1d1584492",
+          "originalSha256": "f589c84ad7a2b00d69fbdfd879d71ec51b39300112d16d56729dc8d1d1584492",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_08_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_08_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_08_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "82f2c39cc45a5550043ac4ee33a1c8f4d27448fcca8c5396dac5b6fae4b8dd76",
+            "originalSha256": "82f2c39cc45a5550043ac4ee33a1c8f4d27448fcca8c5396dac5b6fae4b8dd76",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_pose_extracted_20261103_09",
+    "kind": "pose",
+    "code": "MP-022",
+    "title": {
+      "zh": "双手背后侧倾",
+      "en": "Hands behind with lateral lean"
+    },
+    "category": {
+      "id": "standing",
+      "zh": "站姿",
+      "en": "Standing"
+    },
+    "series": {
+      "zh": "男性写真动作提取 · 20261103",
+      "en": "Male extracted poses · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 动作提取 结构线稿 正面 胸肌 腹肌 双手背后侧倾 五视角 深度图 胸腹肌 五视角 深度图 胸腹肌",
+      "en": "male extracted pose structural line art front pectoral abdominal Hands behind with lateral lean"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "line-art",
+        "zh": "结构线稿",
+        "en": "Structural line art"
+      }
+    ],
+    "provenance": {
+      "batch": "male-three-completion-20261103",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "note": {
+        "zh": "五视角线稿及AI相对深度示意。部分头向脚位有漂移。",
+        "en": "Five-view line art and AI relative-depth illustrations. Some head and foot positions drift."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_pose_extracted_20261103_09_front",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_09_front_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_09_front_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_front_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "5c98a283adb2efb7ea741f5de0a9d0dab2ac638460a594b891360e8b1da3b807",
+          "originalSha256": "5c98a283adb2efb7ea741f5de0a9d0dab2ac638460a594b891360e8b1da3b807",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_09_front_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_09_front_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_front_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "e55db03c42ae77b1371f840e04b3d3698a308e2abaa756434f1e4fbdea8e8744",
+            "originalSha256": "e55db03c42ae77b1371f840e04b3d3698a308e2abaa756434f1e4fbdea8e8744",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_09_high",
+        "angle": "high",
+        "label": {
+          "zh": "俯视",
+          "en": "High"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_09_high_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_09_high_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_high_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "3da6e69a5e3b2e7bbffbc54ae9ea4e976a953b6a36595e31aff033fa34677539",
+          "originalSha256": "3da6e69a5e3b2e7bbffbc54ae9ea4e976a953b6a36595e31aff033fa34677539",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_09_high_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_09_high_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_high_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "50b7b9d9773239498e02c5dd98e446261afd868e31c93957d94d39b70bb5eceb",
+            "originalSha256": "50b7b9d9773239498e02c5dd98e446261afd868e31c93957d94d39b70bb5eceb",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_09_low",
+        "angle": "low",
+        "label": {
+          "zh": "仰视",
+          "en": "Low"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_09_low_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_09_low_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_low_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "956aede08bca7d153ec20ad868ecee3d415dec7e81adce828311d97e1efa3507",
+          "originalSha256": "956aede08bca7d153ec20ad868ecee3d415dec7e81adce828311d97e1efa3507",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_09_low_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_09_low_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_low_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "5070d26b534d00695259e0b8a0fe965e74559373e374ece0e0d7ed8b64caa410",
+            "originalSha256": "5070d26b534d00695259e0b8a0fe965e74559373e374ece0e0d7ed8b64caa410",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_09_side",
+        "angle": "side",
+        "label": {
+          "zh": "侧面",
+          "en": "Side"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_09_side_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_09_side_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_side_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "aa5e5ba3fd532076cc0acb567893ee5ccc7ebbddcc36a5e25401147dc81b40c2",
+          "originalSha256": "aa5e5ba3fd532076cc0acb567893ee5ccc7ebbddcc36a5e25401147dc81b40c2",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_09_side_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_09_side_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_side_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "2d2694a762a084f2037c808b09e1cc449715a966efe9d53038ab08682f0639e9",
+            "originalSha256": "2d2694a762a084f2037c808b09e1cc449715a966efe9d53038ab08682f0639e9",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      },
+      {
+        "id": "custom_pose_extracted_20261103_09_diag",
+        "angle": "diag",
+        "label": {
+          "zh": "斜侧",
+          "en": "Diagonal"
+        },
+        "original": "custom/pose/originals/custom_pose_extracted_20261103_09_diag_multiview20261103.png",
+        "image": "custom/pose/images/custom_pose_extracted_20261103_09_diag_multiview20261103.webp",
+        "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_diag_multiview20261103.webp",
+        "provenance": {
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "batch": "male-three-completion-20261103",
+          "aiInferred": true,
+          "calibrated": false,
+          "generatedSha256": "6ef05f142b3e1d4fb8dcf17ad65922846d5adc756696cda6bf32939bddc17471",
+          "originalSha256": "6ef05f142b3e1d4fb8dcf17ad65922846d5adc756696cda6bf32939bddc17471",
+          "width": 1024,
+          "height": 1536
+        },
+        "depth": {
+          "original": "custom/pose/originals/custom_pose_extracted_20261103_09_diag_multiview20261103_depth.png",
+          "image": "custom/pose/images/custom_pose_extracted_20261103_09_diag_multiview20261103_depth.webp",
+          "thumbnail": "custom/pose/thumbnails/custom_pose_extracted_20261103_09_diag_multiview20261103_depth.webp",
+          "provenance": {
+            "provider": "Atomflow",
+            "model": "gpt-image-2",
+            "batch": "male-three-completion-20261103",
+            "aiInferred": true,
+            "calibrated": false,
+            "generatedSha256": "0ed6ec2340da5f7cf0bf7c1fd2db56d3d4f27162bad69eff1eead499e4b58303",
+            "originalSha256": "0ed6ec2340da5f7cf0bf7c1fd2db56d3d4f27162bad69eff1eead499e4b58303",
+            "width": 1024,
+            "height": 1536
+          }
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_pose_male_001",
     "kind": "pose",
     "code": "MP-001",

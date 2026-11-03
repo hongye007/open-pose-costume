@@ -164,3 +164,31 @@ test('reference network failures are distinguished from provider connection fail
   );
   assert.equal(calls, 2);
 });
+
+
+test('HTTP 403 is reported as access denied without retrying the paid request', async () => {
+  const reference = { kind: 'pose', title: { zh: 'test', en: 'test' }, keywords: { zh: '', en: '' }, variant: { id: 'pose', original: 'https://ai-pose-gallery.pages.dev/img/test.png' } };
+  let posts = 0;
+  await assert.rejects(api.generateReferenceImage({ ...api.defaultImageConfig, apiKey: 'test-secret' }, [reference], 'test', new AbortController().signal, async (_url, options) => {
+    if (options.method === 'POST') { posts++; return new Response('Forbidden', { status: 403 }); }
+    return new Response(new Blob(['test'], { type: 'image/png' }));
+  }), (error) => error.code === 'accessDenied' && String(error.detail || error.message).includes('403'));
+  assert.equal(posts, 1);
+});
+
+
+test('HTML rejection retains bounded diagnostics and removes secrets', async () => {
+  const { readImageResponse } = await vite.ssrLoadModule('/src/image-diagnostics.ts');
+  globalThis.location = { origin: 'http://localhost:5199' };
+  try {
+    const result = await readImageResponse(new Response('<html>Access denied Bearer test-secret sk-private-value https://example.com/?token=private</html>', { status: 403, headers: { 'content-type': 'text/html', 'cf-ray': 'test-ray' } }), 'job-submit', 'https://example.com/jobs?key=private', 'test-secret');
+    const diagnostic = JSON.parse(result.diagnostic);
+    assert.equal(diagnostic.stage, 'job-submit');
+    assert.equal(diagnostic.status, 403);
+    assert.equal(diagnostic.requestId, 'test-ray');
+    assert.equal(diagnostic.endpoint, 'https://example.com/jobs');
+    assert.match(diagnostic.response, /Access denied/);
+    assert.ok(!result.diagnostic.includes('private'));
+    assert.ok(!result.diagnostic.includes('test-secret'));
+  } finally { delete globalThis.location; }
+});

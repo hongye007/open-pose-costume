@@ -14,12 +14,12 @@ const { items } = await readJson('public/data/catalog.json');
 
 test('subject and visual style intersect independently without inferring untagged gender', () => {
   const photos = filterReferences(items, { tag: 'male', style: 'photo' });
-  assert.equal(photos.length, 20);
+  assert.equal(photos.length, 24);
   assert.ok(photos.every((item) => ['costume', 'character'].includes(item.kind)));
   assert.equal(filterReferences(items, { tag: 'male', style: 'anime' }).length, 0);
   assert.equal(
     filterReferences(items, { kind: 'pose', tag: 'male', style: 'line-art' }).length,
-    13,
+    21,
   );
   const untagged = { ...items[0], id: 'untagged', tags: undefined };
   assert.equal(filterReferences([untagged], { tag: 'male' }).length, 0);

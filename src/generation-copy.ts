@@ -76,6 +76,7 @@ export const generationCopy = {
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
+    accessDenied: '请求被拒绝（403）。请检查 API Key 的模型／分组权限及 IP 限制；若配置正确，请联系维护者检查代理来源限制或服务端拦截。',
     networkFailed: '暂时无法连接生图服务，请检查网络后重试；若持续失败，请联系网站维护者。',
     timedOut: '生成超过 10 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
@@ -172,6 +173,7 @@ export const generationCopy = {
       'The original reference could not be read. Check the image URL, network and image host CORS settings, then retry.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
+    accessDenied: 'Request denied (403). Check your API key’s model/group permissions and IP restrictions. If correct, ask the maintainer to check proxy origin restrictions or server-side blocking.',
     networkFailed:
       'The image service is temporarily unreachable. Check your connection and retry; contact the site maintainer if it continues.',
     timedOut: 'Generation exceeded 10 minutes. Please retry later.',

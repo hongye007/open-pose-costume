@@ -60,10 +60,7 @@ export const studioCopy = {
     elapsed: '已等待',
     seconds: '秒',
     loadingHint: '正在处理参考并等待服务返回，可切换图库，生成会继续。',
-    reuse: '用此人物继续生成',
-    reusing: '正在读取结果…',
-    reused: '已将结果设为人物参考',
-    reuseFailed: '无法读取结果图片，请下载后上传为人物参考。',
+    reuse: '换个姿势',
     history: '历史记录',
     downloadReferences: '下载参考图',
     downloadReferencesHint: '打包下载本次使用的姿势、服饰及人物参考原图（如有）',
@@ -156,10 +153,7 @@ export const studioCopy = {
     seconds: 's',
     loadingHint:
       'Processing references and waiting for the service. You can browse the gallery while it runs.',
-    reuse: 'Use as character reference',
-    reusing: 'Reading result…',
-    reused: 'Result added as character reference',
-    reuseFailed: 'Could not read this result. Download it and upload it as a character reference.',
+    reuse: 'Change pose',
     history: 'History',
     downloadReferences: 'Download refs',
     downloadReferencesHint:

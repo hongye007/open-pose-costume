@@ -70,3 +70,5 @@ Custom references are merged into the library, search, favorites, reference pick
 生成批次需先检查动作、视角、构图、截取范围、近远灰度及是否残留线条，审核后使用 `python3 scripts/import-pose-depth.py /path/to/batch-output` 导入。导入脚本仅接受同一姿势全视角均完成的组，校验生成原图哈希，生成无裁切的同尺寸 PNG 和分离的 WebP 预览/缩略图，再写入路径与溯源信息。提示词、参考拼图与生成原始响应信息保留在工作区的批次输出中，不将私有配置放入素材清单。然后运行 `npm run data:build` 和相应校验。
 
 Paired depth references are AI-inferred grayscale guides (near = bright, far = dark), not calibrated 3D depth. The original line art stays intact. All views keep their stable IDs; the selected version is used consistently by previews, generation, downloads and history restoration.
+
+- `male-five-multiview-20261103` 与 `male-three-completion-20261103`：MP-015 至 MP-022，8 张男性照片动作提取的五视角结构线稿，采用用户确认的胸肌收小版，保留腹肌、关节辅助线；遮挡结构、腿脚和相对深度均为 AI 推断，非精确三维测量。

@@ -1,3 +1,4 @@
+import { readImageResponse } from './image-diagnostics';
 import type { Kind, Lang, Reference, Variant } from './types';
 import { isDepthVariant, poseDepthOrigin } from './pose-depth';
 import { isCustomAsset } from './custom-assets';
@@ -272,8 +273,10 @@ export async function generateReferenceImage(
     ).catch((error) => {
       if (combined.aborted) throw error;
       const status = Number((error as { jobStatus?: unknown })?.jobStatus) || 0;
-      const detail = safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
-      if ([400, 401, 403].includes(status))
+      const detail = (error as { diagnostic?: string })?.diagnostic || safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
+      if (status === 403)
+        throw new ImageGenerationError('accessDenied', `HTTP 403${detail ? ` · ${detail}` : ''}`);
+      if ([400, 401].includes(status))
         throw new ImageGenerationError(
           'providerFailed',
           `HTTP ${status}${detail ? ` · ${detail}` : ''}`,
@@ -335,12 +338,12 @@ export async function generateReferenceImage(
       headers: { Authorization: `Bearer ${valid.apiKey}` },
       body: form,
     });
-    const payload = await response.json().catch(() => null);
+    const { payload, diagnostic } = await readImageResponse(response, 'provider-request', endpoint, valid.apiKey);
     if (!response.ok || payload?.error) {
       const message = typeof payload?.error?.message === 'string' ? payload.error.message : '';
       throw new ImageGenerationError(
-        'providerFailed',
-        `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
+        response.status === 403 ? 'accessDenied' : 'providerFailed',
+        diagnostic || `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
       );
     }
     return imageResult(payload);

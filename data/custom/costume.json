@@ -1,5 +1,265 @@
 [
   {
+    "id": "custom_costume_menswear_20261103_01",
+    "kind": "costume",
+    "code": "MW-001",
+    "title": {
+      "zh": "亚麻米色西装与奶油白衬衫",
+      "en": "Beige linen suit and cream shirt"
+    },
+    "category": {
+      "id": "suit",
+      "zh": "西装穿搭",
+      "en": "Suits"
+    },
+    "series": {
+      "zh": "男士精选 · 20261103",
+      "en": "Menswear · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 完整套装 皮鞋 亚麻米色西装与奶油白衬衫",
+      "en": "male photographic complete outfit leather shoes Beige linen suit and cream shirt"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "c3dde6330d4f01847ba4a431bd5856ff1e2fd80ada15773ba0c800b210b66baa",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-menswear-20261103",
+      "note": {
+        "zh": "用户提供原图，未重新生成。",
+        "en": "User-provided original, without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_menswear_20261103_01",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_menswear_20261103_01.png",
+        "image": "custom/costume/images/custom_costume_menswear_20261103_01.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_menswear_20261103_01.webp",
+        "provenance": {
+          "originalSha256": "c3dde6330d4f01847ba4a431bd5856ff1e2fd80ada15773ba0c800b210b66baa",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_menswear_20261103_02",
+    "kind": "costume",
+    "code": "MW-002",
+    "title": {
+      "zh": "黑衬衫与米色阔腿西裤",
+      "en": "Black shirt and beige wide-leg trousers"
+    },
+    "category": {
+      "id": "suit",
+      "zh": "西装穿搭",
+      "en": "Suits"
+    },
+    "series": {
+      "zh": "男士精选 · 20261103",
+      "en": "Menswear · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 完整套装 皮鞋 黑衬衫与米色阔腿西裤",
+      "en": "male photographic complete outfit leather shoes Black shirt and beige wide-leg trousers"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "d73f26f8a5c2e3cbc5f670a1e5db4882a05b752955118cebd39f3301cf78d2dc",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-menswear-20261103",
+      "note": {
+        "zh": "用户提供原图，未重新生成。",
+        "en": "User-provided original, without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_menswear_20261103_02",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_menswear_20261103_02.png",
+        "image": "custom/costume/images/custom_costume_menswear_20261103_02.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_menswear_20261103_02.webp",
+        "provenance": {
+          "originalSha256": "d73f26f8a5c2e3cbc5f670a1e5db4882a05b752955118cebd39f3301cf78d2dc",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_menswear_20261103_03",
+    "kind": "costume",
+    "code": "MW-003",
+    "title": {
+      "zh": "棕色条纹西装与姜黄阔腿裤",
+      "en": "Brown pinstripe blazer and mustard wide-leg trousers"
+    },
+    "category": {
+      "id": "suit",
+      "zh": "西装穿搭",
+      "en": "Suits"
+    },
+    "series": {
+      "zh": "男士精选 · 20261103",
+      "en": "Menswear · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 完整套装 皮鞋 棕色条纹西装与姜黄阔腿裤",
+      "en": "male photographic complete outfit leather shoes Brown pinstripe blazer and mustard wide-leg trousers"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "382ada9e7678fde3536735607890ebefa5a0456109d25bd025b649ba15660b3d",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-menswear-20261103",
+      "note": {
+        "zh": "用户提供原图，未重新生成。",
+        "en": "User-provided original, without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_menswear_20261103_03",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_menswear_20261103_03.png",
+        "image": "custom/costume/images/custom_costume_menswear_20261103_03.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_menswear_20261103_03.webp",
+        "provenance": {
+          "originalSha256": "382ada9e7678fde3536735607890ebefa5a0456109d25bd025b649ba15660b3d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_menswear_20261103_04",
+    "kind": "costume",
+    "code": "MW-004",
+    "title": {
+      "zh": "全黑西装与银色项链",
+      "en": "All-black suit with silver necklace"
+    },
+    "category": {
+      "id": "suit",
+      "zh": "西装穿搭",
+      "en": "Suits"
+    },
+    "series": {
+      "zh": "男士精选 · 20261103",
+      "en": "Menswear · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 完整套装 皮鞋 全黑西装与银色项链",
+      "en": "male photographic complete outfit leather shoes All-black suit with silver necklace"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "16960c049697d175f81ad72640c0591724c4bfca987367f07864af576217a16d",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-menswear-20261103",
+      "note": {
+        "zh": "用户提供原图，未重新生成。",
+        "en": "User-provided original, without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_menswear_20261103_04",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_menswear_20261103_04.png",
+        "image": "custom/costume/images/custom_costume_menswear_20261103_04.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_menswear_20261103_04.webp",
+        "provenance": {
+          "originalSha256": "16960c049697d175f81ad72640c0591724c4bfca987367f07864af576217a16d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_street_010",
     "kind": "costume",
     "code": "ST-010",
