@@ -320,6 +320,7 @@ export default function App() {
     return () => observer.disconnect();
   }, [visible, limit, view, selectedId, panel]);
   const resultKinds = new Set(visible.map((item) => item.kind));
+  const showHero = view === 'all';
   const characterCategory = byView.some(
     (item) => item.category.id === category && item.kind === 'character',
   );
@@ -1049,7 +1050,10 @@ export default function App() {
         </header>
 
         <main className={`library-main library-main-${view}`} hidden={view === 'studio'}>
-          <section className="intro" aria-label={t.brand}>
+          <section
+            className={`intro ${showHero ? 'intro-with-hero' : 'intro-without-hero'}`}
+            aria-label={t.brand}
+          >
             <div className="intro-copy">
               <p className="eyebrow">
                 <span />
@@ -1066,7 +1070,7 @@ export default function App() {
                 <ArrowDown size={15} />
               </a>
             </div>
-            <HeroStudy lang={lang} />
+            {showHero && <HeroStudy lang={lang} />}
           </section>
           <div className="collection-summary">
             <span>

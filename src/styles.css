@@ -420,6 +420,13 @@ main {
 .intro-copy {
   padding-bottom: 10px;
 }
+.intro.intro-without-hero {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+.intro-without-hero .intro-copy {
+  padding-bottom: 0;
+}
 .eyebrow {
   display: flex;
   align-items: center;
