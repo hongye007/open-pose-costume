@@ -88,6 +88,16 @@ export default function App() {
       : storageGet('opc-language', navigator.language.startsWith('zh') ? 'zh' : 'en', isLanguage);
   });
   const t = copy[lang];
+  const [showDomainNotice, setShowDomainNotice] = useState(() =>
+    window.location.hostname === 'hongye007.github.io' &&
+    !storageGet('opc-domain-notice-v1', false, (value): value is boolean => typeof value === 'boolean'),
+  );
+  const dismissDomainNotice = () => {
+    storageSet('opc-domain-notice-v1', true);
+    setShowDomainNotice(false);
+  };
+  const newDomainUrl = `https://omilic.com/${window.location.search}${window.location.hash}`;
+
   const [catalog, setCatalog] = useState<Catalog | null>(null);
   const [failed, setFailed] = useState(false);
   const [reload, setReload] = useState(0);
@@ -1799,6 +1809,22 @@ export default function App() {
               </a>
             </div>
           </section>
+        </Modal>
+      )}
+      {showDomainNotice && (
+        <Modal onClose={dismissDomainNotice} label={lang === 'zh' ? '新域名已启用' : 'Visit our new domain'} className="about-modal">
+          <div className="panel-heading">
+            <h2>{lang === 'zh' ? '新域名已启用' : 'Visit our new domain'}</h2>
+            <button className="icon-button" aria-label={t.close} onClick={dismissDomainNotice}><X size={22} /></button>
+          </div>
+          <p>{lang === 'zh'
+            ? '为了提供更稳定的网络访问服务，我们已启用新域名 omilic.com，建议前往新站继续使用。'
+            : 'For more reliable access, we have launched our new domain, omilic.com. We recommend continuing on the new site.'}</p>
+          <p>{lang === 'zh' ? '收藏和 API 配置保存在当前浏览器的本站数据中，切换域名后需要重新设置。' : 'Favorites and API settings are stored for this domain and will need to be set up again on the new site.'}</p>
+          <div className="domain-notice-actions">
+            <a className="primary-button" href={newDomainUrl} onClick={dismissDomainNotice}>{lang === 'zh' ? '前往新站' : 'Visit new site'}<ExternalLink size={16} /></a>
+            <button className="text-action" onClick={dismissDomainNotice}>{lang === 'zh' ? '暂时留在这里' : 'Stay here for now'}</button>
+          </div>
         </Modal>
       )}
       {toast && (
