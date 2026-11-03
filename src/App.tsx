@@ -1050,28 +1050,27 @@ export default function App() {
         </header>
 
         <main className={`library-main library-main-${view}`} hidden={view === 'studio'}>
-          <section
-            className={`intro ${showHero ? 'intro-with-hero' : 'intro-without-hero'}`}
-            aria-label={t.brand}
-          >
-            <div className="intro-copy">
-              <p className="eyebrow">
-                <span />
-                {t.introLabel}
-              </p>
-              <h1>
-                {t.introA}
-                <br />
-                <em>{t.introB}</em>
-              </h1>
-              <p className="intro-description">{t.introText}</p>
-              <a className="intro-link" href="#collection">
-                {t.introLink}
-                <ArrowDown size={15} />
-              </a>
-            </div>
-            {showHero && <HeroStudy lang={lang} />}
-          </section>
+          {showHero && (
+            <section className="intro" aria-label={t.brand}>
+              <div className="intro-copy">
+                <p className="eyebrow">
+                  <span />
+                  {t.introLabel}
+                </p>
+                <h1>
+                  {t.introA}
+                  <br />
+                  <em>{t.introB}</em>
+                </h1>
+                <p className="intro-description">{t.introText}</p>
+                <a className="intro-link" href="#collection">
+                  {t.introLink}
+                  <ArrowDown size={15} />
+                </a>
+              </div>
+              <HeroStudy lang={lang} />
+            </section>
+          )}
           <div className="collection-summary">
             <span>
               <strong>{catalog?.stats.references.toLocaleString(lang) || '—'}</strong>{' '}
