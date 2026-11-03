@@ -89,19 +89,20 @@ test('custom and anime filters intersect with categories and bilingual search', 
   assert.ok(!matchesQuery(animeOutfit, 'nonexistent-garment'));
 });
 
-test('regional portraits expose paired fictional identities through bilingual search and subject filters', () => {
+test('regional portraits expose the active fictional identities through bilingual search and subject filters', () => {
   const portraits = custom.filter(
     (item) => item.provenance.batch === 'custom-character-regions-01',
   );
-  assert.equal(portraits.length, 22);
-  for (const gender of ['male', 'female'])
-    assert.equal(portraits.filter((item) => matchesExtension(item, 'custom', gender)).length, 11);
+  assert.equal(portraits.length, 21);
+  assert.equal(portraits.filter((item) => matchesExtension(item, 'custom', 'male')).length, 10);
+  assert.equal(portraits.filter((item) => matchesExtension(item, 'custom', 'female')).length, 11);
   const countries = new Set(portraits.map((item) => item.provenance.editorialCountry.code));
   assert.equal(countries.size, 11);
   for (const country of countries) {
     const pair = portraits.filter((item) => item.provenance.editorialCountry.code === country);
-    assert.equal(pair.length, 2);
-    assert.deepEqual(new Set(pair.map((item) => item.tags[0].id)), new Set(['male', 'female']));
+    const genders = country === 'kr' ? ['female'] : ['male', 'female'];
+    assert.equal(pair.length, genders.length);
+    assert.deepEqual(new Set(pair.map((item) => item.tags[0].id)), new Set(genders));
     for (const item of pair) {
       assert.equal(item.kind, 'character');
       assert.equal(item.portrait.section, 'face');

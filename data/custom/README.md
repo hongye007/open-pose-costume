@@ -25,9 +25,9 @@ Custom assets require separate permission. They are free for learning and person
 - `male-character-styles-06-01`：6 张男性人物参考（清爽短发、温柔中分、硬朗寸头、成熟商务、卷发文艺、长发冷感），原图 1024 × 1536，标签 `male`、`photo`。均为 AI 虚构成年人物，国家／地区标签为“国际（未细分）”，统一正面头肩构图、浅蓝灰背景和柔光写实质感，支持发长筛选。
 - `male-extracted-poses-3x5-01`：从已确认的三张男性提取线稿扩展的 3 组动作、15 个视角（正面、俯视、仰视、侧面、斜侧），编号 MP-011 至 MP-013，原图 1024 × 1536，标签 `male`、`line-art`。腰前合手为全身，转头扶髋与单手扶髋持书保留大腿处裁切；统一白底、黑色轮廓、圆形关节和辅助线。仅调整相机视角，不添加服装；生成视图并非严格三维标定数据；配套深度图同样属于 AI 推断参考。
 
-- `custom-character-regions-01`：22 张虚构成年人物参考，11 个国家编辑分组各一男一女，原图 1024 × 1536。统一正面头肩构图、自然微笑、浅灰绿背景及象牙白上衣；标签 `male` / `female`、`photo`，支持发长筛选、独立国家／地区标签筛选及中英文国家名称搜索。国家名称只用于编辑分组，不代表真实国籍或代表性长相。PNG 原图、全尺寸 WebP 和 256 × 384 缩略图分别存放，搭配生成与下载使用 PNG 原图。
+- `custom-character-regions-01`：21 张虚构成年人物参考，覆盖 11 个国家编辑分组；韩国分组仅保留女性人像，其余分组各一男一女。原图 1024 × 1536，统一正面头肩构图、自然微笑、浅灰绿背景及象牙白上衣；标签 `male` / `female`、`photo`，支持发长筛选、独立国家／地区标签筛选及中英文国家名称搜索。国家名称只用于编辑分组，不代表真实国籍或代表性长相。PNG 原图、全尺寸 WebP 和 256 × 384 缩略图分别存放，搭配生成与下载使用 PNG 原图。
 
-Regional portraits: 22 fictional adult characters in 11 editorial country groups, one female and one male per group. Native 1024 × 1536 originals are preserved; gender, photographic style and hair-length filters work alongside bilingual country-name search. Country groups do not establish nationality or a representative appearance. The same custom-asset usage restrictions apply.
+Regional portraits: 21 fictional adult characters across 11 editorial country groups. The South Korea group retains only its female portrait; every other group has one female and one male. Native 1024 × 1536 originals are preserved; gender, photographic style and hair-length filters work alongside bilingual country-name search. Country groups do not establish nationality or a representative appearance. The same custom-asset usage restrictions apply.
 
 男性素材可在图库和一键生图选图器内，选择“自建扩展”与“男性 / Male”标签查看。
 
