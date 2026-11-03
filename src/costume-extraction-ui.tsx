@@ -26,6 +26,7 @@ export function CostumeExtractionDialog({
   onUpload,
   onExtract,
   onConfirm,
+  onUseOriginal,
   onClose,
 }: {
   lang: Lang;
@@ -36,6 +37,7 @@ export function CostumeExtractionDialog({
   onUpload: (file: File) => void;
   onExtract: () => void;
   onConfirm: () => void;
+  onUseOriginal: () => void;
   onClose: () => void;
 }) {
   const t = studioCopy[lang];
@@ -43,9 +45,9 @@ export function CostumeExtractionDialog({
   const extracted = useFilePreview(result);
   const input = useRef<HTMLInputElement>(null);
   return (
-    <Modal label={t.extractCostume} className="costume-extraction-modal" onClose={onClose}>
+    <Modal label={t.costumeUploadTitle} className="costume-extraction-modal" onClose={onClose}>
       <div className="panel-heading">
-        <h2>{t.extractCostume}</h2>
+        <h2>{t.costumeUploadTitle}</h2>
         <button
           type="button"
           className="icon-button"
@@ -157,6 +159,9 @@ export function CostumeExtractionDialog({
       )}
       <p className="costume-extraction-note">{t.costumeExtractionHint}</p>
       <div className="costume-extraction-footer">
+        <button type="button" className="secondary-button" disabled={!file || loading} onClick={onUseOriginal}>
+          {t.useOriginalCostume}
+        </button>
         <button type="button" className="secondary-button" onClick={onClose}>
           {t.cancelExtraction}
         </button>

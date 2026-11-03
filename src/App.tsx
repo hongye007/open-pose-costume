@@ -699,7 +699,7 @@ export default function App() {
         title:
           kind === 'character'
             ? { zh: '人物参考', en: 'Character reference' }
-            : { zh: '已提取的服饰', en: 'Extracted outfit' },
+            : { zh: '服饰参考', en: 'Outfit reference' },
         keywords: {
           zh:
             kind === 'character'
@@ -1681,6 +1681,10 @@ export default function App() {
           error={extractionError}
           onUpload={(file) => void selectReferenceFile(file, 'costume')}
           onExtract={() => void runCostumeExtraction()}
+          onUseOriginal={() => {
+            if (pendingCostume && !costumeLoading)
+              void applyReferenceFile(pendingCostume, 'costume');
+          }}
           onConfirm={() => {
             if (extractedCostume && !costumeLoading)
               void applyReferenceFile(extractedCostume, 'costume');
