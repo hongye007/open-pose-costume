@@ -1,3 +1,4 @@
+import { downloadFilename } from './download-filename';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowDown,
@@ -549,7 +550,7 @@ export default function App() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `${item.id}-${chosenVariant.angle}.${extension}`;
+      link.download = downloadFilename(`${item.id}-${chosenVariant.angle}`, extension);
       (document.querySelector('dialog[open]') || document.body).appendChild(link);
       link.click();
       link.remove();

@@ -1,3 +1,4 @@
+import { downloadFilename } from './download-filename';
 import { useEffect, useRef, useState } from 'react';
 import {
   ArrowLeftRight,
@@ -56,7 +57,7 @@ async function downloadImageSource(source: string, filename: string): Promise<vo
   const objectUrl = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = objectUrl;
-  link.download = `${filename}.${imageExtension(blob.type)}`;
+  link.download = downloadFilename(filename, imageExtension(blob.type));
   const dialogs = document.querySelectorAll('dialog[open]');
   (dialogs[dialogs.length - 1] || document.body).appendChild(link);
   link.click();
