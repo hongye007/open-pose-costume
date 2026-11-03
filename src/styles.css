@@ -5209,3 +5209,6 @@ dialog::backdrop {
 
 .domain-notice-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 24px; }
 .domain-notice-actions a { text-decoration: none; }
+
+.domain-notice-opt-out { display: flex; align-items: center; gap: 8px; margin-top: 20px; cursor: pointer; }
+.domain-notice-opt-out input { width: 16px; height: 16px; accent-color: #4856ca; }
