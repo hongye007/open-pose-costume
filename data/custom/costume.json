@@ -1,5 +1,395 @@
 [
   {
+    "id": "custom_costume_street_010",
+    "kind": "costume",
+    "code": "ST-010",
+    "title": {
+      "zh": "奶白系带上衣与灰色条纹百褶裙",
+      "en": "Ivory tie-front top and grey pinstripe pleated skirt"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 V领 系带 长袖 灰色 条纹 百褶 短裙 棕色褶皱包 珍珠肩带 白色高跟凉鞋",
+      "en": "female photographic complete outfit no person V neck tie front long sleeve grey pinstripe pleated mini skirt brown ruched pearl strap bag white heel sandals"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_010",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_010.png",
+        "image": "custom/costume/images/custom_costume_street_010.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_010.webp",
+        "provenance": {
+          "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_011",
+    "kind": "costume",
+    "code": "ST-011",
+    "title": {
+      "zh": "浅蓝星芒水钻西装裙套装",
+      "en": "Pale blue crystal starburst skirt suit"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 浅蓝 条纹 西装 水钻 星芒 丝巾 黑色手提包 白色长靴",
+      "en": "female photographic complete outfit no person pale blue pinstripe blazer crystal starburst scarf black handbag white tall boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_011",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_011.png",
+        "image": "custom/costume/images/custom_costume_street_011.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_011.webp",
+        "provenance": {
+          "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_012",
+    "kind": "costume",
+    "code": "ST-012",
+    "title": {
+      "zh": "奶白荷叶边露肩连衣裙",
+      "en": "Ivory off-shoulder ruffle dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 奶白 露肩 泡泡袖 荷叶边 蝴蝶结 连衣裙 爱心珍珠包 尖头穆勒鞋",
+      "en": "female photographic complete outfit no person ivory off shoulder puff sleeve ruffle bow dress heart pearl bag pointed mules"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "96309c3274543303a4817e1598d69183f177a2b13071c24ccc4427c406cb8fcc",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_012",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_012.png",
+        "image": "custom/costume/images/custom_costume_street_012.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_012.webp",
+        "provenance": {
+          "originalSha256": "96309c3274543303a4817e1598d69183f177a2b13071c24ccc4427c406cb8fcc",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_013",
+    "kind": "costume",
+    "code": "ST-013",
+    "title": {
+      "zh": "珍珠白缎面斜肩短裙套装",
+      "en": "Pearl satin asymmetric top and ruched skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 珍珠白 缎面 斜肩 宽袖 露腰 褶皱 系带 短裙 手镯 水钻高跟凉鞋",
+      "en": "female photographic complete outfit no person pearl white satin asymmetric wide sleeve crop top ruched tie skirt bracelets crystal heel sandals"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "257be600de0593c02e2e26ac4f1a3c19696f12ee1f8b2098d62634488db2d296",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_013",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_013.png",
+        "image": "custom/costume/images/custom_costume_street_013.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_013.webp",
+        "provenance": {
+          "originalSha256": "257be600de0593c02e2e26ac4f1a3c19696f12ee1f8b2098d62634488db2d296",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_014",
+    "kind": "costume",
+    "code": "ST-014",
+    "title": {
+      "zh": "浅蓝蝴蝶结吊带百褶裙套装",
+      "en": "Pale blue bow camisole and pleated skirt set"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 浅蓝 蝴蝶结 蕾丝 吊带 百褶 短裙 白色发饰 手提包 芭蕾鞋",
+      "en": "female photographic complete outfit no person pale blue bow lace camisole pleated mini skirt white hair bow handbag ballet flats"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "fa90ae61a6d7ffc8f608c7458c645ba527c7bb83a0283a26ec428d654e7cabc3",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_014",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_014.png",
+        "image": "custom/costume/images/custom_costume_street_014.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_014.webp",
+        "provenance": {
+          "originalSha256": "fa90ae61a6d7ffc8f608c7458c645ba527c7bb83a0283a26ec428d654e7cabc3",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_015",
+    "kind": "costume",
+    "code": "ST-015",
+    "title": {
+      "zh": "酒红碎花长袖短裙套装",
+      "en": "Burgundy floral long-sleeve skirt set"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 酒红 碎花 方领 灯笼袖 褶皱 系带 荷叶边 短裙 棕色肩包 玛丽珍鞋",
+      "en": "female photographic complete outfit no person burgundy floral square neck balloon sleeve ruched tie ruffle mini skirt brown shoulder bag Mary Jane shoes"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "d77fcdf0c0f62cf1d92c0cd09493432b83b9fc69644768007cfaa06820ede0cd",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_015",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_015.png",
+        "image": "custom/costume/images/custom_costume_street_015.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_015.webp",
+        "provenance": {
+          "originalSha256": "d77fcdf0c0f62cf1d92c0cd09493432b83b9fc69644768007cfaa06820ede0cd",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_001",
     "kind": "costume",
     "code": "C-001",
@@ -2701,396 +3091,6 @@
         "thumbnail": "custom/costume/thumbnails/custom_costume_street_009.webp",
         "provenance": {
           "originalSha256": "f985bfb4486b0a99d8db945008a70e146c0bf8d99707fd7c798310cb8ca8aa6b",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_010",
-    "kind": "costume",
-    "code": "ST-010",
-    "title": {
-      "zh": "奶白系带上衣与灰色条纹百褶裙",
-      "en": "Ivory tie-front top and grey pinstripe pleated skirt"
-    },
-    "category": {
-      "id": "street",
-      "zh": "日常穿搭",
-      "en": "Everyday"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 V领 系带 长袖 灰色 条纹 百褶 短裙 棕色褶皱包 珍珠肩带 白色高跟凉鞋",
-      "en": "female photographic complete outfit no person V neck tie front long sleeve grey pinstripe pleated mini skirt brown ruched pearl strap bag white heel sandals"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_010",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_010.png",
-        "image": "custom/costume/images/custom_costume_street_010.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_010.webp",
-        "provenance": {
-          "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_011",
-    "kind": "costume",
-    "code": "ST-011",
-    "title": {
-      "zh": "浅蓝星芒水钻西装裙套装",
-      "en": "Pale blue crystal starburst skirt suit"
-    },
-    "category": {
-      "id": "party",
-      "zh": "派对穿搭",
-      "en": "Party"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 浅蓝 条纹 西装 水钻 星芒 丝巾 黑色手提包 白色长靴",
-      "en": "female photographic complete outfit no person pale blue pinstripe blazer crystal starburst scarf black handbag white tall boots"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_011",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_011.png",
-        "image": "custom/costume/images/custom_costume_street_011.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_011.webp",
-        "provenance": {
-          "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_012",
-    "kind": "costume",
-    "code": "ST-012",
-    "title": {
-      "zh": "奶白荷叶边露肩连衣裙",
-      "en": "Ivory off-shoulder ruffle dress"
-    },
-    "category": {
-      "id": "party",
-      "zh": "派对穿搭",
-      "en": "Party"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 奶白 露肩 泡泡袖 荷叶边 蝴蝶结 连衣裙 爱心珍珠包 尖头穆勒鞋",
-      "en": "female photographic complete outfit no person ivory off shoulder puff sleeve ruffle bow dress heart pearl bag pointed mules"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "96309c3274543303a4817e1598d69183f177a2b13071c24ccc4427c406cb8fcc",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_012",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_012.png",
-        "image": "custom/costume/images/custom_costume_street_012.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_012.webp",
-        "provenance": {
-          "originalSha256": "96309c3274543303a4817e1598d69183f177a2b13071c24ccc4427c406cb8fcc",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_013",
-    "kind": "costume",
-    "code": "ST-013",
-    "title": {
-      "zh": "珍珠白缎面斜肩短裙套装",
-      "en": "Pearl satin asymmetric top and ruched skirt"
-    },
-    "category": {
-      "id": "party",
-      "zh": "派对穿搭",
-      "en": "Party"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 珍珠白 缎面 斜肩 宽袖 露腰 褶皱 系带 短裙 手镯 水钻高跟凉鞋",
-      "en": "female photographic complete outfit no person pearl white satin asymmetric wide sleeve crop top ruched tie skirt bracelets crystal heel sandals"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "257be600de0593c02e2e26ac4f1a3c19696f12ee1f8b2098d62634488db2d296",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_013",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_013.png",
-        "image": "custom/costume/images/custom_costume_street_013.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_013.webp",
-        "provenance": {
-          "originalSha256": "257be600de0593c02e2e26ac4f1a3c19696f12ee1f8b2098d62634488db2d296",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_014",
-    "kind": "costume",
-    "code": "ST-014",
-    "title": {
-      "zh": "浅蓝蝴蝶结吊带百褶裙套装",
-      "en": "Pale blue bow camisole and pleated skirt set"
-    },
-    "category": {
-      "id": "street",
-      "zh": "日常穿搭",
-      "en": "Everyday"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 浅蓝 蝴蝶结 蕾丝 吊带 百褶 短裙 白色发饰 手提包 芭蕾鞋",
-      "en": "female photographic complete outfit no person pale blue bow lace camisole pleated mini skirt white hair bow handbag ballet flats"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "fa90ae61a6d7ffc8f608c7458c645ba527c7bb83a0283a26ec428d654e7cabc3",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_014",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_014.png",
-        "image": "custom/costume/images/custom_costume_street_014.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_014.webp",
-        "provenance": {
-          "originalSha256": "fa90ae61a6d7ffc8f608c7458c645ba527c7bb83a0283a26ec428d654e7cabc3",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_015",
-    "kind": "costume",
-    "code": "ST-015",
-    "title": {
-      "zh": "酒红碎花长袖短裙套装",
-      "en": "Burgundy floral long-sleeve skirt set"
-    },
-    "category": {
-      "id": "party",
-      "zh": "派对穿搭",
-      "en": "Party"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 酒红 碎花 方领 灯笼袖 褶皱 系带 荷叶边 短裙 棕色肩包 玛丽珍鞋",
-      "en": "female photographic complete outfit no person burgundy floral square neck balloon sleeve ruched tie ruffle mini skirt brown shoulder bag Mary Jane shoes"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "d77fcdf0c0f62cf1d92c0cd09493432b83b9fc69644768007cfaa06820ede0cd",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_015",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_015.png",
-        "image": "custom/costume/images/custom_costume_street_015.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_015.webp",
-        "provenance": {
-          "originalSha256": "d77fcdf0c0f62cf1d92c0cd09493432b83b9fc69644768007cfaa06820ede0cd",
           "width": 1024,
           "height": 1536
         }
