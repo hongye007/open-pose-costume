@@ -117,11 +117,9 @@ export default function App() {
   );
   const [extended, setExtended] = useState(initialParams.get('extended') === '1');
   const [poseDepth, setPoseDepth] = useState(initialParams.get('depth') === '1');
-  const [angle, setAngle] = useState<string>(
-    angles.includes(initialParams.get('angle') as (typeof angles)[number])
-      ? initialParams.get('angle')!
-      : 'front',
-  );
+  const angle = angles.includes(initialParams.get('angle') as (typeof angles)[number])
+    ? initialParams.get('angle')!
+    : 'front';
   const [cardAngles, setCardAngles] = useState<Record<string, string>>({});
   const [sort, setSort] = useState<Sort>(
     ['name', 'code'].includes(initialParams.get('sort') || '')
@@ -144,7 +142,7 @@ export default function App() {
   const [studioAngle, setStudioAngle] = useState('front');
   const characterTask = useRef(0);
   const costumeTask = useRef(0);
-  const [panel, setPanel] = useState<'about' | 'settings' | null>(null);
+  const [panel, setPanel] = useState<'project' | 'settings' | 'usage' | null>(null);
   const [imageConfig, setImageConfig] = useState(loadImageConfig);
   const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
   const generationController = useRef<AbortController | null>(null);
@@ -447,6 +445,8 @@ export default function App() {
   ];
   const pageTitle =
     view === 'studio' ? studioCopy[lang].title : navItems.find((item) => item.key === view)!.label;
+  const projectOpen = panel === 'project';
+  const mobileLibraryActive = !projectOpen && view !== 'studio' && view !== 'saved';
 
   function changeView(next: View) {
     setSelectedId(null);
@@ -869,6 +869,11 @@ export default function App() {
             <p>{t.extendedHint}</p>
           </div>
           <div className="social-links">
+            <button className="social-link sidebar-about" onClick={() => setPanel('project')}>
+              <Info size={16} />
+              <span>{t.projectAbout}</span>
+              <ChevronRight size={14} />
+            </button>
             <a
               className="social-link"
               href="https://x.com/HongyeMain"
@@ -921,14 +926,83 @@ export default function App() {
         </div>
       </aside>
 
+      <nav className="mobile-bottom-nav" aria-label={t.mobileNavigation}>
+        <button
+          className={mobileLibraryActive ? 'active' : ''}
+          aria-current={mobileLibraryActive ? 'page' : undefined}
+          onClick={() => {
+            changeView('all');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <Grid2X2 size={21} strokeWidth={mobileLibraryActive ? 2.4 : 1.9} />
+          <span>{t.mobileLibrary}</span>
+        </button>
+        <button
+          className={!projectOpen && view === 'studio' ? 'active' : ''}
+          aria-current={!projectOpen && view === 'studio' ? 'page' : undefined}
+          onClick={() => {
+            openStudio();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <Sparkles size={21} strokeWidth={!projectOpen && view === 'studio' ? 2.4 : 1.9} />
+          <span>{studioCopy[lang].title}</span>
+        </button>
+        <button
+          className={!projectOpen && view === 'saved' ? 'active' : ''}
+          aria-current={!projectOpen && view === 'saved' ? 'page' : undefined}
+          onClick={() => {
+            changeView('saved');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <span className="mobile-nav-icon">
+            <Bookmark
+              size={21}
+              strokeWidth={!projectOpen && view === 'saved' ? 2.4 : 1.9}
+              fill={!projectOpen && view === 'saved' ? 'currentColor' : 'none'}
+            />
+            {saved.length > 0 && <small>{saved.length > 99 ? '99+' : saved.length}</small>}
+          </span>
+          <span>{t.mobileSaved}</span>
+        </button>
+        <button
+          className={projectOpen ? 'active' : ''}
+          aria-current={projectOpen ? 'page' : undefined}
+          onClick={() => setPanel('project')}
+        >
+          <Info size={21} strokeWidth={panel === 'project' ? 2.4 : 1.9} />
+          <span>{t.projectAboutShort}</span>
+        </button>
+      </nav>
+
       <div className="workspace">
         <header className="topbar">
-          <div className="breadcrumb">
-            <span>{t.library}</span>
-            <ChevronRight size={13} />
-            <strong>{pageTitle}</strong>
-          </div>
+          <button
+            className="topbar-brand"
+            onClick={() => {
+              changeView('all');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            aria-label={t.projectHome}
+          >
+            <img src={`${import.meta.env.BASE_URL}brand/logo-mark.png`} alt="" />
+            <strong>open-pose-costume</strong>
+          </button>
           <div className="header-actions">
+            <button
+              className={`mobile-extended-toggle ${extended ? 'active' : ''}`}
+              aria-label={t.extended}
+              aria-pressed={extended}
+              title={t.extended}
+              onClick={() => {
+                setExtended((value) => !value);
+                setCategory('all');
+              }}
+            >
+              <Layers2 size={17} />
+            </button>
             <ImageSettingsButton
               lang={lang}
               ready={imageReady}
@@ -940,7 +1014,7 @@ export default function App() {
             </button>
             <button
               className="header-source"
-              onClick={() => setPanel('about')}
+              onClick={() => setPanel('usage')}
               aria-label={t.usage}
             >
               <Info size={17} />
@@ -962,7 +1036,7 @@ export default function App() {
           </div>
         </header>
 
-        <main hidden={view === 'studio'}>
+        <main className={`library-main library-main-${view}`} hidden={view === 'studio'}>
           <section className="intro" aria-label={t.brand}>
             <div className="intro-copy">
               <p className="eyebrow">
@@ -1154,25 +1228,6 @@ export default function App() {
                     <option value="code">{t.code}</option>
                   </select>
                 </label>
-                {resultKinds.has('pose') && (
-                  <label className="angle-control">
-                    <span>{t.angle}</span>
-                    <select
-                      aria-label={t.angle}
-                      value={angle}
-                      onChange={(e) => {
-                        setAngle(e.target.value);
-                        setCardAngles({});
-                      }}
-                    >
-                      {angles.map((key) => (
-                        <option key={key} value={key}>
-                          {t[key]}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                )}
               </div>
             </div>
 
@@ -1359,7 +1414,7 @@ export default function App() {
           <footer>
             <span className="footer-wordmark">open.</span>
             <p>{t.footer}</p>
-            <button onClick={() => setPanel('about')}>
+            <button onClick={() => setPanel('usage')}>
               {t.usage}
               <ArrowUpRight size={13} />
             </button>
@@ -1638,7 +1693,7 @@ export default function App() {
           }}
         />
       )}
-      {panel === 'about' && (
+      {panel === 'usage' && (
         <Modal onClose={() => setPanel(null)} label={t.usage} className="about-modal">
           <div className="panel-heading">
             <div>
@@ -1663,6 +1718,87 @@ export default function App() {
           </p>
           <p>{t.aboutRights}</p>
           <p>{t.aboutCaveat}</p>
+        </Modal>
+      )}
+      {panel === 'project' && (
+        <Modal onClose={() => setPanel(null)} label={t.projectAbout} className="project-modal">
+          <div className="panel-heading project-heading">
+            <div>
+              <span className="section-kicker">OPEN SOURCE REFERENCE STUDIO</span>
+              <h2>{t.projectAboutTitle}</h2>
+            </div>
+            <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
+              <X size={22} />
+            </button>
+          </div>
+          <p className="project-intro">{t.projectAboutIntro}</p>
+          <div className="project-stats" aria-label={t.projectScale}>
+            <div>
+              <strong>{catalog?.stats.references.toLocaleString(lang) || '—'}</strong>
+              <span>{t.projectReferences}</span>
+            </div>
+            <div>
+              <strong>{catalog?.stats.images.toLocaleString(lang) || '—'}</strong>
+              <span>{t.projectImages}</span>
+            </div>
+            <div>
+              <strong>{catalog?.stats.poseGroups.toLocaleString(lang) || '—'}</strong>
+              <span>{t.projectPoses}</span>
+            </div>
+            <div>
+              <strong>{catalog?.stats.costumes.toLocaleString(lang) || '—'}</strong>
+              <span>{t.projectCostumes}</span>
+            </div>
+            <div>
+              <strong>{catalog?.stats.characters.toLocaleString(lang) || '—'}</strong>
+              <span>{t.projectCharacters}</span>
+            </div>
+          </div>
+          <section className="project-section">
+            <h3>{t.projectRepositories}</h3>
+            <a
+              className="project-link"
+              href="https://github.com/hongye007/open-pose-costume"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={18} />
+              <span>
+                <strong>open-pose-costume</strong>
+                <small>github.com/hongye007/open-pose-costume</small>
+              </span>
+              <ExternalLink size={15} />
+            </a>
+            <a
+              className="project-link"
+              href="https://github.com/hongye007/open-pose-costume-skill"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Sparkles size={18} />
+              <span>
+                <strong>open-pose-costume-skill</strong>
+                <small>github.com/hongye007/open-pose-costume-skill</small>
+              </span>
+              <ExternalLink size={15} />
+            </a>
+          </section>
+          <section className="project-section project-author">
+            <h3>{t.projectAuthor}</h3>
+            <div>
+              <span className="author-mark">H</span>
+              <span>
+                <strong>hongye007</strong>
+                <small>@HongyeMain</small>
+              </span>
+              <a href="https://github.com/hongye007" target="_blank" rel="noopener noreferrer">
+                GitHub <ExternalLink size={13} />
+              </a>
+              <a href="https://x.com/HongyeMain" target="_blank" rel="noopener noreferrer">
+                X <ExternalLink size={13} />
+              </a>
+            </div>
+          </section>
         </Modal>
       )}
       {toast && (

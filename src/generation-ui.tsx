@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   ArrowLeftRight,
+  CircleHelp,
   Check,
   Download,
   Eye,
   EyeOff,
+  ExternalLink,
   LoaderCircle,
   Maximize2,
   ZoomIn,
@@ -16,7 +18,7 @@ import {
   X,
 } from 'lucide-react';
 import { Modal, RemoteImage } from './ui';
-import { generationCopy } from './generation-copy';
+import { apiGuideSteps, generationCopy } from './generation-copy';
 import {
   clearImageConfig,
   defaultImageConfig,
@@ -176,6 +178,7 @@ export function ImageSettings({
   const t = generationCopy[lang];
   const [draft, setDraft] = useState(config);
   const [showKey, setShowKey] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const [error, setError] = useState('');
   let serviceHomepage = defaultImageConfig.baseUrl;
   try {
@@ -188,142 +191,202 @@ export function ImageSettings({
     setError('');
   };
   return (
-    <Modal onClose={onClose} label={t.settings} className="image-settings-modal">
-      <div className="panel-heading">
-        <div>
-          <span className="section-kicker">IMAGE GENERATION</span>
-          <h2>{t.settings}</h2>
-        </div>
-        <button className="icon-button" aria-label={t.close} onClick={onClose}>
-          <X size={21} />
-        </button>
-      </div>
-      <p className="panel-description">{t.settingsIntro}</p>
-      <form
-        className="image-settings-form"
-        onSubmit={(event) => {
-          event.preventDefault();
-          try {
-            onSave(saveImageConfig(draft));
-          } catch (failure) {
-            const code = failure instanceof Error ? failure.message : '';
-            setError(
-              code === 'missingConfig' || code === 'invalidConfig'
-                ? t[code]
-                : code === 'invalidEndpoint' || failure instanceof TypeError
-                  ? t.invalidEndpoint
-                  : t.storageFailed,
-            );
-          }
-        }}
-      >
-        <label>
-          {t.baseUrl}
-          <input
-            type="url"
-            required
-            autoComplete="off"
-            placeholder="https://api.example.com/v1"
-            value={draft.baseUrl}
-            onChange={(e) => update('baseUrl', e.target.value)}
-          />
-        </label>
-        <div className="api-key-field">
-          <div className="api-key-label">
-            <label htmlFor="image-api-key">{t.apiKey}</label>
-            <a href={serviceHomepage} target="_blank" rel="noopener noreferrer">
-              {t.getApiKey}
-            </a>
+    <>
+      <Modal onClose={onClose} label={t.settings} className="image-settings-modal">
+        <div className="panel-heading">
+          <div>
+            <span className="section-kicker">IMAGE GENERATION</span>
+            <h2>{t.settings}</h2>
           </div>
-          <span className="api-key-input">
+          <button className="icon-button" aria-label={t.close} onClick={onClose}>
+            <X size={21} />
+          </button>
+        </div>
+        <p className="panel-description">{t.settingsIntro}</p>
+        <form
+          className="image-settings-form"
+          onSubmit={(event) => {
+            event.preventDefault();
+            try {
+              onSave(saveImageConfig(draft));
+            } catch (failure) {
+              const code = failure instanceof Error ? failure.message : '';
+              setError(
+                code === 'missingConfig' || code === 'invalidConfig'
+                  ? t[code]
+                  : code === 'invalidEndpoint' || failure instanceof TypeError
+                    ? t.invalidEndpoint
+                    : t.storageFailed,
+              );
+            }
+          }}
+        >
+          <label>
+            {t.baseUrl}
             <input
-              id="image-api-key"
-              type={showKey ? 'text' : 'password'}
+              type="url"
               required
               autoComplete="off"
-              spellCheck={false}
-              value={draft.apiKey}
-              onChange={(e) => update('apiKey', e.target.value)}
+              placeholder="https://api.example.com/v1"
+              value={draft.baseUrl}
+              onChange={(e) => update('baseUrl', e.target.value)}
             />
+          </label>
+          <div className="api-key-field">
+            <div className="api-key-label">
+              <label htmlFor="image-api-key">{t.apiKey}</label>
+              <span className="api-key-help-links">
+                <a href={serviceHomepage} target="_blank" rel="noopener noreferrer">
+                  {t.getApiKey}
+                </a>
+                <button type="button" onClick={() => setShowGuide(true)}>
+                  <CircleHelp size={13} />
+                  {t.apiGuide}
+                </button>
+              </span>
+            </div>
+            <span className="api-key-input">
+              <input
+                id="image-api-key"
+                type={showKey ? 'text' : 'password'}
+                required
+                autoComplete="off"
+                spellCheck={false}
+                value={draft.apiKey}
+                onChange={(e) => update('apiKey', e.target.value)}
+              />
+              <button
+                type="button"
+                className="icon-button"
+                aria-label={showKey ? t.hideKey : t.showKey}
+                onClick={() => setShowKey(!showKey)}
+              >
+                {showKey ? <EyeOff size={17} /> : <Eye size={17} />}
+              </button>
+            </span>
+          </div>
+          <label>
+            {t.model}
+            <input
+              required
+              autoComplete="off"
+              value={draft.model}
+              onChange={(e) => update('model', e.target.value)}
+            />
+          </label>
+          <div className="image-settings-row">
+            <label>
+              {t.size}
+              <select value={draft.size} onChange={(e) => update('size', e.target.value)}>
+                {imageSizes.map((size) => (
+                  <option key={size} value={size}>
+                    {size === 'auto' ? t.auto : size}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              {t.quality}
+              <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
+                {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
+                  <option key={quality} value={quality}>
+                    {t[quality]}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <label className="remember-key">
+            <input
+              type="checkbox"
+              checked={draft.rememberKey}
+              onChange={(e) => update('rememberKey', e.target.checked)}
+            />
+            {t.rememberKey}
+          </label>
+          <p className="settings-note">{t.privacy}</p>
+          <p className="settings-note">{t.compatibility}</p>
+          {error && (
+            <p className="generation-error" role="alert">
+              {error}
+            </p>
+          )}
+          <div className="image-settings-actions">
+            <button
+              className="secondary-button"
+              type="button"
+              onClick={() => {
+                try {
+                  clearImageConfig();
+                  setDraft({ ...defaultImageConfig });
+                  onClear();
+                } catch {
+                  setError(t.storageFailed);
+                }
+              }}
+            >
+              {t.clear}
+            </button>
+            <button className="primary-button" type="submit">
+              <Check size={16} />
+              {t.save}
+            </button>
+          </div>
+        </form>
+      </Modal>
+      {showGuide && (
+        <Modal
+          onClose={() => setShowGuide(false)}
+          label={t.apiGuideTitle}
+          className="api-guide-modal"
+        >
+          <div className="panel-heading">
+            <div>
+              <span className="section-kicker">API QUICK START</span>
+              <h2>{t.apiGuideTitle}</h2>
+            </div>
             <button
               type="button"
               className="icon-button"
-              aria-label={showKey ? t.hideKey : t.showKey}
-              onClick={() => setShowKey(!showKey)}
+              aria-label={t.close}
+              onClick={() => setShowGuide(false)}
             >
-              {showKey ? <EyeOff size={17} /> : <Eye size={17} />}
+              <X size={21} />
             </button>
-          </span>
-        </div>
-        <label>
-          {t.model}
-          <input
-            required
-            autoComplete="off"
-            value={draft.model}
-            onChange={(e) => update('model', e.target.value)}
-          />
-        </label>
-        <div className="image-settings-row">
-          <label>
-            {t.size}
-            <select value={draft.size} onChange={(e) => update('size', e.target.value)}>
-              {imageSizes.map((size) => (
-                <option key={size} value={size}>
-                  {size === 'auto' ? t.auto : size}
-                </option>
-              ))}
-            </select>
-          </label>
-          <label>
-            {t.quality}
-            <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
-              {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
-                <option key={quality} value={quality}>
-                  {t[quality]}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <label className="remember-key">
-          <input
-            type="checkbox"
-            checked={draft.rememberKey}
-            onChange={(e) => update('rememberKey', e.target.checked)}
-          />
-          {t.rememberKey}
-        </label>
-        <p className="settings-note">{t.privacy}</p>
-        <p className="settings-note">{t.compatibility}</p>
-        {error && (
-          <p className="generation-error" role="alert">
-            {error}
-          </p>
-        )}
-        <div className="image-settings-actions">
-          <button
-            className="secondary-button"
-            type="button"
-            onClick={() => {
-              try {
-                clearImageConfig();
-                setDraft({ ...defaultImageConfig });
-                onClear();
-              } catch {
-                setError(t.storageFailed);
-              }
-            }}
-          >
-            {t.clear}
-          </button>
-          <button className="primary-button" type="submit">
-            <Check size={16} />
-            {t.save}
-          </button>
-        </div>
-      </form>
-    </Modal>
+          </div>
+          <p className="api-guide-intro">{t.apiGuideIntro}</p>
+          <ol className="api-guide-steps">
+            {apiGuideSteps[lang].map((step, index) => (
+              <li key={step}>
+                <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="api-guide-privacy">{t.apiGuidePrivacy}</p>
+          <div className="api-guide-actions">
+            <a
+              className="secondary-button"
+              href="https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.apiGuideDocs}
+              <ExternalLink size={14} />
+            </a>
+            <a
+              className="primary-button"
+              href={defaultImageConfig.baseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.apiGuideOpenAtomflow}
+              <ExternalLink size={14} />
+            </a>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 }
 

@@ -14,13 +14,15 @@
     "worker:types": "wrangler types worker/worker-configuration.d.ts --config worker/wrangler.jsonc",
     "worker:check": "npm run worker:types && tsc -p worker/tsconfig.json && wrangler deploy --config worker/wrangler.jsonc --dry-run",
     "worker:dev": "wrangler dev --config worker/wrangler.jsonc --port 8787",
-    "worker:deploy": "wrangler deploy --config worker/wrangler.jsonc"
+    "worker:deploy": "wrangler deploy --config worker/wrangler.jsonc",
+    "server:start": "node server/index.mjs"
   },
   "dependencies": {
     "fflate": "^0.8.3",
     "lucide-react": "^0.468.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

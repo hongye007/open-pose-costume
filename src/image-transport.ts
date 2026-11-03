@@ -1,4 +1,4 @@
-function atomflowRoute(endpoint: string): 'site' | 'api' | null {
+export function atomflowRoute(endpoint: string): 'site' | 'api' | null {
   const url = new URL(endpoint);
   return url.pathname === '/v1/images/edits' && !url.search && !url.hash
     ? url.origin === 'https://atomflow.vip'

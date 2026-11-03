@@ -2,6 +2,7 @@ import type { Kind, Lang, Reference, Variant } from './types';
 import { isDepthVariant, poseDepthOrigin } from './pose-depth';
 import { isCustomAsset } from './custom-assets';
 import { imageRequestEndpoint } from './image-transport';
+import { generateWithJobApi } from './image-job-transport';
 
 export interface ImageConfig {
   baseUrl: string;
@@ -238,8 +239,9 @@ export async function generateReferenceImage(
 ): Promise<string> {
   const valid = normalizeImageConfig(config);
   if (!references.length || !prompt.trim()) throw new ImageGenerationError('missingReference');
+  const jobApiUrl = import.meta.env.VITE_IMAGE_JOB_API_URL || '';
   const timeout = new AbortController();
-  const timer = setTimeout(() => timeout.abort(), 180_000);
+  const timer = setTimeout(() => timeout.abort(), jobApiUrl.trim() ? 600_000 : 180_000);
   const combined = AbortSignal.any([signal, timeout.signal]);
   try {
     const urls = references.map((reference) => {
@@ -260,6 +262,30 @@ export async function generateReferenceImage(
     });
     for (const reference of references)
       if ('file' in reference) await validateReferenceFile(reference.file, reference.kind);
+    const jobResult = await generateWithJobApi(
+      jobApiUrl,
+      valid,
+      imageEndpoint(valid.baseUrl),
+      references,
+      prompt,
+      combined,
+    ).catch((error) => {
+      if (combined.aborted) throw error;
+      const status = Number((error as { jobStatus?: unknown })?.jobStatus) || 0;
+      const detail = safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
+      if ([400, 401, 403].includes(status))
+        throw new ImageGenerationError(
+          'providerFailed',
+          `HTTP ${status}${detail ? ` · ${detail}` : ''}`,
+        );
+      throw new ImageGenerationError('networkFailed', detail);
+    });
+    if (jobResult)
+      return imageResult(
+        jobResult.startsWith('data:')
+          ? { data: [{ b64_json: jobResult.split(',', 2)[1] }] }
+          : { data: [{ url: jobResult }] },
+      );
     const form = new FormData();
     form.set('model', valid.model);
     form.set('prompt', prompt.trim());

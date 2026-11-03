@@ -5,6 +5,13 @@ export const generationCopy = {
     baseUrl: '服务地址',
     apiKey: 'API Key',
     getApiKey: '获取APIKey',
+    apiGuide: '获取步骤指引',
+    apiGuideTitle: '免费额度 API 获取步骤',
+    apiGuideIntro:
+      'Atomflow 的 codex 分组支持 gpt-image-2，新用户可获得 10 次生图试用额度；也可以填写任意兼容 OpenAI 图片编辑协议的服务。具体额度以服务当前规则为准。',
+    apiGuideDocs: '查看完整图文说明',
+    apiGuideOpenAtomflow: '打开 Atomflow',
+    apiGuidePrivacy: '密钥只用于发起你的生图请求；未勾选记住密钥时，仅保留在当前浏览器会话。',
     model: '模型',
     referenceCount: '提交参考图数量',
     size: '生成尺寸',
@@ -70,7 +77,7 @@ export const generationCopy = {
     referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
     networkFailed: '暂时无法连接生图服务，请检查网络后重试；若持续失败，请联系网站维护者。',
-    timedOut: '生成超过 3 分钟，请稍后重试。',
+    timedOut: '生成超过 10 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
     cancelled: '已取消生成',
     imageFailed: '生成图片无法加载',
@@ -88,6 +95,14 @@ export const generationCopy = {
     baseUrl: 'Service URL',
     apiKey: 'API key',
     getApiKey: 'Get API key',
+    apiGuide: 'Setup guide',
+    apiGuideTitle: 'Get a free-trial API key',
+    apiGuideIntro:
+      'Atomflow supports gpt-image-2 in the codex group and currently offers 10 trial image generations to new users. You can also use another OpenAI image-edit compatible provider. Current provider terms apply.',
+    apiGuideDocs: 'Open the full illustrated guide',
+    apiGuideOpenAtomflow: 'Open Atomflow',
+    apiGuidePrivacy:
+      'The key is used only for your generation requests. Unless you choose to remember it, it stays in this browser session only.',
     model: 'Model',
     referenceCount: 'Submitted references',
     size: 'Image size',
@@ -159,7 +174,7 @@ export const generationCopy = {
       'The service returned an error. Check the key, model and available credits, then retry.',
     networkFailed:
       'The image service is temporarily unreachable. Check your connection and retry; contact the site maintainer if it continues.',
-    timedOut: 'Generation exceeded 3 minutes. Please retry later.',
+    timedOut: 'Generation exceeded 10 minutes. Please retry later.',
     invalidResult: 'No usable image was returned. Check API compatibility and retry.',
     cancelled: 'Generation cancelled',
     imageFailed: 'The generated image could not be loaded',
@@ -171,4 +186,21 @@ export const generationCopy = {
     actualSize: 'Actual size',
     downloadFailed: 'Download failed. Please try again.',
   },
+};
+
+export const apiGuideSteps = {
+  zh: [
+    '进入“一键生图”，点击“配置生图服务”打开当前设置。',
+    '点击“获取 API Key”前往 Atomflow，注册并登录账号。',
+    '进入“控制台 → API 密钥”，创建密钥：填写任意名称，分组选择 codex，然后保存。',
+    '点击新建密钥旁的复制按钮，复制完整 API Key。',
+    '回到此处粘贴密钥。可按需勾选“在此浏览器记住密钥”，然后点击“保存配置”。网站不会在服务器保存密钥。',
+  ],
+  en: [
+    'Open One-click Generate and select Configure image service.',
+    'Select Get API key, then register or sign in to Atomflow.',
+    'Open Console → API Keys and create a key. Enter any name, choose the codex group, then save.',
+    'Use the copy button beside the new key to copy the full API key.',
+    'Paste the key here. Optionally remember it in this browser, then save. This website does not store the key on its server.',
+  ],
 };

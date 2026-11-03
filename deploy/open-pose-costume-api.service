@@ -1,0 +1,28 @@
+[Unit]
+Description=Open Pose Costume image job API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/open-pose-costume-api
+Environment=NODE_ENV=production
+Environment=PORT=8788
+Environment=JOB_CONCURRENCY=2
+Environment=MAX_QUEUE=100
+Environment=JOB_TTL_MS=3600000
+ExecStart=/usr/bin/node /opt/open-pose-costume-api/server/index.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+
+[Install]
+WantedBy=multi-user.target
