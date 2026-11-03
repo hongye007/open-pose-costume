@@ -9,7 +9,7 @@
 A bilingual reference studio for character design, drawing practice and AI creation.<br />
 Find inspiration, combine references and generate characters in one place.
 
-**[Try the studio ↗](https://hongye007.github.io/open-pose-costume/)** &nbsp; · &nbsp; [Character generation skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [Free trial guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
+**[Try the studio ↗](https://omilic.com/)** &nbsp; · &nbsp; [Character generation skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [Free trial guide](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 
 [中文](README.md) / **English** &nbsp; · &nbsp; [Author on X · @HongyeMain](https://x.com/HongyeMain)
 
@@ -62,7 +62,7 @@ Find inspiration, combine references and generate characters in one place.
 - **More outfits**: 4 male outfits and 7 extracted female outfits join the existing 30 anime outfits and one moon-pattern outfit, bringing the custom outfit collection to **42**. Extracted references remove the person while preserving garment volume; provenance notes identify additions such as footwear absent from the source photo.
 - **Better discovery**: independent category, collection, subject and visual-style filters, plus country/region and hair length for characters. Options show matching counts, and active filters can be removed individually. Pose pickers have five thumbnails that switch only their own card, fixed filters and automatic loading as you scroll.
 
-[Browse model/dance poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=dance#collection) · [Browse male poses ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=character&collection=custom#collection)
+[Browse model/dance poses ↗](https://omilic.com/?lang=en&view=pose&collection=custom&tag=dance#collection) · [Browse male poses ↗](https://omilic.com/?lang=en&view=pose&collection=custom&tag=male#collection) · [Browse male outfits ↗](https://omilic.com/?lang=en&view=costume&collection=custom&tag=male&style=photo#collection) · [Browse custom portraits ↗](https://omilic.com/?lang=en&view=character&collection=custom#collection)
 
 ![Male references and regional portraits: three AI-generated outfit examples, 11 editorial country groups and current library counts (5:3)](docs/images/male-regional-references-5x3-en-5c3fbea0.webp)
 
@@ -95,7 +95,7 @@ The custom anime outfits span everyday looks, autumn and winter layers, and fant
 2. **Combine references**: choose a pose and outfit, then optionally select or upload a character reference to guide facial features, hairstyle and identity.
 3. **Choose the style and generate**: select **Anime illustration** under visual style, adjust the size, background or extra instructions, and generate after configuring your image service. Charges depend on that service.
 
-[Browse upstream anime outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=builtin&style=anime#collection) · [Browse 30 custom anime outfits ↗](https://hongye007.github.io/open-pose-costume/?lang=en&view=costume&collection=custom&style=anime&extended=1#collection)
+[Browse upstream anime outfits ↗](https://omilic.com/?lang=en&view=costume&collection=builtin&style=anime#collection) · [Browse 30 custom anime outfits ↗](https://omilic.com/?lang=en&view=costume&collection=custom&style=anime&extended=1#collection)
 
 ![Custom outfit examples using the same character reference: sage skirt, casual cargo and cozy winter looks](docs/images/custom-anime-looks-en.webp)
 
@@ -175,7 +175,7 @@ During `npm run dev`, Vite forwards Atomflow `/v1/images/edits` requests through
 
 ## Build and deploy
 
-The site is deployed on [GitHub Pages](https://hongye007.github.io/open-pose-costume/). Pushes to `main` automatically run tests, build with `/open-pose-costume/` as the base path, and deploy through GitHub Actions. Failed tests or builds prevent deployment. Other branches and pull requests only run checks.
+The production site is hosted at [omilic.com](https://omilic.com/). GitHub Pages remains available as a backup deployment. Pushes to `main` automatically run tests, build with `/open-pose-costume/` as the base path, and deploy through GitHub Actions. Failed tests or builds prevent deployment. Other branches and pull requests only run checks.
 
 Mobile production generation uses the Cloudflare Worker in `worker/`. It accepts only this site's origins, forwards only the two fixed Atomflow image-edit endpoints, and streams responses without storing API keys or images. It cannot proxy arbitrary URLs. Deploy and validate it with:
 

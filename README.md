@@ -9,7 +9,7 @@
 为角色设计、绘画练习与 AI 创作准备的中英文参考工作台。<br />
 查找灵感、组合参考、生成角色，在一个地方完成。
 
-**[在线体验 ↗](https://hongye007.github.io/open-pose-costume/)** &nbsp; · &nbsp; [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [免费试用指南](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
+**[在线体验 ↗](https://omilic.com/)** &nbsp; · &nbsp; [人物生成 Skill](https://github.com/hongye007/open-pose-costume-skill) &nbsp; · &nbsp; [免费试用指南](https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh)
 
 **中文** / [English](README.en.md) &nbsp; · &nbsp; [作者 X · @HongyeMain](https://x.com/HongyeMain)
 
@@ -62,7 +62,7 @@
 - **服饰库扩充**：在 30 套动漫服饰和 1 套月纹服饰基础上，加入 4 套男性服饰与 7 套女性提取服饰，自建服饰共 **42 套**。提取图去除人物、保留衣物立体形态；原图未展示的鞋履等补全部分在素材溯源中注明。
 - **筛选与选图体验**：分类、素材库、人物标签、画面风格分别筛选；人物增加国家／地区与发长。筛选项显示匹配数量，已选条件可单独移除。姿势选图弹窗支持五个小缩略图独立切换，顶部筛选常驻，列表自动加载更多。
 
-[浏览模特舞蹈姿势 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=pose&collection=custom&tag=dance#collection) · [浏览男性姿势 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=pose&collection=custom&tag=male#collection) · [浏览男性服饰 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=costume&collection=custom&tag=male&style=photo#collection) · [浏览自建人物 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=character&collection=custom#collection)
+[浏览模特舞蹈姿势 ↗](https://omilic.com/?lang=zh&view=pose&collection=custom&tag=dance#collection) · [浏览男性姿势 ↗](https://omilic.com/?lang=zh&view=pose&collection=custom&tag=male#collection) · [浏览男性服饰 ↗](https://omilic.com/?lang=zh&view=costume&collection=custom&tag=male&style=photo#collection) · [浏览自建人物 ↗](https://omilic.com/?lang=zh&view=character&collection=custom#collection)
 
 ![男性素材与多地区人物：三个 AI 生成搭配示例、11 国人物分组及当前参考库数量（5:3）](docs/images/male-regional-references-5x3-zh-81e48837.webp)
 
@@ -95,7 +95,7 @@
 2. **组合参考**：选择姿势和服饰，按需选择或上传人物参考；人物用于提供面部、发型等身份特征。
 3. **切换风格并生成**：在“画面风格”中选择 **动漫插画**，调整尺寸、背景或补充描述，配置生图服务后生成。费用以所配置的服务为准。
 
-[浏览上游动漫服饰 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=costume&collection=builtin&style=anime#collection) · [浏览30套自建动漫服饰 ↗](https://hongye007.github.io/open-pose-costume/?lang=zh&view=costume&collection=custom&style=anime&extended=1#collection)
+[浏览上游动漫服饰 ↗](https://omilic.com/?lang=zh&view=costume&collection=builtin&style=anime#collection) · [浏览30套自建动漫服饰 ↗](https://omilic.com/?lang=zh&view=costume&collection=custom&style=anime&extended=1#collection)
 
 ![自建服饰搭配示例：同一人物参考的绿色裙装、休闲工装与秋冬针织长裙](docs/images/custom-anime-looks-zh.webp)
 
@@ -175,7 +175,7 @@ npm run dev -- --port 5200
 
 ## 构建与部署
 
-当前使用 [GitHub Pages](https://hongye007.github.io/open-pose-costume/) 部署。推送到 `main` 后，GitHub Actions 自动运行测试、以 `/open-pose-costume/` 为基础路径构建并部署；测试或构建失败时不会更新网站。其他分支及拉取请求只执行检查。
+正式站点部署于 [omilic.com](https://omilic.com/)。GitHub Pages 保留为备用部署。推送到 `main` 后，GitHub Actions 自动运行测试、以 `/open-pose-costume/` 为基础路径构建并部署；测试或构建失败时不会更新网站。其他分支及拉取请求只执行检查。
 
 线上移动端生图使用 `worker/` 中的 Cloudflare Worker。它只接受本站来源、只转发两个固定的 Atomflow 图片编辑入口，并流式返回响应；不会保存 API Key 或图片，也不能作为任意 URL 代理。部署与接入步骤：
 
