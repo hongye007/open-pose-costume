@@ -72,3 +72,31 @@ Custom references are merged into the library, search, favorites, reference pick
 Paired depth references are AI-inferred grayscale guides (near = bright, far = dark), not calibrated 3D depth. The original line art stays intact. All views keep their stable IDs; the selected version is used consistently by previews, generation, downloads and history restoration.
 
 - `male-five-multiview-20261103` 与 `male-three-completion-20261103`：MP-015 至 MP-022，8 张男性照片动作提取的五视角结构线稿，采用用户确认的胸肌收小版，保留腹肌、关节辅助线；遮挡结构、腿脚和相对深度均为 AI 推断，非精确三维测量。
+
+- `user-portraits-20261104`：4 张用户提供的女性写实正面肖像（UCF-001 至 UCF-004），保留 1024 × 1536 PNG 原图，生成全尺寸 WebP 预览与 256 × 384 缩略图；标注女性、写实和发长，可搜索编号或原文件标题。来源标记为用户导入，不推断真实身份、国籍或生成模型。本次仅本地入库。
+
+- `male-streetwear-20261104`：男士白色背心、米白宽松长裤与完整白色运动鞋（MC-005）；抬膝垂手坐姿（MP-023），正面、俯视、仰视、侧面、斜侧五张结构线稿及五张配套 AI 相对深度图，共十张。基于用户确认线稿由 Atomflow gpt-image-2 扩展，正面保留右前脚裁切，其他视角和遮挡结构为 AI 推断；深度非精确三维测量。本次仅本地入库。
+
+- `female-touch-ear-20261104`：两套用户提供的完整服饰参考（ST-016 黑色皮衣白色束身上衣与短裙、ST-017 奶白花卉蕾丝挂脖短裙），原图保留配套鞋履；触耳交叉腿姿势因俯视深度图连续生成失败，按用户要求整套放弃，未入库。
+
+- `user-male-portrait-20261104`：用户提供的“阳光下的湿发凝视”人物参考（UCM-001），保留原始 PNG 尺寸与字节，生成 WebP 预览和等比例缩略图；标签男性、写实、短发，不推断身份、国籍或生成模型。本次仅本地入库。
+
+- `identity-reference-20261104`：1 张 AI 虚构成年女性正面人物参考（AIF-001），深色长发、榛绿眼睛与暖橄榄肤色；Atomflow `gpt-image-2` 文生图，原图 1024 × 1536，保留 PNG 原图并生成全尺寸 WebP 预览和 256 × 384 等比例缩略图。标签女性、写实、长发，国家分组为国际（未细分）。提示词和生成溯源保留在本地输出目录。本次仅本地入库。
+
+- `gray-green-female-20261104`：灰绿色眼睛、深色长发与自然雀斑女性人物参考（UCF-005），Atomflow gpt-image-2 文生图，虚构成年人物；保留1024 × 1536 PNG及生成溯源，支持女性、写实、长发筛选。仅本地入库。
+
+- `female-side-sit-20261104`：女性侧坐屈腿、双手撑地姿势（FP-013），含五视角结构线稿与五张配套 AI 相对深度图；黑色镂空钩织挂脖长裙与细带高跟鞋（ST-018）；按用户文案生成的灰绿眼、长发、自然雀斑虚构成年女性正面人物参考（UCF-006）。均由 Atomflow `gpt-image-2` 生成，保留 1024 × 1536 高清 PNG 与无裁切 WebP 预览、缩略图。遮挡服饰、腿部结构及新视角包含 AI 补全，深度不是精确三维测量；正面姿势保留原右手裁切。人物参考独立文生图，不作为原照片身份提取，不标注推断国籍。本次仅本地入库。
+
+- `east-asian-male-20261104`：1 张 AI 虚构成年男性正面人物参考（UCM-002），黑发中分、炭灰圆领上衣、浅暖灰背景，Atomflow `gpt-image-2` 文生图，1024 × 1536；原图、无裁切 WebP 预览及缩略图分别保存，支持男性、写实与中发筛选。东亚外貌为生成描述，不代表真实身份或国籍。
+
+- `natural-centerpart-male-20261104`：1 张 AI 虚构成年男性身份参考（UCM-003），24–27 岁设定、自然黑发中分、严格正面、炭灰圆领上衣与浅暖灰背景，Atomflow `gpt-image-2` 文生图，1024 × 1536。保留原始 PNG，生成无裁切 WebP 预览及 256 × 384 缩略图，支持男性、写实、中发筛选；东亚外貌为生成描述，不代表真实国籍。本次仅本地入库。
+
+- `user-retro-blonde-20261104`：用户提供的“复古金发卷发肖像”（UCF-007），女性、写实、中发人物参考；保留 1024 × 1536 PNG 原图字节，生成无裁切 WebP 预览和等比例缩略图。不推断身份、国籍或生成模型。本次仅本地入库。
+
+- `user-outfits-nine-20261104`：新增8套用户服饰原图 ST-019 至 ST-026；黑皮衣图与 ST-016 相同，保留原编号不重复入库。保留用户原图可见范围及鞋履，未补画未展示内容。
+- `female-pose-completion-20261104`：FP-014 触耳交叉腿、FP-015 腹前叠手歪头，两组各五视角线稿及五张配套AI相对深度，共20张。FP-015保留膝部裁切；深度及遮挡结构为AI推断，非精确三维测量。触耳组由用户重新要求补齐后完成。
+
+
+- `five-outfit-extractions-20261104`：五套照片提取服饰，Atomflow gpt-image-2制作，完整穿搭及双鞋入画；遮挡处与未展示鞋履为AI补全，分别记录于素材溯源。原照片不随网站发布。
+
+- 2026-11-04：按用户要求移除 UCF-008（黑发绿眸女性肖像），记录和原图移至本地备份，不随网站发布。

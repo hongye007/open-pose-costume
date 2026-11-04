@@ -1,5 +1,768 @@
 [
   {
+    "id": "custom_character_import_20261104_retro_blonde",
+    "kind": "character",
+    "code": "UCF-007",
+    "title": {
+      "zh": "复古金发卷发肖像",
+      "en": "Retro blonde curls portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "用户导入女性人物参考",
+      "en": "User-imported female character references"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "女性 写实 正面 头肩 人物参考 用户导入 复古 金发 卷发 波波头 中发 灰绿色眼睛 白色背心 浅灰背景",
+      "en": "female photographic frontal head shoulders character reference user supplied retro blonde curls bob medium hair gray green eyes white tank light gray background"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "user-retro-blonde-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "8cdae20ccc69058ad6eaf7bee12e6b50754bb8dc94b667dbe887835eacd44acc",
+      "width": 1024,
+      "height": 1536,
+      "sourceNote": "Imported unchanged from user-supplied image; identity, nationality and generation model not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_retro_blonde",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_retro_blonde.png",
+        "image": "custom/character/images/custom_character_import_20261104_retro_blonde.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_retro_blonde.webp",
+        "provenance": {
+          "originalSha256": "8cdae20ccc69058ad6eaf7bee12e6b50754bb8dc94b667dbe887835eacd44acc",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_natural_centerpart_male_20261104",
+    "kind": "character",
+    "code": "UCM-003",
+    "title": {
+      "zh": "男性 · 自然中分黑发身份参考",
+      "en": "Male · Natural center-part black-haired identity reference"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "文生图人物身份参考",
+      "en": "Text-to-image character identity references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 男士 成年 24–27岁 东亚外貌 写实 正面 头肩 黑发 中分 中长发 深棕眼睛 自然皮肤 炭灰圆领上衣 浅暖灰背景 虚构人物",
+      "en": "male adult age 24–27 East Asian appearance photographic frontal head shoulders black medium center-part hair dark brown eyes natural skin charcoal crew-neck warm gray background fictional character"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "variants": [
+      {
+        "id": "custom_character_natural_centerpart_male_20261104",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_natural_centerpart_male_20261104.png",
+        "image": "custom/character/images/custom_character_natural_centerpart_male_20261104.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_natural_centerpart_male_20261104.webp",
+        "provenance": {
+          "originalSha256": "a51e0e92de0029dab9c9db1ee64f625e9618ea7ea391efd9dff836933a31acf1",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "provenance": {
+      "batch": "natural-centerpart-male-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "generationMode": "text-to-image",
+      "fictional": true,
+      "originalSha256": "a51e0e92de0029dab9c9db1ee64f625e9618ea7ea391efd9dff836933a31acf1",
+      "promptSha256": "8a284934ea006d54fa143dad1ecbbb231765e4d0d83a34f5e8e66cbd1d14486a",
+      "width": 1024,
+      "height": 1536
+    }
+  },
+  {
+    "id": "custom_character_generated_20261104_east_asian_male",
+    "kind": "character",
+    "code": "UCM-002",
+    "title": {
+      "zh": "男性 · 黑发中分正面肖像",
+      "en": "Male · Black-haired frontal portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "文生图人物身份参考",
+      "en": "Text-to-image character identity references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 男士 成年 24–27岁 东亚外貌 写实 正面 头肩 黑发 中分 中长发 深棕眼睛 自然皮肤 炭灰圆领上衣 浅暖灰背景 虚构人物",
+      "en": "male adult age 24–27 East Asian appearance photographic frontal head shoulders black medium center-part hair dark brown eyes natural skin charcoal crew-neck warm gray background fictional character"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "variants": [
+      {
+        "id": "custom_character_generated_20261104_east_asian_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_generated_20261104_east_asian_male.png",
+        "image": "custom/character/images/custom_character_generated_20261104_east_asian_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_generated_20261104_east_asian_male.webp",
+        "provenance": {
+          "originalSha256": "fe320dc15a45c04979d4d3d400e604735e941ad5d4be0ca525fc551b4bdba3ed",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "provenance": {
+      "batch": "east-asian-male-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "generationMode": "text-to-image",
+      "fictional": true,
+      "originalSha256": "fe320dc15a45c04979d4d3d400e604735e941ad5d4be0ca525fc551b4bdba3ed",
+      "promptSha256": "e954cca0298c34738a4458657242d52d6e90aba352b19eecabf2235264f75ba2",
+      "width": 1024,
+      "height": 1536
+    }
+  },
+  {
+    "id": "custom_character_gray_green_frontal_20261104",
+    "kind": "character",
+    "code": "UCF-006",
+    "title": {
+      "zh": "灰绿眼长发女性 · 自然雀斑正面肖像",
+      "en": "Gray-green-eyed long-haired woman · Natural freckled frontal portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "文生图人物身份参考",
+      "en": "Text-to-image character identity references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 文生图 虚构成年 正面 灰绿眼 黑棕长发 中分 雀斑 自然肤质 象牙白背心",
+      "en": "female photographic text to image fictional adult frontal gray green eyes dark brown black long center parted hair freckles natural skin ivory tank"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "variants": [
+      {
+        "id": "custom_character_gray_green_frontal_20261104",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_gray_green_frontal_20261104.png",
+        "image": "custom/character/images/custom_character_gray_green_frontal_20261104.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_gray_green_frontal_20261104.webp",
+        "provenance": {
+          "batch": "female-side-sit-20261104",
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "originalSha256": "a34774355923f97df6eb8429b657890d3dc4a33b20d447420817ced1289a1da7",
+          "generatedSha256": "a34774355923f97df6eb8429b657890d3dc4a33b20d447420817ced1289a1da7",
+          "promptSha256": "32a7b775398a5dee68d06fff7dc704c8e27ea960b84463c1e98861d696b92773",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "provenance": {
+      "batch": "female-side-sit-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "originalSha256": "a34774355923f97df6eb8429b657890d3dc4a33b20d447420817ced1289a1da7",
+      "generatedSha256": "a34774355923f97df6eb8429b657890d3dc4a33b20d447420817ced1289a1da7",
+      "promptSha256": "32a7b775398a5dee68d06fff7dc704c8e27ea960b84463c1e98861d696b92773",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "按用户文案生成的虚构成年人物，非原照片人物身份提取；不推断国籍。",
+        "en": "Fictional adult generated from user text, not an identity extraction from the source photo; no nationality inferred."
+      }
+    }
+  },
+  {
+    "id": "custom_character_generated_20261104_gray_green",
+    "kind": "character",
+    "code": "UCF-005",
+    "title": {
+      "zh": "灰绿眼睛与深色长发女性肖像",
+      "en": "Gray-green eyes and dark-haired female portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "自然质感人物参考",
+      "en": "Natural character portraits"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 正面 头肩 灰绿色眼睛 深棕黑色 长发 中分 浓眉 雀斑 象牙白 细肩带 背心 柔光 虚构成年人物",
+      "en": "female photographic frontal head shoulders pale gray-green eyes dark brown black long center-part hair thick brows freckles ivory thin-strap tank soft studio light fictional adult"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "gray-green-female-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "generationMode": "text-to-image",
+      "fictional": true,
+      "originalSha256": "ecc2097985302f9d716e0a7d819ae2844ddb35af2d7c20291eeed99111273890",
+      "promptSha256": "3644005efee5dd9ac1fc3a5e86d46cdeedd446881a45cae76df68df3136f398d",
+      "width": 1024,
+      "height": 1536
+    },
+    "variants": [
+      {
+        "id": "custom_character_generated_20261104_gray_green",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_generated_20261104_gray_green.png",
+        "image": "custom/character/images/custom_character_generated_20261104_gray_green.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_generated_20261104_gray_green.webp",
+        "provenance": {
+          "originalSha256": "ecc2097985302f9d716e0a7d819ae2844ddb35af2d7c20291eeed99111273890",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_olive_hazel_20261104",
+    "kind": "character",
+    "code": "AIF-001",
+    "title": {
+      "zh": "橄榄肤色 · 榛绿眼长发女性",
+      "en": "Olive complexion · Hazel-green eyes"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "AI 女性人物参考",
+      "en": "AI female character references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "成年女性 写实 正面 人物参考 黑色长发 榛绿色眼睛 橄榄肤色 浓眉 象牙白背心 柔光 纯灰背景 AI虚构",
+      "en": "adult female photographic frontal identity reference long dark hair hazel green eyes olive skin thick eyebrows ivory tank soft studio light gray background fictional AI"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "country": {
+      "id": "international",
+      "zh": "国际（未细分）",
+      "en": "International (unspecified)"
+    },
+    "provenance": {
+      "batch": "identity-reference-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "fictional": true,
+      "originalSha256": "f7e39b8c691ec1d47f38c55ea44ae5584dc509465455699ae4f181f6239c98ad",
+      "width": 1024,
+      "height": 1536
+    },
+    "variants": [
+      {
+        "id": "custom_character_olive_hazel_20261104",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_olive_hazel_20261104.png",
+        "image": "custom/character/images/custom_character_olive_hazel_20261104.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_olive_hazel_20261104.webp",
+        "provenance": {
+          "originalSha256": "f7e39b8c691ec1d47f38c55ea44ae5584dc509465455699ae4f181f6239c98ad",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_import_20261104_wet_hair_male",
+    "kind": "character",
+    "code": "UCM-001",
+    "title": {
+      "zh": "阳光下的湿发凝视",
+      "en": "Wet-haired gaze in sunlight"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "用户导入男性人物参考",
+      "en": "User-imported male character references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 正面 头肩 人物参考 用户导入 深棕 湿发 短发 卷发 浓眉 阳光 白色背心 灰墙",
+      "en": "male photographic frontal head shoulders character reference user supplied dark brown short wet wavy hair thick eyebrows sunlight white tank grey wall"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "user-male-portrait-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "299fd28de097a7a9169f3f4b31ff2af98b71dc71b2508dd34a882478b669f66d",
+      "width": 1122,
+      "height": 1402,
+      "sourceNote": "Imported unchanged from user-supplied image; identity and generation model not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_wet_hair_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_wet_hair_male.png",
+        "image": "custom/character/images/custom_character_import_20261104_wet_hair_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_wet_hair_male.webp",
+        "provenance": {
+          "originalSha256": "299fd28de097a7a9169f3f4b31ff2af98b71dc71b2508dd34a882478b669f66d",
+          "width": 1122,
+          "height": 1402
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_import_20261104_soft_light",
+    "kind": "character",
+    "code": "UCF-004",
+    "title": {
+      "zh": "柔光下的自然肖像",
+      "en": "Natural portrait in soft light"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "自然光女性人物参考 · 4 张",
+      "en": "Natural-light female portraits · 4 references"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "女性 写实 正面 人物参考 用户导入 浅棕长发 自然波浪 榛色眼睛 柔光",
+      "en": "female photographic frontal portrait user supplied natural light Natural portrait in soft light"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "user-portraits-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "431796a7cfe50ba43c707278089ab1fb2f4d5ad7feb4fd2f3ad2f48b0cde1d0c",
+      "width": 1024,
+      "height": 1536,
+      "sourceNote": "Imported unchanged from user-supplied image; generation model and identity not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_soft_light",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_soft_light.png",
+        "image": "custom/character/images/custom_character_import_20261104_soft_light.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_soft_light.webp",
+        "provenance": {
+          "originalSha256": "431796a7cfe50ba43c707278089ab1fb2f4d5ad7feb4fd2f3ad2f48b0cde1d0c",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_import_20261104_cream_gentle",
+    "kind": "character",
+    "code": "UCF-003",
+    "title": {
+      "zh": "奶油色背景下的温柔肖像",
+      "en": "Gentle portrait against a cream background"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "自然光女性人物参考 · 4 张",
+      "en": "Natural-light female portraits · 4 references"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "女性 写实 正面 人物参考 用户导入 深棕长发 自然波浪 棕色眼睛 奶油色背景",
+      "en": "female photographic frontal portrait user supplied natural light Gentle portrait against a cream background"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "user-portraits-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "180cf5250fe65758c8c2db1f5416ca3e4011f054da439af2737ba0db25892c3d",
+      "width": 1024,
+      "height": 1536,
+      "sourceNote": "Imported unchanged from user-supplied image; generation model and identity not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_cream_gentle",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_cream_gentle.png",
+        "image": "custom/character/images/custom_character_import_20261104_cream_gentle.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_cream_gentle.webp",
+        "provenance": {
+          "originalSha256": "180cf5250fe65758c8c2db1f5416ca3e4011f054da439af2737ba0db25892c3d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_import_20261104_french_natural",
+    "kind": "character",
+    "code": "UCF-002",
+    "title": {
+      "zh": "法式自然感女性肖像",
+      "en": "French-inspired natural portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "自然光女性人物参考 · 4 张",
+      "en": "Natural-light female portraits · 4 references"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "女性 写实 正面 人物参考 用户导入 棕色卷发 松散盘发 榛色眼睛 法式自然感",
+      "en": "female photographic frontal portrait user supplied natural light French-inspired natural portrait"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "user-portraits-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "b7e37287f95551e6f4ae259aa32d87d30dee9552777a6fed8a8abace24915c07",
+      "width": 1024,
+      "height": 1536,
+      "sourceNote": "Imported unchanged from user-supplied image; generation model and identity not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_french_natural",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_french_natural.png",
+        "image": "custom/character/images/custom_character_import_20261104_french_natural.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_french_natural.webp",
+        "provenance": {
+          "originalSha256": "b7e37287f95551e6f4ae259aa32d87d30dee9552777a6fed8a8abace24915c07",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_character_import_20261104_dark_curly",
+    "kind": "character",
+    "code": "UCF-001",
+    "title": {
+      "zh": "自然光下的深色卷发女性肖像",
+      "en": "Dark curly-haired portrait in natural light"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "自然光女性人物参考 · 4 张",
+      "en": "Natural-light female portraits · 4 references"
+    },
+    "extended": false,
+    "keywords": {
+      "zh": "女性 写实 正面 人物参考 用户导入 深棕卷发 松散盘发 棕色眼睛 自然光",
+      "en": "female photographic frontal portrait user supplied natural light Dark curly-haired portrait in natural light"
+    },
+    "source": "custom",
+    "collection": "custom",
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "medium"
+    },
+    "provenance": {
+      "batch": "user-portraits-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "2ef32e930ecf6b1cab8815e1205631d0b7be58d2f323e00b3199a5326b1aa120",
+      "width": 1024,
+      "height": 1536,
+      "sourceNote": "Imported unchanged from user-supplied image; generation model and identity not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261104_dark_curly",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261104_dark_curly.png",
+        "image": "custom/character/images/custom_character_import_20261104_dark_curly.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261104_dark_curly.webp",
+        "provenance": {
+          "originalSha256": "2ef32e930ecf6b1cab8815e1205631d0b7be58d2f323e00b3199a5326b1aa120",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_character_region_fr_female",
     "kind": "character",
     "code": "RCF-001",

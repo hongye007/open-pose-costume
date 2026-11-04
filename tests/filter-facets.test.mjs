@@ -14,12 +14,12 @@ const { items } = await readJson('public/data/catalog.json');
 
 test('subject and visual style intersect independently without inferring untagged gender', () => {
   const photos = filterReferences(items, { tag: 'male', style: 'photo' });
-  assert.equal(photos.length, 24);
+  assert.equal(photos.length, 30);
   assert.ok(photos.every((item) => ['costume', 'character'].includes(item.kind)));
   assert.equal(filterReferences(items, { tag: 'male', style: 'anime' }).length, 0);
   assert.equal(
     filterReferences(items, { kind: 'pose', tag: 'male', style: 'line-art' }).length,
-    21,
+    22,
   );
   const untagged = { ...items[0], id: 'untagged', tags: undefined };
   assert.equal(filterReferences([untagged], { tag: 'male' }).length, 0);
@@ -71,23 +71,23 @@ test('existing characters are female photographic references, while custom male 
   );
   assert.equal(
     filterReferences(items, { kind: 'character', collection: 'custom', tag: 'female' }).length,
-    11,
+    19,
   );
-  assert.equal(filterReferences(items, { kind: 'character', tag: 'male' }).length, 16);
+  assert.equal(filterReferences(items, { kind: 'character', tag: 'male' }).length, 19);
   const longHair = filterReferences(items, { tag: 'female', style: 'photo', hair: 'long' });
   assert.ok(longHair.length > 0);
   assert.ok(longHair.every((item) => item.portrait.hair === 'long'));
-  assert.equal(filterReferences(items, { kind: 'character', query: '女性 写实' }).length, 1510);
+  assert.equal(filterReferences(items, { kind: 'character', query: '女性 写实' }).length, 1518);
   assert.equal(
     filterReferences(items, { kind: 'character', query: 'Female Photographic' }).length,
-    1510,
+    1518,
   );
 });
 
 test('existing costumes are female photographic references; poses keep their existing style tags', () => {
   for (const [kind, expected] of [
-    ['pose', 300],
-    ['costume', 2773],
+    ['pose', 303],
+    ['costume', 2787],
   ]) {
     const females = filterReferences(items, { kind, tag: 'female' });
     assert.equal(females.length, expected);
@@ -118,8 +118,8 @@ test('existing costumes are female photographic references; poses keep their exi
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
     1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 69);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 4583);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 94);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4608);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {
@@ -169,7 +169,7 @@ test('character country groups intersect with gender, style, source and bilingua
   assert.equal(filterReferences(items, { country: 'unknown' }).length, 0);
   for (const query of ['日本 女性 写实', 'Japan Female Photographic'])
     assert.equal(filterReferences(items, { kind: 'character', query }).length, 1500);
-  assert.equal(filterReferences(items, { kind: 'character', country: 'all' }).length, 1526);
+  assert.equal(filterReferences(items, { kind: 'character', country: 'all' }).length, 1537);
 });
 
 test('visible codes are searchable and one tag ID has one bilingual display name', () => {
@@ -200,8 +200,7 @@ test('model and dance links retain independent subject tags and intersect with l
     assert.ok(poses.every((item) => item.tags.some((value) => value.id === tag)));
     if (tag === 'dance')
       assert.ok(poses.every((item) => item.tags.some((value) => value.id === 'model')));
-    for (const query of queries)
-      assert.equal(filterReferences(poses, { query }).length, poseCount);
+    for (const query of queries) assert.equal(filterReferences(poses, { query }).length, poseCount);
     assert.equal(
       filterReferences(items, { kind: 'costume', tag, style: 'photo' }).length,
       costumeCount,

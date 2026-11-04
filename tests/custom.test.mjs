@@ -115,16 +115,16 @@ test('regional portraits expose the active fictional identities through bilingua
   }
 });
 
-test('male references expose original five-view poses and eight outfits through bilingual filters', () => {
+test('male references expose original five-view poses and eleven outfits through bilingual filters', () => {
   const male = custom.filter((item) => matchesExtension(item, 'custom', 'male'));
   const allPoses = male.filter((item) => item.kind === 'pose');
   const poses = allPoses;
   const outfits = male.filter((item) => item.kind === 'costume');
-  assert.equal(poses.length, 21);
-  assert.equal(outfits.length, 8);
+  assert.equal(poses.length, 22);
+  assert.equal(outfits.length, 11);
   assert.equal(
     poses.reduce((n, item) => n + item.variants.length, 0),
-    105,
+    110,
   );
   for (const item of male) {
     assert.ok(matchesQuery(item, '男性'));
@@ -219,8 +219,8 @@ test('custom depth keeps project-base URLs, generation uploads and history seman
   const poses = resolved.items.filter(
     (item) => item.kind === 'pose' && item.collection === 'custom' && hasPoseDepth(item),
   );
-  assert.equal(poses.length, 32);
-  assert.equal(poses.flatMap((item) => item.variants).length, 160);
+  assert.equal(poses.length, 36);
+  assert.equal(poses.flatMap((item) => item.variants).length, 180);
   const selected = withPoseDepth(poses[0]);
   const reference = {
     kind: 'pose',

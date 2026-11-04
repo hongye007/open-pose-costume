@@ -1,5 +1,1139 @@
 [
   {
+    "id": "custom_costume_male_007",
+    "kind": "costume",
+    "code": "MC-007",
+    "title": {
+      "zh": "男士奶白金链垂领阔腿连体裤",
+      "en": "Ivory gold-chain draped wide-leg jumpsuit"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "五套服饰提取 · 20261104",
+      "en": "Five extracted outfits · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 服饰提取 奶白 金色 链饰 垂领 灯笼袖 阔腿 连体裤 皮鞋",
+      "en": "male photographic outfit extraction ivory gold chain draped cowl balloon sleeve wide leg jumpsuit dress shoes"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "five-outfit-extractions-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "f4a13e244559036c83c32f6c592b1b79fad19e45e2f2606c78fdb9c0d618f4ba",
+      "promptSha256": "01a58e985df82888c0917411379caf894d7bac3ff3902f613b2167f6de0c11d9",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "由多视图拼图提取单套正面；鞋履为AI补配。",
+        "en": "AI extracted from supplied photo; hidden construction and unseen footwear may be AI completed. Person and personal jewelry removed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_007",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_007.png",
+        "image": "custom/costume/images/custom_costume_male_007.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_007.webp",
+        "provenance": {
+          "originalSha256": "f4a13e244559036c83c32f6c592b1b79fad19e45e2f2606c78fdb9c0d618f4ba",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_029",
+    "kind": "costume",
+    "code": "ST-029",
+    "title": {
+      "zh": "奶白裹身连体短裤与黑色配件",
+      "en": "Ivory wrap romper with black accessories"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "五套服饰提取 · 20261104",
+      "en": "Five extracted outfits · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰提取 奶白 裹身 泡泡袖 连体短裤 黑色 腰带 手套 包 鱼嘴 长靴",
+      "en": "female photographic outfit extraction ivory wrap balloon sleeve romper black belt gloves bag open toe tall boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "five-outfit-extractions-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "ceb242ce68604c599564a54f46d9d3297477ddd3cf5a90eb9e6fe42396850f3e",
+      "promptSha256": "f70de5a69c03dfa4bf826d697e1de0a7e61f057b3002b08d6265b8e480c750db",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "去除人物、首饰及残留手指；保留手套、包与长靴。",
+        "en": "AI extracted from supplied photo; hidden construction and unseen footwear may be AI completed. Person and personal jewelry removed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_029",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_029.png",
+        "image": "custom/costume/images/custom_costume_street_029.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_029.webp",
+        "provenance": {
+          "originalSha256": "ceb242ce68604c599564a54f46d9d3297477ddd3cf5a90eb9e6fe42396850f3e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_028",
+    "kind": "costume",
+    "code": "ST-028",
+    "title": {
+      "zh": "白色露肩泡泡袖连体短裤",
+      "en": "White off-shoulder puff-sleeve romper"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "五套服饰提取 · 20261104",
+      "en": "Five extracted outfits · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰提取 白色 露肩 泡泡袖 连体短裤 金扣 腰带 白色 长靴",
+      "en": "female photographic outfit extraction white off shoulder puff sleeve romper gold buckle belt white tall boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "five-outfit-extractions-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "f6ddb71af2ed133b8599a82a0f014edea17ef5531690368f130ce3ba0d05693b",
+      "promptSha256": "e479795574540d917873a7c3e93333e800381782351e986a8981a8a0d681889f",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "白色长靴下半部为AI补全。",
+        "en": "AI extracted from supplied photo; hidden construction and unseen footwear may be AI completed. Person and personal jewelry removed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_028",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_028.png",
+        "image": "custom/costume/images/custom_costume_street_028.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_028.webp",
+        "provenance": {
+          "originalSha256": "f6ddb71af2ed133b8599a82a0f014edea17ef5531690368f130ce3ba0d05693b",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_027",
+    "kind": "costume",
+    "code": "ST-027",
+    "title": {
+      "zh": "白色裹身短袖裙与黑色腰封",
+      "en": "White short-sleeve wrap dress with black sash"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "五套服饰提取 · 20261104",
+      "en": "Five extracted outfits · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰提取 白色 裹身 短袖 连衣裙 黑色 腰封 踝带 高跟鞋",
+      "en": "female photographic outfit extraction white wrap short sleeve dress black sash ankle strap pumps"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "five-outfit-extractions-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "9675979507822ca1a66cd9464f0c580e7493d358a8fc28c3926ed87d476c707d",
+      "promptSha256": "2be6077713540b6481acb27cd11eb855a4131601456efb570ddcae6408e220f5",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "黑色踝带高跟鞋为AI补配。",
+        "en": "AI extracted from supplied photo; hidden construction and unseen footwear may be AI completed. Person and personal jewelry removed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_027",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_027.png",
+        "image": "custom/costume/images/custom_costume_street_027.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_027.webp",
+        "provenance": {
+          "originalSha256": "9675979507822ca1a66cd9464f0c580e7493d358a8fc28c3926ed87d476c707d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_006",
+    "kind": "costume",
+    "code": "MC-006",
+    "title": {
+      "zh": "男士香槟缎面垂领围巾与阔腿裤",
+      "en": "Champagne satin draped scarf top and wide-leg trousers"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "五套服饰提取 · 20261104",
+      "en": "Five extracted outfits · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 服饰提取 香槟 缎面 垂领 围巾 阔腿裤 米色皮鞋",
+      "en": "male photographic outfit extraction champagne satin draped cowl scarf wide-leg trousers beige dress shoes"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "five-outfit-extractions-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "16d59dc34d2bd38c6adcac474cd3caa01a203a591b2bd39211c0592f57fedb91",
+      "promptSha256": "8e9daae163bfe90f89b28e37266e6d13c4845b7c180cfe56d7f4f2a6a9be67e2",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "遮挡处为AI推断，保留照片可见皮鞋。",
+        "en": "AI extracted from supplied photo; hidden construction and unseen footwear may be AI completed. Person and personal jewelry removed."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_006",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_006.png",
+        "image": "custom/costume/images/custom_costume_male_006.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_006.webp",
+        "provenance": {
+          "originalSha256": "16d59dc34d2bd38c6adcac474cd3caa01a203a591b2bd39211c0592f57fedb91",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_026",
+    "kind": "costume",
+    "code": "ST-026",
+    "title": {
+      "zh": "杏色蕾丝露肩荷叶边短裙",
+      "en": "Apricot lace off-shoulder ruffled mini dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 杏色 蕾丝 露肩 荷叶边 长袖 短裙 裸色 高跟凉鞋",
+      "en": "female photographic outfit update apricot lace off shoulder ruffle long sleeve mini dress nude heeled sandals"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "f78a871bfc1b7b2192080164a7047e4cb2967eb6ae0cdea937cdef953930c577",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_026",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_026.png",
+        "image": "custom/costume/images/custom_costume_street_026.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_026.webp",
+        "provenance": {
+          "originalSha256": "f78a871bfc1b7b2192080164a7047e4cb2967eb6ae0cdea937cdef953930c577",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_025",
+    "kind": "costume",
+    "code": "ST-025",
+    "title": {
+      "zh": "金色链网挂脖上衣与系带短裙",
+      "en": "Gold chainmail halter top and tie-side skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 金色 链网 挂脖 垂领 系带 短裙",
+      "en": "female photographic outfit update gold chainmail halter draped neckline tie-side mini skirt"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "cfc23a26f8cfc0050ab7020ffe086a6af9726e916316277f56d0fe658a69cc40",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_025",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_025.png",
+        "image": "custom/costume/images/custom_costume_street_025.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_025.webp",
+        "provenance": {
+          "originalSha256": "cfc23a26f8cfc0050ab7020ffe086a6af9726e916316277f56d0fe658a69cc40",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_024",
+    "kind": "costume",
+    "code": "ST-024",
+    "title": {
+      "zh": "白色短上衣与破洞牛仔背带裤",
+      "en": "White crop top and distressed denim overalls"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 白色 短上衣 牛仔 背带裤 破洞 宽松 运动鞋",
+      "en": "female photographic outfit update white crop top denim overalls distressed baggy sneakers"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "aa7e4006957df520dcb5081c911d1bf957b969653814815f15e940bc3bf3f0e3",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_024",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_024.png",
+        "image": "custom/costume/images/custom_costume_street_024.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_024.webp",
+        "provenance": {
+          "originalSha256": "aa7e4006957df520dcb5081c911d1bf957b969653814815f15e940bc3bf3f0e3",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_023",
+    "kind": "costume",
+    "code": "ST-023",
+    "title": {
+      "zh": "黑色珍珠网格露腰长礼服",
+      "en": "Black pearl lattice cutout gown"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 黑色 珍珠 网格 露腰 长裙 拖尾",
+      "en": "female photographic outfit update black pearl lattice cutout long skirt train gown"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "e532de147685b81623cd5383754fec0f2e28dd6bffde7fa7126dcec6ab000e38",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_023",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_023.png",
+        "image": "custom/costume/images/custom_costume_street_023.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_023.webp",
+        "provenance": {
+          "originalSha256": "e532de147685b81623cd5383754fec0f2e28dd6bffde7fa7126dcec6ab000e38",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_022",
+    "kind": "costume",
+    "code": "ST-022",
+    "title": {
+      "zh": "白色珠宝束身上衣与牛仔短裤",
+      "en": "White jeweled corset and denim shorts"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 白色 纱袖 蓝色 宝石 水钻 束身 牛仔 短裤 腰链 黑色 鱼嘴靴",
+      "en": "female photographic outfit update white sheer sleeves turquoise jewel rhinestone corset denim shorts waist chain black open-toe boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "862b4b6c0bd3c2d82eb3711d860d58bd70fbde7279a6f7a34cdc263121f7e0d3",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_022",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_022.png",
+        "image": "custom/costume/images/custom_costume_street_022.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_022.webp",
+        "provenance": {
+          "originalSha256": "862b4b6c0bd3c2d82eb3711d860d58bd70fbde7279a6f7a34cdc263121f7e0d3",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_021",
+    "kind": "costume",
+    "code": "ST-021",
+    "title": {
+      "zh": "绿白拼色束身上衣与短裙长靴",
+      "en": "Green-white corset top and mini skirt with tall boots"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 绿色 白色 束身 挂脖 长袖 短裙 长靴",
+      "en": "female photographic outfit update green white corset halter long sleeve mini skirt tall boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "ad46b2d7228af669233bdb3020c75dc7114f8b09ec86a038b8cb764c7c46dbb2",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_021",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_021.png",
+        "image": "custom/costume/images/custom_costume_street_021.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_021.webp",
+        "provenance": {
+          "originalSha256": "ad46b2d7228af669233bdb3020c75dc7114f8b09ec86a038b8cb764c7c46dbb2",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_020",
+    "kind": "costume",
+    "code": "ST-020",
+    "title": {
+      "zh": "彩色印花吊带与黑色褶皱短裙",
+      "en": "Multicolor print camisole and black ruched mini skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 彩色 印花 交叉绑带 金扣 黑色 褶皱 短裙 高跟凉鞋",
+      "en": "female photographic outfit update multicolor print cross straps gold buckle black ruched mini skirt heeled sandals"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "a86daa98bdab81df4d1b40227398629ae02fb300823f0f9968cfc8b9e37d079e",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_020",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_020.png",
+        "image": "custom/costume/images/custom_costume_street_020.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_020.webp",
+        "provenance": {
+          "originalSha256": "a86daa98bdab81df4d1b40227398629ae02fb300823f0f9968cfc8b9e37d079e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_019",
+    "kind": "costume",
+    "code": "ST-019",
+    "title": {
+      "zh": "棕色西部流苏皮革套装",
+      "en": "Brown western fringed leather outfit"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选服饰更新 · 20261104",
+      "en": "Curated outfit update · 20261104"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 服饰更新 西部 牛仔帽 挂脖 束身 短裤 流苏 刺绣 长靴",
+      "en": "female photographic outfit update western cowboy hat halter corset shorts fringe embroidered boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "user-outfits-nine-20261104",
+      "provider": "user-supplied",
+      "originalSha256": "aa7fd0f45f0343030dc74d05e73989720d05de4d308f47b90d4a94bb384c3f62",
+      "width": 1024,
+      "height": 1536,
+      "note": "User supplied image preserved unchanged; original visible crop and any missing footwear retained. Generation model unverified."
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_019",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_019.png",
+        "image": "custom/costume/images/custom_costume_street_019.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_019.webp",
+        "provenance": {
+          "originalSha256": "aa7fd0f45f0343030dc74d05e73989720d05de4d308f47b90d4a94bb384c3f62",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_018",
+    "kind": "costume",
+    "code": "ST-018",
+    "title": {
+      "zh": "黑色镂空钩织挂脖长裙与细带高跟鞋",
+      "en": "Black crochet cutout halter maxi dress and strappy heels"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "黑色镂空长裙与侧坐参考",
+      "en": "Black crochet dress and side-sitting references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 镂空 钩织 挂脖 长裙 细带 高跟凉鞋 隐形人台 完整穿搭",
+      "en": "female photographic black cutout crochet halter maxi dress strappy stiletto sandals ghost mannequin complete outfit"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "variants": [
+      {
+        "id": "custom_costume_street_018",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_018.png",
+        "image": "custom/costume/images/custom_costume_street_018.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_018.webp",
+        "provenance": {
+          "batch": "female-side-sit-20261104",
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "originalSha256": "771a673b8a3b66bb0d4728caac1618d4bda8704c55c927c7582e809bcc65083b",
+          "generatedSha256": "771a673b8a3b66bb0d4728caac1618d4bda8704c55c927c7582e809bcc65083b",
+          "promptSha256": "9f0384642170aebb42aedc6bcef7503668b062428a47a363879d7b460136c388",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ],
+    "provenance": {
+      "batch": "female-side-sit-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "originalSha256": "771a673b8a3b66bb0d4728caac1618d4bda8704c55c927c7582e809bcc65083b",
+      "generatedSha256": "771a673b8a3b66bb0d4728caac1618d4bda8704c55c927c7582e809bcc65083b",
+      "promptSha256": "9f0384642170aebb42aedc6bcef7503668b062428a47a363879d7b460136c388",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "参考照片提取重绘，裙身遮挡与未见细节由AI补全；保留配套鞋履。",
+        "en": "AI reconstructed from reference photo; occluded and unseen dress details inferred, matching footwear retained."
+      }
+    }
+  },
+  {
+    "id": "custom_costume_street_017",
+    "kind": "costume",
+    "code": "ST-017",
+    "title": {
+      "zh": "奶白花卉蕾丝挂脖短裙",
+      "en": "Ivory floral lace halter mini dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "触耳交叉腿与服饰参考",
+      "en": "Touch-ear crossed-leg and outfit references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 奶白 花卉 蕾丝 立体 刺绣 挂脖 镂空 短裙 透明 裸色 后绊带 高跟凉鞋 完整穿搭",
+      "en": "female photographic ivory floral lace embroidered halter cutout mini dress transparent nude slingback heeled sandals complete outfit"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "female-touch-ear-20261104",
+      "originalSha256": "29f78cab1c97a044135d51d25067b062e7be79dd4d0d4de1b4999b4ce8da43be",
+      "width": 1024,
+      "height": 1536,
+      "provider": "user-supplied",
+      "note": {
+        "zh": "用户提供的完整服饰参考原图，保留鞋履；生成模型未验证。",
+        "en": "User-supplied complete outfit original including footwear; generation model unverified."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_017",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_017.png",
+        "image": "custom/costume/images/custom_costume_street_017.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_017.webp",
+        "provenance": {
+          "batch": "female-touch-ear-20261104",
+          "originalSha256": "29f78cab1c97a044135d51d25067b062e7be79dd4d0d4de1b4999b4ce8da43be",
+          "width": 1024,
+          "height": 1536,
+          "provider": "user-supplied"
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_016",
+    "kind": "costume",
+    "code": "ST-016",
+    "title": {
+      "zh": "黑色皮衣与白色束身上衣叠搭短裙",
+      "en": "Black leather jacket and white corset with tiered skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "触耳交叉腿与服饰参考",
+      "en": "Touch-ear crossed-leg and outfit references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 皮衣 西装外套 白色 束身上衣 黑色 领带 图案 双层 蛋糕 短裙 黑色 短靴 完整穿搭",
+      "en": "female photographic black leather blazer white corset printed black tie tiered mini skirt black ankle boots complete outfit"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "female-touch-ear-20261104",
+      "originalSha256": "2e256266bb6fe6bba8e62e67f26bb5e15b5a784ecbd3df55f95b117d2af90fa9",
+      "width": 1024,
+      "height": 1536,
+      "provider": "user-supplied",
+      "note": {
+        "zh": "用户提供的完整服饰参考原图，保留鞋履；生成模型未验证。",
+        "en": "User-supplied complete outfit original including footwear; generation model unverified."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_016",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_016.png",
+        "image": "custom/costume/images/custom_costume_street_016.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_016.webp",
+        "provenance": {
+          "batch": "female-touch-ear-20261104",
+          "originalSha256": "2e256266bb6fe6bba8e62e67f26bb5e15b5a784ecbd3df55f95b117d2af90fa9",
+          "width": 1024,
+          "height": 1536,
+          "provider": "user-supplied"
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_005",
+    "kind": "costume",
+    "code": "MC-005",
+    "title": {
+      "zh": "男士白色背心与米白宽松长裤",
+      "en": "White tank and ivory relaxed trousers"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "男士白色休闲穿搭提取",
+      "en": "Male white casual outfit extraction"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 白色 罗纹 背心 米白 宽松 长裤 白色 运动鞋 街头 休闲 无人物",
+      "en": "male photographic white ribbed tank ivory relaxed trousers white sneakers streetwear casual ghost mannequin"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "batch": "male-streetwear-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "originalSha256": "91dc605349622a973b812c01d2c6deb1d339552e0a17645850c7eea7af3013e1",
+      "generatedSha256": "91dc605349622a973b812c01d2c6deb1d339552e0a17645850c7eea7af3013e1",
+      "promptSha256": "12feb1a35c1dbdecdcd02af9f6cbd4018f3c3a85a54e0058e748f154dea6798d",
+      "width": 1024,
+      "height": 1536,
+      "aiRedrawn": true,
+      "note": {
+        "zh": "原照片遮挡的腰部、裤型和裁切鞋头为AI补全；去除人物与首饰，保留完整双鞋。",
+        "en": "Occluded waist, trouser construction and cropped shoe toe are AI completed; person and jewelry removed, both shoes included."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_005",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_005.png",
+        "image": "custom/costume/images/custom_costume_male_005.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_005.webp",
+        "provenance": {
+          "batch": "male-streetwear-20261104",
+          "provider": "Atomflow",
+          "model": "gpt-image-2",
+          "originalSha256": "91dc605349622a973b812c01d2c6deb1d339552e0a17645850c7eea7af3013e1",
+          "generatedSha256": "91dc605349622a973b812c01d2c6deb1d339552e0a17645850c7eea7af3013e1",
+          "promptSha256": "12feb1a35c1dbdecdcd02af9f6cbd4018f3c3a85a54e0058e748f154dea6798d",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_menswear_20261103_01",
     "kind": "costume",
     "code": "MW-001",
@@ -253,136 +1387,6 @@
         "thumbnail": "custom/costume/thumbnails/custom_costume_menswear_20261103_04.webp",
         "provenance": {
           "originalSha256": "16960c049697d175f81ad72640c0591724c4bfca987367f07864af576217a16d",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_010",
-    "kind": "costume",
-    "code": "ST-010",
-    "title": {
-      "zh": "奶白系带上衣与灰色条纹百褶裙",
-      "en": "Ivory tie-front top and grey pinstripe pleated skirt"
-    },
-    "category": {
-      "id": "street",
-      "zh": "日常穿搭",
-      "en": "Everyday"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 V领 系带 长袖 灰色 条纹 百褶 短裙 棕色褶皱包 珍珠肩带 白色高跟凉鞋",
-      "en": "female photographic complete outfit no person V neck tie front long sleeve grey pinstripe pleated mini skirt brown ruched pearl strap bag white heel sandals"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_010",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_010.png",
-        "image": "custom/costume/images/custom_costume_street_010.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_010.webp",
-        "provenance": {
-          "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
-          "width": 1024,
-          "height": 1536
-        }
-      }
-    ]
-  },
-  {
-    "id": "custom_costume_street_011",
-    "kind": "costume",
-    "code": "ST-011",
-    "title": {
-      "zh": "浅蓝星芒水钻西装裙套装",
-      "en": "Pale blue crystal starburst skirt suit"
-    },
-    "category": {
-      "id": "party",
-      "zh": "派对穿搭",
-      "en": "Party"
-    },
-    "series": {
-      "zh": "精选穿搭 · 20261103",
-      "en": "Curated outfits · 20261103"
-    },
-    "extended": false,
-    "source": "custom",
-    "collection": "custom",
-    "keywords": {
-      "zh": "女性 写实 完整套装 无人物 浅蓝 条纹 西装 水钻 星芒 丝巾 黑色手提包 白色长靴",
-      "en": "female photographic complete outfit no person pale blue pinstripe blazer crystal starburst scarf black handbag white tall boots"
-    },
-    "tags": [
-      {
-        "id": "female",
-        "zh": "女性",
-        "en": "Female"
-      },
-      {
-        "id": "photo",
-        "zh": "写实",
-        "en": "Photographic"
-      }
-    ],
-    "provenance": {
-      "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
-      "width": 1024,
-      "height": 1536,
-      "batch": "user-outfits-20261103",
-      "note": {
-        "zh": "用户提供的服饰参考原图，未重新生成。",
-        "en": "User-provided outfit reference, preserved without regeneration."
-      }
-    },
-    "variants": [
-      {
-        "id": "custom_costume_street_011",
-        "angle": "front",
-        "label": {
-          "zh": "正面",
-          "en": "Front"
-        },
-        "original": "custom/costume/originals/custom_costume_street_011.png",
-        "image": "custom/costume/images/custom_costume_street_011.webp",
-        "thumbnail": "custom/costume/thumbnails/custom_costume_street_011.webp",
-        "provenance": {
-          "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
           "width": 1024,
           "height": 1536
         }
@@ -2527,10 +3531,7 @@
       "completion": {
         "method": "AI garment completion",
         "sourceSha256": "02ca3d3ad4fc88ec86049b2e167324448eb0fb76c7626f43d5641a5a28e34796",
-        "completedRegions": [
-          "lower trouser legs",
-          "trouser hems"
-        ],
+        "completedRegions": ["lower trouser legs", "trouser hems"],
         "footwearAdded": false,
         "note": {
           "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
@@ -2616,10 +3617,7 @@
       "completion": {
         "method": "AI garment completion",
         "sourceSha256": "63222b8a870d7d3c16b2e88b9fe3dcc795ad8956e37b1fc4be9553ebcacae53d",
-        "completedRegions": [
-          "lower trouser legs",
-          "trouser hems"
-        ],
+        "completedRegions": ["lower trouser legs", "trouser hems"],
         "footwearAdded": false,
         "note": {
           "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
@@ -3351,6 +4349,136 @@
         "thumbnail": "custom/costume/thumbnails/custom_costume_street_009.webp",
         "provenance": {
           "originalSha256": "f985bfb4486b0a99d8db945008a70e146c0bf8d99707fd7c798310cb8ca8aa6b",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_010",
+    "kind": "costume",
+    "code": "ST-010",
+    "title": {
+      "zh": "奶白系带上衣与灰色条纹百褶裙",
+      "en": "Ivory tie-front top and grey pinstripe pleated skirt"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 V领 系带 长袖 灰色 条纹 百褶 短裙 棕色褶皱包 珍珠肩带 白色高跟凉鞋",
+      "en": "female photographic complete outfit no person V neck tie front long sleeve grey pinstripe pleated mini skirt brown ruched pearl strap bag white heel sandals"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_010",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_010.png",
+        "image": "custom/costume/images/custom_costume_street_010.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_010.webp",
+        "provenance": {
+          "originalSha256": "43c48d67a35e9587db1dd8ccc6ea76a5b06bbf267f880022a718176bcaba9b8e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_011",
+    "kind": "costume",
+    "code": "ST-011",
+    "title": {
+      "zh": "浅蓝星芒水钻西装裙套装",
+      "en": "Pale blue crystal starburst skirt suit"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261103",
+      "en": "Curated outfits · 20261103"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 完整套装 无人物 浅蓝 条纹 西装 水钻 星芒 丝巾 黑色手提包 白色长靴",
+      "en": "female photographic complete outfit no person pale blue pinstripe blazer crystal starburst scarf black handbag white tall boots"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261103",
+      "note": {
+        "zh": "用户提供的服饰参考原图，未重新生成。",
+        "en": "User-provided outfit reference, preserved without regeneration."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_011",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_011.png",
+        "image": "custom/costume/images/custom_costume_street_011.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_011.webp",
+        "provenance": {
+          "originalSha256": "74dd6f130bd3a93a447e489b6b4c7c682f2a50c0dd140c87ac15d2b6718d6748",
           "width": 1024,
           "height": 1536
         }
