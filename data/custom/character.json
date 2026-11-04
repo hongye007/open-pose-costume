@@ -1,5 +1,78 @@
 [
   {
+    "id": "custom_character_frontal_soft_dark_hair_20261104",
+    "kind": "character",
+    "code": "UCF-009",
+    "title": {
+      "zh": "深色长发女性 · 柔光正面肖像",
+      "en": "Dark-haired woman · Soft frontal portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "正面人物参考",
+      "en": "Frontal character references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 正面 人物参考 深棕黑色 长发 中分 灰棕眼睛 自然 微笑 象牙白 细肩带 背心 柔光",
+      "en": "female photographic frontal character reference dark brown black long hair center part gray brown eyes natural subtle smile ivory thin strap tank soft light"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "long"
+    },
+    "provenance": {
+      "batch": "frontal-soft-dark-hair-20261104",
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "aiRedrawn": true,
+      "originalSha256": "d03368c01a37f93ddc86e91c7a4dbd897db83c0dcd565c4af7b8631cb3ef4e16",
+      "promptSha256": "d8ecec136c325cdb88e27a6811f39ee2d10a8c9bf72006b2df63b0e31d687d6c",
+      "width": 1024,
+      "height": 1536,
+      "note": {
+        "zh": "根据用户侧倾照片调整为正面参考，未展示的正面结构含AI推断。",
+        "en": "Front portrait adapted from user reference; unseen frontal geometry includes AI inference."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_character_frontal_soft_dark_hair_20261104",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_frontal_soft_dark_hair_20261104.png",
+        "image": "custom/character/images/custom_character_frontal_soft_dark_hair_20261104.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_frontal_soft_dark_hair_20261104.webp",
+        "provenance": {
+          "originalSha256": "d03368c01a37f93ddc86e91c7a4dbd897db83c0dcd565c4af7b8631cb3ef4e16",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_character_import_20261104_retro_blonde",
     "kind": "character",
     "code": "UCF-007",

@@ -100,3 +100,5 @@ Paired depth references are AI-inferred grayscale guides (near = bright, far = d
 - `five-outfit-extractions-20261104`：五套照片提取服饰，Atomflow gpt-image-2制作，完整穿搭及双鞋入画；遮挡处与未展示鞋履为AI补全，分别记录于素材溯源。原照片不随网站发布。
 
 - 2026-11-04：按用户要求移除 UCF-008（黑发绿眸女性肖像），记录和原图移至本地备份，不随网站发布。
+
+- `frontal-soft-dark-hair-20261104`：UCF-009 深色长发女性柔光正面肖像，Atomflow gpt-image-2 根据用户照片调整；未展示的正面结构包含AI推断。保留1024 × 1536原图及生成溯源，支持女性、写实、长发筛选。UCF-008为已移除编号，不复用。

@@ -71,16 +71,16 @@ test('existing characters are female photographic references, while custom male 
   );
   assert.equal(
     filterReferences(items, { kind: 'character', collection: 'custom', tag: 'female' }).length,
-    19,
+    20,
   );
   assert.equal(filterReferences(items, { kind: 'character', tag: 'male' }).length, 19);
   const longHair = filterReferences(items, { tag: 'female', style: 'photo', hair: 'long' });
   assert.ok(longHair.length > 0);
   assert.ok(longHair.every((item) => item.portrait.hair === 'long'));
-  assert.equal(filterReferences(items, { kind: 'character', query: '女性 写实' }).length, 1518);
+  assert.equal(filterReferences(items, { kind: 'character', query: '女性 写实' }).length, 1519);
   assert.equal(
     filterReferences(items, { kind: 'character', query: 'Female Photographic' }).length,
-    1518,
+    1519,
   );
 });
 
@@ -118,8 +118,8 @@ test('existing costumes are female photographic references; poses keep their exi
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
     1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 94);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 4608);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 95);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4609);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {
@@ -169,7 +169,7 @@ test('character country groups intersect with gender, style, source and bilingua
   assert.equal(filterReferences(items, { country: 'unknown' }).length, 0);
   for (const query of ['日本 女性 写实', 'Japan Female Photographic'])
     assert.equal(filterReferences(items, { kind: 'character', query }).length, 1500);
-  assert.equal(filterReferences(items, { kind: 'character', country: 'all' }).length, 1537);
+  assert.equal(filterReferences(items, { kind: 'character', country: 'all' }).length, 1538);
 });
 
 test('visible codes are searchable and one tag ID has one bilingual display name', () => {
