@@ -1,5 +1,203 @@
 [
   {
+    "id": "custom_costume_street_030",
+    "kind": "costume",
+    "code": "ST-030",
+    "title": {
+      "zh": "银钻流苏上衣与白缎鱼尾裙",
+      "en": "Crystal fringe top and white satin mermaid skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261106",
+      "en": "Curated outfits · 20261106"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 银色 水钻 流苏 白缎 鱼尾 礼服",
+      "en": "female photographic crystal fringe top and white satin mermaid skirt"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "690ed2fc7081f38bd3e27d3e3f3adf3cb853bc22134abab465387c9346f70ae6",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261106",
+      "note": {
+        "zh": "用户提供的服饰参考原图。",
+        "en": "User-provided outfit reference."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_030",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_030.png",
+        "image": "custom/costume/images/custom_costume_street_030.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_030.webp",
+        "provenance": {
+          "originalSha256": "690ed2fc7081f38bd3e27d3e3f3adf3cb853bc22134abab465387c9346f70ae6",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_031",
+    "kind": "costume",
+    "code": "ST-031",
+    "title": {
+      "zh": "粉色花饰荷叶边拖地礼服",
+      "en": "Pink floral ruffle gown"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261106",
+      "en": "Curated outfits · 20261106"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 粉色 花朵 一字肩 荷叶边 束身 礼服",
+      "en": "female photographic pink floral ruffle gown"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "492b51d07f23372948338fcccb858e0775888fa32ab288829c98e3c9f3e9a296",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261106",
+      "note": {
+        "zh": "用户提供的服饰参考原图。",
+        "en": "User-provided outfit reference."
+      }
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_031",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_031.png",
+        "image": "custom/costume/images/custom_costume_street_031.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_031.webp",
+        "provenance": {
+          "originalSha256": "492b51d07f23372948338fcccb858e0775888fa32ab288829c98e3c9f3e9a296",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_032",
+    "kind": "costume",
+    "code": "ST-032",
+    "title": {
+      "zh": "黑色豹纹亮片短裙套装",
+      "en": "Black leopard sequin miniskirt outfit"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "精选穿搭 · 20261106",
+      "en": "Curated outfits · 20261106"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 豹纹 亮片 短裙 孔眼腰带 银链 短靴",
+      "en": "female photographic black leopard sequin miniskirt outfit"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "9db960159a9aaa42d44252fbd3c4d5e69a61c5f9bd5358cf4cf190cf5408fff2",
+      "width": 1024,
+      "height": 1536,
+      "batch": "user-outfits-20261106",
+      "note": {
+        "zh": "从雨夜电话亭原图提取，短靴和遮挡处由 AI 补全。",
+        "en": "Extracted from the rainy phone booth image. Boots and obscured details were inferred by AI."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "adb3f79d1d8270938da9a9a1521176c684c7461b38534534c5a58c515c6eadb1"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_032",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_032.png",
+        "image": "custom/costume/images/custom_costume_street_032.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_032.webp",
+        "provenance": {
+          "originalSha256": "9db960159a9aaa42d44252fbd3c4d5e69a61c5f9bd5358cf4cf190cf5408fff2",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_male_007",
     "kind": "costume",
     "code": "MC-007",
@@ -3531,7 +3729,10 @@
       "completion": {
         "method": "AI garment completion",
         "sourceSha256": "02ca3d3ad4fc88ec86049b2e167324448eb0fb76c7626f43d5641a5a28e34796",
-        "completedRegions": ["lower trouser legs", "trouser hems"],
+        "completedRegions": [
+          "lower trouser legs",
+          "trouser hems"
+        ],
         "footwearAdded": false,
         "note": {
           "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
@@ -3617,7 +3818,10 @@
       "completion": {
         "method": "AI garment completion",
         "sourceSha256": "63222b8a870d7d3c16b2e88b9fe3dcc795ad8956e37b1fc4be9553ebcacae53d",
-        "completedRegions": ["lower trouser legs", "trouser hems"],
+        "completedRegions": [
+          "lower trouser legs",
+          "trouser hems"
+        ],
         "footwearAdded": false,
         "note": {
           "zh": "裤腿与裤脚由 AI 根据可见服饰补全，非原照片中可见的细节。",
