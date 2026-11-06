@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url';
 import { defineConfig, type ProxyOptions } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -28,6 +29,14 @@ function imageProxy(target: string): ProxyOptions {
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        guide: fileURLToPath(new URL('./guide/index.html', import.meta.url)),
+      },
+    },
+  },
   server: {
     proxy: {
       '^/__opc-image/site/v1/images/edits$': imageProxy('https://atomflow.vip'),

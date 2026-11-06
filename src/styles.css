@@ -1279,6 +1279,25 @@ dialog::backdrop {
   background: #18223977;
   backdrop-filter: blur(5px);
 }
+.operation-guide-modal {
+  width: min(960px, calc(100vw - 24px));
+}
+.operation-guide-modal .panel-heading {
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.operation-guide-modal h2 {
+  margin-right: auto;
+}
+.operation-guide-modal iframe {
+  display: block;
+  width: 100%;
+  height: min(70dvh, 760px);
+  border: 0;
+}
 .detail-modal {
   width: 1050px;
 }

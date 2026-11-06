@@ -31,6 +31,7 @@ export const copy = {
     mobileSaved: '收藏',
     projectHome: '返回 Open Pose & Costume 首页',
     projectAbout: '关于项目',
+    operationGuide: '操作说明',
     projectAboutShort: '关于',
     projectAboutTitle: '关于 Open Pose & Costume',
     projectAboutIntro:
@@ -213,6 +214,7 @@ export const copy = {
     mobileSaved: 'Saved',
     projectHome: 'Return to the Open Pose & Costume home page',
     projectAbout: 'About the project',
+    operationGuide: 'User guide',
     projectAboutShort: 'About',
     projectAboutTitle: 'About Open Pose & Costume',
     projectAboutIntro:

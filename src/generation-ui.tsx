@@ -368,7 +368,7 @@ export function ImageSettings({
           <div className="api-guide-actions">
             <a
               className="secondary-button"
-              href="https://my.feishu.cn/wiki/DuwOwjo0oiUrMAkVY8McigKcnsh"
+              href={`${import.meta.env.BASE_URL}guide/index.html`}
               target="_blank"
               rel="noopener noreferrer"
             >

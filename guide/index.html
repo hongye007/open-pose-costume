@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>使用指引 · Open Pose &amp; Costume</title>
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="../src/styles.css">
+  <script>
+    if (window.parent !== window && new URLSearchParams(location.search).has('embed')) {
+      document.documentElement.classList.add('guide-embedded');
+    }
+  </script>
+  <style>
+    .guide-embedded .topbar, .guide-embedded .guide-footer,
+    .guide-embedded .guide-hero .primary-button { display: none; }
+    .guide-embedded .guide :target { scroll-margin-top: 16px; }
+    .guide-embedded .guide-nav { top: 16px; }
+    .guide { line-height: 1.65; }
+    .guide :target { scroll-margin-top: 96px; }
+    .guide-wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    .guide-hero { padding: 42px 0 26px; border-bottom: 1px solid var(--line); }
+    .guide h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.2; margin: 8px 0; }
+    .guide h2 { margin: 0 0 12px; font-size: 22px; }
+    .guide h3 { margin: 18px 0 6px; font-size: 16px; }
+    .guide p { margin: 6px 0 14px; }
+    .guide-lede, .guide figcaption { color: #606c82; }
+    .guide-layout { display: grid; grid-template-columns: 176px minmax(0, 1fr); gap: 24px; padding-block: 24px 42px; }
+    .guide-nav { align-self: start; position: sticky; top: 96px; }
+    .guide-nav a { display: block; padding: 9px 12px; color: #535e70; font-size: 13px; }
+    .guide-nav a:hover, .guide-nav a:focus-visible { background: var(--lavender); color: var(--blue); }
+    .guide article section { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: clamp(16px, 4vw, 28px); margin-bottom: 16px; }
+    .guide ol { padding-inline-start: 22px; }
+    .guide li + li { margin-top: 8px; }
+    .guide figure { margin: 18px 0 0; }
+    .guide figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+    .guide figcaption { margin-top: 6px; font-size: 12px; }
+    .guide .note { border-left: 3px solid var(--blue); padding: 8px 12px; background: var(--bg); }
+    .guide code { overflow-wrap: anywhere; }
+    .guide-footer { display: flex; flex-wrap: wrap; gap: 18px; padding-block: 16px; border-top: 1px solid var(--line); font-size: 13px; }
+    @media (max-width: 720px) {
+      .guide .topbar { padding-inline: 20px; gap: 12px; }
+      .guide-layout { grid-template-columns: 1fr; gap: 16px; }
+      .guide-nav { position: static; display: flex; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body class="guide">
+  <header class="topbar"><a class="topbar-brand" href="../"><img src="/brand/logo-mark.png" alt="" width="30" height="30"><strong>Open Pose &amp; Costume</strong></a><a class="secondary-button" href="../">返回参考库</a></header>
+  <main class="guide-wrap">
+    <div class="guide-hero">
+      <span class="section-kicker">OPEN POSE &amp; COSTUME / GUIDE</span>
+      <h1>使用指引</h1>
+      <p class="guide-lede">从选取姿势、服饰和人物，到配置生图服务与排查请求错误。</p>
+      <a class="primary-button" href="../?lang=zh&amp;view=studio">打开一键生图</a>
+    </div>
+    <div class="guide-layout">
+      <nav class="guide-nav" aria-label="指引目录">
+        <a href="#references">01 选择参考素材</a>
+        <a href="#api">02 配置 API</a>
+        <a href="#errors">03 排查错误</a>
+        <a href="#local">04 本地工作流</a>
+      </nav>
+      <article>
+        <section id="references">
+          <h2>选择参考素材</h2>
+          <ol>
+            <li>在图库按类别、关键词或编号查找姿势、服饰和人物。点开卡片可查看原图。</li>
+            <li>将姿势和服饰加入搭配台，按需选一张人物图。若姿势有多视角和配套深度图，可切换观察角度或开启「深度图」。</li>
+            <li>进入「一键生图」，确认素材、模型和尺寸，按需补充描述，再生成图片。</li>
+          </ol>
+          <figure><img src="/guide/library.png" loading="lazy" alt="参考库的导航、搜索和筛选"><figcaption>参考库中的分类和筛选入口</figcaption></figure>
+          <figure><img src="/guide/studio.png" loading="lazy" alt="一键生图工作台中的参考素材和结果"><figcaption>工作台中的素材选择与生成结果</figcaption></figure>
+        </section>
+        <section id="api">
+          <h2>配置生图 API</h2>
+          <ol>
+            <li>打开「一键生图」，点击「生图设置」。</li>
+            <li>如果使用 Atomflow，在其控制台的「API 密钥」中新建密钥。参考资料使用 <code>codex</code> 分组和 <code>gpt-image-2</code> 模型，实际可用模型和额度以账户控制台为准。</li>
+            <li>将 API 地址、密钥和模型填入生图设置并保存。需要下次继续使用时，可选择在当前浏览器中保存密钥。</li>
+            <li>使用其他服务时，填写该服务的 API 地址和模型，并确认它支持 <code>/v1/images/edits</code> 图片编辑接口和多张参考图。</li>
+          </ol>
+          <p><a href="https://atomflow.vip/" target="_blank" rel="noopener noreferrer">打开 Atomflow 控制台入口</a></p>
+        </section>
+        <section id="errors">
+          <h2>排查生成错误</h2>
+          <h3>HTTP 400 · 请求参数或参考图被拒绝</h3>
+          <p>先查看服务返回的错误详情，核对模型、尺寸和支持的图像格式。上传图片使用 PNG、JPEG 或 WebP。若同一组素材反复失败，可逐个更换参考图或简化提示词，定位触发错误的输入。</p>
+          <h3>HTTP 403 · 服务拒绝访问</h3>
+          <p>到服务控制台核对密钥状态、模型权限、分组和余额。若错误明确提示额度不足，再按服务商的说明处理。</p>
+          <p class="note">记录错误详情、所用服务地址和模型有助于定位问题。分享截图或日志前请遮住 API 密钥。</p>
+        </section>
+        <section id="local">
+          <h2>本地 ComfyUI 工作流</h2>
+          <p>下载随资料提供的 Qwen-Image-2.1-Compose 工作流，将 JSON 导入 ComfyUI。根据节点提示准备所需模型和依赖，替换节点里的输入图片，再运行工作流。</p>
+          <a class="primary-button" href="Qwen-Image-2.1-Compose.json" download>下载 ComfyUI 工作流</a>
+        </section>
+      </article>
+    </div>
+  </main>
+  <footer class="guide-wrap guide-footer"><a href="https://github.com/hongye007/open-pose-costume">项目仓库</a><a href="https://github.com/hongye007/open-pose-costume-skill">配套 Skill</a><a href="../">参考库首页</a></footer>
+</body>
+</html>

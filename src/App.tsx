@@ -5,6 +5,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   Bookmark,
+  BookOpen,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -154,7 +155,7 @@ export default function App() {
   const [studioAngle, setStudioAngle] = useState('front');
   const characterTask = useRef(0);
   const costumeTask = useRef(0);
-  const [panel, setPanel] = useState<'project' | 'settings' | 'usage' | null>(null);
+  const [panel, setPanel] = useState<'project' | 'settings' | 'usage' | 'guide' | null>(null);
   const [imageConfig, setImageConfig] = useState(loadImageConfig);
   const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
   const generationController = useRef<AbortController | null>(null);
@@ -885,6 +886,11 @@ export default function App() {
             <button className="social-link sidebar-about" onClick={() => setPanel('project')}>
               <Info size={16} />
               <span>{t.projectAbout}</span>
+              <ChevronRight size={14} />
+            </button>
+            <button className="social-link sidebar-about" onClick={() => setPanel('guide')}>
+              <BookOpen size={16} />
+              <span>{t.operationGuide}</span>
               <ChevronRight size={14} />
             </button>
             <a
@@ -1709,6 +1715,35 @@ export default function App() {
           }}
         />
       )}
+      {panel === 'guide' && (
+        <Modal onClose={() => setPanel(null)} label={t.operationGuide} className="operation-guide-modal">
+          <div className="panel-heading">
+            <h2>{t.operationGuide}</h2>
+            <a
+              className="icon-button"
+              href={`${import.meta.env.BASE_URL}guide/index.html`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={lang === 'zh' ? '在新标签页打开操作说明' : 'Open guide in a new tab'}
+              title={lang === 'zh' ? '在新标签页打开操作说明' : 'Open guide in a new tab'}
+            >
+              <ExternalLink size={18} />
+            </a>
+            <button className="icon-button" aria-label={t.close} onClick={() => setPanel(null)}>
+              <X size={22} />
+            </button>
+          </div>
+          <iframe
+            src={`${import.meta.env.BASE_URL}guide/index.html?embed=1`}
+            title={t.operationGuide}
+            onLoad={({ currentTarget }) => {
+              currentTarget.contentDocument?.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') setPanel(null);
+              });
+            }}
+          />
+        </Modal>
+      )}
       {panel === 'usage' && (
         <Modal onClose={() => setPanel(null)} label={t.usage} className="about-modal">
           <div className="panel-heading">
@@ -1721,6 +1756,11 @@ export default function App() {
             </button>
           </div>
           <p>{t.aboutIntro}</p>
+          <p>
+            <a href={`${import.meta.env.BASE_URL}guide/index.html`}>
+              {lang === 'zh' ? '查看完整使用指引' : 'Read the full guide (Chinese)'}
+            </a>
+          </p>
           <h3>{t.aboutHowToTitle}</h3>
           <ul className="usage-steps">
             {t.aboutSteps.map((step) => (
