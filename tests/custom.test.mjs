@@ -219,8 +219,8 @@ test('custom depth keeps project-base URLs, generation uploads and history seman
   const poses = resolved.items.filter(
     (item) => item.kind === 'pose' && item.collection === 'custom' && hasPoseDepth(item),
   );
-  assert.equal(poses.length, 36);
-  assert.equal(poses.flatMap((item) => item.variants).length, 180);
+  assert.equal(poses.length, 54);
+  assert.equal(poses.flatMap((item) => item.variants).length, 270);
   const selected = withPoseDepth(poses[0]);
   const reference = {
     kind: 'pose',

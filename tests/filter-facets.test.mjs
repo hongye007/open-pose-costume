@@ -86,7 +86,7 @@ test('existing characters are female photographic references, while custom male 
 
 test('existing costumes are female photographic references; poses keep their existing style tags', () => {
   for (const [kind, expected] of [
-    ['pose', 303],
+    ['pose', 321],
     ['costume', 2787],
   ]) {
     const females = filterReferences(items, { kind, tag: 'female' });
@@ -118,8 +118,8 @@ test('existing costumes are female photographic references; poses keep their exi
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
     1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 95);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 4609);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 113);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4627);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {

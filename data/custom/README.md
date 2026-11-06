@@ -102,3 +102,5 @@ Paired depth references are AI-inferred grayscale guides (near = bright, far = d
 - 2026-11-04：按用户要求移除 UCF-008（黑发绿眸女性肖像），记录和原图移至本地备份，不随网站发布。
 
 - `frontal-soft-dark-hair-20261104`：UCF-009 深色长发女性柔光正面肖像，Atomflow gpt-image-2 根据用户照片调整；未展示的正面结构包含AI推断。保留1024 × 1536原图及生成溯源，支持女性、写实、长发筛选。UCF-008为已移除编号，不复用。
+
+- `pose-grid-18-20261105`：十八组九宫格姿势，每组含正面、俯视、仰视、侧面和斜侧的结构线稿及配套 AI 相对深度。未展示视角包含 AI 推断。
