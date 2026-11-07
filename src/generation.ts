@@ -13,6 +13,7 @@ export interface ImageConfig {
   quality: 'auto' | 'low' | 'medium' | 'high';
   rememberKey: boolean;
 }
+export type ImageService = 'openwego' | 'atomflow';
 interface ReferenceDetails {
   title: Reference['title'];
   keywords: Reference['keywords'];
@@ -40,15 +41,30 @@ export interface GenerationJob {
 
 const SETTINGS_KEY = 'opc-image-settings';
 const SESSION_KEY = 'opc-image-session-key';
+export const imageServicePresets = {
+  openwego: {
+    baseUrl: 'https://openwego.com',
+    model: 'open-image-v2',
+    size: '1024x1536',
+    quality: 'auto',
+  },
+  atomflow: {
+    baseUrl: 'https://atomflow.vip',
+    model: 'gpt-image-2.6-sunburst',
+    size: '1024x1536',
+    quality: 'auto',
+  },
+} as const satisfies Record<
+  ImageService,
+  Pick<ImageConfig, 'baseUrl' | 'model' | 'size' | 'quality'>
+>;
 export const defaultImageConfig: ImageConfig = {
-  baseUrl: 'https://atomflow.vip',
+  ...imageServicePresets.openwego,
   apiKey: '',
-  model: 'gpt-image-2',
-  size: '1024x1536',
-  quality: 'auto',
-  rememberKey: false,
+  rememberKey: true,
 };
 export const imageSizes = ['1024x1024', '1024x1536', '1536x1024', '2048x2048', 'auto'];
+export const openWegoImageSizes = ['1024x1024', '1024x1536', '1536x1024'];
 
 export function imageEndpoint(baseUrl: string): string {
   const url = new URL(baseUrl.trim());
@@ -68,7 +84,10 @@ export function imageEndpoint(baseUrl: string): string {
 
 export function normalizeImageConfig(config: ImageConfig): ImageConfig {
   const endpoint = imageEndpoint(config.baseUrl);
-  if (!config.apiKey.trim() || !config.model.trim() || /[\r\n]/.test(config.apiKey))
+  const apiKey = config.apiKey.trim();
+  const model = config.model.trim();
+  const openWegoAnonymous = endpoint === 'https://openwego.com/v1/images/edits';
+  if ((!apiKey && !openWegoAnonymous) || !model || /[\r\n]/.test(config.apiKey))
     throw Error('missingConfig');
   if (
     !imageSizes.includes(config.size) ||
@@ -78,9 +97,32 @@ export function normalizeImageConfig(config: ImageConfig): ImageConfig {
   return {
     ...config,
     baseUrl: endpoint.replace(/\/images\/edits$/, ''),
-    apiKey: config.apiKey.trim(),
-    model: config.model.trim(),
+    apiKey,
+    model,
   };
+}
+
+export function imageServiceForConfig(config: ImageConfig): ImageService {
+  try {
+    const endpoint = imageEndpoint(config.baseUrl);
+    if (endpoint === 'https://openwego.com/v1/images/edits') return 'openwego';
+    return 'atomflow';
+  } catch {
+    return 'atomflow';
+  }
+}
+
+export function imageConfigReady(config: ImageConfig): boolean {
+  try {
+    normalizeImageConfig(config);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function imageSizesForConfig(config: ImageConfig): string[] {
+  return imageServiceForConfig(config) === 'openwego' ? openWegoImageSizes : imageSizes;
 }
 
 export function loadImageConfig(): ImageConfig {
@@ -93,8 +135,11 @@ export function loadImageConfig(): ImageConfig {
     const candidate = {
       ...defaultImageConfig,
       ...saved,
-      // Migrate the retired model default while preserving the service and key.
-      model: saved.model.startsWith('grok-') ? defaultImageConfig.model : saved.model,
+      // Migrate retired defaults while preserving the service and key.
+      model:
+        saved.model === 'gpt-image-2' || saved.model.startsWith('grok-')
+          ? imageServicePresets.atomflow.model
+          : saved.model,
       rememberKey,
       apiKey: typeof apiKey === 'string' ? apiKey : '',
     };
@@ -273,7 +318,9 @@ export async function generateReferenceImage(
     ).catch((error) => {
       if (combined.aborted) throw error;
       const status = Number((error as { jobStatus?: unknown })?.jobStatus) || 0;
-      const detail = (error as { diagnostic?: string })?.diagnostic || safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
+      const detail =
+        (error as { diagnostic?: string })?.diagnostic ||
+        safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
       if (status === 403)
         throw new ImageGenerationError('accessDenied', `HTTP 403${detail ? ` · ${detail}` : ''}`);
       if ([400, 401].includes(status))
@@ -294,7 +341,7 @@ export async function generateReferenceImage(
     form.set('prompt', prompt.trim());
     form.set('n', '1');
     form.set('size', valid.size);
-    form.set('quality', valid.quality);
+    if (imageServiceForConfig(valid) === 'atomflow') form.set('quality', valid.quality);
     for (const [index, reference] of references.entries()) {
       combined.throwIfAborted();
       let blob: Blob;
@@ -335,15 +382,21 @@ export async function generateReferenceImage(
       signal: combined,
       credentials: 'omit',
       redirect: 'error',
-      headers: { Authorization: `Bearer ${valid.apiKey}` },
+      headers: valid.apiKey ? { Authorization: `Bearer ${valid.apiKey}` } : undefined,
       body: form,
     });
-    const { payload, diagnostic } = await readImageResponse(response, 'provider-request', endpoint, valid.apiKey);
+    const { payload, diagnostic } = await readImageResponse(
+      response,
+      'provider-request',
+      endpoint,
+      valid.apiKey,
+    );
     if (!response.ok || payload?.error) {
       const message = typeof payload?.error?.message === 'string' ? payload.error.message : '';
       throw new ImageGenerationError(
         response.status === 403 ? 'accessDenied' : 'providerFailed',
-        diagnostic || `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
+        diagnostic ||
+          `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
       );
     }
     return imageResult(payload);

@@ -1,28 +1,61 @@
 export const generationCopy = {
   zh: {
     settings: '生图设置',
-    settingsIntro: '连接兼容 OpenAI 图片接口的生图服务。',
+    settingsIntro: '选择适合这次创作的生图方式。',
+    service: '生成方式',
+    openWegoTitle: 'OpenWego 免费生成',
+    openWegoTag: '免费',
+    openWegoDescription: 'open-image-v2',
+    openWegoBenefit: '免费，内容限制较少',
+    openWegoCaveat: '非旗舰级模型',
+    openWegoQuota: '游客每天 20 张，登陆用户无限用（免费）',
+    atomflowTitle: 'Atomflow 高质量生成',
+    atomflowTag: '高质量',
+    atomflowDescription: 'gpt-image-2.6-sunburst',
+    atomflowBenefit: '生图领域顶尖模型',
+    atomflowCaveat: '安全审查严格',
+    atomflowCompatible: '支持自定义 URL、密钥和模型',
     baseUrl: '服务地址',
+    atomflowBaseUrlHint:
+      '默认使用 Atomflow；也可填写其他服务的根地址或 /v1 地址，系统会请求 /v1/images/edits。',
     apiKey: 'API Key',
+    apiKeyOptional: 'API Key（可选）',
+    apiKeyRequired: 'API Key（必填）',
+    openWegoKeyHint: '留空可按游客额度使用；登录后可无限免费使用，填写个人密钥也不限量。',
+    atomflowKeyHint: '需要所填服务对应的 API Key；密钥只会发送到该服务地址。',
+    getOpenWegoKey: '登录 / 获取 API Key',
     getApiKey: '获取APIKey',
     apiGuide: '获取步骤指引',
     apiGuideTitle: '免费额度 API 获取步骤',
+    openWegoGuideTitle: 'OpenWego API Key 获取步骤',
+    openWegoGuideIntro: '登录 OpenWego 后复制个人 API Key，即可免费不限量使用。',
+    openWegoGuidePrivacy: '完整密钥属于私密信息，请勿分享；如需更换，可在 API 访问页面重置。',
+    openWegoToolsTitle: '不止免费生图',
+    openWegoToolsDescription:
+      'OpenWego 还有图片反推提示词、提示词优化、风格提取等免费工具，界面干净清爽、无广告。',
+    openWegoToolsAction: '浏览免费工具',
+    openWegoAccountAction: '登录并获取 API Key',
     apiGuideIntro:
-      'Atomflow 的 codex 分组支持 gpt-image-2，新用户可获得 10 次生图试用额度；也可以填写任意兼容 OpenAI 图片编辑协议的服务。具体额度以服务当前规则为准。',
+      'Atomflow 的 codex 分组支持 gpt-image-2.6-sunburst，新用户可获得 10 次生图试用额度；也可以填写任意兼容 OpenAI 图片编辑协议的服务。具体额度以服务当前规则为准。',
     apiGuideDocs: '查看完整图文说明',
     apiGuideOpenAtomflow: '打开 Atomflow',
     apiGuidePrivacy: '密钥只用于发起你的生图请求；未勾选记住密钥时，仅保留在当前浏览器会话。',
     model: '模型',
+    modelHint: '已填入推荐模型，也可以手动更换。',
     referenceCount: '提交参考图数量',
     size: '生成尺寸',
     quality: '质量',
+    advancedSettings: '尺寸与质量',
+    advancedSettingsHint: '默认使用推荐参数',
     rememberKey: '在此浏览器记住密钥',
     showKey: '显示密钥',
     hideKey: '隐藏密钥',
     privacy:
       '配置仅保存在此浏览器。未勾选时，密钥只保留在当前会话。生成图片或上传服饰进行提取时，相应图片和描述会发送到此服务。',
-    compatibility:
-      '服务需支持 /v1/images/edits 图片编辑接口；本站为默认 Atomflow 服务提供移动端代理。',
+    openWegoUsage: '无密钥请求按 IP 计算游客额度，',
+    openWegoThanks: '特别感谢 OpenWego 大善人的免费 API。',
+    atomflowUsage:
+      '默认使用 Atomflow 高质量模型；自定义服务需支持浏览器跨域访问和 OpenAI 图片编辑格式。',
     save: '保存配置',
     clear: '清除配置',
     saved: '生图配置已保存',
@@ -70,13 +103,14 @@ export const generationCopy = {
     high: '精细',
     auto: '自动',
     invalidEndpoint: '请输入 HTTPS 服务地址，或本机 HTTP 地址；地址不能包含账号、查询参数或片段。',
-    missingConfig: '请填写服务地址、API Key 和模型。',
+    missingConfig: '请填写完整的服务地址、API Key 和模型；OpenWego 可不填密钥。',
     invalidConfig: '请检查尺寸与质量设置。',
     storageFailed: '浏览器无法保存配置，请检查存储权限后重试。',
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
-    accessDenied: '请求被拒绝（403）。请检查 API Key 的模型／分组权限及 IP 限制；若配置正确，请联系维护者检查代理来源限制或服务端拦截。',
+    accessDenied:
+      '请求被拒绝（403）。请检查 API Key 的模型／分组权限及 IP 限制；若配置正确，请联系维护者检查代理来源限制或服务端拦截。',
     networkFailed: '暂时无法连接生图服务，请检查网络后重试；若持续失败，请联系网站维护者。',
     timedOut: '生成超过 10 分钟，请稍后重试。',
     invalidResult: '服务没有返回可用图片，请检查接口兼容性后重试。',
@@ -92,29 +126,66 @@ export const generationCopy = {
   },
   en: {
     settings: 'Image settings',
-    settingsIntro: 'Connect an OpenAI-compatible image generation service.',
+    settingsIntro: 'Choose how you want to generate this image.',
+    service: 'Generation service',
+    openWegoTitle: 'OpenWego free generation',
+    openWegoTag: 'Free',
+    openWegoDescription: 'open-image-v2',
+    openWegoBenefit: 'Free with fewer content restrictions',
+    openWegoCaveat: 'Not a top-tier model',
+    openWegoQuota: '20 images/day for guests, unlimited free use when signed in',
+    atomflowTitle: 'Atomflow high quality',
+    atomflowTag: 'High quality',
+    atomflowDescription: 'gpt-image-2.6-sunburst',
+    atomflowBenefit: 'Leading image generation quality',
+    atomflowCaveat: 'Strict safety review',
+    atomflowCompatible: 'Custom URL, key and model supported',
     baseUrl: 'Service URL',
+    atomflowBaseUrlHint:
+      'Atomflow is the default. You can also enter another service root or /v1 URL; requests go to /v1/images/edits.',
     apiKey: 'API key',
+    apiKeyOptional: 'API key (optional)',
+    apiKeyRequired: 'API key (required)',
+    openWegoKeyHint:
+      'Leave blank for the guest quota; signed-in users get unlimited free use, and a personal key is also unlimited.',
+    atomflowKeyHint:
+      'Use the API key for the service URL you enter. The key is sent only to that address.',
+    getOpenWegoKey: 'Sign in / get API key',
     getApiKey: 'Get API key',
     apiGuide: 'Setup guide',
     apiGuideTitle: 'Get a free-trial API key',
+    openWegoGuideTitle: 'Get an OpenWego API key',
+    openWegoGuideIntro:
+      'Sign in to OpenWego and copy your personal API key for unlimited free use.',
+    openWegoGuidePrivacy:
+      'Keep the full key private. You can reset it from API access whenever needed.',
+    openWegoToolsTitle: 'More than free image generation',
+    openWegoToolsDescription:
+      'OpenWego also provides free reverse prompting, prompt enhancement, style extraction and other tools in a clean, ad-free interface.',
+    openWegoToolsAction: 'Browse free tools',
+    openWegoAccountAction: 'Sign in and get API key',
     apiGuideIntro:
-      'Atomflow supports gpt-image-2 in the codex group and currently offers 10 trial image generations to new users. You can also use another OpenAI image-edit compatible provider. Current provider terms apply.',
+      'Atomflow supports gpt-image-2.6-sunburst in the codex group and currently offers 10 trial image generations to new users. You can also use another OpenAI image-edit compatible provider. Current provider terms apply.',
     apiGuideDocs: 'Open the full illustrated guide',
     apiGuideOpenAtomflow: 'Open Atomflow',
     apiGuidePrivacy:
       'The key is used only for your generation requests. Unless you choose to remember it, it stays in this browser session only.',
     model: 'Model',
+    modelHint: 'The recommended model is prefilled and can be changed.',
     referenceCount: 'Submitted references',
     size: 'Image size',
     quality: 'Quality',
+    advancedSettings: 'Size and quality',
+    advancedSettingsHint: 'Recommended defaults are used',
     rememberKey: 'Remember the key in this browser',
     showKey: 'Show key',
     hideKey: 'Hide key',
     privacy:
       'Settings stay in this browser. Without this option, the key lasts for this session only. Generation and uploaded outfit extraction send the relevant images and instructions to this service.',
-    compatibility:
-      'The service must support /v1/images/edits. This site provides a mobile-safe proxy for the default Atomflow service.',
+    openWegoUsage: 'Keyless requests use the per-IP guest quota. ',
+    openWegoThanks: 'Special thanks to OpenWego for the free API.',
+    atomflowUsage:
+      'Atomflow high quality is the default. Custom services must allow browser CORS and support the OpenAI image-edit format.',
     save: 'Save settings',
     clear: 'Clear settings',
     saved: 'Image settings saved',
@@ -165,7 +236,8 @@ export const generationCopy = {
     auto: 'Auto',
     invalidEndpoint:
       'Use an HTTPS service URL or a local HTTP URL, without credentials, query parameters or a fragment.',
-    missingConfig: 'Enter a service URL, API key and model.',
+    missingConfig:
+      'Enter a complete service URL, API key and model. The key is optional only for OpenWego.',
     invalidConfig: 'Check the size and quality settings.',
     storageFailed: 'Settings could not be saved. Check browser storage permissions and try again.',
     missingReference: 'Select a reference and enter a generation prompt.',
@@ -173,7 +245,8 @@ export const generationCopy = {
       'The original reference could not be read. Check the image URL, network and image host CORS settings, then retry.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
-    accessDenied: 'Request denied (403). Check your API key’s model/group permissions and IP restrictions. If correct, ask the maintainer to check proxy origin restrictions or server-side blocking.',
+    accessDenied:
+      'Request denied (403). Check your API key’s model/group permissions and IP restrictions. If correct, ask the maintainer to check proxy origin restrictions or server-side blocking.',
     networkFailed:
       'The image service is temporarily unreachable. Check your connection and retry; contact the site maintainer if it continues.',
     timedOut: 'Generation exceeded 10 minutes. Please retry later.',
@@ -191,18 +264,32 @@ export const generationCopy = {
 };
 
 export const apiGuideSteps = {
-  zh: [
-    '进入“一键生图”，点击“配置生图服务”打开当前设置。',
-    '点击“获取 API Key”前往 Atomflow，注册并登录账号。',
-    '进入“控制台 → API 密钥”，创建密钥：填写任意名称，分组选择 codex，然后保存。',
-    '点击新建密钥旁的复制按钮，复制完整 API Key。',
-    '回到此处粘贴密钥。可按需勾选“在此浏览器记住密钥”，然后点击“保存配置”。网站不会在服务器保存密钥。',
-  ],
-  en: [
-    'Open One-click Generate and select Configure image service.',
-    'Select Get API key, then register or sign in to Atomflow.',
-    'Open Console → API Keys and create a key. Enter any name, choose the codex group, then save.',
-    'Use the copy button beside the new key to copy the full API key.',
-    'Paste the key here. Optionally remember it in this browser, then save. This website does not store the key on its server.',
-  ],
+  openwego: {
+    zh: [
+      '登录 OpenWego，点击页面右上角的“账户”进入个人中心。',
+      '在个人中心左侧选择“API 访问”。',
+      '在“当前 API 密钥”右侧点击“复制”，回到这里粘贴并保存。推荐模型为 open-image-v2；需要更换密钥时可在该页面重置。',
+    ],
+    en: [
+      'Sign in to OpenWego and open Account from the top-right navigation.',
+      'Choose API access in the account sidebar.',
+      'Copy the current API key, paste it here and save. The recommended model is open-image-v2; reset the key on that page when needed.',
+    ],
+  },
+  atomflow: {
+    zh: [
+      '进入“一键生图”，点击“配置生图服务”打开当前设置。',
+      '点击“获取 API Key”前往 Atomflow，注册并登录账号。',
+      '进入“控制台 → API 密钥”，创建密钥：填写任意名称，分组选择 codex，然后保存。',
+      '点击新建密钥旁的复制按钮，复制完整 API Key。',
+      '回到此处粘贴密钥。可按需勾选“在此浏览器记住密钥”，然后点击“保存配置”。网站不会在服务器保存密钥。',
+    ],
+    en: [
+      'Open One-click Generate and select Configure image service.',
+      'Select Get API key, then register or sign in to Atomflow.',
+      'Open Console → API Keys and create a key. Enter any name, choose the codex group, then save.',
+      'Use the copy button beside the new key to copy the full API key.',
+      'Paste the key here. Optionally remember it in this browser, then save. This website does not store the key on its server.',
+    ],
+  },
 };

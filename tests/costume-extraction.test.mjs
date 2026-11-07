@@ -40,7 +40,7 @@ test('outfit extraction sends just the uploaded photo, then uses the extracted b
   );
   assert.equal(calls.length, 2);
   assert.equal(calls[0].url, 'https://images.example/v1/images/edits');
-  assert.equal(calls[0].options.body.get('model'), 'gpt-image-2');
+  assert.equal(calls[0].options.body.get('model'), 'open-image-v2');
   assert.equal(calls[0].options.body.get('prompt'), costumeExtractionPrompt);
   assert.equal(calls[0].options.body.getAll('image[]').length, 1);
   assert.equal(calls[0].options.body.get('image[]').name, 'costume-upload.png');

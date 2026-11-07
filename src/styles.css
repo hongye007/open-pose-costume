@@ -2728,7 +2728,7 @@ dialog::backdrop {
   line-height: 1.5;
 }
 .image-settings-modal {
-  width: 560px;
+  width: 640px;
 }
 .image-settings-modal .modal-inner {
   padding: 28px 32px;
@@ -2746,7 +2746,7 @@ dialog::backdrop {
   font-size: 12px;
   color: #59667a;
 }
-.image-settings-form input:not([type='checkbox']),
+.image-settings-form input:not([type='checkbox']):not([type='radio']),
 .image-settings-form select,
 .generation-prompt textarea {
   width: 100%;
@@ -2763,6 +2763,106 @@ dialog::backdrop {
 .generation-prompt textarea:focus {
   outline: 2px solid #bdcaf6;
   outline-offset: 1px;
+}
+.image-service-picker {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.image-service-picker legend {
+  margin-bottom: 9px;
+  color: #59667a;
+  font-size: 12px;
+}
+.image-service-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.image-settings-form .image-service-options > label {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-content: start;
+  gap: 10px;
+  min-height: 118px;
+  padding: 14px;
+  border: 1px solid #dce2ee;
+  border-radius: 6px;
+  background: #fafbfd;
+  cursor: pointer;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    background 150ms ease;
+}
+.image-settings-form .image-service-options > label:hover {
+  border-color: #bdc8de;
+}
+.image-settings-form .image-service-options > label.selected {
+  border-color: #6178db;
+  background: #f7f8ff;
+  box-shadow: inset 0 0 0 1px #6178db;
+}
+.image-service-options input[type='radio'] {
+  width: 14px;
+  height: 14px;
+  margin: 8px 0 0;
+  accent-color: var(--blue);
+}
+.image-service-options > label:focus-within {
+  outline: 2px solid #bdcaf6;
+  outline-offset: 2px;
+}
+.image-service-logo {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 7px;
+}
+.image-service-logo.atomflow {
+  border-radius: 0;
+}
+.image-service-copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.image-service-copy > span {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 7px;
+}
+.image-service-copy strong {
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.image-service-copy em {
+  flex: none;
+  color: #5d6b83;
+  font-size: 9px;
+  font-style: normal;
+  line-height: 1.4;
+}
+.image-service-copy small {
+  color: #78859a;
+  font-size: 10px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.image-service-copy .service-positive {
+  color: #47745f;
+}
+.image-service-copy .service-caveat {
+  color: #985f58;
+}
+.image-service-copy .service-quota {
+  margin-top: 2px;
+  color: #5d6b83;
 }
 .api-key-label {
   display: flex;
@@ -2802,10 +2902,53 @@ dialog::backdrop {
 .api-key-input input {
   flex: 1;
 }
+.api-key-hint {
+  color: #8995a8;
+  font-size: 10px;
+  line-height: 1.6;
+}
+.image-model-field small,
+.image-base-url-field small {
+  color: #8995a8;
+  font-size: 10px;
+  line-height: 1.6;
+}
 .image-settings-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+.image-settings-row.single {
+  grid-template-columns: 1fr;
+}
+.image-settings-advanced {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.image-settings-advanced summary {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 0;
+  color: #65738a;
+  cursor: pointer;
+  list-style-position: outside;
+}
+.image-settings-advanced summary > span {
+  display: grid;
+  gap: 2px;
+}
+.image-settings-advanced summary strong {
+  color: #59667a;
+  font-size: 11px;
+  font-weight: 600;
+}
+.image-settings-advanced summary small {
+  color: #929daf;
+  font-size: 9px;
+}
+.image-settings-advanced .image-settings-row {
+  padding: 2px 0 14px 24px;
 }
 .image-settings-form .remember-key {
   flex-direction: row;
@@ -2820,11 +2963,29 @@ dialog::backdrop {
   font-size: 11px;
   line-height: 1.8;
 }
+.openwego-credit strong {
+  color: #2f7459;
+  font-weight: 650;
+}
 .api-guide-modal {
   width: min(680px, calc(100vw - 32px));
 }
 .api-guide-modal .modal-inner {
   padding: 28px 32px;
+}
+.api-guide-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.api-guide-heading > span {
+  display: grid;
+  gap: 3px;
+}
+.api-guide-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
 }
 .api-guide-intro {
   margin-top: 16px;
@@ -2862,6 +3023,33 @@ dialog::backdrop {
 .api-guide-privacy {
   margin-top: 16px;
   color: #8792a4;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.openwego-tools-promo {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.openwego-tools-promo > img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+.openwego-tools-promo > span {
+  display: grid;
+  gap: 4px;
+}
+.openwego-tools-promo strong {
+  color: #3f4c5f;
+  font-size: 12px;
+}
+.openwego-tools-promo p {
+  color: #748196;
   font-size: 11px;
   line-height: 1.7;
 }
@@ -3478,6 +3666,18 @@ dialog::backdrop {
   }
 }
 @media (max-width: 560px) {
+  .image-service-options {
+    grid-template-columns: 1fr;
+  }
+  .image-settings-form .image-service-options > label {
+    min-height: 0;
+  }
+  .image-settings-row {
+    grid-template-columns: 1fr;
+  }
+  .image-settings-advanced .image-settings-row {
+    padding-left: 0;
+  }
   .generation-comparison {
     grid-template-columns: 1fr 1fr;
   }
@@ -5226,8 +5426,26 @@ dialog::backdrop {
   }
 }
 
-.domain-notice-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 24px; }
-.domain-notice-actions a { text-decoration: none; }
+.domain-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+.domain-notice-actions a {
+  text-decoration: none;
+}
 
-.domain-notice-opt-out { display: flex; align-items: center; gap: 8px; margin-top: 20px; cursor: pointer; }
-.domain-notice-opt-out input { width: 16px; height: 16px; accent-color: #4856ca; }
+.domain-notice-opt-out {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.domain-notice-opt-out input {
+  width: 16px;
+  height: 16px;
+  accent-color: #4856ca;
+}

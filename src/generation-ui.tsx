@@ -23,11 +23,12 @@ import { apiGuideSteps, generationCopy } from './generation-copy';
 import {
   clearImageConfig,
   defaultImageConfig,
-  imageEndpoint,
-  imageSizes,
+  imageServiceForConfig,
+  imageServicePresets,
+  imageSizesForConfig,
   saveImageConfig,
 } from './generation';
-import type { GenerationJob, ImageConfig } from './generation';
+import type { GenerationJob, ImageConfig, ImageService } from './generation';
 import type { Lang } from './types';
 import { isCustomAsset } from './custom-assets';
 
@@ -177,20 +178,37 @@ export function ImageSettings({
   onClose: () => void;
 }) {
   const t = generationCopy[lang];
-  const [draft, setDraft] = useState(config);
+  const initialService = imageServiceForConfig(config);
+  const [service, setService] = useState<ImageService>(initialService);
+  const [draft, setDraft] = useState<ImageConfig>(config);
+  const initialDrafts: Record<ImageService, ImageConfig> = {
+    openwego: { ...defaultImageConfig, ...imageServicePresets.openwego, apiKey: '' },
+    atomflow: { ...defaultImageConfig, ...imageServicePresets.atomflow, apiKey: '' },
+  };
+  initialDrafts[initialService] = { ...config };
+  const serviceDrafts = useRef(initialDrafts);
   const [showKey, setShowKey] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
   const [error, setError] = useState('');
-  let serviceHomepage = defaultImageConfig.baseUrl;
-  try {
-    serviceHomepage = new URL(imageEndpoint(draft.baseUrl)).origin;
-  } catch {
-    // Keep the default service link while an incomplete URL is being edited.
-  }
   const update = (key: keyof ImageConfig, value: string | boolean) => {
-    setDraft((old) => ({ ...old, [key]: value }));
+    setDraft((old) => {
+      const next = { ...old, [key]: value };
+      serviceDrafts.current[service] = next;
+      return next;
+    });
     setError('');
   };
+  const chooseService = (next: ImageService) => {
+    if (next === service) return;
+    serviceDrafts.current[service] = draft;
+    setService(next);
+    setDraft({ ...serviceDrafts.current[next] });
+    setError('');
+  };
+  const supportedSizes = imageSizesForConfig(draft);
+  const guideTitle = service === 'openwego' ? t.openWegoGuideTitle : t.apiGuideTitle;
+  const guideIntro = service === 'openwego' ? t.openWegoGuideIntro : t.apiGuideIntro;
+  const guidePrivacy = service === 'openwego' ? t.openWegoGuidePrivacy : t.apiGuidePrivacy;
   return (
     <>
       <Modal onClose={onClose} label={t.settings} className="image-settings-modal">
@@ -222,23 +240,88 @@ export function ImageSettings({
             }
           }}
         >
-          <label>
-            {t.baseUrl}
-            <input
-              type="url"
-              required
-              autoComplete="off"
-              placeholder="https://api.example.com/v1"
-              value={draft.baseUrl}
-              onChange={(e) => update('baseUrl', e.target.value)}
-            />
-          </label>
+          <fieldset className="image-service-picker">
+            <legend>{t.service}</legend>
+            <div className="image-service-options">
+              <label className={service === 'openwego' ? 'selected' : ''}>
+                <input
+                  type="radio"
+                  name="image-service"
+                  value="openwego"
+                  checked={service === 'openwego'}
+                  onChange={() => chooseService('openwego')}
+                />
+                <img
+                  className="image-service-logo"
+                  src={`${import.meta.env.BASE_URL}brand/openwego-logo.svg`}
+                  alt=""
+                />
+                <span className="image-service-copy">
+                  <span>
+                    <strong>{t.openWegoTitle}</strong>
+                    <em>{t.openWegoTag}</em>
+                  </span>
+                  <small className="service-positive">{t.openWegoBenefit}</small>
+                  <small className="service-caveat">{t.openWegoCaveat}</small>
+                  <small className="service-quota">{t.openWegoQuota}</small>
+                </span>
+              </label>
+              <label className={service === 'atomflow' ? 'selected' : ''}>
+                <input
+                  type="radio"
+                  name="image-service"
+                  value="atomflow"
+                  checked={service === 'atomflow'}
+                  onChange={() => chooseService('atomflow')}
+                />
+                <img
+                  className="image-service-logo atomflow"
+                  src={`${import.meta.env.BASE_URL}brand/atomflow-logo.png`}
+                  alt=""
+                />
+                <span className="image-service-copy">
+                  <span>
+                    <strong>{t.atomflowTitle}</strong>
+                    <em>{t.atomflowTag}</em>
+                  </span>
+                  <small className="service-positive">{t.atomflowBenefit}</small>
+                  <small className="service-caveat">{t.atomflowCaveat}</small>
+                  <small>{t.atomflowCompatible}</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          {service === 'atomflow' && (
+            <label className="image-base-url-field">
+              {t.baseUrl}
+              <input
+                type="url"
+                required
+                autoComplete="off"
+                spellCheck={false}
+                placeholder="https://api.example.com/v1"
+                value={draft.baseUrl}
+                onChange={(e) => update('baseUrl', e.target.value)}
+              />
+              <small>{t.atomflowBaseUrlHint}</small>
+            </label>
+          )}
           <div className="api-key-field">
             <div className="api-key-label">
-              <label htmlFor="image-api-key">{t.apiKey}</label>
+              <label htmlFor="image-api-key">
+                {service === 'openwego' ? t.apiKeyOptional : t.apiKeyRequired}
+              </label>
               <span className="api-key-help-links">
-                <a href={serviceHomepage} target="_blank" rel="noopener noreferrer">
-                  {t.getApiKey}
+                <a
+                  href={
+                    service === 'openwego'
+                      ? 'https://openwego.com/account'
+                      : imageServicePresets.atomflow.baseUrl
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {service === 'openwego' ? t.getOpenWegoKey : t.getApiKey}
                 </a>
                 <button type="button" onClick={() => setShowGuide(true)}>
                   <CircleHelp size={13} />
@@ -250,7 +333,7 @@ export function ImageSettings({
               <input
                 id="image-api-key"
                 type={showKey ? 'text' : 'password'}
-                required
+                required={service === 'atomflow'}
                 autoComplete="off"
                 spellCheck={false}
                 value={draft.apiKey}
@@ -265,48 +348,74 @@ export function ImageSettings({
                 {showKey ? <EyeOff size={17} /> : <Eye size={17} />}
               </button>
             </span>
+            <small className="api-key-hint">
+              {service === 'openwego' ? t.openWegoKeyHint : t.atomflowKeyHint}
+            </small>
           </div>
-          <label>
+          <label className="image-model-field">
             {t.model}
             <input
               required
               autoComplete="off"
+              spellCheck={false}
               value={draft.model}
               onChange={(e) => update('model', e.target.value)}
             />
+            <small>{t.modelHint}</small>
           </label>
-          <div className="image-settings-row">
-            <label>
-              {t.size}
-              <select value={draft.size} onChange={(e) => update('size', e.target.value)}>
-                {imageSizes.map((size) => (
-                  <option key={size} value={size}>
-                    {size === 'auto' ? t.auto : size}
-                  </option>
-                ))}
-              </select>
+          {(service === 'atomflow' || draft.apiKey) && (
+            <label className="remember-key">
+              <input
+                type="checkbox"
+                checked={draft.rememberKey}
+                onChange={(e) => update('rememberKey', e.target.checked)}
+              />
+              {t.rememberKey}
             </label>
-            <label>
-              {t.quality}
-              <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
-                {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
-                  <option key={quality} value={quality}>
-                    {t[quality]}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <label className="remember-key">
-            <input
-              type="checkbox"
-              checked={draft.rememberKey}
-              onChange={(e) => update('rememberKey', e.target.checked)}
-            />
-            {t.rememberKey}
-          </label>
-          <p className="settings-note">{t.privacy}</p>
-          <p className="settings-note">{t.compatibility}</p>
+          )}
+          <details className="image-settings-advanced">
+            <summary>
+              <SlidersHorizontal size={15} />
+              <span>
+                <strong>{t.advancedSettings}</strong>
+                <small>{t.advancedSettingsHint}</small>
+              </span>
+            </summary>
+            <div className={`image-settings-row ${service === 'openwego' ? 'single' : ''}`}>
+              <label>
+                {t.size}
+                <select value={draft.size} onChange={(e) => update('size', e.target.value)}>
+                  {supportedSizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size === 'auto' ? t.auto : size}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              {service === 'atomflow' && (
+                <label>
+                  {t.quality}
+                  <select value={draft.quality} onChange={(e) => update('quality', e.target.value)}>
+                    {(['auto', 'low', 'medium', 'high'] as const).map((quality) => (
+                      <option key={quality} value={quality}>
+                        {t[quality]}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
+            </div>
+          </details>
+          <p className={`settings-note ${service === 'openwego' ? 'openwego-credit' : ''}`}>
+            {service === 'openwego' ? (
+              <>
+                {t.openWegoUsage}
+                <strong>{t.openWegoThanks}</strong>
+              </>
+            ) : (
+              t.atomflowUsage
+            )}
+          </p>
           {error && (
             <p className="generation-error" role="alert">
               {error}
@@ -319,6 +428,15 @@ export function ImageSettings({
               onClick={() => {
                 try {
                   clearImageConfig();
+                  serviceDrafts.current = {
+                    openwego: { ...defaultImageConfig },
+                    atomflow: {
+                      ...defaultImageConfig,
+                      ...imageServicePresets.atomflow,
+                      apiKey: '',
+                    },
+                  };
+                  setService('openwego');
                   setDraft({ ...defaultImageConfig });
                   onClear();
                 } catch {
@@ -336,15 +454,20 @@ export function ImageSettings({
         </form>
       </Modal>
       {showGuide && (
-        <Modal
-          onClose={() => setShowGuide(false)}
-          label={t.apiGuideTitle}
-          className="api-guide-modal"
-        >
+        <Modal onClose={() => setShowGuide(false)} label={guideTitle} className="api-guide-modal">
           <div className="panel-heading">
-            <div>
-              <span className="section-kicker">API QUICK START</span>
-              <h2>{t.apiGuideTitle}</h2>
+            <div className="api-guide-heading">
+              {service === 'openwego' && (
+                <img
+                  src={`${import.meta.env.BASE_URL}brand/openwego-logo.svg`}
+                  alt=""
+                  className="api-guide-logo"
+                />
+              )}
+              <span>
+                <span className="section-kicker">API QUICK START</span>
+                <h2>{guideTitle}</h2>
+              </span>
             </div>
             <button
               type="button"
@@ -355,35 +478,69 @@ export function ImageSettings({
               <X size={21} />
             </button>
           </div>
-          <p className="api-guide-intro">{t.apiGuideIntro}</p>
+          <p className="api-guide-intro">{guideIntro}</p>
           <ol className="api-guide-steps">
-            {apiGuideSteps[lang].map((step, index) => (
+            {apiGuideSteps[service][lang].map((step, index) => (
               <li key={step}>
                 <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <p>{step}</p>
               </li>
             ))}
           </ol>
-          <p className="api-guide-privacy">{t.apiGuidePrivacy}</p>
+          <p className="api-guide-privacy">{guidePrivacy}</p>
+          {service === 'openwego' && (
+            <div className="openwego-tools-promo">
+              <img src={`${import.meta.env.BASE_URL}brand/openwego-logo.svg`} alt="" />
+              <span>
+                <strong>{t.openWegoToolsTitle}</strong>
+                <p>{t.openWegoToolsDescription}</p>
+              </span>
+            </div>
+          )}
           <div className="api-guide-actions">
-            <a
-              className="secondary-button"
-              href={`${import.meta.env.BASE_URL}guide/index.html`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.apiGuideDocs}
-              <ExternalLink size={14} />
-            </a>
-            <a
-              className="primary-button"
-              href={defaultImageConfig.baseUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.apiGuideOpenAtomflow}
-              <ExternalLink size={14} />
-            </a>
+            {service === 'openwego' ? (
+              <>
+                <a
+                  className="secondary-button"
+                  href="https://openwego.com/tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.openWegoToolsAction}
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  className="primary-button"
+                  href="https://openwego.com/account"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.openWegoAccountAction}
+                  <ExternalLink size={14} />
+                </a>
+              </>
+            ) : (
+              <>
+                <a
+                  className="secondary-button"
+                  href={`${import.meta.env.BASE_URL}guide/index.html`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.apiGuideDocs}
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  className="primary-button"
+                  href={imageServicePresets.atomflow.baseUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.apiGuideOpenAtomflow}
+                  <ExternalLink size={14} />
+                </a>
+              </>
+            )}
           </div>
         </Modal>
       )}
