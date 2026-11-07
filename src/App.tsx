@@ -41,6 +41,7 @@ import { generationCopy } from './generation-copy';
 import {
   defaultImageConfig,
   generateReferenceImage,
+  imageConfigReady,
   ImageGenerationError,
   loadImageConfig,
   normalizeImageConfig,
@@ -159,7 +160,7 @@ export default function App() {
   const [imageConfig, setImageConfig] = useState(loadImageConfig);
   const [generationJob, setGenerationJob] = useState<GenerationJob | null>(null);
   const generationController = useRef<AbortController | null>(null);
-  const imageReady = !!(imageConfig.baseUrl && imageConfig.apiKey && imageConfig.model);
+  const imageReady = imageConfigReady(imageConfig);
   const [selectedId, setSelectedId] = useState<string | null>(initialParams.get('item'));
   const [detailAngle, setDetailAngle] = useState(initialParams.get('detailAngle') || angle);
   const [toast, setToast] = useState('');

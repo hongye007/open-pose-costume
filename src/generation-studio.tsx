@@ -23,7 +23,12 @@ import {
 import { ComparisonWipe, ImageDownloadButton, ImageLightbox } from './generation-ui';
 import { generationCopy } from './generation-copy';
 import { studioCopy } from './studio-copy';
-import { imageSizes, referencePrompt } from './generation';
+import {
+  imageConfigReady,
+  imageServiceForConfig,
+  imageSizesForConfig,
+  referencePrompt,
+} from './generation';
 import type { GenerationJob, ImageConfig, ImageReference } from './generation';
 import {
   deleteGenerationRecord,
@@ -394,7 +399,9 @@ export function GenerationStudio({
   const restoredUrls = useRef<string[]>([]);
   const pendingPoseGeneration = useRef<string | null>(null);
   const loading = job?.status === 'loading';
-  const ready = !!(config.baseUrl && config.apiKey && config.model);
+  const ready = imageConfigReady(config);
+  const service = imageServiceForConfig(config);
+  const supportedSizes = imageSizesForConfig(config);
   const missing = kinds.filter(
     (kind) => kind !== 'character' && !references.some((ref) => ref.kind === kind),
   );
@@ -761,22 +768,6 @@ export function GenerationStudio({
               </button>
             ))}
           </div>
-          <label className="studio-field-label" htmlFor="studio-size">
-            {t.size}
-          </label>
-          <select
-            id="studio-size"
-            className="studio-select"
-            disabled={loading}
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
-          >
-            {imageSizes.map((value) => (
-              <option key={value} value={value}>
-                {value === 'auto' ? g.auto : value.replace('x', ' × ')}
-              </option>
-            ))}
-          </select>
           <label className="studio-field-label" htmlFor="studio-extra">
             {t.extra}
             <small>{t.optional}</small>
@@ -797,22 +788,42 @@ export function GenerationStudio({
               {t.advanced}
               {customActive && <small>{t.customPrompt}</small>}
             </summary>
-            <label className="studio-field-label" htmlFor="studio-quality">
-              {g.quality}
+            <label className="studio-field-label" htmlFor="studio-size">
+              {t.size}
             </label>
             <select
-              id="studio-quality"
+              id="studio-size"
               className="studio-select"
-              value={quality}
               disabled={loading}
-              onChange={(e) => setQuality(e.target.value as ImageConfig['quality'])}
+              value={size}
+              onChange={(e) => setSize(e.target.value)}
             >
-              {(['auto', 'low', 'medium', 'high'] as const).map((key) => (
-                <option key={key} value={key}>
-                  {g[key]}
+              {supportedSizes.map((value) => (
+                <option key={value} value={value}>
+                  {value === 'auto' ? g.auto : value.replace('x', ' × ')}
                 </option>
               ))}
             </select>
+            {service === 'atomflow' && (
+              <>
+                <label className="studio-field-label" htmlFor="studio-quality">
+                  {g.quality}
+                </label>
+                <select
+                  id="studio-quality"
+                  className="studio-select"
+                  value={quality}
+                  disabled={loading}
+                  onChange={(e) => setQuality(e.target.value as ImageConfig['quality'])}
+                >
+                  {(['auto', 'low', 'medium', 'high'] as const).map((key) => (
+                    <option key={key} value={key}>
+                      {g[key]}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
             <label className="studio-field-label" htmlFor="studio-prompt">
               {g.prompt}
             </label>

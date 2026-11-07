@@ -15,6 +15,7 @@ const config = {
   ...api.defaultImageConfig,
   baseUrl: 'https://images.example/v1',
   apiKey: 'test-only-key',
+  rememberKey: false,
 };
 const references = ['pose', 'costume'].map((kind) => ({
   kind,
@@ -27,6 +28,38 @@ const references = ['pose', 'costume'].map((kind) => ({
     original: `https://ai-${kind}-gallery.pages.dev/img/${kind}.png`,
   },
 }));
+
+test('OpenWego is the keyless default while Atomflow keeps its API key requirement', () => {
+  assert.equal(api.defaultImageConfig.baseUrl, 'https://openwego.com');
+  assert.equal(api.defaultImageConfig.model, 'open-image-v2');
+  assert.equal(api.defaultImageConfig.rememberKey, true);
+  assert.equal(api.imageServiceForConfig(api.defaultImageConfig), 'openwego');
+  assert.equal(api.imageConfigReady(api.defaultImageConfig), true);
+  assert.equal(
+    api.imageConfigReady({ ...api.defaultImageConfig, model: 'open-image-experimental' }),
+    true,
+  );
+  assert.equal(
+    api.imageServiceForConfig({ ...api.defaultImageConfig, model: 'open-image-experimental' }),
+    'openwego',
+  );
+  assert.equal(
+    api.imageConfigReady({
+      ...api.defaultImageConfig,
+      ...api.imageServicePresets.atomflow,
+      apiKey: '',
+    }),
+    false,
+  );
+  assert.equal(
+    api.imageServiceForConfig({
+      ...api.defaultImageConfig,
+      baseUrl: 'https://images.example/v1',
+      apiKey: 'compatible-key',
+    }),
+    'atomflow',
+  );
+});
 
 test('endpoint normalization accepts compatible bases and rejects credential-bearing URLs', () => {
   for (const base of [
@@ -48,7 +81,7 @@ test('endpoint normalization accepts compatible bases and rejects credential-bea
     assert.throws(() => api.imageEndpoint(base));
 });
 
-test('keys are session-only by default, optional persistent storage can be cleared', () => {
+test('keys are remembered by default, while session-only storage and clearing remain available', () => {
   const storage = () => {
     const values = new Map();
     return {
@@ -73,7 +106,9 @@ test('keys are session-only by default, optional persistent storage can be clear
       'opc-image-settings',
       JSON.stringify({ ...legacy, model: 'grok-imagine-image-2.0' }),
     );
-    assert.equal(api.loadImageConfig().model, 'gpt-image-2');
+    assert.equal(api.loadImageConfig().model, 'gpt-image-2.6-sunburst');
+    localStorage.setItem('opc-image-settings', JSON.stringify({ ...legacy, model: 'gpt-image-2' }));
+    assert.equal(api.loadImageConfig().model, 'gpt-image-2.6-sunburst');
     assert.equal(api.loadImageConfig().apiKey, config.apiKey);
     api.saveImageConfig(config);
     assert.ok(!localStorage.getItem('opc-image-settings').includes(config.apiKey));
@@ -109,9 +144,32 @@ test('image edit request attaches both original files and keeps auth off image s
   assert.equal(request.options.headers.Authorization, `Bearer ${config.apiKey}`);
   assert.equal(request.options.headers['Content-Type'], undefined);
   assert.equal(request.options.body.getAll('image[]').length, 2);
-  assert.equal(request.options.body.get('model'), 'gpt-image-2');
+  assert.equal(request.options.body.get('model'), 'open-image-v2');
+  assert.equal(request.options.body.get('quality'), 'auto');
   assert.equal(request.options.body.get('prompt'), 'draw a character');
   assert.equal(request.options.body.get('input_fidelity'), null);
+});
+
+test('keyless OpenWego requests omit authorization and unsupported quality parameters', async () => {
+  const calls = [];
+  await api.generateReferenceImage(
+    api.defaultImageConfig,
+    references,
+    'draw with the free service',
+    new AbortController().signal,
+    async (url, options) => {
+      calls.push({ url, options });
+      return calls.length <= 2
+        ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+        : Response.json({ data: [{ b64_json: png }] });
+    },
+  );
+  const request = calls[2];
+  assert.equal(request.url, 'https://openwego.com/v1/images/edits');
+  assert.equal(request.options.headers, undefined);
+  assert.equal(request.options.body.get('model'), 'open-image-v2');
+  assert.equal(request.options.body.get('quality'), null);
+  assert.equal(request.options.body.get('size'), '1024x1536');
 });
 
 test('provider errors are redacted and not retried automatically', async () => {
@@ -260,8 +318,14 @@ test('catalog search metadata cannot request a multi-view sheet or override the 
         assert.ok(!prompt.includes(ref.keywords[lang]));
       }
       assert.doesNotMatch(prompt, /五视角|five views/i);
-      assert.match(prompt, lang === 'zh' ? /一个人物、一个选定视角/ : /one person and one selected viewpoint/);
-      assert.match(prompt, lang === 'zh' ? /手势、腿部弯曲及遮挡关系/ : /hand gestures, bent legs and occlusion/);
+      assert.match(
+        prompt,
+        lang === 'zh' ? /一个人物、一个选定视角/ : /one person and one selected viewpoint/,
+      );
+      assert.match(
+        prompt,
+        lang === 'zh' ? /手势、腿部弯曲及遮挡关系/ : /hand gestures, bent legs and occlusion/,
+      );
       assert.match(prompt, lang === 'zh' ? /禁止多面板/ : /No panels/);
     }
   }
