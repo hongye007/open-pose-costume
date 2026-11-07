@@ -309,7 +309,7 @@ export function ImageSettings({
           <div className="api-key-field">
             <div className="api-key-label">
               <label htmlFor="image-api-key">
-                {service === 'openwego' ? t.apiKeyOptional : t.apiKeyRequired}
+                {t.apiKeyRequired}
               </label>
               <span className="api-key-help-links">
                 <a
@@ -333,7 +333,7 @@ export function ImageSettings({
               <input
                 id="image-api-key"
                 type={showKey ? 'text' : 'password'}
-                required={service === 'atomflow'}
+                required
                 autoComplete="off"
                 spellCheck={false}
                 value={draft.apiKey}

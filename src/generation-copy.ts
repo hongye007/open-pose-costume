@@ -8,7 +8,7 @@ export const generationCopy = {
     openWegoDescription: 'open-image-v2',
     openWegoBenefit: '免费，内容限制较少',
     openWegoCaveat: '非旗舰级模型',
-    openWegoQuota: '游客每天 20 张，登陆用户无限用（免费）',
+    openWegoQuota: '免充值，真免费无限制使用',
     atomflowTitle: 'Atomflow 高质量生成',
     atomflowTag: '高质量',
     atomflowDescription: 'gpt-image-2.6-sunburst',
@@ -19,9 +19,8 @@ export const generationCopy = {
     atomflowBaseUrlHint:
       '默认使用 Atomflow；也可填写其他服务的根地址或 /v1 地址，系统会请求 /v1/images/edits。',
     apiKey: 'API Key',
-    apiKeyOptional: 'API Key（可选）',
     apiKeyRequired: 'API Key（必填）',
-    openWegoKeyHint: '留空可按游客额度使用；登录后可无限免费使用，填写个人密钥也不限量。',
+    openWegoKeyHint: '登录 OpenWego 获取 API Key；免充值，填写后可免费不限量使用。',
     atomflowKeyHint: '需要所填服务对应的 API Key；密钥只会发送到该服务地址。',
     getOpenWegoKey: '登录 / 获取 API Key',
     getApiKey: '获取APIKey',
@@ -52,7 +51,7 @@ export const generationCopy = {
     hideKey: '隐藏密钥',
     privacy:
       '配置仅保存在此浏览器。未勾选时，密钥只保留在当前会话。生成图片或上传服饰进行提取时，相应图片和描述会发送到此服务。',
-    openWegoUsage: '无密钥请求按 IP 计算游客额度，',
+    openWegoUsage: '使用 OpenWego API Key 免费不限量生图，',
     openWegoThanks: '特别感谢 OpenWego 大善人的免费 API。',
     atomflowUsage:
       '默认使用 Atomflow 高质量模型；自定义服务需支持浏览器跨域访问和 OpenAI 图片编辑格式。',
@@ -103,7 +102,7 @@ export const generationCopy = {
     high: '精细',
     auto: '自动',
     invalidEndpoint: '请输入 HTTPS 服务地址，或本机 HTTP 地址；地址不能包含账号、查询参数或片段。',
-    missingConfig: '请填写完整的服务地址、API Key 和模型；OpenWego 可不填密钥。',
+    missingConfig: '请填写完整的服务地址、API Key 和模型。',
     invalidConfig: '请检查尺寸与质量设置。',
     storageFailed: '浏览器无法保存配置，请检查存储权限后重试。',
     missingReference: '请先选择参考图并填写生成描述。',
@@ -133,7 +132,7 @@ export const generationCopy = {
     openWegoDescription: 'open-image-v2',
     openWegoBenefit: 'Free with fewer content restrictions',
     openWegoCaveat: 'Not a top-tier model',
-    openWegoQuota: '20 images/day for guests, unlimited free use when signed in',
+    openWegoQuota: 'No top-up required. Truly free, unlimited use',
     atomflowTitle: 'Atomflow high quality',
     atomflowTag: 'High quality',
     atomflowDescription: 'gpt-image-2.6-sunburst',
@@ -144,10 +143,9 @@ export const generationCopy = {
     atomflowBaseUrlHint:
       'Atomflow is the default. You can also enter another service root or /v1 URL; requests go to /v1/images/edits.',
     apiKey: 'API key',
-    apiKeyOptional: 'API key (optional)',
     apiKeyRequired: 'API key (required)',
     openWegoKeyHint:
-      'Leave blank for the guest quota; signed-in users get unlimited free use, and a personal key is also unlimited.',
+      'Sign in to OpenWego for an API key. No top-up is required, and use is free and unlimited.',
     atomflowKeyHint:
       'Use the API key for the service URL you enter. The key is sent only to that address.',
     getOpenWegoKey: 'Sign in / get API key',
@@ -182,7 +180,7 @@ export const generationCopy = {
     hideKey: 'Hide key',
     privacy:
       'Settings stay in this browser. Without this option, the key lasts for this session only. Generation and uploaded outfit extraction send the relevant images and instructions to this service.',
-    openWegoUsage: 'Keyless requests use the per-IP guest quota. ',
+    openWegoUsage: 'Use an OpenWego API key for free, unlimited image generation. ',
     openWegoThanks: 'Special thanks to OpenWego for the free API.',
     atomflowUsage:
       'Atomflow high quality is the default. Custom services must allow browser CORS and support the OpenAI image-edit format.',
@@ -236,8 +234,7 @@ export const generationCopy = {
     auto: 'Auto',
     invalidEndpoint:
       'Use an HTTPS service URL or a local HTTP URL, without credentials, query parameters or a fragment.',
-    missingConfig:
-      'Enter a complete service URL, API key and model. The key is optional only for OpenWego.',
+    missingConfig: 'Enter a complete service URL, API key and model.',
     invalidConfig: 'Check the size and quality settings.',
     storageFailed: 'Settings could not be saved. Check browser storage permissions and try again.',
     missingReference: 'Select a reference and enter a generation prompt.',

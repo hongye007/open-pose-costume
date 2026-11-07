@@ -36,7 +36,7 @@ A bilingual reference workspace for character design, drawing practice and AI cr
 
 ## What's New
 
-- Added **free OpenWego generation** with `open-image-v2`: 20 images per day for guests and unlimited free use for signed-in users. Keyless quotas are calculated per IP.
+- Added **free OpenWego generation** with `open-image-v2`: no top-up required, genuinely free and unlimited; an OpenWego API key is required.
 - Updated the Atomflow default to `gpt-image-2.6-sunburst`, while keeping editable service URL, API key and model fields for compatible providers.
 - Improved the mobile experience with tighter service settings, reference selection and result previews on small screens.
 - Expanded the library to **343 pose groups, 2,801 outfits and 1,538 character references**, including male, female, photographic, anime, dance and regional fictional-character material.
@@ -57,7 +57,7 @@ Open One-click Generate and choose a **pose + outfit**. A character reference is
 
 | Option | Best for | Configuration |
 | --- | --- | --- |
-| **OpenWego free generation** | Everyday creation with fewer content restrictions | `open-image-v2` by default; API key optional; non-flagship model |
+| **OpenWego free generation** | Everyday creation with fewer content restrictions | `open-image-v2` by default; API key required; non-flagship model |
 | **Custom compatible API** | Your own provider | Edit the URL, key and model under Atomflow; must support `/v1/images/edits` |
 
 Before generation, select a viewpoint, visual style and optional instructions. Size and quality use recommended defaults until expanded. After generation, switch between result-only, side-by-side and overlay views, align images, change the pose, download the result or restore a previous combination.
@@ -68,7 +68,7 @@ Before generation, select a viewpoint, visual style and optional instructions. S
 
 ## Generation and Privacy
 
-- OpenWego is called directly from the browser. Keyless requests omit the `Authorization` header.
+- OpenWego is called directly from the browser and uses the required API key in the `Authorization` header.
 - Default Atomflow requests use Vite locally and can use a restricted Cloudflare Worker in production. Custom compatible endpoints are called directly and must provide correct CORS headers.
 - API keys are stored locally in this browser by default. Disable “Remember key” to keep a key only for the current session; settings can be cleared at any time.
 - Generation and outfit extraction send the selected references and instructions to the configured provider. Provider pricing, quotas and moderation policies apply.

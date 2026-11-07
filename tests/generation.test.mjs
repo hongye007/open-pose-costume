@@ -29,14 +29,18 @@ const references = ['pose', 'costume'].map((kind) => ({
   },
 }));
 
-test('OpenWego is the keyless default while Atomflow keeps its API key requirement', () => {
+test('OpenWego remains the default and requires an API key', () => {
   assert.equal(api.defaultImageConfig.baseUrl, 'https://openwego.com');
   assert.equal(api.defaultImageConfig.model, 'open-image-v2');
   assert.equal(api.defaultImageConfig.rememberKey, true);
   assert.equal(api.imageServiceForConfig(api.defaultImageConfig), 'openwego');
-  assert.equal(api.imageConfigReady(api.defaultImageConfig), true);
+  assert.equal(api.imageConfigReady(api.defaultImageConfig), false);
   assert.equal(
-    api.imageConfigReady({ ...api.defaultImageConfig, model: 'open-image-experimental' }),
+    api.imageConfigReady({
+      ...api.defaultImageConfig,
+      apiKey: 'openwego-key',
+      model: 'open-image-experimental',
+    }),
     true,
   );
   assert.equal(
@@ -150,10 +154,11 @@ test('image edit request attaches both original files and keeps auth off image s
   assert.equal(request.options.body.get('input_fidelity'), null);
 });
 
-test('keyless OpenWego requests omit authorization and unsupported quality parameters', async () => {
+test('OpenWego requests require authorization and omit unsupported quality parameters', async () => {
   const calls = [];
+  const openWegoConfig = { ...api.defaultImageConfig, apiKey: 'openwego-key' };
   await api.generateReferenceImage(
-    api.defaultImageConfig,
+    openWegoConfig,
     references,
     'draw with the free service',
     new AbortController().signal,
@@ -166,7 +171,7 @@ test('keyless OpenWego requests omit authorization and unsupported quality param
   );
   const request = calls[2];
   assert.equal(request.url, 'https://openwego.com/v1/images/edits');
-  assert.equal(request.options.headers, undefined);
+  assert.equal(request.options.headers.Authorization, `Bearer ${openWegoConfig.apiKey}`);
   assert.equal(request.options.body.get('model'), 'open-image-v2');
   assert.equal(request.options.body.get('quality'), null);
   assert.equal(request.options.body.get('size'), '1024x1536');
