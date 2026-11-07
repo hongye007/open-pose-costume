@@ -86,8 +86,7 @@ export function normalizeImageConfig(config: ImageConfig): ImageConfig {
   const endpoint = imageEndpoint(config.baseUrl);
   const apiKey = config.apiKey.trim();
   const model = config.model.trim();
-  const openWegoAnonymous = endpoint === 'https://openwego.com/v1/images/edits';
-  if ((!apiKey && !openWegoAnonymous) || !model || /[\r\n]/.test(config.apiKey))
+  if (!apiKey || !model || /[\r\n]/.test(config.apiKey))
     throw Error('missingConfig');
   if (
     !imageSizes.includes(config.size) ||
@@ -382,7 +381,7 @@ export async function generateReferenceImage(
       signal: combined,
       credentials: 'omit',
       redirect: 'error',
-      headers: valid.apiKey ? { Authorization: `Bearer ${valid.apiKey}` } : undefined,
+      headers: { Authorization: `Bearer ${valid.apiKey}` },
       body: form,
     });
     const { payload, diagnostic } = await readImageResponse(
