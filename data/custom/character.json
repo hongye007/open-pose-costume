@@ -1,5 +1,72 @@
 [
   {
+    "id": "custom_character_import_20261108_soft_bright_male",
+    "kind": "character",
+    "code": "UCM-004",
+    "title": {
+      "zh": "柔和提亮的男士肖像",
+      "en": "Softly brightened male portrait"
+    },
+    "category": {
+      "id": "portrait-face",
+      "zh": "人脸",
+      "en": "Face"
+    },
+    "series": {
+      "zh": "用户导入男性人物参考",
+      "en": "User-imported male character references"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 男士 写实 正面 头肩 人物参考 用户导入 黑色 凌乱 短发 棕色眼睛 自然微笑 白色圆领上衣 白色背景 柔和提亮",
+      "en": "male photographic frontal head shoulders character reference user supplied black tousled short hair brown eyes natural smile white crew-neck shirt white background softly brightened"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "portrait": {
+      "section": "face",
+      "hair": "short"
+    },
+    "provenance": {
+      "batch": "user-soft-bright-male-20261108",
+      "provider": "user-supplied",
+      "originalSha256": "d865a6d2468d28765a3e6df601bfd66d74a771c764a5ad63134e6632a613a80e",
+      "width": 1122,
+      "height": 1402,
+      "sourceNote": "Imported unchanged from user-supplied image; identity, nationality and generation model not verified"
+    },
+    "variants": [
+      {
+        "id": "custom_character_import_20261108_soft_bright_male",
+        "angle": "front",
+        "label": {
+          "zh": "正面人像",
+          "en": "Front portrait"
+        },
+        "original": "custom/character/originals/custom_character_import_20261108_soft_bright_male.png",
+        "image": "custom/character/images/custom_character_import_20261108_soft_bright_male.webp",
+        "thumbnail": "custom/character/thumbnails/custom_character_import_20261108_soft_bright_male.webp",
+        "provenance": {
+          "originalSha256": "d865a6d2468d28765a3e6df601bfd66d74a771c764a5ad63134e6632a613a80e",
+          "width": 1122,
+          "height": 1402
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_character_frontal_soft_dark_hair_20261104",
     "kind": "character",
     "code": "UCF-009",

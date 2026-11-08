@@ -59,6 +59,12 @@ test('custom manifests merge independently, with original hashes and separate co
       'ST-050',
     ],
   );
+  assert.deepEqual(
+    custom
+      .filter((item) => item.provenance.batch === 'user-soft-bright-male-20261108')
+      .map((item) => [item.code, item.tags[0].id, item.portrait.hair]),
+    [['UCM-004', 'male', 'short']],
+  );
   for (const item of custom) {
     for (const variant of item.variants) {
       const [original, image, thumb] = await Promise.all(
