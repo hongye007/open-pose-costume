@@ -104,3 +104,5 @@ Paired depth references are AI-inferred grayscale guides (near = bright, far = d
 - `frontal-soft-dark-hair-20261104`：UCF-009 深色长发女性柔光正面肖像，Atomflow gpt-image-2 根据用户照片调整；未展示的正面结构包含AI推断。保留1024 × 1536原图及生成溯源，支持女性、写实、长发筛选。UCF-008为已移除编号，不复用。
 
 - `pose-grid-18-20261105`：十八组九宫格姿势，每组含正面、俯视、仰视、侧面和斜侧的结构线稿及配套 AI 相对深度。未展示视角包含 AI 推断。
+
+- `female-outfit-extraction-20261108`：新增 ST-033 至 ST-036 四套女性写实服饰，分别为酒红挂脖短裤套装、奶白针织衫与卡其工装短裙、白衬衫黑马甲链饰短裤、粉色印花束身上衣与黑色百褶裙。均由 Atomflow `gpt-image-2` 根据用户照片提取重绘，人物、背景与水印已移除，鞋履和可见配饰完整入画；遮挡细节包含 AI 推断，原始人物照片不随网站发布。

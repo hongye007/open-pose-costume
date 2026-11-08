@@ -1,5 +1,277 @@
 [
   {
+    "id": "custom_costume_street_033",
+    "kind": "costume",
+    "code": "ST-033",
+    "title": {
+      "zh": "酒红挂脖套装与棕色长靴",
+      "en": "Burgundy halter set and brown tall boots"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 酒红 挂脖 系带 短上衣 短裤 金属环 棕色 皮革 褶皱 长靴 完整套装 无人物",
+      "en": "female photographic burgundy halter tie front crop top shorts metal rings brown leather slouch tall boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "48807ef7c6441f634587059c5609c739630f514e175e2d979dd3d705715ff870",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "4550749bfd0f446143700fa595722f7ab67e64cd82b5cf52022bdfa71e6b7b99"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_033",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_033.png",
+        "image": "custom/costume/images/custom_costume_street_033.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_033.webp",
+        "provenance": {
+          "originalSha256": "48807ef7c6441f634587059c5609c739630f514e175e2d979dd3d705715ff870",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_034",
+    "kind": "costume",
+    "code": "ST-034",
+    "title": {
+      "zh": "奶白针织衫与卡其工装短裙",
+      "en": "Ivory cardigan and khaki cargo miniskirt"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 奶白 罗纹 针织 开衫 卡其 工装 短裙 堆堆袜 厚底 运动鞋 完整套装 无人物",
+      "en": "female photographic ivory ribbed cardigan khaki cargo miniskirt leg warmers chunky sneakers complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "725b9250ae294fe692e5376ec944ca7306f092a0a6cd73255e89c58c3373bebb",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "0ff8884f76d68374a4e989984a7cc6c999e1fe18332bef2bdf50dfb29b26eca6"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_034",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_034.png",
+        "image": "custom/costume/images/custom_costume_street_034.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_034.webp",
+        "provenance": {
+          "originalSha256": "725b9250ae294fe692e5376ec944ca7306f092a0a6cd73255e89c58c3373bebb",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_035",
+    "kind": "costume",
+    "code": "ST-035",
+    "title": {
+      "zh": "白衬衫黑马甲与链饰短裤",
+      "en": "White blouse, black vest and chain shorts"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 白色 衬衫 黑色 蝴蝶结 马甲 短裤 银链 腰链 过膝 长靴 完整套装 无人物",
+      "en": "female photographic white blouse black bow cropped vest shorts silver chain belt over knee boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "1e283585b57a8aadf3202e0916fa25225b662d0f211e95c83645637c8307c744",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "0712c1b6474051ce4e006930182100d73c2f2ebe8714b327f6f50b7bdb17d1d0"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_035",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_035.png",
+        "image": "custom/costume/images/custom_costume_street_035.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_035.webp",
+        "provenance": {
+          "originalSha256": "1e283585b57a8aadf3202e0916fa25225b662d0f211e95c83645637c8307c744",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_036",
+    "kind": "costume",
+    "code": "ST-036",
+    "title": {
+      "zh": "粉色印花束身上衣与黑色百褶裙",
+      "en": "Pink graphic corset top and black pleated skirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 粉色 印花 束身 吊带 短上衣 黑色 百褶 短裙 系带 吊袜带 长袜 厚底 长靴 完整套装 无人物",
+      "en": "female photographic pink graphic corset camisole black pleated miniskirt lace up garters stockings platform tall boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "beb68233faaddd6cfcc295cf5f352b6b0fb45bca6b7a72eea89f6c2dcf4a4e5b",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "4a8d375577ed5ba54db0e271cdd7185d8f5880dccc99a56122386323ac3db441"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_036",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_036.png",
+        "image": "custom/costume/images/custom_costume_street_036.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_036.webp",
+        "provenance": {
+          "originalSha256": "beb68233faaddd6cfcc295cf5f352b6b0fb45bca6b7a72eea89f6c2dcf4a4e5b",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_street_030",
     "kind": "costume",
     "code": "ST-030",
