@@ -32,6 +32,12 @@ test('custom manifests merge independently, with original hashes and separate co
   await assert.rejects(loadCustomReferences(custom), /duplicate custom ID/);
   assert.equal(custom.filter((item) => item.provenance.batch === 'anime-outfits-01').length, 30);
   assert.equal(custom.filter((item) => item.provenance.batch === 'moon-extraction-01').length, 1);
+  assert.deepEqual(
+    custom
+      .filter((item) => item.provenance.batch === 'female-outfit-extraction-20261108')
+      .map((item) => item.code),
+    ['ST-033', 'ST-034', 'ST-035', 'ST-036'],
+  );
   for (const item of custom) {
     for (const variant of item.variants) {
       const [original, image, thumb] = await Promise.all(
