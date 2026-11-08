@@ -35,8 +35,29 @@ test('custom manifests merge independently, with original hashes and separate co
   assert.deepEqual(
     custom
       .filter((item) => item.provenance.batch === 'female-outfit-extraction-20261108')
-      .map((item) => item.code),
-    ['ST-033', 'ST-034', 'ST-035', 'ST-036'],
+      .map((item) => item.code)
+      .sort(),
+    ['ST-033', 'ST-034', 'ST-035', 'ST-036', 'ST-037', 'ST-038', 'ST-039', 'ST-040'],
+  );
+  assert.deepEqual(
+    custom
+      .filter((item) => item.provenance.batch === 'outfit-extraction-20261108-batch2')
+      .map((item) => item.code)
+      .sort(),
+    [
+      'MC-008',
+      'MC-009',
+      'ST-041',
+      'ST-042',
+      'ST-043',
+      'ST-044',
+      'ST-045',
+      'ST-046',
+      'ST-047',
+      'ST-048',
+      'ST-049',
+      'ST-050',
+    ],
   );
   for (const item of custom) {
     for (const variant of item.variants) {
@@ -127,7 +148,7 @@ test('male references expose original five-view poses and eleven outfits through
   const poses = allPoses;
   const outfits = male.filter((item) => item.kind === 'costume');
   assert.equal(poses.length, 22);
-  assert.equal(outfits.length, 11);
+  assert.equal(outfits.length, 13);
   assert.equal(
     poses.reduce((n, item) => n + item.variants.length, 0),
     110,

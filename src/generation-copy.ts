@@ -107,6 +107,8 @@ export const generationCopy = {
     storageFailed: '浏览器无法保存配置，请检查存储权限后重试。',
     missingReference: '请先选择参考图并填写生成描述。',
     referenceFailed: '参考原图读取失败，请检查图片地址、网络或图片站的跨域设置后重试。',
+    safetyReviewFailed:
+      '请求返回 400，一般是安全审查未通过。建议替换参考图、修改提示词，或在 API 配置中切换到 OpenWego 的低审查接入方式。',
     providerFailed: '生图服务返回错误，请检查密钥、模型和服务额度后重试。',
     accessDenied:
       '请求被拒绝（403）。请检查 API Key 的模型／分组权限及 IP 限制；若配置正确，请联系维护者检查代理来源限制或服务端拦截。',
@@ -240,6 +242,8 @@ export const generationCopy = {
     missingReference: 'Select a reference and enter a generation prompt.',
     referenceFailed:
       'The original reference could not be read. Check the image URL, network and image host CORS settings, then retry.',
+    safetyReviewFailed:
+      'A 400 response usually means the safety review was not passed. Try another reference image, revise the prompt, or switch to the lower-review OpenWego option in API settings.',
     providerFailed:
       'The service returned an error. Check the key, model and available credits, then retry.',
     accessDenied:

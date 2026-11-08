@@ -197,6 +197,26 @@ test('provider errors are redacted and not retried automatically', async () => {
   assert.equal(calls, 2);
 });
 
+test('HTTP 400 responses surface the safety-review guidance without exposing the key', async () => {
+  let calls = 0;
+  await assert.rejects(
+    api.generateReferenceImage(
+      config,
+      [references[0]],
+      'draw',
+      new AbortController().signal,
+      async () => {
+        calls++;
+        return calls === 1
+          ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
+          : Response.json({ error: { message: `Safety rejected ${config.apiKey}` } }, { status: 400 });
+      },
+    ),
+    (error) => error.code === 'safetyReviewFailed' && !error.message.includes(config.apiKey),
+  );
+  assert.equal(calls, 2);
+});
+
 test('invalid results and non-image references fail instead of displaying arbitrary content', async () => {
   for (const payload of [
     null,
