@@ -18,7 +18,7 @@ A bilingual reference workspace for character design, drawing practice and AI cr
 
 | Poses | Outfits | Characters | Total images |
 | :---: | :---: | :---: | :---: |
-| **343 groups** · 1,714 views | **2,821 outfits** | **1,538 images** | **6,073 images** |
+| **343 groups** · 1,714 views | **2,821 outfits** | **1,539 images** | **6,074 images** |
 
 <sub>Current <code>public/data/catalog.json</code> statistics; preview duplicates are excluded</sub>
 
@@ -39,7 +39,7 @@ A bilingual reference workspace for character design, drawing practice and AI cr
 - Added **free OpenWego generation** with `open-image-v2`: no top-up required, genuinely free and unlimited; an OpenWego API key is required.
 - Updated the Atomflow default to `gpt-image-2.6-sunburst`, while keeping editable service URL, API key and model fields for compatible providers.
 - Improved the mobile experience with tighter service settings, reference selection and result previews on small screens.
-- Added 16 photo-extracted outfits, including two menswear looks, with complete footwear and accessories; the library now contains **343 pose groups, 2,821 outfits and 1,538 character references**.
+- Added 16 photo-extracted outfits, including two menswear looks, plus one frontal male character reference; the library now contains **343 pose groups, 2,821 outfits and 1,539 character references**.
 - HTTP 400 generation errors now include safety-review guidance: change the reference, revise the prompt, or switch to the lower-review OpenWego option.
 
 ## How It Works
@@ -135,7 +135,7 @@ Configure the Worker through `VITE_IMAGE_PROXY_URL`. Without it, production fall
 - Sync record: `data/sync-manifest.json`
 - Custom images: `public/custom/{pose,costume,character}/`
 
-The current catalog combines upstream galleries with 55 custom pose groups, 94 custom outfits and 39 custom character references. See [SOURCES.md](SOURCES.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the [custom collection guide](data/custom/README.md) for complete sources, synchronization details and third-party notices.
+The current catalog combines upstream galleries with 55 custom pose groups, 94 custom outfits and 40 custom character references. See [SOURCES.md](SOURCES.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the [custom collection guide](data/custom/README.md) for complete sources, synchronization details and third-party notices.
 
 Depth maps are AI-inferred relative-depth references for visual guidance, not precise 3D measurements.
 

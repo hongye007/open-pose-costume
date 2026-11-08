@@ -108,3 +108,5 @@ Paired depth references are AI-inferred grayscale guides (near = bright, far = d
 - `female-outfit-extraction-20261108`：ST-033 至 ST-040 共八套女性写实服饰；本次补充 ST-037 至 ST-040 四套修订图，包含为 3、4 补齐的鞋履和改为正面的 5、6。均由 Atomflow `gpt-image-2` 根据用户照片提取重绘，人物、背景与水印已移除，鞋履和可见配饰完整入画；遮挡细节与未展示鞋履包含 AI 推断，原始人物照片不随网站发布。
 
 - `outfit-extraction-20261108-batch2`：新增 ST-041 至 ST-050 十套女性服饰及 MC-008、MC-009 两套男性服饰，覆盖格纹、工装、牛仔、学院、街头与派对造型。均由 Atomflow `gpt-image-2` 根据用户照片提取重绘，完整服装、鞋履和配饰均留有边距；遮挡结构及部分搭配鞋履包含 AI 推断，原始人物照片不随网站发布。
+
+- `user-soft-bright-male-20261108`：UCM-004“柔和提亮的男士肖像”，男性、写实、短发、正面人物参考；保留用户提供的 1122 × 1402 PNG 原图字节，生成同尺寸 WebP 预览和 256 × 320 无裁切缩略图。不推断真实身份、国籍或生成模型，本次仅本地入库。
