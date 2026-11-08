@@ -322,7 +322,12 @@ export async function generateReferenceImage(
         safeMessage(error instanceof Error ? error.message : '', valid.apiKey);
       if (status === 403)
         throw new ImageGenerationError('accessDenied', `HTTP 403${detail ? ` · ${detail}` : ''}`);
-      if ([400, 401].includes(status))
+      if (status === 400)
+        throw new ImageGenerationError(
+          'safetyReviewFailed',
+          `HTTP 400${detail ? ` · ${detail}` : ''}`,
+        );
+      if (status === 401)
         throw new ImageGenerationError(
           'providerFailed',
           `HTTP ${status}${detail ? ` · ${detail}` : ''}`,
@@ -393,7 +398,11 @@ export async function generateReferenceImage(
     if (!response.ok || payload?.error) {
       const message = typeof payload?.error?.message === 'string' ? payload.error.message : '';
       throw new ImageGenerationError(
-        response.status === 403 ? 'accessDenied' : 'providerFailed',
+        response.status === 400
+          ? 'safetyReviewFailed'
+          : response.status === 403
+            ? 'accessDenied'
+            : 'providerFailed',
         diagnostic ||
           `HTTP ${response.status}${message ? ` · ${safeMessage(message, valid.apiKey)}` : ''}`,
       );

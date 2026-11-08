@@ -1,5 +1,1093 @@
 [
   {
+    "id": "custom_costume_street_037",
+    "kind": "costume",
+    "code": "ST-037",
+    "title": {
+      "zh": "灰白条纹衬衫与藏蓝格纹短裤",
+      "en": "Grey striped shirt and navy plaid wrap shorts"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 灰白 条纹 短袖 衬衫 系结 藏蓝 格纹 裹身 短裤 黑色 短靴 完整套装 无人物",
+      "en": "female photographic grey white pinstripe short sleeve tie shirt navy plaid wrap shorts black ankle boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "f5266761b7ac9b2338a8d24854e288c82467ee2915fc023167caf4cb5d076149",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节及搭配鞋履包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details and matching footwear include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "c75e68655e357c6799cf219757f5e67e43599e0ed0d0c4036aac5ceb925bb046"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_037",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_037.png",
+        "image": "custom/costume/images/custom_costume_street_037.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_037.webp",
+        "provenance": {
+          "originalSha256": "f5266761b7ac9b2338a8d24854e288c82467ee2915fc023167caf4cb5d076149",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_038",
+    "kind": "costume",
+    "code": "ST-038",
+    "title": {
+      "zh": "黑色短上衣与红黑格纹短裙",
+      "en": "Black crop top and red plaid miniskirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 短袖 短上衣 红黑 格纹 短裙 开衩 黑色 长靴 完整套装 无人物",
+      "en": "female photographic black short sleeve crop top red black plaid miniskirt slit black tall boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "e1fdf3d78415f9f40f722d8046592e6cbdcffd2479b60c40aa1f3ecb0b713f59",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节及搭配鞋履包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details and matching footwear include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "448af33071741a150a83dc931d1239d2e919ebef6cf44df6d6758a64d8d52f2c"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_038",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_038.png",
+        "image": "custom/costume/images/custom_costume_street_038.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_038.webp",
+        "provenance": {
+          "originalSha256": "e1fdf3d78415f9f40f722d8046592e6cbdcffd2479b60c40aa1f3ecb0b713f59",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_039",
+    "kind": "costume",
+    "code": "ST-039",
+    "title": {
+      "zh": "黑色短西装与系带过膝长靴",
+      "en": "Black cropped suit and lace-up over-knee boots"
+    },
+    "category": {
+      "id": "suit",
+      "zh": "西装穿搭",
+      "en": "Suits"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 短西装 白衬衫 领带 裹身 短裤裙 漆皮 系带 过膝 长靴 完整套装 无人物",
+      "en": "female photographic black cropped blazer white shirt tie wrap skort patent lace up over knee boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "7ca83e558527ab88c589e8e97dadfb0424c5567c46aff71c3df5be01d3b34408",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "d91cbe7650368cfe4091394f6d22aa694d860aaf10596320081cfcb4eb00244e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_039",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_039.png",
+        "image": "custom/costume/images/custom_costume_street_039.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_039.webp",
+        "provenance": {
+          "originalSha256": "7ca83e558527ab88c589e8e97dadfb0424c5567c46aff71c3df5be01d3b34408",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_040",
+    "kind": "costume",
+    "code": "ST-040",
+    "title": {
+      "zh": "牛仔束身套装与过膝长靴",
+      "en": "Denim corset set and over-knee boots"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 蓝色 牛仔 抹胸 束身 上衣 短裙 链饰 单肩包 过膝 长靴 完整套装 无人物",
+      "en": "female photographic blue denim strapless corset top miniskirt chain shoulder bag over knee boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "ef0d13d8b3bca2e4af35a08d84544fc90124a5b46bd3f831de12badc973549cd",
+      "width": 1024,
+      "height": 1536,
+      "batch": "female-outfit-extraction-20261108",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "833dcb1c2a9236235f4877711522edd07316a5a64974b59d2bbc982361e7ce4a"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_040",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_040.png",
+        "image": "custom/costume/images/custom_costume_street_040.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_040.webp",
+        "provenance": {
+          "originalSha256": "ef0d13d8b3bca2e4af35a08d84544fc90124a5b46bd3f831de12badc973549cd",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_041",
+    "kind": "costume",
+    "code": "ST-041",
+    "title": {
+      "zh": "粉色格纹衬衫与蝴蝶结短裙",
+      "en": "Pink plaid shirt and bow pleated skirt"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 粉色 格纹 短袖 衬衫 蝴蝶结 百褶 短裙 腰带 短袜 玛丽珍 厚底鞋 完整套装 无人物",
+      "en": "female photographic pink plaid short sleeve shirt bow pleated miniskirt belt socks platform mary janes complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "9aa2f0f2c7d0039a97e3db1ee3f09ef7a343476b7f1b5d88f8685274726ee472",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "de13678722f41496377cd7aaf321a44737c25eaa1479b2b3016e9302e0b83f11"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_041",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_041.png",
+        "image": "custom/costume/images/custom_costume_street_041.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_041.webp",
+        "provenance": {
+          "originalSha256": "9aa2f0f2c7d0039a97e3db1ee3f09ef7a343476b7f1b5d88f8685274726ee472",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_008",
+    "kind": "costume",
+    "code": "MC-008",
+    "title": {
+      "zh": "男士格纹外套与米色阔腿牛仔裤",
+      "en": "Men's plaid overshirt and beige wide-leg jeans"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 灰棕 格纹 连帽 外套 米色 T恤 阔腿 牛仔裤 黑色 腰带 运动鞋 墨镜 完整套装 无人物",
+      "en": "male photographic grey brown plaid hooded overshirt beige t shirt wide leg jeans black belt sneakers sunglasses complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "61f103494238e0e3f21bf247b916745b20b81739ff9a87aeee89e1cbc358faa5",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "079b83fe1bd8b7f792c654bf3c9fe0a37d526d8e89cad5dbcf0b96bd646ebc1b"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_008",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_008.png",
+        "image": "custom/costume/images/custom_costume_male_008.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_008.webp",
+        "provenance": {
+          "originalSha256": "61f103494238e0e3f21bf247b916745b20b81739ff9a87aeee89e1cbc358faa5",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_042",
+    "kind": "costume",
+    "code": "ST-042",
+    "title": {
+      "zh": "浅蓝短衬衫与米色工装阔腿裤",
+      "en": "Pale blue cropped shirt and beige cargo pants"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 浅蓝 短款 衬衫 黑色 领带 米色 工装 阔腿裤 垂带 黑色 单肩包 厚底鞋 完整套装 无人物",
+      "en": "female photographic pale blue cropped shirt black tie beige cargo wide leg pants hanging belt black shoulder bag platform shoes complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "31982c534826988dcb6bb10e0d9b8a11ac6d1d3d543f42af57455c282be9ff8e",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "6a4d1f7ef3648546ec65b4fff537ece5113c43e16177c3da58a4a9c142b4192f"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_042",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_042.png",
+        "image": "custom/costume/images/custom_costume_street_042.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_042.webp",
+        "provenance": {
+          "originalSha256": "31982c534826988dcb6bb10e0d9b8a11ac6d1d3d543f42af57455c282be9ff8e",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_043",
+    "kind": "costume",
+    "code": "ST-043",
+    "title": {
+      "zh": "炭灰叠穿卫衣与蓝色运动鞋",
+      "en": "Charcoal layered sweatshirt and blue sneakers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 炭灰 宽松 卫衣 白色 黑色 叠穿 红色 堆堆袜 蓝色 运动鞋 完整套装 无人物",
+      "en": "female photographic charcoal oversized sweatshirt white black layered hems red slouch socks blue sneakers complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "39d3cf875e0be386f8403c800c1cad65f94a7bf1f1c5c8f0ebc6ce4b6d9458d0",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "40edbcb55a81b0cea3d3bdbc91921df724a77b8b03d8c00c4c6baf7b2faa248b"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_043",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_043.png",
+        "image": "custom/costume/images/custom_costume_street_043.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_043.webp",
+        "provenance": {
+          "originalSha256": "39d3cf875e0be386f8403c800c1cad65f94a7bf1f1c5c8f0ebc6ce4b6d9458d0",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_044",
+    "kind": "costume",
+    "code": "ST-044",
+    "title": {
+      "zh": "青绿橙色条纹上衣与黑色牛仔短裤",
+      "en": "Turquoise striped top and black denim shorts"
+    },
+    "category": {
+      "id": "summer",
+      "zh": "夏日穿搭",
+      "en": "Summer"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 青绿 橙色 条纹 宽松 上衣 黑色 牛仔 短裤 贝雷帽 单肩包 厚底靴 完整套装 无人物",
+      "en": "female photographic turquoise orange striped oversized top black denim shorts beret shoulder bag platform boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "0d0f0f11fadcea3b10cdc20be269baa351a2946b24aa24990c1cf888b5f6ccb0",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "77a6ce3eaf8062af1cf3dfc926527489ed0ec9f1bc10de3d9b30986e75fa6b18"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_044",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_044.png",
+        "image": "custom/costume/images/custom_costume_street_044.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_044.webp",
+        "provenance": {
+          "originalSha256": "0d0f0f11fadcea3b10cdc20be269baa351a2946b24aa24990c1cf888b5f6ccb0",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_045",
+    "kind": "costume",
+    "code": "ST-045",
+    "title": {
+      "zh": "橙色印花上衣与拼布牛仔裙",
+      "en": "Orange graphic top and patchwork denim skirt"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 橙色 长袖 印花 上衣 拼布 牛仔 裙 贝雷帽 多层 项链 流苏 包 棕色 系带 长靴 完整套装 无人物",
+      "en": "female photographic orange long sleeve graphic top patchwork denim skirt beret layered necklaces fringe bag brown lace up tall boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "60139e839e44d2a1cbc86eb29d743ee5d51948e7cb71685bfa32459f0b52edfd",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "a506b78521d0323e1f473628d0f90f52b4d32f77eeb44696ab2400684bd2b881"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_045",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_045.png",
+        "image": "custom/costume/images/custom_costume_street_045.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_045.webp",
+        "provenance": {
+          "originalSha256": "60139e839e44d2a1cbc86eb29d743ee5d51948e7cb71685bfa32459f0b52edfd",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_046",
+    "kind": "costume",
+    "code": "ST-046",
+    "title": {
+      "zh": "米色条纹衬衫与棕色阔腿裤",
+      "en": "Beige striped shirt and brown wide-leg trousers"
+    },
+    "category": {
+      "id": "autumn",
+      "zh": "秋日穿搭",
+      "en": "Autumn"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 米色 条纹 衬衫 格纹 领带 棕色 阔腿裤 皮带 黑白 乐福鞋 完整套装 无人物",
+      "en": "female photographic beige striped shirt plaid tie brown wide leg trousers leather belt black white loafers complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "79f537b6b56da4f4a5bc9f8be5ae2d8a3294eb46011c3794bb40f65b0168b637",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "e659321b588bb328dc4f7cadea2eee4baa1b05ef69e3f9fea5900c4b5299cc77"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_046",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_046.png",
+        "image": "custom/costume/images/custom_costume_street_046.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_046.webp",
+        "provenance": {
+          "originalSha256": "79f537b6b56da4f4a5bc9f8be5ae2d8a3294eb46011c3794bb40f65b0168b637",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_047",
+    "kind": "costume",
+    "code": "ST-047",
+    "title": {
+      "zh": "浅蓝单肩牛仔阔腿套装",
+      "en": "Pale blue one-shoulder denim set"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 浅蓝 牛仔 单肩 抹胸 背带 阔腿裤 发箍 白色 运动鞋 完整套装 无人物",
+      "en": "female photographic pale blue denim one shoulder bandeau overalls wide leg jeans headband white sneakers complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "dbe311895e59608527cd4656af540b2445ebd14f185ce90725fb85d41358b11f",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "d4ad59eee67e7dbbca06cfcf66f66e8f42a938da1881e71c4a8ea763a098b47c"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_047",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_047.png",
+        "image": "custom/costume/images/custom_costume_street_047.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_047.webp",
+        "provenance": {
+          "originalSha256": "dbe311895e59608527cd4656af540b2445ebd14f185ce90725fb85d41358b11f",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_male_009",
+    "kind": "costume",
+    "code": "MC-009",
+    "title": {
+      "zh": "男士浅蓝叠穿衬衫与白色阔腿裤",
+      "en": "Men's layered blue shirts and white wide-leg pants"
+    },
+    "category": {
+      "id": "spring",
+      "zh": "春日穿搭",
+      "en": "Spring"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "男性 写实 浅蓝 短袖 长袖 条纹 衬衫 叠穿 领带 白色 阔腿裤 米色 运动鞋 完整套装 无人物",
+      "en": "male photographic pale blue short sleeve long sleeve striped layered shirts tie white wide leg pants cream sneakers complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "male",
+        "zh": "男性",
+        "en": "Male"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "0df076267c6fc02ae4c80ee71d75247a6c80e19a47bec0b01a792176d73920e5",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "3a506f880c384a54e21378a5c53cb2c1713bf8937cb42456bcc46b05f5244889"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_male_009",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_male_009.png",
+        "image": "custom/costume/images/custom_costume_male_009.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_male_009.webp",
+        "provenance": {
+          "originalSha256": "0df076267c6fc02ae4c80ee71d75247a6c80e19a47bec0b01a792176d73920e5",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_048",
+    "kind": "costume",
+    "code": "ST-048",
+    "title": {
+      "zh": "黑色印花束身上衣与荷叶短裙",
+      "en": "Black graphic corset and ruffle miniskirt"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 黑色 印花 束身 吊带 上衣 荷叶 短裙 铆钉 腰带 银链 过膝 长靴 完整套装 无人物",
+      "en": "female photographic black graphic corset camisole ruffle miniskirt studded belts silver chains over knee boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "46aff039c1c3d8e547172a6af50bdd800e5467e045c8230975a3255f9b69c498",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "925c4cc44221bf30164bf0415fc034642e67948961da3c0449af8da9217df815"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_048",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_048.png",
+        "image": "custom/costume/images/custom_costume_street_048.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_048.webp",
+        "provenance": {
+          "originalSha256": "46aff039c1c3d8e547172a6af50bdd800e5467e045c8230975a3255f9b69c498",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_049",
+    "kind": "costume",
+    "code": "ST-049",
+    "title": {
+      "zh": "牛仔马甲与红色格纹不对称短裙",
+      "en": "Denim vest and red asymmetric plaid skirt"
+    },
+    "category": {
+      "id": "street",
+      "zh": "日常穿搭",
+      "en": "Everyday"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 蓝色 牛仔 马甲 徽章 红色 领带 格纹 不对称 短裙 墨镜 酒红 系带 长靴 完整套装 无人物",
+      "en": "female photographic blue denim vest patches red tie plaid asymmetric miniskirt sunglasses burgundy lace up tall boots complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "346ca2e1feb311fead7c2e5b242f47e23a0c56581f41cc63908bc3cf1702d181",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "79bc85cf9d1d7659d0140347ac19b6ca52608ea0fdc8ca3f6e6dfb32613ea30e"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_049",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_049.png",
+        "image": "custom/costume/images/custom_costume_street_049.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_049.webp",
+        "provenance": {
+          "originalSha256": "346ca2e1feb311fead7c2e5b242f47e23a0c56581f41cc63908bc3cf1702d181",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
+    "id": "custom_costume_street_050",
+    "kind": "costume",
+    "code": "ST-050",
+    "title": {
+      "zh": "酒红拼花卉系带连衣裙",
+      "en": "Burgundy floral tie-strap dress"
+    },
+    "category": {
+      "id": "party",
+      "zh": "派对穿搭",
+      "en": "Party"
+    },
+    "series": {
+      "zh": "服饰提取 · 20261108",
+      "en": "Outfit extraction · 20261108"
+    },
+    "extended": false,
+    "source": "custom",
+    "collection": "custom",
+    "keywords": {
+      "zh": "女性 写实 酒红 奶油 花卉 拼接 蝴蝶结 系带 吊带 修身 短款 连衣裙 玛丽珍鞋 完整套装 无人物",
+      "en": "female photographic burgundy cream floral panel bow tie straps fitted mini dress mary jane shoes complete outfit no person"
+    },
+    "tags": [
+      {
+        "id": "female",
+        "zh": "女性",
+        "en": "Female"
+      },
+      {
+        "id": "photo",
+        "zh": "写实",
+        "en": "Photographic"
+      }
+    ],
+    "provenance": {
+      "originalSha256": "2daa9dcaad4b5db0a3065e6cc847c6410d5f6285f498eb8812a4a8ac36e19976",
+      "width": 1024,
+      "height": 1536,
+      "batch": "outfit-extraction-20261108-batch2",
+      "note": {
+        "zh": "根据用户提供的照片提取重绘；人物与背景已移除，遮挡细节及搭配鞋履包含 AI 推断，原始人物照片不随网站发布。",
+        "en": "Extracted and redrawn from a user-provided photo. The person and background were removed; obscured details and matching footwear include AI inference, and the source portrait is not published."
+      },
+      "provider": "Atomflow",
+      "model": "gpt-image-2",
+      "promptSha256": "7a1c1d5823bde09f87f51302c11d704a798bac1d94651e9b813206f534e08e03"
+    },
+    "variants": [
+      {
+        "id": "custom_costume_street_050",
+        "angle": "front",
+        "label": {
+          "zh": "正面",
+          "en": "Front"
+        },
+        "original": "custom/costume/originals/custom_costume_street_050.png",
+        "image": "custom/costume/images/custom_costume_street_050.webp",
+        "thumbnail": "custom/costume/thumbnails/custom_costume_street_050.webp",
+        "provenance": {
+          "originalSha256": "2daa9dcaad4b5db0a3065e6cc847c6410d5f6285f498eb8812a4a8ac36e19976",
+          "width": 1024,
+          "height": 1536
+        }
+      }
+    ]
+  },
+  {
     "id": "custom_costume_street_033",
     "kind": "costume",
     "code": "ST-033",

@@ -70,7 +70,7 @@ test('failed extraction does not fall back to the unprocessed upload or silently
       calls++;
       return Response.json({ error: { message: `Rejected ${config.apiKey}` } }, { status: 400 });
     }),
-    (error) => error.code === 'providerFailed' && !error.message.includes(config.apiKey),
+    (error) => error.code === 'safetyReviewFailed' && !error.message.includes(config.apiKey),
   );
   assert.equal(calls, 1);
 });

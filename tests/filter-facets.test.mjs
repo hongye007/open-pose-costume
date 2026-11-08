@@ -14,7 +14,7 @@ const { items } = await readJson('public/data/catalog.json');
 
 test('subject and visual style intersect independently without inferring untagged gender', () => {
   const photos = filterReferences(items, { tag: 'male', style: 'photo' });
-  assert.equal(photos.length, 30);
+  assert.equal(photos.length, 32);
   assert.ok(photos.every((item) => ['costume', 'character'].includes(item.kind)));
   assert.equal(filterReferences(items, { tag: 'male', style: 'anime' }).length, 0);
   assert.equal(
@@ -87,7 +87,7 @@ test('existing characters are female photographic references, while custom male 
 test('existing costumes are female photographic references; poses keep their existing style tags', () => {
   for (const [kind, expected] of [
     ['pose', 321],
-    ['costume', 2794],
+    ['costume', 2808],
   ]) {
     const females = filterReferences(items, { kind, tag: 'female' });
     assert.equal(females.length, expected);
@@ -118,8 +118,8 @@ test('existing costumes are female photographic references; poses keep their exi
     filterReferences(items, { kind: 'costume', tag: 'female', style: 'anime' }).length,
     1350,
   );
-  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 120);
-  assert.equal(filterReferences(items, { tag: 'female' }).length, 4634);
+  assert.equal(filterReferences(items, { collection: 'custom', tag: 'female' }).length, 134);
+  assert.equal(filterReferences(items, { tag: 'female' }).length, 4648);
 });
 
 test('sort by code follows the visible numeric code rather than the internal ID', () => {
