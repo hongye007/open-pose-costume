@@ -26,7 +26,8 @@ import {
   imageServiceForConfig,
   imageServicePresets,
   imageSizesForConfig,
-  saveImageConfig,
+  loadImageConfigState,
+  saveImageConfigState,
 } from './generation';
 import type { GenerationJob, ImageConfig, ImageService } from './generation';
 import type { Lang } from './types';
@@ -181,11 +182,11 @@ export function ImageSettings({
   const initialService = imageServiceForConfig(config);
   const [service, setService] = useState<ImageService>(initialService);
   const [draft, setDraft] = useState<ImageConfig>(config);
-  const initialDrafts: Record<ImageService, ImageConfig> = {
-    openwego: { ...defaultImageConfig, ...imageServicePresets.openwego, apiKey: '' },
-    atomflow: { ...defaultImageConfig, ...imageServicePresets.atomflow, apiKey: '' },
-  };
-  initialDrafts[initialService] = { ...config };
+  const [initialDrafts] = useState(() => {
+    const configs = loadImageConfigState().configs;
+    configs[initialService] = { ...config };
+    return configs;
+  });
   const serviceDrafts = useRef(initialDrafts);
   const [showKey, setShowKey] = useState(false);
   const [showGuide, setShowGuide] = useState(false);
@@ -227,7 +228,8 @@ export function ImageSettings({
           onSubmit={(event) => {
             event.preventDefault();
             try {
-              onSave(saveImageConfig(draft));
+              serviceDrafts.current[service] = draft;
+              onSave(saveImageConfigState(serviceDrafts.current, service));
             } catch (failure) {
               const code = failure instanceof Error ? failure.message : '';
               setError(
@@ -308,9 +310,7 @@ export function ImageSettings({
           )}
           <div className="api-key-field">
             <div className="api-key-label">
-              <label htmlFor="image-api-key">
-                {t.apiKeyRequired}
-              </label>
+              <label htmlFor="image-api-key">{t.apiKeyRequired}</label>
               <span className="api-key-help-links">
                 <a
                   href={

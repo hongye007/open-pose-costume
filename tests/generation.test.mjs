@@ -100,18 +100,20 @@ test('keys are remembered by default, while session-only storage and clearing re
     api.saveImageConfig(config);
     assert.ok(!localStorage.getItem('opc-image-settings').includes(config.apiKey));
     assert.equal(api.loadImageConfig().apiKey, config.apiKey);
-    sessionStorage.removeItem('opc-image-session-key');
+    sessionStorage.removeItem('opc-image-session-key-atomflow');
     assert.equal(api.loadImageConfig().apiKey, '');
     assert.equal(api.loadImageConfig().baseUrl, config.baseUrl);
     api.saveImageConfig({ ...config, rememberKey: true });
     assert.equal(api.loadImageConfig().apiKey, config.apiKey);
-    const legacy = JSON.parse(localStorage.getItem('opc-image-settings'));
     localStorage.setItem(
       'opc-image-settings',
-      JSON.stringify({ ...legacy, model: 'grok-imagine-image-2.0' }),
+      JSON.stringify({ ...config, rememberKey: true, model: 'grok-imagine-image-2.0' }),
     );
     assert.equal(api.loadImageConfig().model, 'gpt-image-2.6-sunburst');
-    localStorage.setItem('opc-image-settings', JSON.stringify({ ...legacy, model: 'gpt-image-2' }));
+    localStorage.setItem(
+      'opc-image-settings',
+      JSON.stringify({ ...config, rememberKey: true, model: 'gpt-image-2' }),
+    );
     assert.equal(api.loadImageConfig().model, 'gpt-image-2.6-sunburst');
     assert.equal(api.loadImageConfig().apiKey, config.apiKey);
     api.saveImageConfig(config);
@@ -119,6 +121,57 @@ test('keys are remembered by default, while session-only storage and clearing re
     api.clearImageConfig();
     assert.equal(api.loadImageConfig().apiKey, '');
     assert.equal(sessionStorage.getItem('opc-image-session-key'), null);
+    assert.equal(sessionStorage.getItem('opc-image-session-key-openwego'), null);
+    assert.equal(sessionStorage.getItem('opc-image-session-key-atomflow'), null);
+  } finally {
+    delete globalThis.localStorage;
+    delete globalThis.sessionStorage;
+  }
+});
+
+test('OpenWego and Atomflow retain separate keys and settings while switching', () => {
+  const storage = () => {
+    const values = new Map();
+    return {
+      getItem: (key) => values.get(key) ?? null,
+      setItem: (key, value) => values.set(key, value),
+      removeItem: (key) => values.delete(key),
+    };
+  };
+  globalThis.localStorage = storage();
+  globalThis.sessionStorage = storage();
+  try {
+    const openwego = {
+      ...api.defaultImageConfig,
+      apiKey: 'openwego-key',
+      model: 'open-image-custom',
+      rememberKey: true,
+    };
+    const atomflow = {
+      ...api.defaultImageConfig,
+      ...api.imageServicePresets.atomflow,
+      baseUrl: 'https://images.example/v1',
+      apiKey: 'atomflow-key',
+      model: 'custom-image-model',
+      rememberKey: false,
+    };
+    api.saveImageConfig(openwego);
+    api.saveImageConfig(atomflow);
+    let state = api.loadImageConfigState();
+    assert.equal(state.activeService, 'atomflow');
+    assert.equal(state.configs.openwego.apiKey, 'openwego-key');
+    assert.equal(state.configs.openwego.model, 'open-image-custom');
+    assert.equal(state.configs.atomflow.apiKey, 'atomflow-key');
+    assert.equal(state.configs.atomflow.baseUrl, 'https://images.example/v1');
+    assert.ok(!localStorage.getItem('opc-image-settings').includes('atomflow-key'));
+    assert.equal(sessionStorage.getItem('opc-image-session-key-atomflow'), 'atomflow-key');
+
+    api.saveImageConfig(state.configs.openwego);
+    state = api.loadImageConfigState();
+    assert.equal(state.activeService, 'openwego');
+    assert.equal(state.configs.openwego.apiKey, 'openwego-key');
+    assert.equal(state.configs.atomflow.apiKey, 'atomflow-key');
+    assert.equal(state.configs.atomflow.model, 'custom-image-model');
   } finally {
     delete globalThis.localStorage;
     delete globalThis.sessionStorage;
@@ -209,7 +262,10 @@ test('HTTP 400 responses surface the safety-review guidance without exposing the
         calls++;
         return calls === 1
           ? new Response(Buffer.from(png, 'base64'), { headers: { 'Content-Type': 'image/png' } })
-          : Response.json({ error: { message: `Safety rejected ${config.apiKey}` } }, { status: 400 });
+          : Response.json(
+              { error: { message: `Safety rejected ${config.apiKey}` } },
+              { status: 400 },
+            );
       },
     ),
     (error) => error.code === 'safetyReviewFailed' && !error.message.includes(config.apiKey),

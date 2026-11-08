@@ -14,6 +14,10 @@ export interface ImageConfig {
   rememberKey: boolean;
 }
 export type ImageService = 'openwego' | 'atomflow';
+export interface ImageConfigState {
+  activeService: ImageService;
+  configs: Record<ImageService, ImageConfig>;
+}
 interface ReferenceDetails {
   title: Reference['title'];
   keywords: Reference['keywords'];
@@ -41,6 +45,10 @@ export interface GenerationJob {
 
 const SETTINGS_KEY = 'opc-image-settings';
 const SESSION_KEY = 'opc-image-session-key';
+const SESSION_KEYS: Record<ImageService, string> = {
+  openwego: 'opc-image-session-key-openwego',
+  atomflow: 'opc-image-session-key-atomflow',
+};
 export const imageServicePresets = {
   openwego: {
     baseUrl: 'https://openwego.com',
@@ -66,6 +74,14 @@ export const defaultImageConfig: ImageConfig = {
 export const imageSizes = ['1024x1024', '1024x1536', '1536x1024', '2048x2048', 'auto'];
 export const openWegoImageSizes = ['1024x1024', '1024x1536', '1536x1024'];
 
+function defaultConfigForService(service: ImageService): ImageConfig {
+  return {
+    ...defaultImageConfig,
+    ...imageServicePresets[service],
+    apiKey: '',
+  };
+}
+
 export function imageEndpoint(baseUrl: string): string {
   const url = new URL(baseUrl.trim());
   const loopback = ['localhost', '127.0.0.1'].includes(url.hostname);
@@ -86,8 +102,7 @@ export function normalizeImageConfig(config: ImageConfig): ImageConfig {
   const endpoint = imageEndpoint(config.baseUrl);
   const apiKey = config.apiKey.trim();
   const model = config.model.trim();
-  if (!apiKey || !model || /[\r\n]/.test(config.apiKey))
-    throw Error('missingConfig');
+  if (!apiKey || !model || /[\r\n]/.test(config.apiKey)) throw Error('missingConfig');
   if (
     !imageSizes.includes(config.size) ||
     !['auto', 'low', 'medium', 'high'].includes(config.quality)
@@ -124,47 +139,127 @@ export function imageSizesForConfig(config: ImageConfig): string[] {
   return imageServiceForConfig(config) === 'openwego' ? openWegoImageSizes : imageSizes;
 }
 
-export function loadImageConfig(): ImageConfig {
+function configFromStorage(
+  service: ImageService,
+  saved: Partial<ImageConfig> | null | undefined,
+  legacySessionKey = '',
+): ImageConfig {
+  const fallback = defaultConfigForService(service);
+  if (!saved || typeof saved.baseUrl !== 'string' || typeof saved.model !== 'string')
+    return fallback;
   try {
-    const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || 'null');
-    if (!saved || typeof saved.baseUrl !== 'string' || typeof saved.model !== 'string')
-      return { ...defaultImageConfig };
     const rememberKey = saved.rememberKey === true;
-    const apiKey = rememberKey ? saved.apiKey : sessionStorage.getItem(SESSION_KEY);
-    const candidate = {
-      ...defaultImageConfig,
+    const storedKey = rememberKey
+      ? saved.apiKey
+      : sessionStorage.getItem(SESSION_KEYS[service]) || legacySessionKey;
+    const model =
+      service === 'atomflow' && (saved.model === 'gpt-image-2' || saved.model.startsWith('grok-'))
+        ? imageServicePresets.atomflow.model
+        : saved.model;
+    const candidate: ImageConfig = {
+      ...fallback,
       ...saved,
-      // Migrate retired defaults while preserving the service and key.
-      model:
-        saved.model === 'gpt-image-2' || saved.model.startsWith('grok-')
-          ? imageServicePresets.atomflow.model
-          : saved.model,
+      model,
       rememberKey,
-      apiKey: typeof apiKey === 'string' ? apiKey : '',
+      apiKey: typeof storedKey === 'string' ? storedKey : '',
     };
-    // Keep the endpoint settings when a session-only key has expired.
     normalizeImageConfig({ ...candidate, apiKey: candidate.apiKey || 'validation-only' });
     return candidate;
   } catch {
-    return { ...defaultImageConfig };
+    return fallback;
   }
 }
 
-export function saveImageConfig(config: ImageConfig): ImageConfig {
-  const valid = normalizeImageConfig(config);
-  const { apiKey, ...settings } = valid;
-  localStorage.setItem(
-    SETTINGS_KEY,
-    JSON.stringify({ ...settings, ...(valid.rememberKey ? { apiKey } : {}) }),
+export function loadImageConfigState(): ImageConfigState {
+  try {
+    const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || 'null');
+    if (saved?.version === 2 && saved.services && typeof saved.services === 'object') {
+      const activeService: ImageService =
+        saved.activeService === 'atomflow' ? 'atomflow' : 'openwego';
+      return {
+        activeService,
+        configs: {
+          openwego: configFromStorage('openwego', saved.services.openwego),
+          atomflow: configFromStorage('atomflow', saved.services.atomflow),
+        },
+      };
+    }
+    if (!saved || typeof saved.baseUrl !== 'string' || typeof saved.model !== 'string') {
+      return {
+        activeService: 'openwego',
+        configs: {
+          openwego: defaultConfigForService('openwego'),
+          atomflow: defaultConfigForService('atomflow'),
+        },
+      };
+    }
+    const activeService = imageServiceForConfig({ ...defaultImageConfig, ...saved });
+    const legacySessionKey = sessionStorage.getItem(SESSION_KEY) || '';
+    const configs = {
+      openwego: defaultConfigForService('openwego'),
+      atomflow: defaultConfigForService('atomflow'),
+    };
+    configs[activeService] = configFromStorage(activeService, saved, legacySessionKey);
+    return { activeService, configs };
+  } catch {
+    return {
+      activeService: 'openwego',
+      configs: {
+        openwego: defaultConfigForService('openwego'),
+        atomflow: defaultConfigForService('atomflow'),
+      },
+    };
+  }
+}
+
+export function loadImageConfig(): ImageConfig {
+  const state = loadImageConfigState();
+  return state.configs[state.activeService];
+}
+
+export function saveImageConfigState(
+  configs: Record<ImageService, ImageConfig>,
+  activeService: ImageService,
+): ImageConfig {
+  normalizeImageConfig(configs[activeService]);
+  const normalized = Object.fromEntries(
+    (['openwego', 'atomflow'] as const).map((service) => {
+      const apiKey = configs[service].apiKey.trim();
+      const valid = normalizeImageConfig({
+        ...configs[service],
+        apiKey: apiKey || 'validation-only',
+      });
+      return [service, { ...valid, apiKey }];
+    }),
+  ) as Record<ImageService, ImageConfig>;
+  const services = Object.fromEntries(
+    (['openwego', 'atomflow'] as const).map((service) => {
+      const { apiKey, ...settings } = normalized[service];
+      return [service, { ...settings, ...(settings.rememberKey && apiKey ? { apiKey } : {}) }];
+    }),
   );
-  if (valid.rememberKey) sessionStorage.removeItem(SESSION_KEY);
-  else sessionStorage.setItem(SESSION_KEY, apiKey);
-  return valid;
+  localStorage.setItem(SETTINGS_KEY, JSON.stringify({ version: 2, activeService, services }));
+  for (const service of ['openwego', 'atomflow'] as const) {
+    const config = normalized[service];
+    if (config.rememberKey || !config.apiKey) sessionStorage.removeItem(SESSION_KEYS[service]);
+    else sessionStorage.setItem(SESSION_KEYS[service], config.apiKey);
+  }
+  sessionStorage.removeItem(SESSION_KEY);
+  return normalized[activeService];
+}
+
+export function saveImageConfig(config: ImageConfig): ImageConfig {
+  const state = loadImageConfigState();
+  const activeService = imageServiceForConfig(config);
+  state.configs[activeService] = config;
+  return saveImageConfigState(state.configs, activeService);
 }
 
 export function clearImageConfig() {
   localStorage.removeItem(SETTINGS_KEY);
   sessionStorage.removeItem(SESSION_KEY);
+  sessionStorage.removeItem(SESSION_KEYS.openwego);
+  sessionStorage.removeItem(SESSION_KEYS.atomflow);
 }
 
 export function referencePrompt(references: ImageReference[], lang: Lang): string {
